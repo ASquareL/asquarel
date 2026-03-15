@@ -1,0 +1,253 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif; /* Added font for readability */
+    line-height: 1.6; /* Better text spacing */
+}
+
+/* Header Styling */
+header, footer {
+    background-color: black;
+    text-align: center;
+    padding: 1rem;
+    color: #f0c040;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Keeps nav on screen on small phones */
+    list-style-type: none;
+    background-color: #1A1A1A;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+nav ul li a {
+    color: #f0c040;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: goldenrod;
+    color: black;
+    border-radius: 3px;
+}
+
+/* Main Layout */
+main {
+    max-width: 800px; /* Keeps text readable width */
+    margin: 0 auto; /* Centers content */
+    padding: 0 15px;
+}
+
+/* Section Cards */
+section.content-card, section.hero-section, section.cta-section {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px goldenrod; /* Reduced glow slightly for clean look */
+    margin-bottom: 30px;
+    animation: slideIn 0.5s ease-out;
+    text-align: center;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    color: darkgoldenrod;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #ddd; /* Changed from darkgoldenrod to light grey for readability */
+}
+
+ul {
+    list-style-position: inside; /* Keeps bullets inside the box */
+    color: #ddd;
+}
+
+/* Link Styling */
+a.text-link {
+    color: goldenrod;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.text-link:hover {
+    text-decoration: underline;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.primary-btn {
+    background-color: goldenrod;
+    color: black;
+}
+
+.primary-btn:hover {
+    background-color: #b8860b; /* Darker gold */
+    color: white;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid goldenrod;
+    color: goldenrod;
+}
+
+.secondary-btn:hover {
+    background-color: goldenrod;
+    color: black;
+}
+
+/* HR Styling */
+hr {
+    border: 0;
+    height: 1px;
+    background: darkgoldenrod;
+    margin: 30px 0;
+    opacity: 0.5;
+}
+
+/* Review Quote Style */
+blockquote.review {
+    font-style: italic;
+    color: #f0c040;
+    border-left: 3px solid goldenrod;
+    padding-left: 15px;
+    margin: 10px auto;
+    display: inline-block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- SERVICES PAGE SPECIFIC STYLES --- */
+
+/* This turns the container into a Grid */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to next line */
+    gap: 20px; /* Space between cards */
+    justify-content: center;
+}
+
+/* This sizes the cards to take up roughly half the screen each */
+.service-card {
+    flex: 1 1 45%; /* Grow, Shrink, Basis (45% width) */
+    min-width: 300px; /* Don't get smaller than 300px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* On mobile, stack them neatly */
+@media (max-width: 768px) {
+    .service-card {
+        flex: 1 1 100%; /* Take full width on phones */
+    }
+}
+
+
+
+
+/* --- CONTACT FORM STYLES --- */
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Align labels to the left */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: darkgoldenrod;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #000; /* Black input background */
+    border: 1px solid #444; /* Dark grey border */
+    border-radius: 4px;
+    color: white; /* White text when typing */
+    font-family: inherit;
+}
+
+/* When the user clicks inside the box */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: goldenrod; /* Glow gold when active */
+    box-shadow: 0 0 5px rgba(218, 165, 32, 0.5);
+}
+
+/* Placeholder text color */
+::placeholder {
+    color: #666;
+}
+
+.social-links {
+    margin: 15px 0;
+}
+
+.social-links a {
+    color: goldenrod;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid goldenrod;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background-color: goldenrod;
+    color: black;
+}
