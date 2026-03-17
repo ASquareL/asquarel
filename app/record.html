@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Sale - A_SQUARE_L OS</title>
+    <link rel="stylesheet" href="os-style.css">
+</head>
+<body class="dash-body">
+
+    <div class="sidebar">
+        <h2>A_SQUARE_L OS</h2>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="inventory.html">📦 Inventory</a>
+        <a href="record.html" class="active">🛒 Record Sale</a>
+        <a href="debt-ledger.html">📒 Debt Ledger</a>
+        <a href="settings.html">⚙️ Settings</a>
+        <a href="login.html" class="logout">🚪 Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Record New Sale</h1>
+        </div>
+
+        <div class="activity-section" style="max-width: 600px;">
+            <form action="dashboard.html" method="GET">
+                <label style="color: #888; font-size: 0.9rem;">Product Sold</label>
+                <input type="text" placeholder="e.g., Nike Air Force 1" required>
+
+                <label style="color: #888; font-size: 0.9rem;">Quantity</label>
+                <input type="number" placeholder="1" required>
+
+                <label style="color: #888; font-size: 0.9rem;">Total Amount (₦)</label>
+                <input type="number" placeholder="e.g., 25000" required>
+
+                <label style="color: #888; font-size: 0.9rem;">Payment Method</label>
+                <select style="width: 100%; padding: 12px; margin-bottom: 20px; background: #000; border: 1px solid #444; color: white; border-radius: 4px;" required>
+                    <option value="moniepoint">💳 Moniepoint POS</option>
+                    <option value="cash">💵 Cash</option>
+                    <option value="transfer">🏦 Bank Transfer</option>
+                    <option value="debt">📝 Credit / Unpaid (Add to Debt Ledger)</option>
+                </select>
+
+                <button type="submit" class="btn">Log Sale</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
