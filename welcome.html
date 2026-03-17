@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Client Onboarding - A SQUARE L</title>
+</head>
+<body>
+
+  <header>
+      <img src="ASquareL.png" alt="ASquareL Logo" width="75" height="75" class="logo">
+      <h4>A Square L Multi Com</h4>
+      </header> 
+
+  <main style="max-width: 600px; margin: 40px auto;">
+    
+    <section class="content-card">
+        <h1>Welcome to A_SQUARE_L</h1>
+        <p style="color: goldenrod; font-weight: bold;">Project Intake Portal</p>
+        <p>Thank you for your payment! To help us begin designing your assets and setting up your digital infrastructure, please complete the details below.</p>
+        
+        <hr>
+
+        <form name="onboarding" method="POST" netlify action="success.html" class="contact-form">
+            <input type="hidden" name="form-name" value="onboarding" />
+            
+            <div class="form-group">
+                <label for="biz-name">1. Exact Business Name</label>
+                <input type="text" id="biz-name" name="biz-name" placeholder="How should it appear on your logo/website?" required>
+            </div>
+
+            <div class="form-group">
+                <label for="colors">2. Brand Colors</label>
+                <input type="text" id="colors" name="colors" placeholder="e.g., Blue and White, or Black and Gold" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pitch">3. What does your business do?</label>
+                <textarea id="pitch" name="pitch" rows="2" placeholder="Explain your services in one or two sentences." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-info">4. Public Contact Info</label>
+                <textarea id="contact-info" name="contact-info" rows="3" placeholder="Phone number, email, and physical address for your website and flyers." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="cac-nin">5. Moniepoint POS Status</label>
+                <select id="cac-nin" name="cac-nin">
+                    <option value="has-both">I have my NIN and CAC Registration</option>
+                    <option value="has-nin-only">I only have my NIN right now</option>
+                    <option value="needs-help">I need help registering my business</option>
+                    <option value="not-applicable">Not applicable to my project</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn primary-btn" style="width: 100%; border: none; cursor: pointer; margin-top: 15px;">Submit Project Details</button>
+        </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+        <p class="copyright">&copy; 2026 A Square L Multi Company — All Rights Reserved</p>
+    </div>
+  </footer>
+
+</body>
+</html>
