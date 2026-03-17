@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - A_SQUARE_L OS</title>
+    <link rel="stylesheet" href="os-style.css">
+</head>
+<body class="dash-body">
+
+    <div class="sidebar">
+        <h2>A_SQUARE_L OS</h2>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="inventory.html">📦 Inventory</a>
+        <a href="record.html">🛒 Record Sale</a>
+        <a href="debt-ledger.html">📒 Debt Ledger</a>
+        <a href="settings.html" class="active">⚙️ Settings</a>
+        <a href="login.html" class="logout">🚪 Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Store Settings</h1>
+        </div>
+
+        <div class="activity-section" style="max-width: 600px;">
+            <h3>Business Profile</h3>
+            <br>
+            <form action="dashboard.html" method="GET">
+                <label style="color: #888; font-size: 0.9rem;">Store Name</label>
+                <input type="text" value="A_SQUARE_L Multi Com" required>
+
+                <label style="color: #888; font-size: 0.9rem;">Admin Email</label>
+                <input type="email" value="asquarel.contact@gmail.com" required>
+                
+                <label style="color: #888; font-size: 0.9rem;">Default POS Terminal</label>
+                <select style="width: 100%; padding: 12px; margin-bottom: 20px; background: #000; border: 1px solid #444; color: white; border-radius: 4px;">
+                    <option value="moniepoint">Moniepoint (Primary)</option>
+                    <option value="opay">OPay</option>
+                    <option value="palmpay">PalmPay</option>
+                </select>
+
+                <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+                
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
