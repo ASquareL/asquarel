@@ -36,3 +36,26 @@ input:focus { outline: none; border-color: goldenrod; }
 .activity-list li:last-child { border-bottom: none; }
 .status-paid { color: #4caf50; font-weight: bold; }
 .status-pending { color: #ff9800; font-weight: bold; }
+
+/* RESPONSIVE DESIGN (MOBILE MOBILE FIXES) */
+@media (max-width: 768px) {
+    /* Stack the layout */
+    .dash-body { flex-direction: column; height: auto; overflow: visible; }
+    
+    /* Turn sidebar into a swipeable top navigation */
+    .sidebar { width: 100%; flex-direction: row; overflow-x: auto; white-space: nowrap; padding: 10px 15px; border-right: none; border-bottom: 1px solid #333; gap: 10px; align-items: center; }
+    .sidebar h2 { display: none; /* Hide logo text to save space on mobile */ }
+    .sidebar a { display: inline-block; margin-bottom: 0; padding: 8px 12px; font-size: 0.9rem; }
+    .sidebar .logout { margin-top: 0; }
+    
+    /* Adjust main content padding */
+    .main-content { padding: 15px; }
+    .header { flex-direction: column; align-items: flex-start; gap: 15px; }
+    
+    /* Stack dashboard cards */
+    .grid { flex-direction: column; gap: 15px; }
+    
+    /* Stack list items if they get too squeezed */
+    .activity-list li { flex-direction: column; align-items: flex-start; gap: 5px; }
+}
+
