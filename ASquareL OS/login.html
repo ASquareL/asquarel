@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - A_SQUARE_L OS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #000; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-card { background-color: #111; padding: 40px; border-radius: 8px; border: 1px solid #333; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2); }
+        h2 { color: darkgoldenrod; margin-bottom: 10px; }
+        p { color: #888; margin-bottom: 30px; font-size: 0.9rem; }
+        input { width: 100%; padding: 12px; margin-bottom: 20px; background: #000; border: 1px solid #444; color: white; border-radius: 4px; }
+        input:focus { outline: none; border-color: goldenrod; }
+        .btn { display: inline-block; width: 100%; padding: 12px; background: goldenrod; color: black; font-weight: bold; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: #b8860b; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>A_SQUARE_L OS</h2>
+        <p>Merchant Command Center</p>
+        
+        <form action="dashboard.html" method="GET">
+            <input type="text" placeholder="Merchant ID or Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn">Secure Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
