@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Ledger - A_SQUARE_L OS</title>
+    <link rel="stylesheet" href="os-style.css">
+</head>
+<body class="dash-body">
+
+    <div class="sidebar">
+        <h2>A_SQUARE_L OS</h2>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="inventory.html">📦 Inventory</a>
+        <a href="#">🛒 Record Sale</a>
+        <a href="debt-ledger.html" class="active">📒 Debt Ledger</a>
+        <a href="#">⚙️ Settings</a>
+        <a href="login.html" class="logout">🚪 Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Debt Ledger</h1>
+            <button class="btn" style="width: auto; padding: 10px 20px; background: #ff4c4c; color: white;">+ Add New Debt</button>
+        </div>
+
+        <div class="grid">
+            <div class="card" style="border-color: #ff4c4c;">
+                <h3>Total Unpaid Debt</h3>
+                <div class="value" style="color: #ff4c4c;">₦45,500</div>
+            </div>
+        </div>
+
+        <div class="activity-section">
+            <h3>Active Debtors</h3>
+            <ul class="activity-list">
+                <li>
+                    <div>
+                        <strong>Aminu (Shop 42)</strong><br>
+                        <span style="color: #888; font-size: 0.85rem;">Date: Oct 15 - 2x Shirts</span>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="status-pending">Owes ₦15,000</span><br>
+                        <a href="#" style="color: #4caf50; font-size: 0.85rem; text-decoration: none;">Mark as Paid ✓</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <strong>Hajiya Fatima</strong><br>
+                        <span style="color: #888; font-size: 0.85rem;">Date: Oct 12 - Wholesale order balance</span>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="status-pending">Owes ₦30,500</span><br>
+                        <a href="#" style="color: #4caf50; font-size: 0.85rem; text-decoration: none;">Mark as Paid ✓</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
