@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Day 1: Semantic HTML & Multimedia | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        /* Nuke any white backgrounds and force Black Theme */
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .tip-box, .activity-box, .warning-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .tip-box { border-left-color: var(--dark-gold); } 
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .tip-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Semantic Diagram specific to this page */
+        .semantic-diagram {
+            border: 1px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background: #0a0a0a;
+        }
+        .semantic-element {
+            background: #151515;
+            color: var(--text-white);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 1px solid #333;
+            border-left: 4px solid var(--dark-gold);
+        }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .text { color: var(--text-white); }
+        .html-code .comment { color: #666; font-style: italic; } 
+        .html-code .line { display: block; padding: 2px 0; }
+        .html-code .indent-1 { padding-left: 20px; }
+        .html-code .indent-2 { padding-left: 40px; }
+        .html-code .indent-3 { padding-left: 60px; }
+        .html-code .indent-4 { padding-left: 80px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { 
+            background: var(--dark-gold); 
+            transform: translateY(-2px); 
+        }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Week 2 - Day 1</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 2 - Day 1: Semantic HTML & Multimedia</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Accessibility, Structure & Media Elements</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand semantic HTML and its importance in modern web development</li>
+                    <li>Use structural tags: header, nav, main, article, section, aside, footer</li>
+                    <li>Embed audio and video content securely</li>
+                    <li>Build a complete news article page utilizing proper layout</li>
+                </ul>
+            </div>
+
+            <!-- What is Semantic HTML -->
+            <div class="section">
+                <h2>📚 What is Semantic HTML?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray); margin-bottom: 10px;"><strong>Semantic HTML</strong> uses tags that clearly describe their meaning to both the browser and the developer.</p>
+                    <p style="color: #fff; font-weight: bold; margin-bottom: 5px;">Benefits:</p>
+                    <ul style="color: var(--text-gray); margin-left: 20px;">
+                        <li>Improves accessibility for visually impaired users (screen readers)</li>
+                        <li>Better SEO (Search Engine Optimization) so Google ranks you higher</li>
+                        <li>Easier to read and maintain your code</li>
+                    </ul>
+                </div>
+
+                <h3>Non-Semantic vs Semantic</h3>
+                <table>
+                    <tr>
+                        <th>Non-Semantic (The Old Way)</th>
+                        <th>Semantic (The Professional Way)</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;div id="header"&gt;</td>
+                        <td>&lt;header&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;div id="nav"&gt;</td>
+                        <td>&lt;nav&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;div id="footer"&gt;</td>
+                        <td>&lt;footer&gt;</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Semantic HTML Structure -->
+            <div class="section">
+                <h2>🏗️ Semantic HTML Structure</h2>
+                
+                <div class="semantic-diagram">
+                    <div class="semantic-element">&lt;header&gt; - Top section (logo, navigation)</div>
+                    <div class="semantic-element">&lt;nav&gt; - Navigation links</div>
+                    <div class="semantic-element">&lt;main&gt; - Main content area</div>
+                    <div style="margin-left: 40px; padding-left: 20px; border-left: 2px dashed var(--primary-gold);">
+                        <div class="semantic-element">&lt;article&gt; - Independent content</div>
+                        <div class="semantic-element">&lt;section&gt; - Thematic grouping</div>
+                        <div class="semantic-element">&lt;aside&gt; - Sidebar content</div>
+                    </div>
+                    <div class="semantic-element">&lt;footer&gt; - Bottom section</div>
+                </div>
+
+                <h3>Key Semantic Elements Explored</h3>
+                
+                <h4>1. &lt;header&gt;</h4>
+                <p style="color: var(--text-gray);">Contains introductory content, typically your logo, site title, and main navigation.</p>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;header&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h1&gt;</span><span class="text">My Website</span><span class="tag">&lt;/h1&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;nav&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"/"</span><span class="tag">&gt;</span><span class="text">Home</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"/about"</span><span class="tag">&gt;</span><span class="text">About</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"/contact"</span><span class="tag">&gt;</span><span class="text">Contact</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/nav&gt;</span></span>
+<span class="line"><span class="tag">&lt;/header&gt;</span></span>
+                </div>
+
+                <h4>2. &lt;nav&gt;</h4>
+                <p style="color: var(--text-gray);">Contains navigation links. Do not wrap all links in `nav`—only major navigation blocks.</p>
+
+                <h4>3. &lt;main&gt;</h4>
+                <p style="color: var(--text-gray);">The dominant content of the page. You should only use one `<main>` tag per page.</p>
+
+                <h4>4. &lt;article&gt;</h4>
+                <p style="color: var(--text-gray);">Self-contained, independent content (like a blog post, news article, or forum post).</p>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;article&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2&gt;</span><span class="text">Article Title</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;p&gt;</span><span class="text">Article content goes here...</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line"><span class="tag">&lt;/article&gt;</span></span>
+                </div>
+
+                <h4>5. &lt;section&gt;</h4>
+                <p style="color: var(--text-gray);">A thematic grouping of content, typically with a heading.</p>
+
+                <h4>6. &lt;aside&gt;</h4>
+                <p style="color: var(--text-gray);">Side content, related to main content (like a sidebar, author bio, or callout boxes).</p>
+
+                <h4>7. &lt;footer&gt;</h4>
+                <p style="color: var(--text-gray);">Footer information at the bottom of the page or article (copyright, contact, social links).</p>
+            </div>
+
+            <!-- Multimedia Section -->
+            <div class="section">
+                <h2>🎵 Embedding Multimedia</h2>
+                
+                <h3>Audio Element</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;audio</span> <span class="attr">controls</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"audio.mp3"</span> <span class="attr">type</span>=<span class="value">"audio/mpeg"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"audio.ogg"</span> <span class="attr">type</span>=<span class="value">"audio/ogg"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="text">Your browser does not support the audio element.</span></span>
+<span class="line"><span class="tag">&lt;/audio&gt;</span></span>
+                </div>
+                <p style="color: var(--text-gray); margin-bottom: 10px;"><strong>Key Attributes:</strong></p>
+                <ul style="color: var(--text-gray); margin-left: 20px;">
+                    <li><code>controls</code> - Shows play/pause buttons (Mandatory so users can control it)</li>
+                    <li><code>autoplay</code> - Starts automatically</li>
+                    <li><code>loop</code> - Repeats continuously</li>
+                    <li><code>muted</code> - Starts muted</li>
+                </ul>
+
+                <h3>Video Element</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;video</span> <span class="attr">width</span>=<span class="value">"640"</span> <span class="attr">height</span>=<span class="value">"360"</span> <span class="attr">controls</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"video.mp4"</span> <span class="attr">type</span>=<span class="value">"video/mp4"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"video.webm"</span> <span class="attr">type</span>=<span class="value">"video/webm"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="text">Your browser does not support the video tag.</span></span>
+<span class="line"><span class="tag">&lt;/video&gt;</span></span>
+                </div>
+
+                <h3>Embedding YouTube Videos</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;iframe</span> <span class="attr">width</span>=<span class="value">"560"</span> <span class="attr">height</span>=<span class="value">"315"</span></span>
+<span class="line indent-1"><span class="attr">src</span>=<span class="value">"https://www.youtube.com/embed/VIDEO_ID"</span></span>
+<span class="line indent-1"><span class="attr">frameborder</span>=<span class="value">"0"</span></span>
+<span class="line indent-1"><span class="attr">allow</span>=<span class="value">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</span></span>
+<span class="line indent-1"><span class="attr">allowfullscreen</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;/iframe&gt;</span></span>
+                </div>
+            </div>
+
+            <!-- Main Activity -->
+            <div class="section">
+                <h2>💻 Main Activity: Build a News Article Page</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Create: news-article.html</h3>
+                    <p style="color: var(--text-gray);">Build a complete news page using semantic HTML tags and multimedia embeddings.</p>
+                </div>
+
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;head&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="value">"viewport"</span> <span class="attr">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;title&gt;</span><span class="text">Latest Tech News</span><span class="tag">&lt;/title&gt;</span></span>
+<span class="line"><span class="tag">&lt;/head&gt;</span></span>
+<span class="line"><span class="tag">&lt;body&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;header&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;h1&gt;</span><span class="text">Tech News Daily</span><span class="tag">&lt;/h1&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;nav&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"/"</span><span class="tag">&gt;</span><span class="text">Home</span><span class="tag">&lt;/a&gt;</span><span class="text"> | </span></span>
+<span class="line indent-3"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"/news"</span><span class="tag">&gt;</span><span class="text">News</span><span class="tag">&lt;/a&gt;</span><span class="text"> | </span></span>
+<span class="line indent-3"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"/contact"</span><span class="tag">&gt;</span><span class="text">Contact</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;/nav&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/header&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="tag">&lt;main&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;article&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;header&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;h2&gt;</span><span class="text">AI Revolution in Web Development</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;p&gt;</span></span>
+<span class="line indent-4"><span class="text">By </span><span class="tag">&lt;strong&gt;</span><span class="text">A Square L Academy</span><span class="tag">&lt;/strong&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;/header&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-3"><span class="tag">&lt;figure&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"https://picsum.photos/800/400"</span> <span class="attr">alt</span>=<span class="value">"AI in Web Development"</span><span class="tag">&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;figcaption&gt;</span><span class="text">AI transforming web development</span><span class="tag">&lt;/figcaption&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;/figure&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-3"><span class="tag">&lt;section&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;h3&gt;</span><span class="text">Introduction</span><span class="tag">&lt;/h3&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;p&gt;</span><span class="text">Artificial Intelligence is revolutionizing how we build websites...</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;/section&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-3"><span class="tag">&lt;section&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;h3&gt;</span><span class="text">Watch the Discussion</span><span class="tag">&lt;/h3&gt;</span></span>
+<span class="line indent-4"><span class="comment">&lt;!-- Replace VIDEO_ID with an actual YouTube ID --&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;iframe</span> <span class="attr">width</span>=<span class="value">"560"</span> <span class="attr">height</span>=<span class="value">"315"</span> <span class="attr">src</span>=<span class="value">"https://www.youtube.com/embed/VIDEO_ID"</span><span class="tag">&gt;&lt;/iframe&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;/section&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-3"><span class="tag">&lt;footer&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;p&gt;</span><span class="text">Tags: #AI #WebDevelopment #ASquareL</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;/footer&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;/article&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-2"><span class="tag">&lt;aside&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;h3&gt;</span><span class="text">Related Articles</span><span class="tag">&lt;/h3&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;ul&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="value">"#"</span><span class="tag">&gt;</span><span class="text">Future of JavaScript</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span class="line indent-4"><span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="value">"#"</span><span class="tag">&gt;</span><span class="text">CSS Grid Tutorial</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;/ul&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;/aside&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/main&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="tag">&lt;footer&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;p&gt;</span><span class="text">&copy; 2026 Tech News Daily. All rights reserved.</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/footer&gt;</span></span>
+<span class="line"><span class="tag">&lt;/body&gt;</span></span>
+<span class="line"><span class="tag">&lt;/html&gt;</span></span>
+                </div>
+            </div>
+
+            <!-- Practice Exercises -->
+            <div class="section">
+                <h2>✏️ Practice Exercises</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 1: Personal Blog Post</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;">Create a blog post about your web development journey using:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Proper semantic structure (`header`, `main`, `article`, `footer`)</li>
+                        <li>At least 3 sections</li>
+                        <li>An image with `figure` and `figcaption` tags</li>
+                        <li>A blockquote with your favorite coding quote</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 2: Add Multimedia</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;">Enhance your page with:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>An embedded YouTube video about web development</li>
+                        <li>An audio element (use any online audio file, like a free stock sound)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <ul class="checklist">
+                        <li><code>news-article.html</code> with complete semantic structure</li>
+                        <li>Working audio and video elements included in your code</li>
+                        <li>Personal blog post exercise completed</li>
+                        <li>Code committed and pushed to your GitHub repository</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day3-forms-tables-git.html" class="btn-outline">← Previous: Day 3</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <!-- Pointing to what will be Day 5 (Intro to CSS) -->
+                <a href="day5-css.html" class="btn-gold">Next: Day 5 - Intro to CSS →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 2 - Day 1: Semantic HTML & Multimedia</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

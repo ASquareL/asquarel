@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 Day 3: Responsive Design | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .tip-box, .activity-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .tip-box { border-left-color: var(--dark-gold); } 
+        .activity-box { border-left-color: var(--text-white); } 
+
+        .activity-box h4, .tip-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Device Demos */
+        .device-demo {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .device { text-align: center; }
+        .device-screen {
+            border: 2px solid var(--primary-gold);
+            border-radius: 10px;
+            background: #000;
+            margin: 10px auto;
+            position: relative;
+        }
+        .device-screen::after {
+            content: '';
+            position: absolute;
+            background: #333;
+        }
+        /* Mobile */
+        .mobile { width: 100px; height: 180px; }
+        .mobile::after { width: 20px; height: 4px; bottom: 5px; left: 40px; border-radius: 2px; }
+        /* Tablet */
+        .tablet { width: 160px; height: 210px; border-radius: 15px; }
+        .tablet::after { width: 30px; height: 4px; bottom: 8px; left: 65px; border-radius: 2px; }
+        /* Desktop */
+        .desktop { width: 250px; height: 160px; border-radius: 5px; }
+        .desktop::after { width: 60px; height: 10px; bottom: -12px; left: 95px; background: var(--primary-gold); border-radius: 2px; }
+
+        /* Layout Example Container */
+        .layout-example {
+            border: 1px dashed var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #0a0a0a;
+        }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code, .css-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        /* HTML Specific */
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .text { color: var(--text-white); }
+        .html-code .comment { color: #666; font-style: italic; } 
+        /* CSS Specific */
+        .css-code .selector { color: var(--primary-gold); font-weight: bold; }
+        .css-code .property { color: var(--text-white); }
+        .css-code .value { color: var(--dark-gold); }
+        .css-code .punctuation { color: #888; }
+        .css-code .comment { color: #666; font-style: italic; }
+        
+        .html-code .line, .css-code .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 9</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 3 - Day 3: Responsive Design Basics</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Mobile-First, Viewports, and Media Queries</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand responsive web design principles</li>
+                    <li>Learn about the viewport meta tag</li>
+                    <li>Master CSS media queries and breakpoints</li>
+                    <li>Implement a Mobile-First mindset</li>
+                    <li>Convert an existing page into a fully responsive design</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📱 What is Responsive Web Design?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);"><strong>Responsive Web Design (RWD)</strong> is an approach that makes web pages render well on all devices and screen sizes. A single website should look beautiful whether viewed on a giant monitor or a tiny smartphone.</p>
+                    <p style="color: #fff; margin-top: 10px;"><strong>Key principles:</strong></p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Fluid grids (flexible layouts using %, fr, flex)</li>
+                        <li>Flexible images</li>
+                        <li>Media queries</li>
+                        <li>Mobile-first mindset</li>
+                    </ul>
+                </div>
+
+                <div class="device-demo">
+                    <div class="device">
+                        <h4 style="color: var(--primary-gold);">📱 Mobile</h4>
+                        <div class="device-screen mobile"></div>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">320px - 480px</p>
+                    </div>
+                    <div class="device">
+                        <h4 style="color: var(--primary-gold);">📱 Tablet</h4>
+                        <div class="device-screen tablet"></div>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">481px - 768px</p>
+                    </div>
+                    <div class="device">
+                        <h4 style="color: var(--primary-gold);">💻 Desktop</h4>
+                        <div class="device-screen desktop"></div>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">769px+</p>
+                    </div>
+                </div>
+
+                <h3>Why Responsive Design?</h3>
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong style="color: #fff;">Mobile traffic:</strong> Over 60% of all global web traffic is mobile.</li>
+                    <li><strong style="color: #fff;">SEO:</strong> Google explicitly prioritizes and ranks mobile-friendly sites higher.</li>
+                    <li><strong style="color: #fff;">User experience:</strong> Users will immediately leave a site if they have to pinch and zoom to read it.</li>
+                </ul>
+            </div>
+
+            <!-- Viewport Meta Tag -->
+            <div class="section">
+                <h2>🔧 The Viewport Meta Tag</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">The viewport meta tag tells mobile browsers how to control the page's dimensions and scaling. Without this, a smartphone will pretend to be a desktop and shrink your website to unreadable levels.</p>
+                </div>
+                
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="value">"viewport"</span> <span class="attr">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span></span>
+                </div>
+                
+                <ul style="color: var(--text-gray); margin-left: 20px;">
+                    <li><strong style="color: #fff;">width=device-width:</strong> Sets the width of the page to follow the screen width of the device.</li>
+                    <li><strong style="color: #fff;">initial-scale=1.0:</strong> Sets the initial zoom level when the page is first loaded.</li>
+                </ul>
+                
+                <div class="tip-box" style="border-left-color: #ef4444;">
+                    <p style="color: #fff;"><strong>⚠️ CRITICAL: Always include this in your <code>&lt;head&gt;</code> section!</strong> Visual Studio Code adds it automatically when you press <code>! + Tab</code>.</p>
+                </div>
+            </div>
+
+            <!-- Media Queries -->
+            <div class="section">
+                <h2>📐 Media Queries</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);"><strong>Media queries</strong> allow you to apply entirely different CSS styles based on the device's characteristics (usually the screen width).</p>
+                </div>
+
+                <h3>Basic Syntax</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">@media</span> <span class="punctuation">(</span><span class="value">condition</span><span class="punctuation">)</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="comment">/* CSS rules go here and only trigger if the condition is true */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+
+                <h3>Common Breakpoints (Standard Industry Practice)</h3>
+                <table>
+                    <tr>
+                        <th>Device Type</th>
+                        <th>Screen Width</th>
+                        <th>Media Query to Use</th>
+                    </tr>
+                    <tr>
+                        <td>Mobile (Base)</td>
+                        <td>0px - 767px</td>
+                        <td><em>(No media query needed if coding Mobile-First)</em></td>
+                    </tr>
+                    <tr>
+                        <td>Tablet</td>
+                        <td>768px+</td>
+                        <td><code>@media (min-width: 768px)</code></td>
+                    </tr>
+                    <tr>
+                        <td>Desktop</td>
+                        <td>1024px+</td>
+                        <td><code>@media (min-width: 1024px)</code></td>
+                    </tr>
+                </table>
+
+                <div class="layout-example">
+                    <h4 style="margin-bottom: 15px;">Live Example - Responsive Container:</h4>
+                    <p style="margin-bottom: 15px; color: var(--text-gray);">Resize your browser window from desktop to mobile to see how the container adapts below:</p>
+                    <div style="background: #111; padding: 20px; border: 1px solid var(--primary-gold); text-align: center; transition: all 0.3s;">
+                        <p style="margin: 0; font-weight: bold; color: var(--primary-gold);">📱 This box is responsive!</p>
+                        <p style="margin: 10px 0 0 0; font-size: 0.9em; color: var(--text-gray);">
+                            <em>If you shrink your browser, this box shrinks fluidly instead of causing a scrollbar.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile First Approach -->
+            <div class="section">
+                <h2>📲 The Mobile-First Mindset</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);"><strong>Mobile-first</strong> means you write your default CSS for mobile devices <em>first</em>, outside of any media query. Then, you use <code>min-width</code> media queries to add complexity as the screen gets larger.</p>
+                </div>
+
+                <h3>Why Mobile-First?</h3>
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li>Forces you to prioritize core content.</li>
+                    <li>Mobile devices are slower. This ensures they don't load heavy desktop CSS rules they don't need.</li>
+                    <li>It is much easier to scale a simple layout up (to desktop) than to compress a complex layout down (to mobile).</li>
+                </ul>
+
+                <h3>Example: Mobile-First Navigation</h3>
+                <div class="css-code">
+<span class="line"><span class="comment">/* 1. Mobile styles (Default, applies to all screens) */</span></span>
+<span class="line"><span class="selector">nav</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">flex</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">flex-direction</span><span class="punctuation">:</span> <span class="value">column</span><span class="punctuation">;</span> <span class="comment">/* Links stack vertically on phones */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* 2. Tablet and up overrides */</span></span>
+<span class="line"><span class="selector">@media</span> <span class="punctuation">(</span><span class="property">min-width</span><span class="punctuation">:</span> <span class="value">768px</span><span class="punctuation">)</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="selector">nav</span> <span class="punctuation">{</span></span>
+<span class="line indent-2"><span class="property">flex-direction</span><span class="punctuation">:</span> <span class="value">row</span><span class="punctuation">;</span> <span class="comment">/* Links sit side-by-side on larger screens */</span></span>
+<span class="line indent-1"><span class="punctuation">}</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Responsive Images -->
+            <div class="section">
+                <h2>🖼️ Fluid Responsive Images</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Images break layouts constantly. The easiest way to fix all image issues on a website is to apply this rule to your master CSS file:</p>
+                
+                <div class="css-code">
+<span class="line"><span class="comment">/* Make all images responsive automatically */</span></span>
+<span class="line"><span class="selector">img</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">max-width</span><span class="punctuation">:</span> <span class="value">100%</span><span class="punctuation">;</span> <span class="comment">/* Image can shrink, but never grow larger than its container */</span></span>
+<span class="line indent-1"><span class="property">height</span><span class="punctuation">:</span> <span class="value">auto</span><span class="punctuation">;</span> <span class="comment">/* Maintains aspect ratio */</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">block</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Main Activity -->
+            <div class="section">
+                <h2>💻 Main Activity: The Responsive Profile Page</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Update responsive.css</h3>
+                    <p style="color: var(--text-gray);">Take the CSS Grid or Flexbox profile page you built in previous lessons and make it perfectly responsive.</p>
+                </div>
+
+                <h3>The Core CSS Upgrade</h3>
+                <div class="css-code">
+<span class="line"><span class="comment">/* Container: Default mobile setup */</span></span>
+<span class="line"><span class="selector">.container</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">width</span><span class="punctuation">:</span> <span class="value">100%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">15px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">flex</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">flex-direction</span><span class="punctuation">:</span> <span class="value">column</span><span class="punctuation">;</span> <span class="comment">/* Stack vertically */</span></span>
+<span class="line indent-1"><span class="property">gap</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* ========== DESKTOP (1024px and up) ========== */</span></span>
+<span class="line"><span class="selector">@media</span> <span class="punctuation">(</span><span class="property">min-width</span><span class="punctuation">:</span> <span class="value">1024px</span><span class="punctuation">)</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="selector">.container</span> <span class="punctuation">{</span></span>
+<span class="line indent-2"><span class="property">flex-direction</span><span class="punctuation">:</span> <span class="value">row</span><span class="punctuation">;</span> <span class="comment">/* Side-by-side columns! */</span></span>
+<span class="line indent-2"><span class="property">max-width</span><span class="punctuation">:</span> <span class="value">1100px</span><span class="punctuation">;</span></span>
+<span class="line indent-2"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">0 auto</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="punctuation">}</span></span>
+<span class="line indent-1"></span>
+<span class="line indent-1"><span class="selector">.profile-column</span> <span class="punctuation">{</span> <span class="property">width</span><span class="punctuation">:</span> <span class="value">30%</span><span class="punctuation">;</span> <span class="punctuation">}</span></span>
+<span class="line indent-1"><span class="selector">.bio-column</span> <span class="punctuation">{</span> <span class="property">width</span><span class="punctuation">:</span> <span class="value">70%</span><span class="punctuation">;</span> <span class="punctuation">}</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Testing -->
+            <div class="section">
+                <h2>🧪 Testing Responsive Design</h2>
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Using Chrome DevTools:</h3>
+                    <ol>
+                        <li>Open your HTML page in Chrome.</li>
+                        <li>Press <strong>F12</strong> or right-click and select "Inspect".</li>
+                        <li>Click the <strong>Toggle Device Toolbar</strong> icon (it looks like a little phone and tablet) or press <code>Ctrl+Shift+M</code>.</li>
+                        <li>Select different devices (iPhone 12, iPad Mini) from the dropdown at the top of the screen to simulate how your code reacts!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <ul class="checklist">
+                        <li>Update your project files to be completely mobile-responsive using Media Queries.</li>
+                        <li>Take 2 screenshots: One of your site in Mobile View, one in Desktop View.</li>
+                        <li>Commit and push to GitHub.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day8-css-grid.html" class="btn-outline">← Previous: Day 8</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day10-advanced-git.html" class="btn-gold">Next: Day 10 - Advanced Git →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 3 - Day 3: Responsive Design Basics</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

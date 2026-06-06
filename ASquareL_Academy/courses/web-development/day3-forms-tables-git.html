@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Day 3: HTML Forms, Tables & Git Basics | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        /* Nuke any white backgrounds and force Black Theme */
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .tip-box, .activity-box, .warning-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .tip-box { border-left-color: var(--dark-gold); } 
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .tip-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .text { color: var(--text-white); }
+        .html-code .comment { color: #666; font-style: italic; } 
+        .html-code .line { display: block; padding: 2px 0; }
+        .html-code .indent-1 { padding-left: 20px; }
+        .html-code .indent-2 { padding-left: 40px; }
+        .html-code .indent-3 { padding-left: 60px; }
+
+        /* Command Line Terminal */
+        .command-line {
+            background: #000;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            border: 1px solid #333;
+        }
+        .command-line::before {
+            content: "$ ";
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { 
+            background: var(--dark-gold); 
+            transform: translateY(-2px); 
+        }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 3</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 1 - Day 3: HTML Forms, Tables & Git Basics</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Input, Data, and Version Control</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Create HTML forms with various input types</li>
+                    <li>Build structured tables for data display</li>
+                    <li>Understand Git version control basics</li>
+                    <li>Initialize a Git repository using VS Code</li>
+                    <li>Make commits and push code to GitHub</li>
+                </ul>
+            </div>
+
+            <!-- PART 1: HTML FORMS -->
+            <div class="section">
+                <h2>📝 Part 1: HTML Forms</h2>
+                
+                <h3>What are HTML Forms?</h3>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Forms are used to collect user input. The data is typically sent to a server for processing.</p>
+                    <p style="color: var(--text-white); margin-top:10px;"><strong>Common uses:</strong> Login pages, registration, contact forms, search boxes, surveys</p>
+                </div>
+
+                <h3>Basic Form Structure</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="value">"/submit"</span> <span class="attr">method</span>=<span class="value">"POST"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Form elements go here --&gt;</span></span>
+<span class="line"><span class="tag">&lt;/form&gt;</span></span>
+                </div>
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong style="color:#fff;">action:</strong> Where to send form data (URL/file)</li>
+                    <li><strong style="color:#fff;">method:</strong> How to send data (GET or POST)</li>
+                </ul>
+
+                <h3>Common Form Elements</h3>
+                
+                <h4>1. Text Input</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"name"</span><span class="tag">&gt;</span><span class="text">Name:</span><span class="tag">&lt;/label&gt;</span></span>
+<span class="line"><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">id</span>=<span class="value">"name"</span> <span class="attr">name</span>=<span class="value">"name"</span> <span class="attr">required</span><span class="tag">&gt;</span></span>
+                </div>
+
+                <h4>2. Email Input</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"email"</span><span class="tag">&gt;</span><span class="text">Email:</span><span class="tag">&lt;/label&gt;</span></span>
+<span class="line"><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"email"</span> <span class="attr">id</span>=<span class="value">"email"</span> <span class="attr">name</span>=<span class="value">"email"</span> <span class="attr">required</span><span class="tag">&gt;</span></span>
+                </div>
+
+                <h4>3. Password Input</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"password"</span><span class="tag">&gt;</span><span class="text">Password:</span><span class="tag">&lt;/label&gt;</span></span>
+<span class="line"><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"password"</span> <span class="attr">id</span>=<span class="value">"password"</span> <span class="attr">name</span>=<span class="value">"password"</span> <span class="attr">required</span><span class="tag">&gt;</span></span>
+                </div>
+
+                <h4>4. Radio Buttons (Choose One)</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;p&gt;</span><span class="text">Gender:</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line"><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"radio"</span> <span class="attr">id</span>=<span class="value">"male"</span> <span class="attr">name</span>=<span class="value">"gender"</span> <span class="attr">value</span>=<span class="value">"male"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"male"</span><span class="tag">&gt;</span><span class="text">Male</span><span class="tag">&lt;/label&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"radio"</span> <span class="attr">id</span>=<span class="value">"female"</span> <span class="attr">name</span>=<span class="value">"gender"</span> <span class="attr">value</span>=<span class="value">"female"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"female"</span><span class="tag">&gt;</span><span class="text">Female</span><span class="tag">&lt;/label&gt;</span></span>
+                </div>
+
+                <h4>5. Checkboxes (Choose Multiple)</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;p&gt;</span><span class="text">Skills:</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line"><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"checkbox"</span> <span class="attr">id</span>=<span class="value">"html"</span> <span class="attr">name</span>=<span class="value">"skills"</span> <span class="attr">value</span>=<span class="value">"html"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"html"</span><span class="tag">&gt;</span><span class="text">HTML</span><span class="tag">&lt;/label&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"checkbox"</span> <span class="attr">id</span>=<span class="value">"css"</span> <span class="attr">name</span>=<span class="value">"skills"</span> <span class="attr">value</span>=<span class="value">"css"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"css"</span><span class="tag">&gt;</span><span class="text">CSS</span><span class="tag">&lt;/label&gt;</span></span>
+                </div>
+
+                <h4>6. Dropdown (Select)</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"department"</span><span class="tag">&gt;</span><span class="text">Department:</span><span class="tag">&lt;/label&gt;</span></span>
+<span class="line"><span class="tag">&lt;select</span> <span class="attr">id</span>=<span class="value">"department"</span> <span class="attr">name</span>=<span class="value">"department"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="value">""</span><span class="tag">&gt;</span><span class="text">--Select--</span><span class="tag">&lt;/option&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="value">"cs"</span><span class="tag">&gt;</span><span class="text">Computer Science</span><span class="tag">&lt;/option&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="value">"se"</span><span class="tag">&gt;</span><span class="text">Software Engineering</span><span class="tag">&lt;/option&gt;</span></span>
+<span class="line"><span class="tag">&lt;/select&gt;</span></span>
+                </div>
+
+                <h4>7. Textarea (Multi-line Text)</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"message"</span><span class="tag">&gt;</span><span class="text">Message:</span><span class="tag">&lt;/label&gt;</span></span>
+<span class="line"><span class="tag">&lt;textarea</span> <span class="attr">id</span>=<span class="value">"message"</span> <span class="attr">name</span>=<span class="value">"message"</span> <span class="attr">rows</span>=<span class="value">"5"</span> <span class="attr">cols</span>=<span class="value">"50"</span><span class="tag">&gt;&lt;/textarea&gt;</span></span>
+                </div>
+
+                <h4>8. Submit Button</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span><span class="text">Submit Form</span><span class="tag">&lt;/button&gt;</span></span>
+                </div>
+            </div>
+
+            <!-- PART 2: HTML TABLES -->
+            <div class="section">
+                <h2>📊 Part 2: HTML Tables</h2>
+                
+                <h3>Table Structure</h3>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Tables display data in rows and columns.</p>
+                    <ul style="color: var(--text-gray); margin-left: 20px; margin-top: 10px;">
+                        <li><strong style="color:#fff;">&lt;table&gt;</strong> - Container for the table</li>
+                        <li><strong style="color:#fff;">&lt;tr&gt;</strong> - Table row</li>
+                        <li><strong style="color:#fff;">&lt;th&gt;</strong> - Table header (bold, centered)</li>
+                        <li><strong style="color:#fff;">&lt;td&gt;</strong> - Table data cell</li>
+                    </ul>
+                </div>
+
+                <h3>Basic Table Example</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;table</span> <span class="attr">border</span>=<span class="value">"1"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;tr&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;th&gt;</span><span class="text">Name</span><span class="tag">&lt;/th&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;th&gt;</span><span class="text">Age</span><span class="tag">&lt;/th&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;th&gt;</span><span class="text">Department</span><span class="tag">&lt;/th&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/tr&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;tr&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;td&gt;</span><span class="text">Ahmad Tijjani</span><span class="tag">&lt;/td&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;td&gt;</span><span class="text">22</span><span class="tag">&lt;/td&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;td&gt;</span><span class="text">IT</span><span class="tag">&lt;/td&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/tr&gt;</span></span>
+<span class="line"><span class="tag">&lt;/table&gt;</span></span>
+                </div>
+            </div>
+
+            <!-- PART 3: GIT BASICS -->
+            <div class="section">
+                <h2>🔧 Part 3: Git Version Control Basics</h2>
+                
+                <h3>What is Git?</h3>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);"><strong>Git</strong> is a version control system that tracks changes in your code over time.</p>
+                    <p style="color: var(--text-white); margin-top: 10px;"><strong>Benefits:</strong></p>
+                    <ul style="color: var(--text-gray); margin-left: 20px;">
+                        <li>Track all changes to your files</li>
+                        <li>Collaborate with other developers</li>
+                        <li>Revert to previous versions if needed</li>
+                        <li>Work on multiple features simultaneously (branches)</li>
+                    </ul>
+                </div>
+
+                <h3>Git vs GitHub</h3>
+                <table>
+                    <tr>
+                        <th>Git</th>
+                        <th>GitHub</th>
+                    </tr>
+                    <tr>
+                        <td>Version control software</td>
+                        <td>Web-based hosting service for Git repositories</td>
+                    </tr>
+                    <tr>
+                        <td>Works locally on your computer</td>
+                        <td>Cloud-based platform</td>
+                    </tr>
+                    <tr>
+                        <td>Free and open-source</td>
+                        <td>Freemium service</td>
+                    </tr>
+                </table>
+
+                <h3>Essential Git Commands</h3>
+                
+                <h4>1. Configure Git (First Time Only)</h4>
+                <div class="command-line">git config --global user.name "Your Name"</div>
+                <div class="command-line">git config --global user.email "your.email@example.com"</div>
+
+                <h4>2. Initialize a Git Repository</h4>
+                <div class="command-line">git init</div>
+                <p style="color: var(--text-gray);">This creates a new Git repository in your current folder.</p>
+
+                <h4>3. Check Status</h4>
+                <div class="command-line">git status</div>
+                <p style="color: var(--text-gray);">Shows which files have been modified, added, or deleted.</p>
+
+                <h4>4. Stage Files (Add to Staging Area)</h4>
+                <div class="command-line">git add .</div>
+                <p style="color: var(--text-gray);">The dot (.) adds all changed files in the folder.</p>
+
+                <h4>5. Commit Changes</h4>
+                <div class="command-line">git commit -m "Your commit message"</div>
+                <p style="color: var(--text-gray);">Saves a snapshot of your staged changes with a descriptive message.</p>
+
+                <h4>6. Push to GitHub</h4>
+                <div class="command-line">git push -u origin main</div>
+                <p style="color: var(--text-gray);">Uploads your commits to GitHub.</p>
+            </div>
+
+            <!-- HANDS-ON ACTIVITY -->
+            <div class="section">
+                <h2>💻 Hands-On Activity: Complete Workflow</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Step 1: Create Registration Form</h3>
+                    <ol>
+                        <li>Create <code>registration.html</code> in your project folder</li>
+                        <li>Build a form asking for Name, Email, Password, and a Submit button</li>
+                        <li>Test it in your browser</li>
+                    </ol>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Step 2: Create Student Table</h3>
+                    <ol>
+                        <li>Create <code>students-table.html</code></li>
+                        <li>Build a table with at least 5 rows of dummy student data</li>
+                        <li>Include: S/N, Name, Department, Level</li>
+                    </ol>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Step 3: Create GitHub Account</h3>
+                    <ol>
+                        <li>Go to <a href="https://github.com" target="_blank" style="color: var(--primary-gold);">github.com</a></li>
+                        <li>Sign up for a free account</li>
+                        <li>Create a new repository named <strong>"web-dev-basics"</strong></li>
+                    </ol>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Step 4: Push to GitHub using VS Code</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;">In VS Code, press <code>Ctrl + `</code> (Backtick) to open the Terminal. Then type:</p>
+                    <div class="command-line">git init</div>
+                    <div class="command-line">git add .</div>
+                    <div class="command-line">git commit -m "Initial commit: Added Forms and Tables"</div>
+                    <div class="command-line">git remote add origin https://github.com/yourusername/web-dev-basics.git</div>
+                    <div class="command-line">git branch -M main</div>
+                    <div class="command-line">git push -u origin main</div>
+                </div>
+
+                <div class="tip-box">
+                    <h4 style="color: var(--primary-gold); margin-bottom: 10px;">💡 Pro Tips for Git:</h4>
+                    <ul style="color: var(--text-gray);">
+                        <li>Commit often with meaningful messages</li>
+                        <li>Use present tense: "Add feature" not "Added feature"</li>
+                        <li>Keep commits focused on one specific change</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="section">
+                <h2>📝 Quick Quiz</h2>
+                <div class="info-box">
+                    <ol style="margin-left: 20px; color: var(--text-white); line-height: 2;">
+                        <li>What is the difference between the <code>action</code> and <code>method</code> attributes in a form?</li>
+                        <li>Which input type is used for a dropdown menu?</li>
+                        <li>What is the difference between <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> in a table?</li>
+                        <li>What does the command <code>git add .</code> do?</li>
+                        <li>What is the difference between Git and GitHub?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Submit to your Mentor:</h3>
+                    <ul class="checklist" style="margin-top: 15px;">
+                        <li>Link to your new GitHub repository containing your files</li>
+                        <li>Screenshot of your terminal showing a successful push</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day2-html.html" class="btn-outline">← Previous: Day 2</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day4-semantic.html" class="btn-gold">Next: Day 4 →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 1 - Day 3: HTML Forms, Tables & Git Basics</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

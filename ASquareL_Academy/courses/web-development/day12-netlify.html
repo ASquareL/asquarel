@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 Day 3: Netlify Deployment | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .activity-box, .warning-box, .success-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+        .success-box { border-left-color: #10b981; }
+
+        .activity-box h4, .info-box h4, .warning-box h4, .success-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Terminal Syntax Highlighting */
+        .terminal-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: #d4d4d4;
+        }
+        .terminal-code .prompt { color: var(--primary-gold); font-weight: bold; }
+        .terminal-code .command { color: #fff; }
+        .terminal-code .comment { color: #666; font-style: italic; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 12</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 4 - Day 3: Launching to the World</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Web Hosting, Netlify, and Continuous Deployment</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the difference between Code, Hosting, and Domains.</li>
+                    <li>Connect a GitHub repository to a live web server.</li>
+                    <li>Deploy your portfolio website to the internet using Netlify.</li>
+                    <li>Understand and configure Continuous Deployment (CI/CD).</li>
+                    <li>Customize your website's URL domain.</li>
+                </ul>
+            </div>
+
+            <!-- What is Deployment? -->
+            <div class="section">
+                <h2>🌍 What is Deployment?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Right now, your website only exists on your laptop (and backed up on GitHub). If you send your <code>index.html</code> link to a client, they cannot see it. <strong>Deployment</strong> is the process of putting your code on a computer that is connected to the internet 24/7 so anyone in the world can visit it.</p>
+                </div>
+
+                <h3>The Real Estate Analogy</h3>
+                <table style="margin-top: 15px;">
+                    <tr>
+                        <th style="width: 30%;">Concept</th>
+                        <th>Web Development Equivalent</th>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: #fff;">The House</strong></td>
+                        <td><strong>Your Code (HTML/CSS)</strong>. You built it, painted it, and structured it.</td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: #fff;">The Plot of Land</strong></td>
+                        <td><strong>Web Hosting (Netlify, AWS, GoDaddy)</strong>. You need to rent a space on the internet's "land" to place your house.</td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: #fff;">The Street Address</strong></td>
+                        <td><strong>The Domain Name (www.asquarel.com)</strong>. People need a memorable address to find your house on that land.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Why Netlify? -->
+            <div class="section">
+                <h2>🚀 Why Netlify? (The Magic of CI/CD)</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">In the old days, you had to manually upload files via FTP to a server every time you changed a single typo. Netlify changed the game by introducing <strong>Continuous Deployment (CI/CD)</strong>.</p>
+                
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li>Netlify connects directly to your GitHub repository.</li>
+                    <li>When you run <code>git push</code> on your computer, GitHub tells Netlify, "Hey, there is new code!"</li>
+                    <li>Netlify automatically rebuilds and updates your live website in seconds.</li>
+                    <li>It is 100% free for static sites (HTML/CSS/JS).</li>
+                </ul>
+            </div>
+
+            <!-- Main Activity: Deployment -->
+            <div class="section">
+                <h2>💻 Main Activity: Deploy Your Portfolio</h2>
+                
+                <div class="warning-box">
+                    <h4 style="margin-top:0;">🛑 Pre-Flight Check!</h4>
+                    <p style="color: var(--text-gray);">Before we deploy, you MUST ensure that your main HTML file is named exactly <code>index.html</code> (all lowercase) and that it sits in the absolute root folder of your repository. If it is named <code>Index.html</code> or <code>portfolio.html</code>, the server will not find it!</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Step-by-Step Deployment</h3>
+                    <ol style="color: var(--text-gray); line-height: 1.8;">
+                        <li>Go to <a href="https://www.netlify.com/" target="_blank" style="color: var(--primary-gold);">Netlify.com</a> and click <strong>Sign Up</strong>.</li>
+                        <li>Choose <strong>Sign up with GitHub</strong>. (This securely links your accounts).</li>
+                        <li>Once logged in, click the <strong>"Add new site"</strong> button, then select <strong>"Import an existing project"</strong>.</li>
+                        <li>Click the <strong>GitHub</strong> button. You may need to authorize Netlify to view your repositories.</li>
+                        <li>Search for your <code>my-portfolio</code> repository and click on it.</li>
+                        <li><strong>Site Settings:</strong> Leave the <em>Build command</em> and <em>Publish directory</em> <strong>completely blank</strong>. (Since we are just using plain HTML/CSS, no building is required).</li>
+                        <li>Click <strong>Deploy Site</strong>!</li>
+                    </ol>
+                </div>
+
+                <div class="success-box">
+                    <h4 style="margin-top:0;">🎉 You are Live!</h4>
+                    <p style="color: var(--text-gray);">Netlify will generate a funny, random domain name for you (like <code>brave-curie-72b81a.netlify.app</code>). Click the link—your website is now live on the internet!</p>
+                </div>
+            </div>
+
+            <!-- Customizing the Domain -->
+            <div class="section">
+                <h2>✏️ Customizing Your Domain</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">That random URL looks unprofessional. Let's change it to something clean.</p>
+                
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li>In your Netlify Site Dashboard, click on <strong>Site settings</strong>.</li>
+                    <li>Click <strong>Domain management</strong>.</li>
+                    <li>Next to the funny name, click <strong>Options</strong> -> <strong>Edit site name</strong>.</li>
+                    <li>Change it to something professional, like <code>ashiru-portfolio</code>.</li>
+                    <li>Your new free domain is now: <strong>https://ashiru-portfolio.netlify.app</strong>!</li>
+                </ul>
+            </div>
+
+            <!-- The CI/CD Magic Trick -->
+            <div class="section">
+                <h2>✨ Activity: The Auto-Update Magic Trick</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Let's prove that Continuous Deployment works.</p>
+
+                <div class="terminal-code">
+<span class="comment"># 1. Open your code in VS Code. Change a paragraph of text on your portfolio.</span><br><br>
+<span class="comment"># 2. Save the file, then push it to GitHub:</span><br>
+<span class="prompt">$</span> <span class="command">git add .</span><br>
+<span class="prompt">$</span> <span class="command">git commit -m "Updated portfolio text"</span><br>
+<span class="prompt">$</span> <span class="command">git push origin main</span><br><br>
+<span class="comment"># 3. Wait 15 seconds. Refresh your live Netlify website on your phone.</span><br>
+<span class="comment"># The text updated automatically! No file uploads required.</span>
+                </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="section">
+                <h2>🐛 Troubleshooting: "Page Not Found" (404 Error)</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">If you see a "Page Not Found" error on Netlify, it is almost always one of these two reasons:</p>
+                    <ul style="color: var(--text-gray); margin-top: 10px; margin-left: 20px;">
+                        <li><strong>Wrong Filename:</strong> Your file is named <code>home.html</code> or <code>Index.html</code>. Netlify servers specifically look for a file named exactly <code>index.html</code> (all lowercase) to act as the homepage.</li>
+                        <li><strong>Wrong Folder:</strong> Your <code>index.html</code> is trapped inside a sub-folder (like <code>my-portfolio/src/index.html</code>). Move it to the absolute root of the repository and push again.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Final Deliverable</h2>
+                <div class="success-box">
+                    <h3 style="margin-top:0;">Submit to your Mentor & Class:</h3>
+                    <ul class="checklist" style="margin-top: 15px;">
+                        <li>Drop the live Netlify link to your newly deployed portfolio in the WhatsApp group chat!</li>
+                        <li>Review at least two other students' portfolios on your mobile phone and give them feedback on their responsive design.</li>
+                    </ul>
+                    <p style="color: var(--primary-gold); font-weight: bold; margin-top: 20px; font-size: 1.2rem;">Congratulations! You have successfully completed Month 1: Front-End Foundations!</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day11-portfolio.html" class="btn-outline">← Previous: Day 11</a>
+                <a href="../web-dev-main.html" class="btn-gold">Return to Main Course Dashboard →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 4 - Day 3: Netlify Deployment</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

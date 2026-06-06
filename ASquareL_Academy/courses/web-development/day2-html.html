@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Day 2: HTML Fundamentals | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        /* Nuke any white backgrounds and force Black Theme */
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { 
+            color: var(--text-white); 
+            margin: 25px 0 15px 0; 
+            font-weight: 700; 
+        }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .tip-box, .activity-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .tip-box { border-left-color: var(--dark-gold); } 
+        .activity-box { border-left-color: var(--text-white); } 
+
+        .activity-box h4 { margin-bottom: 15px; color: var(--text-white); }
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Live Preview Box */
+        .preview-box {
+            border: 1px solid var(--primary-gold);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .text { color: var(--text-white); }
+        .html-code .comment { color: #666; font-style: italic; } 
+        .html-code .line { display: block; padding: 2px 0; }
+        .html-code .indent-1 { padding-left: 20px; }
+        .html-code .indent-2 { padding-left: 40px; }
+        .html-code .indent-3 { padding-left: 60px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { 
+            background: var(--dark-gold); 
+            transform: translateY(-2px); 
+        }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 2</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 1 - Day 2: HTML Fundamentals</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Tags, Structure & Layouts</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the structure of HTML documents</li>
+                    <li>Master common HTML tags (headings, paragraphs, links, images, lists)</li>
+                    <li>Create a simple profile page with multiple elements</li>
+                    <li>Link multiple HTML pages together</li>
+                    <li>Apply semantic HTML principles</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📚 Lecture Notes: HTML Document Structure</h2>
+                
+                <h3>1. Basic HTML Template</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;head&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="value">"viewport"</span> <span class="attr">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;title&gt;</span><span class="text">Page Title</span><span class="tag">&lt;/title&gt;</span></span>
+<span class="line"><span class="tag">&lt;/head&gt;</span></span>
+<span class="line"><span class="tag">&lt;body&gt;</span></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Your content goes here --&gt;</span></span>
+<span class="line"><span class="tag">&lt;/body&gt;</span></span>
+<span class="line"><span class="tag">&lt;/html&gt;</span></span>
+                </div>
+
+                <h3>2. Heading Tags (H1 - H6)</h3>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">HTML has six levels of headings, from &lt;h1&gt; (most important) to &lt;h6&gt; (least important).</p>
+                </div>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;h1&gt;</span><span class="text">Main Heading</span><span class="tag">&lt;/h1&gt;</span></span>
+<span class="line"><span class="tag">&lt;h2&gt;</span><span class="text">Subheading</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line"><span class="tag">&lt;h3&gt;</span><span class="text">Sub-subheading</span><span class="tag">&lt;/h3&gt;</span></span>
+<span class="line"><span class="tag">&lt;h4&gt;</span><span class="text">Minor heading</span><span class="tag">&lt;/h4&gt;</span></span>
+<span class="line"><span class="tag">&lt;h5&gt;</span><span class="text">Even smaller</span><span class="tag">&lt;/h5&gt;</span></span>
+<span class="line"><span class="tag">&lt;h6&gt;</span><span class="text">Smallest heading</span><span class="tag">&lt;/h6&gt;</span></span>
+                </div>
+                
+                <div class="preview-box">
+                    <h1 style="margin: 5px 0;">Main Heading (H1)</h1>
+                    <h2 style="margin: 5px 0;">Subheading (H2)</h2>
+                    <h3 style="margin: 5px 0;">Sub-subheading (H3)</h3>
+                    <h4 style="margin: 5px 0;">Minor heading (H4)</h4>
+                    <h5 style="margin: 5px 0;">Even smaller (H5)</h5>
+                    <h6 style="margin: 5px 0;">Smallest heading (H6)</h6>
+                </div>
+
+                <h3>3. Paragraph Tags</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;p&gt;</span><span class="text">This is a paragraph of text. It can contain multiple sentences.</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line"><span class="tag">&lt;p&gt;</span><span class="text">This is another paragraph.</span><span class="tag">&lt;/p&gt;</span></span>
+                </div>
+
+                <h3>4. Links (Anchor Tags)</h3>
+                <div class="html-code">
+<span class="line"><span class="comment">&lt;!-- External link --&gt;</span></span>
+<span class="line"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://www.google.com"</span><span class="tag">&gt;</span><span class="text">Go to Google</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">&lt;!-- Internal link --&gt;</span></span>
+<span class="line"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"about.html"</span><span class="tag">&gt;</span><span class="text">About Page</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">&lt;!-- Link that opens in new tab --&gt;</span></span>
+<span class="line"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://www.github.com"</span> <span class="attr">target</span>=<span class="value">"_blank"</span><span class="tag">&gt;</span><span class="text">GitHub</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">&lt;!-- Email link --&gt;</span></span>
+<span class="line"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"mailto:info@example.com"</span><span class="tag">&gt;</span><span class="text">Email Us</span><span class="tag">&lt;/a&gt;</span></span>
+                </div>
+
+                <h3>5. Images</h3>
+                <div class="html-code">
+<span class="line"><span class="comment">&lt;!-- Basic image --&gt;</span></span>
+<span class="line"><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"photo.jpg"</span> <span class="attr">alt</span>=<span class="value">"Description of image"</span><span class="tag">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">&lt;!-- Image with dimensions --&gt;</span></span>
+<span class="line"><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"logo.png"</span> <span class="attr">alt</span>=<span class="value">"Company Logo"</span> <span class="attr">width</span>=<span class="value">"200"</span> <span class="attr">height</span>=<span class="value">"100"</span><span class="tag">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">&lt;!-- Image from URL --&gt;</span></span>
+<span class="line"><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"https://picsum.photos/300/200"</span> <span class="attr">alt</span>=<span class="value">"Random image"</span><span class="tag">&gt;</span></span>
+                </div>
+                <div class="tip-box">
+                    <p style="color: var(--text-gray);"><strong>💡 Important:</strong> Always include the <code>alt</code> attribute for accessibility and SEO.</p>
+                </div>
+
+                <h3>6. Lists</h3>
+                <h4 style="color: var(--text-white); margin-top: 15px;">Unordered Lists (Bullets)</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;ul&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;li&gt;</span><span class="text">First item</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;li&gt;</span><span class="text">Second item</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;li&gt;</span><span class="text">Third item</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line"><span class="tag">&lt;/ul&gt;</span></span>
+                </div>
+
+                <h4 style="color: var(--text-white); margin-top: 15px;">Ordered Lists (Numbered)</h4>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;ol&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;li&gt;</span><span class="text">First step</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;li&gt;</span><span class="text">Second step</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;li&gt;</span><span class="text">Third step</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line"><span class="tag">&lt;/ol&gt;</span></span>
+                </div>
+
+                <h3>7. Other Useful Tags</h3>
+                <table>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Purpose</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;strong&gt;</td>
+                        <td>Bold/important text</td>
+                        <td>&lt;strong&gt;Important!&lt;/strong&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;em&gt;</td>
+                        <td>Italic/emphasized text</td>
+                        <td>&lt;em&gt;Emphasis&lt;/em&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;br&gt;</td>
+                        <td>Line break</td>
+                        <td>Line 1&lt;br&gt;Line 2</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;hr&gt;</td>
+                        <td>Horizontal rule</td>
+                        <td>&lt;hr&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;div&gt;</td>
+                        <td>Container/division</td>
+                        <td>&lt;div&gt;Content&lt;/div&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;span&gt;</td>
+                        <td>Inline container</td>
+                        <td>&lt;span&gt;Text&lt;/span&gt;</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Main Activity -->
+            <div class="section">
+                <h2>💻 Main Activity: Build a Profile Page</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Create profile.html</h3>
+                    <p style="color: var(--text-gray);">Create a personal profile page inside your <code>Desktop\web_basics\</code> folder and name it <code>profile.html</code></p>
+                </div>
+
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;head&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="value">"viewport"</span> <span class="attr">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;title&gt;</span><span class="text">My Profile - [Your Name]</span><span class="tag">&lt;/title&gt;</span></span>
+<span class="line"><span class="tag">&lt;/head&gt;</span></span>
+<span class="line"><span class="tag">&lt;body&gt;</span></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Navigation --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;nav&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"index.html"</span><span class="tag">&gt;</span><span class="text">Home</span><span class="tag">&lt;/a&gt;</span><span class="text"> | </span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"profile.html"</span><span class="tag">&gt;</span><span class="text">Profile</span><span class="tag">&lt;/a&gt;</span><span class="text"> | </span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"contact.html"</span><span class="tag">&gt;</span><span class="text">Contact</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/nav&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="tag">&lt;hr&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Main Heading --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h1&gt;</span><span class="text">About Me</span><span class="tag">&lt;/h1&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Profile Image --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"https://via.placeholder.com/200"</span> <span class="attr">alt</span>=<span class="value">"My Photo"</span> <span class="attr">width</span>=<span class="value">"200"</span><span class="tag">&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Introduction --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2&gt;</span><span class="text">Introduction</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;p&gt;</span></span>
+<span class="line indent-2"><span class="text">Hello! My name is </span><span class="tag">&lt;strong&gt;</span><span class="text">[Your Full Name]</span><span class="tag">&lt;/strong&gt;</span><span class="text">. </span></span>
+<span class="line indent-2"><span class="text">I am a student at </span><span class="tag">&lt;em&gt;</span><span class="text">A Square L Academy</span><span class="tag">&lt;/em&gt;</span><span class="text"> learning web development.</span></span>
+<span class="line indent-1"><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;p&gt;</span></span>
+<span class="line indent-2"><span class="text">I am passionate about technology and building websites. </span></span>
+<span class="line indent-2"><span class="text">This is my first profile page!</span></span>
+<span class="line indent-1"><span class="tag">&lt;/p&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Education --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2&gt;</span><span class="text">Education</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;ul&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">Bayero University Kano</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">Department: [Your Department]</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">Level: [Your Level]</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/ul&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Skills --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2&gt;</span><span class="text">Skills I'm Learning</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;ol&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">HTML</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">CSS</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">JavaScript (coming soon)</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">Git and GitHub</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/ol&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Hobbies --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2&gt;</span><span class="text">My Hobbies</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;ul&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">Reading</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">Coding</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;</span><span class="text">Gaming</span><span class="tag">&lt;/li&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/ul&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Social Links --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2&gt;</span><span class="text">Connect With Me</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;p&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://github.com/yourusername"</span> <span class="attr">target</span>=<span class="value">"_blank"</span><span class="tag">&gt;</span><span class="text">GitHub</span><span class="tag">&lt;/a&gt;</span><span class="text"> | </span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://linkedin.com/in/yourusername"</span> <span class="attr">target</span>=<span class="value">"_blank"</span><span class="tag">&gt;</span><span class="text">LinkedIn</span><span class="tag">&lt;/a&gt;</span><span class="text"> | </span></span>
+<span class="line indent-2"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"mailto:your.email@example.com"</span><span class="tag">&gt;</span><span class="text">Email</span><span class="tag">&lt;/a&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/p&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="tag">&lt;hr&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Footer --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;p&gt;&lt;small&gt;</span><span class="text">&copy; 2026 [Your Name]. All rights reserved.</span><span class="tag">&lt;/small&gt;&lt;/p&gt;</span></span>
+<span class="line"><span class="tag">&lt;/body&gt;</span></span>
+<span class="line"><span class="tag">&lt;/html&gt;</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>✏️ Practice Exercises</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 1: Create a Contact Page</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;">Create <code>contact.html</code> with:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>A heading "Contact Me"</li>
+                        <li>Your email address as a clickable link</li>
+                        <li>Your phone number</li>
+                        <li>Links to your social media (use a placeholder if you don't have one)</li>
+                        <li>Navigation links to home and profile pages</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 2: Update Your Index Page</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;">Add navigation links at the top of your <code>index.html</code> that link to:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>profile.html</li>
+                        <li>contact.html</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 3: Image Gallery</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;">Create a new page called <code>gallery.html</code> with:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>At least 4 images (use placeholder images from https://picsum.photos/)</li>
+                        <li>Each image should have a caption using a paragraph below it</li>
+                        <li>Organize images in an unordered list</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 Quick Quiz</h2>
+                <div class="info-box">
+                    <ol style="margin-left: 20px; color: var(--text-white); line-height: 2;">
+                        <li>What is the difference between &lt;strong&gt; and &lt;b&gt;?</li>
+                        <li>Why is the alt attribute important in img tags?</li>
+                        <li>What's the difference between &lt;ul&gt; and &lt;ol&gt;?</li>
+                        <li>How do you create a link that opens in a new tab?</li>
+                        <li>What tag is used for the most important heading?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Submit to your Mentor:</h3>
+                    <ul class="checklist" style="margin-top: 15px;">
+                        <li>profile.html (completed profile page)</li>
+                        <li>contact.html (contact page)</li>
+                        <li>gallery.html (image gallery)</li>
+                        <li>Updated index.html with navigation links</li>
+                        <li>Screenshot of all pages working in browser</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day1-intro.html" class="btn-outline">← Previous: Day 1</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day3-forms-tables-git.html" class="btn-gold">Next: Day 3 →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 1 - Day 2: HTML Fundamentals</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

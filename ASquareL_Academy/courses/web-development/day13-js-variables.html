@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 Day 1: JS Variables & Data Types | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .activity-box, .warning-box, .success-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+        .success-box { border-left-color: #10b981; }
+
+        .activity-box h4, .info-box h4, .warning-box h4, .success-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code, .js-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        /* HTML Specific */
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        
+        /* JS Specific */
+        .js-code .keyword { color: #c678dd; } /* Let, const, var, function */
+        .js-code .string { color: #ce9178; }  /* "Text" */
+        .js-code .number { color: #d19a66; }  /* 42 */
+        .js-code .comment { color: #6a9955; font-style: italic; } /* // comment */
+        .js-code .function { color: #61afef; } /* console.log */
+        .js-code .operator { color: #56b6c2; } /* = + - */
+        .js-code .variable { color: #e5c07b; } 
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+        .indent-3 { padding-left: 60px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 13</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 5 - Day 1: JS Variables & Data Types</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Introduction to Programming Logic</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand what JavaScript is and how it powers the web.</li>
+                    <li>Master variable declaration using <code>let</code> and <code>const</code>.</li>
+                    <li>Learn core JavaScript Data Types (Strings, Numbers, Booleans).</li>
+                    <li>Create and manipulate Arrays (Lists of values).</li>
+                    <li>Use <code>console.log()</code> to debug and test your code.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📝 Welcome to JavaScript</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">HTML creates the structure (the bones). CSS creates the design (the skin). <strong>JavaScript</strong> creates the logic and interactivity (the brain and muscles). It is the programming language that makes websites respond to user actions.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔤 Variables: Storing Data</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Variables are simply containers for storing data values in the computer's memory.</p>
+
+                <h3>How to Declare Variables</h3>
+                <div class="js-code">
+<span class="line"><span class="comment">// ❌ var - The old way (Avoid using this in modern code)</span></span>
+<span class="line"><span class="keyword">var</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">"Ashiru"</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// ✅ let - The modern way (Use when the value WILL change later)</span></span>
+<span class="line"><span class="keyword">let</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">25</span>;</span>
+<span class="line"><span class="variable">age</span> <span class="operator">=</span> <span class="number">26</span>;  <span class="comment">// Perfectly fine! The value was reassigned.</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">// ✅ const - The modern way (Use when the value MUST NOT change)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">country</span> <span class="operator">=</span> <span class="string">"Nigeria"</span>;</span>
+<span class="line"><span class="comment">// country = "USA";  // ERROR! The app will crash. Cannot reassign a const.</span></span>
+                </div>
+
+                <div class="warning-box">
+                    <h4 style="color: var(--primary-gold);">Best Practice Rule</h4>
+                    <p style="color: var(--text-gray);">Always use <code>const</code> by default. Only switch to <code>let</code> if you know absolutely for sure that the variable's value needs to change (like a score counter in a game).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Data Types</h2>
+
+                <h3>1. String (Text)</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Strings must always be wrapped in quotes.</p>
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">firstName</span> <span class="operator">=</span> <span class="string">"Ahmad"</span>;</span>
+<span class="line"><span class="keyword">const</span> <span class="variable">lastName</span> <span class="operator">=</span> <span class="string">'Garba'</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// String concatenation (The old way)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">greeting</span> <span class="operator">=</span> <span class="string">"Hello, "</span> <span class="operator">+</span> <span class="variable">firstName</span> <span class="operator">+</span> <span class="string">"!"</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Template Literals (The modern, professional way - uses Backticks ` )</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">`Welcome to the team, ${firstName} ${lastName}`</span>;</span>
+                </div>
+
+                <h3>2. Number</h3>
+                <div class="js-code">
+<span class="line"><span class="keyword">let</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">25</span>;</span>
+<span class="line"><span class="keyword">let</span> <span class="variable">price</span> <span class="operator">=</span> <span class="number">99.99</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Math operations</span></span>
+<span class="line"><span class="keyword">let</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">10</span> <span class="operator">+</span> <span class="number">5</span>;      <span class="comment">// 15</span></span>
+<span class="line"><span class="keyword">let</span> <span class="variable">product</span> <span class="operator">=</span> <span class="number">4</span> <span class="operator">*</span> <span class="number">3</span>;   <span class="comment">// 12</span></span>
+<span class="line"><span class="keyword">let</span> <span class="variable">remainder</span> <span class="operator">=</span> <span class="number">10</span> <span class="operator">%</span> <span class="number">3</span>; <span class="comment">// 1 (Modulus - finds the remainder after division)</span></span>
+                </div>
+
+                <h3>3. Boolean (True/False)</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Booleans are the core of all application logic. They can only be <code>true</code> or <code>false</code> (no quotes!).</p>
+                <div class="js-code">
+<span class="line"><span class="keyword">let</span> <span class="variable">isStudent</span> <span class="operator">=</span> <span class="keyword">true</span>;</span>
+<span class="line"><span class="keyword">let</span> <span class="variable">hasGraduated</span> <span class="operator">=</span> <span class="keyword">false</span>;</span>
+                </div>
+
+                <h3>4. Array (Lists of Data)</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Arrays hold multiple values in a single variable. They are surrounded by square brackets <code>[]</code>.</p>
+                <div class="js-code">
+<span class="line"><span class="comment">// Creating arrays</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">fruits</span> <span class="operator">=</span> [<span class="string">"Apple"</span>, <span class="string">"Banana"</span>, <span class="string">"Orange"</span>];</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Accessing array elements (CRITICAL: Computers start counting at 0, not 1!)</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">fruits</span>[<span class="number">0</span>]);  <span class="comment">// Prints: Apple</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">fruits</span>[<span class="number">1</span>]);  <span class="comment">// Prints: Banana</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Finding how many items are in the array</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">fruits</span>.<span class="function">length</span>);  <span class="comment">// Prints: 3</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Adding new elements to the END of the array</span></span>
+<span class="line"><span class="variable">fruits</span>.<span class="function">push</span>(<span class="string">"Mango"</span>); </span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Console.log() - The Developer's Best Friend</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">How do we know if our JavaScript is working? We print the results to the browser's hidden console. To see this, right-click on your webpage, click <strong>Inspect</strong>, and select the <strong>Console</strong> tab.</p>
+                </div>
+                <div class="js-code">
+<span class="line"><span class="comment">// Print simple text</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Hello, World! I am learning JS!"</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Print variables</span></span>
+<span class="line"><span class="keyword">let</span> <span class="variable">playerName</span> <span class="operator">=</span> <span class="string">"Sarah"</span>;</span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">playerName</span>);</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔗 Connecting JavaScript to HTML</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Just like CSS, we need to link our JavaScript file to our HTML file so the browser knows to run the code.</p>
+                
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;head&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;title&gt;</span><span class="text">JS Practice</span><span class="tag">&lt;/title&gt;</span></span>
+<span class="line"><span class="tag">&lt;/head&gt;</span></span>
+<span class="line"><span class="tag">&lt;body&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h1&gt;</span><span class="text">JavaScript Variables Practice</span><span class="tag">&lt;/h1&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- CRITICAL: Place your script tag at the VERY BOTTOM of the body --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="value">"app.js"</span><span class="tag">&gt;&lt;/script&gt;</span></span>
+<span class="line"><span class="tag">&lt;/body&gt;</span></span>
+<span class="line"><span class="tag">&lt;/html&gt;</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>✏️ Practice Exercises</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Your Turn to Code!</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 15px;">Create a folder called <code>js_basics</code>, add an <code>index.html</code> and an <code>app.js</code> file, and link them. Inside <code>app.js</code>, complete the following:</p>
+                    <ol style="color: var(--text-gray);">
+                        <li>Create variables using <code>const</code> for your name, age, and city.</li>
+                        <li>Create an Array containing a list of your 5 favorite foods.</li>
+                        <li>Use <code>console.log()</code> to print out the 3rd food on your list. (Remember how computers count!)</li>
+                        <li>Calculate: <code>(10 + 5) * 3</code> and store the result in a variable, then log it.</li>
+                        <li>Use the <code>.push()</code> method to add two more items to your food array, then log the entire array.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="success-box">
+                    <ul class="checklist">
+                        <li><code>index.html</code> properly linked to <code>app.js</code>.</li>
+                        <li>Code executing without errors.</li>
+                        <li>Take a screenshot of your browser's Console showing all the correct outputs.</li>
+                        <li>Share the screenshot in the student WhatsApp group.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="../week4/day3-netlify-deployment.html" class="btn-outline">← Previous: End of Month 1</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day14-js-operators.html" class="btn-gold">Next: Day 14 - Operators & Math →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 5 - Day 1: JS Variables & Data Types</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

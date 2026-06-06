@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Day 1: Introduction to Web Technologies | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        /* Nuke any white backgrounds and force Black Theme */
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { 
+            color: var(--text-white); 
+            margin: 25px 0 15px 0; 
+            font-weight: 700; 
+        }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .tip-box, .activity-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .tip-box { border-left-color: var(--dark-gold); } 
+        .activity-box { border-left-color: var(--text-white); } 
+
+        .activity-box h4 { margin-bottom: 15px; color: var(--text-white); }
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Diagrams & Tables */
+        .diagram {
+            background: #151515;
+            border: 1px solid #333;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .flow-step {
+            display: inline-block;
+            background: #000;
+            color: var(--primary-gold);
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid var(--primary-gold); 
+        }
+        
+        .arrow { font-size: 2em; color: var(--text-gray); vertical-align: middle; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Folders UI */
+        .folder-structure {
+            background: #151515;
+            border: 1px solid #333;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .folder-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; font-family: monospace; }
+        .folder-item.root { font-size: 1.1em; font-weight: 700; color: var(--primary-gold); margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #333; }
+        .folder-item i { font-size: 1.2em; }
+        .folder-item.folder i { color: var(--primary-gold); }
+        .folder-item.file i { color: var(--text-gray); }
+        .file-desc { color: #666; font-style: italic; margin-left: auto; }
+        .indent-1 { padding-left: 30px; }
+        .indent-2 { padding-left: 60px; }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .comment { color: #666; font-style: italic; } 
+        .html-code .line { display: block; }
+        .html-code .indent-1 { padding-left: 20px; }
+        .html-code .indent-2 { padding-left: 40px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { 
+            background: var(--dark-gold); 
+            transform: translateY(-2px); 
+        }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fa fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 1</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 1 - Day 1: Introduction to Web Technologies</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Environment & Basics</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">By the end of this lesson, you will be able to:</p>
+                <ul class="checklist">
+                    <li>Explain how the Internet and World Wide Web work</li>
+                    <li>Understand the client-server model and HTTP protocol</li>
+                    <li>Set up a professional web development environment</li>
+                    <li>Create and run your first HTML page</li>
+                    <li>Understand basic file and folder structure for web projects</li>
+                </ul>
+            </div>
+
+            <!-- Theory Section -->
+            <div class="section">
+                <h2>📚 Lecture Notes: How the Web Works</h2>
+                
+                <h3>1. The Internet vs The World Wide Web</h3>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);"><strong>The Internet:</strong> A global network of interconnected computers that communicate using standardized protocols.</p>
+                    <p style="margin-top: 10px; color: var(--text-gray);"><strong>The World Wide Web (WWW):</strong> A system of interlinked documents and resources accessed via the Internet using web browsers.</p>
+                    <p style="margin-top: 15px; color: var(--primary-gold);"><strong>Key Point:</strong> The Internet is the infrastructure; the Web is a service that runs on top of it.</p>
+                </div>
+
+                <h3>2. The Client-Server Model</h3>
+                <div class="diagram">
+                    <h4 style="margin-bottom: 20px; color: var(--text-white);">How a Webpage is Loaded</h4>
+                    <div>
+                        <div class="flow-step">Client (Browser)</div>
+                        <span class="arrow">→</span>
+                        <div class="flow-step">Request</div>
+                        <span class="arrow">→</span>
+                        <div class="flow-step">Server</div>
+                        <br><br>
+                        <div class="flow-step">Server</div>
+                        <span class="arrow">→</span>
+                        <div class="flow-step">Response (HTML/CSS)</div>
+                        <span class="arrow">→</span>
+                        <div class="flow-step">Client Renders Page</div>
+                    </div>
+                </div>
+
+                <h3>3. What is HTTP?</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;"><strong>HTTP (HyperText Transfer Protocol)</strong> is the foundation of data communication on the web.</p>
+                <table>
+                    <tr>
+                        <th>HTTP Method</th>
+                        <th>Purpose</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>Retrieve data from server</td>
+                        <td>Loading a webpage</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>Send data to server</td>
+                        <td>Submitting a form</td>
+                    </tr>
+                    <tr>
+                        <td>PUT</td>
+                        <td>Update existing data</td>
+                        <td>Editing a profile</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>Remove data</td>
+                        <td>Deleting an account</td>
+                    </tr>
+                </table>
+
+                <h3>4. DNS: The Internet's Phone Book</h3>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);"><strong>DNS (Domain Name System)</strong> translates human-readable domain names into IP addresses.</p>
+                    <p style="margin: 10px 0; color: var(--text-gray);"><strong>Example:</strong> www.google.com → 142.250.190.46</p>
+                    <p style="color: var(--text-gray);">Without DNS, we'd have to remember IP addresses for every website!</p>
+                </div>
+
+                <h3>5. Key Web Technologies</h3>
+                <ul style="margin-left: 20px; color: var(--text-gray); line-height: 1.8;">
+                    <li><strong style="color: #fff;">HTML (HyperText Markup Language):</strong> Structure and content of web pages</li>
+                    <li><strong style="color: #fff;">CSS (Cascading Style Sheets):</strong> Styling and layout</li>
+                    <li><strong style="color: #fff;">JavaScript:</strong> Interactivity and dynamic behavior</li>
+                    <li><strong style="color: #fff;">HTTP/HTTPS:</strong> Communication protocol</li>
+                </ul>
+            </div>
+
+            <!-- Setup Section -->
+            <div class="section">
+                <h2>🛠️ Setting Up Your Development Environment</h2>
+                
+                <h3>Step 1: Install Visual Studio Code</h3>
+                <div class="activity-box">
+                    <h4>📥 Installation Steps:</h4>
+                    <ol>
+                        <li>Visit <a href="https://code.visualstudio.com/" target="_blank" style="color: var(--primary-gold);">code.visualstudio.com</a></li>
+                        <li>Download the installer for your operating system</li>
+                        <li>Run the installer and follow the prompts</li>
+                        <li>Launch VS Code after installation</li>
+                    </ol>
+                </div>
+
+                <h3>Step 2: Install Essential VS Code Extensions</h3>
+                <div class="tip-box">
+                    <h4 style="color: var(--text-white); margin-bottom: 15px;">Recommended Extensions:</h4>
+                    <ul style="color: var(--text-gray); margin-bottom: 15px; margin-left: 20px;">
+                        <li><strong style="color: #fff;">Live Server:</strong> Launch a local development server with live reload (Crucial!)</li>
+                        <li><strong style="color: #fff;">Prettier:</strong> Code formatter to keep your code neat</li>
+                        <li><strong style="color: #fff;">Auto Rename Tag:</strong> Automatically rename paired HTML tags</li>
+                    </ul>
+                    <p style="color: #fff;"><strong>How to Install:</strong> Click the Extensions icon on the left panel (Ctrl+Shift+X) → Search → Install</p>
+                </div>
+
+                <h3>Step 3: Install Git</h3>
+                <div class="activity-box">
+                    <h4>📥 Installation Steps:</h4>
+                    <ol>
+                        <li>Visit <a href="https://git-scm.com/" target="_blank" style="color: var(--primary-gold);">git-scm.com</a></li>
+                        <li>Download Git for Windows/Mac</li>
+                        <li>Run installer with default settings</li>
+                        <li>Verify installation: Open VS Code Terminal and type: <code>git --version</code></li>
+                    </ol>
+                    <p style="margin-top: 10px; color: var(--text-gray);"><strong>Purpose:</strong> Git tracks changes in your code and enables collaboration on GitHub.</p>
+                </div>
+
+                <h3>Step 4: Create Your Project Folder</h3>
+                <div class="folder-structure">
+                    <div class="folder-item root">
+                        <i class="fas fa-folder-open"></i>
+                        <span class="folder-name">Desktop\web_basics\</span>
+                    </div>
+                    <div class="folder-item file indent-1">
+                        <i class="fas fa-file-code"></i>
+                        <span class="file-name" style="color: #fff;">index.html</span>
+                        <span class="file-desc">your main page</span>
+                    </div>
+                    <div class="folder-item file indent-1">
+                        <i class="fas fa-file-code"></i>
+                        <span class="file-name" style="color: #fff;">about.html</span>
+                        <span class="file-desc">about page</span>
+                    </div>
+                    <div class="folder-item folder indent-1">
+                        <i class="fas fa-folder"></i>
+                        <span class="folder-name" style="color: #fff;">css\</span>
+                    </div>
+                    <div class="folder-item file indent-2">
+                        <i class="fas fa-file-code"></i>
+                        <span class="file-name" style="color: #fff;">style.css</span>
+                        <span class="file-desc">stylesheets</span>
+                    </div>
+                    <div class="folder-item folder indent-1">
+                        <i class="fas fa-folder"></i>
+                        <span class="folder-name" style="color: #fff;">images\</span>
+                    </div>
+                </div>
+                <div class="tip-box">
+                    <p style="color: var(--text-gray);"><strong>💡 Best Practice:</strong> Keep files organized in folders. Use lowercase names without spaces (use hyphens or underscores like <code>my-page.html</code>).</p>
+                </div>
+            </div>
+
+            <!-- Hands-On Activity -->
+            <div class="section">
+                <h2>💻 Hands-On Activity: Your First HTML Page</h2>
+                
+                <h3>Task: Create "Hello World" Webpage</h3>
+                <div class="activity-box">
+                    <h4>Instructions:</h4>
+                    <ol>
+                        <li>Open VS Code</li>
+                        <li>Click <strong>File → Open Folder</strong> and select your <code>web_basics</code> folder on your Desktop.</li>
+                        <li>Create a new file inside the folder and name it <code>hello.html</code></li>
+                        <li>Type the code below exactly as it appears</li>
+                        <li>Save the file (Ctrl+S)</li>
+                        <li><strong>To view it:</strong> Right-click inside your code editor and select <strong>"Open with Live Server"</strong></li>
+                    </ol>
+                </div>
+
+                <div class="html-code">
+<span class="line"><span class="comment">&lt;!-- HTML5 Document Type Declaration --&gt;</span></span>
+<span class="line"><span class="tag">&lt;!DOCTYPE</span> <span class="attr">html</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;head&gt;</span></span>
+<span class="line indent-2"><span class="comment">&lt;!-- Character encoding for proper text display --&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span></span>
+<span class="line indent-2"><span class="comment">&lt;!-- Responsive design for mobile devices --&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="value">"viewport"</span> <span class="attr">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span></span>
+<span class="line indent-2"><span class="comment">&lt;!-- Page title shown in browser tab --&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;title&gt;</span><span style="color:#fff">My First Web Page</span><span class="tag">&lt;/title&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/head&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;body&gt;</span></span>
+<span class="line indent-2"><span class="comment">&lt;!-- Main heading --&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;h1&gt;</span><span style="color:#fff">Hello World!</span><span class="tag">&lt;/h1&gt;</span></span>
+<span class="line indent-2"><span class="comment">&lt;!-- Paragraph content --&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;p&gt;</span><span style="color:#fff">Welcome to my first web page. My name is </span><span class="value">[Your Name]</span><span style="color:#fff">.</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;p&gt;</span><span style="color:#fff">I am learning web development at A Square L Academy.</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/body&gt;</span></span>
+<span class="line"><span class="tag">&lt;/html&gt;</span></span>
+                </div>
+
+                <h3>Understanding the Code</h3>
+                <ul style="margin-left: 20px; color: var(--text-gray); line-height: 1.8;">
+                    <li><strong style="color:#fff;">&lt;!DOCTYPE html&gt;:</strong> Tells browser this is HTML5</li>
+                    <li><strong style="color:#fff;">&lt;html&gt;:</strong> Root element of the page</li>
+                    <li><strong style="color:#fff;">&lt;head&gt;:</strong> Contains meta information (not displayed)</li>
+                    <li><strong style="color:#fff;">&lt;meta charset="UTF-8"&gt;:</strong> Character encoding for proper text display</li>
+                    <li><strong style="color:#fff;">&lt;title&gt;:</strong> Title shown in browser tab</li>
+                    <li><strong style="color:#fff;">&lt;body&gt;:</strong> Contains visible content</li>
+                    <li><strong style="color:#fff;">&lt;h1&gt;:</strong> Main heading (largest)</li>
+                    <li><strong style="color:#fff;">&lt;p&gt;:</strong> Paragraph</li>
+                </ul>
+
+                <div class="info-box" style="margin-top: 30px;">
+                    <h4 style="color: var(--primary-gold); margin-bottom: 10px;">🎨 Try This: Modify Your Page</h4>
+                    <ul style="margin-left: 20px; color: var(--text-white);">
+                        <li>Change the heading text</li>
+                        <li>Add your own name and information</li>
+                        <li>Add more paragraphs with &lt;p&gt; tags</li>
+                        <li>Save (Ctrl+S) and look at your browser—Live Server will update it instantly!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Practice Exercises -->
+            <div class="section">
+                <h2>✏️ Practice Exercises</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 1: Create an Index Page</h3>
+                    <p style="margin-bottom: 15px; color: var(--text-gray);">Create <code>index.html</code> in your web_basics folder with:</p>
+                    <ul style="margin-left:20px; color: var(--text-gray);">
+                        <li>A main heading with your name</li>
+                        <li>A subheading (use &lt;h2&gt;) saying "Web Development Journey"</li>
+                        <li>Three paragraphs about yourself</li>
+                        <li>A horizontal line (use &lt;hr&gt;)</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 2: Explore Developer Tools</h3>
+                    <ul class="checklist" style="margin-top: 15px;">
+                        <li>Ensure your page is open via Live Server</li>
+                        <li>Right-click anywhere on your webpage in Chrome and select "Inspect" (or press F12)</li>
+                        <li>Explore the "Elements" tab to see how the browser reads your HTML</li>
+                        <li>Make a small change in VS Code, save, and watch it update automatically</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="section">
+                <h2>📝 Quick Quiz</h2>
+                <div class="info-box">
+                    <ol style="margin-left: 20px; color: var(--text-white); line-height: 2;">
+                        <li>What is the difference between the Internet and the World Wide Web?</li>
+                        <li>What does HTTP stand for?</li>
+                        <li>What are the three main technologies used in frontend web development?</li>
+                        <li>What is the purpose of the &lt;!DOCTYPE html&gt; tag?</li>
+                        <li>Where should visible content be placed in an HTML document?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Submit the following to your Mentor:</h3>
+                    <ul class="checklist" style="margin-top: 15px;">
+                        <li>Screenshot of VS Code with your <code>index.html</code> file open</li>
+                        <li>Screenshot of your webpage running successfully in the browser</li>
+                        <li>Your completed <code>index.html</code> file attached</li>
+                    </ul>
+                    <p style="margin-top: 15px; color: var(--text-gray);"><strong>Submit to:</strong> The A Square L Academy Student WhatsApp Group or directly to Ashiru Auwal Lawal.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="../web-dev-main.html" class="btn-outline">← Back to Course Home</a>
+                <a href="day2-html.html" class="btn-gold">Next: Day 2 - HTML Fundamentals →</a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+        <div class="container" style="text-align:center;">
+            <p style="color: var(--text-gray); margin-bottom: 5px;">Week 1 - Day 1: Introduction to Web Technologies</p>
+            <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+        </div>
+    </footer>
+
+</body>
+</html>

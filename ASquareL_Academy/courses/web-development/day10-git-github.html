@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 Day 1: Git & GitHub | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .activity-box, .warning-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .info-box h4, .warning-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* ASCII Diagram Box */
+        .diagram {
+            background: #000;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #333;
+            color: var(--primary-gold);
+            overflow-x: auto;
+        }
+
+        /* Terminal Syntax Highlighting */
+        .terminal-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: #d4d4d4;
+        }
+        .terminal-code .prompt { color: var(--primary-gold); font-weight: bold; }
+        .terminal-code .command { color: #fff; }
+        .terminal-code .comment { color: #666; font-style: italic; }
+        .terminal-code .output { color: #9cdcfe; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 10</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 4 - Day 1: Git & GitHub</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Branching, Pull Requests, and Team Collaboration</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the Git branching workflow for teams</li>
+                    <li>Create and push branches directly to GitHub</li>
+                    <li>Create and review Pull Requests (PRs) on GitHub</li>
+                    <li>Resolve terrifying merge conflicts safely</li>
+                    <li>Practice a professional collaborative Git workflow</li>
+                </ul>
+            </div>
+
+            <!-- Understanding Branches -->
+            <div class="section">
+                <h2>🌳 Understanding Branches</h2>
+                
+                <div class="info-box">
+                    <h4 style="color: var(--primary-gold);">What is a Branch?</h4>
+                    <p style="color: var(--text-gray);">A branch is an independent line of development. It allows you to build a new feature or fix a bug in a completely safe, isolated environment without breaking the live website (the <code>main</code> branch).</p>
+                </div>
+
+                <h3>Why Use Branches & GitHub?</h3>
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong style="color: #fff;">Isolation:</strong> Develop features independently without crashing the app.</li>
+                    <li><strong style="color: #fff;">Collaboration:</strong> Multiple team members can work simultaneously on the same project using GitHub.</li>
+                    <li><strong style="color: #fff;">Code Review (Pull Requests):</strong> Peers can review your branch on GitHub before it is permanently merged to main.</li>
+                </ul>
+
+                <h3>Branch Visualization</h3>
+                <div class="diagram">
+<pre>
+main:     A---B---C-----------F---G
+                   \         /
+feature:            D---E---/
+</pre>
+                </div>
+                <p style="color: var(--text-gray); font-style: italic;">In this diagram, Commits D and E happen on a separate feature branch. Once tested and approved via a Pull Request on GitHub, they are merged back into main at Commit F.</p>
+            </div>
+
+            <!-- Essential Git Commands -->
+            <div class="section">
+                <h2>🔧 Essential Git Branch Commands</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>git branch</code></td>
+                            <td>List all local branches (current branch has a *)</td>
+                        </tr>
+                        <tr>
+                            <td><code>git checkout -b branch-name</code></td>
+                            <td>Create a new branch AND immediately switch to it</td>
+                        </tr>
+                        <tr>
+                            <td><code>git checkout branch-name</code></td>
+                            <td>Switch to an existing branch</td>
+                        </tr>
+                        <tr>
+                            <td><code>git push -u origin branch-name</code></td>
+                            <td>Push a newly created branch up to GitHub</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Creating and Using Branches -->
+            <div class="section">
+                <h2>📝 Creating and Pushing Branches</h2>
+                
+                <h3>Step 1: Create a New Branch</h3>
+                <div class="terminal-code">
+<span class="comment"># The fastest, most professional way to create and switch branches</span><br>
+<span class="prompt">$</span> <span class="command">git checkout -b feature-dark-mode</span>
+                </div>
+
+                <h3>Step 2: Work on Your Branch</h3>
+                <div class="terminal-code">
+<span class="comment"># Make changes to your HTML/CSS files, then add and commit as usual</span><br>
+<span class="prompt">$</span> <span class="command">git add .</span><br>
+<span class="prompt">$</span> <span class="command">git commit -m "Added dark mode CSS variables"</span>
+                </div>
+
+                <h3>Step 3: Push the Branch to GitHub</h3>
+                <div class="terminal-code">
+<span class="comment"># Because this branch doesn't exist on GitHub yet, you must tell GitHub to create it</span><br>
+<span class="prompt">$</span> <span class="command">git push -u origin feature-dark-mode</span><br><br>
+<span class="comment"># Future pushes on this branch will just be:</span><br>
+<span class="prompt">$</span> <span class="command">git push</span>
+                </div>
+            </div>
+
+            <!-- Pull Requests -->
+            <div class="section">
+                <h2>🔀 Merging via GitHub Pull Requests</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">In professional teams, you rarely merge code in your terminal. Instead, you push your branch to GitHub and open a <strong>Pull Request (PR)</strong>.</p>
+                </div>
+
+                <h3>The Pull Request Workflow</h3>
+                <ol style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li>Push your branch to GitHub using <code>git push -u origin branch-name</code>.</li>
+                    <li>Go to your repository on <strong>GitHub.com</strong>.</li>
+                    <li>You will see a green button that says "Compare & pull request". Click it!</li>
+                    <li>Leave a comment explaining what your code does.</li>
+                    <li>Click <strong>Create pull request</strong>.</li>
+                    <li>Your team members will review your code. Once approved, you click <strong>Merge pull request</strong> on GitHub.</li>
+                    <li>Finally, go back to your VS Code terminal and pull the newly merged code:</li>
+                </ol>
+
+                <div class="terminal-code">
+<span class="comment"># After merging on GitHub, update your local computer</span><br>
+<span class="prompt">$</span> <span class="command">git checkout main</span><br>
+<span class="prompt">$</span> <span class="command">git pull origin main</span>
+                </div>
+            </div>
+
+            <!-- Merge Conflicts -->
+            <div class="section">
+                <h2>⚠️ Merge Conflicts</h2>
+                
+                <div class="warning-box">
+                    <h4 style="color: #ef4444;">Don't Panic!</h4>
+                    <p style="color: var(--text-gray);"><strong>Merge conflicts</strong> happen when two developers edit the exact same line of code in the same file. Git doesn't know which version to keep, so it pauses the merge and asks a human (you) to decide.</p>
+                </div>
+
+                <h3>What a Conflict Looks Like in VS Code</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">If you open the conflicted file, Git will have injected markers into your code:</p>
+                <div class="terminal-code" style="border-color: #ef4444;">
+/* style.css */<br>
+button {<br>
+    padding: 10px 20px;<br>
+<span style="color: #ef4444;">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br>
+    background: #D4AF37; /* The code currently on main */<br>
+<span style="color: #ef4444;">=======</span><br>
+    background: #10b981; /* The code coming from your branch */<br>
+<span style="color: #ef4444;">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch</span><br>
+    border: none;<br>
+}
+                </div>
+
+                <h3>How to Resolve It</h3>
+                <ol style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li>Open the conflicted file in VS Code.</li>
+                    <li>Look for the <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> markers.</li>
+                    <li>Delete the markers and delete the version of the code you DO NOT want. Keep the code you DO want.</li>
+                    <li>Save the file.</li>
+                    <li>Run <code>git add .</code> and <code>git commit -m "Resolved merge conflict"</code>.</li>
+                </ol>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="section">
+                <h2>🔄 The Professional Team Workflow</h2>
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong style="color: #10b981;">DO:</strong> Create a new branch for every single new feature or bug fix.</li>
+                    <li><strong style="color: #10b981;">DO:</strong> Use GitHub Pull Requests to merge code so there is a paper trail of changes.</li>
+                    <li><strong style="color: #ef4444;">DON'T:</strong> Commit directly to the `main` branch. Main should only be updated via GitHub merges.</li>
+                </ul>
+            </div>
+
+            <!-- Main Activity -->
+            <div class="section">
+                <h2>💻 Main Activity: GitHub PR Practice</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task 1: The Pull Request</h3>
+                    <ol>
+                        <li>Make sure you are on main: <code>git checkout main</code></li>
+                        <li>Create a new branch: <code>git checkout -b feature-contact-button</code></li>
+                        <li>Add a new button to your HTML file.</li>
+                        <li>Commit the code: <code>git add .</code> then <code>git commit -m "Added contact button"</code></li>
+                        <li>Push to GitHub: <code>git push -u origin feature-contact-button</code></li>
+                        <li>Go to GitHub.com, create a Pull Request, and merge it!</li>
+                        <li>Return to VS Code: <code>git checkout main</code> -> <code>git pull origin main</code>.</li>
+                    </ol>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task 2: Force a Conflict</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;">Let's intentionally cause a conflict locally so you learn how to fix it.</p>
+                    <ol>
+                        <li>On <code>main</code>, change the background color of your website to `#111`. Commit it.</li>
+                        <li>Create a branch: <code>git checkout -b rogue-branch</code></li>
+                        <li>Change the background color of the SAME line of code to `red`. Commit it.</li>
+                        <li>Switch back to main: <code>git checkout main</code></li>
+                        <li>Change the background color of the SAME line of code to `blue`. Commit it.</li>
+                        <li>Try to merge: <code>git merge rogue-branch</code>. <strong>BOOM! Conflict.</strong></li>
+                        <li>Open the file, delete the markers, pick your favorite color, save, add, and commit!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <ul class="checklist">
+                        <li>Successfully pushed a branch to GitHub.</li>
+                        <li>Successfully opened and merged a Pull Request on GitHub.</li>
+                        <li>Successfully forced and resolved a merge conflict locally.</li>
+                        <li>Link your merged GitHub Pull Request in the student group chat.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day9-responsive.html" class="btn-outline">← Previous: Day 9</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <!-- Linking to Portfolio Setup -->
+                <a href="day11-portfolio-setup.html" class="btn-gold">Next: Day 11 - Portfolio Building →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 4 - Day 1: Git & GitHub</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 Day 2: Portfolio Capstone | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .activity-box, .warning-box, .success-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+        .success-box { border-left-color: #10b981; }
+
+        .activity-box h4, .info-box h4, .warning-box h4, .success-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Wireframes */
+        .wireframe {
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 20px 0;
+            background: #0a0a0a;
+            border-radius: 8px;
+        }
+        .wireframe-box {
+            border: 1px dashed var(--primary-gold);
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            background: #111;
+            color: var(--text-gray);
+            font-family: monospace;
+            border-radius: 4px;
+        }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code, .css-code, .md-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .comment, .css-code .comment { color: #666; font-style: italic; } 
+        .css-code .selector { color: var(--primary-gold); font-weight: bold; }
+        .css-code .property { color: var(--text-white); }
+        .css-code .value { color: var(--dark-gold); }
+        
+        .md-code .heading { color: var(--primary-gold); font-weight: bold; }
+        .md-code .list { color: var(--text-gray); }
+        
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+        .indent-3 { padding-left: 60px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 11</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 4 - Day 2: Portfolio Capstone Project</h1>
+            <p style="color: var(--text-gray);">Duration: 6 hours | Focus: Planning, Architecture, Testing & Documentation</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Create low-fidelity wireframes to plan your layout.</li>
+                    <li>Set up a professional project folder structure and Git repository.</li>
+                    <li>Combine CSS Flexbox and Grid to build the architecture.</li>
+                    <li>Write a professional README.md file for recruiters.</li>
+                    <li>Conduct comprehensive cross-browser and mobile testing.</li>
+                </ul>
+            </div>
+
+            <!-- Wireframing -->
+            <div class="section">
+                <h2>📐 Phase 1: Wireframing</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">A <strong>Wireframe</strong> is a visual blueprint showing the structure of a website before you write a single line of code. It saves hours of frustration.</p>
+                </div>
+                
+                <h3>Desktop Layout Blueprint (1024px+)</h3>
+                <div class="wireframe">
+                    <div class="wireframe-box" style="border-style: solid; color: var(--primary-gold);">
+                        NAVIGATION BAR<br>
+                        [Logo] -------- [Home] [About] [Projects] [Contact]
+                    </div>
+                    <div class="wireframe-box" style="min-height: 150px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        HERO SECTION (Flexbox)<br>
+                        [Large Heading: Hi, I'm {Name}]<br>
+                        [Subheading: Web Developer]<br>
+                        [Call-to-Action Button]
+                    </div>
+                    <div class="wireframe-box">
+                        ABOUT SECTION<br>
+                        [Profile Photo] | [Bio Text & Skills]
+                    </div>
+                    <div class="wireframe-box">
+                        PROJECTS SECTION (CSS Grid: 3 Columns)<br>
+                        [Project 1] | [Project 2] | [Project 3]
+                    </div>
+                    <div class="wireframe-box">
+                        CONTACT SECTION<br>
+                        [Name] [Email] [Message Box] [Submit]
+                    </div>
+                </div>
+
+                <h3>Mobile Layout Blueprint (< 768px)</h3>
+                <div class="wireframe" style="max-width: 350px; margin: 0 auto;">
+                    <div class="wireframe-box" style="border-style: solid; color: var(--primary-gold);">
+                        [Logo] --- [☰ Menu]
+                    </div>
+                    <div class="wireframe-box" style="min-height: 120px;">
+                        HERO<br>[Heading]<br>[Button]
+                    </div>
+                    <div class="wireframe-box">
+                        ABOUT<br>[Photo]<br>[Text]
+                    </div>
+                    <div class="wireframe-box">
+                        PROJECTS (Grid: 1 Column)<br>[Project 1]<br>[Project 2]<br>[Project 3]
+                    </div>
+                </div>
+            </div>
+
+            <!-- Folder Setup -->
+            <div class="section">
+                <h2>📁 Phase 2: Project Setup & Structure</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Standard Professional Folder Structure</h3>
+                    <div style="font-family: 'Courier New', monospace; color: var(--text-gray); line-height: 1.8;">
+                        <i class="fas fa-folder" style="color: var(--primary-gold);"></i> <strong>my-portfolio/</strong><br>
+                        <span style="padding-left: 20px;"><i class="fas fa-file-code" style="color: #60a5fa;"></i> index.html</span> <em>(Main structure)</em><br>
+                        <span style="padding-left: 20px;"><i class="fas fa-folder" style="color: var(--primary-gold);"></i> css/</span><br>
+                        <span style="padding-left: 40px;"><i class="fas fa-file-code" style="color: #34d399;"></i> style.css</span> <em>(Main stylesheet)</em><br>
+                        <span style="padding-left: 20px;"><i class="fas fa-folder" style="color: var(--primary-gold);"></i> images/</span><br>
+                        <span style="padding-left: 40px;"><i class="fas fa-image" style="color: #c792ea;"></i> profile.jpg</span><br>
+                        <span style="padding-left: 40px;"><i class="fas fa-image" style="color: #c792ea;"></i> project1.jpg</span><br>
+                        <span style="padding-left: 20px;"><i class="fas fa-file-alt" style="color: #fff;"></i> README.md</span> <em>(Documentation)</em><br>
+                    </div>
+                </div>
+                
+                <ol style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li>Create the folder structure above.</li>
+                    <li>Open the terminal in VS Code and run <code>git init</code>.</li>
+                    <li>Go to GitHub.com, create a new repo called <code>my-portfolio</code>, and link them.</li>
+                </ol>
+            </div>
+
+            <!-- HTML/CSS Architecture -->
+            <div class="section">
+                <h2>🏗️ Phase 3: The Architecture</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Build out your <code>index.html</code> and <code>style.css</code> using the Flexbox and CSS Grid techniques we learned this week. Here is the core skeleton to get you started:</p>
+                
+                <div class="html-code">
+<span class="line"><span class="comment">&lt;!-- 1. Navbar (Flexbox) --&gt;</span></span>
+<span class="line"><span class="tag">&lt;nav</span> <span class="attr">class</span>=<span class="value">"navbar"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="value">"logo"</span><span class="tag">&gt;</span><span class="text">DevPortfolio</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="value">"nav-links"</span><span class="tag">&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="value">"#home"</span><span class="tag">&gt;</span><span class="text">Home</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="value">"#projects"</span><span class="tag">&gt;</span><span class="text">Projects</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/ul&gt;</span></span>
+<span class="line"><span class="tag">&lt;/nav&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">&lt;!-- 2. Hero Section (Flexbox Centered) --&gt;</span></span>
+<span class="line"><span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="value">"home"</span> <span class="attr">class</span>=<span class="value">"hero"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h1&gt;</span><span class="text">Hi, I'm </span><span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="value">"highlight"</span><span class="tag">&gt;</span><span class="text">[Your Name]</span><span class="tag">&lt;/span&gt;&lt;/h1&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;p&gt;</span><span class="text">A Frontend Developer trained at A Square L Academy.</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line"><span class="tag">&lt;/section&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">&lt;!-- 3. Projects Section (CSS Grid) --&gt;</span></span>
+<span class="line"><span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="value">"projects"</span> <span class="attr">class</span>=<span class="value">"projects-section"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"grid-container"</span><span class="tag">&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"project-card"</span><span class="tag">&gt;</span><span class="text">Project 1</span><span class="tag">&lt;/div&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"project-card"</span><span class="tag">&gt;</span><span class="text">Project 2</span><span class="tag">&lt;/div&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"project-card"</span><span class="tag">&gt;</span><span class="text">Project 3</span><span class="tag">&lt;/div&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/div&gt;</span></span>
+<span class="line"><span class="tag">&lt;/section&gt;</span></span>
+                </div>
+                
+                <div class="css-code">
+<span class="line"><span class="comment">/* The Ultimate Responsive Grid Code */</span></span>
+<span class="line"><span class="selector">.grid-container</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">grid</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">grid-template-columns</span><span class="punctuation">:</span> <span class="value">repeat(auto-fit, minmax(300px, 1fr))</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">gap</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Smooth Scrolling for anchor links */</span></span>
+<span class="line"><span class="selector">html</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">scroll-behavior</span><span class="punctuation">:</span> <span class="value">smooth</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- README Documentation -->
+            <div class="section">
+                <h2>📄 Phase 4: Professional README.md</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Recruiters look at your GitHub profile. A repository without a <code>README.md</code> looks unfinished. Use Markdown to create a beautiful introduction to your code.</p>
+                </div>
+                
+                <div class="md-code">
+<span class="line"><span class="heading"># 🚀 Personal Portfolio Website</span></span>
+<span class="line"></span>
+<span class="line"><span class="heading">## 📌 Overview</span></span>
+<span class="line"><span class="list">This is my personal portfolio website built to showcase my web development skills. Developed during my training at A Square L Academy.</span></span>
+<span class="line"></span>
+<span class="line"><span class="heading">## ✨ Features</span></span>
+<span class="line"><span class="list">- 📱 Fully responsive design (Mobile-First)</span></span>
+<span class="line"><span class="list">- 🎨 Modern UI with CSS Grid & Flexbox</span></span>
+<span class="line"><span class="list">- 🎯 Smooth scrolling navigation</span></span>
+<span class="line"></span>
+<span class="line"><span class="heading">## 🛠️ Technologies Used</span></span>
+<span class="line"><span class="list">- HTML5 (Semantic Structure)</span></span>
+<span class="line"><span class="list">- CSS3 (Custom Variables, No Frameworks)</span></span>
+<span class="line"><span class="list">- Git & GitHub</span></span>
+<span class="line"></span>
+<span class="line"><span class="heading">## 👤 Author</span></span>
+<span class="line"><span class="list">**[Your Name]**</span></span>
+<span class="line"><span class="list">- GitHub: [@yourusername](https://github.com/yourusername)</span></span>
+<span class="line"><span class="list">- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)</span></span>
+                </div>
+            </div>
+
+            <!-- Testing Checklist -->
+            <div class="section">
+                <h2>🔍 Phase 5: Final Testing & QA</h2>
+                
+                <h3>Functionality & Responsive Testing</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Test Case / Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Navigation</td>
+                            <td>All menu links click and smooth-scroll to correct sections.</td>
+                        </tr>
+                        <tr>
+                            <td>Images</td>
+                            <td>All images load without breaking the layout (No horizontal scrollbars).</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile (375px)</td>
+                            <td>Grid collapses to 1 column. Text is readable.</td>
+                        </tr>
+                        <tr>
+                            <td>Tablet (768px)</td>
+                            <td>Grid expands to 2 columns. Spacing looks balanced.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">W3C Validation</h3>
+                    <p style="color: var(--text-gray);">Professionals ensure their code has no syntax errors.</p>
+                    <ul style="color: var(--text-gray);">
+                        <li><strong>HTML:</strong> Paste your code at <a href="https://validator.w3.org/" target="_blank" style="color: var(--primary-gold);">validator.w3.org</a> and fix any red errors.</li>
+                        <li><strong>CSS:</strong> Paste your CSS at <a href="https://jigsaw.w3.org/css-validator/" target="_blank" style="color: var(--primary-gold);">jigsaw.w3.org/css-validator</a> to check for missing semicolons or brackets.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Presentation Prep -->
+            <div class="section">
+                <h2>📊 Phase 6: Presentation Prep</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">You will present your portfolio to the class/mentor. Prepare a 3-minute walkthrough.</p>
+                    <ul style="color: var(--text-gray); margin-top: 10px; margin-left: 20px;">
+                        <li><strong>1. Introduce Yourself:</strong> "Hi, I'm [Name], a Frontend Developer."</li>
+                        <li><strong>2. The Walkthrough:</strong> Scroll through the site. Show how it adapts to mobile using DevTools.</li>
+                        <li><strong>3. The Code:</strong> Highlight one piece of CSS you are particularly proud of (like your CSS Grid setup).</li>
+                        <li><strong>4. The Challenge:</strong> Mention one bug you faced and how you fixed it.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="success-box">
+                    <h3 style="margin-top:0;">Submit to your Mentor:</h3>
+                    <ul class="checklist" style="margin-top: 15px;">
+                        <li>Your finished, fully responsive portfolio codebase.</li>
+                        <li>Your populated <code>README.md</code> file.</li>
+                        <li>Code pushed to the <code>main</code> branch of your GitHub repository.</li>
+                    </ul>
+                    <p style="color: var(--text-gray); margin-top: 15px; font-weight: bold;">Get ready! Tomorrow, we are taking this code and launching it live to the world on Netlify.</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day10-git-github.html" class="btn-outline">← Previous: Day 10</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <!-- Link to Netlify Deployment -->
+                <a href="day12-netlify.html" class="btn-gold">Next: Day 12 - Netlify Deployment →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 4 - Day 2: Portfolio Capstone Project</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

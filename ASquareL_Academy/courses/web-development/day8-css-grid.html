@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 Day 2: CSS Grid | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .activity-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+
+        .activity-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Grid Live Preview Boxes */
+        .grid-preview-container {
+            border: 1px dashed var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #0a0a0a;
+        }
+        
+        /* Grid specific demo styles */
+        .demo-grid-1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .demo-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .demo-grid-item {
+            background: #1a1a1a;
+            border: 1px solid var(--primary-gold);
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code, .css-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        /* HTML Specific */
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .text { color: var(--text-white); }
+        .html-code .comment { color: #666; font-style: italic; } 
+        /* CSS Specific */
+        .css-code .selector { color: var(--primary-gold); font-weight: bold; }
+        .css-code .property { color: var(--text-white); }
+        .css-code .value { color: var(--dark-gold); }
+        .css-code .punctuation { color: #888; }
+        .css-code .comment { color: #666; font-style: italic; }
+        
+        .html-code .line, .css-code .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { 
+            background: var(--dark-gold); 
+            transform: translateY(-2px); 
+        }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 8</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 3 - Day 2: Advanced CSS Grid</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Modern 2-Dimensional Layouts</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the difference between Flexbox (1D) and Grid (2D)</li>
+                    <li>Define Grid columns and rows</li>
+                    <li>Master the <code>fr</code> (fractional) unit and the <code>repeat()</code> function</li>
+                    <li>Position specific items within a Grid</li>
+                    <li>Build a modern masonry-style Photo Gallery</li>
+                </ul>
+            </div>
+
+            <!-- What is CSS Grid -->
+            <div class="section">
+                <h2>📐 What is CSS Grid?</h2>
+                <div class="info-box">
+                    <h4 style="color: var(--primary-gold);">Flexbox vs Grid: What is the difference?</h4>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;"><strong>Flexbox</strong> is a 1-Dimensional layout system. It aligns things in a single row OR a single column.</p>
+                    <p style="color: var(--text-gray);"><strong>CSS Grid</strong> is a 2-Dimensional layout system. It handles both rows AND columns at the exact same time. It is perfect for complex page layouts, dashboards, and photo galleries.</p>
+                </div>
+            </div>
+
+            <!-- The Grid Container -->
+            <div class="section">
+                <h2>🏗️ The Grid Container</h2>
+                
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Just like Flexbox, you start by applying a display rule to the parent container.</p>
+                
+                <div class="css-code">
+<span class="line"><span class="selector">.grid-container</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">grid</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">grid-template-columns</span><span class="punctuation">:</span> <span class="value">200px 200px 200px</span><span class="punctuation">;</span> <span class="comment">/* Creates 3 columns, each 200px wide */</span></span>
+<span class="line indent-1"><span class="property">gap</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span> <span class="comment">/* Space between rows and columns */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+
+                <h3>The Magic "fr" Unit</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Grid introduces a brand new unit called <code>fr</code> (fractional unit). It represents a fraction of the available space in the grid container. It is much better than percentages!</p>
+
+                <div class="css-code">
+<span class="line"><span class="selector">.grid-container</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">grid</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">grid-template-columns</span><span class="punctuation">:</span> <span class="value">1fr 1fr 1fr</span><span class="punctuation">;</span> <span class="comment">/* Creates 3 equal columns that stretch to fill the screen */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+
+                <div class="grid-preview-container">
+                    <h4 style="margin-bottom: 10px; color: var(--primary-gold);">Live Example: 3 Equal Columns (1fr 1fr 1fr)</h4>
+                    <div class="demo-grid-1">
+                        <div class="demo-grid-item">1fr</div>
+                        <div class="demo-grid-item">1fr</div>
+                        <div class="demo-grid-item">1fr</div>
+                        <div class="demo-grid-item">Automatically</div>
+                        <div class="demo-grid-item">Wraps to</div>
+                        <div class="demo-grid-item">Next Row!</div>
+                    </div>
+                </div>
+
+                <h3>The repeat() Function</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">If you want 4 columns, writing <code>1fr 1fr 1fr 1fr</code> is annoying. Use the repeat function instead!</p>
+
+                <div class="css-code">
+<span class="line"><span class="selector">.grid-container</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">grid</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">grid-template-columns</span><span class="punctuation">:</span> <span class="value">repeat(4, 1fr)</span><span class="punctuation">;</span> <span class="comment">/* Creates 4 equal columns */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+                
+                <div class="grid-preview-container">
+                    <h4 style="margin-bottom: 10px; color: var(--primary-gold);">Live Example: repeat(4, 1fr)</h4>
+                    <div class="demo-grid-2">
+                        <div class="demo-grid-item">Col 1</div>
+                        <div class="demo-grid-item">Col 2</div>
+                        <div class="demo-grid-item">Col 3</div>
+                        <div class="demo-grid-item">Col 4</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placing Grid Items -->
+            <div class="section">
+                <h2>🎯 Placing Specific Items</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">The true power of Grid is that you can tell a specific child element to span across multiple rows or columns.</p>
+
+                <div class="css-code">
+<span class="line"><span class="comment">/* Make an item stretch across 2 columns */</span></span>
+<span class="line"><span class="selector">.featured-item</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">grid-column</span><span class="punctuation">:</span> <span class="value">span 2</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Make an item stretch down across 2 rows */</span></span>
+<span class="line"><span class="selector">.tall-item</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">grid-row</span><span class="punctuation">:</span> <span class="value">span 2</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Main Activity -->
+            <div class="section">
+                <h2>💻 Main Activity: Build a Photo Gallery</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Create gallery.html</h3>
+                    <p style="color: var(--text-gray);">We are going to build a modern image gallery grid where some featured photos are larger than others.</p>
+                </div>
+
+                <h3>HTML Structure</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="value">"gallery-section"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2&gt;</span><span class="text">My Portfolio Gallery</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"grid-gallery"</span><span class="tag">&gt;</span></span>
+<span class="line indent-2"><span class="comment">&lt;!-- Notice the special class on the first item --&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"gallery-item featured"</span><span class="tag">&gt;&lt;img</span> <span class="attr">src</span>=<span class="value">"img1.jpg"</span><span class="tag">&gt;&lt;/div&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"gallery-item"</span><span class="tag">&gt;&lt;img</span> <span class="attr">src</span>=<span class="value">"img2.jpg"</span><span class="tag">&gt;&lt;/div&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"gallery-item tall"</span><span class="tag">&gt;&lt;img</span> <span class="attr">src</span>=<span class="value">"img3.jpg"</span><span class="tag">&gt;&lt;/div&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"gallery-item"</span><span class="tag">&gt;&lt;img</span> <span class="attr">src</span>=<span class="value">"img4.jpg"</span><span class="tag">&gt;&lt;/div&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"gallery-item"</span><span class="tag">&gt;&lt;img</span> <span class="attr">src</span>=<span class="value">"img5.jpg"</span><span class="tag">&gt;&lt;/div&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/div&gt;</span></span>
+<span class="line"><span class="tag">&lt;/section&gt;</span></span>
+                </div>
+
+                <h3>CSS Styling</h3>
+                <div class="css-code">
+<span class="line"><span class="comment">/* Setup the Grid Container */</span></span>
+<span class="line"><span class="selector">.grid-gallery</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">grid</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">grid-template-columns</span><span class="punctuation">:</span> <span class="value">repeat(3, 1fr)</span><span class="punctuation">;</span> <span class="comment">/* 3 Columns */</span></span>
+<span class="line indent-1"><span class="property">gap</span><span class="punctuation">:</span> <span class="value">15px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Make images fit the boxes perfectly */</span></span>
+<span class="line"><span class="selector">.gallery-item img</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">width</span><span class="punctuation">:</span> <span class="value">100%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">height</span><span class="punctuation">:</span> <span class="value">100%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">object-fit</span><span class="punctuation">:</span> <span class="value">cover</span><span class="punctuation">;</span> <span class="comment">/* Prevents images from stretching weirdly */</span></span>
+<span class="line indent-1"><span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">8px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Advanced Spanning */</span></span>
+<span class="line"><span class="selector">.featured</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">grid-column</span><span class="punctuation">:</span> <span class="value">span 2</span><span class="punctuation">;</span> <span class="comment">/* Takes up 2 columns of space */</span></span>
+<span class="line indent-1"><span class="property">grid-row</span><span class="punctuation">:</span> <span class="value">span 2</span><span class="punctuation">;</span> <span class="comment">/* Takes up 2 rows of space (Massive image!) */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="selector">.tall</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">grid-row</span><span class="punctuation">:</span> <span class="value">span 2</span><span class="punctuation">;</span> <span class="comment">/* Takes up 2 rows of space (Vertical portrait) */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Exercises -->
+            <div class="section">
+                <h2>✏️ Practice Exercises</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 1: CSS Grid Garden</h3>
+                    <p style="color: var(--text-gray);">Just like Flexbox Froggy, there is a fun game to master Grid.</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Go to <a href="https://cssgridgarden.com/" target="_blank" style="color: var(--primary-gold);">cssgridgarden.com</a></li>
+                        <li>Complete levels 1 through 15.</li>
+                        <li>Take a screenshot of your completion.</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 2: Refactor your Profile Page</h3>
+                    <p style="color: var(--text-gray);">In Day 6, you built a 2-column profile layout using Flexbox. Let's do it with Grid!</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Open your `layout.css`.</li>
+                        <li>Change the `.container` to use `display: grid;`.</li>
+                        <li>Instead of setting widths on the children, use `grid-template-columns: 1fr 2fr;` on the parent to create a 30%/70% split!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <ul class="checklist">
+                        <li><code>gallery.html</code> successfully coded with a CSS Grid layout.</li>
+                        <li>Screenshot of your Grid Garden progress.</li>
+                        <li>Commit and push the code to your GitHub repository with the message: "Added CSS Grid Image Gallery".</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day7-flexbox.html" class="btn-outline">← Previous: Day 7</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <!-- Linking to what would be the next logical step: Responsive Design -->
+                <a href="day9-responsive.html" class="btn-gold">Next: Day 9 - Responsive Design →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 3 - Day 2: Advanced CSS Grid Layouts</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

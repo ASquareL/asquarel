@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register | A Square L Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="top-header">
+        <div class="container">
+            <div class="header-flex">
+                <div class="contact-info">
+                    <i class="fa fa-phone"></i> +234 8125585709
+                </div>
+                <div class="apply-link">
+                    <a href="contact.html">Apply Online</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container navbar-flex">
+            <a href="index.html" class="logo">A SQUARE L <span>ACADEMY</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="active-link">Login/Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-form="login">Sign In</button>
+                    <button class="auth-tab" data-form="register">Sign Up</button>
+                </div>
+
+                <div id="login-form" class="auth-form active">
+                    <h2>Welcome Back</h2>
+                    <p class="auth-sub">Login to access your dashboard and continue learning.</p>
+                    <form action="#" method="POST">
+                        <div class="input-group">
+                            <i class="fa fa-envelope"></i>
+                            <input type="email" name="login_email" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" name="login_password" placeholder="Password" required>
+                        </div>
+                        <div class="form-options">
+                            <label><input type="checkbox"> Remember Me</label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="auth-btn">Sign In <i class="fa fa-arrow-right"></i></button>
+                    </form>
+                    <p class="auth-switch">Don't have an account? <span class="switch-link" data-form="register">Sign Up</span></p>
+                </div>
+
+                <div id="register-form" class="auth-form">
+                    <h2>Create Account</h2>
+                    <p class="auth-sub">Join A Square L Academy and start your tech journey.</p>
+                    <form action="#" method="POST">
+                        <div class="input-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="reg_name" placeholder="Full Name" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fa fa-envelope"></i>
+                            <input type="email" name="reg_email" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" name="reg_password" placeholder="Password (min. 6 characters)" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fa fa-check-circle"></i>
+                            <input type="password" name="reg_password_confirm" placeholder="Confirm Password" required>
+                        </div>
+                        <button type="submit" class="auth-btn">Sign Up <i class="fa fa-user-plus"></i></button>
+                    </form>
+                    <p class="auth-switch">Already have an account? <span class="switch-link" data-form="login">Sign In</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>A SQUARE L <span>ACADEMY</span></h3>
+                    <p>Working to bring significant changes in online-based learning by doing extensive research for course curriculum preparation, student engagements, and looking forward to flexible education!</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Become A Teacher</a></li>
+                        <li><a href="#">Instructor/Student Profile</a></li>
+                        <li><a href="curriculum.html">Courses</a></li>
+                        <li><a href="#">LP Checkout</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Become A Teacher</a></li>
+                        <li><a href="curriculum.html">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Address</h4>
+                    <address>
+                        <p><i class="fa fa-location-dot"></i> No. 123, Ahmadu Bello Way, Kano, Nigeria</p>
+                        <p><i class="fa fa-phone"></i> +234 812 558 5709</p>
+                        <p><i class="fa fa-envelope"></i> hello@asquarelinnovate.com</p>
+                        <p><i class="fa fa-whatsapp"></i> +234 812 558 5709</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 A SQUARE L INNOVATE. Proudly Crafted by A Square L Team</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('.auth-tab');
+        const forms = {
+            login: document.getElementById('login-form'),
+            register: document.getElementById('register-form')
+        };
+        const switchLinks = document.querySelectorAll('.switch-link');
+
+        function showForm(formId) {
+            tabs.forEach(tab => {
+                if(tab.dataset.form === formId) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+            Object.keys(forms).forEach(key => {
+                if(key === formId) {
+                    forms[key].classList.add('active');
+                } else {
+                    forms[key].classList.remove('active');
+                }
+            });
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                showForm(tab.dataset.form);
+            });
+        });
+
+        switchLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                showForm(link.dataset.form);
+            });
+        });
+    </script>
+
+</body>
+</html>

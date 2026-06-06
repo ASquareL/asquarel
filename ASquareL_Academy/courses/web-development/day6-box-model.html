@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Day 3: The Box Model & Layouts | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        /* Nuke any white backgrounds and force Black Theme */
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .tip-box, .activity-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .tip-box { border-left-color: var(--dark-gold); } 
+        .activity-box { border-left-color: var(--text-white); } 
+
+        .activity-box h4, .tip-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Box Model Diagram - Dark Mode adaptation */
+        .box-model-diagram {
+            border: 1px solid #333;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 500px;
+            background: #0a0a0a;
+            border-radius: 12px;
+        }
+        .box-layer {
+            border: 2px dashed;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+        }
+        .margin-layer { border-color: #ff6b6b; background: rgba(255, 107, 107, 0.1); }
+        .border-layer { border-color: var(--primary-gold); background: rgba(212, 175, 55, 0.1); }
+        .padding-layer { border-color: #45b7d1; background: rgba(69, 183, 209, 0.1); }
+        .content-layer { border-color: #96ceb4; background: rgba(150, 206, 180, 0.1); }
+
+        /* Previews & Examples */
+        .layout-example {
+            border: 1px dashed var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #0a0a0a;
+        }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code, .css-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        /* HTML Specific */
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .text { color: var(--text-white); }
+        .html-code .comment { color: #666; font-style: italic; } 
+        /* CSS Specific */
+        .css-code .selector { color: var(--primary-gold); font-weight: bold; }
+        .css-code .property { color: var(--text-white); }
+        .css-code .value { color: var(--dark-gold); }
+        .css-code .punctuation { color: #888; }
+        .css-code .comment { color: #666; font-style: italic; }
+        
+        /* Universal Indents */
+        .html-code .line, .css-code .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+        .indent-3 { padding-left: 60px; }
+        .indent-4 { padding-left: 80px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { 
+            background: var(--dark-gold); 
+            transform: translateY(-2px); 
+        }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Day 6</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 2 - Day 3: The Box Model & Layout Fundamentals</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Spacing, Sizing, and Structural Design</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the CSS Box Model architecture</li>
+                    <li>Master the differences between margin, padding, and borders</li>
+                    <li>Learn display properties (block, inline, inline-block)</li>
+                    <li>Create basic layouts using width, height, and box-sizing</li>
+                    <li>Build a modern 2-column profile layout</li>
+                </ul>
+            </div>
+
+            <!-- The Box Model -->
+            <div class="section">
+                <h2>📦 The CSS Box Model</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Every HTML element is essentially a rectangular box. The <strong>Box Model</strong> describes how the space around and inside that element is calculated by the browser.</p>
+                </div>
+                
+                
+                
+                <div class="box-model-diagram">
+                    <div class="box-layer margin-layer">
+                        MARGIN (Transparent, outside spacing)
+                        <div class="box-layer border-layer">
+                            BORDER (Visible edge)
+                            <div class="box-layer padding-layer">
+                                PADDING (Space inside the border)
+                                <div class="box-layer content-layer" style="color: #96ceb4;">
+                                    CONTENT (Text, Images, etc.)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Box Model Components Explained</h3>
+                <ol style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong style="color: #fff;">Content:</strong> The actual element data (text, images).</li>
+                    <li><strong style="color: #fff;">Padding:</strong> The transparent space between the content and the border.</li>
+                    <li><strong style="color: #fff;">Border:</strong> The line wrapped around the padding and content.</li>
+                    <li><strong style="color: #fff;">Margin:</strong> The transparent space outside the border used to push elements away from each other.</li>
+                </ol>
+
+                <div class="css-code">
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">width</span><span class="punctuation">:</span> <span class="value">300px</span><span class="punctuation">;</span>           <span class="comment">/* Content width */</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span>          <span class="comment">/* Space inside */</span></span>
+<span class="line indent-1"><span class="property">border</span><span class="punctuation">:</span> <span class="value">5px solid #D4AF37</span><span class="punctuation">;</span> <span class="comment">/* Border */</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">10px</span><span class="punctuation">;</span>           <span class="comment">/* Space outside */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Total width visually taken up by element: 300 + (20*2) + (5*2) = 350px */</span></span>
+                </div>
+            </div>
+
+            <!-- Margin -->
+            <div class="section">
+                <h2>📏 Margin (Outer Spacing)</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Margin creates space <strong>outside</strong> an element's border, pushing other elements away.</p>
+                </div>
+
+                <div class="css-code">
+<span class="line"><span class="comment">/* All sides equally */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Individual sides manually */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin-top</span><span class="punctuation">:</span> <span class="value">10px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin-right</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin-bottom</span><span class="punctuation">:</span> <span class="value">30px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin-left</span><span class="punctuation">:</span> <span class="value">40px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Shorthand - 4 values (Clockwise: Top, Right, Bottom, Left) */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">10px 20px 30px 40px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Shorthand - 2 values (Vertical Horizontal) */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">10px 20px</span><span class="punctuation">;</span>  <span class="comment">/* 10px top/bottom, 20px left/right */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* CRITICAL: How to perfectly center a block element */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">0 auto</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">width</span><span class="punctuation">:</span> <span class="value">80%</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+
+                <div class="layout-example">
+                    <h4 style="margin-bottom: 15px; color: var(--primary-gold);">Live Example - Margin Spacing:</h4>
+                    <div style="background: #111; padding: 20px; border-radius: 8px;">
+                        <div style="background: #1a1a1a; padding: 15px; margin: 10px; border: 1px solid #333;">
+                            <p style="margin: 0; color: #fff;">Box 1 - 10px margin</p>
+                        </div>
+                        <div style="background: #1a1a1a; padding: 15px; margin: 30px; border: 1px solid #333;">
+                            <p style="margin: 0; color: #fff;">Box 2 - 30px margin (Notice the larger gap)</p>
+                        </div>
+                        <div style="background: #1a1a1a; padding: 15px; margin: 0 auto; border: 1px solid var(--primary-gold); width: 70%; text-align: center;">
+                            <p style="margin: 0; color: #fff;">Box 3 - margin: 0 auto (Perfectly centered)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Padding -->
+            <div class="section">
+                <h2>🎨 Padding (Inner Spacing)</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Padding creates space <strong>inside</strong> an element's border, pushing the content away from the edges.</p>
+                </div>
+                <div class="css-code">
+<span class="line"><span class="comment">/* Uses the exact same shorthand logic as margin */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">15px</span><span class="punctuation">;</span>                     <span class="comment">/* All sides */</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">10px 20px</span><span class="punctuation">;</span>                <span class="comment">/* vertical horizontal */</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">5px 10px 15px 20px</span><span class="punctuation">;</span>       <span class="comment">/* top right bottom left */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+                
+                <div class="layout-example">
+                    <h4 style="margin-bottom: 15px; color: var(--primary-gold);">Live Example - Padding:</h4>
+                    <div style="background: #1a1a1a; padding: 10px; border: 1px solid #333; margin-bottom: 15px; color: #fff;">
+                        10px padding on all sides
+                    </div>
+                    <div style="background: #1a1a1a; padding: 20px 40px; border: 1px solid #333; color: #fff;">
+                        20px top/bottom, 40px left/right padding
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box Sizing -->
+            <div class="section">
+                <h2>📐 Width, Height, and Box-Sizing</h2>
+                <div class="info-box">
+                    <h4 style="color: var(--primary-gold); margin-bottom: 10px;">The Most Important CSS Rule You Will Learn Today:</h4>
+                    <p style="color: var(--text-gray);">By default, adding padding or borders to an element <strong>increases its total width</strong>. This breaks layouts! To fix this, developers universally use <code>box-sizing: border-box;</code>.</p>
+                </div>
+
+                <div class="css-code">
+<span class="line"><span class="comment">/* Apply this to EVERY project you build! */</span></span>
+<span class="line"><span class="selector">*</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">box-sizing</span><span class="punctuation">:</span> <span class="value">border-box</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+
+                <div class="layout-example">
+                    <h4 style="margin-bottom: 15px; color: var(--primary-gold);">Live Example - Box-Sizing Comparison:</h4>
+                    <p style="margin-bottom: 15px; color: var(--text-gray);">Both boxes below have <code>width: 200px</code>, <code>padding: 20px</code>, and <code>border: 5px</code>.</p>
+                    
+                    <div style="display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start;">
+                        <div style="text-align: center;">
+                            <p style="font-weight: bold; margin-bottom: 10px; color: #fff;">content-box (Default)</p>
+                            <div style="background: #1a1a1a; width: 200px; padding: 20px; border: 5px solid #555; box-sizing: content-box; color: #fff;">
+                                200px content
+                            </div>
+                            <p style="font-size: 0.85em; margin-top: 10px; color: #999;">
+                                Total width explodes to <strong style="color: #ff6b6b;">250px</strong>
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <p style="font-weight: bold; margin-bottom: 10px; color: #fff;">border-box (Recommended)</p>
+                            <div style="background: #1a1a1a; width: 200px; padding: 20px; border: 5px solid var(--primary-gold); box-sizing: border-box; color: #fff;">
+                                200px total
+                            </div>
+                            <p style="font-size: 0.85em; margin-top: 10px; color: #999;">
+                                Total width stays safely at <strong style="color: var(--primary-gold);">200px</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display Properties -->
+            <div class="section">
+                <h2>🎭 Display Property</h2>
+                
+                <h3>Block Elements (div, h1, p)</h3>
+                <p style="color: var(--text-gray);">Take the full width available and start on a new line.</p>
+                <div class="css-code">
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span> <span class="property">display</span><span class="punctuation">:</span> <span class="value">block</span><span class="punctuation">;</span> <span class="punctuation">}</span></span>
+                </div>
+
+                <h3>Inline Elements (span, a, strong)</h3>
+                <p style="color: var(--text-gray);">Take only necessary width, flow horizontally, and ignore height/width declarations.</p>
+                <div class="css-code">
+<span class="line"><span class="selector">span</span> <span class="punctuation">{</span> <span class="property">display</span><span class="punctuation">:</span> <span class="value">inline</span><span class="punctuation">;</span> <span class="punctuation">}</span></span>
+                </div>
+
+                <h3>Inline-Block</h3>
+                <p style="color: var(--text-gray);">Flows horizontally like inline, but perfectly respects width, height, and padding declarations. Great for side-by-side elements.</p>
+                <div class="css-code">
+<span class="line"><span class="selector">.card</span> <span class="punctuation">{</span> <span class="property">display</span><span class="punctuation">:</span> <span class="value">inline-block</span><span class="punctuation">;</span> <span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Main Activity -->
+            <div class="section">
+                <h2>💻 Main Activity: Build a 2-Column Layout</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Create profile-bio.html</h3>
+                    <p style="color: var(--text-gray);">Let's combine everything we've learned to build a page with a profile sidebar on the left and biography text on the right.</p>
+                </div>
+
+                <h3>HTML Structure</h3>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;head&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;title&gt;</span><span class="text">Profile Layout</span><span class="tag">&lt;/title&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="value">"stylesheet"</span> <span class="attr">href</span>=<span class="value">"css/layout.css"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;/head&gt;</span></span>
+<span class="line"><span class="tag">&lt;body&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;header&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;h1&gt;</span><span class="text">My Professional Profile</span><span class="tag">&lt;/h1&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/header&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"container"</span><span class="tag">&gt;</span></span>
+<span class="line indent-2"><span class="comment">&lt;!-- Left Column --&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"profile-column"</span><span class="tag">&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"https://via.placeholder.com/200"</span> <span class="attr">alt</span>=<span class="value">"Profile"</span><span class="tag">&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;h2&gt;</span><span class="text">Jane Doe</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;p&gt;</span><span class="text">Frontend Developer</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;/div&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-2"><span class="comment">&lt;!-- Right Column --&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"bio-column"</span><span class="tag">&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;h2&gt;</span><span class="text">About Me</span><span class="tag">&lt;/h2&gt;</span></span>
+<span class="line indent-3"><span class="tag">&lt;p&gt;</span><span class="text">I am a passionate web development student at A Square L Academy.</span><span class="tag">&lt;/p&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;/div&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/div&gt;</span></span>
+<span class="line"><span class="tag">&lt;/body&gt;</span></span>
+<span class="line"><span class="tag">&lt;/html&gt;</span></span>
+                </div>
+
+                <h3>CSS for 2-Column Layout (css/layout.css)</h3>
+                <div class="css-code">
+<span class="line"><span class="comment">/* Universal Box-Sizing Reset */</span></span>
+<span class="line"><span class="selector">*</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">0</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">0</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">box-sizing</span><span class="punctuation">:</span> <span class="value">border-box</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="selector">body</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">background-color</span><span class="punctuation">:</span> <span class="value">#000</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">#fff</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">font-family</span><span class="punctuation">:</span> <span class="value">Arial, sans-serif</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Flexbox makes column layouts incredibly easy */</span></span>
+<span class="line"><span class="selector">.container</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">max-width</span><span class="punctuation">:</span> <span class="value">1000px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">40px auto</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">display</span><span class="punctuation">:</span> <span class="value">flex</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">gap</span><span class="punctuation">:</span> <span class="value">30px</span><span class="punctuation">;</span> <span class="comment">/* Creates space between the columns */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Profile Column (Left - 30%) */</span></span>
+<span class="line"><span class="selector">.profile-column</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">width</span><span class="punctuation">:</span> <span class="value">30%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">background</span><span class="punctuation">:</span> <span class="value">#111</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">30px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border</span><span class="punctuation">:</span> <span class="value">1px solid #333</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">10px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">text-align</span><span class="punctuation">:</span> <span class="value">center</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="selector">.profile-column img</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">width</span><span class="punctuation">:</span> <span class="value">100%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">50%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border</span><span class="punctuation">:</span> <span class="value">3px solid #D4AF37</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin-bottom</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Bio Column (Right - 70%) */</span></span>
+<span class="line"><span class="selector">.bio-column</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">width</span><span class="punctuation">:</span> <span class="value">70%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">background</span><span class="punctuation">:</span> <span class="value">#111</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">30px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border</span><span class="punctuation">:</span> <span class="value">1px solid #333</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">10px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Responsive Rule: Stack columns on phone screens */</span></span>
+<span class="line"><span class="selector">@media (max-width: 768px)</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="selector">.container</span> <span class="punctuation">{</span></span>
+<span class="line indent-2"><span class="property">flex-direction</span><span class="punctuation">:</span> <span class="value">column</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="punctuation">}</span></span>
+<span class="line indent-1"><span class="selector">.profile-column, .bio-column</span> <span class="punctuation">{</span></span>
+<span class="line indent-2"><span class="property">width</span><span class="punctuation">:</span> <span class="value">100%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="punctuation">}</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Exercises -->
+            <div class="section">
+                <h2>✏️ Practice Exercises</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 1: Box Model Playground</h3>
+                    <p style="color: var(--text-gray);">Create a page with different colored boxes to practice:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Try different margin and padding values.</li>
+                        <li>Experiment with borders and border-radius.</li>
+                        <li>Use Chrome DevTools to inspect the spacing.</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 2: Create a Card Layout</h3>
+                    <p style="color: var(--text-gray);">Build a page with 3 product cards side by side:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Use <code>display: inline-block</code> for the cards.</li>
+                        <li>Add padding, borders, and margins.</li>
+                        <li>Include an image, title, description, and price inside each card.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <ul class="checklist">
+                        <li><code>profile-bio.html</code> fully functional with the 2-column layout.</li>
+                        <li><code>layout.css</code> linked and working properly.</li>
+                        <li>Commit and push the code to your GitHub repository with the message: "Added 2-column box model layout".</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day5-css.html" class="btn-outline">← Previous: Day 5</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day7-flexbox.html" class="btn-gold">Next: Day 7 - Flexbox →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 2 - Day 3: The Box Model & Layout Fundamentals</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

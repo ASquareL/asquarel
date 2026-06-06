@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Day 2: Introduction to CSS | A Square L Academy</title>
+    
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Master CSS Path -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        /* Nuke any white backgrounds and force Black Theme */
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            background-image: none !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container {
+            background-color: transparent !important; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SPECIFIC LESSON CONTENT STYLES --- */
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        
+        .section h2 { 
+            color: var(--primary-gold); 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #333; 
+            font-weight: 800; 
+        }
+        
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+        .section h4 { color: var(--primary-gold); margin: 15px 0 10px 0; font-weight: 600; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        /* Custom Content Boxes */
+        .info-box, .tip-box, .activity-box, .warning-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .tip-box { border-left-color: var(--dark-gold); } 
+        .activity-box { border-left-color: var(--text-white); } 
+
+        .activity-box h4, .tip-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        /* Previews & Examples */
+        .preview-box {
+            border: 1px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #0a0a0a;
+            color: var(--text-white);
+        }
+        .css-example {
+            border: 1px dashed var(--primary-gold);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background: #151515;
+        }
+        .color-swatch {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+        tr:nth-child(even) { background: #1a1a1a; }
+
+        /* Code Editor Syntax Highlighting */
+        .html-code, .css-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        /* HTML Specific */
+        .html-code .tag { color: var(--primary-gold); } 
+        .html-code .attr { color: var(--text-white); } 
+        .html-code .value { color: var(--dark-gold); } 
+        .html-code .text { color: var(--text-white); }
+        .html-code .comment { color: #666; font-style: italic; } 
+        /* CSS Specific */
+        .css-code .selector { color: var(--primary-gold); font-weight: bold; }
+        .css-code .property { color: var(--text-white); }
+        .css-code .value { color: var(--dark-gold); }
+        .css-code .punctuation { color: #888; }
+        .css-code .comment { color: #666; font-style: italic; }
+        
+        /* Universal Indents */
+        .html-code .line, .css-code .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+        .indent-3 { padding-left: 60px; }
+        .indent-4 { padding-left: 80px; }
+
+        /* Navigation Buttons */
+        .lesson-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-gold {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        
+        .btn-gold:hover { 
+            background: var(--dark-gold); 
+            transform: translateY(-2px); 
+        }
+
+        .btn-outline {
+            color: var(--text-gray);
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> 
+            <span style="color: #fff;">Week 2 - Day 2</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 2 - Day 2: Introduction to CSS</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Styling, Selectors, and Visuals</p>
+        </header>
+
+        <main class="lesson-container">
+            <!-- Learning Objectives -->
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand what CSS is and its purpose</li>
+                    <li>Learn CSS syntax, selectors, and properties</li>
+                    <li>Apply inline, internal, and external CSS correctly</li>
+                    <li>Use Chrome DevTools for live CSS editing</li>
+                    <li>Style the news page from Day 1</li>
+                </ul>
+            </div>
+
+            <!-- What is CSS -->
+            <div class="section">
+                <h2>🎨 What is CSS?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);"><strong>CSS (Cascading Style Sheets)</strong> is a stylesheet language used to describe the presentation and design of your HTML documents.</p>
+                    <p style="color: var(--text-white); margin-top: 15px;"><strong>CSS controls:</strong></p>
+                    <ul style="color: var(--text-gray); margin-left: 20px; margin-top: 5px;">
+                        <li>Colors and backgrounds</li>
+                        <li>Fonts and text styling</li>
+                        <li>Spacing (margins, padding)</li>
+                        <li>Layout and positioning</li>
+                        <li>Animations and transitions</li>
+                    </ul>
+                </div>
+
+                <h3>Why Use CSS?</h3>
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong style="color: #fff;">Separation of concerns:</strong> Keep content (HTML) separate from presentation (CSS)</li>
+                    <li><strong style="color: #fff;">Consistency:</strong> Apply the same styles across multiple pages</li>
+                    <li><strong style="color: #fff;">Maintainability:</strong> Change design without touching HTML</li>
+                    <li><strong style="color: #fff;">Efficiency:</strong> One CSS file can style an entire website</li>
+                </ul>
+            </div>
+
+            <!-- CSS Syntax -->
+            <div class="section">
+                <h2>📝 CSS Syntax</h2>
+                <div class="css-code">
+<span class="line"><span class="selector">selector</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">property</span><span class="punctuation">:</span> <span class="value">value</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">property</span><span class="punctuation">:</span> <span class="value">value</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+                <p style="color: var(--text-gray); margin-bottom: 10px;"><strong>Example:</strong></p>
+                <div class="css-code">
+<span class="line"><span class="selector">h1</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">blue</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">font-size</span><span class="punctuation">:</span> <span class="value">32px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">text-align</span><span class="punctuation">:</span> <span class="value">center</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong style="color: #fff;">Selector:</strong> What element to style (e.g., h1)</li>
+                    <li><strong style="color: #fff;">Property:</strong> What aspect to change (e.g., color)</li>
+                    <li><strong style="color: #fff;">Value:</strong> The specific setting (e.g., blue)</li>
+                </ul>
+            </div>
+
+            <!-- 3 Ways to Add CSS -->
+            <div class="section">
+                <h2>🔗 Three Ways to Add CSS</h2>
+                
+                <h3>1. Inline CSS (Not Recommended)</h3>
+                <p style="color: var(--text-gray);">Applied directly to an element using the `style` attribute.</p>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="value">"color: red; font-size: 20px;"</span><span class="tag">&gt;</span><span class="text">This is red text.</span><span class="tag">&lt;/p&gt;</span></span>
+                </div>
+                <div class="tip-box">
+                    <p style="color: var(--text-gray);"><strong style="color: var(--primary-gold);">⚠️ Avoid inline CSS</strong> - It is hard to maintain and mixes content with presentation.</p>
+                </div>
+
+                <h3>2. Internal CSS (For Single Pages)</h3>
+                <p style="color: var(--text-gray);">Written inside a <code>&lt;style&gt;</code> tag within the <code>&lt;head&gt;</code> section of your HTML.</p>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;head&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;style&gt;</span></span>
+<span class="line indent-2"><span class="text">body {</span></span>
+<span class="line indent-3"><span class="text">background-color: #000;</span></span>
+<span class="line indent-2"><span class="text">}</span></span>
+<span class="line indent-2"><span class="text">h1 {</span></span>
+<span class="line indent-3"><span class="text">color: #D4AF37;</span></span>
+<span class="line indent-2"><span class="text">}</span></span>
+<span class="line indent-1"><span class="tag">&lt;/style&gt;</span></span>
+<span class="line"><span class="tag">&lt;/head&gt;</span></span>
+                </div>
+
+                <h3>3. External CSS (Best Practice) ✅</h3>
+                <p style="color: var(--text-gray);">Written in a separate `.css` file and linked to the HTML file.</p>
+                <div class="html-code">
+<span class="line"><span class="comment">&lt;!-- In your index.html file --&gt;</span></span>
+<span class="line"><span class="tag">&lt;head&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="value">"stylesheet"</span> <span class="attr">href</span>=<span class="value">"css/style.css"</span><span class="tag">&gt;</span></span>
+<span class="line"><span class="tag">&lt;/head&gt;</span></span>
+                </div>
+                <div class="css-code">
+<span class="line"><span class="comment">/* In your css/style.css file */</span></span>
+<span class="line"><span class="selector">body</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">font-family</span><span class="punctuation">:</span> <span class="value">Arial, sans-serif</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">0</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="selector">h1</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">#D4AF37</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Selectors -->
+            <div class="section">
+                <h2>🎯 CSS Selectors</h2>
+                
+                <h3>1. Element Selector</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">p</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">white</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+                <p style="color: var(--text-gray);">Selects all <code>&lt;p&gt;</code> elements on the page.</p>
+
+                <h3>2. Class Selector (.)</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">.highlight</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">background-color</span><span class="punctuation">:</span> <span class="value">yellow</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="value">"highlight"</span><span class="tag">&gt;</span><span class="text">This paragraph is highlighted.</span><span class="tag">&lt;/p&gt;</span></span>
+                </div>
+
+                <h3>3. ID Selector (#)</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">#header</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">background-color</span><span class="punctuation">:</span> <span class="value">#111</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">white</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="value">"header"</span><span class="tag">&gt;</span><span class="text">Header content</span><span class="tag">&lt;/div&gt;</span></span>
+                </div>
+                
+                <div class="tip-box">
+                    <p style="color: var(--text-gray);"><strong style="color: #fff;">💡 Classes vs IDs:</strong></p>
+                    <ul style="color: var(--text-gray); margin-left: 20px;">
+                        <li>Use <strong>classes (.)</strong> for styling multiple elements.</li>
+                        <li>Use <strong>IDs (#)</strong> for unique elements (only use an ID once per page).</li>
+                    </ul>
+                </div>
+
+                <h3>4. Multiple Selectors</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">h1, h2, h3</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">#D4AF37</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">font-family</span><span class="punctuation">:</span> <span class="value">Arial</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+
+                <h3>5. Descendant Selector</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">article p</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">line-height</span><span class="punctuation">:</span> <span class="value">1.6</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+                <p style="color: var(--text-gray);">Selects all <code>&lt;p&gt;</code> elements that live inside an <code>&lt;article&gt;</code>.</p>
+            </div>
+
+            <!-- Properties -->
+            <div class="section">
+                <h2>🎨 Common CSS Properties</h2>
+                
+                <h3>Text Styling</h3>
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Values</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td>red, #ff0000, rgb(255,0,0)</td>
+                        <td>color: #D4AF37;</td>
+                    </tr>
+                    <tr>
+                        <td>font-size</td>
+                        <td>16px, 1.5em, 100%</td>
+                        <td>font-size: 20px;</td>
+                    </tr>
+                    <tr>
+                        <td>font-family</td>
+                        <td>Arial, serif, sans-serif</td>
+                        <td>font-family: Arial;</td>
+                    </tr>
+                    <tr>
+                        <td>font-weight</td>
+                        <td>normal, bold, 700</td>
+                        <td>font-weight: bold;</td>
+                    </tr>
+                    <tr>
+                        <td>text-align</td>
+                        <td>left, center, right, justify</td>
+                        <td>text-align: center;</td>
+                    </tr>
+                    <tr>
+                        <td>text-decoration</td>
+                        <td>underline, none, line-through</td>
+                        <td>text-decoration: none;</td>
+                    </tr>
+                </table>
+
+                <h3>Background Properties</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">body</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">background-color</span><span class="punctuation">:</span> <span class="value">#000000</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">background-image</span><span class="punctuation">:</span> <span class="value">url('background.jpg')</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">background-size</span><span class="punctuation">:</span> <span class="value">cover</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">background-position</span><span class="punctuation">:</span> <span class="value">center</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+
+                <h3>Colors in CSS</h3>
+                <div class="css-example">
+                    <p style="margin-bottom:10px;"><span class="color-swatch" style="background: red;"></span> <strong>Named Colors:</strong> red</p>
+                    <p style="margin-bottom:10px;"><span class="color-swatch" style="background: #D4AF37;"></span> <strong>Hex Colors:</strong> #D4AF37</p>
+                    <p style="margin-bottom:10px;"><span class="color-swatch" style="background: rgb(52, 152, 219);"></span> <strong>RGB:</strong> rgb(52, 152, 219)</p>
+                    <p><span class="color-swatch" style="background: rgba(52, 152, 219, 0.5);"></span> <strong>RGBA (with transparency):</strong> rgba(52, 152, 219, 0.5)</p>
+                </div>
+
+                <h3>Spacing: Margin and Padding</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span>        <span class="comment">/* Space OUTSIDE element */</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">15px</span><span class="punctuation">;</span>       <span class="comment">/* Space INSIDE element */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Individual sides */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin-top</span><span class="punctuation">:</span> <span class="value">10px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin-right</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin-bottom</span><span class="punctuation">:</span> <span class="value">10px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">margin-left</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Shorthand */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">10px 20px</span><span class="punctuation">;</span>           <span class="comment">/* top/bottom left/right */</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">10px 20px 15px 25px</span><span class="punctuation">;</span> <span class="comment">/* top right bottom left */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+
+                <h3>Borders</h3>
+                <div class="css-code">
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">border</span><span class="punctuation">:</span> <span class="value">2px solid #D4AF37</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">10px</span><span class="punctuation">;</span>        <span class="comment">/* Rounded corners */</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Individual properties */</span></span>
+<span class="line"><span class="selector">div</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">border-width</span><span class="punctuation">:</span> <span class="value">3px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border-style</span><span class="punctuation">:</span> <span class="value">dashed</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border-color</span><span class="punctuation">:</span> <span class="value">#fff</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- DevTools -->
+            <div class="section">
+                <h2>🛠️ Chrome DevTools for CSS</h2>
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">How to Use DevTools:</h3>
+                    <ol>
+                        <li>Right-click on any element on this webpage → Click <strong>"Inspect"</strong></li>
+                        <li>Or press <strong>F12</strong> or <strong>Ctrl+Shift+I</strong></li>
+                        <li>Select the Elements tab</li>
+                        <li>View and edit CSS in real-time in the "Styles" panel on the right.</li>
+                    </ol>
+                    <p style="color: var(--text-gray); margin-top: 10px;"><strong>💡 Pro Tip:</strong> Changes in DevTools are temporary! If you refresh, they vanish. Always copy the changes back to your VS Code <code>style.css</code> file.</p>
+                </div>
+            </div>
+
+            <!-- Activity -->
+            <div class="section">
+                <h2>💻 Main Activity: Style Your News Page</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Create style.css and link it</h3>
+                    <p style="color: var(--text-gray);">Inside your <code>web_basics</code> folder, create a new folder named <code>css</code>. Inside that, create a file named <code>style.css</code>.</p>
+                </div>
+
+                <h3>Step 1: Link CSS to HTML</h3>
+                <p style="color: var(--text-gray);">Add this in the <code>&lt;head&gt;</code> of your `news-article.html`:</p>
+                <div class="html-code">
+<span class="line"><span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="value">"stylesheet"</span> <span class="attr">href</span>=<span class="value">"css/style.css"</span><span class="tag">&gt;</span></span>
+                </div>
+
+                <h3>Step 2: Add this CSS to style.css</h3>
+                <div class="css-code">
+<span class="line"><span class="comment">/* Reset default styles */</span></span>
+<span class="line"><span class="selector">*</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">0</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">0</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">box-sizing</span><span class="punctuation">:</span> <span class="value">border-box</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Body styling */</span></span>
+<span class="line"><span class="selector">body</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">font-family</span><span class="punctuation">:</span> <span class="value">'Segoe UI', Arial, sans-serif</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">line-height</span><span class="punctuation">:</span> <span class="value">1.6</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">#fff</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">background-color</span><span class="punctuation">:</span> <span class="value">#000</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Header styling */</span></span>
+<span class="line"><span class="selector">header</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">background</span><span class="punctuation">:</span> <span class="value">#111</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">#D4AF37</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">20px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">text-align</span><span class="punctuation">:</span> <span class="value">center</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border-bottom</span><span class="punctuation">:</span> <span class="value">2px solid #333</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Navigation */</span></span>
+<span class="line"><span class="selector">nav</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">background-color</span><span class="punctuation">:</span> <span class="value">#1a1a1a</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">15px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="selector">nav a</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">white</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">text-decoration</span><span class="punctuation">:</span> <span class="value">none</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">10px 20px</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">transition</span><span class="punctuation">:</span> <span class="value">0.3s</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="selector">nav a:hover</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">color</span><span class="punctuation">:</span> <span class="value">#D4AF37</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Images */</span></span>
+<span class="line"><span class="selector">figure img</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">width</span><span class="punctuation">:</span> <span class="value">100%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">8px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                </div>
+            </div>
+
+            <!-- Exercises -->
+            <div class="section">
+                <h2>✏️ Practice Exercises</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 1: Experiment with Colors</h3>
+                    <p style="color: var(--text-gray);">Change the following in your CSS:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Try different background colors for the header</li>
+                        <li>Change the text colors using hex codes</li>
+                        <li>Use `rgba()` for transparent effects</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 2: Typography</h3>
+                    <ul style="color: var(--text-gray);">
+                        <li>Change font families (try: 'Georgia', 'Courier New', 'Times New Roman')</li>
+                        <li>Adjust font sizes using `px` or `em`</li>
+                        <li>Add `letter-spacing` and `line-height`</li>
+                    </ul>
+                </div>
+
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Exercise 3: Style Your Profile Page</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 10px;">Go back to `profile.html` from Week 1 and connect it to your new CSS file.</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Style headings with colors</li>
+                        <li>Add borders and padding to sections</li>
+                        <li>Make your profile image circular using the code below:</li>
+                    </ul>
+                    <div class="css-code" style="margin-top: 15px;">
+<span class="line"><span class="comment">/* Circular image */</span></span>
+<span class="line"><span class="selector">img</span> <span class="punctuation">{</span></span>
+<span class="line indent-1"><span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">50%</span><span class="punctuation">;</span></span>
+<span class="line indent-1"><span class="property">border</span><span class="punctuation">:</span> <span class="value">3px solid #D4AF37</span><span class="punctuation">;</span></span>
+<span class="line"><span class="punctuation">}</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cheat Sheet -->
+            <div class="section">
+                <h2>📝 CSS Cheat Sheet</h2>
+                <div class="info-box">
+                    <h4 style="color: var(--primary-gold); margin-bottom: 10px;">Common Properties Quick Reference:</h4>
+                    <div class="css-code">
+<span class="line"><span class="comment">/* Text */</span></span>
+<span class="line"><span class="property">color</span><span class="punctuation">:</span> <span class="value">blue</span><span class="punctuation">;</span></span>
+<span class="line"><span class="property">font-size</span><span class="punctuation">:</span> <span class="value">16px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="property">font-weight</span><span class="punctuation">:</span> <span class="value">bold</span><span class="punctuation">;</span></span>
+<span class="line"><span class="property">text-align</span><span class="punctuation">:</span> <span class="value">center</span><span class="punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* Spacing & Borders */</span></span>
+<span class="line"><span class="property">margin</span><span class="punctuation">:</span> <span class="value">10px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="property">padding</span><span class="punctuation">:</span> <span class="value">15px</span><span class="punctuation">;</span></span>
+<span class="line"><span class="property">border</span><span class="punctuation">:</span> <span class="value">1px solid #fff</span><span class="punctuation">;</span></span>
+<span class="line"><span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">5px</span><span class="punctuation">;</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deliverable -->
+            <div class="section">
+                <h2>✅ Today's Deliverable</h2>
+                <div class="activity-box">
+                    <ul class="checklist">
+                        <li><code>style.css</code> file containing all your new styles</li>
+                        <li>Styled <code>news-article.html</code> page</li>
+                        <li>Styled <code>profile.html</code> page</li>
+                        <li>Push everything to GitHub with the commit message: "Added initial CSS styling"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="lesson-nav-buttons">
+                <a href="day4-semantic.html" class="btn-outline">← Previous: Day 4</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day6-box-model.html" class="btn-gold">Next: Day 6 - Box Model →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 2 - Day 2: Introduction to CSS</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
