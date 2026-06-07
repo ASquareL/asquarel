@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 Day 2: Operators & Math | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        /* --- BULLETPROOF BLACK & GOLD THEME ENFORCEMENT --- */
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; 
+            background: var(--card-bg) !important;
+            color: var(--text-white); 
+            border-radius: 15px; 
+            margin-top: 20px;
+            border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-right: 1px solid #222;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .info-box h4, .warning-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ol, .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #151515; }
+        th, td { border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-gray); }
+        th { background: #000; color: var(--primary-gold); font-weight: bold; }
+
+        .js-code {
+            background: #000;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+            color: var(--text-white);
+        }
+        .js-code .keyword { color: #c678dd; } 
+        .js-code .string { color: #ce9178; }  
+        .js-code .number { color: #d19a66; }  
+        .js-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 14</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 5 - Day 2: Operators & Math</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Processing Logic & Calculations</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Master arithmetic operators for building calculators and algorithms.</li>
+                    <li>Understand assignment operators to update variable values dynamically.</li>
+                    <li>Learn strict comparison operators to check if data matches.</li>
+                    <li>Utilize the built-in JavaScript <code>Math</code> object for complex calculations.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🧮 Arithmetic Operators</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Computers are essentially just giant calculators. Arithmetic operators allow JavaScript to process numbers, which is essential for building things like shopping carts or trading dashboards.</p>
+                </div>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Example: Calculating profit from a Solana DEX trade</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">buyPrice</span> <span class="operator">=</span> <span class="number">120.50</span>;</span>
+<span class="line"><span class="keyword">const</span> <span class="variable">sellPrice</span> <span class="operator">=</span> <span class="number">145.00</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">grossProfit</span> <span class="operator">=</span> <span class="variable">sellPrice</span> <span class="operator">-</span> <span class="variable">buyPrice</span>;    <span class="comment">// Subtraction (-)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">networkFee</span> <span class="operator">=</span> <span class="variable">grossProfit</span> <span class="operator">*</span> <span class="number">0.01</span>;       <span class="comment">// Multiplication (*)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">netProfit</span> <span class="operator">=</span> <span class="variable">grossProfit</span> <span class="operator">-</span> <span class="variable">networkFee</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="string">`Your Net Profit is: $${netProfit}`</span>);</span>
+                </div>
+
+                <table>
+                    <tr><th>Operator</th><th>Name</th><th>Example</th><th>Result</th></tr>
+                    <tr><td><code>+</code></td><td>Addition</td><td><code>10 + 5</code></td><td>15</td></tr>
+                    <tr><td><code>-</code></td><td>Subtraction</td><td><code>10 - 5</code></td><td>5</td></tr>
+                    <tr><td><code>*</code></td><td>Multiplication</td><td><code>10 * 5</code></td><td>50</td></tr>
+                    <tr><td><code>/</code></td><td>Division</td><td><code>10 / 5</code></td><td>2</td></tr>
+                    <tr><td><code>%</code></td><td>Modulus (Remainder)</td><td><code>10 % 3</code></td><td>1 (Because 3 fits into 10 three times, with 1 left over)</td></tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>🔄 Assignment Operators</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">When building apps, you often need to update a variable's value based on its *current* value (like adding points to a score). You must use <code>let</code> for these variables, as <code>const</code> cannot be changed.</p>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">let</span> <span class="variable">userPoints</span> <span class="operator">=</span> <span class="number">100</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// The long way:</span></span>
+<span class="line"><span class="variable">userPoints</span> <span class="operator">=</span> <span class="variable">userPoints</span> <span class="operator">+</span> <span class="number">50</span>;  <span class="comment">// Now 150</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">// The professional, shorthand way (Addition Assignment):</span></span>
+<span class="line"><span class="variable">userPoints</span> <span class="operator">+=</span> <span class="number">50</span>;              <span class="comment">// Adds 50. Now 200.</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Incrementing by exactly 1 (Very common in loops):</span></span>
+<span class="line"><span class="variable">userPoints</span><span class="operator">++</span>;                  <span class="comment">// Now 201</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>⚖️ Comparison Operators</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Comparison operators compare two values and ALWAYS return a Boolean (<code>true</code> or <code>false</code>). This is how apps make decisions.</p>
+
+                <div class="warning-box">
+                    <h4 style="color: #ef4444;">Strict Equality vs Loose Equality</h4>
+                    <p style="color: var(--text-gray);">In JavaScript, never use <code>==</code>. It is a loose check and can cause massive bugs (it thinks the number 5 and the string "5" are the same). Always use <code>===</code>, which strictly checks that both the value AND the data type match.</p>
+                </div>
+
+                <div class="js-code">
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="number">10</span> <span class="operator">></span> <span class="number">5</span>);       <span class="comment">// true (Greater than)</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="number">10</span> <span class="operator"><=</span> <span class="number">20</span>);      <span class="comment">// true (Less than or equal to)</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Equality Checks</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">databaseCode</span> <span class="operator">=</span> <span class="number">1234</span>;</span>
+<span class="line"><span class="keyword">const</span> <span class="variable">userInput</span> <span class="operator">=</span> <span class="string">"1234"</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">databaseCode</span> <span class="operator">===</span> <span class="variable">userInput</span>); <span class="comment">// false (One is a Number, one is a String!)</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">databaseCode</span> <span class="operator">!==</span> <span class="variable">userInput</span>); <span class="comment">// true (Strictly NOT equal)</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🧠 The JavaScript Math Object</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">For complex calculations, JS has a built-in library called <code>Math</code>.</p>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Rounding a number</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">Math</span>.<span class="function">round</span>(<span class="number">4.6</span>));  <span class="comment">// 5</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">Math</span>.<span class="function">floor</span>(<span class="number">4.9</span>));  <span class="comment">// 4 (Always rounds down to the floor)</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">Math</span>.<span class="function">ceil</span>(<span class="number">4.1</span>));   <span class="comment">// 5 (Always rounds up to the ceiling)</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Generating Random Numbers (Crucial for game dev or unique IDs)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">randomDec</span> <span class="operator">=</span> <span class="variable">Math</span>.<span class="function">random</span>(); <span class="comment">// Gives a random decimal between 0 and 0.99</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">randomNum</span> <span class="operator">=</span> <span class="variable">Math</span>.<span class="function">floor</span>(<span class="variable">Math</span>.<span class="function">random</span>() <span class="operator">*</span> <span class="number">10</span>) <span class="operator">+</span> <span class="number">1</span>; <span class="comment">// Random whole number from 1 to 10</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: Terminal Calculator</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Build an E-commerce Cart Calculator</h3>
+                    <p style="color: var(--text-gray);">Create an <code>app.js</code> file. Write a script that calculates the final checkout price for a user buying a laptop and a mouse, applying a 10% tax rate. Use template literals to print a receipt to the console.</p>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="day13-js-variables.html" class="btn-outline">← Previous: Day 13</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day15-control-flow.html" class="btn-gold">Next: Day 15 - Control Flow →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 5 - Day 2: Operators & Math</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

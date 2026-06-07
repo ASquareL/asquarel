@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 Day 3: Control Flow | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 8px; border-right: 1px solid #222; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        .js-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .js-code .keyword { color: #c678dd; } 
+        .js-code .string { color: #ce9178; }  
+        .js-code .number { color: #d19a66; }  
+        .js-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 15</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 5 - Day 3: Control Flow</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: If/Else Logic & Making Decisions</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand Control Flow (how code makes decisions).</li>
+                    <li>Write <code>if</code>, <code>else</code>, and <code>else if</code> statements.</li>
+                    <li>Combine conditions using Logical Operators (AND, OR, NOT).</li>
+                    <li>Build a security access checker script.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🧠 What is Control Flow?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">By default, JavaScript reads your code from top to bottom, line by line. <strong>Control Flow</strong> allows you to hijack that process. You can tell the computer: "If this specific condition is true, run this block of code. Otherwise, skip it and run a different block of code."</p>
+                </div>
+
+                <h3>The If Statement</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">The code inside the curly braces <code>{}</code> only executes if the condition inside the parenthesis <code>()</code> evaluates to <code>true</code>.</p>
+                
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">userAge</span> <span class="operator">=</span> <span class="number">20</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="keyword">if</span> (<span class="variable">userAge</span> <span class="operator">>=</span> <span class="number">18</span>) {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Access Granted. You may enter the site."</span>);</span>
+<span class="line">}</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔀 If... Else</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">What if the condition is false? We use <code>else</code> to provide a backup plan.</p>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Example: Omniiera Dashboard Security Check</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">isSubscribed</span> <span class="operator">=</span> <span class="keyword">false</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="keyword">if</span> (<span class="variable">isSubscribed</span> <span class="operator">===</span> <span class="keyword">true</span>) {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Welcome to your Omniiera Dashboard."</span>);</span>
+<span class="line">} <span class="keyword">else</span> {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Please upgrade your plan to access this feature."</span>);</span>
+<span class="line">}</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🚦 Else If (Multiple Conditions)</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">If you have more than two possible outcomes, chain them together using <code>else if</code>.</p>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">batteryLevel</span> <span class="operator">=</span> <span class="number">15</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="keyword">if</span> (<span class="variable">batteryLevel</span> <span class="operator">></span> <span class="number">50</span>) {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Battery is healthy."</span>);</span>
+<span class="line">} <span class="keyword">else if</span> (<span class="variable">batteryLevel</span> <span class="operator">></span> <span class="number">20</span>) {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Battery is getting low."</span>);</span>
+<span class="line">} <span class="keyword">else</span> {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"CRITICAL: Please plug in charger immediately!"</span>);</span>
+<span class="line">}</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔗 Logical Operators (AND, OR, NOT)</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Sometimes a decision requires multiple things to be true at the same time. This is where Logical Operators come in.</p>
+                
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong>AND (<code>&&</code>)</strong>: BOTH sides must be true.</li>
+                    <li><strong>OR (<code>||</code>)</strong>: ONLY ONE side needs to be true.</li>
+                    <li><strong>NOT (<code>!</code>)</strong>: Flips the boolean (turns true to false).</li>
+                </ul>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">hasEmail</span> <span class="operator">=</span> <span class="keyword">true</span>;</span>
+<span class="line"><span class="keyword">const</span> <span class="variable">hasPassword</span> <span class="operator">=</span> <span class="keyword">true</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// The AND Operator (&&)</span></span>
+<span class="line"><span class="keyword">if</span> (<span class="variable">hasEmail</span> <span class="operator">&&</span> <span class="variable">hasPassword</span>) {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Login successful!"</span>);</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// The OR Operator (||)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">isWeekend</span> <span class="operator">=</span> <span class="keyword">false</span>;</span>
+<span class="line"><span class="keyword">const</span> <span class="variable">isHoliday</span> <span class="operator">=</span> <span class="keyword">true</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="keyword">if</span> (<span class="variable">isWeekend</span> <span class="operator">||</span> <span class="variable">isHoliday</span>) {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"The academy is closed today."</span>);</span>
+<span class="line">}</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: Grade Calculator</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Build an Exam Evaluator</h3>
+                    <p style="color: var(--text-gray);">Write a script that takes a variable called <code>examScore</code> (a number from 0 to 100). Use <code>if/else if/else</code> logic to log the following to the console:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>If score is 90 or above: "A Grade"</li>
+                        <li>If score is 80 to 89: "B Grade"</li>
+                        <li>If score is 70 to 79: "C Grade"</li>
+                        <li>If score is below 70: "Fail - Must Retake"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="day14-js-operators.html" class="btn-outline">← Previous: Day 14</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day16-js-functions.html" class="btn-gold">Next: Day 16 - Functions & Scope →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 5 - Day 3: Control Flow</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 Day 1: The DOM | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 8px; border-right: 1px solid #222; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        .js-code, .html-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .js-code .keyword { color: #c678dd; } 
+        .js-code .string { color: #ce9178; }  
+        .js-code .number { color: #d19a66; }  
+        .js-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 19</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 7 - Day 1: The DOM</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Bridging HTML and JavaScript</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand what the Document Object Model (DOM) is.</li>
+                    <li>Learn how JavaScript reads HTML as a structured "Tree".</li>
+                    <li>Select specific HTML elements using JavaScript selectors.</li>
+                    <li>Dynamically change text content and CSS styles using code.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🌐 What is the DOM?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">When a web browser loads an HTML file, it translates that file into a massive JavaScript Object called the <strong>Document Object Model (DOM)</strong>. This creates a "bridge." Because the HTML is now an object, JavaScript can reach into it, grab specific elements, and change them in real-time without refreshing the page.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Selecting Elements</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Before you can change an element, you have to find it. JavaScript provides several built-in methods to target HTML elements.</p>
+
+                <h3>1. Select by ID (The Old Way)</h3>
+                <div class="js-code">
+<span class="line"><span class="comment">// Grabs the single element with id="main-title"</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">header</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">getElementById</span>(<span class="string">'main-title'</span>);</span>
+                </div>
+
+                <h3>2. querySelector (The Modern Professional Way)</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;"><code>querySelector</code> is incredibly powerful because it allows you to select elements using the exact same syntax you use in CSS.</p>
+                <div class="js-code">
+<span class="line"><span class="comment">// Select an ID (use #)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">heroText</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#hero-text'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Select a Class (use .) - This only grabs the FIRST one it finds</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">firstButton</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'.btn-gold'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Select an Element type</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">firstParagraph</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'p'</span>);</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>✨ Manipulating the DOM</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Once you have selected an element and saved it to a variable, you have total control over it.</p>
+
+                <h3>Changing Text</h3>
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">welcomeMessage</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#welcome'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Change the text inside the element</span></span>
+<span class="line"><span class="variable">welcomeMessage</span>.<span class="property">textContent</span> <span class="operator">=</span> <span class="string">"Welcome to A Square L Innovate!"</span>;</span>
+                </div>
+
+                <h3>Changing CSS Styles</h3>
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">statusBox</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'.status'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// You can change ANY CSS property. </span></span>
+<span class="line"><span class="comment">// Note: CSS properties with dashes (background-color) become camelCase in JS!</span></span>
+<span class="line"><span class="variable">statusBox</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> <span class="operator">=</span> <span class="string">"#D4AF37"</span>;</span>
+<span class="line"><span class="variable">statusBox</span>.<span class="property">style</span>.<span class="property">color</span> <span class="operator">=</span> <span class="string">"#000000"</span>;</span>
+<span class="line"><span class="variable">statusBox</span>.<span class="property">style</span>.<span class="property">fontSize</span> <span class="operator">=</span> <span class="string">"24px"</span>;</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: Dynamic Styling</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: The Status Updater</h3>
+                    <p style="color: var(--text-gray);">Create an <code>index.html</code> file with a single <code>&lt;div id="system-status"&gt;System Offline&lt;/div&gt;</code>.</p>
+                    <p style="color: var(--text-gray);">Create an <code>app.js</code> file and write a script that does the following:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>Selects the <code>#system-status</code> div.</li>
+                        <li>Changes the text content to "System Online".</li>
+                        <li>Changes the background color to green.</li>
+                        <li>Changes the text color to white.</li>
+                        <li>Adds a 20px padding.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="../week6/day18-js-objects.html" class="btn-outline">← Previous: Day 18</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day20-js-events.html" class="btn-gold">Next: Day 20 - Events →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 7 - Day 1: The DOM</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 Day 1: Functions & Scope | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 8px; border-right: 1px solid #222; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        .js-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .js-code .keyword { color: #c678dd; } 
+        .js-code .string { color: #ce9178; }  
+        .js-code .number { color: #d19a66; }  
+        .js-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 16</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 6 - Day 1: Functions & Scope</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Reusable Code & Architecture</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the DRY principle (Don't Repeat Yourself).</li>
+                    <li>Declare and invoke JavaScript functions.</li>
+                    <li>Pass data into functions using Parameters and Arguments.</li>
+                    <li>Output data from functions using Return statements.</li>
+                    <li>Understand Local vs. Global Variable Scope.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>⚙️ What is a Function?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">A function is a reusable block of code designed to perform a single specific task. Instead of writing the same 10 lines of code every time a user clicks a "Buy" button, you write it once inside a function, and then "call" that function whenever you need it.</p>
+                </div>
+
+                <h3>Declaring and Calling a Function</h3>
+                <div class="js-code">
+<span class="line"><span class="comment">// 1. Declaring the function (Building the machine)</span></span>
+<span class="line"><span class="keyword">function</span> <span class="function">greetUser</span>() {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Welcome back to A Square L Academy!"</span>);</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// 2. Calling the function (Turning the machine on)</span></span>
+<span class="line"><span class="function">greetUser</span>();</span>
+<span class="line"><span class="function">greetUser</span>(); <span class="comment">// You can run it as many times as you want!</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📥 Parameters and Arguments</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Functions become powerful when they can accept dynamic data. We do this using parameters (the placeholders) and arguments (the actual data).</p>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// 'firstName' is the Parameter (the placeholder)</span></span>
+<span class="line"><span class="keyword">function</span> <span class="function">sendEmail</span>(<span class="variable">firstName</span>) {</span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">`Sending welcome email to ${firstName}...`</span>);</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// "Ashiru" and "Amina" are the Arguments (the real data)</span></span>
+<span class="line"><span class="function">sendEmail</span>(<span class="string">"Ashiru"</span>);</span>
+<span class="line"><span class="function">sendEmail</span>(<span class="string">"Amina"</span>);</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📤 The Return Statement</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;"><code>console.log()</code> just prints text to the screen for developers to see. If you want a function to calculate a value and give it back to the program to be used later, you MUST use <code>return</code>.</p>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">function</span> <span class="function">calculateTax</span>(<span class="variable">price</span>) {</span>
+<span class="line indent-1"><span class="keyword">const</span> <span class="variable">tax</span> <span class="operator">=</span> <span class="variable">price</span> <span class="operator">*</span> <span class="number">0.075</span>;  <span class="comment">// 7.5% Tax</span></span>
+<span class="line indent-1"><span class="keyword">return</span> <span class="variable">tax</span>;                 <span class="comment">// Hands the data back to the app</span></span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// We can save the returned data into a new variable!</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">laptopTax</span> <span class="operator">=</span> <span class="function">calculateTax</span>(<span class="number">1000</span>);</span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="string">`The tax on the laptop is $${laptopTax}`</span>);</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔒 Variable Scope (Global vs. Local)</h2>
+                <div class="warning-box">
+                    <h4 style="color: #ef4444;">The Vegas Rule of JavaScript</h4>
+                    <p style="color: var(--text-gray);">"What happens inside a function, stays inside the function." Variables created inside a function (Local Scope) cannot be accessed from outside.</p>
+                </div>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">globalName</span> <span class="operator">=</span> <span class="string">"CEO"</span>; <span class="comment">// Global Scope: Everyone can see this.</span></span>
+<span class="line"></span>
+<span class="line"><span class="keyword">function</span> <span class="function">secureSystem</span>() {</span>
+<span class="line indent-1"><span class="keyword">const</span> <span class="variable">secretPassword</span> <span class="operator">=</span> <span class="string">"12345"</span>; <span class="comment">// Local Scope: Trapped inside!</span></span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">globalName</span>); <span class="comment">// Works perfectly</span></span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">secretPassword</span>); <span class="comment">// ERROR! The app crashes. It cannot see inside the function.</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: Transaction Function</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Build a POS Calculator</h3>
+                    <p style="color: var(--text-gray);">Create an <code>app.js</code> file. Write a function called <code>processPOS()</code> that takes two parameters: <code>amount</code> and <code>feePercentage</code>. The function should calculate the total fee, subtract it from the amount to get the final payout, and <strong>return</strong> the payout amount. Call the function twice with different numbers and log the results.</p>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="../week5/day15-control-flow.html" class="btn-outline">← Previous: Day 15</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day17-js-loops.html" class="btn-gold">Next: Day 17 - Arrays & Loops →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 6 - Day 1: Functions & Scope</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

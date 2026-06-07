@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 Day 1: LocalStorage | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+            --success-green: #10b981;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 8px; border-right: 1px solid #222; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .warning-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        .js-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .js-code .keyword { color: #c678dd; } 
+        .js-code .string { color: #ce9178; }  
+        .js-code .number { color: #d19a66; }  
+        .js-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 22</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 8 - Day 1: LocalStorage</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Data Persistence & Browser Memory</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the concept of Data Persistence in modern web applications.</li>
+                    <li>Save, retrieve, and delete data using the browser's <code>localStorage</code> API.</li>
+                    <li>Combine <code>JSON.stringify()</code> with LocalStorage to save complex Arrays and Objects.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>💾 The Refresh Problem</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Think about a financial dashboard. When a business owner logs into their account, their transaction history is there. If they refresh the page, the data doesn't disappear. Up until now, all the JavaScript variables we have created are erased the moment the browser is refreshed. To build a real application, we must persist (save) the data.</p>
+                </div>
+                <p style="color: var(--text-gray);">Before we learn how to connect to massive external databases like Firebase or SQL, we start with the database built right into the user's browser: <strong>LocalStorage</strong>.</p>
+            </div>
+
+            <div class="section">
+                <h2>🛠️ The 3 Core Commands</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">LocalStorage acts like a digital filing cabinet. You save files (values) into folders (keys).</p>
+
+                <h3>1. Saving Data (setItem)</h3>
+                <div class="js-code">
+<span class="line"><span class="comment">// Syntax: localStorage.setItem('key', 'value');</span></span>
+<span class="line"><span class="variable">localStorage</span>.<span class="function">setItem</span>(<span class="string">'themeMode'</span>, <span class="string">'dark'</span>);</span>
+<span class="line"><span class="variable">localStorage</span>.<span class="function">setItem</span>(<span class="string">'username'</span>, <span class="string">'Ashiru'</span>);</span>
+                </div>
+
+                <h3>2. Retrieving Data (getItem)</h3>
+                <div class="js-code">
+<span class="line"><span class="comment">// To get the data back, ask for the specific key</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">savedName</span> <span class="operator">=</span> <span class="variable">localStorage</span>.<span class="function">getItem</span>(<span class="string">'username'</span>);</span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="string">`Welcome back, ${savedName}!`</span>);</span>
+                </div>
+
+                <h3>3. Deleting Data (removeItem)</h3>
+                <div class="js-code">
+<span class="line"><span class="comment">// When a user logs out, you must clear their data</span></span>
+<span class="line"><span class="variable">localStorage</span>.<span class="function">removeItem</span>(<span class="string">'username'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Or, clear absolutely everything at once:</span></span>
+<span class="line"><span class="variable">localStorage</span>.<span class="function">clear</span>();</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🧩 Storing Complex Data (The JSON Trick)</h2>
+                <div class="warning-box">
+                    <h4 style="color: #ef4444;">Crucial Limitation</h4>
+                    <p style="color: var(--text-gray);">LocalStorage can <strong>only store text strings</strong>. If you try to save a JavaScript Array or Object directly, the browser will break it. You must convert it to a JSON string first!</p>
+                </div>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">userTasks</span> <span class="operator">=</span> [<span class="string">"Learn DOM"</span>, <span class="string">"Build App"</span>, <span class="string">"Deploy"</span>];</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// ✅ CORRECT WAY TO SAVE: Convert to JSON String first</span></span>
+<span class="line"><span class="variable">localStorage</span>.<span class="function">setItem</span>(<span class="string">'tasks'</span>, <span class="variable">JSON</span>.<span class="function">stringify</span>(<span class="variable">userTasks</span>));</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// ✅ CORRECT WAY TO RETRIEVE: Parse it back into a live Array</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">retrievedData</span> <span class="operator">=</span> <span class="variable">localStorage</span>.<span class="function">getItem</span>(<span class="string">'tasks'</span>);</span>
+<span class="line"><span class="keyword">const</span> <span class="variable">liveArray</span> <span class="operator">=</span> <span class="variable">JSON</span>.<span class="function">parse</span>(<span class="variable">retrievedData</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">liveArray</span>[<span class="number">0</span>]); <span class="comment">// Prints: "Learn DOM"</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: The Name Saver</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Persistent Greeting</h3>
+                    <p style="color: var(--text-gray);">Create an HTML file with a text input, a "Save Name" button, and an empty <code>&lt;h2 id="greeting"&gt;&lt;/h2&gt;</code> tag.</p>
+                    <p style="color: var(--text-gray);">In your JavaScript:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>When the page loads, check if a name exists in LocalStorage. If it does, update the <code>h2</code> to say "Welcome back, [Name]".</li>
+                        <li>Add an event listener to the button. When clicked, grab the value from the input, save it to LocalStorage, and update the <code>h2</code> immediately.</li>
+                        <li><em>Test it by typing your name, hitting save, and then refreshing the page! Your name should stay on the screen.</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="../week7/day21-js-validation.html" class="btn-outline">← Previous: Day 21</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day23-building-ui.html" class="btn-gold">Next: Day 23 - Building the UI →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 8 - Day 1: LocalStorage</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

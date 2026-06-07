@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 Day 3: Form Validation | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+            --error-red: #ef4444;
+            --success-green: #10b981;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 8px; border-right: 1px solid #222; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: var(--error-red); }
+
+        .activity-box h4, .warning-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        .js-code, .html-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .js-code .keyword, .html-code .keyword { color: #c678dd; } 
+        .js-code .string, .html-code .value { color: #ce9178; }  
+        .js-code .number { color: #d19a66; }  
+        .js-code .comment, .html-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+        .html-code .tag { color: var(--primary-gold); }
+        .html-code .attr { color: #56b6c2; }
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 21</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 7 - Day 3: Form Validation</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Securing User Input</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the golden rule: Never trust user input.</li>
+                    <li>Learn how to intercept a form submission using <code>e.preventDefault()</code>.</li>
+                    <li>Extract and evaluate values from input fields.</li>
+                    <li>Dynamically display error messages in the DOM based on conditional logic.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🛡️ Why Validate Forms?</h2>
+                <div class="warning-box">
+                    <h4 style="color: var(--error-red);">Data Integrity is Everything</h4>
+                    <p style="color: var(--text-gray);">If you are building a registration portal or a checkout system, you cannot allow users to submit empty fields, passwords that are too short, or text where a phone number should be. Validation ensures the data is clean before it ever reaches your database.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🛑 Stopping the Default Behavior</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">By default, when you click a "Submit" button inside an HTML form, the browser instantly refreshes the page and tries to send the data to a server. We have to stop this using JavaScript so we can check the data first.</p>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">loginForm</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#login-form'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// We listen for the 'submit' event on the FORM, not the button!</span></span>
+<span class="line"><span class="variable">loginForm</span>.<span class="function">addEventListener</span>(<span class="string">'submit'</span>, <span class="keyword">function</span>(<span class="variable">e</span>) {</span>
+<span class="line indent-1"><span class="comment">// CRITICAL: This line stops the page from refreshing</span></span>
+<span class="line indent-1"><span class="variable">e</span>.<span class="function">preventDefault</span>();</span>
+<span class="line"></span>
+<span class="line indent-1"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Form intercepted! Now we check the data..."</span>);</span>
+<span class="line">});</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔍 Extracting the Input Values</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Once we freeze the form, we need to grab what the user actually typed. We do this using the <code>.value</code> property.</p>
+
+                <div class="js-code">
+<span class="line"><span class="variable">loginForm</span>.<span class="function">addEventListener</span>(<span class="string">'submit'</span>, <span class="keyword">function</span>(<span class="variable">e</span>) {</span>
+<span class="line indent-1"><span class="variable">e</span>.<span class="function">preventDefault</span>();</span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">// Select the input field, and immediately grab its value</span></span>
+<span class="line indent-1"><span class="keyword">const</span> <span class="variable">emailInput</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#email'</span>).<span class="property">value</span>;</span>
+<span class="line indent-1"><span class="keyword">const</span> <span class="variable">passwordInput</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#password'</span>).<span class="property">value</span>;</span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">// Checking if the fields are empty</span></span>
+<span class="line indent-1"><span class="keyword">if</span> (<span class="variable">emailInput</span> <span class="operator">===</span> <span class="string">""</span> <span class="operator">||</span> <span class="variable">passwordInput</span> <span class="operator">===</span> <span class="string">""</span>) {</span>
+<span class="line indent-2"><span class="function">alert</span>(<span class="string">"Please fill in all fields!"</span>);</span>
+<span class="line indent-1">} <span class="keyword">else</span> {</span>
+<span class="line indent-2"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"Data looks good. Ready to send to server."</span>);</span>
+<span class="line indent-1">}</span>
+<span class="line">});</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎨 Displaying Professional Errors</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;"><code>alert()</code> popups look unprofessional. A modern application injects the error message directly into the DOM right below the input field.</p>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">errorDisplay</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#error-message'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Inside your validation if-statement:</span></span>
+<span class="line"><span class="keyword">if</span> (<span class="variable">passwordInput</span>.<span class="property">length</span> <span class="operator"><</span> <span class="number">6</span>) {</span>
+<span class="line indent-1"><span class="variable">errorDisplay</span>.<span class="property">textContent</span> <span class="operator">=</span> <span class="string">"Password must be at least 6 characters."</span>;</span>
+<span class="line indent-1"><span class="variable">errorDisplay</span>.<span class="property">style</span>.<span class="property">color</span> <span class="operator">=</span> <span class="string">"red"</span>;</span>
+<span class="line">}</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: The Security Gate</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Build a Secure Registration Form</h3>
+                    <p style="color: var(--text-gray);">Create an <code>index.html</code> file with a form containing a Username input, a Password input, a Submit button, and an empty <code>&lt;p id="feedback"&gt;&lt;/p&gt;</code> tag.</p>
+                    <p style="color: var(--text-gray);">Write an <code>app.js</code> script that intercepts the submission and runs these checks:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>If the Username is empty, display "Username is required" in red text in the feedback tag.</li>
+                        <li>If the Password is less than 8 characters, display "Password is too weak" in red text.</li>
+                        <li>If both pass, display "Registration Successful!" in green text, and clear the input fields.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="day20-js-events.html" class="btn-outline">← Previous: Day 20</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day22-app-capstone.html" class="btn-gold">Next: Week 8 Capstone →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 7 - Day 3: Form Validation</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

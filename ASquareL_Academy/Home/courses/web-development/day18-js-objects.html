@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 Day 3: Objects & JSON | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 8px; border-right: 1px solid #222; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        .js-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .js-code .keyword { color: #c678dd; } 
+        .js-code .string { color: #ce9178; }  
+        .js-code .number { color: #d19a66; }  
+        .js-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+        .js-code .property { color: #e06c75; } 
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 18</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 6 - Day 3: Objects & JSON</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Structuring Complex Data Models</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand the difference between Arrays and Objects.</li>
+                    <li>Create JavaScript Objects using Key-Value pairs.</li>
+                    <li>Access and modify Object properties.</li>
+                    <li>Understand JSON (JavaScript Object Notation) and how APIs work.</li>
+                    <li>Combine Arrays and Objects for real-world data structures.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📦 What is a JavaScript Object?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">While an <strong>Array</strong> is good for a simple list (like a grocery list), an <strong>Object</strong> is used for describing a single complex entity with specific properties. Objects use curly braces <code>{}</code> and organize data in <strong>Key-Value pairs</strong>.</p>
+                </div>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Example: A User Profile Object</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">userProfile</span> <span class="operator">=</span> {</span>
+<span class="line indent-1"><span class="property">firstName</span>: <span class="string">"Ashiru"</span>,</span>
+<span class="line indent-1"><span class="property">lastName</span>: <span class="string">"Lawal"</span>,</span>
+<span class="line indent-1"><span class="property">role</span>: <span class="string">"Software Engineer"</span>,</span>
+<span class="line indent-1"><span class="property">isAdmin</span>: <span class="keyword">true</span>,</span>
+<span class="line indent-1"><span class="property">skills</span>: [<span class="string">"HTML"</span>, <span class="string">"CSS"</span>, <span class="string">"JavaScript"</span>]</span>
+<span class="line">};</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔍 Accessing & Modifying Data</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">To grab a specific piece of data from an Object, we use <strong>Dot Notation</strong>.</p>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Reading data from the object</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">userProfile</span>.<span class="property">firstName</span>);  <span class="comment">// Prints: "Ashiru"</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">userProfile</span>.<span class="property">skills</span>[<span class="number">2</span>]);  <span class="comment">// Prints: "JavaScript"</span></span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Modifying existing data</span></span>
+<span class="line"><span class="variable">userProfile</span>.<span class="property">role</span> <span class="operator">=</span> <span class="string">"Senior Engineer"</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Adding brand new properties on the fly</span></span>
+<span class="line"><span class="variable">userProfile</span>.<span class="property">company</span> <span class="operator">=</span> <span class="string">"A Square L"</span>;</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔗 Arrays of Objects (Real-World Architecture)</h2>
+                <div class="warning-box">
+                    <h4 style="color: #ef4444;">How Modern Databases Work</h4>
+                    <p style="color: var(--text-gray);">In professional apps, you almost never have just one object. You usually have an Array that contains hundreds of Objects (like an e-commerce store with hundreds of products).</p>
+                </div>
+
+                <div class="js-code">
+<span class="line"><span class="keyword">const</span> <span class="variable">inventory</span> <span class="operator">=</span> [</span>
+<span class="line indent-1">{ <span class="property">id</span>: <span class="number">1</span>, <span class="property">item</span>: <span class="string">"Laptop"</span>, <span class="property">price</span>: <span class="number">1200</span> },</span>
+<span class="line indent-1">{ <span class="property">id</span>: <span class="number">2</span>, <span class="property">item</span>: <span class="string">"Mouse"</span>, <span class="property">price</span>: <span class="number">45</span> },</span>
+<span class="line indent-1">{ <span class="property">id</span>: <span class="number">3</span>, <span class="property">item</span>: <span class="string">"Keyboard"</span>, <span class="property">price</span>: <span class="number">80</span> }</span>
+<span class="line">];</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// If we want the price of the Keyboard, we have to look in the Array at index 2, then ask for the 'price' property.</span></span>
+<span class="line"><span class="function">console</span>.<span class="function">log</span>(<span class="variable">inventory</span>[<span class="number">2</span>].<span class="property">price</span>); <span class="comment">// Prints: 80</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🌐 What is JSON?</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;"><strong>JSON</strong> stands for <em>JavaScript Object Notation</em>. When a frontend app (like React) needs to talk to a backend server (like Java or Python), they cannot send live JavaScript code over the internet. They must convert the Object into a text string first. This text format is called JSON.</p>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Convert a live JS Object into a JSON String (to send to a server)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">jsonString</span> <span class="operator">=</span> <span class="variable">JSON</span>.<span class="function">stringify</span>(<span class="variable">userProfile</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// Convert a JSON String back into a live JS Object (when receiving data from an API)</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">liveObject</span> <span class="operator">=</span> <span class="variable">JSON</span>.<span class="function">parse</span>(<span class="variable">jsonString</span>);</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: Product Catalog</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: The Inventory Loop</h3>
+                    <p style="color: var(--text-gray);">Create an <code>app.js</code> file. Build an Array that contains 3 Objects representing products in a store (each object needs a <code>name</code> and <code>price</code> property). Write a <code>for</code> loop that iterates through the array and uses a Template Literal to <code>console.log()</code> a sentence for each one, like: "The Laptop costs $1200."</p>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="day17-js-loops.html" class="btn-outline">← Previous: Day 17</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day19-dom-manipulation.html" class="btn-gold">Next: Day 19 - The DOM →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 6 - Day 3: Objects & JSON</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

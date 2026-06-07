@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | A Square L Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #000000; color: #ffffff; font-family: 'Nunito', sans-serif;
+            display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;
+        }
+        .auth-container {
+            background: #111111; padding: 40px; border-radius: 15px; border: 1px solid #D4AF37;
+            width: 100%; max-width: 400px; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+        h2 { color: #D4AF37; text-align: center; margin-bottom: 30px; font-weight: 800; font-size: 2rem; margin-top: 0; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; color: #b3b3b3; margin-bottom: 8px; font-size: 0.9rem; }
+        input {
+            width: 100%; padding: 12px 15px; background: #000; border: 1px solid #333;
+            color: #fff; border-radius: 5px; font-size: 1rem; box-sizing: border-box; outline: none;
+        }
+        input:focus { border-color: #D4AF37; }
+        button {
+            width: 100%; padding: 15px; background: #D4AF37; color: #000; border: none;
+            border-radius: 5px; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.3s;
+        }
+        button:hover { background: #b8860b; transform: translateY(-2px); }
+        .error-message { color: #ef4444; font-size: 0.85rem; margin-bottom: 15px; text-align: center; display: none; }
+        .footer-text { text-align: center; margin-top: 20px; color: #b3b3b3; font-size: 0.9rem; }
+        .footer-text a { color: #D4AF37; text-decoration: none; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <h2>Join the Academy</h2>
+        <p id="error-box" class="error-message"></p>
+        
+        <form id="signup-form">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password (Min 6 characters)</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" id="submit-btn">Create Account</button>
+        </form>
+
+        <div class="footer-text">
+            Already have an account? <a href="login.html">Log in here</a>
+        </div>
+    </div>
+
+    <script type="module" src="js/signup.js"></script>
+</body>
+</html>

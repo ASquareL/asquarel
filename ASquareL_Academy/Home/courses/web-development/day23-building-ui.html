@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 Day 2: Building the UI | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 8px; border-right: 1px solid #222; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+
+        .activity-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        .js-code, .html-code, .css-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .html-code .tag { color: var(--primary-gold); }
+        .html-code .attr { color: #56b6c2; }
+        .html-code .value { color: #ce9178; }
+        .css-code .property { color: #56b6c2; }
+        .css-code .value { color: #ce9178; }
+        .css-code .selector { color: var(--primary-gold); }
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 23</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 8 - Day 2: Building the UI</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Architecting the App Shell</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Design the HTML structure for a dynamic Single Page Application (SPA).</li>
+                    <li>Create dedicated DOM elements for inputs, triggers, and display areas.</li>
+                    <li>Use CSS Flexbox to ensure the app looks professional and responsive on mobile devices.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🏗️ The App Architecture</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">Before JavaScript can do anything, it needs a "shell" to live inside. When building the UI for an application (like the Moniepoint dashboard or our Task Manager), you must think in three parts: <strong>The Input (Where user types)</strong>, <strong>The Trigger (The button)</strong>, and <strong>The Output (Where data is displayed)</strong>.</p>
+                </div>
+
+                <h3>The HTML Structure</h3>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Every dynamic app needs specific IDs so our JavaScript <code>querySelector</code> can easily find the elements.</p>
+                
+                <div class="html-code">
+<span class="line"><span class="comment">&lt;!-- The Application Container --&gt;</span></span>
+<span class="line"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"app-container"</span><span class="tag">&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;h2&gt;</span>A Square L Task Manager<span class="tag">&lt;/h2&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Input Area --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"input-group"</span><span class="tag">&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">id</span>=<span class="value">"taskInput"</span> <span class="attr">placeholder</span>=<span class="value">"Enter a new task..."</span><span class="tag">&gt;</span></span>
+<span class="line indent-2"><span class="tag">&lt;button</span> <span class="attr">id</span>=<span class="value">"addTaskBtn"</span><span class="tag">&gt;</span>Add Task<span class="tag">&lt;/button&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;/div&gt;</span></span>
+<span class="line"></span>
+<span class="line indent-1"><span class="comment">&lt;!-- Output Area (Notice it is completely empty! JS will fill it later) --&gt;</span></span>
+<span class="line indent-1"><span class="tag">&lt;ul</span> <span class="attr">id</span>=<span class="value">"taskList"</span><span class="tag">&gt;</span><span class="tag">&lt;/ul&gt;</span></span>
+<span class="line"><span class="tag">&lt;/div&gt;</span></span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎨 Styling the Application Shell</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">An application must look like an application, not a standard web page. We use CSS to lock the container size, remove default list styling, and use Flexbox to align the task text with the delete button.</p>
+
+                <div class="css-code">
+<span class="line"><span class="comment">/* The Main App Window */</span></span>
+<span class="line"><span class="selector">.app-container</span> {</span>
+<span class="line indent-1"><span class="property">max-width</span>: <span class="value">500px</span>;</span>
+<span class="line indent-1"><span class="property">margin</span>: <span class="value">50px auto</span>;</span>
+<span class="line indent-1"><span class="property">padding</span>: <span class="value">30px</span>;</span>
+<span class="line indent-1"><span class="property">background</span>: <span class="value">#111111</span>;</span>
+<span class="line indent-1"><span class="property">border</span>: <span class="value">1px solid #D4AF37</span>;</span>
+<span class="line indent-1"><span class="property">border-radius</span>: <span class="value">15px</span>;</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"><span class="comment">/* How a single task will look once JS adds it */</span></span>
+<span class="line"><span class="selector">#taskList li</span> {</span>
+<span class="line indent-1"><span class="property">display</span>: <span class="value">flex</span>;</span>
+<span class="line indent-1"><span class="property">justify-content</span>: <span class="value">space-between</span>; <span class="comment">/* Pushes delete btn to the right */</span></span>
+<span class="line indent-1"><span class="property">align-items</span>: <span class="value">center</span>;</span>
+<span class="line indent-1"><span class="property">padding</span>: <span class="value">15px</span>;</span>
+<span class="line indent-1"><span class="property">border-bottom</span>: <span class="value">1px solid #333</span>;</span>
+<span class="line indent-1"><span class="property">color</span>: <span class="value">#fff</span>;</span>
+<span class="line">}</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: Build the UI</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Construct Your App Shell</h3>
+                    <p style="color: var(--text-gray);">Today's task is purely structural. You are setting up the foundation for tomorrow's grand finale.</p>
+                    <ol style="color: var(--text-gray);">
+                        <li>Create a new folder called <code>capstone_app</code>.</li>
+                        <li>Create an <code>index.html</code>, a <code>style.css</code>, and an <code>app.js</code> file. Link them together.</li>
+                        <li>Write the HTML structure exactly as shown above, ensuring you use the exact IDs: <code>taskInput</code>, <code>addTaskBtn</code>, and <code>taskList</code>.</li>
+                        <li>Apply your CSS to make it look premium. Use the Black & Gold A Square L color palette. Ensure the input field and button look large and clickable on mobile devices.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="day22-localstorage.html" class="btn-outline">← Previous: Day 22</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day24-app-logic.html" class="btn-gold">Next: Day 24 - App Logic Compilation →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 8 - Day 2: Building the UI</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

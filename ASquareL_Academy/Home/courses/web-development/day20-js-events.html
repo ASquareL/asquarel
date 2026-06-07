@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 Day 2: Event Listeners | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+        .section h3 { color: var(--text-white); margin: 25px 0 15px 0; font-weight: 700; }
+
+        .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+        .checklist li { margin-bottom: 10px; color: var(--text-gray); }
+        .checklist li:before { content: "✓ "; color: var(--primary-gold); font-weight: bold; margin-right: 10px; }
+
+        .info-box, .activity-box, .warning-box {
+            background: #151515; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 8px; border-right: 1px solid #222; border-top: 1px solid #222; border-bottom: 1px solid #222;
+        }
+        .activity-box { border-left-color: var(--text-white); } 
+        .warning-box { border-left-color: #ef4444; }
+
+        .activity-box h4, .info-box h4 { margin-bottom: 15px; color: var(--text-white); margin-top:0;}
+        .activity-box ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-gray); }
+        .activity-box li { margin-bottom: 8px; }
+
+        .js-code, .html-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .js-code .keyword, .html-code .keyword { color: #c678dd; } 
+        .js-code .string, .html-code .value { color: #ce9178; }  
+        .js-code .number { color: #d19a66; }  
+        .js-code .comment, .html-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+        .html-code .tag { color: var(--primary-gold); }
+        .html-code .attr { color: #56b6c2; }
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="margin-top: 20px; color: var(--text-gray); font-size: 0.9rem;">
+            <a href="../../curriculum.html" style="color: var(--primary-gold); text-decoration: none;">Curriculum</a> 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> Web Development 
+            <i class="fa fa-chevron-right" style="font-size: 0.7rem; margin: 0 10px;"></i> <span style="color: #fff;">Day 20</span>
+        </div>
+
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 7 - Day 2: Event Listeners</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Making the DOM Interactive</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <ul class="checklist">
+                    <li>Understand what JavaScript "Events" are.</li>
+                    <li>Attach event listeners to buttons and inputs.</li>
+                    <li>Trigger custom functions based on user interactions (clicks, hovers, typing).</li>
+                    <li>Understand the powerful Event Object (<code>e</code>).</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>⚡ What is an Event?</h2>
+                <div class="info-box">
+                    <p style="color: var(--text-gray);">If the DOM is the engine of your website, <strong>Events</strong> are the steering wheel and pedals. Every time a user clicks a mouse, types on a keyboard, scrolls the page, or resizes a window, the browser fires an "Event". We use JavaScript to "listen" for these events and execute code when they happen.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎧 The addEventListener() Method</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">To make an element interactive, we attach an event listener to it. It requires two things: the <strong>type of event</strong> to listen for (like 'click'), and a <strong>function</strong> to run when it happens.</p>
+
+                <div class="html-code">
+<span class="line"><span class="comment">&lt;!-- Your HTML File --&gt;</span></span>
+<span class="line"><span class="tag">&lt;button</span> <span class="attr">id</span>=<span class="value">"buy-btn"</span><span class="tag">&gt;</span>Buy Now<span class="tag">&lt;/button&gt;</span></span>
+                </div>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Your JS File</span></span>
+<span class="line"><span class="comment">// 1. Grab the element</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">buyButton</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#buy-btn'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="comment">// 2. Add the listener</span></span>
+<span class="line"><span class="variable">buyButton</span>.<span class="function">addEventListener</span>(<span class="string">'click'</span>, <span class="keyword">function</span>() {</span>
+<span class="line indent-1"><span class="function">alert</span>(<span class="string">"Item added to your cart!"</span>);</span>
+<span class="line indent-1"><span class="variable">buyButton</span>.<span class="property">textContent</span> <span class="operator">=</span> <span class="string">"Added! ✓"</span>;</span>
+<span class="line indent-1"><span class="variable">buyButton</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> <span class="operator">=</span> <span class="string">"#10b981"</span>; <span class="comment">// Turn button green</span></span>
+<span class="line">});</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>⌨️ Other Common Events</h2>
+                <p style="color: var(--text-gray); margin-bottom: 15px;">Clicks are great, but modern web apps track much more than that.</p>
+
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8; margin-bottom: 20px;">
+                    <li><code>'mouseenter'</code> & <code>'mouseleave'</code>: Hover effects.</li>
+                    <li><code>'input'</code>: Fires every single time a key is pressed inside a text box.</li>
+                    <li><code>'submit'</code>: Fires when a user tries to submit a form.</li>
+                </ul>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Example: Dynamic search bar matching Moniepoint's dashboard style</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">searchInput</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#search-box'</span>);</span>
+<span class="line"><span class="keyword">const</span> <span class="variable">displayArea</span> <span class="operator">=</span> <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'#result-text'</span>);</span>
+<span class="line"></span>
+<span class="line"><span class="variable">searchInput</span>.<span class="function">addEventListener</span>(<span class="string">'input'</span>, <span class="keyword">function</span>() {</span>
+<span class="line indent-1"><span class="comment">// Update the text on the screen AS the user types!</span></span>
+<span class="line indent-1"><span class="variable">displayArea</span>.<span class="property">textContent</span> <span class="operator">=</span> <span class="string">`Searching for: ${searchInput.value}...`</span>;</span>
+<span class="line">});</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🕵️ The Event Object (e)</h2>
+                <div class="warning-box">
+                    <h4 style="color: #ef4444;">Pro Developer Secret</h4>
+                    <p style="color: var(--text-gray);">Whenever an event fires, the browser automatically creates an "Event Object" packed with data about exactly what just happened (Where did the mouse click? Which specific key was pressed?). We capture this object by passing <code>e</code> or <code>event</code> into our function.</p>
+                </div>
+
+                <div class="js-code">
+<span class="line"><span class="variable">document</span>.<span class="function">addEventListener</span>(<span class="string">'keydown'</span>, <span class="keyword">function</span>(<span class="variable">e</span>) {</span>
+<span class="line indent-1"><span class="keyword">if</span> (<span class="variable">e</span>.<span class="property">key</span> <span class="operator">===</span> <span class="string">"Escape"</span>) {</span>
+<span class="line indent-2"><span class="function">console</span>.<span class="function">log</span>(<span class="string">"User pressed the Escape key! Closing modal..."</span>);</span>
+<span class="line indent-1">}</span>
+<span class="line">});</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Main Activity: Interactive VIP Pass</h2>
+                
+                <div class="activity-box">
+                    <h3 style="margin-top:0;">Task: Build a State-Toggling Button</h3>
+                    <p style="color: var(--text-gray);">Create an <code>index.html</code> file with a button that says "Follow".</p>
+                    <p style="color: var(--text-gray);">Write an <code>app.js</code> script that does the following when the button is clicked:</p>
+                    <ul style="color: var(--text-gray);">
+                        <li>If the button currently says "Follow", change the text to "Following" and change the background color to Gold.</li>
+                        <li>If the button currently says "Following", change the text back to "Follow" and change the background to an outline.</li>
+                        <li><em>Hint: Use an <code>if/else</code> statement inside your event listener to check the button's current <code>textContent</code>!</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="day19-dom-intro.html" class="btn-outline">← Previous: Day 19</a>
+                <a href="../web-dev-main.html" class="btn-outline">Back to Course Home</a>
+                <a href="day21-js-validation.html" class="btn-gold">Next: Day 21 - Form Validation →</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 7 - Day 2: Event Listeners</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
