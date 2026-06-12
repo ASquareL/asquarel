@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 Day 26: Promises & Async JS | A Square L Academy</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        html, body, .classroom-body {
+            background-color: #000000 !important; color: #ffffff !important; margin: 0; padding: 0; font-family: 'Nunito', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .lesson-container { 
+            padding: 40px; background: var(--card-bg) !important; color: var(--text-white); border-radius: 15px; margin-top: 20px; border: 1px solid #333;
+        }
+
+        .section { margin-bottom: 40px; }
+        .section h2 { color: var(--primary-gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #333; font-weight: 800; }
+
+        .js-code {
+            background: #000; padding: 25px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95em; line-height: 1.6; border: 1px solid #333; color: var(--text-white);
+        }
+        .js-code .keyword { color: #c678dd; } 
+        .js-code .string { color: #ce9178; }  
+        .js-code .comment { color: #6a9955; font-style: italic; } 
+        .js-code .function { color: #61afef; } 
+        .js-code .operator { color: #56b6c2; } 
+        .js-code .variable { color: #e5c07b; } 
+        .js-code .number { color: #d19a66; } 
+
+        .line { display: block; padding: 2px 0; }
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+
+        .lesson-nav-buttons {
+            display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; flex-wrap: wrap; gap: 15px;
+        }
+        .btn-gold { background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { background: var(--dark-gold); transform: translateY(-2px); }
+        .btn-outline { color: var(--text-gray); border: 1px solid #333; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-outline:hover { border-color: var(--primary-gold); color: var(--primary-gold); }
+    </style>
+</head>
+<body class="classroom-body">
+
+    <nav class="navbar" style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header style="padding: 40px 0 20px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">📅 Week 9 - Day 26: Promises & Async JS</h1>
+            <p style="color: var(--text-gray);">Duration: 3 hours | Focus: Non-Blocking Architecture</p>
+        </header>
+
+        <main class="lesson-container">
+            <div class="section">
+                <h2>⏳ The Asynchronous Web</h2>
+                <p style="color: var(--text-gray);">JavaScript is traditionally single-threaded, meaning it executes one line of code at a time. But in enterprise development, we cannot wait for a database to load before running the rest of our application. We need <strong>Asynchronous JavaScript</strong> to handle tasks like fetching POS terminal data or authenticating a user in the background.</p>
+            </div>
+
+            <div class="section">
+                <h2>1. What is a Promise?</h2>
+                <p style="color: var(--text-gray);">A Promise is exactly what it sounds like: a guarantee that a process will eventually finish in the future. It has three states:</p>
+                <ul style="color: var(--text-gray); margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Pending:</strong> The task is still running (e.g., waiting for the server).</li>
+                    <li><strong>Fulfilled:</strong> The task succeeded, and we have the data.</li>
+                    <li><strong>Rejected:</strong> The task failed (e.g., the internet disconnected).</li>
+                </ul>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Creating a Promise</span></span>
+<span class="line"><span class="keyword">const</span> <span class="variable">checkTerminalStatus</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="function">Promise</span>((<span class="variable">resolve</span>, <span class="variable">reject</span>) <span class="operator">=></span> {</span>
+<span class="line indent-1"><span class="keyword">let</span> <span class="variable">isOnline</span> <span class="operator">=</span> <span class="keyword">true</span>;</span>
+<span class="line indent-1"></span>
+<span class="line indent-1"><span class="keyword">if</span>(<span class="variable">isOnline</span>) {</span>
+<span class="line indent-2"><span class="function">resolve</span>(<span class="string">"Terminal is active and ready."</span>); <span class="comment">// Success!</span></span>
+<span class="line indent-1">} <span class="keyword">else</span> {</span>
+<span class="line indent-2"><span class="function">reject</span>(<span class="string">"Connection failed."</span>); <span class="comment">// Error!</span></span>
+<span class="line indent-1">}</span>
+<span class="line">});</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. Consuming a Promise (.then and .catch)</h2>
+                <p style="color: var(--text-gray);">Once a promise is created, we need to "consume" it. We use <code>.then()</code> to handle the success (resolve) and <code>.catch()</code> to handle the error (reject).</p>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// Executing the Promise</span></span>
+<span class="line"><span class="variable">checkTerminalStatus</span></span>
+<span class="line indent-1">.<span class="function">then</span>(<span class="variable">response</span> <span class="operator">=></span> {</span>
+<span class="line indent-2"><span class="variable">console</span>.<span class="function">log</span>(<span class="variable">response</span>); <span class="comment">// Output: Terminal is active and ready.</span></span>
+<span class="line indent-1">})</span>
+<span class="line indent-1">.<span class="function">catch</span>(<span class="variable">error</span> <span class="operator">=></span> {</span>
+<span class="line indent-2"><span class="variable">console</span>.<span class="function">error</span>(<span class="variable">error</span>);</span>
+<span class="line indent-1">});</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>3. The Modern Approach: Async / Await</h2>
+                <p style="color: var(--text-gray);">While <code>.then()</code> works perfectly, modern ES6+ gives us an even cleaner way to handle promises using <strong>async</strong> and <strong>await</strong>. It makes asynchronous code look synchronous, which is much easier to read and debug.</p>
+
+                <div class="js-code">
+<span class="line"><span class="comment">// ✅ THE ENTERPRISE WAY</span></span>
+<span class="line"><span class="keyword">const</span> <span class="function">getSystemStatus</span> <span class="operator">=</span> <span class="keyword">async</span> () <span class="operator">=></span> {</span>
+<span class="line indent-1"><span class="keyword">try</span> {</span>
+<span class="line indent-2"><span class="comment">// The code PAUSES here until the promise resolves</span></span>
+<span class="line indent-2"><span class="keyword">const</span> <span class="variable">response</span> <span class="operator">=</span> <span class="keyword">await</span> <span class="variable">checkTerminalStatus</span>; </span>
+<span class="line indent-2"><span class="variable">console</span>.<span class="function">log</span>(<span class="variable">response</span>);</span>
+<span class="line indent-1">} <span class="keyword">catch</span> (<span class="variable">error</span>) {</span>
+<span class="line indent-2"><span class="comment">// If the promise rejects, it jumps directly to this catch block</span></span>
+<span class="line indent-2"><span class="variable">console</span>.<span class="function">error</span>(<span class="string">"Alert:"</span>, <span class="variable">error</span>);</span>
+<span class="line indent-1">}</span>
+<span class="line">};</span>
+<span class="line"></span>
+<span class="line"><span class="function">getSystemStatus</span>();</span>
+                </div>
+            </div>
+
+            <div class="lesson-nav-buttons">
+                <a href="day25.html" class="btn-outline">← Previous: Day 25</a>
+                <a href="day27.html" class="btn-gold">Next: Day 27 →</a>
+            </div>
+        </main>
+
+        <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+            <div class="container" style="text-align:center;">
+                <p style="color: var(--text-gray); margin-bottom: 5px;">Week 9 - Day 26: Promises & Async JS</p>
+                <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
