@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1.3: Cryptography & Security | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.5rem;
+    }
+    .lesson-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .content {
+      background: rgba(15,23,42,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      color: var(--accent);
+      font-size: 1.25rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .key-point {
+      background: rgba(56,189,248,.1);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    .warning-box {
+      background: rgba(239,68,68,.1);
+      border-left: 4px solid #ef4444;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    code {
+      background: rgba(0,0,0,.3);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: space-between;
+    }
+    .btn {
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--bg);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="crypto-blockchain.html">Course</a> → 
+      <a href="module-1-intro.html">Module 1</a> → 
+      Lesson 1.3
+    </div>
+    <h1>Lesson 1.3: Cryptography & Security</h1>
+    <p class="lesson-meta">Duration: 55 minutes | Difficulty: Intermediate</p>
+
+    <div class="content">
+      <h2>The Foundations of Blockchain Security</h2>
+      <p>Blockchain security relies on cryptographic techniques developed over decades. Understanding these fundamentals is crucial for grasping how blockchain ensures data integrity and authenticity.</p>
+
+      <div class="key-point">
+        <strong>Cryptography:</strong> The practice of secure communication in the presence of an adversary. It's the mathematical foundation that makes blockchain possible.
+      </div>
+
+      <h2>Hash Functions</h2>
+      <p>A hash function is a mathematical algorithm that converts input data of any size into a fixed-size output (hash). Hash functions are fundamental to blockchain security.</p>
+
+      <h3>Properties of Cryptographic Hash Functions</h3>
+      <ul>
+        <li><strong>Deterministic:</strong> Same input always produces same output</li>
+        <li><strong>Fast:</strong> Quick to compute for any input</li>
+        <li><strong>Avalanche Effect:</strong> Tiny change in input drastically changes output</li>
+        <li><strong>One-Way:</strong> Impossible to reverse (find input from output)</li>
+        <li><strong>Collision-Resistant:</strong> Nearly impossible to find two inputs with same hash</li>
+        <li><strong>Fixed Output:</strong> Always produces same length output</li>
+      </ul>
+
+      <div class="key-point">
+        <strong>Example:</strong> SHA-256 (used by Bitcoin) takes any input and produces a 256-bit (64 hex character) output. Changing one letter in input completely changes the hash.
+      </div>
+
+      <h3>Hash Functions in Blockchain</h3>
+      <ul>
+        <li>Block hashes identify blocks uniquely</li>
+        <li>Linking blocks: Each block contains previous block's hash</li>
+        <li>Transaction verification: Transactions are hashed</li>
+        <li>Merkle trees: Efficient verification of large datasets</li>
+      </ul>
+
+      <h2>Public-Key Cryptography</h2>
+      <p>Public-key cryptography (asymmetric cryptography) uses two related keys: a public key (anyone can see) and a private key (only you know). This enables digital signatures and secure communication.</p>
+
+      <h3>How Public-Key Cryptography Works</h3>
+      <ol>
+        <li>Generate a key pair (public + private key)</li>
+        <li>Share your public key with others</li>
+        <li>Others can encrypt messages with your public key</li>
+        <li>Only you can decrypt with your private key</li>
+        <li>You can sign messages with your private key</li>
+        <li>Others verify with your public key</li>
+      </ol>
+
+      <div class="key-point">
+        <strong>The Magic:</strong> It's mathematically easy to compute public key from private key, but practically impossible to reverse.
+      </div>
+
+      <h3>Elliptic Curve Cryptography (ECC)</h3>
+      <p>Bitcoin and Ethereum use ECDSA (Elliptic Curve Digital Signature Algorithm), which uses elliptic curve mathematics. It provides the same security as RSA with smaller key sizes.</p>
+      <ul>
+        <li><strong>Bitcoin:</strong> Uses secp256k1 curve</li>
+        <li><strong>Ethereum:</strong> Also uses secp256k1 curve</li>
+        <li><strong>Advantage:</strong> 256-bit keys provide security equivalent to 3072-bit RSA keys</li>
+      </ul>
+
+      <h2>Digital Signatures</h2>
+      <p>A digital signature proves you authorized a transaction without revealing your private key. It's the cryptographic equivalent of a handwritten signature but mathematically secure.</p>
+
+      <h3>Creating a Digital Signature</h3>
+      <ol>
+        <li>Create a transaction</li>
+        <li>Hash the transaction data</li>
+        <li>Sign the hash with your private key</li>
+        <li>Create a signature (unique to this transaction + your key)</li>
+        <li>Include signature with the transaction</li>
+      </ol>
+
+      <h3>Verifying a Digital Signature</h3>
+      <ol>
+        <li>Receive a transaction with signature</li>
+        <li>Hash the transaction data</li>
+        <li>Use sender's public key to verify the signature</li>
+        <li>If valid, the transaction is authentic</li>
+      </ol>
+
+      <div class="key-point">
+        <strong>Non-Repudiation:</strong> Once you sign a transaction, you cannot claim you didn't sign it. The signature proves you authorized it.
+      </div>
+
+      <h2>Merkle Trees</h2>
+      <p>A Merkle tree is a data structure that efficiently summarizes large datasets. Each block in a blockchain contains a Merkle root (hash of all transactions).</p>
+
+      <h3>How Merkle Trees Work</h3>
+      <ol>
+        <li>Transactions are the "leaves" of the tree</li>
+        <li>Adjacent leaves are hashed together to create "parent" nodes</li>
+        <li>Parents are hashed together to create higher levels</li>
+        <li>Continue until one hash remains: the Merkle root</li>
+      </ol>
+
+      <h3>Advantages of Merkle Trees</h3>
+      <ul>
+        <li>Efficient: Verify transaction inclusion without storing entire tree</li>
+        <li>Compact: Single root hash represents all transactions</li>
+        <li>Secure: Any change to a transaction changes the root</li>
+        <li>Fast verification: Logarithmic time to verify a transaction</li>
+      </ul>
+
+      <h2>Key Management & Security</h2>
+      
+      <h3>Private Key Security</h3>
+      <div class="warning-box">
+        <strong>Critical:</strong> If someone gains access to your private key, they can take all your funds. There is no recovery mechanism.
+      </div>
+
+      <ul>
+        <li><strong>Never share:</strong> Your private key is like your password and bank account combined</li>
+        <li><strong>Secure storage:</strong> Use hardware wallets for large amounts</li>
+        <li><strong>Backups:</strong> Keep encrypted backups, preferably offline</li>
+        <li><strong>Seed phrases:</strong> Backup recovery phrases are critical</li>
+      </ul>
+
+      <h3>Address Derivation</h3>
+      <p>Your blockchain address (like Bitcoin or Ethereum address) is derived from your public key:</p>
+      <ul>
+        <li>Private Key → Public Key (using elliptic curve math)</li>
+        <li>Public Key → Address (using hash functions)</li>
+        <li>Address is public but derived from private key</li>
+      </ul>
+
+      <h2>Cryptographic Attacks & Protections</h2>
+      
+      <h3>Common Attacks</h3>
+      <ul>
+        <li><strong>51% Attack:</strong> Majority of network power performs double-spend; mitigated by distributed mining</li>
+        <li><strong>Phishing:</strong> Tricking users to reveal private keys; protection: awareness and hardware wallets</li>
+        <li><strong>Sybil Attack:</strong> Creating many fake nodes; mitigation: proof-of-work/stake, reputation</li>
+        <li><strong>Double-Spending:</strong> Spending same coin twice; prevented by consensus and immutability</li>
+      </ul>
+
+      <h2>Summary</h2>
+      <p>Blockchain security rests on three cryptographic pillars:</p>
+      <ol>
+        <li><strong>Hash Functions:</strong> Ensure data integrity and linking of blocks</li>
+        <li><strong>Public-Key Cryptography:</strong> Enable secure transactions and authentication</li>
+        <li><strong>Digital Signatures:</strong> Prove ownership and authorization</li>
+      </ol>
+
+      <div class="key-point">
+        <strong>Remember:</strong> No cryptocurrency is more secure than your private key management. Technology can be secure, but user behavior is often the weakest link.
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson-1-2.html" class="btn btn-secondary">← Previous Lesson</a>
+      <a href="lesson-1-4.html" class="btn btn-primary">Next Lesson →</a>
+    </div>
+
+    <footer>
+      <p>ASquareL Academy · Blockchain Fundamentals · Lesson 1.3</p>
+    </footer>
+  </div>
+</body>
+</html>

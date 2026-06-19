@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2.1: Wallets & Key Management | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.5rem;
+    }
+    .lesson-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .content {
+      background: rgba(15,23,42,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      color: var(--accent);
+      font-size: 1.25rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .key-point {
+      background: rgba(56,189,248,.1);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    .warning-box {
+      background: rgba(239,68,68,.1);
+      border-left: 4px solid #ef4444;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: space-between;
+    }
+    .btn {
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--bg);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="crypto-blockchain.html">Course</a> → 
+      <a href="module-2-intro.html">Module 2</a> → 
+      Lesson 2.1
+    </div>
+    <h1>Lesson 2.1: Wallets & Key Management</h1>
+    <p class="lesson-meta">Duration: 50 minutes | Difficulty: Beginner</p>
+
+    <div class="content">
+      <h2>What is a Cryptocurrency Wallet?</h2>
+      <p>A cryptocurrency wallet is software or hardware that stores your cryptographic keys and allows you to send and receive digital assets. Despite the name, a wallet doesn't actually store coins - it stores the keys to access them on the blockchain.</p>
+
+      <div class="key-point">
+        <strong>Understanding Wallets:</strong> A crypto wallet is like a combination of a password manager and a bank account interface. It securely stores your private keys and displays your balance from the blockchain.
+      </div>
+
+      <h2>Types of Wallets</h2>
+      
+      <h3>Hot Wallets (Online/Connected)</h3>
+      <p>Connected to the internet, convenient for frequent transactions but riskier for large amounts.</p>
+      <ul>
+        <li><strong>Web Wallets:</strong> Access through browser (MetaMask, MyEtherWallet)</li>
+        <li><strong>Mobile Wallets:</strong> Smartphone applications (Trust Wallet, Coinbase Wallet)</li>
+        <li><strong>Desktop Wallets:</strong> Software on your computer (Bitcoin Core, Electrum)</li>
+      </ul>
+
+      <h3>Hot Wallet Advantages</h3>
+      <ul>
+        <li>Convenient for daily transactions</li>
+        <li>Fast access to funds</li>
+        <li>Easy to use for beginners</li>
+        <li>Good for testing and learning</li>
+      </ul>
+
+      <h3>Hot Wallet Risks</h3>
+      <ul>
+        <li>Vulnerable to hacking and malware</li>
+        <li>Exchange or service provider could be compromised</li>
+        <li>Phishing attacks</li>
+        <li>Device theft or data loss</li>
+      </ul>
+
+      <h3>Cold Wallets (Offline/Disconnected)</h3>
+      <p>Offline storage, more secure for long-term holdings but less convenient.</p>
+      <ul>
+        <li><strong>Hardware Wallets:</strong> Dedicated devices (Ledger, Trezor)</li>
+        <li><strong>Paper Wallets:</strong> Keys printed on paper</li>
+        <li><strong>Cold Storage:</strong> Keys stored offline in encrypted form</li>
+      </ul>
+
+      <h3>Cold Wallet Advantages</h3>
+      <ul>
+        <li>Maximum security from online threats</li>
+        <li>Protected against hacking and malware</li>
+        <li>Good for large amounts or long-term storage</li>
+        <li>Full control over your keys</li>
+      </ul>
+
+      <h3>Cold Wallet Disadvantages</h3>
+      <ul>
+        <li>Inconvenient for frequent trading</li>
+        <li>Slower transaction process</li>
+        <li>Risk of losing access (lost device, forgotten password)</li>
+        <li>Physical risks (damage, theft of hardware)</li>
+      </ul>
+
+      <h2>Seed Phrases & Recovery</h2>
+      <p>Modern wallets use a 12 or 24-word recovery seed (also called mnemonic phrase) to generate all your keys.</p>
+
+      <h3>How Seed Phrases Work</h3>
+      <ol>
+        <li>Wallet generates a random seed phrase</li>
+        <li>Seed phrase generates a master key</li>
+        <li>Master key generates all your cryptocurrency addresses</li>
+        <li>If you lose your wallet, the seed phrase lets you recover everything</li>
+      </ol>
+
+      <div class="key-point">
+        <strong>BIP39 Standard:</strong> The 12 or 24-word recovery phrases use BIP39 standard, allowing recovery across different wallets that support the standard.
+      </div>
+
+      <div class="warning-box">
+        <strong>Critical Security Rule:</strong> Never share your seed phrase with anyone, not even wallet developers. Anyone with your seed phrase has complete access to all your funds across all blockchains. There is no recovery if you lose it.
+      </div>
+
+      <h3>Seed Phrase Best Practices</h3>
+      <ul>
+        <li><strong>Write it down:</strong> Store physically, not digitally</li>
+        <li><strong>Multiple copies:</strong> Keep copies in secure locations</li>
+        <li><strong>Never photograph:</strong> Avoid digital records of the seed phrase</li>
+        <li><strong>Safe location:</strong> Bank vault, safe, or secure storage</li>
+        <li><strong>Encrypted backup:</strong> If digital, encrypt with strong password</li>
+        <li><strong>Test recovery:</strong> Verify you can recover with your seed</li>
+      </ul>
+
+      <h2>Hierarchical Deterministic (HD) Wallets</h2>
+      <p>HD wallets allow you to derive multiple addresses from a single seed, making it easier to manage accounts without storing multiple seeds.</p>
+
+      <h3>Benefits of HD Wallets</h3>
+      <ul>
+        <li>Generate unlimited addresses from one seed</li>
+        <li>Organize addresses by account</li>
+        <li>Share public addresses without revealing private keys</li>
+        <li>Easier backup (one seed instead of many)</li>
+      </ul>
+
+      <h2>Private Keys vs Public Keys vs Addresses</h2>
+
+      <h3>Private Key</h3>
+      <ul>
+        <li>A secret number (256-bit) only you know</li>
+        <li>Used to sign transactions and prove ownership</li>
+        <li>Never share this with anyone</li>
+        <li>Usually displayed as 64 hex characters</li>
+      </ul>
+
+      <h3>Public Key</h3>
+      <ul>
+        <li>Derived mathematically from private key</li>
+        <li>Can be shared with anyone</li>
+        <li>Used to verify your signature</li>
+        <li>Usually displayed as 130 hex characters (compressed: 66)</li>
+      </ul>
+
+      <h3>Address</h3>
+      <ul>
+        <li>Derived from public key using hash functions</li>
+        <li>Your "receive address" for transactions</li>
+        <li>Can be safely shared publicly</li>
+        <li>Bitcoin: 34 characters starting with 1 or 3</li>
+        <li>Ethereum: 42 characters starting with 0x</li>
+      </ul>
+
+      <div class="key-point">
+        <strong>One-Way Derivation:</strong> Private key → Public key → Address works in one direction only. You cannot reverse this process to get the private key from an address.
+      </div>
+
+      <h2>Wallet Security Best Practices</h2>
+      
+      <h3>For Hot Wallets</h3>
+      <ul>
+        <li>Use strong, unique passwords</li>
+        <li>Enable 2FA (two-factor authentication)</li>
+        <li>Keep software updated</li>
+        <li>Use trusted wallet providers</li>
+        <li>Keep amounts small (testing only)</li>
+        <li>Use on secure, malware-free devices</li>
+      </ul>
+
+      <h3>For Cold Wallets</h3>
+      <ul>
+        <li>Buy from official sources only</li>
+        <li>Verify authenticity before use</li>
+        <li>Use strong passphrase (in addition to seed)</li>
+        <li>Never enter PIN on untrusted devices</li>
+        <li>Keep firmware updated</li>
+        <li>Test recovery before storing large amounts</li>
+      </ul>
+
+      <h2>Common Wallet Mistakes</h2>
+      <ul>
+        <li>Not backing up seed phrase</li>
+        <li>Storing seed digitally without encryption</li>
+        <li>Using same password across multiple services</li>
+        <li>Not verifying addresses before sending</li>
+        <li>Panic-selling during market dips</li>
+        <li>Using untrusted wallet software</li>
+        <li>Not testing recovery before major deposits</li>
+      </ul>
+
+      <h2>Choosing Your Wallet</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem;">
+        <thead>
+          <tr style="background: rgba(56,189,248,.1); border-bottom: 2px solid var(--border);">
+            <th style="padding: 0.75rem; text-align: left;">Use Case</th>
+            <th style="padding: 0.75rem; text-align: left;">Recommended Type</th>
+            <th style="padding: 0.75rem; text-align: left;">Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.75rem;">Learning & Small Amount</td>
+            <td style="padding: 0.75rem;">Hot (Mobile)</td>
+            <td style="padding: 0.75rem;">Trust Wallet, Coinbase</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.75rem;">Active Trading</td>
+            <td style="padding: 0.75rem;">Hot (Mobile/Web)</td>
+            <td style="padding: 0.75rem;">MetaMask, Coinbase Wallet</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.75rem;">Significant Holdings</td>
+            <td style="padding: 0.75rem;">Cold (Hardware)</td>
+            <td style="padding: 0.75rem;">Ledger, Trezor</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem;">Mixed (Hold + Trade)</td>
+            <td style="padding: 0.75rem;">Both (Cold + Hot)</td>
+            <td style="padding: 0.75rem;">Hardware + MetaMask</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="module-2-intro.html" class="btn btn-secondary">← Back to Module</a>
+      <a href="lesson-2-2.html" class="btn btn-primary">Next Lesson →</a>
+    </div>
+
+    <footer>
+      <p>ASquareL Academy · Cryptocurrency Ecosystems · Lesson 2.1</p>
+    </footer>
+  </div>
+</body>
+</html>

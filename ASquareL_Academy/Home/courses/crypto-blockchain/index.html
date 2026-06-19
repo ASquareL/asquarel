@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Crypto & Blockchain Course | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(circle at top, rgba(56,189,248,.15), transparent 35%),
+                  radial-gradient(circle at bottom right, rgba(167,139,250,.13), transparent 25%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .site-header {
+      padding: 2rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .brand h1 {
+      font-size: 1.6rem;
+      letter-spacing: .05em;
+      margin: 0;
+    }
+    .brand a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      display: grid;
+      gap: 1.5rem;
+      padding: 2rem 0;
+    }
+    .hero-content {
+      max-width: 680px;
+    }
+    .hero-content h2 {
+      font-size: clamp(2rem, 4vw, 3.75rem);
+      margin: 0 0 1rem;
+      line-height: 1.05;
+    }
+    .hero-content p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 1.75rem;
+      max-width: 700px;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.45rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .button {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0f172a;
+    }
+    .button-secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .hero-image {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      min-height: 320px;
+      background: linear-gradient(180deg, rgba(56,189,248,.15), transparent 50%),
+                  linear-gradient(180deg, rgba(167,139,250,.12), transparent 50%),
+                  rgba(15,23,42,.88);
+      padding: 2rem;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+    .hero-image h3 {
+      color: var(--primary);
+      margin: 0 0 1rem;
+      font-size: 1.15rem;
+    }
+    .hero-image p {
+      color: var(--muted);
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .section {
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-title h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+      background: rgba(15,23,42,.95);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.75rem;
+      min-height: 220px;
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
+      color: var(--primary);
+    }
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+    .module-card {
+      background: linear-gradient(135deg, rgba(56,189,248,.1), rgba(167,139,250,.1));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.75rem;
+      min-height: auto;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      color: var(--text);
+    }
+    .module-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(56,189,248,0.1);
+      transform: translateY(-4px);
+    }
+    .module-card h3 {
+      color: var(--primary);
+      margin: 0 0 0.75rem;
+    }
+    .module-card p {
+      color: var(--muted);
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+    .lessons-count {
+      display: inline-block;
+      background: rgba(56,189,248,.1);
+      color: var(--primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: .95rem;
+    }
+    .feature-list li {
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      background: rgba(255,255,255,.02);
+    }
+    .feature-list strong {
+      color: var(--text);
+    }
+    footer {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: 1.3fr .9fr;
+      }
+      .hero-image {
+        min-height: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>ASquareL Academy</h1>
+      <a href="#start">Start Learning</a>
+    </div>
+    <section class="hero">
+      <div class="hero-content">
+        <p style="text-transform: uppercase; letter-spacing:.24em; color: var(--primary); margin-bottom: 1rem;">Complete Course</p>
+        <h2>Master Crypto & Blockchain from Fundamentals to Real-World Projects</h2>
+        <p>Learn blockchain architecture, smart contracts, DeFi protocols, NFTs, security best practices, and governance through 6 comprehensive modules with hands-on projects.</p>
+        <div class="cta-group">
+          <a href="#modules" class="button">View Curriculum</a>
+          <a href="#about" class="button-secondary">Why This Course?</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div>
+          <h3>Build, Invest, Innovate</h3>
+          <p>30+ lessons covering blockchain fundamentals, smart contract development, DeFi strategies, and security practices.</p>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="section-title">
+        <h2>About the Course</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Comprehensive Path</h3>
+          <p>6 modules from blockchain basics to advanced security, covering everything you need to succeed in crypto.</p>
+        </div>
+        <div class="card">
+          <h3>Hands-on Projects</h3>
+          <p>Deploy smart contracts, create tokens and NFTs, participate in DeFi, and conduct security audits.</p>
+        </div>
+        <div class="card">
+          <h3>Expert Content</h3>
+          <p>Learn from instructors with blockchain development, crypto investment, and security experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="modules">
+      <div class="section-title">
+        <h2>Complete Curriculum</h2>
+      </div>
+      <div class="grid grid-3">
+        <a href="module-1-intro.html" class="module-card">
+          <h3>Module 1</h3>
+          <p><strong>Blockchain Fundamentals</strong></p>
+          <p>Core concepts, consensus mechanisms, cryptography, blocks, and transactions.</p>
+          <span class="lessons-count">5 Lessons</span>
+        </a>
+
+        <a href="module-2-intro.html" class="module-card">
+          <h3>Module 2</h3>
+          <p><strong>Cryptocurrency Ecosystems</strong></p>
+          <p>Wallets, exchanges, trading fundamentals, and market analysis.</p>
+          <span class="lessons-count">5 Lessons</span>
+        </a>
+
+        <a href="module-3-intro.html" class="module-card">
+          <h3>Module 3</h3>
+          <p><strong>Smart Contracts with Solidity</strong></p>
+          <p>Write, test, and deploy smart contracts on Ethereum.</p>
+          <span class="lessons-count">5 Lessons</span>
+        </a>
+
+        <a href="module-4-intro.html" class="module-card">
+          <h3>Module 4</h3>
+          <p><strong>Decentralized Finance (DeFi)</strong></p>
+          <p>Lending, AMMs, staking, yield farming, and DeFi protocols.</p>
+          <span class="lessons-count">5 Lessons</span>
+        </a>
+
+        <a href="module-5-intro.html" class="module-card">
+          <h3>Module 5</h3>
+          <p><strong>NFTs & Token Standards</strong></p>
+          <p>Create digital assets, deploy NFT collections, and manage royalties.</p>
+          <span class="lessons-count">5 Lessons</span>
+        </a>
+
+        <a href="module-6-intro.html" class="module-card">
+          <h3>Module 6</h3>
+          <p><strong>Security & Best Practices</strong></p>
+          <p>Smart contract security, audits, governance, and asset protection.</p>
+          <span class="lessons-count">5 Lessons</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>What You'll Learn</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Blockchain Architecture</h3>
+          <p>Understand distributed ledgers, consensus mechanisms, and how blockchains achieve decentralization and security.</p>
+        </div>
+        <div class="card">
+          <h3>Smart Contract Development</h3>
+          <p>Write secure Solidity code, deploy contracts, test thoroughly, and optimize for gas efficiency.</p>
+        </div>
+        <div class="card">
+          <h3>DeFi Protocols</h3>
+          <p>Master lending platforms, automated market makers, staking, and yield farming strategies.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Assets & NFTs</h3>
+          <p>Create ERC20 tokens and ERC721 NFTs, launch collections, and manage digital IP rights.</p>
+        </div>
+        <div class="card">
+          <h3>Security & Audits</h3>
+          <p>Identify vulnerabilities, conduct code reviews, understand attack vectors, and protect assets.</p>
+        </div>
+        <div class="card">
+          <h3>Real-World Application</h3>
+          <p>Build complete projects, interact with real protocols, and develop investor and developer skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Course Overview</h2>
+      </div>
+      <ul class="feature-list">
+        <li><strong>Module 1 - Blockchain Fundamentals:</strong> History, consensus mechanisms, cryptography, block structure, and mining.</li>
+        <li><strong>Module 2 - Crypto Ecosystems:</strong> Wallet setup, exchange trading, technical analysis, and portfolio management.</li>
+        <li><strong>Module 3 - Smart Contracts:</strong> Solidity programming, testing frameworks, deployment, and optimization.</li>
+        <li><strong>Module 4 - DeFi:</strong> Lending protocols, AMMs, liquidity pools, staking, and yield farming strategies.</li>
+        <li><strong>Module 5 - NFTs:</strong> ERC721/ERC1155 standards, IPFS storage, minting, and marketplace trading.</li>
+        <li><strong>Module 6 - Security:</strong> Cryptographic security, contract audits, governance, and best practices.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="start">
+      <div class="section-title">
+        <h2>Ready to Get Started?</h2>
+      </div>
+      <p style="max-width: 760px; color: var(--muted); margin-bottom: 1.5rem;">Enroll in the complete Crypto & Blockchain course today. Learn at your own pace with comprehensive lessons, practical projects, and real-world examples designed for both beginners and experienced developers.</p>
+      <a href="module-1-intro.html" class="button">Start with Module 1</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>ASquareL Academy · Complete Crypto & Blockchain Course · 30+ Lessons · 6 Modules · Professional Training</p>
+  </footer>
+</body>
+</html>

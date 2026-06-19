@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2.2: Crypto Exchanges | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.5rem;
+    }
+    .lesson-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .content {
+      background: rgba(15,23,42,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      color: var(--accent);
+      font-size: 1.25rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .key-point {
+      background: rgba(56,189,248,.1);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: space-between;
+    }
+    .btn {
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--bg);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="crypto-blockchain.html">Course</a> → 
+      <a href="module-2-intro.html">Module 2</a> → 
+      Lesson 2.2
+    </div>
+    <h1>Lesson 2.2: Crypto Exchanges</h1>
+    <p class="lesson-meta">Duration: 55 minutes | Difficulty: Beginner</p>
+
+    <div class="content">
+      <h2>What is a Crypto Exchange?</h2>
+      <p>A cryptocurrency exchange is a platform where you can buy, sell, and trade cryptocurrencies. There are two main types: centralized (CEX) and decentralized (DEX).</p>
+
+      <h2>Centralized Exchanges (CEX)</h2>
+      <p>Centralized exchanges are managed by a company that holds custody of your assets and operates the trading platform.</p>
+
+      <h3>How CEX Works</h3>
+      <ol>
+        <li>You deposit funds (fiat or crypto)</li>
+        <li>Exchange holds your funds in their wallets</li>
+        <li>You trade through their orderbook</li>
+        <li>You withdraw to your personal wallet</li>
+      </ol>
+
+      <h3>Advantages of CEX</h3>
+      <ul>
+        <li>User-friendly interface</li>
+        <li>Fast transactions</li>
+        <li>High liquidity</li>
+        <li>Fiat onramp/offramp (buy with credit card)</li>
+        <li>Customer support</li>
+        <li>Advanced trading features</li>
+      </ul>
+
+      <h3>Disadvantages of CEX</h3>
+      <ul>
+        <li>Counterparty risk (exchange bankruptcy, hacking)</li>
+        <li>KYC requirements (privacy concerns)</li>
+        <li>Regulatory restrictions by jurisdiction</li>
+        <li>Trading fees</li>
+        <li>Not truly decentralized (violates crypto principles)</li>
+      </ul>
+
+      <h3>Popular CEX Platforms</h3>
+      <ul>
+        <li><strong>Coinbase:</strong> Beginner-friendly, US-based</li>
+        <li><strong>Kraken:</strong> Good fees, security focused</li>
+        <li><strong>Binance:</strong> Largest exchange, most trading pairs</li>
+        <li><strong>Gemini:</strong> Regulated, premium offering</li>
+        <li><strong>FTX/Bybit:</strong> Derivatives and futures trading</li>
+      </ul>
+
+      <h2>Decentralized Exchanges (DEX)</h2>
+      <p>DEX are blockchain-based platforms where you trade directly from your wallet without needing to deposit funds to a central authority.</p>
+
+      <h3>How DEX Works</h3>
+      <ol>
+        <li>Connect your wallet to the DEX</li>
+        <li>You remain in control of your private keys</li>
+        <li>Trades happen directly between wallets</li>
+        <li>Funds go straight to your wallet</li>
+      </ol>
+
+      <div class="key-point">
+        <strong>Key Difference:</strong> With DEX, you never give custody of your funds to anyone. You trade directly from your wallet.
+      </div>
+
+      <h3>Advantages of DEX</h3>
+      <ul>
+        <li>Full control of your funds</li>
+        <li>No KYC requirements</li>
+        <li>Censorship-resistant</li>
+        <li>Access to all listed tokens (including new ones)</li>
+        <li>No counterparty risk</li>
+        <li>True cryptocurrency principles</li>
+      </ul>
+
+      <h3>Disadvantages of DEX</h3>
+      <ul>
+        <li>Requires technical knowledge (wallet setup)</li>
+        <li>Lower liquidity (higher spreads)</li>
+        <li>Slower transactions (blockchain dependent)</li>
+        <li>Higher gas fees</li>
+        <li>Risk of losing access (if you lose private keys)</li>
+      </ul>
+
+      <h3>Popular DEX Platforms</h3>
+      <ul>
+        <li><strong>Uniswap:</strong> Largest DEX, Ethereum</li>
+        <li><strong>PancakeSwap:</strong> Binance Smart Chain</li>
+        <li><strong>Raydium:</strong> Solana ecosystem</li>
+        <li><strong>Curve:</strong> Specialized for stablecoins</li>
+      </ul>
+
+      <h2>Account Setup & KYC</h2>
+      <p>Most CEX require Know Your Customer (KYC) verification for regulatory compliance.</p>
+
+      <h3>KYC Process</h3>
+      <ol>
+        <li>Create account with email and password</li>
+        <li>Verify email address</li>
+        <li>Provide personal information</li>
+        <li>Upload identity documents (passport, ID)</li>
+        <li>Sometimes facial recognition verification</li>
+        <li>Approval usually within 24 hours</li>
+      </ol>
+
+      <h3>Privacy Considerations</h3>
+      <ul>
+        <li>KYC creates identity link to your holdings</li>
+        <li>Data breaches expose personal info</li>
+        <li>Governments can subpoena records</li>
+        <li>For privacy, use DEX (but with risks)</li>
+      </ul>
+
+      <h2>Trading Pairs</h2>
+      <p>A trading pair is two cryptocurrencies you're trading between, like BTC/USD or ETH/BTC.</p>
+
+      <h3>Reading Trading Pairs</h3>
+      <ul>
+        <li><strong>BTC/USD:</strong> Buy Bitcoin with US Dollars</li>
+        <li><strong>ETH/BTC:</strong> Buy Ethereum with Bitcoin</li>
+        <li><strong>USDC/ETH:</strong> Buy USDC stablecoin with Ethereum</li>
+        <li>First symbol = what you're buying (base)</li>
+        <li>Second symbol = what you're using (quote)</li>
+      </ul>
+
+      <h2>Order Types</h2>
+      
+      <h3>Market Order</h3>
+      <ul>
+        <li>Buy/sell immediately at current price</li>
+        <li>Guaranteed execution</li>
+        <li>Price may be slightly worse than displayed</li>
+        <li>Good for quick trades</li>
+      </ul>
+
+      <h3>Limit Order</h3>
+      <ul>
+        <li>Set your desired buy/sell price</li>
+        <li>Only executes if price reaches your limit</li>
+        <li>May not execute if price never reached</li>
+        <li>Better price control</li>
+      </ul>
+
+      <h3>Stop-Loss Order</h3>
+      <ul>
+        <li>Set trigger price to sell automatically</li>
+        <li>Protects against major losses</li>
+        <li>Executes as market order when triggered</li>
+        <li>Essential risk management tool</li>
+      </ul>
+
+      <h2>Fees</h2>
+      <ul>
+        <li><strong>Trading Fee:</strong> Percentage of trade value (0.1-0.25% typical)</li>
+        <li><strong>Withdrawal Fee:</strong> Cost to move crypto off exchange</li>
+        <li><strong>Deposit Fee:</strong> Usually free, but depends on method</li>
+        <li><strong>Maker vs Taker:</strong> Different fees for placing vs filling orders</li>
+      </ul>
+
+      <h2>Exchange Security</h2>
+      <p>Exchanges are frequent targets for hackers. Protect yourself:</p>
+      <ul>
+        <li>Use strong, unique passwords</li>
+        <li>Enable 2FA (authenticator app, not SMS if possible)</li>
+        <li>Whitelist withdrawal addresses</li>
+        <li>Don't keep large amounts on exchange</li>
+        <li>Use reputable, regulated exchanges</li>
+        <li>Verify withdrawal addresses before sending</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson-2-1.html" class="btn btn-secondary">← Previous Lesson</a>
+      <a href="lesson-2-3.html" class="btn btn-primary">Next Lesson →</a>
+    </div>
+
+    <footer>
+      <p>ASquareL Academy · Cryptocurrency Ecosystems · Lesson 2.2</p>
+    </footer>
+  </div>
+</body>
+</html>

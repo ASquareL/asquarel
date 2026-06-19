@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3.2: Solidity Fundamentals | ASquareL Academy</title>
+  <style>
+    :root { --bg: #0f172a; --primary: #38bdf8; --accent: #a78bfa; --text: #e2e8f0; --muted: #94a3b8; --border: rgba(148,163,184,0.2); }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .breadcrumb { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+    .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+    .content { background: rgba(15,23,42,.95); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+    h2 { color: var(--primary); font-size: 1.6rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    h3 { color: var(--accent); font-size: 1.25rem; margin-top: 1.25rem; }
+    .key-point { background: rgba(56,189,248,.1); border-left: 4px solid var(--primary); padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+    code { background: rgba(0,0,0,.3); padding: 0.2rem 0.5rem; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9em; }
+    .nav-buttons { display: flex; gap: 1rem; margin-top: 2rem; justify-content: space-between; }
+    .btn { padding: 0.9rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg); }
+    .btn-secondary { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--border); }
+    footer { padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Course</a> → <a href="module-3-intro.html">Module 3</a> → Lesson 3.2</div>
+    <h1>Lesson 3.2: Solidity Fundamentals</h1>
+    <p class="lesson-meta">Duration: 65 minutes | Difficulty: Intermediate</p>
+
+    <div class="content">
+      <h2>Solidity Syntax Basics</h2>
+      <p>Solidity is statically typed and shares similarities with JavaScript and C++. Let's learn the fundamentals.</p>
+
+      <h3>State Variables</h3>
+      <p>Variables that persist on the blockchain, stored in contract state:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+contract Counter {
+    uint256 public count = 0;  // State variable
+    address public owner;      // Address state variable
+}
+      </pre>
+
+      <h3>Data Types</h3>
+      <ul>
+        <li><strong>uint:</strong> Unsigned integer (uint256 most common)</li>
+        <li><strong>int:</strong> Signed integer</li>
+        <li><strong>address:</strong> 20-byte Ethereum address</li>
+        <li><strong>bool:</strong> Boolean true/false</li>
+        <li><strong>bytes:</strong> Fixed-size byte arrays</li>
+        <li><strong>string:</strong> Text data</li>
+      </ul>
+
+      <h3>Functions</h3>
+      <p>Functions define contract behavior:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+function increment() public {
+    count = count + 1;
+}
+
+function getCount() public view returns (uint256) {
+    return count;
+}
+      </pre>
+
+      <h3>Visibility Modifiers</h3>
+      <ul>
+        <li><strong>public:</strong> Callable by anyone, can be called internally</li>
+        <li><strong>private:</strong> Only callable within this contract</li>
+        <li><strong>internal:</strong> Only callable by this contract and derived contracts</li>
+        <li><strong>external:</strong> Only callable from outside the contract</li>
+      </ul>
+
+      <h2>Function Modifiers</h2>
+      <p>Modifiers restrict function execution:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+modifier onlyOwner() {
+    require(msg.sender == owner, "Only owner");
+    _;
+}
+
+function changeOwner(address newOwner) public onlyOwner {
+    owner = newOwner;
+}
+      </pre>
+
+      <h2>Events and Logging</h2>
+      <p>Events allow efficient logging of contract activity:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+event Transfer(address indexed from, address indexed to, uint256 amount);
+
+function sendFunds(address recipient, uint256 amount) public {
+    // ... transfer logic ...
+    emit Transfer(msg.sender, recipient, amount);
+}
+      </pre>
+
+      <h2>Control Flow</h2>
+      
+      <h3>If/Else Statements</h3>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+if (value > 100) {
+    // Handle large value
+} else if (value > 10) {
+    // Handle medium value
+} else {
+    // Handle small value
+}
+      </pre>
+
+      <h3>Loops</h3>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+for (uint i = 0; i < 10; i++) {
+    // Loop body
+}
+
+while (condition) {
+    // Loop body
+}
+      </pre>
+
+      <h2>Error Handling</h2>
+      <ul>
+        <li><strong>require:</strong> Validates conditions, reverts if false</li>
+        <li><strong>assert:</strong> Internal checks, always reverts if false</li>
+        <li><strong>revert:</strong> Explicitly reject with error message</li>
+      </ul>
+
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+require(amount > 0, "Amount must be positive");
+require(balance >= amount, "Insufficient balance");
+assert(result == expectedValue);
+      </pre>
+
+      <div class="key-point">
+        <strong>Gas Efficiency:</strong> Every operation costs gas. Write efficient code: minimize storage writes, use local variables, avoid loops where possible.
+      </div>
+
+      <h2>Your First Contract</h2>
+      <p>Practice writing a simple counter contract that increments, decrements, and resets.</p>
+      <ol>
+        <li>Use Remix IDE (remix.ethereum.org)</li>
+        <li>Write the contract</li>
+        <li>Compile and deploy locally</li>
+        <li>Test functions through the interface</li>
+      </ol>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson-3-1.html" class="btn btn-secondary">← Previous Lesson</a>
+      <a href="module-3-intro.html" class="btn btn-primary">Back to Module</a>
+    </div>
+
+    <footer><p>ASquareL Academy · Smart Contracts with Solidity · Lesson 3.2</p></footer>
+  </div>
+</body>
+</html>

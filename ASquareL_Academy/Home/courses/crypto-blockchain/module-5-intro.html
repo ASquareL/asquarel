@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 5: NFTs and Token Standards | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .header { margin-bottom: 3rem; }
+    .breadcrumb { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    h1 { font-size: 2.5rem; margin: 0 0 1rem; }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin: 0; }
+    .module-card { background: linear-gradient(135deg, rgba(56,189,248,.1), rgba(167,139,250,.1)); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; }
+    .lesson-grid { display: grid; gap: 1.5rem; }
+    .lesson { background: rgba(15,23,42,.95); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; transition: all 0.3s ease; }
+    .lesson:hover { border-color: var(--primary); box-shadow: 0 0 20px rgba(56,189,248,0.1); }
+    .lesson-number { background: var(--primary); color: var(--bg); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 0.5rem; }
+    .lesson h3 { margin: 0 0 0.5rem; font-size: 1.35rem; }
+    .lesson-desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .lesson-topics { list-style: none; padding: 0; margin: 0 0 1rem; font-size: 0.9rem; }
+    .lesson-topics li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+    .lesson-topics li:before { content: "▸"; position: absolute; left: 0; color: var(--primary); }
+    .lesson-btn { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+    .lesson-btn:hover { transform: translateY(-2px); }
+    footer { padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="breadcrumb"><a href="crypto-blockchain.html">Course</a> → Module 5</div>
+      <h1>Module 5: NFTs and Token Standards</h1>
+      <p class="subtitle">Create digital assets, understand standards, and explore marketplaces</p>
+    </div>
+
+    <div class="module-card">
+      <h2>What You'll Learn</h2>
+      <p>This module covers non-fungible tokens (NFTs), ERC721 and ERC1155 standards, creating and minting NFTs, interacting with marketplaces, and understanding legal IP considerations.</p>
+    </div>
+
+    <div class="lesson-grid">
+      <div class="lesson">
+        <div class="lesson-number">1</div>
+        <h3>Introduction to NFTs</h3>
+        <p class="lesson-desc">What are NFTs and their applications</p>
+        <ul class="lesson-topics">
+          <li>NFT concepts and use cases</li>
+          <li>ERC721 and ERC1155 standards</li>
+          <li>Metadata and IPFS storage</li>
+          <li>Royalties and standards</li>
+        </ul>
+        <a href="lesson-5-1.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">2</div>
+        <h3>Creating NFTs</h3>
+        <p class="lesson-desc">Mint your own NFT collection</p>
+        <ul class="lesson-topics">
+          <li>NFT design and metadata</li>
+          <li>IPFS and decentralized storage</li>
+          <li>Smart contract deployment</li>
+          <li>Batch minting</li>
+        </ul>
+        <a href="lesson-5-2.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">3</div>
+        <h3>NFT Marketplaces</h3>
+        <p class="lesson-desc">Trading NFTs on major platforms</p>
+        <ul class="lesson-topics">
+          <li>OpenSea, Rarible, Blur</li>
+          <li>Listing and selling NFTs</li>
+          <li>Collection management</li>
+          <li>Royalties and earnings</li>
+        </ul>
+        <a href="lesson-5-3.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">4</div>
+        <h3>Legal & IP Considerations</h3>
+        <p class="lesson-desc">Rights and responsibilities of NFT creators</p>
+        <ul class="lesson-topics">
+          <li>Copyright and intellectual property</li>
+          <li>Licensing and permissions</li>
+          <li>Royalty structures</li>
+          <li>Legal frameworks by jurisdiction</li>
+        </ul>
+        <a href="lesson-5-4.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">5</div>
+        <h3>Project: NFT Collection</h3>
+        <p class="lesson-desc">Create and launch an NFT collection</p>
+        <ul class="lesson-topics">
+          <li>Design and artwork creation</li>
+          <li>Smart contract deployment</li>
+          <li>Metadata and upload to IPFS</li>
+          <li>Launch on marketplace</li>
+        </ul>
+        <a href="lesson-5-5.html" class="lesson-btn">Start Project</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>ASquareL Academy · NFTs and Token Standards · Create digital assets</p>
+    </footer>
+  </div>
+</body>
+</html>

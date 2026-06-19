@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3.3: Advanced Solidity | ASquareL Academy</title>
+  <style>
+    :root { --bg: #0f172a; --primary: #38bdf8; --accent: #a78bfa; --text: #e2e8f0; --muted: #94a3b8; --border: rgba(148,163,184,0.2); }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .breadcrumb { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+    .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+    .content { background: rgba(15,23,42,.95); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+    h2 { color: var(--primary); font-size: 1.6rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    h3 { color: var(--accent); font-size: 1.25rem; margin-top: 1.25rem; }
+    .key-point { background: rgba(56,189,248,.1); border-left: 4px solid var(--primary); padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+    .nav-buttons { display: flex; gap: 1rem; margin-top: 2rem; justify-content: space-between; }
+    .btn { padding: 0.9rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg); }
+    .btn-secondary { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--border); }
+    footer { padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Course</a> → <a href="module-3-intro.html">Module 3</a> → Lesson 3.3</div>
+    <h1>Lesson 3.3: Advanced Solidity</h1>
+    <p class="lesson-meta">Duration: 70 minutes | Difficulty: Intermediate-Advanced</p>
+
+    <div class="content">
+      <h2>Structs for Complex Data</h2>
+      <p>Group related data together:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+struct User {
+    address addr;
+    uint256 balance;
+    bool active;
+    string name;
+}
+
+User public user1 = User(msg.sender, 100, true, "Alice");
+      </pre>
+
+      <h2>Mappings (Key-Value Storage)</h2>
+      <p>Efficient key-value store for fast lookups:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+mapping(address => uint256) public balances;
+mapping(address => mapping(address => uint256)) public allowance;
+
+balances[msg.sender] = 100;
+uint256 myBalance = balances[msg.sender];
+      </pre>
+
+      <h2>Arrays</h2>
+      <p>Collections of same-type elements:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+address[] public users;  // Dynamic array
+uint256[10] public scores;  // Fixed-size array
+
+users.push(msg.sender);
+uint256 length = users.length;
+address firstUser = users[0];
+      </pre>
+
+      <h2>Inheritance</h2>
+      <p>Inherit functionality from parent contracts:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+contract Ownable {
+    address public owner = msg.sender;
+    modifier onlyOwner { require(msg.sender == owner); _; }
+}
+
+contract MyContract is Ownable {
+    function specialFunction() public onlyOwner {
+        // Only owner can call
+    }
+}
+      </pre>
+
+      <h2>Interfaces</h2>
+      <p>Define contract interfaces for interaction:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+interface IERC20 {
+    function transfer(address to, uint256 amount) external;
+    function balanceOf(address account) external view returns (uint256);
+}
+
+contract MyToken is IERC20 {
+    // Implement interface functions
+}
+      </pre>
+
+      <h2>Libraries</h2>
+      <p>Reusable code without state:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+library SafeMath {
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a + b;
+    }
+}
+
+using SafeMath for uint256;
+uint256 result = a.add(b);
+      </pre>
+
+      <div class="key-point">
+        <strong>Gas Optimization:</strong> Use libraries for common operations, be mindful of storage access (expensive), and optimize data structures for your use case.
+      </div>
+
+      <h2>Practice Project</h2>
+      <p>Build a contract with:</p>
+      <ul>
+        <li>Struct for user profiles</li>
+        <li>Mapping to store users</li>
+        <li>Array of active users</li>
+        <li>Modifier for access control</li>
+        <li>Events for tracking changes</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson-3-2.html" class="btn btn-secondary">← Previous Lesson</a>
+      <a href="module-3-intro.html" class="btn btn-primary">Back to Module</a>
+    </div>
+
+    <footer><p>ASquareL Academy · Smart Contracts with Solidity · Lesson 3.3</p></footer>
+  </div>
+</body>
+</html>

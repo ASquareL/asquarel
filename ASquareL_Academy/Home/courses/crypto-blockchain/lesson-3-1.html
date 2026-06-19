@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3.1: Introduction to Smart Contracts | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .breadcrumb { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+    .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+    .content { background: rgba(15,23,42,.95); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+    h2 { color: var(--primary); font-size: 1.6rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    h3 { color: var(--accent); font-size: 1.25rem; margin-top: 1.25rem; }
+    .key-point { background: rgba(56,189,248,.1); border-left: 4px solid var(--primary); padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+    code { background: rgba(0,0,0,.3); padding: 0.2rem 0.5rem; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9em; }
+    .nav-buttons { display: flex; gap: 1rem; margin-top: 2rem; justify-content: space-between; }
+    .btn { padding: 0.9rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg); }
+    .btn-secondary { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--border); }
+    footer { padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb"><a href="crypto-blockchain.html">Course</a> → <a href="module-3-intro.html">Module 3</a> → Lesson 3.1</div>
+    <h1>Lesson 3.1: Introduction to Smart Contracts</h1>
+    <p class="lesson-meta">Duration: 50 minutes | Difficulty: Intermediate</p>
+
+    <div class="content">
+      <h2>What are Smart Contracts?</h2>
+      <p>A smart contract is self-executing code stored on a blockchain. When conditions are met, the contract automatically executes without intermediaries.</p>
+
+      <div class="key-point">
+        <strong>Definition:</strong> Smart contracts are programs on the blockchain that execute automatically when predetermined conditions are met, eliminating the need for intermediaries.
+      </div>
+
+      <h3>Smart Contract Characteristics</h3>
+      <ul>
+        <li><strong>Immutable:</strong> Once deployed, code cannot be changed</li>
+        <li><strong>Deterministic:</strong> Same input always produces same output</li>
+        <li><strong>Transparent:</strong> All code is visible on the blockchain</li>
+        <li><strong>Autonomous:</strong> Executes without intermediaries</li>
+        <li><strong>Irreversible:</strong> Executed transactions cannot be undone</li>
+      </ul>
+
+      <h2>Real-World Use Cases</h2>
+      
+      <h3>Finance (DeFi)</h3>
+      <ul>
+        <li>Automated lending and borrowing protocols</li>
+        <li>Decentralized exchanges (swapping tokens)</li>
+        <li>Yield farming and staking</li>
+        <li>Insurance protocols</li>
+      </ul>
+
+      <h3>NFTs & Digital Assets</h3>
+      <ul>
+        <li>Digital art and collectibles</li>
+        <li>Gaming items and virtual worlds</li>
+        <li>Domain names and IP rights</li>
+        <li>Supply chain verification</li>
+      </ul>
+
+      <h3>Governance</h3>
+      <ul>
+        <li>Decentralized autonomous organizations (DAOs)</li>
+        <li>Community voting on proposals</li>
+        <li>Treasury management</li>
+      </ul>
+
+      <h2>Introduction to Solidity</h2>
+      <p>Solidity is the primary programming language for Ethereum smart contracts. It's statically typed and designed for blockchain applications.</p>
+
+      <h3>Why Solidity?</h3>
+      <ul>
+        <li>Purpose-built for smart contracts</li>
+        <li>Compiles to bytecode executable on EVM</li>
+        <li>Large developer community</li>
+        <li>Extensive libraries and tools</li>
+        <li>Well-documented and tested</li>
+      </ul>
+
+      <h3>Simple Solidity Example</h3>
+      <p>Here's a basic "Hello World" contract:</p>
+      <pre style="background: rgba(0,0,0,.3); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+pragma solidity ^0.8.0;
+
+contract HelloWorld {
+    string public message = "Hello, Blockchain!";
+    
+    function getMessage() public view returns (string memory) {
+        return message;
+    }
+}</pre>
+
+      <h2>Ethereum Virtual Machine (EVM)</h2>
+      <p>The EVM is the runtime environment for smart contracts on Ethereum.</p>
+
+      <h3>Key Concepts</h3>
+      <ul>
+        <li><strong>Bytecode:</strong> Compiled contract code</li>
+        <li><strong>Gas:</strong> Cost to execute computations</li>
+        <li><strong>State:</strong> Storage of contract data</li>
+        <li><strong>Address:</strong> Location of contract on blockchain</li>
+      </ul>
+
+      <h2>Gas & Transaction Costs</h2>
+      <p>Gas is the unit of computation cost on Ethereum. More complex operations cost more gas.</p>
+
+      <h3>Gas Components</h3>
+      <ul>
+        <li><strong>Gas Used:</strong> Amount of computation performed</li>
+        <li><strong>Gas Price:</strong> Cost per unit (in Gwei)</li>
+        <li><strong>Transaction Fee:</strong> Gas Used × Gas Price</li>
+      </ul>
+
+      <h3>Gas Optimization</h3>
+      <ul>
+        <li>Use local variables instead of storage when possible</li>
+        <li>Batch operations to reduce calls</li>
+        <li>Remove unnecessary computations</li>
+        <li>Use efficient data structures</li>
+      </ul>
+
+      <div class="key-point">
+        <strong>Gas Matters:</strong> Always think about gas efficiency. Poorly written contracts waste user funds on expensive transactions.
+      </div>
+
+      <h2>Contract State & Transactions</h2>
+      
+      <h3>State-Changing Functions</h3>
+      <ul>
+        <li>Modify contract data</li>
+        <li>Cost gas to execute</li>
+        <li>Create blockchain transactions</li>
+        <li>Example: transferring tokens</li>
+      </ul>
+
+      <h3>View/Pure Functions</h3>
+      <ul>
+        <li>Don't modify state</li>
+        <li>Free to call (no gas cost)</li>
+        <li>Read-only access</li>
+        <li>Example: checking balance</li>
+      </ul>
+
+      <h2>Security Considerations</h2>
+      
+      <h3>Common Smart Contract Vulnerabilities</h3>
+      <ul>
+        <li><strong>Reentrancy:</strong> Calling contract before state updates</li>
+        <li><strong>Overflow/Underflow:</strong> Integer math errors</li>
+        <li><strong>Front-running:</strong> Attackers seeing pending transactions</li>
+        <li><strong>Unchecked External Calls:</strong> Assuming calls won't fail</li>
+      </ul>
+
+      <h3>Best Practices</h3>
+      <ul>
+        <li>Use established libraries and patterns</li>
+        <li>Get contracts audited before mainnet deployment</li>
+        <li>Test thoroughly on testnets first</li>
+        <li>Start with small amounts</li>
+        <li>Have emergency pause mechanisms</li>
+      </ul>
+
+      <h2>Development Tools</h2>
+      
+      <h3>Popular IDEs & Frameworks</h3>
+      <ul>
+        <li><strong>Remix:</strong> Browser-based IDE (great for beginners)</li>
+        <li><strong>Hardhat:</strong> Ethereum development environment</li>
+        <li><strong>Truffle:</strong> Development framework and testing suite</li>
+        <li><strong>VS Code:</strong> Editor with Solidity plugins</li>
+      </ul>
+
+      <h3>Testing & Deployment</h3>
+      <ul>
+        <li><strong>Ganache:</strong> Local blockchain for testing</li>
+        <li><strong>Etherscan:</strong> Verify and publish contracts</li>
+        <li><strong>Goerli/Sepolia:</strong> Ethereum testnets</li>
+        <li><strong>Faucets:</strong> Get free test ETH</li>
+      </ul>
+
+      <h2>Your Learning Path</h2>
+      <ol>
+        <li>Learn Solidity syntax and basics</li>
+        <li>Write simple contracts</li>
+        <li>Test on local network (Ganache)</li>
+        <li>Deploy to testnet (Goerli)</li>
+        <li>Interact with contract on testnet</li>
+        <li>Verify code on Etherscan</li>
+        <li>Eventually: Deploy to mainnet</li>
+      </ol>
+
+      <div class="key-point">
+        <strong>Start Simple:</strong> Begin with basic contracts. Once you understand fundamentals, move to more complex patterns and optimizations.
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="module-3-intro.html" class="btn btn-secondary">← Back to Module</a>
+      <a href="lesson-3-2.html" class="btn btn-primary">Next Lesson →</a>
+    </div>
+
+    <footer><p>ASquareL Academy · Smart Contracts with Solidity · Lesson 3.1</p></footer>
+  </div>
+</body>
+</html>

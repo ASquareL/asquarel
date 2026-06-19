@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1.5: Project - Blockchain Explorer | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.5rem;
+    }
+    .lesson-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .content {
+      background: rgba(15,23,42,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      color: var(--accent);
+      font-size: 1.25rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .key-point {
+      background: rgba(56,189,248,.1);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    .project-step {
+      background: rgba(167,139,250,.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: space-between;
+    }
+    .btn {
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--bg);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="crypto-blockchain.html">Course</a> → 
+      <a href="module-1-intro.html">Module 1</a> → 
+      Lesson 1.5
+    </div>
+    <h1>Lesson 1.5: Project - Blockchain Explorer</h1>
+    <p class="lesson-meta">Duration: 90 minutes | Difficulty: Beginner</p>
+
+    <div class="content">
+      <h2>Project Overview</h2>
+      <p>In this hands-on project, you'll use real blockchain explorers to analyze transactions, understand block structure, and explore how blockchain data is organized. Blockchain explorers are web applications that let you view all public blockchain data.</p>
+
+      <div class="key-point">
+        <strong>Learning Objective:</strong> Gain practical experience reading blockchain data and understanding how transactions flow through the network.
+      </div>
+
+      <h2>Tools You'll Use</h2>
+      <ul>
+        <li><strong>Etherscan:</strong> Ethereum blockchain explorer (etherscan.io)</li>
+        <li><strong>Bitcoin.com:</strong> Bitcoin blockchain explorer</li>
+        <li><strong>Polygonscan:</strong> Polygon blockchain explorer</li>
+      </ul>
+
+      <h2>Project Steps</h2>
+
+      <div class="project-step">
+        <h3>Step 1: Explore a Bitcoin Block</h3>
+        <ul>
+          <li>Visit bitcoin.com/explorer</li>
+          <li>Search for block #750,000</li>
+          <li>Note down the following:
+            <ul>
+              <li>Block hash</li>
+              <li>Block height</li>
+              <li>Timestamp</li>
+              <li>Number of transactions</li>
+              <li>Block size in bytes</li>
+              <li>Previous block hash</li>
+              <li>Miner's reward</li>
+            </ul>
+          </li>
+          <li>Take a screenshot and save it</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 2: Analyze a Bitcoin Transaction</h3>
+        <ul>
+          <li>In the same block, find a transaction</li>
+          <li>Click into the transaction to view details</li>
+          <li>Identify:
+            <ul>
+              <li>Transaction hash (TXID)</li>
+              <li>Number of inputs</li>
+              <li>Number of outputs</li>
+              <li>Total input amount</li>
+              <li>Total output amount</li>
+              <li>Transaction fee</li>
+              <li>Fee rate (satoshis per byte)</li>
+              <li>Confirmation count</li>
+            </ul>
+          </li>
+          <li>Calculate: Total input - Total output = Transaction fee</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 3: Explore Ethereum on Etherscan</h3>
+        <ul>
+          <li>Visit etherscan.io</li>
+          <li>Search for a recent block (search for "latest block")</li>
+          <li>Compare to Bitcoin block structure:
+            <ul>
+              <li>Block number (height)</li>
+              <li>Timestamp</li>
+              <li>Transactions</li>
+              <li>Block reward (base fee + tips)</li>
+              <li>Gas used vs gas limit</li>
+              <li>Miner/Validator</li>
+            </ul>
+          </li>
+          <li>Note differences from Bitcoin (account model vs UTXO)</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 4: Follow an Ethereum Transaction</h3>
+        <ul>
+          <li>Find a recent Ethereum transaction</li>
+          <li>Click into it and identify:
+            <ul>
+              <li>Transaction hash</li>
+              <li>From address</li>
+              <li>To address</li>
+              <li>Value transferred (in ETH and USD)</li>
+              <li>Gas limit</li>
+              <li>Gas price (in Gwei)</li>
+              <li>Transaction fee (total gas cost)</li>
+              <li>Block number</li>
+              <li>Number of confirmations</li>
+            </ul>
+          </li>
+          <li>Calculate: Gas used × Gas price = Transaction fee</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 5: Understand Gas in Ethereum</h3>
+        <ul>
+          <li>On Etherscan, find an active smart contract</li>
+          <li>Look at a contract interaction transaction</li>
+          <li>Note:
+            <ul>
+              <li>Higher gas usage than simple transfers</li>
+              <li>Gas price varies by network congestion</li>
+              <li>Transaction fee = Gas used × Gas price</li>
+            </ul>
+          </li>
+          <li>Compare to a simple ETH transfer (21,000 gas)</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 6: Investigate Address History</h3>
+        <ul>
+          <li>Search for a well-known address (e.g., Vitalik's address: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045)</li>
+          <li>Review the address overview:
+            <ul>
+              <li>Total transactions</li>
+              <li>Current balance</li>
+              <li>Token holdings</li>
+              <li>Transaction history</li>
+            </ul>
+          </li>
+          <li>Click on a transaction to see full details</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 7: Explore Token Transfers</h3>
+        <ul>
+          <li>On Etherscan, search for a popular token (e.g., USDC, USDT, DAI)</li>
+          <li>Review the token contract:
+            <ul>
+              <li>Contract address</li>
+              <li>Total supply</li>
+              <li>Number of holders</li>
+              <li>Transfer events</li>
+            </ul>
+          </li>
+          <li>Compare token transfers to ETH transfers</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 8: Create Your Analysis Report</h3>
+        <p>Document your findings in a report that includes:</p>
+        <ul>
+          <li>Screenshots of blocks and transactions explored</li>
+          <li>Key differences between Bitcoin and Ethereum</li>
+          <li>Explanation of fees and gas</li>
+          <li>Transaction examples with calculations</li>
+          <li>Observations about network activity</li>
+        </ul>
+      </div>
+
+      <h2>Key Concepts to Understand</h2>
+      
+      <h3>Block Confirmation</h3>
+      <ul>
+        <li>Unconfirmed: Transaction in mempool</li>
+        <li>1 confirmation: Block containing transaction</li>
+        <li>6+ confirmations: Generally considered final</li>
+        <li>More confirmations = harder to reverse</li>
+      </ul>
+
+      <h3>Transaction Fees</h3>
+      <ul>
+        <li><strong>Bitcoin:</strong> Calculated per byte (satoshis/byte)</li>
+        <li><strong>Ethereum:</strong> Calculated per unit of computation (Gwei/gas)</li>
+        <li>Higher fee = faster inclusion</li>
+        <li>Network congestion increases fees</li>
+      </ul>
+
+      <h3>Address Privacy</h3>
+      <ul>
+        <li>All transactions are public and traceable</li>
+        <li>Addresses are pseudonymous (not anonymous)</li>
+        <li>Blockchain analysis can link addresses to identities</li>
+        <li>No deletion or modification of transactions</li>
+      </ul>
+
+      <h2>Reflection Questions</h2>
+      <ol>
+        <li>What are the differences in block structure between Bitcoin and Ethereum?</li>
+        <li>How does the transaction fee market work?</li>
+        <li>Why are transaction fees important for network security?</li>
+        <li>How would you estimate appropriate fees for different use cases?</li>
+        <li>What does blockchain transparency mean for privacy?</li>
+      </ol>
+
+      <h2>Next Steps</h2>
+      <p>After completing this project:</p>
+      <ul>
+        <li>You can now read real blockchain data</li>
+        <li>You understand how transactions flow through networks</li>
+        <li>You can analyze fees and optimize transaction costs</li>
+        <li>Ready to dive deeper into smart contracts and DeFi</li>
+      </ul>
+
+      <div class="key-point">
+        <strong>Pro Tip:</strong> Bookmark your favorite blockchain explorer. You'll use it constantly in your blockchain journey to verify contracts, check transactions, and research addresses.
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson-1-4.html" class="btn btn-secondary">← Previous Lesson</a>
+      <a href="module-2-intro.html" class="btn btn-primary">Start Module 2 →</a>
+    </div>
+
+    <footer>
+      <p>ASquareL Academy · Blockchain Fundamentals · Lesson 1.5</p>
+    </footer>
+  </div>
+</body>
+</html>

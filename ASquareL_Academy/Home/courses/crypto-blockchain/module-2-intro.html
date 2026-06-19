@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 2: Cryptocurrency Ecosystems | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .header {
+      margin-bottom: 3rem;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .module-card {
+      background: linear-gradient(135deg, rgba(56,189,248,.1), rgba(167,139,250,.1));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .lesson-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .lesson {
+      background: rgba(15,23,42,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+    }
+    .lesson:hover {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(56,189,248,0.1);
+    }
+    .lesson-number {
+      background: var(--primary);
+      color: var(--bg);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .lesson h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.35rem;
+    }
+    .lesson-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .lesson-topics {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      font-size: 0.9rem;
+    }
+    .lesson-topics li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .lesson-topics li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+    .lesson-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--bg);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .lesson-btn:hover {
+      transform: translateY(-2px);
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="breadcrumb">
+        <a href="crypto-blockchain.html">Course</a> → Module 2
+      </div>
+      <h1>Module 2: Cryptocurrency Ecosystems</h1>
+      <p class="subtitle">Master wallets, exchanges, trading fundamentals, and market dynamics</p>
+    </div>
+
+    <div class="module-card">
+      <h2>What You'll Learn</h2>
+      <p>This module covers the practical aspects of using cryptocurrencies. You'll learn about wallets and key management, how exchanges work, trading mechanics, and market analysis. By the end, you'll understand how to securely manage digital assets and participate in crypto markets.</p>
+    </div>
+
+    <div class="lesson-grid">
+      <div class="lesson">
+        <div class="lesson-number">1</div>
+        <h3>Wallets & Key Management</h3>
+        <p class="lesson-desc">Secure storage and control of your cryptocurrency assets</p>
+        <ul class="lesson-topics">
+          <li>Hot wallets vs cold wallets</li>
+          <li>Seed phrases and recovery</li>
+          <li>Private key management</li>
+          <li>Hardware wallet setup</li>
+        </ul>
+        <a href="lesson-2-1.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">2</div>
+        <h3>Crypto Exchanges</h3>
+        <p class="lesson-desc">How to buy, sell, and trade cryptocurrencies</p>
+        <ul class="lesson-topics">
+          <li>Centralized vs decentralized exchanges</li>
+          <li>Account setup and KYC</li>
+          <li>Trading pairs and order types</li>
+          <li>Exchange security risks</li>
+        </ul>
+        <a href="lesson-2-2.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">3</div>
+        <h3>Trading Fundamentals</h3>
+        <p class="lesson-desc">Understand order types, strategies, and risk management</p>
+        <ul class="lesson-topics">
+          <li>Market, limit, and stop-loss orders</li>
+          <li>Long and short positions</li>
+          <li>Trading pairs and spreads</li>
+          <li>Risk management principles</li>
+        </ul>
+        <a href="lesson-2-3.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">4</div>
+        <h3>Market Analysis</h3>
+        <p class="lesson-desc">Technical and fundamental analysis for crypto markets</p>
+        <ul class="lesson-topics">
+          <li>Reading candlestick charts</li>
+          <li>Key technical indicators</li>
+          <li>Support and resistance levels</li>
+          <li>Fundamental analysis</li>
+        </ul>
+        <a href="lesson-2-4.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">5</div>
+        <h3>Project: Portfolio Management</h3>
+        <p class="lesson-desc">Hands-on project managing a crypto portfolio</p>
+        <ul class="lesson-topics">
+          <li>Portfolio diversification</li>
+          <li>Cost basis tracking</li>
+          <li>Risk-adjusted returns</li>
+          <li>Tax considerations</li>
+        </ul>
+        <a href="lesson-2-5.html" class="lesson-btn">Start Project</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>ASquareL Academy · Cryptocurrency Ecosystems Module · Master crypto trading and asset management</p>
+    </footer>
+  </div>
+</body>
+</html>

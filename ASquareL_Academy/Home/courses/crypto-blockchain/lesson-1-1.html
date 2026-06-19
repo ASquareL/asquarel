@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1.1: Blockchain Basics & History | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.5rem;
+    }
+    .lesson-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .content {
+      background: rgba(15,23,42,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      color: var(--accent);
+      font-size: 1.25rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(56,189,248,.1), rgba(167,139,250,.1));
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    .key-point {
+      background: rgba(56,189,248,.1);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    code {
+      background: rgba(0,0,0,.3);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+    .quiz {
+      background: rgba(167,139,250,.1);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .quiz h3 {
+      margin-top: 0;
+    }
+    .question {
+      margin: 1rem 0;
+    }
+    .question label {
+      display: block;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      cursor: pointer;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: space-between;
+    }
+    .btn {
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--bg);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="crypto-blockchain.html">Course</a> → 
+      <a href="module-1-intro.html">Module 1</a> → 
+      Lesson 1.1
+    </div>
+    <h1>Lesson 1.1: Blockchain Basics & History</h1>
+    <p class="lesson-meta">Duration: 45 minutes | Difficulty: Beginner</p>
+
+    <div class="content">
+      <h2>What is Blockchain?</h2>
+      <p>At its core, blockchain is a distributed database that maintains a continuously growing list of records called blocks. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data, creating an immutable chain of records.</p>
+
+      <div class="key-point">
+        <strong>Key Concept:</strong> A blockchain is essentially a ledger that is replicated across a network of computers, making it impossible for any single entity to alter the records without detection.
+      </div>
+
+      <h3>Key Characteristics of Blockchain</h3>
+      <ul>
+        <li><strong>Decentralized:</strong> No single point of control; the network is distributed across many nodes</li>
+        <li><strong>Immutable:</strong> Once recorded, data cannot be changed without altering all subsequent blocks</li>
+        <li><strong>Transparent:</strong> All network participants can view the complete transaction history</li>
+        <li><strong>Secure:</strong> Uses cryptographic techniques to ensure data integrity</li>
+        <li><strong>Consensus-Based:</strong> New blocks are added only when the network reaches agreement</li>
+      </ul>
+
+      <h2>The Evolution of Digital Currency</h2>
+      <p>Before blockchain, several attempts were made to create digital currency, but all faced the "double-spending problem" - how to prevent the same digital asset from being spent twice.</p>
+
+      <h3>Pre-Bitcoin Era</h3>
+      <ul>
+        <li><strong>DigiCash (1989):</strong> Early attempt at digital money, required a trusted central server</li>
+        <li><strong>Hashcash (1997):</strong> Proof-of-work mechanism, used to prevent email spam</li>
+        <li><strong>B-money (1998):</strong> Proposed anonymous distributed electronic cash</li>
+        <li><strong>Bit Gold (1998):</strong> Early attempt at cryptocurrency using proof-of-work</li>
+      </ul>
+
+      <div class="highlight-box">
+        <h3>Bitcoin's Innovation</h3>
+        <p>In 2008, an anonymous individual or group known as "Satoshi Nakamoto" published the Bitcoin whitepaper: "Bitcoin: A Peer-to-Peer Electronic Cash System." This revolutionary approach solved the double-spending problem without requiring a trusted intermediary by combining:</p>
+        <ul>
+          <li>Proof-of-work consensus mechanism</li>
+          <li>Cryptographic hashing</li>
+          <li>Distributed peer-to-peer network</li>
+          <li>Economic incentives for miners</li>
+        </ul>
+      </div>
+
+      <h2>Why Decentralization Matters</h2>
+      
+      <h3>Traditional Financial System</h3>
+      <p>In traditional finance, you trust a central authority (bank, government) to maintain accurate records and prevent fraud. This creates several dependencies:</p>
+      <ul>
+        <li>Requires trust in the institution</li>
+        <li>Vulnerable to censorship</li>
+        <li>Subject to government control</li>
+        <li>Single point of failure</li>
+        <li>Can exclude individuals without access to banking</li>
+      </ul>
+
+      <h3>Blockchain Advantages</h3>
+      <ul>
+        <li><strong>Trustless:</strong> No need to trust a single entity; cryptography ensures trust</li>
+        <li><strong>Censorship-Resistant:</strong> Cannot be shut down by any single authority</li>
+        <li><strong>Inclusive:</strong> Anyone with internet can participate</li>
+        <li><strong>Transparent:</strong> Everyone can verify transactions</li>
+        <li><strong>Resilient:</strong> No single point of failure</li>
+      </ul>
+
+      <div class="key-point">
+        <strong>Philosophy:</strong> Blockchain enables "trust through mathematics" rather than "trust through institutions."
+      </div>
+
+      <h2>Timeline of Blockchain Evolution</h2>
+      <ul>
+        <li><strong>2008:</strong> Bitcoin whitepaper published</li>
+        <li><strong>2009:</strong> Bitcoin network launched (Genesis Block mined)</li>
+        <li><strong>2011:</strong> Litecoin created as Bitcoin alternative</li>
+        <li><strong>2015:</strong> Ethereum launches, introducing smart contracts</li>
+        <li><strong>2017:</strong> ICO boom and cryptocurrency mainstream adoption</li>
+        <li><strong>2020:</strong> DeFi explosion and institutional adoption</li>
+        <li><strong>2023:</strong> Layer 2 solutions and enterprise blockchain</li>
+      </ul>
+
+      <h2>Blockchain vs Other Technologies</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+        <thead>
+          <tr style="background: rgba(56,189,248,.1); border-bottom: 2px solid var(--border);">
+            <th style="padding: 0.75rem; text-align: left;">Feature</th>
+            <th style="padding: 0.75rem; text-align: left;">Blockchain</th>
+            <th style="padding: 0.75rem; text-align: left;">Database</th>
+            <th style="padding: 0.75rem; text-align: left;">Distributed System</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.75rem;">Decentralized</td>
+            <td style="padding: 0.75rem;">✓</td>
+            <td style="padding: 0.75rem;">✗</td>
+            <td style="padding: 0.75rem;">✓</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.75rem;">Immutable</td>
+            <td style="padding: 0.75rem;">✓</td>
+            <td style="padding: 0.75rem;">✗</td>
+            <td style="padding: 0.75rem;">✗</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.75rem;">Transparent</td>
+            <td style="padding: 0.75rem;">✓</td>
+            <td style="padding: 0.75rem;">✗</td>
+            <td style="padding: 0.75rem;">Varies</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem;">Consensus-Based</td>
+            <td style="padding: 0.75rem;">✓</td>
+            <td style="padding: 0.75rem;">✗</td>
+            <td style="padding: 0.75rem;">Varies</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="quiz">
+        <h3>Check Your Understanding</h3>
+        <div class="question">
+          <strong>1. What problem did Bitcoin solve that previous digital currencies could not?</strong>
+          <label><input type="radio" name="q1"> Double-spending without a central authority</label>
+          <label><input type="radio" name="q1"> Fast transaction speeds</label>
+          <label><input type="radio" name="q1"> Low transaction fees</label>
+        </div>
+        <div class="question">
+          <strong>2. What year was Bitcoin created?</strong>
+          <label><input type="radio" name="q2"> 2005</label>
+          <label><input type="radio" name="q2"> 2008 (whitepaper), 2009 (network launch)</label>
+          <label><input type="radio" name="q2"> 2010</label>
+        </div>
+        <div class="question">
+          <strong>3. What is the main advantage of a decentralized system?</strong>
+          <label><input type="radio" name="q3"> Lower fees</label>
+          <label><input type="radio" name="q3"> No single point of failure or control</label>
+          <label><input type="radio" name="q3"> Faster transactions</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="module-1-intro.html" class="btn btn-secondary">← Back to Module</a>
+      <a href="lesson-1-2.html" class="btn btn-primary">Next Lesson →</a>
+    </div>
+
+    <footer>
+      <p>ASquareL Academy · Blockchain Fundamentals · Lesson 1.1</p>
+    </footer>
+  </div>
+</body>
+</html>

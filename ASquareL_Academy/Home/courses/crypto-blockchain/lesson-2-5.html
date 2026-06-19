@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2.5: Project - Portfolio Management | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+    h2 { color: var(--primary); font-size: 1.6rem; margin-top: 1.5rem; }
+    h3 { color: var(--accent); font-size: 1.25rem; margin-top: 1.25rem; }
+    .content { background: rgba(15,23,42,.95); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+    .key-point { background: rgba(56,189,248,.1); border-left: 4px solid var(--primary); padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+    .project-step { background: rgba(167,139,250,.05); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+    .breadcrumb { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+    .nav-buttons { display: flex; gap: 1rem; margin-top: 2rem; justify-content: space-between; }
+    .btn { padding: 0.9rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg); }
+    .btn-secondary { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--border); }
+    footer { padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb"><a href="crypto-blockchain.html">Course</a> → <a href="module-2-intro.html">Module 2</a> → Lesson 2.5</div>
+    <h1>Lesson 2.5: Project - Portfolio Management</h1>
+    <p class="lesson-meta">Duration: 90 minutes | Difficulty: Intermediate</p>
+
+    <div class="content">
+      <h2>Project Overview</h2>
+      <p>In this project, you'll create and manage a diversified cryptocurrency portfolio, track your cost basis, calculate returns, and understand tax implications.</p>
+
+      <div class="key-point">
+        <strong>Objective:</strong> Learn portfolio construction, tracking, and optimization strategies used by professional investors.
+      </div>
+
+      <h2>Project Steps</h2>
+
+      <div class="project-step">
+        <h3>Step 1: Define Your Portfolio Strategy</h3>
+        <ul>
+          <li>Decide allocation strategy:
+            <ul>
+              <li>Core (60%): Bitcoin and Ethereum</li>
+              <li>Sector (30%): DeFi, Layer 2, Altcoins</li>
+              <li>Exploration (10%): New projects, high-risk</li>
+            </ul>
+          </li>
+          <li>Create allocation spreadsheet</li>
+          <li>Document your investment thesis</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 2: Research & Asset Selection</h3>
+        <ul>
+          <li>Research 5-10 cryptocurrencies:
+            <ul>
+              <li>Use CoinMarketCap or CoinGecko</li>
+              <li>Review fundamental metrics</li>
+              <li>Check team and technology</li>
+              <li>Assess use case and adoption</li>
+            </ul>
+          </li>
+          <li>Write brief investment thesis for each</li>
+          <li>Calculate target position size</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 3: Cost Basis Tracking</h3>
+        <ul>
+          <li>Create transaction log with:
+            <ul>
+              <li>Date and time of trade</li>
+              <li>Asset bought/sold</li>
+              <li>Quantity</li>
+              <li>Price per unit</li>
+              <li>Total cost (including fees)</li>
+              <li>Exchange/wallet</li>
+            </ul>
+          </li>
+          <li>Calculate your average cost basis per asset</li>
+          <li>Total investment amount</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 4: Performance Calculation</h3>
+        <ul>
+          <li>Calculate current portfolio value:
+            <ul>
+              <li>Current price × quantity per asset</li>
+              <li>Sum all positions</li>
+            </ul>
+          </li>
+          <li>Calculate unrealized P&L:
+            <ul>
+              <li>Current value - Total cost = Unrealized P&L</li>
+              <li>Calculate as percentage</li>
+            </ul>
+          </li>
+          <li>Track daily/weekly returns</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 5: Diversification Analysis</h3>
+        <ul>
+          <li>Calculate allocation % per asset</li>
+          <li>Compare to target allocation</li>
+          <li>Identify rebalancing needs:
+            <ul>
+              <li>If Bitcoin < 50%, rebalance</li>
+              <li>If single altcoin > 20%, reduce</li>
+            </ul>
+          </li>
+          <li>Document rebalancing decisions</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 6: Risk Metrics</h3>
+        <ul>
+          <li>Calculate volatility:
+            <ul>
+              <li>Standard deviation of daily returns</li>
+              <li>Higher volatility = higher risk</li>
+            </ul>
+          </li>
+          <li>Calculate max drawdown:
+            <ul>
+              <li>Largest % decline from peak</li>
+              <li>Shows worst-case scenario</li>
+            </ul>
+          </li>
+          <li>Sharpe Ratio:
+            <ul>
+              <li>Return adjusted for risk</li>
+              <li>Higher is better</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 7: Tax Implications</h3>
+        <ul>
+          <li>Research your jurisdiction's tax rules:
+            <ul>
+              <li>Capital gains tax (short-term vs long-term)</li>
+              <li>Income tax on staking rewards</li>
+              <li>Gift tax on transfers</li>
+            </ul>
+          </li>
+          <li>Calculate tax liability:
+            <ul>
+              <li>Realized gains × tax rate</li>
+              <li>Identify tax-loss harvesting opportunities</li>
+            </ul>
+          </li>
+          <li>Document for accountant</li>
+        </ul>
+      </div>
+
+      <div class="project-step">
+        <h3>Step 8: Portfolio Dashboard</h3>
+        <ul>
+          <li>Create dashboard showing:
+            <ul>
+              <li>Current portfolio value</li>
+              <li>Total invested</li>
+              <li>Unrealized P&L ($and %)</li>
+              <li>Allocation breakdown</li>
+              <li>Top and worst performers</li>
+              <li>Asset allocation chart</li>
+            </ul>
+          </li>
+          <li>Update daily/weekly</li>
+        </ul>
+      </div>
+
+      <h2>Portfolio Tools</h2>
+      <ul>
+        <li><strong>CoinGecko API:</strong> Free cryptocurrency data</li>
+        <li><strong>Delta App:</strong> Portfolio tracker</li>
+        <li><strong>Zapper:</strong> DeFi portfolio tracker</li>
+        <li><strong>Google Sheets:</strong> DIY tracking (recommended for learning)</li>
+      </ul>
+
+      <h2>Professional Portfolio Rules</h2>
+      
+      <h3>The 60/30/10 Rule</h3>
+      <ul>
+        <li>60% Core holdings (stable, proven assets)</li>
+        <li>30% Sector bets (DeFi, NFT, Layer 2, etc.)</li>
+        <li>10% Exploration (new, high-risk projects)</li>
+      </ul>
+
+      <h3>Position Sizing</h3>
+      <ul>
+        <li>No single position > 20% of portfolio</li>
+        <li>Risk per position ≤ 2% of total capital</li>
+        <li>Allocate based on conviction level</li>
+      </ul>
+
+      <h3>Rebalancing</h3>
+      <ul>
+        <li>Rebalance quarterly or when allocations drift >10%</li>
+        <li>Buy underweighted, sell outperformers</li>
+        <li>Maintains risk profile</li>
+      </ul>
+
+      <h2>Common Portfolio Mistakes</h2>
+      <ul>
+        <li>Not diversifying (single asset risk)</li>
+        <li>Not tracking cost basis</li>
+        <li>Letting winners run too large</li>
+        <li>Emotional panic selling</li>
+        <li>Ignoring tax implications</li>
+        <li>Not documenting transactions</li>
+      </ul>
+
+      <h2>Deliverables</h2>
+      <p>Submit documentation including:</p>
+      <ul>
+        <li>Investment thesis and strategy</li>
+        <li>Cost basis spreadsheet</li>
+        <li>Performance analysis</li>
+        <li>Risk metrics</li>
+        <li>Tax analysis</li>
+        <li>Portfolio dashboard</li>
+        <li>Rebalancing recommendations</li>
+      </ul>
+
+      <div class="key-point">
+        <strong>Remember:</strong> Past performance doesn't guarantee future results. Diversification reduces risk but doesn't eliminate it. Always do your own research.
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson-2-4.html" class="btn btn-secondary">← Previous Lesson</a>
+      <a href="module-3-intro.html" class="btn btn-primary">Start Module 3 →</a>
+    </div>
+
+    <footer><p>ASquareL Academy · Cryptocurrency Ecosystems · Lesson 2.5</p></footer>
+  </div>
+</body>
+</html>

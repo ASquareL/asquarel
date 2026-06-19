@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1: Blockchain Fundamentals | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .header {
+      margin-bottom: 3rem;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .module-card {
+      background: linear-gradient(135deg, rgba(56,189,248,.1), rgba(167,139,250,.1));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .lesson-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .lesson {
+      background: rgba(15,23,42,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+    }
+    .lesson:hover {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(56,189,248,0.1);
+    }
+    .lesson-number {
+      background: var(--primary);
+      color: var(--bg);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .lesson h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.35rem;
+    }
+    .lesson-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .lesson-topics {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      font-size: 0.9rem;
+    }
+    .lesson-topics li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .lesson-topics li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+    .lesson-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--bg);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .lesson-btn:hover {
+      transform: translateY(-2px);
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="breadcrumb">
+        <a href="crypto-blockchain.html">Course</a> → Module 1
+      </div>
+      <h1>Module 1: Blockchain Fundamentals</h1>
+      <p class="subtitle">Master the core concepts, architecture, and mechanisms that power blockchain networks</p>
+    </div>
+
+    <div class="module-card">
+      <h2>What You'll Learn</h2>
+      <p>This module introduces you to the foundational concepts of blockchain technology, including distributed ledger systems, consensus mechanisms, cryptographic principles, and network architecture. You'll understand how blockchain creates trust without intermediaries and gain hands-on experience with blockchain explorers and node concepts.</p>
+    </div>
+
+    <div class="lesson-grid">
+      <div class="lesson">
+        <div class="lesson-number">1</div>
+        <h3>Blockchain Basics & History</h3>
+        <p class="lesson-desc">Introduction to blockchain, its origin with Bitcoin, and why it matters</p>
+        <ul class="lesson-topics">
+          <li>What is blockchain?</li>
+          <li>History of digital currencies</li>
+          <li>Bitcoin's revolutionary approach</li>
+          <li>Why decentralization matters</li>
+        </ul>
+        <a href="lesson-1-1.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">2</div>
+        <h3>Distributed Ledgers & Consensus</h3>
+        <p class="lesson-desc">How blockchain maintains a shared, immutable record across networks</p>
+        <ul class="lesson-topics">
+          <li>Distributed ledger technology</li>
+          <li>Proof of Work (PoW)</li>
+          <li>Proof of Stake (PoS)</li>
+          <li>Other consensus mechanisms</li>
+        </ul>
+        <a href="lesson-1-2.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">3</div>
+        <h3>Cryptography & Security</h3>
+        <p class="lesson-desc">Understand the cryptographic foundations that make blockchain secure</p>
+        <ul class="lesson-topics">
+          <li>Hash functions</li>
+          <li>Public-key cryptography</li>
+          <li>Digital signatures</li>
+          <li>Security implications</li>
+        </ul>
+        <a href="lesson-1-3.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">4</div>
+        <h3>Blocks, Transactions & Mining</h3>
+        <p class="lesson-desc">Deep dive into blockchain's core components and transaction lifecycle</p>
+        <ul class="lesson-topics">
+          <li>Block structure</li>
+          <li>Transaction anatomy</li>
+          <li>Mining and validation</li>
+          <li>Merkle trees and hashing</li>
+        </ul>
+        <a href="lesson-1-4.html" class="lesson-btn">Start Lesson</a>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-number">5</div>
+        <h3>Project: Blockchain Explorer</h3>
+        <p class="lesson-desc">Hands-on project using real blockchain explorers to analyze transactions</p>
+        <ul class="lesson-topics">
+          <li>Using Etherscan</li>
+          <li>Analyzing transactions</li>
+          <li>Understanding gas and fees</li>
+          <li>Reading smart contract data</li>
+        </ul>
+        <a href="lesson-1-5.html" class="lesson-btn">Start Project</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>ASquareL Academy · Blockchain Fundamentals Module · Master the foundation of blockchain technology</p>
+    </footer>
+  </div>
+</body>
+</html>

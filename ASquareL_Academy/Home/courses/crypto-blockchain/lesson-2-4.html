@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2.4: Market Analysis | ASquareL Academy</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --primary: #38bdf8;
+      --accent: #a78bfa;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,0.2);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+    h2 { color: var(--primary); font-size: 1.6rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    h3 { color: var(--accent); font-size: 1.25rem; margin-top: 1.25rem; }
+    .content { background: rgba(15,23,42,.95); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+    .key-point { background: rgba(56,189,248,.1); border-left: 4px solid var(--primary); padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+    .breadcrumb { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .lesson-meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+    .nav-buttons { display: flex; gap: 1rem; margin-top: 2rem; justify-content: space-between; }
+    .btn { padding: 0.9rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg); }
+    .btn-secondary { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--border); }
+    footer { padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb"><a href="crypto-blockchain.html">Course</a> → <a href="module-2-intro.html">Module 2</a> → Lesson 2.4</div>
+    <h1>Lesson 2.4: Market Analysis</h1>
+    <p class="lesson-meta">Duration: 60 minutes | Difficulty: Intermediate</p>
+
+    <div class="content">
+      <h2>Technical Analysis Basics</h2>
+      <p>Technical analysis studies historical price and volume data to forecast future price movement. It's based on the idea that price trends repeat.</p>
+
+      <h3>Candlestick Charts</h3>
+      <ul>
+        <li><strong>Body:</strong> Open to close price</li>
+        <li><strong>Wick (Shadow):</strong> High and low during period</li>
+        <li><strong>Green:</strong> Close higher than open (bullish)</li>
+        <li><strong>Red:</strong> Close lower than open (bearish)</li>
+        <li>Each candle represents a time period (1min, 5min, 1hr, 1day)</li>
+      </ul>
+
+      <h3>Chart Timeframes</h3>
+      <ul>
+        <li><strong>Scalping:</strong> 1-5 minute charts</li>
+        <li><strong>Day Trading:</strong> 15-60 minute charts</li>
+        <li><strong>Swing Trading:</strong> 4-hour to daily charts</li>
+        <li><strong>Position Trading:</strong> Weekly or monthly charts</li>
+      </ul>
+
+      <h2>Key Technical Indicators</h2>
+      
+      <h3>Moving Averages (MA)</h3>
+      <ul>
+        <li><strong>Simple MA:</strong> Average of prices over set period</li>
+        <li><strong>Exponential MA:</strong> Weights recent prices more heavily</li>
+        <li><strong>Use:</strong> Identify trend direction</li>
+        <li><strong>Golden Cross:</strong> When fast MA crosses above slow MA (bullish)</li>
+      </ul>
+
+      <h3>RSI (Relative Strength Index)</h3>
+      <ul>
+        <li>Measures momentum on scale of 0-100</li>
+        <li><strong>&lt;30:</strong> Oversold (potential bounce)</li>
+        <li><strong>&gt;70:</strong> Overbought (potential pullback)</li>
+        <li>Good for identifying extremes</li>
+      </ul>
+
+      <h3>MACD (Moving Average Convergence Divergence)</h3>
+      <ul>
+        <li>Trend following momentum indicator</li>
+        <li>Shows relationship between moving averages</li>
+        <li><strong>Signal Line Crossover:</strong> Common trading signal</li>
+        <li>Good for trend confirmation</li>
+      </ul>
+
+      <h3>Bollinger Bands</h3>
+      <ul>
+        <li>Shows support and resistance zones</li>
+        <li>Upper and lower bands indicate extremes</li>
+        <li>Squeeze indicates low volatility (breakout coming)</li>
+        <li>Price outside bands is extreme</li>
+      </ul>
+
+      <h3>Volume Analysis</h3>
+      <ul>
+        <li><strong>High Volume:</strong> Strong move confirmation</li>
+        <li><strong>Low Volume:</strong> Weak move, low confidence</li>
+        <li><strong>Volume Increase:</strong> Trend strengthening</li>
+        <li><strong>Volume Decrease:</strong> Trend weakening</li>
+      </ul>
+
+      <h2>Support & Resistance</h2>
+      
+      <h3>Support Levels</h3>
+      <ul>
+        <li>Price levels where buying pressure appears</li>
+        <li>Prices tend to bounce up at support</li>
+        <li>Breakthrough below support is bearish signal</li>
+        <li>Often at previous lows or round numbers</li>
+      </ul>
+
+      <h3>Resistance Levels</h3>
+      <ul>
+        <li>Price levels where selling pressure appears</li>
+        <li>Prices tend to bounce down at resistance</li>
+        <li>Breakthrough above resistance is bullish signal</li>
+        <li>Often at previous highs or round numbers</li>
+      </ul>
+
+      <h3>Dynamic Support/Resistance</h3>
+      <ul>
+        <li>Moving average acts as dynamic support/resistance</li>
+        <li>Price bouncing on MA shows trend strength</li>
+        <li>Break through MA indicates trend reversal</li>
+      </ul>
+
+      <h2>Chart Patterns</h2>
+      
+      <h3>Bullish Patterns</h3>
+      <ul>
+        <li><strong>Double Bottom:</strong> V-shape recovery</li>
+        <li><strong>Triangle:</strong> Breakout to upside likely</li>
+        <li><strong>Flag:</strong> Consolidation before continued rise</li>
+      </ul>
+
+      <h3>Bearish Patterns</h3>
+      <ul>
+        <li><strong>Double Top:</strong> Inverted V, rejection of highs</li>
+        <li><strong>Head and Shoulders:</strong> Three peaks, middle higher</li>
+        <li><strong>Descending Triangle:</strong> Breakout downward likely</li>
+      </ul>
+
+      <div class="key-point">
+        <strong>Pattern Recognition:</strong> Patterns give probability edges, not certainties. Always use stop-losses with pattern trades.
+      </div>
+
+      <h2>Fundamental Analysis</h2>
+      <p>Fundamental analysis evaluates the intrinsic value and adoption potential of a cryptocurrency.</p>
+
+      <h3>Key Metrics</h3>
+      <ul>
+        <li><strong>Market Cap:</strong> Price × circulating supply</li>
+        <li><strong>Volume:</strong> Trading activity and liquidity</li>
+        <li><strong>Active Addresses:</strong> Number of active accounts</li>
+        <li><strong>Transaction Count:</strong> Network usage</li>
+        <li><strong>Developer Activity:</strong> GitHub commits and updates</li>
+      </ul>
+
+      <h3>What to Research</h3>
+      <ul>
+        <li>Whitepaper and technology</li>
+        <li>Team experience and credibility</li>
+        <li>Use case and real-world adoption</li>
+        <li>Competition and market positioning</li>
+        <li>Regulatory environment</li>
+        <li>Community and social metrics</li>
+      </ul>
+
+      <h2>On-Chain Analysis</h2>
+      <p>Analyzing blockchain data to understand investor behavior.</p>
+
+      <h3>Key On-Chain Metrics</h3>
+      <ul>
+        <li><strong>Exchange Flows:</strong> Coins moving in/out of exchanges</li>
+        <li><strong>Whale Activity:</strong> Large holder movements</li>
+        <li><strong>HODL Waves:</strong> Age of coins being moved</li>
+        <li><strong>Network Value:</strong> Total economic value secured</li>
+      </ul>
+
+      <h2>Risk Assessment</h2>
+      
+      <h3>Evaluate Before Trading</h3>
+      <ul>
+        <li>Market cap (avoid extremely low cap coins)</li>
+        <li>Liquidity (can you exit when needed?)</li>
+        <li>Volatility (can you handle price swings?)</li>
+        <li>Regulatory risks (could be delisted?)</li>
+        <li>Technology risks (code audits, security)</li>
+      </ul>
+
+      <h2>Trading Plan Template</h2>
+      <ol>
+        <li><strong>Setup:</strong> What conditions trigger a trade?</li>
+        <li><strong>Entry:</strong> Exact price and order type</li>
+        <li><strong>Stop-Loss:</strong> Where you exit if wrong</li>
+        <li><strong>Take-Profit:</strong> Target profit level</li>
+        <li><strong>Risk/Reward:</strong> Calculate ratio before entering</li>
+      </ol>
+
+      <div class="key-point">
+        <strong>Technical vs Fundamental:</strong> Technical analysis is for timing, fundamental analysis is for selection. Use both together for best results.
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson-2-3.html" class="btn btn-secondary">← Previous Lesson</a>
+      <a href="lesson-2-5.html" class="btn btn-primary">Next Lesson →</a>
+    </div>
+
+    <footer><p>ASquareL Academy · Cryptocurrency Ecosystems · Lesson 2.4</p></footer>
+  </div>
+</body>
+</html>
