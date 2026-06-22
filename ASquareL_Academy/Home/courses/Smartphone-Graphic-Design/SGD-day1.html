@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: Mobile Design Fundamentals - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1); }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); font-weight: 400; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.disabled { opacity: 0.5; cursor: not-allowed; }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+        .nav-btn.dashboard:hover { background: var(--primary-gold); color: #000000; }
+        @media (max-width: 768px) { .container { padding: 30px 20px; } .lesson-nav-buttons { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 1: MOBILE DESIGN FUNDAMENTALS</h1>
+            <p>Unlock the core principles that define smartphone graphic design excellence</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>The Mobile-First Mindset</h2>
+                <p>Welcome to your journey into smartphone graphic design mastery. Today, we establish the foundation—understanding that mobile design is not simply "smaller desktop design." It's a paradigm shift in how we approach creative expression within tight constraints.</p>
+                <p>The screen real estate is precious. Every pixel counts. Every choice carries weight. This is where minimalism meets maximalism in impact. We design for thumbs, eyes optimized for closeup viewing, and platforms that demand immediate engagement.</p>
+                
+                <h3>Core Principles of Mobile Design</h3>
+                <p><strong>1. Constraint as Catalyst:</strong> Limited screen space forces us to prioritize. We eliminate the superfluous. Every element serves a purpose.</p>
+                <p><strong>2. Thumb Zone Optimization:</strong> Users hold phones naturally. Interact with bottom 40% most comfortably. Reach zones matter. Design within them.</p>
+                <p><strong>3. Touch-First Interactions:</strong> Buttons must be at least 44x44px. Spacing prevents accidental taps. Precision is impossible—design for forgiveness.</p>
+                
+                <div class="tip-box">
+                    <strong>DIRECTOR'S NOTE:</strong> The best mobile design feels like it was always meant to be small. There's an elegance to constraint. Embrace it.
+                </div>
+                
+                <h3>The 375px Canvas</h3>
+                <p>iPhone 12, 13, 14 standard: 390px width. This is our benchmark. Design at this resolution. Ensure readability at 100% zoom without horizontal scroll. This single constraint shapes every decision we'll make this week.</p>
+                
+                <h3>Resolution Independence</h3>
+                <p>Vectors dominate mobile design. SVG, EPS, AI files. Scaling without degradation is essential. Your logo at 40px must be as crisp as at 400px. Learn to simplify while maintaining character.</p>
+                
+                <div class="tip-box">
+                    <strong>PRO TIP:</strong> Test your designs at 1.5x and 2x scales. iOS uses 2x and 3x for Retina displays. Your design must sing across all densities.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Why Mobile Design Matters NOW</h2>
+                <p>67% of global internet traffic flows through mobile devices. Your audience is in their pocket. Desktop is secondary. Mobile is the primary stage.</p>
+                <p>This isn't a prediction. It's reality. Brands that master mobile first dominate. Those that don't fade into obscurity. Your competitive advantage starts with understanding this shift.</p>
+                
+                <h3>The Commercial Advantage</h3>
+                <p>Clients pay premium rates for designers who understand mobile-first strategy. Apps, social media graphics, mobile web assets—the demand is relentless and the budgets are generous for those with expertise.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Your Week Ahead</h2>
+                <p>Days 1-6 establish our toolkit and mindset. We explore PixelLab and Canva—the professional platforms where we'll craft mobile excellence. We master layers, understand canvas specifications, and begin building our design language.</p>
+                <p>Each day builds on the previous. No skipping. No shortcuts. By day 6, you'll have internalized the principles that separate professional mobile designers from amateurs.</p>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">← Return to Dashboard</a>
+            <div></div>
+            <a href="SGD-day2.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

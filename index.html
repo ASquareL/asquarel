@@ -1,290 +1,1693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A Square L Innovate | Enterprise Ecosystem</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <style>
-        /* === CORE VARIABLES === */
+        /* =========================
+           CORE VARIABLES
+        ========================= */
         :root {
             --bg-black: #050505;
+            --bg-deep: #080808;
             --surface-dark: #111111;
-            --surface-glass: rgba(17, 17, 17, 0.7);
-            --border-glow: rgba(212, 175, 55, 0.2);
+            --surface-dark-2: #151515;
+            --surface-glass: rgba(17, 17, 17, 0.72);
+            --border-glow: rgba(212, 175, 55, 0.18);
+            --border-soft: rgba(255,255,255,0.06);
             --primary-gold: #D4AF37;
+            --primary-gold-dark: #AA7C11;
             --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
             --text-main: #ffffff;
-            --text-muted: #888888;
+            --text-muted: #a0a0a0;
+            --text-soft: #cfcfcf;
+            --shadow-gold: 0 0 30px rgba(212,175,55,0.12);
+            --radius-lg: 24px;
+            --radius-md: 18px;
+            --radius-sm: 12px;
+            --transition: all 0.35s ease;
+            --max-width: 1380px;
         }
 
-        /* === GLOBAL RESET === */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-black); color: var(--text-main); font-family: 'Nunito', sans-serif; overflow-x: hidden; }
-        a { text-decoration: none; }
+        /* =========================
+           GLOBAL RESET
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* === NAVIGATION (GLASSMORPHISM) === */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top center, rgba(212,175,55,0.08), transparent 35%),
+                linear-gradient(180deg, #050505 0%, #070707 50%, #040404 100%);
+            color: var(--text-main);
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        section {
+            position: relative;
+        }
+
+        .container {
+            width: min(100%, var(--max-width));
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-wrapper {
+            padding: 110px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid var(--border-glow);
+            border-radius: 999px;
+            color: var(--primary-gold);
+            background: rgba(212,175,55,0.06);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+
+        .section-title .gold {
+            color: var(--primary-gold);
+        }
+
+        .section-subtitle {
+            max-width: 780px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .section-line {
+            width: 70px;
+            height: 3px;
+            background: var(--gold-gradient);
+            border-radius: 999px;
+            margin: 20px auto 0;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(12,12,12,0.98));
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-md);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        /* =========================
+           REVEAL ANIMATION
+        ========================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
         .navbar {
-            position: fixed; top: 0; width: 100%; padding: 20px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            background: var(--surface-glass); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border-glow);
-            z-index: 1000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1100;
+            transition: var(--transition);
+            padding: 18px 0;
         }
-        .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: 2px; color: var(--text-main); }
-        .nav-logo span { color: var(--primary-gold); }
-        .nav-btn {
-            background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);
-            padding: 10px 25px; border-radius: 30px; font-weight: 800; font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        .nav-btn:hover { background: var(--primary-gold); color: var(--bg-black); box-shadow: 0 0 20px rgba(212,175,55,0.4); }
 
-        /* === THE MAGIC HERO SECTION === */
+        .navbar.scrolled {
+            background: rgba(8, 8, 8, 0.82);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-glow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            font-size: 1.05rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            white-space: nowrap;
+        }
+
+        .nav-logo span {
+            color: var(--primary-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .nav-btn,
+        .btn,
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .nav-btn,
+        .btn {
+            background: var(--gold-gradient);
+            color: #050505;
+            padding: 13px 24px;
+            border: 1px solid transparent;
+            box-shadow: 0 10px 25px rgba(212,175,55,0.18);
+        }
+
+        .nav-btn:hover,
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(212,175,55,0.25);
+        }
+
+        .btn-outline {
+            padding: 13px 24px;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-gold);
+            color: #050505;
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--border-glow);
+            background: rgba(255,255,255,0.02);
+            color: var(--text-main);
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
         .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; position: relative; padding: 0 20px;
-        }
-        .hero::before {
-            content: ''; position: absolute; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0) 70%);
-            top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1;
-            animation: pulseGlow 6s infinite alternate;
-        }
-        @keyframes pulseGlow {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 90px;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* === CLEAN LOGO STYLES === */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(212,175,55,0.16) 0%, rgba(212,175,55,0.03) 35%, rgba(0,0,0,0) 72%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            animation: pulseGlow 7s infinite alternate ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(5,5,5,0.15) 0%, rgba(5,5,5,0.55) 75%, rgba(5,5,5,0.9) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.55;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.15);
+                opacity: 1;
+            }
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(212,175,55,0.08);
+            border: 1px solid var(--border-glow);
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            line-height: 1.02;
+            font-weight: 900;
+            margin-bottom: 22px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title .gold {
+            color: var(--primary-gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.08rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            line-height: 1.9;
+            margin-bottom: 34px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-soft);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .hero-chip i {
+            color: var(--primary-gold);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-visual-card {
+            position: relative;
+            width: min(100%, 470px);
+            padding: 34px;
+            border-radius: 30px;
+            background:
+                linear-gradient(180deg, rgba(22,22,22,0.92), rgba(12,12,12,0.98));
+            border: 1px solid var(--border-glow);
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.45),
+                0 0 30px rgba(212,175,55,0.08);
+            overflow: hidden;
+        }
+
+        .hero-visual-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.07), transparent 40%, transparent 60%, rgba(212,175,55,0.05));
+            pointer-events: none;
+        }
+
         .hero-logo-img {
-            width: 100%; max-width: 450px; height: auto;
-            margin-bottom: 30px; z-index: 2;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
+            width: 100%;
+            max-width: 330px;
+            height: auto;
+            margin: 0 auto 28px;
+            filter: drop-shadow(0 14px 24px rgba(0,0,0,0.75));
             animation: floatLogo 6s ease-in-out infinite;
         }
+
         @keyframes floatLogo {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
 
-        .hero-subtitle { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; font-weight: 300; letter-spacing: 1px; z-index: 2; }
+        .hero-pillars {
+            display: grid;
+            gap: 14px;
+        }
 
-        /* === SECTION CONTAINERS === */
-        .section-wrapper { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
-        .section-header { margin-bottom: 60px; text-align: center; }
-        .section-title { font-size: 2.5rem; font-weight: 900; color: var(--primary-gold); margin-bottom: 15px; }
-        .section-line { width: 60px; height: 3px; background: var(--primary-gold); margin: 0 auto; border-radius: 2px; }
+        .hero-pillar {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 18px;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+        }
 
-        /* === ABOUT & FOUNDER (SPLIT LAYOUT) === */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .about-text p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; }
-        
+        .hero-pillar i {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212,175,55,0.12);
+            color: var(--primary-gold);
+            font-size: 1rem;
+        }
+
+        .hero-pillar h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .hero-pillar p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* =========================
+           ABOUT / CONSORTIUM
+        ========================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-text-card,
         .founder-card {
-            background: var(--surface-dark); padding: 40px; border-radius: 20px; border: 1px solid var(--border-glow);
-            position: relative; overflow: hidden;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(180deg, rgba(18,18,18,0.98), rgba(10,10,10,0.98));
+            border: 1px solid var(--border-soft);
+            position: relative;
+            overflow: hidden;
         }
+
+        .about-text-card::before,
         .founder-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: var(--gold-gradient);
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gold-gradient);
         }
-        .founder-name { font-size: 2rem; font-weight: 800; margin-bottom: 5px; }
-        .founder-title { color: var(--primary-gold); font-weight: 600; font-size: 1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;}
-        
-        /* Portfolio Link Styles */
+
+        .about-text-card p,
+        .founder-card p {
+            font-size: 1.02rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .founder-name {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .founder-title {
+            color: var(--primary-gold);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
         .portfolio-link {
-            display: inline-flex; align-items: center; gap: 10px; color: var(--primary-gold);
-            font-weight: 800; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;
-            border: 1px solid var(--primary-gold); padding: 12px 25px; border-radius: 5px;
-            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-gold);
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--primary-gold);
+            padding: 13px 24px;
+            border-radius: 999px;
+            transition: var(--transition);
         }
-        .portfolio-link:hover { background: var(--primary-gold); color: var(--bg-black); gap: 15px; }
 
-        /* === THE ECOSYSTEM GRID (THE CORE DIVISIONS) === */
-        .ecosystem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        
+        .portfolio-link:hover {
+            background: var(--primary-gold);
+            color: var(--bg-black);
+            gap: 15px;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           WHY US
+        ========================= */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .why-card {
+            padding: 32px 28px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(180deg, rgba(17,17,17,0.98), rgba(11,11,11,0.98));
+            border: 1px solid var(--border-soft);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .why-icon {
+            width: 62px;
+            height: 62px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212,175,55,0.1);
+            color: var(--primary-gold);
+            font-size: 1.35rem;
+            margin-bottom: 22px;
+        }
+
+        .why-card h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-size: 0.96rem;
+        }
+
+        /* =========================
+           ECOSYSTEM
+        ========================= */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
         .division-card {
-            background: var(--surface-dark); border: 1px solid #222; border-radius: 16px; padding: 50px 40px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column;
+            background: linear-gradient(180deg, rgba(18,18,18,0.98), rgba(10,10,10,0.98));
+            border: 1px solid #222;
+            border-radius: 22px;
+            padding: 40px 32px;
+            transition: all 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            position: relative;
+            overflow: hidden;
         }
+
+        .division-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.05), transparent 40%, transparent 60%, rgba(212,175,55,0.04));
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
         .division-card:hover {
-            border-color: var(--primary-gold); transform: translateY(-10px); background: #151515;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.1);
+            border-color: var(--primary-gold);
+            transform: translateY(-10px);
+            background: #151515;
+            box-shadow: 0 24px 45px rgba(0,0,0,0.45), 0 0 25px rgba(212,175,55,0.08);
         }
-        
-        .div-icon { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 30px; }
-        .division-card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; }
-        .division-card p { color: var(--text-muted); line-height: 1.7; flex-grow: 1; margin-bottom: 30px; }
-        
+
+        .division-card:hover::before {
+            opacity: 1;
+        }
+
+        .div-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212,175,55,0.1);
+            color: var(--primary-gold);
+            font-size: 1.7rem;
+            margin-bottom: 26px;
+        }
+
+        .division-card h3 {
+            font-size: 1.55rem;
+            font-weight: 900;
+            margin-bottom: 14px;
+        }
+
+        .division-card p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            flex-grow: 1;
+            margin-bottom: 26px;
+            font-size: 0.98rem;
+        }
+
         .div-link {
-            display: inline-flex; align-items: center; gap: 10px; color: var(--primary-gold);
-            font-weight: 800; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-gold);
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
-        .division-card:hover .div-link { gap: 15px; } 
 
-        /* === PREMIUM FOOTER STYLES === */
-        footer { border-top: 1px solid var(--border-glow); padding: 70px 5% 30px; background: #030303; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
+        .division-card:hover .div-link {
+            gap: 16px;
+        }
 
-        .footer-brand h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 15px; }
-        .footer-brand span { color: var(--primary-gold); }
-        .footer-brand p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; max-width: 280px; }
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        /* =========================
+           HOW IT WORKS
+        ========================= */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .process-card {
+            padding: 30px 26px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(180deg, rgba(17,17,17,0.98), rgba(11,11,11,0.98));
+            border: 1px solid var(--border-soft);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .process-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .process-step {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(212,175,55,0.12);
+            color: var(--primary-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        .process-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .process-card p {
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-size: 0.96rem;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+        .stats-wrap {
+            border-radius: 30px;
+            padding: 38px;
+            background:
+                linear-gradient(180deg, rgba(20,20,20,0.98), rgba(10,10,10,0.98));
+            border: 1px solid var(--border-glow);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .stat-card {
+            padding: 26px 22px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-glow);
+        }
+
+        .stat-number {
+            font-size: clamp(1.9rem, 4vw, 2.5rem);
+            font-weight: 900;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-soft);
+            font-size: 0.96rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           FINAL CTA
+        ========================= */
+        .final-cta-wrap {
+            border-radius: 30px;
+            padding: 48px;
+            background:
+                linear-gradient(135deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02)),
+                linear-gradient(180deg, rgba(16,16,16,0.98), rgba(10,10,10,0.98));
+            border: 1px solid var(--border-glow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .final-cta-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 35%);
+            pointer-events: none;
+        }
+
+        .final-cta-top {
+            text-align: center;
+            margin-bottom: 34px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta-top h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 900;
+            margin-bottom: 14px;
+        }
+
+        .final-cta-top p {
+            max-width: 780px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .path-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .path-card {
+            padding: 30px 26px;
+            border-radius: 24px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            transition: var(--transition);
+        }
+
+        .path-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .path-card .div-icon {
+            margin-bottom: 20px;
+        }
+
+        .path-card h3 {
+            font-size: 1.35rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .path-card p {
+            color: var(--text-muted);
+            line-height: 1.75;
+            flex-grow: 1;
+            margin-bottom: 24px;
+            font-size: 0.96rem;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+        footer {
+            border-top: 1px solid var(--border-glow);
+            padding: 80px 0 30px;
+            background: #030303;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+            gap: 36px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 14px;
+        }
+
+        .footer-brand span {
+            color: var(--primary-gold);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            max-width: 320px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
         .social-links a {
-            width: 40px; height: 40px; border-radius: 50%; background: var(--surface-dark);
-            display: flex; justify-content: center; align-items: center; color: var(--text-main);
-            transition: 0.3s; border: 1px solid #333;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--surface-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-main);
+            transition: 0.3s;
+            border: 1px solid #333;
         }
-        .social-links a:hover { background: var(--primary-gold); color: var(--bg-black); border-color: var(--primary-gold); }
 
-        .footer-links h4, .footer-newsletter h4 { color: #fff; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 0.95rem; }
-        .footer-links ul { list-style: none; padding: 0; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: var(--text-muted); transition: 0.3s; font-size: 0.95rem; }
-        .footer-links a:hover { color: var(--primary-gold); padding-left: 5px; }
+        .social-links a:hover {
+            background: var(--primary-gold);
+            color: var(--bg-black);
+            border-color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
 
-        .footer-newsletter p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px; line-height: 1.5; }
-        .newsletter-form { display: flex; width: 100%; position: relative; }
+        .footer-links h4,
+        .footer-newsletter h4 {
+            color: #fff;
+            margin-bottom: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            transition: 0.3s;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            padding-left: 5px;
+        }
+
+        .footer-newsletter p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .newsletter-form {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
         .newsletter-form input {
-            width: 100%; padding: 15px 50px 15px 20px; background: #111; border: 1px solid #333;
-            color: #fff; border-radius: 30px; outline: none; font-family: 'Nunito', sans-serif;
+            width: 100%;
+            padding: 15px 55px 15px 20px;
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 30px;
+            outline: none;
+            font-family: 'Nunito', sans-serif;
+            transition: var(--transition);
         }
-        .newsletter-form input:focus { border-color: var(--primary-gold); }
+
+        .newsletter-form input:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.08);
+        }
+
         .newsletter-form button {
-            position: absolute; right: 5px; top: 5px; bottom: 5px; width: 40px;
-            border-radius: 50%; background: var(--primary-gold); border: none; color: #000;
-            cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            width: 42px;
+            border-radius: 50%;
+            background: var(--primary-gold);
+            border: none;
+            color: #000;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .newsletter-form button:hover { background: #b8860b; transform: scale(1.05); }
 
-        .copyright { text-align: center; color: #555; font-size: 0.85rem; border-top: 1px solid #222; padding-top: 30px; }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+        .newsletter-form button:hover {
+            background: #b8860b;
+            transform: scale(1.05);
         }
-        @media (max-width: 600px) {
-            .footer-grid { grid-template-columns: 1fr; }
+
+        .copyright {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #1f1f1f;
+            padding-top: 28px;
+        }
+
+        /* =========================
+           MOBILE NAV
+        ========================= */
+        @media (max-width: 980px) {
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: calc(100% + 12px);
+                left: 5%;
+                right: 5%;
+                background: rgba(10,10,10,0.96);
+                border: 1px solid var(--border-glow);
+                border-radius: 24px;
+                padding: 20px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 18px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-12px);
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .nav-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-btn {
+                width: 100%;
+            }
+        }
+
+        /* =========================
+           RESPONSIVE LAYOUT
+        ========================= */
+        @media (max-width: 1180px) {
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-visual {
+                justify-content: flex-start;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ecosystem-grid,
+            .path-grid,
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 760px) {
+            .section-wrapper {
+                padding: 90px 0;
+            }
+
+            .hero {
+                padding-top: 130px;
+                min-height: auto;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn,
+            .btn-outline {
+                width: 100%;
+            }
+
+            .about-text-card,
+            .founder-card,
+            .stats-wrap,
+            .final-cta-wrap {
+                padding: 30px 22px;
+            }
+
+            .why-grid,
+            .ecosystem-grid,
+            .process-grid,
+            .stats-grid,
+            .path-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .division-card,
+            .why-card,
+            .process-card,
+            .path-card {
+                padding: 28px 22px;
+            }
+
+            .hero-visual-card {
+                padding: 24px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .final-cta-top h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-logo">A SQUARE L <span>INNOVATE</span></div>
-        <a href="#divisions" class="nav-btn">Explore Ecosystem</a>
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo">A SQUARE L <span>INNOVATE</span></a>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#divisions">Ecosystem</a></li>
+                    <li><a href="#process">How It Works</a></li>
+                    <li><a href="#contact-footer">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="#divisions" class="nav-btn">Explore Ecosystem</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
     </nav>
 
+    <!-- =========================
+         HERO
+    ========================= -->
     <section class="hero">
-        <!-- Make sure to use your newly edited image file name here -->
-        <img src="logo.png" alt="A Square L Innovate Logo" class="hero-logo-img">
-        <p class="hero-subtitle">Architecting the future of digital education, enterprise web infrastructure, and high-performance business hardware.</p>
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-sparkles"></i>
+                    Enterprise ecosystem for digital growth, execution and infrastructure
+                </div>
+
+                <h1 class="hero-title">
+                    Building the <span class="gold">digital talent, software systems,</span> and business infrastructure that power modern growth.
+                </h1>
+
+                <p class="hero-subtitle">
+                    A Square L Innovate is the parent ecosystem behind elite digital training, premium web execution, and high-performance business systems. We connect learning, product delivery, and real-world business operations into one integrated engine for growth.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#divisions" class="btn">
+                        Explore Our Ecosystem <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="ASquareL_Academy/Home/index.html" class="btn-outline">
+                        Enter Academy <i class="fa-solid fa-graduation-cap"></i>
+                    </a>
+                </div>
+
+                <div class="hero-meta">
+                    <div class="hero-chip">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Talent Development
+                    </div>
+                    <div class="hero-chip">
+                        <i class="fa-solid fa-code"></i>
+                        Web Solutions
+                    </div>
+                    <div class="hero-chip">
+                        <i class="fa-solid fa-server"></i>
+                        Business Infrastructure
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal">
+                <div class="hero-visual-card">
+                    <img src="logo.png" alt="A Square L Innovate Logo" class="hero-logo-img">
+
+                    <div class="hero-pillars">
+                        <div class="hero-pillar">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <div>
+                                <h4>A Square L Academy</h4>
+                                <p>Train ambitious learners into production-ready software engineers and digital creators.</p>
+                            </div>
+                        </div>
+
+                        <div class="hero-pillar">
+                            <i class="fa-solid fa-code"></i>
+                            <div>
+                                <h4>Web Design Pool</h4>
+                                <p>Design, build and deploy premium web experiences for startups, brands and enterprises.</p>
+                            </div>
+                        </div>
+
+                        <div class="hero-pillar">
+                            <i class="fa-solid fa-server"></i>
+                            <div>
+                                <h4>Business Systems</h4>
+                                <p>Support operational growth with payment hardware, infrastructure and business technology systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- =========================
+         ABOUT / CONSORTIUM
+    ========================= -->
     <section class="section-wrapper" id="about">
-        <div class="about-grid">
-            <div class="about-text">
-                <h2 class="section-title" style="text-align: left;">The Consortium</h2>
-                <p>A Square L Innovate is not just a company; it is an ecosystem. We bridge the gap between brilliant digital architecture and physical business operations. From deploying high-end corporate websites to scaling financial hardware networks across the region, we build the systems that modern enterprises rely on.</p>
-                <p>We believe in zero compromises. Every line of code, every pixel of design, and every terminal deployed is executed with absolute precision.</p>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text-card reveal">
+                    <div class="section-tag">The Consortium</div>
+                    <h2 class="section-title">An ecosystem built to bridge <span class="gold">digital innovation</span> and real business execution.</h2>
+                    <p>
+                        A Square L Innovate is more than a company. It is a connected ecosystem where digital education, enterprise web execution, and operational business systems work together to create measurable value. We build the pipeline from learning and capability development to deployment, delivery and infrastructure support.
+                    </p>
+                    <p>
+                        From training future software professionals, to designing premium websites, to supporting business payment systems and operational technology, our focus is the same: deliver with clarity, precision, and long-term impact.
+                    </p>
+                    <p>
+                        We believe modern growth is strongest when talent, technology, and infrastructure are not separated. They should reinforce each other — and that is exactly how A Square L Innovate is structured.
+                    </p>
+                </div>
+
+                <div class="founder-card reveal">
+                    <h3 class="founder-name">Ashiru Auwal Lawal</h3>
+                    <div class="founder-title">Founder & Chief Executive Officer</div>
+                    <p>
+                        A tech professional, software engineer, and Business Relationship Manager, Ashiru leads A Square L Innovate with a rare combination of technical depth and operational business experience. His background spans software, digital product execution, and large-scale business systems management.
+                    </p>
+                    <p>
+                        That mix is what shapes the A Square L model: not just building digital products, but understanding how technology, people, and operational systems must work together to create real business outcomes.
+                    </p>
+                    <a href="solved-prtofolio.html" target="_blank" class="portfolio-link">
+                        View Executive Portfolio <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
-            
-            <div class="founder-card">
-                <h3 class="founder-name">Ashiru Auwal Lawal</h3>
-                <div class="founder-title">Founder & Chief Executive Officer</div>
-                <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 25px;">
-                    A tech professional, software engineer, and Business Relationship Manager. Driving the vision behind A Square L Innovate, Ashiru combines deep technical expertise in computer science with high-level operational experience managing vast networks of corporate POS and business terminals. The result is a company built on both digital innovation and concrete financial infrastructure.
+        </div>
+    </section>
+
+    <!-- =========================
+         WHY A SQUARE L
+    ========================= -->
+    <section class="section-wrapper" id="why-us">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Why A Square L Innovate</div>
+                <h2 class="section-title">Built for <span class="gold">execution, growth, and long-term value</span></h2>
+                <p class="section-subtitle">
+                    We are not built as isolated services. A Square L Innovate is designed as a connected ecosystem that develops talent, delivers digital products, and supports the business infrastructure needed to sustain growth.
                 </p>
-                <a href="solved-prtofolio.html" target="_blank" class="portfolio-link">
-                    View Executive Portfolio <i class="fa-solid fa-arrow-right"></i>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Integrated Ecosystem</h3>
+                    <p>
+                        Training, execution, and operational systems live inside one brand structure. That means stronger alignment, faster learning loops, and more consistent outcomes across every division.
+                    </p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Execution-Focused Delivery</h3>
+                    <p>
+                        We care about outcomes, not just concepts. Whether we are training learners, shipping websites, or supporting business systems, our work is built around implementation and practical results.
+                    </p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Quality With Precision</h3>
+                    <p>
+                        Every touchpoint matters — from the clarity of our training paths to the performance of our websites and the reliability of our business support systems.
+                    </p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon"><i class="fa-solid fa-people-group"></i></div>
+                    <h3>Built Around Real Growth</h3>
+                    <p>
+                        Our model supports people and businesses at different stages: learners starting their journey, brands building online, and enterprises strengthening operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         ECOSYSTEM
+    ========================= -->
+    <section class="section-wrapper" id="divisions">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Ecosystem</div>
+                <h2 class="section-title">Three divisions. <span class="gold">One connected mission.</span></h2>
+                <p class="section-subtitle">
+                    Each arm of A Square L Innovate solves a different layer of growth — from developing digital talent, to building web experiences, to supporting operational business infrastructure.
+                </p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="ecosystem-grid">
+                <a href="ASquareL_Academy/Home/index.html" class="division-card reveal">
+                    <div class="div-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>A Square L Academy</h3>
+                    <p>
+                        The elite training ground. An intense, project-based learning environment designed to transform beginners and growing learners into capable software engineers, digital builders, and creative problem-solvers through real work and consistent practice.
+                    </p>
+                    <div class="div-link">Enter Academy <i class="fa-solid fa-arrow-right"></i></div>
+                </a>
+
+                <a href="Main/index.html" class="division-card reveal">
+                    <div class="div-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Design Pool</h3>
+                    <p>
+                        Our client-facing digital execution arm. We architect, design, and deploy premium, responsive, high-performance websites for modern businesses, startups, and founders who want their online presence to match their ambition.
+                    </p>
+                    <div class="div-link">Client Portal <i class="fa-solid fa-arrow-right"></i></div>
+                </a>
+
+                <a href="app/dashboard.html" class="division-card reveal">
+                    <div class="div-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Business Systems</h3>
+                    <p>
+                        The operational backbone. We support business payment systems, hardware deployment, and technology infrastructure that help enterprises and growing businesses run with greater stability, efficiency, and scale.
+                    </p>
+                    <div class="div-link">View Infrastructure <i class="fa-solid fa-arrow-right"></i></div>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="section-wrapper" id="divisions">
-        <div class="section-header">
-            <h2 class="section-title">Our Ecosystem</h2>
-            <div class="section-line"></div>
-        </div>
+    <!-- =========================
+         HOW THE ECOSYSTEM WORKS
+    ========================= -->
+    <section class="section-wrapper" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">How It Works</div>
+                <h2 class="section-title">From learning to execution to infrastructure — <span class="gold">a complete growth pipeline</span></h2>
+                <p class="section-subtitle">
+                    A Square L Innovate is structured to support capability development, digital product execution, and the operational systems that help businesses sustain momentum.
+                </p>
+                <div class="section-line"></div>
+            </div>
 
-        <div class="ecosystem-grid">
-            
-            <a href="ASquareL_Academy/Home/index.html" class="division-card">
-                <div class="div-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h3>A Square L Academy</h3>
-                <p>The elite training ground. An intense, 52-week curriculum transforming absolute beginners into production-ready software engineers and digital creators through rigorous, real-world project builds.</p>
-                <div class="div-link">Enter Academy <i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+            <div class="process-grid">
+                <div class="process-card reveal">
+                    <div class="process-step">01</div>
+                    <h3>Develop Talent</h3>
+                    <p>
+                        Through A Square L Academy, learners build practical skills in software, digital creation, and real project execution.
+                    </p>
+                </div>
 
-            <a href="Main/index.html" class="division-card">
-                <div class="div-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>Web Design Pool</h3>
-                <p>Our client-facing software agency. We architect, design, and deploy premium, high-speed modern websites for global enterprises and ambitious startups. Place your order, and we build the future.</p>
-                <div class="div-link">Client Portal <i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+                <div class="process-card reveal">
+                    <div class="process-step">02</div>
+                    <h3>Build Solutions</h3>
+                    <p>
+                        Through Web Design Pool, ideas and business needs are translated into polished, production-ready web products and digital experiences.
+                    </p>
+                </div>
 
-            <a href="app/dashboard.html" class="division-card">
-                <div class="div-icon"><i class="fa-solid fa-server"></i></div>
-                <h3>Business Systems</h3>
-                <p>The hardware backbone. We manage, distribute, and scale Moniepoint POS terminals and corporate payment gateways, ensuring seamless financial operations for businesses of all sizes.</p>
-                <div class="div-link">View Infrastructure <i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+                <div class="process-card reveal">
+                    <div class="process-step">03</div>
+                    <h3>Support Operations</h3>
+                    <p>
+                        Through Business Systems, we extend support into the real-world operational layer with hardware, payment systems, and infrastructure enablement.
+                    </p>
+                </div>
 
+                <div class="process-card reveal">
+                    <div class="process-step">04</div>
+                    <h3>Scale With Alignment</h3>
+                    <p>
+                        Because these divisions sit inside one ecosystem, knowledge, execution quality, and business understanding can reinforce one another over time.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="section-wrapper" style="padding: 0;">
-            <div class="footer-grid">
-                
-                <div class="footer-brand">
-                    <h2>A SQUARE L <span>INNOVATE</span></h2>
-                    <p>Engineering the digital and physical infrastructure of tomorrow.</p>
-                    <div class="social-links">
-                        <a href="https://x.com/A_Square_L"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/ashiru-auwal-lawal"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://instagram.com/a_square_l"><i class="fa-brands fa-instagram"></i></a>
+    <!-- =========================
+         STATS / IMPACT
+    ========================= -->
+    <section class="section-wrapper" id="impact">
+        <div class="container">
+            <div class="stats-wrap reveal">
+                <div class="section-header" style="margin-bottom: 36px;">
+                    <div class="section-tag">Ecosystem Impact</div>
+                    <h2 class="section-title">Designed to support <span class="gold">learners, brands, and business operations</span></h2>
+                    <p class="section-subtitle">
+                        These indicators communicate the scope of what A Square L Innovate is built to do across education, software delivery, and business infrastructure.
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Integrated divisions inside one connected ecosystem</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number">52</div>
+                        <div class="stat-label">Weeks of structured academy transformation and guided growth</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Commitment to reliable systems thinking, support, and execution quality</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Long-term ambition to build talent, digital products, and scalable business value</div>
                     </div>
                 </div>
-                
-                <div class="footer-links">
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         FINAL CTA / PATHS
+    ========================= -->
+    <section class="section-wrapper">
+        <div class="container">
+            <div class="final-cta-wrap reveal">
+                <div class="final-cta-top">
+                    <h2>Choose the path that matches your next move.</h2>
+                    <p>
+                        Whether you want to learn in-demand digital skills, launch a premium website, or strengthen the systems that support your business operations, A Square L Innovate gives you a direct entry point into the right division.
+                    </p>
+                </div>
+
+                <div class="path-grid">
+                    <a href="ASquareL_Academy/Home/index.html" class="path-card">
+                        <div class="div-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>Join the Academy</h3>
+                        <p>
+                            Start your growth journey through structured software training, project-based learning, and practical digital skill development.
+                        </p>
+                        <div class="div-link">Enter Academy <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="Main/index.html" class="path-card">
+                        <div class="div-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Build With Web Design Pool</h3>
+                        <p>
+                            Work with us to design and launch a modern, premium, high-performance website that represents your business at a higher level.
+                        </p>
+                        <div class="div-link">Open Client Portal <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+
+                    <a href="app/dashboard.html" class="path-card">
+                        <div class="div-icon"><i class="fa-solid fa-server"></i></div>
+                        <h3>Strengthen Business Systems</h3>
+                        <p>
+                            Explore the infrastructure side of A Square L Innovate for payment systems, hardware support, and operational business enablement.
+                        </p>
+                        <div class="div-link">View Infrastructure <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+    <footer id="contact-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand reveal">
+                    <h2>A SQUARE L <span>INNOVATE</span></h2>
+                    <p>
+                        Engineering the digital talent, software experiences, and operational business infrastructure that modern growth depends on.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://x.com/A_Square_L" target="_blank" aria-label="X / Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ashiru-auwal-lawal" target="_blank" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/a_square_l" target="_blank" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links reveal">
                     <h4>Divisions</h4>
                     <ul>
                         <li><a href="ASquareL_Academy/Home/index.html">The Academy</a></li>
-                        <li><a href="Main/index.html">Web Design</a></li>
+                        <li><a href="Main/index.html">Web Design Pool</a></li>
                         <li><a href="app/dashboard.html">Business Systems</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-links">
+                <div class="footer-links reveal">
                     <h4>Enterprise</h4>
                     <ul>
                         <li><a href="mailto:ashiruauwallawal@gmail.com">ashiruauwallawal@gmail.com</a></li>
-                        <li><a href="https://maps.google.com/?q=Kano,+Nigeria">Kano, Nigeria</a></li>
+                        <li><a href="https://maps.google.com/?q=Kano,+Nigeria" target="_blank">Kano, Nigeria</a></li>
                         <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="terms-of-service.html">Terms of Service</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-newsletter">
-                     <h4>Stay Updated</h4>
-                     <p>Subscribe to receive enterprise updates and technical insights.</p>
+
+                <div class="footer-newsletter reveal">
+                    <h4>Stay Updated</h4>
+                    <p>
+                        Subscribe to receive ecosystem updates, technical insights, and announcements across A Square L Innovate.
+                    </p>
+
                     <form class="newsletter-form" name="Innovate_Newsletter" method="POST" data-netlify="true" action="subscribed.html">
+                        <input type="hidden" name="form-name" value="Innovate_Newsletter">
                         <input type="email" name="email" placeholder="Enter your email" required>
-                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                        <button type="submit" aria-label="Subscribe">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
             </div>
-            
+
             <div class="copyright">
                 &copy; 2026 A Square L Innovate. Founded by Ashiru Auwal Lawal. All rights reserved.
             </div>
         </div>
     </footer>
+
+    <script>
+        // =========================
+        // NAVBAR SCROLL EFFECT
+        // =========================
+        const navbar = document.getElementById('navbar');
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-links a, .nav-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // =========================
+        // MOBILE MENU TOGGLE
+        // =========================
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // =========================
+        // REVEAL ON SCROLL
+        // =========================
+        const revealItems = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        revealItems.forEach(item => revealObserver.observe(item));
+    </script>
 
 </body>
 </html>

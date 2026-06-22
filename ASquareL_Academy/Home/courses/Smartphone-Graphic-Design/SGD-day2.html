@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: PixelLab Mastery - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1); }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); font-weight: 400; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .tool-section { background: #0a0a0a; border: 1px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .tool-section h4 { color: var(--primary-gold); margin-bottom: 10px; font-size: 14px; }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+        .nav-btn.dashboard:hover { background: var(--primary-gold); color: #000000; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 2: PIXELLAB MASTERY</h1>
+            <p>Navigate the industry-standard mobile design platform with precision and power</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>What is PixelLab?</h2>
+                <p>PixelLab is the professional mobile design suite for creating graphics directly on Android and iOS. Unlike desktop tools, PixelLab brings the full power of design tools to your phone. Native performance. Real-time rendering. Professional output. This is where smartphone designers craft their work at scale.</p>
+                
+                <h3>The PixelLab Advantage</h3>
+                <p>Design anywhere. No laptop required. Render at full resolution. Export to professional formats. PixelLab isn't a toy—it's a production tool trusted by thousands of professional designers.</p>
+                
+                <div class="tool-section">
+                    <h4>PIXELLAB CORE MODULES</h4>
+                    <p>• Text Engine: Advanced typography with kerning, tracking, and style controls • Shape Library: 300+ vector shapes ready to manipulate • Layer System: Non-destructive, infinitely stackable • Blend Modes: Professional color blending and opacity • Effects: Shadows, glows, blur, distortion</p>
+                </div>
+                
+                <h3>Interface Navigation</h3>
+                <p>The main canvas occupies 70% of your screen. Left toolbar contains your primary creation tools. Right sidebar shows layer stack and properties. Top toolbar provides file management and export options.</p>
+                
+                <div class="tip-box">
+                    <strong>CRITICAL SKILL:</strong> Learn keyboard shortcuts. They separate professionals from hobbyists. Spend 30 minutes today memorizing the 20 most-used shortcuts.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>PixelLab Workspace Setup</h2>
+                <p>Create a new project: 390x844px (standard iPhone viewport). Set resolution to 300 DPI for export. This single decision ensures your graphics scale perfectly across all platforms.</p>
+                
+                <h3>Essential Settings</h3>
+                <p><strong>Color Mode:</strong> RGB (for digital), CMYK (for print). <strong>Guides:</strong> Enable grid. Set to 8px. This enforces modular design. <strong>Zoom:</strong> 100% represents actual size. Always verify at 100% zoom before export.</p>
+                
+                <div class="tool-section">
+                    <h4>PRO WORKFLOW SETUP</h4>
+                    <p>1. Create templates for recurring tasks (stories, posts, cards) 2. Save custom brush sets 3. Organize fonts into collections 4. Create color swatches for brand palettes 5. Build shape libraries for your signature style</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Export Like a Professional</h2>
+                <p>PixelLab exports in PNG, JPG, SVG, and PDF. Each format serves a purpose. Understand them intimately.</p>
+                <p>PNG: Transparent backgrounds. Best for overlays and logos. JPG: Compressed photos. Fast loading. SVG: Scalable vectors. Infinitely sharp. PDF: Print-ready. Preserves all layers optionally.</p>
+                
+                <div class="tip-box">
+                    <strong>EXPORT RULE:</strong> Always export at 2x resolution. A 390px image exports at 780px. This ensures crisp display on all Retina devices.
+                </div>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day1.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day3.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

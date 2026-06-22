@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 21: Advanced Masking & Clipping - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #D4AF37; --dark-gold: #b8860b; --card-bg: #111111; --text-white: #ffffff; --text-gray: #b3b3b3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 21: ADVANCED MASKING & CLIPPING</h1>
+            <p>Master clipping paths and layer masks for seamless image integration</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>Layer Masks Fundamentals</h2>
+                <p>Layer masks hide/show portions of layers using grayscale values. White reveals. Black hides. Gray partially reveals. This enables infinite blend possibilities without destructive editing. Masks are editable forever. This is professional-grade control.</p>
+                
+                <h3>Mask-Based Workflows</h3>
+                <p>Create mask. Paint with brush. Adjust opacity. Feather edges. Create seamless transitions. This technique creates professional composites. The key: feathering. Hard edges look fake. Soft edges look real.</p>
+                
+                <div class="tip-box">
+                    <strong>MASK RULE:</strong> Feather masks by 20-50 pixels depending on image. Never use hard mask edges. Feathering is the difference between amateur and professional.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Clipping Paths and Selections</h2>
+                <p>Clipping paths precisely isolate objects from backgrounds. Draw paths around objects. Use paths to create masks. This enables foreground/background separation without destructive selection tools.</p>
+                
+                <h3>Advanced Masking Techniques</h3>
+                <p><strong>Vector Masks:</strong> Shapes create precise, scalable masks. <strong>Raster Masks:</strong> Pixel-based masks for organic shapes. <strong>Luminosity Masks:</strong> Masks based on image brightness. Each serves different purposes. Master all three.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Refining Mask Edges</h2>
+                <p>Refine Edge tool improves mask quality. Adjust radius, contrast, feather. Create hair-perfect selections. This separates professional results from adequate results.</p>
+                
+                <div class="tip-box">
+                    <strong>REFINEMENT TIP:</strong> Zoom to 300% when refining mask edges. Small imperfections become obvious at full scale. Perfect at macro scale, imperfect at normal viewing.
+                </div>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day20.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day22.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

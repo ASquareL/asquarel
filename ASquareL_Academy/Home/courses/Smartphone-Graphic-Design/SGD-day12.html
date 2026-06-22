@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12: Building Design Systems - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #D4AF37; --dark-gold: #b8860b; --card-bg: #111111; --text-white: #ffffff; --text-gray: #b3b3b3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 12: BUILDING DESIGN SYSTEMS</h1>
+            <p>Establish consistent, scalable design systems that grow infinitely without degradation</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>What is a Design System?</h2>
+                <p>A design system is a library of reusable components, patterns, and guidelines. It scales infinitely. One decision made once, applied everywhere. Design systems multiply productivity. They guarantee consistency. They reduce errors.</p>
+                
+                <h3>Design System Components</h3>
+                <p><strong>Color Palette:</strong> All colors used, with names and hex values. <strong>Typography Scale:</strong> Font sizes, weights, line heights. <strong>Component Library:</strong> Buttons, cards, inputs, headers. <strong>Spacing System:</strong> Padding, margins, gaps (usually 4px or 8px multiples). <strong>Iconography:</strong> Icon set with consistent style. <strong>Grid System:</strong> Layout structure, breakpoints.</p>
+                
+                <div class="tip-box">
+                    <strong>SYSTEM RULE:</strong> Document everything. A design system only works if it's used. Create clear guidelines. Make it accessible to every team member. Update it constantly.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Building Your First System</h2>
+                <p>Start with color. Define primary, secondary, accent, neutral. Test combinations. Document hex values. Move to typography. Define font scale. Test at mobile sizes. Add spacing. Use 8px multiples. Add component library. Start with core components: buttons, cards, inputs.</p>
+                
+                <h3>Scaling Systems</h3>
+                <p>Systems grow. Add new components. Extend color palette when needed. Update guidelines. Version your system. "Design System v1", "v2", etc. Communicate changes to team. Adoption requires communication.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Design System Tools</h2>
+                <p>Figma is design system home. Adobe XD works. InVision has libraries. For mobile, Zeplin documents specs. For implementation, Storybook displays components. Choose tools that integrate with your workflow. The best tool is one your team actually uses.</p>
+                
+                <div class="tip-box">
+                    <strong>SYSTEM TIP:</strong> Spend week 1 building system. Spend week 2+ using it. Systems are most valuable when used consistently. Invest in adoption.
+                </div>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day11.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day13.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

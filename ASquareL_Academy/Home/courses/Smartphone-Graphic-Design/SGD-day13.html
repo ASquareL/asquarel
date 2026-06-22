@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13: Logo Design Foundations - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #D4AF37; --dark-gold: #b8860b; --card-bg: #111111; --text-white: #ffffff; --text-gray: #b3b3b3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 13: LOGO DESIGN FOUNDATIONS</h1>
+            <p>Master the art of creating memorable logos that endure across decades</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>Logo Principles</h2>
+                <p>A logo is a brand's visual signature. It must work at all scales (favicon to billboard). It must work in single color (black/white). It must be memorable. It must age well. It must work on mobile especially—most first encounters happen on smartphone screens.</p>
+                
+                <h3>Mark vs. Wordmark</h3>
+                <p><strong>Mark:</strong> Icon-based (Nike swoosh). Wordmark: Text-based (Google). Combo: Both together. Different applications suit different types. Understand nuances. Choose strategically.</p>
+                
+                <div class="tip-box">
+                    <strong>LOGO RULE:</strong> Test your logo as a favicon (16x16px). If it's unrecognizable at that size, it's too complex. Simplicity is sophistication.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Logo Grid Systems</h2>
+                <p>Professional logos use grid systems. Circles, squares, triangles—geometric foundations. This creates mathematical harmony. It ensures consistency. It makes refinement easier. Start with grid. Build on grid. Your logo appears intentional and balanced.</p>
+                
+                <h3>Color and Logo</h3>
+                <p>Design logo first in black/white. Then add color. The best logos work in single color. Color is secondary, not primary. Reverse this in your process and your logo will be weak.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Negative Space Logos</h2>
+                <p>The space around your logo matters as much as the logo itself. Use negative space strategically. Create hidden imagery. Amazon logo: smile between A and Z. The negative space adds dimension without complexity.</p>
+                
+                <h3>Logo Variations</h3>
+                <p>Create logo in multiple variations: full horizontal, stacked, icon-only, with tagline, without. Each variation serves different applications. A flexible logo system scales infinitely across applications.</p>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day12.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day14.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

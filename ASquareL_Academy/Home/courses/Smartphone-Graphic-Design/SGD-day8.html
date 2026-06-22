@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8: Font Pairing Methodology - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #D4AF37; --dark-gold: #b8860b; --card-bg: #111111; --text-white: #ffffff; --text-gray: #b3b3b3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 8: FONT PAIRING METHODOLOGY</h1>
+            <p>Discover the science behind harmonious font combinations</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>The Pairing Principle</h2>
+                <p>Never use a single font for everything. Pairing creates contrast and visual interest. But pairing poorly creates visual chaos. The rule: Pair serif with sans-serif. Or pair different sans-serifs with contrasting weights.</p>
+                
+                <h3>Font Families</h3>
+                <p>Serif: Timeless, elegant, traditional. Sans-serif: Modern, clean, contemporary. Monospace: Technical, code-oriented. Script: Decorative, celebratory. Choose families that serve your content.</p>
+                
+                <div class="tip-box">
+                    <strong>PAIRING RULE:</strong> If two fonts look too similar, they clash. They fight for attention without creating intended contrast. Make the difference obvious. Bold vs. thin. Serif vs. sans. Let contrasts sing.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>High Contrast Pairings</h2>
+                <p>Display serif paired with body sans-serif. Example: Playfair Display + Inter. This pairing gives elegance + readability. Classic combination trusted by professional designers for years.</p>
+                
+                <h3>Modern Pairings</h3>
+                <p>Two sans-serifs work when weights differ dramatically. Example: Oswald (bold) + Open Sans (regular). The weight difference creates visual hierarchy without font conflict.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Mobile Font Selection</h2>
+                <p>Small screens demand readable fonts. Avoid thin weights at body sizes. Avoid decorative scripts for body text. Headlines can be adventurous. Body text must be reader-friendly. Test all font choices at small scales.</p>
+                
+                <div class="tip-box">
+                    <strong>MOBILE FONT TIP:</strong> Test your font at 14px on actual phones. Squint. Can you read it comfortably? If not, choose different font. Small screens leave no room for beautiful-but-unreadable choices.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>System Fonts vs. Custom Fonts</h2>
+                <p>System fonts (San Francisco, Roboto) load instantly. Custom fonts take time. On mobile, seconds matter. When in doubt, use system fonts. They're designed for device resolution. They're proven. They work.</p>
+                
+                <h3>When to Use Custom Fonts</h3>
+                <p>Brand-defining moments. Logos. Headlines that need personality. Not every pixel needs personality. Use custom fonts strategically. Sprinkle them like seasoning, not flour.</p>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day7.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day9.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

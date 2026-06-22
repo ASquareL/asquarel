@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7: Advanced Typography Techniques - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #D4AF37; --dark-gold: #b8860b; --card-bg: #111111; --text-white: #ffffff; --text-gray: #b3b3b3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 7: ADVANCED TYPOGRAPHY TECHNIQUES</h1>
+            <p>Elevate your type game: kerning, leading, hierarchy, and expressive typographic systems</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>Kerning: The Space Between Letters</h2>
+                <p>Kerning isn't decoration. It's precision engineering. A poorly kerned headline reads as unprofessional, even if the typeface is beautiful. Perfect kerning feels invisible—viewers don't notice it, but they feel its quality.</p>
+                
+                <h3>Manual vs. Automatic Kerning</h3>
+                <p>Auto-kerning (optical) handles 80% of cases well. Manual kerning perfects the remaining 20%. When scaling designs for mobile, kerning distances scale with your font size. This relationship changes at different scales.</p>
+                
+                <div class="tip-box">
+                    <strong>KERNING RULE:</strong> Kern headlines manually. Small body text doesn't need manual kerning. Focus effort on elements viewers stare at longest.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Leading: The Vertical Rhythm</h2>
+                <p>Leading (line height) determines readability more than font choice. Too tight: eye confusion. Too loose: disjointed. Perfect leading feels like natural breathing rhythm. For body text on mobile, aim for 1.5x to 1.8x line height.</p>
+                
+                <h3>Paragraph Spacing</h3>
+                <p>Space between paragraphs needs more than default line height. Use 1.5-2x line height between paragraphs. This creates visual grouping without adding layout complexity.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Typography Hierarchy in Action</h2>
+                <p>H1 (headline): 32-48px. H2 (section): 24-28px. H3 (subsection): 18-20px. Body: 14-16px. Captions: 12px. These sizes create visual hierarchy on mobile. Maintain this progression consistently across all designs.</p>
+                
+                <h3>Weight Variation</h3>
+                <p>Don't just change size. Vary weight. Bold headlines, regular body, light captions. Weight creates hierarchy as powerfully as size does.</p>
+                
+                <div class="tip-box">
+                    <strong>HIERARCHY TIP:</strong> Test hierarchy by converting your design to grayscale. Can viewers still identify hierarchy? If not, it's too subtle. Hierarchy should survive color removal.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Optical Adjustment</h2>
+                <p>Letter metrics don't account for letter shape. The letter 'V' at 100px looks smaller than 'O' at 100px. Adjust font size optically. Trust your eyes more than pixel measurements.</p>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day6.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day8.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

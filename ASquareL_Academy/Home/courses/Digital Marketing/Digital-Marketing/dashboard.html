@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Mastery - A Square L Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .nav-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+        }
+
+        .nav-brand span {
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%);
+            border-bottom: 2px solid var(--dark-gold);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .course-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 2px solid var(--dark-gold);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .curriculum-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+        }
+
+        .week-section {
+            margin-bottom: 4rem;
+        }
+
+        .week-title {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--dark-gold);
+            font-weight: 800;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .day-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(212, 175, 55, 0.08) 100%);
+            border: 2px solid var(--dark-gold);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .day-card:hover::before {
+            left: 100%;
+        }
+
+        .day-card:hover {
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+            border-color: var(--primary-gold);
+        }
+
+        .day-number {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-title {
+            font-size: 1.3rem;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .day-description {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .day-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--dark-gold) 100%);
+            color: #000000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .day-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        footer {
+            background-color: rgba(17, 17, 17, 0.95);
+            border-top: 2px solid var(--primary-gold);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .days-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">A SQUARE L <span>ACADEMY</span></div>
+    </nav>
+
+    <section class="hero">
+        <h1>Digital Marketing Mastery</h1>
+        <p>Master the complete ecosystem of modern digital marketing in 8 weeks. From social media psychology to conversion funnel architecture—everything you need to dominate your market.</p>
+    </section>
+
+    <section class="course-stats">
+        <div class="stat-card">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Days of Content</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Weeks of Training</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Core Modules</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">ROI Potential</div>
+        </div>
+    </section>
+
+    <section class="curriculum-container">
+        <div class="week-section">
+            <h2 class="week-title">📱 Weeks 1-2: Foundation & Social Media Ecosystems</h2>
+            <div class="days-grid">
+                <div class="day-card">
+                    <div class="day-number">Day 1</div>
+                    <div class="day-title">Algorithm Psychology 101</div>
+                    <div class="day-description">Understand how Instagram, TikTok, and X algorithms determine what goes viral. Learn the science behind engagement, reach, and algorithmic amplification.</div>
+                    <a href="DM-day1.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 2</div>
+                    <div class="day-title">Content Calendar Strategy</div>
+                    <div class="day-description">Master the art of planning 90 days of high-converting content. Build calendars that drive engagement, visibility, and audience loyalty.</div>
+                    <a href="DM-day2.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 3</div>
+                    <div class="day-title">X/Twitter Mastery</div>
+                    <div class="day-description">Dominate Twitter with threads, viral tactics, and community building. Learn hashtag strategy, follower growth, and monetization paths.</div>
+                    <a href="DM-day3.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 4</div>
+                    <div class="day-title">LinkedIn B2B Excellence</div>
+                    <div class="day-description">Build authority on LinkedIn. Master personal branding, connection strategy, and B2B lead generation for enterprise marketing.</div>
+                    <a href="DM-day4.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 5</div>
+                    <div class="day-title">Instagram Conversion Strategy</div>
+                    <div class="day-description">Turn Instagram followers into customers. Master Reels, Stories, DM automation, and shoppable posts for direct e-commerce revenue.</div>
+                    <a href="DM-day5.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 6</div>
+                    <div class="day-title">Community Building & Engagement</div>
+                    <div class="day-description">Create engaged communities across platforms. Learn moderation, community management, and turning followers into brand advocates.</div>
+                    <a href="DM-day6.html" class="day-link">Start Lesson →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-section">
+            <h2 class="week-title">🔍 Weeks 3-4: SEO & Organic Traffic</h2>
+            <div class="days-grid">
+                <div class="day-card">
+                    <div class="day-number">Day 7</div>
+                    <div class="day-title">Search Intent Mastery</div>
+                    <div class="day-description">Decode what users really want when they search. Learn navigational, informational, and commercial intent to create hyper-targeted content.</div>
+                    <a href="DM-day7.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 8</div>
+                    <div class="day-title">Keyword Clustering & Research</div>
+                    <div class="day-description">Build topic clusters that dominate search. Master keyword research tools, competition analysis, and topic mapping for organic visibility.</div>
+                    <a href="DM-day8.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 9</div>
+                    <div class="day-title">On-Page SEO Optimization</div>
+                    <div class="day-description">Optimize every element: titles, meta descriptions, headers, schema markup, and internal linking. Create pages that rank and convert.</div>
+                    <a href="DM-day9.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 10</div>
+                    <div class="day-title">Technical SEO & Site Architecture</div>
+                    <div class="day-description">Master Core Web Vitals, site speed, mobile optimization, and XML sitemaps. Build technically sound sites that Google loves.</div>
+                    <a href="DM-day10.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 11</div>
+                    <div class="day-title">Copywriting for Rankings & Conversions</div>
+                    <div class="day-description">Write SEO-optimized copy that ranks AND converts. Master headline formulas, value proposition writing, and CTAs that drive revenue.</div>
+                    <a href="DM-day11.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 12</div>
+                    <div class="day-title">Backlinks, Authority & Link Building</div>
+                    <div class="day-description">Build domain authority through strategic link building. Learn outreach, content marketing, and authority building without buying links.</div>
+                    <a href="DM-day12.html" class="day-link">Start Lesson →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-section">
+            <h2 class="week-title">💰 Weeks 5-6: Paid Acquisition (Performance Marketing)</h2>
+            <div class="days-grid">
+                <div class="day-card">
+                    <div class="day-number">Day 13</div>
+                    <div class="day-title">Meta Ads Manager Fundamentals</div>
+                    <div class="day-description">Master Facebook & Instagram Ads. Learn campaign structure, audience segmentation, bidding strategies, and optimization for maximum ROI.</div>
+                    <a href="DM-day13.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 14</div>
+                    <div class="day-title">Google Ads Architecture</div>
+                    <div class="day-description">Dominate Google Search, Display, and Shopping. Learn campaign types, quality score optimization, and keyword bid strategies.</div>
+                    <a href="DM-day14.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 15</div>
+                    <div class="day-title">Audience Targeting & Segmentation</div>
+                    <div class="day-description">Create high-intent audience segments. Master Lookalike audiences, custom audiences, behavioral targeting, and DPA strategies.</div>
+                    <a href="DM-day15.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 16</div>
+                    <div class="day-title">Pixel Tracking & Conversion Optimization</div>
+                    <div class="day-description">Set up Facebook & Google pixels. Master conversion tracking, event configuration, and using data to optimize ad performance.</div>
+                    <a href="DM-day16.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 17</div>
+                    <div class="day-title">Budget Pacing & ROAS Management</div>
+                    <div class="day-description">Control ad spend like a CFO. Master budget allocation, cost-per-acquisition targets, and scaling while maintaining profitability.</div>
+                    <a href="DM-day17.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 18</div>
+                    <div class="day-title">Creative Optimization & Testing</div>
+                    <div class="day-description">Create ads that convert. Master A/B testing, creative composition, copy formulas, and landing page alignment for maximum performance.</div>
+                    <a href="DM-day18.html" class="day-link">Start Lesson →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-section">
+            <h2 class="week-title">📊 Weeks 7-8: Analytics, Email & The Conversion Funnel</h2>
+            <div class="days-grid">
+                <div class="day-card">
+                    <div class="day-number">Day 19</div>
+                    <div class="day-title">Google Analytics 4 Mastery</div>
+                    <div class="day-description">Understand user behavior at scale. Master event tracking, custom dimensions, audience reports, and using data to drive marketing decisions.</div>
+                    <a href="DM-day19.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 20</div>
+                    <div class="day-title">Email List Building & Lead Magnets</div>
+                    <div class="day-description">Build high-value email lists. Master lead magnet creation, opt-in strategies, list segmentation, and email provider setup.</div>
+                    <a href="DM-day20.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 21</div>
+                    <div class="day-title">Email Automation & Sequences</div>
+                    <div class="day-description">Create automated email funnels that convert. Master welcome sequences, abandoned cart sequences, and nurture campaigns that generate revenue.</div>
+                    <a href="DM-day21.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 22</div>
+                    <div class="day-title">Conversion Funnel Architecture</div>
+                    <div class="day-description">Design funnels that convert. Learn top-of-funnel awareness, mid-funnel consideration, and bottom-funnel decision-making optimization.</div>
+                    <a href="DM-day22.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 23</div>
+                    <div class="day-title">Retargeting & Remarketing Strategy</div>
+                    <div class="day-description">Recapture lost opportunities. Master pixel-based retargeting, list-based remarketing, and sequential messaging for maximum conversion.</div>
+                    <a href="DM-day23.html" class="day-link">Start Lesson →</a>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">Day 24</div>
+                    <div class="day-title">Integration & Full-Funnel Attribution</div>
+                    <div class="day-description">Connect all channels. Master multi-touch attribution, CRM integration, and measuring true ROI across your entire marketing ecosystem.</div>
+                    <a href="DM-day24.html" class="day-link">Start Lesson →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 A Square L Academy. Digital Marketing Mastery Course.</p>
+        <p>Elevating marketers. Transforming businesses. Dominating markets.</p>
+    </footer>
+</body>
+</html>

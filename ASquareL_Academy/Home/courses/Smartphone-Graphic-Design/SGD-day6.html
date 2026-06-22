@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6: Design Principles Applied - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #D4AF37; --dark-gold: #b8860b; --card-bg: #111111; --text-white: #ffffff; --text-gray: #b3b3b3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 6: DESIGN PRINCIPLES APPLIED</h1>
+            <p>Study balance, contrast, emphasis, and hierarchy in real mobile design scenarios</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>Balance: Visual Weight Distribution</h2>
+                <p>Symmetrical balance feels static. Asymmetrical balance feels dynamic. Both have applications. Understand the psychological difference and choose intentionally. A single large element on one side balances three small elements on the other.</p>
+                
+                <h3>On Mobile Screens</h3>
+                <p>Mobile's narrow width favors asymmetrical balance. Use it strategically. Left-aligned text with right-aligned imagery creates movement. This movement guides eyes through your content naturally.</p>
+                
+                <div class="tip-box">
+                    <strong>BALANCE PRINCIPLE:</strong> If your design feels lifeless, shift elements slightly off-center. Break symmetry. Create tension. Design is best when it has energy.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Contrast: The Attention Driver</h2>
+                <p>High contrast commands attention. Low contrast creates subtlety. Color contrast, size contrast, weight contrast, style contrast—every design decision creates contrast or harmony with previous elements.</p>
+                
+                <h3>Hierarchy Through Contrast</h3>
+                <p>Largest element attracts first. Next-largest second. This hierarchy guides viewers through your content in intended order. Without contrast, design becomes noise. With too much contrast, design becomes chaos.</p>
+                
+                <h3>Contrast Ratio Testing</h3>
+                <p>Text needs 4.5:1 contrast ratio (WCAG AA). Large text needs 3:1. Measure contrast in design tools or use online calculators. Don't guess. This affects accessibility and legibility on mobile.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Emphasis: The Visual Focal Point</h2>
+                <p>Every design needs one primary focal point. One thing viewers look at first. Size, color, position, isolation—use these to create emphasis. Secondary elements support. Tertiary elements complete the story.</p>
+                
+                <h3>Mobile-First Emphasis</h3>
+                <p>On narrow screens, emphasis matters more. You can't hide important elements in peripheral space. Everything is either emphasized or ignored. Treat emphasis like real estate—it's precious.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Hierarchy: Information Architecture</h2>
+                <p>Typography hierarchy, spatial hierarchy, color hierarchy—each creates meaning. Your call-to-action button needs more visual weight than disclaimer text. This isn't decoration—it's communication.</p>
+                
+                <div class="tip-box">
+                    <strong>HIERARCHY RULE:</strong> Squint at your design. See four levels? Good. See eight levels? You've lost hierarchy. Viewers shouldn't work to understand what's important. Make it obvious.
+                </div>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day5.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day7.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

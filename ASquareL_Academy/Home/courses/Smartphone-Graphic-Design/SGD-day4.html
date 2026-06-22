@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4: Layer Management Mastery - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #D4AF37; --dark-gold: #b8860b; --card-bg: #111111; --text-white: #ffffff; --text-gray: #b3b3b3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1); }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); font-weight: 400; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .tool-section { background: #0a0a0a; border: 1px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .tool-section h4 { color: var(--primary-gold); margin-bottom: 10px; font-size: 14px; }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+        .nav-btn.dashboard:hover { background: var(--primary-gold); color: #000000; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 4: LAYER MANAGEMENT MASTERY</h1>
+            <p>Organize complex designs with the precision that separates professionals from chaos</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>Layers: The Foundation of Professional Design</h2>
+                <p>Amateur designers treat layers as a necessary evil. Professionals treat layers as poetry. Proper organization multiplies efficiency. You'll spend 80% of your time on complex files. 80% of that time is wasted if layers aren't organized.</p>
+                
+                <h3>The Layer Hierarchy Philosophy</h3>
+                <p>Think of layers like a building blueprint. Foundation at bottom. Structure layers above. Detail layers on top. Every layer serves one purpose. Every layer has a name that describes its purpose. Scroll through your layer panel, and you can read the design intent.</p>
+                
+                <div class="tool-section">
+                    <h4>LAYER NAMING CONVENTION</h4>
+                    <p>❌ WRONG: "Shape 1", "Text 2", "Group 3" ✓ RIGHT: "bg-gradient-dark", "cta-button-text", "image-overlay-50" Always use descriptive names. Include element type and purpose. This saves hours debugging later.</p>
+                </div>
+                
+                <h3>Grouping Strategy</h3>
+                <p>Group related layers. All typography in one group. All backgrounds in another. All interactive elements in a third. Collapse groups when editing other sections. This keeps your workspace mental model clean.</p>
+                
+                <div class="tip-box">
+                    <strong>PRO TIP:</strong> Create folders for different design variations. "Variation-Desktop", "Variation-Mobile", "Variation-Dark". Keep iterations organized. Never delete old versions—you'll need them.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Layer Operations</h2>
+                
+                <h3>Blend Modes: Color Harmony</h3>
+                <p>Multiply darkens layers. Screen lightens. Overlay creates drama. Difference creates inversion. Each blend mode has a purpose. Understand them intimately. Blending multiplies your visual vocabulary without adding layers.</p>
+                
+                <h3>Opacity Control</h3>
+                <p>100% opacity is obvious. 75% is subtle. 50% creates depth. 25% whispers. Master opacity like you master brushwork. Opacity isn't weakness—it's control. Use it to create visual hierarchy without additional design elements.</p>
+                
+                <div class="tool-section">
+                    <h4>LAYER MANAGEMENT WORKFLOW</h4>
+                    <p>1. Create folder structure FIRST 2. Name every layer before moving on 3. Color-code layers for quick identification 4. Lock completed layers 5. Use blend modes strategically 6. Collapse unused groups 7. Archive old iterations in separate file</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Editing Complex Designs</h2>
+                <p>Lock layers you're not editing. Select layer before modifying. Use layer thumbnails for visual reference. Never accidentally delete important elements because you weren't careful. Precision requires discipline.</p>
+                
+                <div class="tip-box">
+                    <strong>SAFETY RULE:</strong> Save after every major layer operation. File versioning saves your sanity. "design-v1.ai", "design-v2.ai", "design-final.ai", "design-final-final.ai". It sounds silly until it saves you six hours of re-work.
+                </div>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day3.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day5.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>

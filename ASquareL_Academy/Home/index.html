@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Square L Academy | Learn Tech from your Phone</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -14,7 +14,7 @@
         <div class="container">
             <div class="header-flex">
                 <div class="contact-info">
-                    <i class="fa fa-phone"></i> +234 8125585709
+                    <i class="fa fa-phone"></i> +234 812 558 5709
                 </div>
                 <div class="apply-link">
                     <a href="contact.html">Apply Online</a>
@@ -26,6 +26,7 @@
     <nav class="navbar">
         <div class="container navbar-flex">
             <a href="index.html" class="logo">A SQUARE L <span>ACADEMY</span></a>
+
             <ul class="nav-links">
                 <li><a href="index.html" class="active-link">Home</a></li>
                 <li><a href="curriculum.html">Curriculum</a></li>
@@ -36,26 +37,108 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <!-- HERO -->
+    <header class="hero hero-enhanced">
         <div class="container hero-flex">
             <div class="hero-content">
-                <h1>Build Development Skills From Your Phone Any Time, Anywhere</h1>
-                <p>Simplified tech courses for African beginners. Join thousands of students mastering high-income skills with professional mentorship.</p>
+                <span class="hero-badge">
+                    <i class="fa fa-star"></i>
+                    Tech education built for African beginners
+                </span>
+
+                <h1>Learn Digital Skills That Can Change Your Income — Right From Your Phone</h1>
+
+                <p>
+                    A SQUARE L Academy helps beginners master practical digital skills with simple lessons,
+                    project-based learning, and mentorship support. Start with the right foundations and grow
+                    into web development, crypto knowledge, and smartphone-based creative skills.
+                </p>
+
                 <div class="hero-btns">
-                    <a href="pricing.html" class="btn-red">Join For Free</a>
+                    <a href="pricing.html" class="btn-red">Start Learning</a>
+                    <a href="curriculum.html" class="btn-outline">Explore Courses</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat-card">
+                        <h3>3+</h3>
+                        <p>Core Skill Tracks</p>
+                    </div>
+                    <div class="hero-stat-card">
+                        <h3>100%</h3>
+                        <p>Beginner Friendly</p>
+                    </div>
+                    <div class="hero-stat-card">
+                        <h3>Mentor</h3>
+                        <p>Guided Learning</p>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://themes.envytheme.com/ecademy/wp-content/uploads/2020/05/man.jpg" alt="Learning" class="main-img">
+
+            <div class="hero-image hero-visual">
+                <div class="hero-image-wrap">
+                    <img src="https://themes.envytheme.com/ecademy/wp-content/uploads/2020/05/man.jpg" alt="A Square L Academy student learning online" class="main-img">
+
+                    <div class="floating-card floating-card-1">
+                        <i class="fa fa-code"></i>
+                        <div>
+                            <strong>Web Development</strong>
+                            <span>Build real websites & apps</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-2">
+                        <i class="fa fa-mobile-screen-button"></i>
+                        <div>
+                            <strong>Learn From Your Phone</strong>
+                            <span>Flexible digital learning</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- VALUE STRIP -->
+    <section class="academy-highlights">
+        <div class="container">
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <i class="fa fa-graduation-cap"></i>
+                    <h3>Beginner-Friendly Lessons</h3>
+                    <p>Start from zero with simplified explanations and guided learning paths.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <i class="fa fa-mobile-alt"></i>
+                    <h3>Learn From Your Phone</h3>
+                    <p>Study from anywhere using mobile-friendly lessons and practical resources.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <i class="fa fa-laptop-code"></i>
+                    <h3>Project-Based Learning</h3>
+                    <p>Apply what you learn by building practical projects that sharpen your skills.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <i class="fa fa-user-group"></i>
+                    <h3>Mentorship Support</h3>
+                    <p>Get direction, clarity, and support as you progress through your learning journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES -->
     <section class="courses-section">
         <div class="container">
             <div class="section-title">
                 <span class="sub">Education for everyone</span>
                 <h2>Our Most Popular Courses</h2>
+                <p class="section-desc">
+                    Start with practical, beginner-friendly courses designed to help you build valuable digital skills step by step.
+                </p>
             </div>
 
             <div class="content-grid">
@@ -63,117 +146,219 @@
                     <div class="icon-box"><i class="fa fa-code"></i></div>
                     <span class="tag tag-blue">Free Plan Available</span>
                     <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, React – build full-stack apps from scratch.</p>
-                    <a href="courses/web-development/web-dev.html" class="start-link">Start Now!</a>
+                    <p>Learn HTML, CSS, JavaScript and the foundations of modern web development by building practical projects from scratch.</p>
+
+                    <div class="course-meta">
+                        <span><i class="fa fa-signal"></i> Beginner</span>
+                        <span><i class="fa fa-laptop-code"></i> Practical</span>
+                    </div>
+
+                    <a href="courses/web-development/web-dev.html" class="start-link">Start Now</a>
                 </div>
 
                 <div class="content-card">
                     <div class="icon-box"><i class="fa fa-bitcoin"></i></div>
                     <span class="tag tag-purple">Pro Mentorship</span>
                     <h3>Crypto & Blockchain</h3>
-                    <p>Learn Solana DEX trading, wallet security, and decentralized finance strategies.</p>
-                    <a href="courses/crypto-blockchain/index.html" class="start-link">Start Now!</a>
+                    <p>Understand blockchain fundamentals, wallet safety, trading concepts, and decentralized finance from a beginner-friendly perspective.</p>
+
+                    <div class="course-meta">
+                        <span><i class="fa fa-signal"></i> Beginner to Intermediate</span>
+                        <span><i class="fa fa-shield-halved"></i> Security Focus</span>
+                    </div>
+
+                    <a href="courses/crypto-blockchain/index.html" class="start-link">Start Now</a>
                 </div>
 
                 <div class="content-card">
                     <div class="icon-box"><i class="fa fa-mobile-alt"></i></div>
                     <span class="tag tag-green">Free Plan Available</span>
                     <h3>Smartphone Graphic Design</h3>
-                    <p>Create premium logos, flyers, and brand identities using only your mobile phone.</p>
-                    <a href="courses/smartphone-graphic-design/smartphone-graphic-design.html" class="start-link">Start Now!</a>
+                    <p>Create premium flyers, logos, social posts and brand visuals using just your mobile phone and the right design process.</p>
+
+                    <div class="course-meta">
+                        <span><i class="fa fa-signal"></i> Beginner Friendly</span>
+                        <span><i class="fa fa-pen-ruler"></i> Creative Skill</span>
+                    </div>
+
+                    <a href="courses/smartphone-graphic-design/sgd-dashboard.html" class="start-link">Start Now</a>
                 </div>
             </div>
 
             <div class="view-more">
-                <p>If you want more? <a href="curriculum.html">View More Courses</a></p>
+                <p>Want to explore more learning paths? <a href="curriculum.html">View All Courses</a></p>
             </div>
         </div>
     </section>
 
-<section class="why-choose-us">
-    <div class="container">
-        <div class="section-title">
-            <span class="sub">What makes us different</span>
-            <h2>Why Choose Us?</h2>
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub">What makes us different</span>
+                <h2>Why Choose A SQUARE L Academy?</h2>
+                <p class="section-desc">
+                    We’re building an academy that helps ambitious beginners learn practical skills without confusion, pressure, or unnecessary complexity.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                    <h3>Beginner Friendly</h3>
+                    <p>No prior experience? No problem. Our lessons are structured to help you start with confidence.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-laptop-code"></i>
+                    </div>
+                    <h3>Real Projects</h3>
+                    <p>Practice with meaningful projects that help you turn theory into usable skills.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-chalkboard-user"></i>
+                    </div>
+                    <h3>Mentorship Support</h3>
+                    <p>Learn with guidance, clarity, and support as you progress through your training.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-mobile-screen-button"></i>
+                    </div>
+                    <h3>Phone-Friendly Learning</h3>
+                    <p>Access learning in a way that works for your reality — especially if your phone is your main device.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-clock"></i>
+                    </div>
+                    <h3>Flexible Learning Pace</h3>
+                    <p>Learn at a pace that fits your schedule while still building momentum and consistency.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <h3>Skills With Real Value</h3>
+                    <p>We focus on practical digital skills that can help you create, build, and earn in the modern economy.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fa fa-rocket"></i>
-                </div>
-                <h3>Beginner Friendly</h3>
-                <p>No prior coding experience? No problem. We start from zero.</p>
+    <!-- HOW IT WORKS -->
+    <section class="learning-steps">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub">Your learning journey</span>
+                <h2>How Learning Works</h2>
+                <p class="section-desc">
+                    We keep the process simple so you can focus on building skills, not figuring out what to do next.
+                </p>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fa fa-laptop-code"></i>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Choose Your Path</h3>
+                    <p>Pick a course that matches your current level and the digital skill you want to build first.</p>
                 </div>
-                <h3>Real Projects</h3>
-                <p>Build 4+ real applications during your training.</p>
-            </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fa fa-chalkboard-user"></i>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Learn & Practice</h3>
+                    <p>Study simplified lessons, follow guided steps, and apply your knowledge through practical exercises.</p>
                 </div>
-                <h3>Mentorship</h3>
-                <p>Direct guidance from Ashiru Auwal Lawal.</p>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Build With Confidence</h3>
+                    <p>Use your new knowledge to create projects, sharpen your confidence, and move to the next level.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <span class="sub">Start your journey</span>
+                    <h2>Build Digital Skills That Can Open New Opportunities</h2>
+                    <p>
+                        Join A SQUARE L Academy and start learning practical skills in a simple, guided, and beginner-friendly way.
+                    </p>
+                </div>
+
+                <div class="cta-actions">
+                    <a href="pricing.html" class="btn-red">Join For Free</a>
+                    <a href="contact.html" class="btn-outline">Talk to Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="main-footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>A SQUARE L <span>ACADEMY</span></h3>
-                <p>Working to bring significant changes in online-based learning by doing extensive research for course curriculum preparation, student engagements, and looking forward to flexible education!</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>A SQUARE L <span>ACADEMY</span></h3>
+                    <p>
+                        A practical digital learning platform built to help beginners gain valuable tech and creative skills through structured learning, flexibility, and mentorship support.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Academy</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="curriculum.html">Courses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Apply / Contact</a></li>
+                        <li><a href="dashboard.html">Student Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Learning Paths</h4>
+                    <ul>
+                        <li><a href="courses/web-development/web-dev.html">Web Development</a></li>
+                        <li><a href="courses/crypto-blockchain/index.html">Crypto & Blockchain</a></li>
+                        <li><a href="courses/smartphone-graphic-design/sgd-dashboard.html">Smartphone Graphic Design</a></li>
+                        <li><a href="curriculum.html">More Courses</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <address>
+                        <p><i class="fa fa-location-dot"></i> Kano, Nigeria</p>
+                        <p><i class="fa fa-phone"></i> +234 812 558 5709</p>
+                        <p><i class="fa fa-envelope"></i> hello@asquarelinnovate.com</p>
+                        <p><i class="fa fa-whatsapp"></i> +234 812 558 5709</p>
+                    </address>
+                </div>
             </div>
 
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Become A Teacher</a></li>
-                    <li><a href="#">Instructor/Student Profile</a></li>
-                    <li><a href="curriculum.html">Courses</a></li>
-                    <li><a href="#">LP Checkout</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Become A Teacher</a></li>
-                    <li><a href="curriculum.html">Courses</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Address</h4>
-                <address>
-                    <p><i class="fa fa-location-dot"></i> No. 123, Ahmadu Bello Way, Kano, Nigeria</p>
-                    <p><i class="fa fa-phone"></i> +234 812 558 5709</p>
-                    <p><i class="fa fa-envelope"></i> hello@asquarelinnovate.com</p>
-                    <p><i class="fa fa-whatsapp"></i> +234 812 558 5709</p>
-                </address>
+            <div class="footer-bottom">
+                <p>&copy; 2026 A SQUARE L INNOVATE. Proudly crafted by A Square L Team.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 A SQUARE L INNOVATE. Proudly Crafted by A Square L Team</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>

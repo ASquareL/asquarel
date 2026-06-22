@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphone Graphic Design - A Square L Academy</title>
+    
+    <!-- Premium Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #b8860b;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-gray: #b3b3b3;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Unified Academy Navbar Setup */
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+        
+        .course-header {
+            text-align: center;
+            margin-bottom: 80px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 40px;
+        }
+        
+        .course-header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .course-header p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .week-section {
+            margin-bottom: 80px;
+        }
+        
+        .week-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 4px solid var(--primary-gold);
+        }
+        
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .lesson-card {
+            background: var(--card-bg);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .lesson-card:hover::before {
+            left: 100%;
+        }
+        
+        .lesson-card:hover {
+            border-color: var(--primary-gold);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .lesson-number {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: #000000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .lesson-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-white);
+        }
+        
+        .lesson-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .lesson-card a {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary-gold);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-gold);
+        }
+        
+        .lesson-card a:hover {
+            background: transparent;
+            color: var(--primary-gold);
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .stat-box {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-gold);
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .course-header h1 {
+                font-size: 32px;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Branded Enterprise Navbar -->
+    <nav style="background: #000; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="navbar-container">
+            <a href="../../index.html" style="font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none;">
+                A SQUARE L <span style="color: var(--primary-gold);">ACADEMY</span>
+            </a>
+            <a href="../../dashboard.html" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Main Dashboard
+            </a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="course-header">
+            <h1>SMARTPHONE GRAPHIC DESIGN MASTERY</h1>
+            <p>Master mobile design principles, typography, color theory, professional identities, and commercial output. Transform your creative vision into market-ready smartphone graphics in 8 intensive weeks.</p>
+        </div>
+        
+        <div class="stats-section">
+            <div class="stat-box">
+                <div class="stat-number">24</div>
+                <div class="stat-label">Daily Lessons</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Weeks</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Practical</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">Pro</div>
+                <div class="stat-label">Certification</div>
+            </div>
+        </div>
+        
+        <div class="week-section">
+            <div class="week-title">WEEK 1-2: INTRODUCTION TO MOBILE DESIGN</div>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-number">1</div>
+                    <h3>Mobile Design Fundamentals</h3>
+                    <p>Unlock the core principles of smartphone graphic design and understand the mobile-first creative mindset.</p>
+                    <a href="SGD-day1.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">2</div>
+                    <h3>PixelLab Mastery</h3>
+                    <p>Navigate PixelLab's interface with precision and confidence. Explore every tool that will power your creative journey.</p>
+                    <a href="SGD-day2.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">3</div>
+                    <h3>Canva Pro Essentials</h3>
+                    <p>Harness Canva's powerful design ecosystem and templates. Build professional graphics at enterprise speed.</p>
+                    <a href="SGD-day3.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">4</div>
+                    <h3>Layer Management Mastery</h3>
+                    <p>Organize complex designs using advanced layering strategies. Keep your workflow clean and your vision clear.</p>
+                    <a href="SGD-day4.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">5</div>
+                    <h3>Canvas Sizing & Formats</h3>
+                    <p>Master viewport dimensions, aspect ratios, and canvas setup for every platform and device configuration.</p>
+                    <a href="SGD-day5.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">6</div>
+                    <h3>Design Principles Applied</h3>
+                    <p>Study balance, contrast, emphasis, and hierarchy through mobile design applications and real-world case studies.</p>
+                    <a href="SGD-day6.html">Start Lesson →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="week-section">
+            <div class="week-title">WEEK 3-4: ADVANCED TYPOGRAPHY & COLOR MASTERY</div>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-number">7</div>
+                    <h3>Advanced Typography Techniques</h3>
+                    <p>Elevate your type game: kerning, leading, hierarchy, and expressive typographic systems for mobile screens.</p>
+                    <a href="SGD-day7.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">8</div>
+                    <h3>Font Pairing Methodology</h3>
+                    <p>Discover the science behind harmonious font combinations. Create typographic elegance through strategic pairing.</p>
+                    <a href="SGD-day8.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">9</div>
+                    <h3>Color Theory Fundamentals</h3>
+                    <p>Decode the color wheel, saturation, value, and contrast. Build scientifically sound color schemes for impact.</p>
+                    <a href="SGD-day9.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">10</div>
+                    <h3>Brand Color Psychology</h3>
+                    <p>Understand how colors influence emotion and perception. Build brand color identities with psychological precision.</p>
+                    <a href="SGD-day10.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">11</div>
+                    <h3>Accessibility in Design</h3>
+                    <p>Create inclusive designs that serve all users. Master contrast ratios and color-blind safe palettes.</p>
+                    <a href="SGD-day11.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">12</div>
+                    <h3>Building Design Systems</h3>
+                    <p>Establish consistent, scalable design systems. Create reusable components and cohesive brand guidelines.</p>
+                    <a href="SGD-day12.html">Start Lesson →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="week-section">
+            <div class="week-title">WEEK 5-6: PROFESSIONAL IDENTITIES & BRANDING</div>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-number">13</div>
+                    <h3>Logo Design Foundations</h3>
+                    <p>Master the art of creating memorable text-based and icon-based logos that stand the test of time.</p>
+                    <a href="SGD-day13.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">14</div>
+                    <h3>Text-Based Logo Design</h3>
+                    <p>Engineer logotypes that speak clearly. Leverage typography, kerning, and form to create distinctive wordmarks.</p>
+                    <a href="SGD-day14.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">15</div>
+                    <h3>Icon & Symbol Mastery</h3>
+                    <p>Craft geometric icons that communicate instantly. Balance simplicity with recognition power.</p>
+                    <a href="SGD-day15.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">16</div>
+                    <h3>Shape Manipulation & Geometry</h3>
+                    <p>Command geometric principles and boolean operations. Transform basic shapes into sophisticated design elements.</p>
+                    <a href="SGD-day16.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">17</div>
+                    <h3>Negative Space Design</h3>
+                    <p>Harness the power of emptiness. Use negative space strategically to create depth, meaning, and visual sophistication.</p>
+                    <a href="SGD-day17.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">18</div>
+                    <h3>Brand Identity Packages</h3>
+                    <p>Build comprehensive brand identities: logos, color systems, typography, and usage guidelines.</p>
+                    <a href="SGD-day18.html">Start Lesson →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="week-section">
+            <div class="week-title">WEEK 7-8: COMMERCIAL OUTPUT & MASTERY</div>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-number">19</div>
+                    <h3>High-Converting Marketing Flyers</h3>
+                    <p>Design commercially viable flyers with proven conversion principles. Master sales-driving visual hierarchy.</p>
+                    <a href="SGD-day19.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">20</div>
+                    <h3>Photo Manipulation Techniques</h3>
+                    <p>Transform raw photography into design assets. Blend, retouch, and manipulate images with professional finesse.</p>
+                    <a href="SGD-day20.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">21</div>
+                    <h3>Advanced Masking & Clipping</h3>
+                    <p>Master clipping paths, alpha masking, and layer masks. Achieve seamless integration of images and design elements.</p>
+                    <a href="SGD-day21.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">22</div>
+                    <h3>Print-Ready Optimization</h3>
+                    <p>Prepare designs for professional printing. Manage CMYK workflows, bleed settings, and resolution standards.</p>
+                    <a href="SGD-day22.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">23</div>
+                    <h3>Web-Ready Export Mastery</h3>
+                    <p>Optimize for digital platforms. Master file formats, compression, and web-specific export strategies.</p>
+                    <a href="SGD-day23.html">Start Lesson →</a>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">24</div>
+                    <h3>Portfolio & Graduation Project</h3>
+                    <p>Synthesize everything. Build your capstone project, compile your portfolio, and prepare to enter the professional market.</p>
+                    <a href="SGD-day24.html">Start Lesson →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Branded Enterprise Footer -->
+    <footer style="margin-top: 50px; border-top: 1px solid #222; padding: 30px 0; background: #000;">
+        <div class="container" style="text-align:center; padding: 0;">
+            <p style="color: var(--text-gray); margin-bottom: 5px;">Smartphone Graphic Design Mastery</p>
+            <p style="color: #666; font-size: 0.85rem;">&copy; 2026 A SQUARE L INNOVATE | Kano, Nigeria</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

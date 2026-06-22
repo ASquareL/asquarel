@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5: Canvas Sizing & Formats - Smartphone Graphic Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-gold: #D4AF37; --dark-gold: #b8860b; --card-bg: #111111; --text-white: #ffffff; --text-gray: #b3b3b3; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Nunito', sans-serif; line-height: 1.6; }
+        .navbar { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 20px 40px; border-bottom: 2px solid var(--primary-gold); display: flex; justify-content: space-between; align-items: center; }
+        .navbar-brand { font-size: 28px; font-weight: 800; color: var(--primary-gold); letter-spacing: 1px; }
+        .navbar-subtitle { font-size: 14px; color: var(--text-gray); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+        .lesson-header { text-align: center; margin-bottom: 60px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 40px; }
+        .lesson-header h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; color: var(--primary-gold); }
+        .lesson-header p { font-size: 16px; color: var(--text-gray); }
+        .lesson-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .content-section { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; padding: 40px; }
+        .content-section h2 { font-size: 28px; font-weight: 700; color: var(--primary-gold); margin-bottom: 20px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; color: var(--text-white); margin-top: 30px; margin-bottom: 15px; }
+        .content-section p { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; }
+        .tip-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .tip-box strong { color: var(--primary-gold); }
+        .tool-section { background: #0a0a0a; border: 1px solid var(--primary-gold); padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .tool-section h4 { color: var(--primary-gold); margin-bottom: 10px; font-size: 14px; }
+        .lesson-nav-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--primary-gold); }
+        .nav-btn { display: inline-block; padding: 15px 30px; background: var(--primary-gold); color: #000000; text-decoration: none; border-radius: 4px; font-weight: 700; text-align: center; transition: all 0.3s ease; border: 2px solid var(--primary-gold); }
+        .nav-btn:hover { background: transparent; color: var(--primary-gold); }
+        .nav-btn.dashboard { background: #333333; color: var(--primary-gold); border-color: var(--primary-gold); }
+        .nav-btn.dashboard:hover { background: var(--primary-gold); color: #000000; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <div class="navbar-brand">A SQUARE L ACADEMY</div>
+            <div class="navbar-subtitle">Smartphone Graphic Design Mastery</div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <h1>DAY 5: CANVAS SIZING & FORMATS</h1>
+            <p>Master the technical specifications that ensure your designs work perfectly across all platforms</p>
+        </div>
+        
+        <div class="lesson-content">
+            <div class="content-section">
+                <h2>The Canvas Specification Blueprint</h2>
+                <p>Dimensions matter. Aspect ratios matter. Resolution matters. Get these wrong, and your beautiful design displays distorted, pixelated, or cropped. Get them right, and every platform renders your vision perfectly.</p>
+                
+                <h3>Standard Mobile Canvas Sizes</h3>
+                <p><strong>iPhone Standard:</strong> 390x844px (iPhone 13, 14, 15) • <strong>iPhone Plus:</strong> 430x932px (max height) • <strong>Android:</strong> 1080x1920px (design at this, scale down for iPhone) • <strong>Square (Instagram):</strong> 1080x1080px • <strong>Stories:</strong> 1080x1920px</p>
+                
+                <div class="tool-section">
+                    <h4>PLATFORM CANVAS CHEAT SHEET</h4>
+                    <p>• Instagram Feed: 1080x1350px • Instagram Story: 1080x1920px • Facebook Post: 1200x628px • Twitter: 1200x675px • TikTok: 1080x1920px • Pinterest: 1000x1500px • LinkedIn: 1200x627px</p>
+                </div>
+                
+                <h3>Why Aspect Ratio Matters</h3>
+                <p>Aspect ratio determines how platforms crop and display your work. Instagram Feed (4:5) vs Instagram Story (9:16) are different compositions. Your design must adapt. One composition doesn't rule them all.</p>
+                
+                <div class="tip-box">
+                    <strong>CRITICAL RULE:</strong> Always design for the most restrictive platform first. Then scale up and adapt to less restrictive platforms. Never scale down from desktop to mobile—always mobile-first.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Resolution and DPI</h2>
+                
+                <h3>Pixels per Inch (PPI)</h3>
+                <p>Screen PPI affects how large elements appear. iPhone 13/14: 460 PPI. iPad: 264 PPI. Design at 300 DPI for universal sharpness. This one setting ensures your designs scale across devices without blurring.</p>
+                
+                <h3>2x and 3x Scaling</h3>
+                <p>Retina displays use 2x pixel density. Super Retina uses 3x. Export at native resolution AND 2x/3x variants. A 390px design exports at 390px, 780px, and 1170px. Each serves a different device density.</p>
+                
+                <div class="tool-section">
+                    <h4>EXPORT RESOLUTION PROTOCOL</h4>
+                    <p>1. Design at 390px width 2. Export as 390px (1x) 3. Export as 780px (2x) 4. Create 1170px version for 3x devices 5. Save all three versions 6. Test on actual devices 7. Iterate based on actual rendering</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2>Safe Zones and Margins</h2>
+                <p>Not all screen real estate is usable. Top has status bar and notch. Bottom has home indicator on iPhone, nav bar on Android. Design only in the safe zone. Extend full-bleed elements beyond safe zone if needed, but critical content stays inside.</p>
+                
+                <div class="tip-box">
+                    <strong>SAFE ZONE RULE:</strong> Keep critical UI elements 40px from all edges. This accommodates notches, bottom bars, and screen curve variations across all devices.
+                </div>
+            </div>
+        </div>
+        
+        <div class="lesson-nav-buttons">
+            <a href="SGD-day4.html" class="nav-btn">← Previous Lesson</a>
+            <a href="SGD-dashboard.html" class="nav-btn dashboard">Return to Dashboard</a>
+            <a href="SGD-day6.html" class="nav-btn">Next Lesson →</a>
+        </div>
+    </div>
+</body>
+</html>
