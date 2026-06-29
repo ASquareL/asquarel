@@ -147,16 +147,20 @@ Author: A Square L Innovate
    RIGHT SIDE
 ====================================================== */
 
-.nav-actions{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:16px;
+.nav-actions {
     
-    flex-wrap:wrap;
-
+    display: flex;
+    
+    align-items: center;
+    
+    justify-content: flex-end;
+    
+    gap: 16px;
+    
+    flex-wrap: nowrap;
+    
+    flex-shrink: 0;
+    
 }
 
 /* ======================================================
@@ -165,7 +169,8 @@ Author: A Square L Innovate
 
 .nav-search{
 
-    width:240px;
+    width:200px;
+    max-width: 18vw;
 
 }
 
@@ -311,16 +316,50 @@ Author: A Square L Innovate
    MOBILE MENU
 ====================================================== */
 
-.mobile-toggle{
+.mobile-toggle {
+    
+    display: none;
+    
+    align-items: center;
+    
+    justify-content: center;
+    
+    width: 48px;
+    
+    height: 48px;
+    
+    border: none;
+    
+    background: transparent;
+    
+    color: var(--white);
+    
+    cursor: pointer;
+    
+    transition: .3s;
+    
+}
 
-    display:none;
+.mobile-toggle:hover {
+    
+    color: var(--primary-gold);
+    
+}
 
-    cursor:pointer;
-
-    font-size:28px;
-
-    color:var(--white);
-
+.mobile-toggle span {
+    
+    display: block;
+    
+    width: 22px;
+    
+    height: 2px;
+    
+    margin: 4px auto;
+    
+    background: currentColor;
+    
+    transition: .3s;
+    
 }
 
 /* ======================================================
@@ -329,9 +368,37 @@ Author: A Square L Innovate
 
 @media(max-width:992px){
 
-.nav-menu{
+.nav-menu {
+    
+    display: none;
+    
+    position: absolute;
+    
+    top: 80px;
+    
+    left: 0;
+    
+    width: 100%;
+    
+    flex-direction: column;
+    
+    align-items: flex-start;
+    
+    gap: 0;
+    
+    padding: 24px;
+    
+    background: rgba(0, 0, 0, .95);
+    
+    backdrop-filter: blur(18px);
+    
+    border-top: 1px solid var(--border-color);
+    
+}
 
-    display:none;
+.nav-menu.open{
+
+    display:flex;
 
 }
 
@@ -341,9 +408,26 @@ Author: A Square L Innovate
 
 }
 
+.nav-link{
+
+    width:100%;
+
+    padding:16px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.nav-actions{
+
+    gap:8px;
+
+}
+
+
 .mobile-toggle{
 
-    display:block;
+    display:flex;
 
 }
 
