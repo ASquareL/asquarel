@@ -16,6 +16,7 @@ Author: A Square L Innovate
     max-width:var(--container-width);
     margin:0 auto;
     padding:0 var(--container-padding);
+    align-items: center;
 }
 
 /* ==========================================

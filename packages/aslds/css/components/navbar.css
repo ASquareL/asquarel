@@ -154,6 +154,8 @@ Author: A Square L Innovate
     align-items:center;
 
     gap:16px;
+    
+    flex-wrap:wrap;
 
 }
 
