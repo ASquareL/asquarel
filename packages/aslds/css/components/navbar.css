@@ -43,6 +43,8 @@ Author: A Square L Innovate
 
     justify-content:space-between;
 
+    gap: 2rem;
+
 }
 
 /* ======================================================
@@ -64,6 +66,8 @@ Author: A Square L Innovate
     font-size:24px;
 
     font-weight:800;
+
+    flex-shrink: 0;
 
 }
 
@@ -92,6 +96,12 @@ Author: A Square L Innovate
     gap:32px;
 
     list-style:none;
+
+    flex: 1;
+
+    justify-content: center;
+
+    margin-inline: 2rem;
 
 }
 
@@ -160,6 +170,8 @@ Author: A Square L Innovate
     flex-wrap: nowrap;
     
     flex-shrink: 0;
+
+    margin-left: auto;
     
 }
 
