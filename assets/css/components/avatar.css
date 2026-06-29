@@ -1,0 +1,209 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Avatar
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Reusable avatar component for profile images,
+user groups, online status, badges, and
+default initials.
+
+==========================================================
+*/
+
+/* ======================================================
+   BASE AVATAR
+====================================================== */
+
+.avatar{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    border-radius:50%;
+    flex-shrink:0;
+    background:var(--surface);
+    border:2px solid var(--border-color);
+    user-select:none;
+    transition:var(--transition-normal);
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.avatar:hover{
+    transform:scale(1.05);
+}
+
+/* ======================================================
+   INITIALS
+====================================================== */
+
+.avatar-initials{
+    font-weight:700;
+    color:var(--white);
+    text-transform:uppercase;
+}
+
+/* ======================================================
+   SIZES
+====================================================== */
+
+.avatar-xs{
+    width:28px;
+    height:28px;
+    font-size:10px;
+}
+
+.avatar-sm{
+    width:40px;
+    height:40px;
+    font-size:13px;
+}
+
+.avatar-md{
+    width:56px;
+    height:56px;
+    font-size:16px;
+}
+
+.avatar-lg{
+    width:72px;
+    height:72px;
+    font-size:20px;
+}
+
+.avatar-xl{
+    width:100px;
+    height:100px;
+    font-size:28px;
+}
+
+/* ======================================================
+   BORDERS
+====================================================== */
+
+.avatar-gold{
+    border-color:var(--primary-gold);
+}
+
+.avatar-success{
+    border-color:var(--success);
+}
+
+.avatar-danger{
+    border-color:var(--danger);
+}
+
+.avatar-white{
+    border-color:var(--white);
+}
+
+/* ======================================================
+   ONLINE STATUS
+====================================================== */
+
+.avatar-status{
+    position:absolute;
+    right:2px;
+    bottom:2px;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    border:2px solid var(--card-bg);
+}
+
+.status-online{
+    background:var(--success);
+}
+
+.status-away{
+    background:var(--warning);
+}
+
+.status-busy{
+    background:var(--danger);
+}
+
+.status-offline{
+    background:var(--gray-500);
+}
+
+/* ======================================================
+   VERIFIED BADGE
+====================================================== */
+
+.avatar-badge{
+    position:absolute;
+    right:-2px;
+    top:-2px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--primary-gold);
+    color:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    font-weight:700;
+    border:2px solid var(--card-bg);
+}
+
+/* ======================================================
+   GLOW
+====================================================== */
+
+.avatar-glow{
+    box-shadow:0 0 18px rgba(212,175,55,.30);
+}
+
+/* ======================================================
+   STACKED AVATARS
+====================================================== */
+
+.avatar-group{
+    display:flex;
+    align-items:center;
+}
+
+.avatar-group .avatar{
+    margin-left:-12px;
+    border:2px solid var(--card-bg);
+}
+
+.avatar-group .avatar:first-child{
+    margin-left:0;
+}
+
+.avatar-group .avatar:hover{
+    z-index:5;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+    .avatar-xl{
+        width:80px;
+        height:80px;
+        font-size:22px;
+    }
+
+    .avatar-lg{
+        width:60px;
+        height:60px;
+        font-size:18px;
+    }
+
+}

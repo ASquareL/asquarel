@@ -1,0 +1,240 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Modal
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Reusable modal component for dialogs,
+forms, confirmations, media previews,
+and interactive content.
+
+==========================================================
+*/
+
+/* ======================================================
+   MODAL BACKDROP
+====================================================== */
+
+.modal{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(8px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:var(--transition-normal);
+
+    z-index:2000;
+}
+
+.modal.is-open{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ======================================================
+   MODAL CONTAINER
+====================================================== */
+
+.modal-dialog{
+
+    width:100%;
+    max-width:650px;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-xl);
+
+    box-shadow:var(--shadow-xl);
+
+    overflow:hidden;
+
+    transform:translateY(20px) scale(.97);
+
+    transition:var(--transition-normal);
+
+}
+
+.modal.is-open .modal-dialog{
+
+    transform:translateY(0) scale(1);
+
+}
+
+/* ======================================================
+   MODAL SIZES
+====================================================== */
+
+.modal-sm .modal-dialog{
+    max-width:420px;
+}
+
+.modal-md .modal-dialog{
+    max-width:650px;
+}
+
+.modal-lg .modal-dialog{
+    max-width:900px;
+}
+
+.modal-xl .modal-dialog{
+    max-width:1200px;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 26px;
+
+    border-bottom:1px solid var(--border-color);
+
+}
+
+.modal-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--white);
+
+}
+
+/* ======================================================
+   CLOSE BUTTON
+====================================================== */
+
+.modal-close{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--gray-300);
+
+    cursor:pointer;
+
+    transition:var(--transition-fast);
+
+}
+
+.modal-close:hover{
+
+    background:rgba(212,175,55,.12);
+
+    color:var(--primary-gold);
+
+    transform:rotate(90deg);
+
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+
+.modal-body{
+
+    padding:28px;
+
+    color:var(--gray-300);
+
+    line-height:1.8;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.modal-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:14px;
+
+    padding:22px 26px;
+
+    border-top:1px solid var(--border-color);
+
+}
+
+/* ======================================================
+   SCROLLABLE CONTENT
+====================================================== */
+
+.modal-scroll{
+
+    max-height:70vh;
+
+    overflow-y:auto;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+    .modal{
+
+        padding:16px;
+
+    }
+
+    .modal-body{
+
+        padding:20px;
+
+    }
+
+    .modal-header,
+
+    .modal-footer{
+
+        padding:18px;
+
+    }
+
+    .modal-footer{
+
+        flex-direction:column;
+
+    }
+
+    .modal-footer .btn{
+
+        width:100%;
+
+    }
+
+}

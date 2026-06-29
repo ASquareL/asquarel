@@ -1,0 +1,254 @@
+/*
+==========================================================
+A SQUARE L DESIGN SYSTEM (ADS)
+Version: 1.0.0
+Component: Typography
+Author: A Square L Innovate
+==========================================================
+*/
+
+/* ==============================
+   Google Font
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+/* ==============================
+   Body
+================================ */
+
+body{
+    font-family: var(--font-family);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-normal);
+    color: var(--white);
+}
+
+/* ==============================
+   Headings
+================================ */
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--space-2);
+    color: var(--white);
+}
+
+h1{
+    font-size: var(--fs-6xl);
+}
+
+h2{
+    font-size: var(--fs-5xl);
+}
+
+h3{
+    font-size: var(--fs-4xl);
+}
+
+h4{
+    font-size: var(--fs-3xl);
+}
+
+h5{
+    font-size: var(--fs-2xl);
+}
+
+h6{
+    font-size: var(--fs-xl);
+}
+
+/* ==============================
+   Paragraphs
+================================ */
+
+p{
+    font-size: var(--fs-lg);
+    color: var(--gray-400);
+    margin-bottom: var(--space-2);
+}
+
+/* ==============================
+   Links
+================================ */
+
+a{
+    color: var(--white);
+    transition: var(--transition-normal);
+}
+
+a:hover{
+    color: var(--primary-gold);
+}
+
+/* ==============================
+   Lists
+================================ */
+
+ul,
+ol{
+    margin-bottom: var(--space-2);
+}
+
+li{
+    color: var(--gray-300);
+    margin-bottom: 8px;
+}
+
+/* ==============================
+   Strong & Emphasis
+================================ */
+
+strong{
+    color: var(--white);
+    font-weight: var(--fw-bold);
+}
+
+em{
+    font-style: italic;
+}
+
+/* ==============================
+   Small Text
+================================ */
+
+small{
+    font-size: var(--fs-sm);
+    color: var(--gray-500);
+}
+
+/* ==============================
+   Labels
+================================ */
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:var(--fw-semibold);
+    color:var(--white);
+}
+
+/* ==============================
+   Code
+================================ */
+
+code{
+    background: var(--surface);
+    color: var(--primary-gold);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-family: Consolas, monospace;
+}
+
+/* ==============================
+   Preformatted Code
+================================ */
+
+pre{
+    background:#050505;
+    border:1px solid var(--border-color);
+    border-radius:var(--radius-md);
+    padding:24px;
+    overflow:auto;
+    margin-bottom:var(--space-3);
+}
+
+pre code{
+    background:none;
+    color:var(--gray-200);
+    padding:0;
+}
+
+/* ==============================
+   Blockquote
+================================ */
+
+blockquote{
+    border-left:4px solid var(--primary-gold);
+    padding-left:20px;
+    margin:32px 0;
+    color:var(--gray-300);
+    font-style:italic;
+}
+
+/* ==============================
+   Horizontal Rule
+================================ */
+
+hr{
+    margin:40px 0;
+}
+
+/* ==============================
+   Text Utilities
+================================ */
+
+.text-center{
+    text-align:center;
+}
+
+.text-left{
+    text-align:left;
+}
+
+.text-right{
+    text-align:right;
+}
+
+.text-gold{
+    color:var(--primary-gold);
+}
+
+.text-white{
+    color:var(--white);
+}
+
+.text-gray{
+    color:var(--gray-400);
+}
+
+.text-success{
+    color:var(--success);
+}
+
+.text-warning{
+    color:var(--warning);
+}
+
+.text-danger{
+    color:var(--danger);
+}
+
+.text-info{
+    color:var(--info);
+}
+
+/* ==============================
+   Responsive Typography
+================================ */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:42px;
+    }
+
+    h2{
+        font-size:34px;
+    }
+
+    h3{
+        font-size:28px;
+    }
+
+    h4{
+        font-size:24px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+}

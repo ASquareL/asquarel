@@ -1,0 +1,404 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Forms
+Author: A Square L Innovate
+==========================================================
+*/
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form{
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-5);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:var(--space-4);
+}
+
+.form-row-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:var(--space-4);
+}
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.form-label{
+    color:var(--white);
+    font-size:var(--fs-sm);
+    font-weight:var(--fw-semibold);
+}
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.form-control{
+
+    width:100%;
+
+    height:56px;
+
+    padding:0 18px;
+
+    background:var(--card-bg);
+
+    color:var(--white);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-md);
+
+    font-size:var(--fs-md);
+
+    transition:all var(--transition-normal);
+
+}
+
+.form-control::placeholder{
+
+    color:var(--gray-500);
+
+}
+
+.form-control:focus{
+
+    outline:none;
+
+    border-color:var(--primary-gold);
+
+    box-shadow:0 0 0 4px rgba(212,175,55,.15);
+
+}
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+textarea.form-control{
+
+    min-height:150px;
+
+    resize:vertical;
+
+    padding:18px;
+
+}
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+select.form-control{
+
+    cursor:pointer;
+
+}
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.input-group{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.input-group-text{
+
+    background:var(--surface);
+
+    color:var(--gray-300);
+
+    padding:0 18px;
+
+    height:56px;
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid var(--border-color);
+
+}
+
+.input-group .form-control{
+
+    border-left:none;
+
+}
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box{
+
+    position:relative;
+
+}
+
+.search-box i{
+
+    position:absolute;
+
+    left:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--gray-400);
+
+}
+
+.search-box .form-control{
+
+    padding-left:50px;
+
+}
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+.checkbox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.checkbox input{
+
+    accent-color:var(--primary-gold);
+
+}
+
+/* =====================================================
+   RADIO
+===================================================== */
+
+.radio{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.radio input{
+
+    accent-color:var(--primary-gold);
+
+}
+
+/* =====================================================
+   SWITCH
+===================================================== */
+
+.switch{
+
+    position:relative;
+
+    width:52px;
+
+    height:28px;
+
+}
+
+.switch input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#444;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    left:3px;
+
+    top:3px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    transition:.3s;
+
+}
+
+.switch input:checked + .slider{
+
+    background:var(--primary-gold);
+
+}
+
+.switch input:checked + .slider::before{
+
+    transform:translateX(24px);
+
+}
+
+/* =====================================================
+   FILE UPLOAD
+===================================================== */
+
+.file-upload{
+
+    border:2px dashed var(--border-color);
+
+    border-radius:var(--radius-lg);
+
+    padding:40px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.file-upload:hover{
+
+    border-color:var(--primary-gold);
+
+    background:rgba(212,175,55,.05);
+
+}
+
+/* =====================================================
+   HELPER TEXT
+===================================================== */
+
+.form-text{
+
+    font-size:var(--fs-sm);
+
+    color:var(--gray-400);
+
+}
+
+/* =====================================================
+   VALIDATION
+===================================================== */
+
+.is-success{
+
+    border-color:var(--success)!important;
+
+}
+
+.is-error{
+
+    border-color:var(--danger)!important;
+
+}
+
+.is-warning{
+
+    border-color:var(--warning)!important;
+
+}
+
+.text-success{
+
+    color:var(--success);
+
+}
+
+.text-error{
+
+    color:var(--danger);
+
+}
+
+.text-warning{
+
+    color:var(--warning);
+
+}
+
+/* =====================================================
+   DISABLED
+===================================================== */
+
+.form-control:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:768px){
+
+.form-row{
+
+    grid-template-columns:1fr;
+
+}
+
+.form-row-3{
+
+    grid-template-columns:1fr;
+
+}
+
+}

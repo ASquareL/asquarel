@@ -1,0 +1,256 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Progress
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Reusable progress indicators for the A Square L ecosystem.
+
+Supports:
+- Course Progress
+- Lesson Progress
+- Profile Completion
+- Upload Progress
+- Quiz Progress
+- Loading Indicators
+==========================================================
+*/
+
+/* ======================================================
+   PROGRESS WRAPPER
+====================================================== */
+
+.progress{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.progress-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.progress-title{
+    font-size:14px;
+    font-weight:600;
+    color:var(--gray-300);
+}
+
+.progress-value{
+    font-size:14px;
+    font-weight:700;
+    color:var(--primary-gold);
+}
+
+/* ======================================================
+   BAR
+====================================================== */
+
+.progress-bar{
+    width:100%;
+    height:10px;
+    background:rgba(255,255,255,.08);
+    border-radius:999px;
+    overflow:hidden;
+    position:relative;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        var(--primary-gold),
+        var(--dark-gold)
+    );
+    border-radius:999px;
+    transition:width .6s ease;
+}
+
+/* ======================================================
+   SIZES
+====================================================== */
+
+.progress-sm .progress-bar{
+    height:6px;
+}
+
+.progress-md .progress-bar{
+    height:10px;
+}
+
+.progress-lg .progress-bar{
+    height:16px;
+}
+
+/* ======================================================
+   COLORS
+====================================================== */
+
+.progress-success .progress-fill{
+    background:var(--success);
+}
+
+.progress-warning .progress-fill{
+    background:var(--warning);
+}
+
+.progress-danger .progress-fill{
+    background:var(--danger);
+}
+
+.progress-info .progress-fill{
+    background:var(--info);
+}
+
+/* ======================================================
+   STRIPED
+====================================================== */
+
+.progress-striped .progress-fill{
+    background-image:linear-gradient(
+        45deg,
+        rgba(255,255,255,.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255,255,255,.15) 50%,
+        rgba(255,255,255,.15) 75%,
+        transparent 75%,
+        transparent
+    );
+
+    background-size:20px 20px;
+}
+
+/* ======================================================
+   ANIMATED
+====================================================== */
+
+.progress-animated .progress-fill{
+    animation:progressMove 1.2s linear infinite;
+}
+
+@keyframes progressMove{
+
+    from{
+        background-position:20px 0;
+    }
+
+    to{
+        background-position:0 0;
+    }
+
+}
+
+/* ======================================================
+   CIRCLE PROGRESS
+====================================================== */
+
+.progress-circle{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:conic-gradient(
+        var(--primary-gold) 68%,
+        rgba(255,255,255,.08) 0
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.progress-circle-inner{
+
+    width:90px;
+    height:90px;
+
+    background:var(--card-bg);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--white);
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+/* ======================================================
+   STEP PROGRESS
+====================================================== */
+
+.progress-steps{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+}
+
+.progress-step{
+    flex:1;
+    height:8px;
+    border-radius:999px;
+    background:rgba(255,255,255,.08);
+}
+
+.progress-step.active{
+    background:var(--primary-gold);
+}
+
+/* ======================================================
+   COURSE PROGRESS CARD
+====================================================== */
+
+.course-progress{
+    padding:20px;
+    background:var(--card-bg);
+    border:1px solid var(--border-color);
+    border-radius:var(--radius-lg);
+}
+
+.course-progress h4{
+    color:var(--white);
+    margin-bottom:15px;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+    .progress-circle{
+
+        width:90px;
+        height:90px;
+
+    }
+
+    .progress-circle-inner{
+
+        width:68px;
+        height:68px;
+
+        font-size:18px;
+
+    }
+
+}

@@ -1,0 +1,141 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Component: Tabs
+Version:1.0.0
+==========================================================
+*/
+
+/* ======================================================
+   TABS
+====================================================== */
+
+.tabs{
+    width:100%;
+}
+
+/* ======================================================
+   TAB HEADER
+====================================================== */
+
+.tab-list{
+
+display:flex;
+
+gap:10px;
+
+border-bottom:1px solid var(--border-color);
+
+margin-bottom:24px;
+
+overflow-x:auto;
+
+}
+
+/* ======================================================
+   BUTTON
+====================================================== */
+
+.tab-button{
+
+padding:14px 22px;
+
+border:none;
+
+background:none;
+
+cursor:pointer;
+
+font-weight:700;
+
+color:var(--gray-400);
+
+border-bottom:3px solid transparent;
+
+transition:var(--transition-fast);
+
+white-space:nowrap;
+
+}
+
+.tab-button:hover{
+
+color:var(--primary-gold);
+
+}
+
+.tab-button.is-active{
+
+color:var(--primary-gold);
+
+border-bottom-color:var(--primary-gold);
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.tab-content{
+
+display:none;
+
+animation:fadeTab .35s ease;
+
+}
+
+.tab-content.is-active{
+
+display:block;
+
+}
+
+/* ======================================================
+   ICONS
+====================================================== */
+
+.tab-button i{
+
+margin-right:8px;
+
+}
+
+/* ======================================================
+   ANIMATION
+====================================================== */
+
+@keyframes fadeTab{
+
+from{
+
+opacity:0;
+
+transform:translateY(8px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+.tab-button{
+
+padding:12px 16px;
+
+font-size:14px;
+
+}
+
+}

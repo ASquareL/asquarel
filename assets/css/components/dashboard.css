@@ -1,0 +1,220 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Dashboard
+Author: A Square L Innovate
+==========================================================
+*/
+
+/* ======================================================
+   DASHBOARD WRAPPER
+====================================================== */
+
+.dashboard{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    min-height:100vh;
+    background:var(--background);
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+
+.dashboard-sidebar{
+    background:var(--card-bg);
+    border-right:1px solid var(--border-color);
+    padding:24px;
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.dashboard-content{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.dashboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 32px;
+    border-bottom:1px solid var(--border-color);
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(12px);
+}
+
+/* ======================================================
+   PAGE TITLE
+====================================================== */
+
+.dashboard-title{
+    font-size:32px;
+    font-weight:800;
+    color:var(--white);
+}
+
+.dashboard-subtitle{
+    margin-top:8px;
+    color:var(--gray-400);
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+
+.dashboard-body{
+    padding:32px;
+    flex:1;
+}
+
+/* ======================================================
+   STATS GRID
+====================================================== */
+
+.dashboard-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:24px;
+    margin-bottom:32px;
+}
+
+/* ======================================================
+   MAIN GRID
+====================================================== */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+}
+
+/* ======================================================
+   WIDGET
+====================================================== */
+
+.widget{
+    background:var(--card-bg);
+    border:1px solid var(--border-color);
+    border-radius:var(--radius-lg);
+    padding:24px;
+    transition:var(--transition-normal);
+}
+
+.widget:hover{
+    border-color:var(--primary-gold);
+    transform:translateY(-4px);
+}
+
+/* ======================================================
+   WIDGET TITLE
+====================================================== */
+
+.widget-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+/* ======================================================
+   QUICK ACTIONS
+====================================================== */
+
+.quick-actions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:20px;
+}
+
+.quick-action{
+    text-align:center;
+    padding:30px 20px;
+    border-radius:var(--radius-lg);
+    background:var(--surface);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.quick-action:hover{
+    background:rgba(212,175,55,.08);
+    border:1px solid var(--primary-gold);
+}
+
+.quick-action i{
+    font-size:34px;
+    color:var(--primary-gold);
+    margin-bottom:14px;
+}
+
+/* ======================================================
+   RECENT ACTIVITY
+====================================================== */
+
+.activity-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.activity-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    border-radius:var(--radius-md);
+    background:var(--surface);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:992px){
+
+.dashboard{
+
+    grid-template-columns:1fr;
+
+}
+
+.dashboard-sidebar{
+
+    display:none;
+
+}
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.dashboard-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.dashboard-body{
+
+    padding:20px;
+
+}
+
+}

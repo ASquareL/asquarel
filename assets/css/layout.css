@@ -1,0 +1,327 @@
+/*
+==========================================================
+A SQUARE L DESIGN SYSTEM (ADS)
+Version: 1.0.0
+Component: Layout
+Author: A Square L Innovate
+==========================================================
+*/
+
+/* ==========================================
+   Main Container
+========================================== */
+
+.container{
+    width:100%;
+    max-width:var(--container-width);
+    margin:0 auto;
+    padding:0 var(--container-padding);
+}
+
+/* ==========================================
+   Sections
+========================================== */
+
+.section{
+    padding:var(--space-10) 0;
+}
+
+.section-sm{
+    padding:var(--space-7) 0;
+}
+
+.section-lg{
+    padding:var(--space-11) 0;
+}
+
+/* ==========================================
+   Page Wrapper
+========================================== */
+
+.page-wrapper{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.main-content{
+    flex:1;
+}
+
+/* ==========================================
+   Display Utilities
+========================================== */
+
+.d-flex{
+    display:flex;
+}
+
+.d-grid{
+    display:grid;
+}
+
+.d-block{
+    display:block;
+}
+
+.d-inline{
+    display:inline-block;
+}
+
+/* ==========================================
+   Flex Direction
+========================================== */
+
+.flex-column{
+    flex-direction:column;
+}
+
+.flex-row{
+    flex-direction:row;
+}
+
+/* ==========================================
+   Alignment
+========================================== */
+
+.align-center{
+    align-items:center;
+}
+
+.align-start{
+    align-items:flex-start;
+}
+
+.align-end{
+    align-items:flex-end;
+}
+
+.justify-center{
+    justify-content:center;
+}
+
+.justify-between{
+    justify-content:space-between;
+}
+
+.justify-around{
+    justify-content:space-around;
+}
+
+.justify-evenly{
+    justify-content:space-evenly;
+}
+
+.justify-start{
+    justify-content:flex-start;
+}
+
+.justify-end{
+    justify-content:flex-end;
+}
+
+/* ==========================================
+   Gap Utilities
+========================================== */
+
+.gap-1{gap:var(--space-1);}
+.gap-2{gap:var(--space-2);}
+.gap-3{gap:var(--space-3);}
+.gap-4{gap:var(--space-4);}
+.gap-5{gap:var(--space-5);}
+.gap-6{gap:var(--space-6);}
+
+/* ==========================================
+   Grid System
+========================================== */
+
+.grid{
+    display:grid;
+    gap:var(--space-4);
+}
+
+.grid-2{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.grid-3{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.grid-4{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.grid-auto{
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+/* ==========================================
+   Width Utilities
+========================================== */
+
+.w-100{
+    width:100%;
+}
+
+.w-50{
+    width:50%;
+}
+
+.w-auto{
+    width:auto;
+}
+
+/* ==========================================
+   Height Utilities
+========================================== */
+
+.h-100{
+    height:100%;
+}
+
+.min-vh{
+    min-height:100vh;
+}
+
+/* ==========================================
+   Overflow
+========================================== */
+
+.overflow-hidden{
+    overflow:hidden;
+}
+
+.overflow-auto{
+    overflow:auto;
+}
+
+/* ==========================================
+   Position Utilities
+========================================== */
+
+.relative{
+    position:relative;
+}
+
+.absolute{
+    position:absolute;
+}
+
+.fixed{
+    position:fixed;
+}
+
+.sticky{
+    position:sticky;
+    top:0;
+    z-index:var(--z-navbar);
+}
+
+/* ==========================================
+   Hero Layout
+========================================== */
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+/* ==========================================
+   Dashboard Layout
+========================================== */
+
+.dashboard-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    min-height:100vh;
+}
+
+.sidebar{
+    background:var(--card-bg);
+    border-right:1px solid var(--border-color);
+}
+
+.dashboard-content{
+    padding:var(--space-5);
+}
+
+/* ==========================================
+   Course Layout
+========================================== */
+
+.course-layout{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:var(--space-4);
+}
+
+.lesson-sidebar{
+    background:var(--card-bg);
+    border-radius:var(--radius-lg);
+}
+
+.lesson-content{
+    background:var(--card-bg);
+    border-radius:var(--radius-lg);
+    padding:var(--space-5);
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:992px){
+
+.dashboard-layout{
+    grid-template-columns:1fr;
+}
+
+.course-layout{
+    grid-template-columns:1fr;
+}
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+}
+
+.hero-image{
+    margin-top:var(--space-5);
+}
+
+.grid-2,
+.grid-3,
+.grid-4{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+    padding:0 16px;
+}
+
+.section{
+    padding:64px 0;
+}
+
+.dashboard-content{
+    padding:24px;
+}
+
+}

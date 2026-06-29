@@ -1,0 +1,110 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Component: Table
+Version: 1.0.0
+==========================================================
+*/
+
+/* ======================================================
+   TABLE WRAPPER
+====================================================== */
+
+.table-wrapper{
+    width:100%;
+    overflow-x:auto;
+    border-radius:var(--radius-lg);
+    border:1px solid var(--border-color);
+    background:var(--card-bg);
+}
+
+/* ======================================================
+   TABLE
+====================================================== */
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+    color:var(--white);
+}
+
+.table th,
+.table td{
+    padding:18px 20px;
+    text-align:left;
+    vertical-align:middle;
+}
+
+.table thead{
+    background:rgba(212,175,55,.08);
+}
+
+.table th{
+    font-size:14px;
+    font-weight:700;
+    color:var(--primary-gold);
+    white-space:nowrap;
+}
+
+.table tbody tr{
+    border-top:1px solid var(--border-color);
+    transition:var(--transition-fast);
+}
+
+.table tbody tr:hover{
+    background:rgba(212,175,55,.05);
+}
+
+.table td{
+    color:var(--gray-300);
+}
+
+/* ======================================================
+   ALIGNMENT
+====================================================== */
+
+.text-center{text-align:center;}
+.text-right{text-align:right;}
+
+/* ======================================================
+   STRIPED
+====================================================== */
+
+.table-striped tbody tr:nth-child(even){
+    background:rgba(255,255,255,.02);
+}
+
+/* ======================================================
+   BORDERED
+====================================================== */
+
+.table-bordered td,
+.table-bordered th{
+    border:1px solid var(--border-color);
+}
+
+/* ======================================================
+   COMPACT
+====================================================== */
+
+.table-sm th,
+.table-sm td{
+    padding:12px 14px;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+.table th,
+.table td{
+
+padding:14px;
+
+font-size:14px;
+
+}
+
+}

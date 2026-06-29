@@ -1,0 +1,56 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Badge
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Reusable badge component used across the A Square L
+ecosystem for status, labels, roles, achievements,
+course categories, and notifications.
+==========================================================
+*/
+
+/* ======================================================
+   BASE BADGE
+====================================================== */
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.3px;
+    line-height:1;
+    white-space:nowrap;
+    user-select:none;
+    transition:var(--transition-normal);
+}
+
+/* ======================================================
+   SIZES
+====================================================== */
+
+.badge-sm{
+    padding:4px 10px;
+    font-size:11px;
+}
+
+.badge-md{
+    padding:6px 14px;
+    font-size:12px;
+}
+
+.badge-lg{
+    padding:8px 18px;
+    font-size:14px;
+}
+
+/* ======================================================
+   GOLD

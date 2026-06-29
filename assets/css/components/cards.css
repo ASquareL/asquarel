@@ -1,0 +1,362 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Cards
+Author: A Square L Innovate
+==========================================================
+*/
+
+/* ======================================================
+   BASE CARD
+====================================================== */
+
+.card{
+    position:relative;
+    background:var(--card-bg);
+    border:1px solid var(--border-color);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    transition:all var(--transition-normal);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:var(--primary-gold);
+    box-shadow:var(--shadow-lg);
+}
+
+/* ======================================================
+   CARD HEADER
+====================================================== */
+
+.card-header{
+    padding:var(--space-4);
+    border-bottom:1px solid var(--border-color);
+}
+
+.card-title{
+    margin:0;
+    color:var(--white);
+    font-size:var(--fs-xl);
+    font-weight:var(--fw-bold);
+}
+
+.card-subtitle{
+    color:var(--gray-400);
+    margin-top:8px;
+}
+
+/* ======================================================
+   CARD BODY
+====================================================== */
+
+.card-body{
+    padding:var(--space-4);
+}
+
+/* ======================================================
+   CARD FOOTER
+====================================================== */
+
+.card-footer{
+    padding:var(--space-4);
+    border-top:1px solid var(--border-color);
+}
+
+/* ======================================================
+   GLASS CARD
+====================================================== */
+
+.card-glass{
+    background:var(--glass-bg);
+    backdrop-filter:var(--glass-blur);
+    border:1px solid var(--glass-border);
+}
+
+/* ======================================================
+   COURSE CARD
+====================================================== */
+
+.course-card{
+    display:flex;
+    flex-direction:column;
+}
+
+.course-image{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+}
+
+.course-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.course-card:hover img{
+    transform:scale(1.08);
+}
+
+.course-content{
+    padding:var(--space-4);
+}
+
+.course-title{
+    font-size:var(--fs-xl);
+    color:var(--white);
+    margin-bottom:12px;
+}
+
+.course-description{
+    color:var(--gray-400);
+}
+
+.course-footer{
+    padding:var(--space-4);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ======================================================
+   DASHBOARD CARD
+====================================================== */
+
+.dashboard-card{
+    padding:var(--space-5);
+}
+
+.dashboard-value{
+    font-size:42px;
+    font-weight:var(--fw-extrabold);
+    color:var(--primary-gold);
+}
+
+.dashboard-label{
+    color:var(--gray-400);
+}
+
+/* ======================================================
+   STAT CARD
+====================================================== */
+
+.stat-card{
+    text-align:center;
+    padding:40px;
+}
+
+.stat-icon{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:rgba(212,175,55,.1);
+    color:var(--primary-gold);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+
+    margin:auto;
+    margin-bottom:20px;
+}
+
+.stat-number{
+    font-size:38px;
+    font-weight:800;
+}
+
+.stat-text{
+    color:var(--gray-400);
+}
+
+/* ======================================================
+   PROFILE CARD
+====================================================== */
+
+.profile-card{
+    text-align:center;
+    padding:40px;
+}
+
+.profile-avatar{
+    width:120px;
+    height:120px;
+    margin:auto;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid var(--primary-gold);
+}
+
+.profile-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.profile-name{
+    margin-top:20px;
+    font-size:24px;
+}
+
+.profile-role{
+    color:var(--gray-400);
+}
+
+/* ======================================================
+   PRICING CARD
+====================================================== */
+
+.pricing-card{
+    text-align:center;
+    padding:50px 35px;
+}
+
+.pricing-price{
+    font-size:56px;
+    color:var(--primary-gold);
+    font-weight:800;
+}
+
+.pricing-duration{
+    color:var(--gray-400);
+}
+
+/* ======================================================
+   FEATURED CARD
+====================================================== */
+
+.featured{
+    border:2px solid var(--primary-gold);
+}
+
+.featured::before{
+
+    content:"POPULAR";
+
+    position:absolute;
+
+    top:18px;
+
+    right:-35px;
+
+    width:150px;
+
+    text-align:center;
+
+    padding:8px;
+
+    background:var(--primary-gold);
+
+    color:#000;
+
+    transform:rotate(45deg);
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+/* ======================================================
+   HORIZONTAL CARD
+====================================================== */
+
+.card-horizontal{
+    display:flex;
+}
+
+.card-horizontal img{
+    width:260px;
+    object-fit:cover;
+}
+
+/* ======================================================
+   LESSON CARD
+====================================================== */
+
+.lesson-card{
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ======================================================
+   CERTIFICATE CARD
+====================================================== */
+
+.certificate-card{
+    text-align:center;
+    padding:50px;
+    border:2px dashed var(--primary-gold);
+}
+
+/* ======================================================
+   DOWNLOAD CARD
+====================================================== */
+
+.download-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:25px;
+}
+
+/* ======================================================
+   BADGE POSITION
+====================================================== */
+
+.card-badge{
+    position:absolute;
+    top:18px;
+    left:18px;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:992px){
+
+.card-horizontal{
+
+    flex-direction:column;
+
+}
+
+.card-horizontal img{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.dashboard-value{
+
+    font-size:32px;
+
+}
+
+.pricing-price{
+
+    font-size:42px;
+
+}
+
+.profile-avatar{
+
+    width:90px;
+
+    height:90px;
+
+}
+
+}

@@ -1,0 +1,231 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Footer
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Reusable footer component for all A Square L products.
+==========================================================
+*/
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.footer{
+    background:var(--card-bg);
+    border-top:1px solid var(--border-color);
+    margin-top:auto;
+    color:var(--gray-300);
+}
+
+.footer-container{
+    max-width:var(--container-xl);
+    margin:0 auto;
+    padding:60px 24px 30px;
+}
+
+/* ======================================================
+   FOOTER GRID
+====================================================== */
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.2fr;
+    gap:40px;
+    margin-bottom:50px;
+}
+
+/* ======================================================
+   BRAND
+====================================================== */
+
+.footer-brand h2{
+    color:var(--white);
+    font-size:26px;
+    margin-bottom:10px;
+    font-weight:800;
+}
+
+.footer-brand span{
+    color:var(--primary-gold);
+}
+
+.footer-brand p{
+    color:var(--gray-400);
+    line-height:1.8;
+}
+
+/* ======================================================
+   TITLES
+====================================================== */
+
+.footer-title{
+    color:var(--white);
+    font-size:18px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+/* ======================================================
+   LINKS
+====================================================== */
+
+.footer-links{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-links a{
+    color:var(--gray-400);
+    text-decoration:none;
+    transition:var(--transition-normal);
+}
+
+.footer-links a:hover{
+    color:var(--primary-gold);
+    padding-left:6px;
+}
+
+/* ======================================================
+   CONTACT
+====================================================== */
+
+.footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.footer-contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.footer-contact-item i{
+    color:var(--primary-gold);
+    width:20px;
+    margin-top:4px;
+}
+
+/* ======================================================
+   SOCIAL
+====================================================== */
+
+.footer-social{
+    display:flex;
+    gap:14px;
+    margin-top:25px;
+}
+
+.footer-social a{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    color:var(--gray-300);
+    transition:var(--transition-normal);
+}
+
+.footer-social a:hover{
+    background:var(--primary-gold);
+    color:#000;
+    transform:translateY(-3px);
+}
+
+/* ======================================================
+   NEWSLETTER
+====================================================== */
+
+.footer-newsletter{
+    margin-top:20px;
+}
+
+.footer-newsletter input{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid var(--border-color);
+    border-radius:var(--radius-md);
+    background:var(--surface);
+    color:var(--white);
+    margin-bottom:12px;
+}
+
+.footer-newsletter input:focus{
+    outline:none;
+    border-color:var(--primary-gold);
+}
+
+/* ======================================================
+   BOTTOM
+====================================================== */
+
+.footer-bottom{
+    border-top:1px solid var(--border-color);
+    padding-top:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-copy{
+    color:var(--gray-500);
+    font-size:14px;
+}
+
+.footer-bottom-links{
+    display:flex;
+    gap:24px;
+}
+
+.footer-bottom-links a{
+    color:var(--gray-400);
+    text-decoration:none;
+    transition:var(--transition-fast);
+}
+
+.footer-bottom-links a:hover{
+    color:var(--primary-gold);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:992px){
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-bottom-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}

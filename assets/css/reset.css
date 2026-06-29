@@ -1,0 +1,201 @@
+/*
+==========================================================
+A SQUARE L DESIGN SYSTEM (ADS)
+Version: 1.0.0
+Component: CSS Reset
+Author: A Square L Innovate
+==========================================================
+*/
+
+/* ==============================
+   Universal Reset
+================================ */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==============================
+   HTML & Body
+================================ */
+
+html{
+    scroll-behavior:smooth;
+    font-size:16px;
+}
+
+body{
+    min-height:100vh;
+    font-family:var(--font-family);
+    background:var(--background);
+    color:var(--white);
+    line-height:var(--lh-normal);
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+}
+
+/* ==============================
+   Images
+================================ */
+
+img,
+picture{
+    max-width:100%;
+    display:block;
+    user-select:none;
+}
+
+/* ==============================
+   Videos
+================================ */
+
+video{
+    max-width:100%;
+    display:block;
+}
+
+/* ==============================
+   SVG
+================================ */
+
+svg{
+    display:block;
+}
+
+/* ==============================
+   Links
+================================ */
+
+a{
+    text-decoration:none;
+    color:inherit;
+    transition:var(--transition-normal);
+}
+
+/* ==============================
+   Lists
+================================ */
+
+ul,
+ol{
+    list-style:none;
+}
+
+/* ==============================
+   Buttons
+================================ */
+
+button{
+    border:none;
+    background:none;
+    font:inherit;
+    color:inherit;
+    cursor:pointer;
+}
+
+button:disabled{
+    cursor:not-allowed;
+    opacity:.6;
+}
+
+/* ==============================
+   Inputs
+================================ */
+
+input,
+textarea,
+select{
+    font:inherit;
+    color:inherit;
+    background:none;
+    border:none;
+    outline:none;
+}
+
+textarea{
+    resize:vertical;
+}
+
+/* ==============================
+   Tables
+================================ */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* ==============================
+   Forms
+================================ */
+
+fieldset{
+    border:none;
+}
+
+legend{
+    padding:0;
+}
+
+/* ==============================
+   Horizontal Rule
+================================ */
+
+hr{
+    border:none;
+    border-top:1px solid var(--border-color);
+}
+
+/* ==============================
+   Selection
+================================ */
+
+::selection{
+    background:var(--primary-gold);
+    color:var(--black);
+}
+
+/* ==============================
+   Scrollbar (Chrome, Edge)
+================================ */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:var(--surface);
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary-gold);
+    border-radius:var(--radius-round);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--dark-gold);
+}
+
+/* ==============================
+   Focus Accessibility
+================================ */
+
+:focus-visible{
+    outline:2px solid var(--primary-gold);
+    outline-offset:3px;
+}
+
+/* ==============================
+   Hidden Attribute
+================================ */
+
+[hidden]{
+    display:none !important;
+}

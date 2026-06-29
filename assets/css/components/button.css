@@ -1,0 +1,450 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Buttons
+Author: A Square L Innovate
+==========================================================
+*/
+
+/* =====================================================
+   BASE BUTTON
+===================================================== */
+
+.btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    height:var(--btn-height);
+    padding:var(--btn-padding);
+
+    font-family:var(--font-family);
+    font-size:var(--fs-md);
+    font-weight:var(--fw-bold);
+
+    border:none;
+    border-radius:var(--radius-md);
+
+    cursor:pointer;
+    overflow:hidden;
+
+    transition:all var(--transition-normal);
+
+    white-space:nowrap;
+
+    user-select:none;
+}
+
+/* =====================================================
+   BUTTON SHINE EFFECT
+===================================================== */
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transition:.8s;
+
+}
+
+.btn:hover::before{
+
+    left:140%;
+
+}
+
+/* =====================================================
+   PRIMARY
+===================================================== */
+
+.btn-primary{
+
+    background:var(--primary-gold);
+
+    color:var(--black);
+
+    box-shadow:var(--shadow-gold);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-gold-hover);
+
+    transform:translateY(-3px);
+
+}
+
+/* =====================================================
+   SECONDARY
+===================================================== */
+
+.btn-secondary{
+
+    background:var(--card-bg);
+
+    color:var(--white);
+
+    border:1px solid var(--border-color);
+
+}
+
+.btn-secondary:hover{
+
+    border-color:var(--primary-gold);
+
+    color:var(--primary-gold);
+
+}
+
+/* =====================================================
+   OUTLINE
+===================================================== */
+
+.btn-outline{
+
+    background:transparent;
+
+    border:2px solid var(--primary-gold);
+
+    color:var(--primary-gold);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary-gold);
+
+    color:var(--black);
+
+}
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.btn-success{
+
+    background:var(--success);
+
+    color:#fff;
+
+}
+
+/* =====================================================
+   DANGER
+===================================================== */
+
+.btn-danger{
+
+    background:var(--danger);
+
+    color:#fff;
+
+}
+
+/* =====================================================
+   WARNING
+===================================================== */
+
+.btn-warning{
+
+    background:var(--warning);
+
+    color:#000;
+
+}
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.btn-info{
+
+    background:var(--info);
+
+    color:#fff;
+
+}
+
+/* =====================================================
+   LIGHT
+===================================================== */
+
+.btn-light{
+
+    background:#fff;
+
+    color:#000;
+
+}
+
+/* =====================================================
+   GLASS
+===================================================== */
+
+.btn-glass{
+
+    background:var(--glass-bg);
+
+    backdrop-filter:var(--glass-blur);
+
+    border:1px solid var(--glass-border);
+
+    color:#fff;
+
+}
+
+.btn-glass:hover{
+
+    border-color:var(--primary-gold);
+
+}
+
+/* =====================================================
+   LINK BUTTON
+===================================================== */
+
+.btn-link{
+
+    padding:0;
+
+    background:none;
+
+    color:var(--primary-gold);
+
+    height:auto;
+
+}
+
+.btn-link:hover{
+
+    color:var(--primary-gold-hover);
+
+}
+
+/* =====================================================
+   ICON BUTTON
+===================================================== */
+
+.btn-icon{
+
+    width:50px;
+
+    padding:0;
+
+}
+
+.btn-icon i{
+
+    font-size:18px;
+
+}
+
+/* =====================================================
+   BUTTON SIZES
+===================================================== */
+
+.btn-sm{
+
+    height:40px;
+
+    padding:0 18px;
+
+    font-size:14px;
+
+}
+
+.btn-md{
+
+    height:50px;
+
+}
+
+.btn-lg{
+
+    height:60px;
+
+    padding:0 36px;
+
+    font-size:18px;
+
+}
+
+.btn-xl{
+
+    height:70px;
+
+    padding:0 48px;
+
+    font-size:20px;
+
+}
+
+/* =====================================================
+   FULL WIDTH
+===================================================== */
+
+.btn-block{
+
+    width:100%;
+
+}
+
+/* =====================================================
+   ROUNDED
+===================================================== */
+
+.rounded{
+
+    border-radius:var(--radius-md);
+
+}
+
+.rounded-pill{
+
+    border-radius:999px;
+
+}
+
+.rounded-circle{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    padding:0;
+
+}
+
+/* =====================================================
+   ACTIVE
+===================================================== */
+
+.btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* =====================================================
+   DISABLED
+===================================================== */
+
+.btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.btn-loading{
+
+    pointer-events:none;
+
+    opacity:.8;
+
+}
+
+.btn-loading::after{
+
+    content:"";
+
+    width:18px;
+
+    height:18px;
+
+    margin-left:10px;
+
+    border:2px solid rgba(255,255,255,.3);
+
+    border-top-color:#fff;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+/* =====================================================
+   FLOATING BUTTON
+===================================================== */
+
+.btn-fab{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    z-index:999;
+
+}
+
+/* =====================================================
+   GROUP
+===================================================== */
+
+.btn-group{
+
+    display:flex;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:768px){
+
+.btn{
+
+    width:100%;
+
+}
+
+.btn-group{
+
+    flex-direction:column;
+
+}
+
+}

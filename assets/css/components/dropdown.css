@@ -1,0 +1,248 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Dropdown
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Reusable dropdown component for menus, profile,
+notifications, actions, and settings.
+
+==========================================================
+*/
+
+/* ======================================================
+   DROPDOWN WRAPPER
+====================================================== */
+
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+/* ======================================================
+   TOGGLE BUTTON
+====================================================== */
+
+.dropdown-toggle{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    border:none;
+    background:none;
+    color:var(--white);
+    font:inherit;
+}
+
+/* ======================================================
+   MENU
+====================================================== */
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:calc(100% + 12px);
+
+    right:0;
+
+    min-width:240px;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+    overflow:hidden;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(-10px);
+
+    transition:var(--transition-normal);
+
+    z-index:1000;
+
+}
+
+/* ======================================================
+   OPEN STATE
+====================================================== */
+
+.dropdown.is-open .dropdown-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.dropdown-header{
+
+    padding:18px;
+
+    border-bottom:1px solid var(--border-color);
+
+}
+
+.dropdown-title{
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:var(--white);
+
+}
+
+.dropdown-subtitle{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:var(--gray-400);
+
+}
+
+/* ======================================================
+   ITEMS
+====================================================== */
+
+.dropdown-list{
+
+    list-style:none;
+
+    padding:8px 0;
+
+}
+
+.dropdown-item{
+
+    width:100%;
+
+}
+
+.dropdown-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 18px;
+
+    text-decoration:none;
+
+    color:var(--gray-300);
+
+    transition:var(--transition-fast);
+
+}
+
+.dropdown-link:hover{
+
+    background:rgba(212,175,55,.08);
+
+    color:var(--primary-gold);
+
+}
+
+.dropdown-link.active{
+
+    background:rgba(212,175,55,.12);
+
+    color:var(--primary-gold);
+
+}
+
+.dropdown-link i{
+
+    width:18px;
+
+    text-align:center;
+
+}
+
+/* ======================================================
+   DIVIDER
+====================================================== */
+
+.dropdown-divider{
+
+    height:1px;
+
+    background:var(--border-color);
+
+    margin:8px 0;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.dropdown-footer{
+
+    padding:14px 18px;
+
+    border-top:1px solid var(--border-color);
+
+}
+
+.dropdown-footer a{
+
+    color:var(--primary-gold);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+   STATES
+====================================================== */
+
+.is-hidden{
+
+    display:none !important;
+
+}
+
+.is-disabled{
+
+    opacity:.5;
+
+    pointer-events:none;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+    .dropdown-menu{
+
+        min-width:210px;
+
+    }
+
+}

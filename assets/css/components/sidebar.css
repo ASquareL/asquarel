@@ -1,0 +1,316 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Sidebar
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Reusable sidebar component for all A Square L products.
+Supports:
+- Student Dashboard
+- Instructor Dashboard
+- Admin Dashboard
+- Business OS
+- AI Platform
+- Web Dev Pool
+
+==========================================================
+*/
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+
+.sidebar{
+    width:280px;
+    min-height:100vh;
+    background:var(--card-bg);
+    border-right:1px solid var(--border-color);
+    display:flex;
+    flex-direction:column;
+    position:sticky;
+    top:0;
+    overflow-y:auto;
+    transition:var(--transition-normal);
+}
+
+/* ======================================================
+   SIDEBAR HEADER
+====================================================== */
+
+.sidebar-header{
+    padding:30px 24px;
+    border-bottom:1px solid var(--border-color);
+}
+
+.sidebar-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+}
+
+.sidebar-logo img{
+    width:44px;
+    height:44px;
+    object-fit:contain;
+}
+
+.sidebar-brand{
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar-title{
+    font-size:22px;
+    font-weight:800;
+    color:var(--white);
+}
+
+.sidebar-subtitle{
+    font-size:13px;
+    color:var(--primary-gold);
+}
+
+/* ======================================================
+   USER PROFILE
+====================================================== */
+
+.sidebar-user{
+    padding:24px;
+    text-align:center;
+    border-bottom:1px solid var(--border-color);
+}
+
+.sidebar-avatar{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:0 auto 15px;
+    border:3px solid var(--primary-gold);
+}
+
+.sidebar-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.sidebar-name{
+    font-size:18px;
+    font-weight:700;
+    color:var(--white);
+}
+
+.sidebar-role{
+    font-size:14px;
+    color:var(--gray-400);
+    margin-top:4px;
+}
+
+.sidebar-level{
+    display:inline-block;
+    margin-top:12px;
+    padding:6px 14px;
+    background:rgba(212,175,55,.12);
+    border:1px solid var(--primary-gold);
+    border-radius:999px;
+    color:var(--primary-gold);
+    font-size:13px;
+    font-weight:700;
+}
+
+/* ======================================================
+   NAVIGATION
+====================================================== */
+
+.sidebar-nav{
+    flex:1;
+    padding:20px 16px;
+}
+
+.sidebar-menu{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.sidebar-item{
+    width:100%;
+}
+
+.sidebar-link{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 18px;
+    border-radius:var(--radius-md);
+    color:var(--gray-300);
+    text-decoration:none;
+    font-weight:600;
+    transition:var(--transition-normal);
+}
+
+.sidebar-link i{
+    width:22px;
+    text-align:center;
+    font-size:18px;
+}
+
+.sidebar-link:hover{
+    background:rgba(212,175,55,.08);
+    color:var(--primary-gold);
+}
+
+.sidebar-link.active{
+    background:rgba(212,175,55,.12);
+    color:var(--primary-gold);
+    border-left:4px solid var(--primary-gold);
+}
+
+/* ======================================================
+   PROGRESS CARD
+====================================================== */
+
+.sidebar-progress{
+    margin:20px 16px;
+    padding:20px;
+    background:var(--surface);
+    border:1px solid var(--border-color);
+    border-radius:var(--radius-lg);
+}
+
+.sidebar-progress-title{
+    font-size:14px;
+    color:var(--gray-400);
+    margin-bottom:12px;
+}
+
+.sidebar-progress-value{
+    font-size:26px;
+    font-weight:800;
+    color:var(--primary-gold);
+    margin-bottom:12px;
+}
+
+.sidebar-progress-bar{
+    width:100%;
+    height:10px;
+    background:rgba(255,255,255,.08);
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.sidebar-progress-fill{
+    width:68%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        var(--primary-gold),
+        var(--dark-gold)
+    );
+    border-radius:999px;
+}
+
+/* ======================================================
+   DAILY MISSION
+====================================================== */
+
+.sidebar-mission{
+    margin:0 16px 20px;
+    padding:20px;
+    border-radius:var(--radius-lg);
+    background:rgba(212,175,55,.08);
+    border:1px solid rgba(212,175,55,.2);
+}
+
+.sidebar-mission h4{
+    color:var(--primary-gold);
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+.sidebar-mission p{
+    color:var(--gray-300);
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.sidebar-footer{
+    padding:20px;
+    border-top:1px solid var(--border-color);
+}
+
+.sidebar-footer .sidebar-link{
+    color:var(--danger);
+}
+
+.sidebar-footer .sidebar-link:hover{
+    background:rgba(220,53,69,.12);
+    color:var(--danger);
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+.sidebar::-webkit-scrollbar{
+    width:8px;
+}
+
+.sidebar::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+    background:rgba(212,175,55,.25);
+    border-radius:999px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover{
+    background:var(--primary-gold);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 992px){
+
+    .sidebar{
+        position:fixed;
+        left:-100%;
+        top:0;
+        z-index:1100;
+        transition:left .3s ease;
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .sidebar{
+        width:260px;
+    }
+
+    .sidebar-header{
+        padding:24px 20px;
+    }
+
+    .sidebar-user{
+        padding:20px;
+    }
+
+}
