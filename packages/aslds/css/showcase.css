@@ -189,19 +189,19 @@ It provides documentation-specific layouts only.
 }
 
 .stats-grid{
-    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 }
 
 .documentation-grid{
-    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
 
 .component-grid{
-    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
 
 .feature-grid{
-    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
 
 .roadmap-grid{
@@ -217,7 +217,7 @@ It provides documentation-specific layouts only.
 }
 
 .quick-links-grid{
-    grid-template-columns:repeat(5,minmax(0,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 }
 
 
