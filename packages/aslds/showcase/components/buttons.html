@@ -1,0 +1,2269 @@
+    <!DOCTYPE html>
+    <html lang="en">
+      
+      <head>
+        <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+    
+    File:
+    packages/aslds/showcase/components/buttons.html
+    
+    Version:
+    1.1 Stable
+    
+    Description:
+    Official Button Component Documentation
+    
+    ==========================================================
+    -->
+    
+    <meta charset="UTF-8">
+    
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    
+    <meta
+        name="description"
+        content="Official Button Component documentation for the ASL Design System."
+    >
+    
+    <meta
+        name="keywords"
+        content="ASLDS, Buttons, Components, UI, Documentation"
+    >
+    
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+    
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+    
+    <title>
+    
+        Buttons • ASL Design System
+    
+    </title>
+    
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+    
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+    
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+    
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+    
+    <link rel="stylesheet" href="../../css/showcase.css">
+    
+    </head>
+    
+    <body>
+        
+        <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Skip to main content
+    </a>
+    
+    <div class="page-wrapper">
+    
+        <header class="navbar">
+    
+            <div class="navbar-container">
+    
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+                    <strong>ASLDS</strong>
+                </a>
+    
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+    
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+    
+                    <ul class="nav-menu">
+    
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../playground.html" class="nav-link">Playground</a></li>
+                        <li>
+                            <a
+                                href="buttons.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                Components
+                            </a>
+                        </li>
+    
+                    </ul>
+    
+                </nav>
+    
+                <div class="nav-actions">
+    
+                    <button class="nav-search">
+                        Search
+                    </button>
+    
+                    <button class="btn btn-outline">
+                        Theme
+                    </button>
+    
+                    <button class="btn btn-secondary">
+                        GitHub
+                    </button>
+    
+                    <span class="badge">
+                        v1.1 Stable
+                    </span>
+    
+                </div>
+    
+            </div>
+    
+        </header>
+    
+        <main
+            id="main-content"
+            class="main-content"
+        >
+    
+            <section class="section">
+    
+                <div class="container">
+    
+                    <nav aria-label="Breadcrumb">
+    
+                        <a href="../index.html">Home</a>
+    
+                        /
+    
+                        <a href="../foundations/animations.html">
+                            Components
+                        </a>
+    
+                        /
+    
+                        <span>
+                            Buttons
+                        </span>
+    
+                    </nav>
+    
+                </div>
+    
+            </section>
+    
+            <section class="hero">
+    
+                <div class="container">
+    
+                    <div class="hero-grid">
+    
+                        <div class="hero-content">
+    
+                            <span class="hero-badge">
+                                Component
+                            </span>
+    
+                            <h1 class="hero-title">
+                                Buttons
+                            </h1>
+    
+                            <p class="hero-tagline">
+                                Trigger actions with consistent, accessible and
+                                reusable button components.
+                            </p>
+    
+                            <p class="hero-description">
+                                The ASL Design System Button component provides a
+                                unified interaction model across every application.
+                                Every variant follows the same spacing,
+                                accessibility and interaction principles to ensure
+                                predictable user experiences.
+                            </p>
+    
+                            <div class="hero-actions">
+    
+                                <button class="btn btn-primary">
+                                    Copy Import
+                                </button>
+    
+                                <span class="badge">
+                                    Component
+                                </span>
+    
+                                <span class="badge">
+                                    Version 1.1 Stable
+                                </span>
+    
+                            </div>
+    
+                        </div>
+    
+                        <aside class="hero-panel card">
+    
+                            <div class="card-body">
+    
+                                <h3>
+                                    On This Page
+                                </h3>
+    
+                                <ul>
+    
+                                    <li>Introduction</li>
+                                    <li>Anatomy</li>
+                                    <li>Variants</li>
+                                    <li>Sizes</li>
+                                    <li>Groups</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+    
+                                </ul>
+    
+                            </div>
+    
+                        </aside>
+    
+                    </div>
+    
+                </div>
+    
+            </section>
+    
+            <section
+                id="introduction"
+                class="section"
+            >
+    
+                <div class="container">
+    
+                    <header class="section-header">
+    
+                        <span class="section-label">
+                            Overview
+                        </span>
+    
+                        <h2>
+                            Button Component
+                        </h2>
+    
+                        <p>
+                            Buttons initiate user actions throughout the ASL
+                            Design System. They communicate hierarchy through
+                            color, emphasis and placement while maintaining a
+                            consistent interaction pattern across every product.
+                        </p>
+    
+                    </header>
+    
+                    <div class="card-grid documentation-grid">
+    
+                        <article class="card documentation-card">
+    
+                            <div class="card-body">
+    
+                                <h3>
+                                    Primary Actions
+                                </h3>
+    
+                                <p>
+                                    Use one primary button for the most important
+                                    action in a view.
+                                </p>
+    
+                            </div>
+    
+                        </article>
+    
+                        <article class="card documentation-card">
+    
+                            <div class="card-body">
+    
+                                <h3>
+                                    Secondary Actions
+                                </h3>
+    
+                                <p>
+                                    Secondary buttons support alternative actions
+                                    without competing with the primary call to
+                                    action.
+                                </p>
+    
+                            </div>
+    
+                        </article>
+    
+                        <article class="card documentation-card">
+    
+                            <div class="card-body">
+    
+                                <h3>
+                                    Accessibility
+                                </h3>
+    
+                                <p>
+                                    Buttons remain keyboard accessible, maintain
+                                    visible focus and provide sufficient color
+                                    contrast.
+                                </p>
+    
+                            </div>
+    
+                        </article>
+    
+                    </div>
+    
+                </div>
+    
+            </section>
+    
+            <section
+                id="anatomy"
+                class="section"
+            >
+    
+                <div class="container">
+    
+                    <header class="section-header">
+    
+                        <span class="section-label">
+                            Anatomy
+                        </span>
+    
+                        <h2>
+                            Button Anatomy
+                        </h2>
+    
+                    </header>
+    
+                    <div class="card">
+    
+                        <div class="card-body">
+    
+                            <ul>
+    
+                                <li>Container</li>
+                                <li>Label</li>
+                                <li>Leading Icon</li>
+                                <li>Trailing Icon</li>
+                                <li>Padding</li>
+                                <li>Border Radius</li>
+                                <li>Focus Ring</li>
+                                <li>Elevation</li>
+    
+                            </ul>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </section>
+    
+            <section
+                id="variants"
+                class="section"
+            >
+    
+                <div class="container">
+    
+                    <header class="section-header">
+    
+                        <span class="section-label">
+                            Variants
+                        </span>
+    
+                        <h2>
+                            Button Variants
+                        </h2>
+    
+                        <p>
+                            Choose the appropriate button style according to the
+                            visual importance of the action.
+                        </p>
+    
+                    </header>
+    
+                    <div class="card-grid documentation-grid">
+    
+                        <article class="card documentation-card">
+    
+                            <div class="card-body">
+    
+                                <h3>
+                                    Primary
+                                </h3>
+    
+                                <div class="hero-actions">
+    
+                                    <button class="btn btn-primary">
+                                        Primary
+                                    </button>
+    
+                                </div>
+    
+                                <p>
+                                    Highest emphasis action.
+                                </p>
+    
+                                <pre><code>&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;</code></pre>
+    
+                            </div>
+    
+                        </article>
+    
+                        <article class="card documentation-card">
+    
+                            <div class="card-body">
+    
+                                <h3>
+                                    Secondary
+                                </h3>
+    
+                                <button class="btn btn-secondary">
+                                    Secondary
+                                </button>
+    
+                                <p>
+                                    Supporting actions.
+                                </p>
+    
+                                <pre><code>&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;</code></pre>
+    
+                            </div>
+    
+                        </article>
+    
+                        <article class="card documentation-card">
+    
+                            <div class="card-body">
+    
+                                <h3>
+                                    Outline
+                                </h3>
+    
+                                <button class="btn btn-outline">
+                                    Outline
+                                </button>
+    
+                                <p>
+                                    Medium emphasis.
+                                </p>
+    
+                                <pre><code>&lt;button class="btn btn-outline"&gt;Outline&lt;/button&gt;</code></pre>
+    
+                            </div>
+    
+                        </article>
+                        
+                                                <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Ghost
+                                    </h3>
+    
+                                    <button class="btn btn-ghost">
+                                        Ghost
+                                    </button>
+    
+                                    <p>
+                                        Low emphasis actions displayed on minimal
+                                        surfaces.
+                                    </p>
+    
+                                    <pre><code>&lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;</code></pre>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Text
+                                    </h3>
+    
+                                    <button class="btn btn-text">
+                                        Text
+                                    </button>
+    
+                                    <p>
+                                        Lightweight actions placed inline with
+                                        surrounding content.
+                                    </p>
+    
+                                    <pre><code>&lt;button class="btn btn-text"&gt;Text&lt;/button&gt;</code></pre>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Link
+                                    </h3>
+    
+                                    <button class="btn btn-link">
+                                        Link
+                                    </button>
+    
+                                    <p>
+                                        Navigation or contextual actions that appear
+                                        similar to hyperlinks.
+                                    </p>
+    
+                                    <pre><code>&lt;button class="btn btn-link"&gt;Link&lt;/button&gt;</code></pre>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Success
+                                    </h3>
+    
+                                    <button class="btn btn-success">
+                                        Success
+                                    </button>
+    
+                                    <p>
+                                        Indicates successful or positive actions.
+                                    </p>
+    
+                                    <pre><code>&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;</code></pre>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Warning
+                                    </h3>
+    
+                                    <button class="btn btn-warning">
+                                        Warning
+                                    </button>
+    
+                                    <p>
+                                        Used for actions requiring additional user
+                                        attention.
+                                    </p>
+    
+                                    <pre><code>&lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;</code></pre>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Danger
+                                    </h3>
+    
+                                    <button class="btn btn-danger">
+                                        Danger
+                                    </button>
+    
+                                    <p>
+                                        Reserved for destructive or irreversible
+                                        actions.
+                                    </p>
+    
+                                    <pre><code>&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;</code></pre>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Info
+                                    </h3>
+    
+                                    <button class="btn btn-info">
+                                        Info
+                                    </button>
+    
+                                    <p>
+                                        Highlights informational actions or secondary
+                                        workflows.
+                                    </p>
+    
+                                    <pre><code>&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;</code></pre>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="sizes"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Sizing
+    
+                            </span>
+    
+                            <h2>
+    
+                                Button Sizes
+    
+                            </h2>
+    
+                            <p>
+    
+                                Every button variant supports a consistent sizing
+                                scale to improve rhythm and maintain predictable
+                                touch targets across devices.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card">
+    
+                            <div class="card-body">
+    
+                                <div class="hero-actions">
+    
+                                    <button class="btn btn-primary btn-xs">
+                                        XS
+                                    </button>
+    
+                                    <button class="btn btn-primary btn-sm">
+                                        Small
+                                    </button>
+    
+                                    <button class="btn btn-primary">
+                                        Medium
+                                    </button>
+    
+                                    <button class="btn btn-primary btn-lg">
+                                        Large
+                                    </button>
+    
+                                    <button class="btn btn-primary btn-xl">
+                                        Extra Large
+                                    </button>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="card-grid documentation-grid">
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Extra Small
+                                    </h3>
+    
+                                    <p>
+                                        Compact interfaces, dense tables and utility
+                                        controls.
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Small
+                                    </h3>
+    
+                                    <p>
+                                        Secondary actions within cards and compact
+                                        layouts.
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Medium
+                                    </h3>
+    
+                                    <p>
+                                        Default size for nearly every interface.
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Large
+                                    </h3>
+    
+                                    <p>
+                                        Hero sections and prominent call-to-action
+                                        buttons.
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+                                        Extra Large
+                                    </h3>
+    
+                                    <p>
+                                        Marketing pages and high-impact landing
+                                        experiences.
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="icon-buttons"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Icons
+    
+                            </span>
+    
+                            <h2>
+    
+                                Icon Buttons
+    
+                            </h2>
+    
+                            <p>
+    
+                                Icons improve recognition and reduce cognitive load
+                                when paired with concise labels.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card-grid documentation-grid">
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Icon Only
+    
+                                    </h3>
+    
+                                    <button
+                                        class="btn btn-primary"
+                                        aria-label="Search"
+                                    >
+                                        🔍
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Icon + Text
+    
+                                    </h3>
+    
+                                    <button class="btn btn-primary">
+    
+                                        ➕ Add Item
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Text + Icon
+    
+                                    </h3>
+    
+                                    <button class="btn btn-secondary">
+    
+                                        Continue →
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Circular Button
+    
+                                    </h3>
+    
+                                    <button
+                                        class="btn btn-primary"
+                                        aria-label="Settings"
+                                    >
+                                        ⚙
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Square Button
+    
+                                    </h3>
+    
+                                    <button
+                                        class="btn btn-outline"
+                                        aria-label="Download"
+                                    >
+                                        ⬇
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="button-groups"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Groups
+    
+                            </span>
+    
+                            <h2>
+    
+                                Button Groups
+    
+                            </h2>
+    
+                            <p>
+    
+                                Related actions can be grouped together to reduce
+                                visual clutter and improve discoverability.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card">
+    
+                            <div class="card-body">
+    
+                                <h3>
+    
+                                    Horizontal Group
+    
+                                </h3>
+    
+                                <div class="hero-actions">
+    
+                                    <button class="btn btn-outline">
+                                        Back
+                                    </button>
+    
+                                    <button class="btn btn-secondary">
+                                        Save Draft
+                                    </button>
+    
+                                    <button class="btn btn-primary">
+                                        Publish
+                                    </button>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+                        
+                                            <div class="card-grid documentation-grid">
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Vertical Group
+    
+                                    </h3>
+    
+                                    <div>
+    
+                                        <button class="btn btn-primary">
+                                            Create
+                                        </button>
+    
+                                        <button class="btn btn-secondary">
+                                            Edit
+                                        </button>
+    
+                                        <button class="btn btn-outline">
+                                            Archive
+                                        </button>
+    
+                                    </div>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Toolbar Group
+    
+                                    </h3>
+    
+                                    <div class="hero-actions">
+    
+                                        <button class="btn btn-outline">
+                                            Undo
+                                        </button>
+    
+                                        <button class="btn btn-outline">
+                                            Redo
+                                        </button>
+    
+                                        <button class="btn btn-outline">
+                                            Copy
+                                        </button>
+    
+                                        <button class="btn btn-outline">
+                                            Paste
+                                        </button>
+    
+                                    </div>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Mixed Group
+    
+                                    </h3>
+    
+                                    <div class="hero-actions">
+    
+                                        <button class="btn btn-danger">
+                                            Delete
+                                        </button>
+    
+                                        <button class="btn btn-secondary">
+                                            Cancel
+                                        </button>
+    
+                                        <button class="btn btn-primary">
+                                            Save
+                                        </button>
+    
+                                    </div>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="split-buttons"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Advanced
+    
+                            </span>
+    
+                            <h2>
+    
+                                Split Buttons
+    
+                            </h2>
+    
+                            <p>
+    
+                                Split buttons combine a primary action with
+                                additional related actions accessible through a
+                                secondary trigger.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card">
+    
+                            <div class="card-body">
+    
+                                <div class="hero-actions">
+    
+                                    <button class="btn btn-primary">
+    
+                                        Download
+    
+                                    </button>
+    
+                                    <button
+                                        class="btn btn-outline"
+                                        aria-label="More download options"
+                                    >
+    
+                                        ▼
+    
+                                    </button>
+    
+                                </div>
+    
+                                <pre><code>&lt;div class="hero-actions"&gt;
+        &lt;button class="btn btn-primary"&gt;Download&lt;/button&gt;
+        &lt;button class="btn btn-outline"&gt;▼&lt;/button&gt;
+    &lt;/div&gt;</code></pre>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="toggle-buttons"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Selection
+    
+                            </span>
+    
+                            <h2>
+    
+                                Toggle Buttons
+    
+                            </h2>
+    
+                            <p>
+    
+                                Toggle buttons represent selectable states and are
+                                useful for filters, formatting controls and
+                                segmented interfaces.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card-grid documentation-grid">
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Single Toggle
+    
+                                    </h3>
+    
+                                    <button class="btn btn-primary">
+    
+                                        Active
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Inactive
+    
+                                    </h3>
+    
+                                    <button class="btn btn-outline">
+    
+                                        Inactive
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Multiple Selection
+    
+                                    </h3>
+    
+                                    <div class="hero-actions">
+    
+                                        <button class="btn btn-primary">
+                                            Bold
+                                        </button>
+    
+                                        <button class="btn btn-primary">
+                                            Italic
+                                        </button>
+    
+                                        <button class="btn btn-outline">
+                                            Underline
+                                        </button>
+    
+                                    </div>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="floating-action-buttons"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Floating Actions
+    
+                            </span>
+    
+                            <h2>
+    
+                                Floating Action Buttons
+    
+                            </h2>
+    
+                            <p>
+    
+                                Floating Action Buttons provide quick access to the
+                                primary action within an application.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card-grid documentation-grid">
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Standard FAB
+    
+                                    </h3>
+    
+                                    <button
+                                        class="btn btn-primary"
+                                        aria-label="Create"
+                                    >
+    
+                                        ＋
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Extended FAB
+    
+                                    </h3>
+    
+                                    <button class="btn btn-primary">
+    
+                                        ＋ Create
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Mini FAB
+    
+                                    </h3>
+    
+                                    <button
+                                        class="btn btn-secondary"
+                                        aria-label="Add"
+                                    >
+    
+                                        ＋
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="loading-buttons"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Loading
+    
+                            </span>
+    
+                            <h2>
+    
+                                Loading Buttons
+    
+                            </h2>
+    
+                            <p>
+    
+                                Buttons should communicate progress whenever an
+                                action requires additional processing time.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card-grid documentation-grid">
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Spinner
+    
+                                    </h3>
+    
+                                    <button
+                                        class="btn btn-primary"
+                                        disabled
+                                    >
+    
+                                        ⏳ Loading...
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Progress
+    
+                                    </h3>
+    
+                                    <button
+                                        class="btn btn-secondary"
+                                        disabled
+                                    >
+    
+                                        Uploading...
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Completed
+    
+                                    </h3>
+    
+                                    <button
+                                        class="btn btn-success"
+                                        disabled
+                                    >
+    
+                                        ✓ Completed
+    
+                                    </button>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="button-states"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                States
+    
+                            </span>
+    
+                            <h2>
+    
+                                Interactive States
+    
+                            </h2>
+    
+                            <p>
+    
+                                Every ASLDS button provides clear visual feedback
+                                across every interaction state.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card">
+    
+                            <div class="card-body">
+    
+                                <div class="hero-actions">
+    
+                                    <button class="btn btn-primary">
+                                        Default
+                                    </button>
+    
+                                    <button class="btn btn-secondary">
+                                        Hover
+                                    </button>
+    
+                                    <button class="btn btn-outline">
+                                        Focus
+                                    </button>
+    
+                                    <button class="btn btn-success">
+                                        Active
+                                    </button>
+    
+                                    <button
+                                        class="btn btn-primary"
+                                        disabled
+                                    >
+                                        Disabled
+                                    </button>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="accessibility"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Accessibility
+    
+                            </span>
+    
+                            <h2>
+    
+                                Accessible Button Design
+    
+                            </h2>
+    
+                            <p>
+    
+                                Buttons should remain usable for every user,
+                                regardless of device, assistive technology or
+                                interaction method.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card-grid documentation-grid">
+                            
+                       <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Keyboard Navigation
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Every button must be reachable using the
+                                        <kbd>Tab</kbd> key and activated using
+                                        <kbd>Enter</kbd> or <kbd>Space</kbd>.
+    
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Focus Visibility
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Preserve the default ASLDS focus indicator
+                                        to ensure keyboard users can easily identify
+                                        the active control.
+    
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Touch Targets
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Ensure interactive controls remain large
+                                        enough for touch interaction on mobile
+                                        devices.
+    
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Screen Readers
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Provide descriptive labels for icon-only
+                                        buttons using accessible names such as
+                                        <code>aria-label</code>.
+    
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Color Contrast
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Never rely solely on color to communicate
+                                        meaning. Maintain sufficient contrast across
+                                        every button variant.
+    
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Reduced Motion
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Respect reduced-motion preferences and avoid
+                                        unnecessary animation during interaction.
+    
+                                    </p>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="best-practices"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Best Practices
+    
+                            </span>
+    
+                            <h2>
+    
+                                Do &amp; Don't
+    
+                            </h2>
+    
+                        </header>
+    
+                        <div class="card-grid documentation-grid">
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Do
+    
+                                    </h3>
+    
+                                    <ul>
+    
+                                        <li>Use one primary button per section.</li>
+                                        <li>Keep labels concise and action-oriented.</li>
+                                        <li>Maintain consistent spacing.</li>
+                                        <li>Use semantic button variants.</li>
+                                        <li>Align grouped actions consistently.</li>
+                                        <li>Provide visible focus indicators.</li>
+                                        <li>Use icons to reinforce labels.</li>
+                                        <li>Disable buttons only when necessary.</li>
+    
+                                    </ul>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Don't
+    
+                                    </h3>
+    
+                                    <ul>
+    
+                                        <li>Place multiple primary buttons together.</li>
+                                        <li>Use vague labels such as "Click Here".</li>
+                                        <li>Depend only on color for meaning.</li>
+                                        <li>Mix unrelated button styles.</li>
+                                        <li>Remove keyboard focus styles.</li>
+                                        <li>Use destructive colors unnecessarily.</li>
+                                        <li>Overcrowd toolbars with actions.</li>
+                                        <li>Create inconsistent sizing.</li>
+    
+                                    </ul>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="developer-usage"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Developer
+    
+                            </span>
+    
+                            <h2>
+    
+                                Implementation Examples
+    
+                            </h2>
+    
+                            <p>
+    
+                                Use the existing ASLDS button component classes to
+                                ensure consistency across applications.
+    
+                            </p>
+    
+                        </header>
+    
+                        <div class="card">
+    
+                            <div class="card-body">
+    
+    <pre><code>&lt;button class="btn btn-primary"&gt;
+        Save Changes
+    &lt;/button&gt;
+    
+    &lt;button class="btn btn-outline"&gt;
+        Cancel
+    &lt;/button&gt;
+    
+    &lt;button class="btn btn-success"&gt;
+        Continue
+    &lt;/button&gt;
+    
+    &lt;button class="btn btn-danger"&gt;
+        Delete
+    &lt;/button&gt;</code></pre>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="card">
+    
+                            <div class="card-body">
+    
+    <pre><code>&lt;div class="hero-actions"&gt;
+        &lt;button class="btn btn-outline"&gt;Back&lt;/button&gt;
+        &lt;button class="btn btn-secondary"&gt;Save Draft&lt;/button&gt;
+        &lt;button class="btn btn-primary"&gt;Publish&lt;/button&gt;
+    &lt;/div&gt;</code></pre>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="card">
+    
+                            <div class="card-body">
+    
+    <pre><code>&lt;button
+        class="btn btn-primary"
+        aria-label="Search"&gt;
+        🔍
+    &lt;/button&gt;
+    
+    &lt;button
+        class="btn btn-primary"
+        disabled&gt;
+        Loading...
+    &lt;/button&gt;</code></pre>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    id="related-components"
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <header class="section-header">
+    
+                            <span class="section-label">
+    
+                                Related Components
+    
+                            </span>
+    
+                            <h2>
+    
+                                Continue Exploring
+    
+                            </h2>
+    
+                        </header>
+    
+                        <div class="card-grid documentation-grid">
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Cards
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Combine buttons with flexible content
+                                        containers.
+    
+                                    </p>
+    
+                                    <a
+                                        href="cards.html"
+                                        class="btn btn-outline"
+                                    >
+    
+                                        View Cards
+    
+                                    </a>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Forms
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Learn how buttons integrate with form
+                                        controls and validation.
+    
+                                    </p>
+    
+                                    <a
+                                        href="forms.html"
+                                        class="btn btn-outline"
+                                    >
+    
+                                        View Forms
+    
+                                    </a>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Alerts
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Explore action buttons used inside alert
+                                        components.
+    
+                                    </p>
+    
+                                    <a
+                                        href="alerts.html"
+                                        class="btn btn-outline"
+                                    >
+    
+                                        View Alerts
+    
+                                    </a>
+    
+                                </div>
+    
+                            </article>
+    
+                            <article class="card documentation-card">
+    
+                                <div class="card-body">
+    
+                                    <h3>
+    
+                                        Badges
+    
+                                    </h3>
+    
+                                    <p>
+    
+                                        Combine buttons with status indicators and
+                                        notification badges.
+    
+                                    </p>
+    
+                                    <a
+                                        href="badges.html"
+                                        class="btn btn-outline"
+                                    >
+    
+                                        View Badges
+    
+                                    </a>
+    
+                                </div>
+    
+                            </article>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section
+                    class="section"
+                >
+    
+                    <div class="container">
+    
+                        <nav
+                            class="hero-actions"
+                            aria-label="Documentation Navigation"
+                        >
+    
+                            <a
+                                href="../foundations/animations.html"
+                                class="btn btn-outline"
+                            >
+    
+                                ← Previous: Animations
+    
+                            </a>
+    
+                            <a
+                                href="cards.html"
+                                class="btn btn-primary"
+                            >
+    
+                                Next: Cards →
+    
+                            </a>
+    
+                        </nav>
+    
+                    </div>
+    
+                </section>
+    
+            </main>
+    
+             <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise UI framework for modern web
+                            applications.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Components
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../components/buttons.html">Buttons</a></li>
+                            <li><a href="../components/cards.html">Cards</a></li>
+                            <li><a href="../components/forms.html">Forms</a></li>
+                            <li><a href="../components/navbar.html">Navbar</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            ASL Design System
+
+                        </p>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            © 2026 A Square L Innovate
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+    
+    </body>
+    
+    </html>

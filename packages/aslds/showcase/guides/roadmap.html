@@ -1,0 +1,2496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/guides/roadmap.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Development Roadmap for the
+    ASL Design System.
+
+    Copyright © 2026
+    A Square L Innovate
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official roadmap for the A Square L Design System and future engineering direction."
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Roadmap • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Navigation -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System Home"
+                >
+
+                    <strong>
+
+                        ASLDS
+
+                    </strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+
+                                Getting Started
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+
+                                Installation
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+
+                                Playground
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="roadmap.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Roadmap
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button
+                        class="nav-search"
+                        type="button"
+                        aria-label="Search Documentation"
+                    >
+
+                        Search
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline"
+                        type="button"
+                        aria-label="Toggle Theme"
+                    >
+
+                        Theme
+
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                    >
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main Content -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Product Roadmap
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                ASL Design System Roadmap
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Building the future foundation for every
+                                A Square L Innovate application.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                The roadmap describes the long-term
+                                evolution of the ASL Design System,
+                                highlighting planned features,
+                                engineering priorities, enterprise
+                                capabilities and future platform
+                                integrations. It serves as a transparent
+                                guide for contributors, designers and
+                                developers across the ecosystem.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <a
+                                    href="#timeline"
+                                    class="btn btn-primary"
+                                >
+
+                                    View Timeline
+
+                                </a>
+
+                                <a
+                                    href="#versions"
+                                    class="btn btn-secondary"
+                                >
+
+                                    Version Roadmap
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Roadmap Overview
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Vision</li>
+                                    <li>Current Release</li>
+                                    <li>Future Versions</li>
+                                    <li>Upcoming Components</li>
+                                    <li>Engineering Goals</li>
+                                    <li>Enterprise Strategy</li>
+                                    <li>Milestones</li>
+                                    <li>Community Contributions</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Vision -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="vision"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Vision
+
+                        </span>
+
+                        <h2>
+
+                            Long-Term Vision
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS aims to become the unified engineering
+                            foundation powering every application,
+                            platform and digital experience created by
+                            A Square L Innovate while remaining
+                            accessible, scalable, maintainable and
+                            enterprise ready.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    One Design Language
+
+                                </h3>
+
+                                <p>
+
+                                    Every product shares a consistent
+                                    interface and engineering standard.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Enterprise Scale
+
+                                </h3>
+
+                                <p>
+
+                                    Support complex business
+                                    applications without sacrificing
+                                    simplicity or maintainability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Continuous Evolution
+
+                                </h3>
+
+                                <p>
+
+                                    Deliver predictable improvements
+                                    through incremental releases backed
+                                    by long-term planning.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Current Version -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="current-version"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Current Release
+
+                        </span>
+
+                        <h2>
+
+                            Version 1.1 Stable
+
+                        </h2>
+
+                        <p>
+
+                            Version 1.1 establishes the stable
+                            foundation of the ASL Design System,
+                            providing reusable components,
+                            documentation, responsive layouts and core
+                            engineering standards for the ecosystem.
+
+                        </p>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Version 1.1 Stable is the recommended production
+                        release for all current A Square L Innovate
+                        projects.
+
+                    </div>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Stable Components
+
+                                </h3>
+
+                                <p>
+
+                                    Buttons, cards, forms, navigation,
+                                    tables, tabs and documentation are
+                                    production ready.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Engineering Standards
+
+                                </h3>
+
+                                <p>
+
+                                    Repository conventions, coding
+                                    standards and documentation are now
+                                    unified.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Development Timeline -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="timeline"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Timeline
+
+                        </span>
+
+                        <h2>
+
+                            Development Timeline
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS evolves through carefully planned
+                            milestones. Every release builds upon the
+                            previous version while maintaining backward
+                            compatibility whenever practical.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Completed
+
+                                </span>
+
+                                <h3>
+
+                                    Version 1.1
+
+                                </h3>
+
+                                <p>
+
+                                    Stable design tokens, reusable
+                                    components, documentation showcase,
+                                    engineering standards and responsive
+                                    layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Planned
+
+                                </span>
+
+                                <h3>
+
+                                    Version 1.2
+
+                                </h3>
+
+                                <p>
+
+                                    Component enhancements, expanded
+                                    JavaScript modules and improved
+                                    documentation coverage.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Future
+
+                                </span>
+
+                                <h3>
+
+                                    Version 2.0
+
+                                </h3>
+
+                                <p>
+
+                                    Enterprise platform maturity,
+                                    advanced tooling and ecosystem-wide
+                                    integration.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Version Roadmap -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="versions"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Versions
+
+                        </span>
+
+                        <h2>
+
+                            Version Roadmap
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    v1.1 Stable
+
+                                </h3>
+
+                                <p>
+
+                                    Production-ready foundation with
+                                    reusable UI components,
+                                    documentation and engineering
+                                    standards.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    v1.2
+
+                                </h3>
+
+                                <p>
+
+                                    Expanded component library,
+                                    documentation improvements,
+                                    accessibility refinements and
+                                    additional JavaScript modules.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    v1.5
+
+                                </h3>
+
+                                <p>
+
+                                    Advanced layouts, dashboards,
+                                    enterprise templates, utility
+                                    enhancements and improved developer
+                                    tooling.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    v2.0
+
+                                </h3>
+
+                                <p>
+
+                                    Complete enterprise ecosystem,
+                                    package distribution, design tokens
+                                    automation and framework expansion.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Future Vision
+
+                                </h3>
+
+                                <p>
+
+                                    Cross-platform design system,
+                                    AI-assisted development,
+                                    multi-framework support and cloud
+                                    integration.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Planned Features -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="planned-features"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Features
+
+                        </span>
+
+                        <h2>
+
+                            Planned Features
+
+                        </h2>
+
+                        <p>
+
+                            Future releases will focus on improving
+                            usability, scalability and developer
+                            productivity without compromising
+                            performance.
+
+                        </p>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Features listed below represent the current
+                        engineering direction and may evolve as the
+                        ecosystem grows.
+
+                    </div>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Theme Builder
+
+                                </h3>
+
+                                <p>
+
+                                    Generate custom themes using ASLDS
+                                    design tokens without modifying the
+                                    framework.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Component Generator
+
+                                </h3>
+
+                                <p>
+
+                                    CLI tools for scaffolding reusable
+                                    components that follow ASLDS
+                                    engineering standards.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Visual Playground
+
+                                </h3>
+
+                                <p>
+
+                                    Interactive previews with live
+                                    configuration and responsive
+                                    testing.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Upcoming Components -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="upcoming-components"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Components
+
+                        </span>
+
+                        <h2>
+
+                            Upcoming Components
+
+                        </h2>
+
+                        <p>
+
+                            Future releases will continue expanding the
+                            reusable component library for enterprise
+                            applications.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Timeline
+
+                                </h3>
+
+                                <p>
+
+                                    Flexible timeline components for
+                                    documentation and dashboards.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Data Charts
+
+                                </h3>
+
+                                <p>
+
+                                    Reusable chart containers supporting
+                                    analytics dashboards.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tree View
+
+                                </h3>
+
+                                <p>
+
+                                    Hierarchical navigation components
+                                    for large enterprise applications.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Command Palette
+
+                                </h3>
+
+                                <p>
+
+                                    Keyboard-driven navigation for power
+                                    users and administrators.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Foundation Improvements -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="foundation-improvements"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Foundations
+
+                        </span>
+
+                        <h2>
+
+                            Foundation Improvements
+
+                        </h2>
+
+                        <p>
+
+                            Continuous improvements to colors,
+                            typography, spacing, layout, animation and
+                            utility systems will ensure the framework
+                            remains modern, accessible and scalable.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Design Tokens
+
+                                </h3>
+
+                                <p>
+
+                                    Expand token coverage for themes,
+                                    spacing and responsive design.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Layout System
+
+                                </h3>
+
+                                <p>
+
+                                    Improve responsive containers,
+                                    adaptive grids and enterprise page
+                                    templates.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- JavaScript Module Roadmap -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="javascript-roadmap"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            JavaScript
+
+                        </span>
+
+                        <h2>
+
+                            JavaScript Module Roadmap
+
+                        </h2>
+
+                        <p>
+
+                            Future JavaScript development focuses on
+                            modularity, accessibility and progressive
+                            enhancement while keeping the framework
+                            lightweight and dependency free.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Component APIs
+
+                                </h3>
+
+                                <p>
+
+                                    Expand reusable APIs for dropdowns,
+                                    dialogs, navigation, tabs, data
+                                    tables and interactive dashboards.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Utility Modules
+
+                                </h3>
+
+                                <p>
+
+                                    Introduce reusable utilities for
+                                    storage, validation, accessibility,
+                                    animations and state management.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Performance
+
+                                </h3>
+
+                                <p>
+
+                                    Continue reducing initialization
+                                    time while keeping modules
+                                    tree-shakable and independent.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Documentation Expansion -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="documentation-expansion"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Documentation
+
+                        </span>
+
+                        <h2>
+
+                            Documentation Expansion
+
+                        </h2>
+
+                        <p>
+
+                            Documentation will continue expanding with
+                            deeper engineering references, practical
+                            examples and production-ready templates.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    More Component Guides
+
+                                </h3>
+
+                                <p>
+
+                                    Every reusable component will
+                                    include comprehensive usage
+                                    documentation and examples.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Interactive Examples
+
+                                </h3>
+
+                                <p>
+
+                                    Expand the Playground with richer
+                                    demonstrations and live previews.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Engineering References
+
+                                </h3>
+
+                                <p>
+
+                                    Add architecture guides, ADRs,
+                                    implementation notes and migration
+                                    documentation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility Improvements -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="accessibility-improvements"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Improvements
+
+                        </h2>
+
+                        <p>
+
+                            Accessibility remains a core engineering
+                            priority across every future release.
+
+                        </p>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Every new component must satisfy accessibility
+                        requirements before entering a stable release.
+
+                    </div>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    WCAG Updates
+
+                                </h3>
+
+                                <p>
+
+                                    Continue aligning components with
+                                    the latest WCAG recommendations.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Improve keyboard interaction across
+                                    every interactive component.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Performance Goals -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="performance-goals"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Performance
+
+                        </span>
+
+                        <h2>
+
+                            Performance Goals
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Smaller Bundle Size
+
+                                </h3>
+
+                                <p>
+
+                                    Reduce unnecessary assets while
+                                    maintaining enterprise capability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Faster Rendering
+
+                                </h3>
+
+                                <p>
+
+                                    Optimize rendering performance for
+                                    large enterprise interfaces.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Efficient Loading
+
+                                </h3>
+
+                                <p>
+
+                                    Continue improving startup time and
+                                    runtime performance.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Experience -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="developer-experience"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer Experience
+
+                        </span>
+
+                        <h2>
+
+                            Developer Experience Enhancements
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    CLI Tools
+
+                                </h3>
+
+                                <p>
+
+                                    Generate projects and components
+                                    using standardized engineering
+                                    templates.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Better Tooling
+
+                                </h3>
+
+                                <p>
+
+                                    Improve linting, validation,
+                                    documentation generation and project
+                                    automation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Future Integrations -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="future-integrations"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Integrations
+
+                        </span>
+
+                        <h2>
+
+                            Future Integrations
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Public Website
+
+                                </h3>
+
+                                <p>
+
+                                    Shared UI components across every
+                                    marketing experience.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Academy
+
+                                </h3>
+
+                                <p>
+
+                                    Consistent educational interfaces
+                                    powered by ASLDS.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Business OS
+
+                                </h3>
+
+                                <p>
+
+                                    Enterprise dashboards, forms and
+                                    workflow components.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Enterprise Adoption -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="enterprise-adoption"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Enterprise
+
+                        </span>
+
+                        <h2>
+
+                            Enterprise Adoption Strategy
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-warning">
+
+                        Every future application inside A Square L
+                        Innovate should adopt ASLDS before introducing
+                        project-specific UI solutions.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Contribution Opportunities -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="contributing"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Community
+
+                        </span>
+
+                        <h2>
+
+                            Contribution Opportunities
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Documentation
+
+                                </h3>
+
+                                <p>
+
+                                    Improve examples, tutorials and
+                                    engineering references.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Components
+
+                                </h3>
+
+                                <p>
+
+                                    Build reusable enterprise-ready
+                                    components following ASLDS
+                                    standards.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Help improve usability for every
+                                    user across the ecosystem.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Release Strategy -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="release-strategy"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Releases
+
+                        </span>
+
+                        <h2>
+
+                            Release Strategy
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS follows an incremental release model
+                            where every version improves stability,
+                            expands functionality and maintains
+                            compatibility whenever practical.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>Planning
+
+↓
+
+Development
+
+↓
+
+Internal Review
+
+↓
+
+Testing
+
+↓
+
+Documentation
+
+↓
+
+Stable Release
+
+↓
+
+Maintenance
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Milestones -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="milestones"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Milestones
+
+                        </span>
+
+                        <h2>
+
+                            Project Milestones
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ✓ v1.1 Stable
+
+                                </h3>
+
+                                <p>
+
+                                    Core framework, responsive layouts,
+                                    documentation platform and reusable
+                                    enterprise components completed.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    v1.2
+
+                                </h3>
+
+                                <p>
+
+                                    Expanded documentation, improved
+                                    JavaScript modules and additional UI
+                                    components.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    v1.5
+
+                                </h3>
+
+                                <p>
+
+                                    Enterprise dashboards, templates,
+                                    utilities and improved developer
+                                    tooling.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    v2.0
+
+                                </h3>
+
+                                <p>
+
+                                    Complete enterprise platform with
+                                    automated tooling and ecosystem-wide
+                                    adoption.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Frequently Asked Questions -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="faq"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            FAQ
+
+                        </span>
+
+                        <h2>
+
+                            Frequently Asked Questions
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Will ASLDS remain free?
+
+                                </h3>
+
+                                <p>
+
+                                    Yes. The framework is designed to be
+                                    reusable across every A Square L
+                                    Innovate project.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    How often are releases planned?
+
+                                </h3>
+
+                                <p>
+
+                                    Releases are driven by engineering
+                                    milestones rather than fixed dates
+                                    to maintain quality.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Can the roadmap change?
+
+                                </h3>
+
+                                <p>
+
+                                    Yes. Priorities may evolve as new
+                                    engineering requirements emerge.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Roadmap Summary -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="summary"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Summary
+
+                        </span>
+
+                        <h2>
+
+                            Roadmap Summary
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        ASLDS will continue evolving into the unified
+                        engineering and design foundation for every
+                        application within the A Square L Innovate
+                        ecosystem.
+
+                    </div>
+
+                    <div class="alert alert-warning">
+
+                        Planned features represent the current
+                        engineering direction and may change as new
+                        priorities arise.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Documentation Navigation -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="documentation-navigation"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Reading
+
+                        </span>
+
+                        <h2>
+
+                            Documentation Navigation
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="engineering.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ← Engineering
+
+                                </h3>
+
+                                <p>
+
+                                    Return to engineering standards and
+                                    development guidelines.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="changelog.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Changelog →
+
+                                </h3>
+
+                                <p>
+
+                                    Review completed releases and
+                                    version history.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer doc-footer">
+
+            <div class="container">
+
+                <div class="doc-footer-grid">
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            A Square L Innovate
+
+                        </h3>
+
+                        <p>
+
+                            Building scalable enterprise software
+                            through a unified design system and shared
+                            engineering standards.
+
+                        </p>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Documentation
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../playground.html">Playground</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Guides
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="accessibility.html">Accessibility</a></li>
+                            <li><a href="engineering.html">Engineering</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>ASL Design System</p>
+                        <p>Version 1.1 Stable</p>
+                        <p>© 2026 A Square L Innovate</p>
+
+                    </section>
+
+                </div>
+
+                <div class="doc-footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate.
+                        All rights reserved.
+
+                    </p>
+
+                    <p>
+
+                        ASL Design System • Version 1.1 Stable
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Toast Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

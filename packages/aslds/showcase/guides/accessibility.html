@@ -1,0 +1,3002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/guides/accessibility.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Accessibility Engineering Guide for the
+    ASL Design System Documentation Website.
+
+    Copyright © 2026
+    A Square L Innovate
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Accessibility engineering guidelines for the A Square L Design System."
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Accessibility • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Navigation -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System Home"
+                >
+
+                    <strong>
+
+                        ASLDS
+
+                    </strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+
+                                Getting Started
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+
+                                Installation
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+
+                                Playground
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="accessibility.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Accessibility
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button
+                        class="nav-search"
+                        type="button"
+                        aria-label="Search Documentation"
+                    >
+
+                        Search
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline"
+                        type="button"
+                        aria-label="Toggle Theme"
+                    >
+
+                        Theme
+
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                    >
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main Content -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Engineering Guide
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Accessibility
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Build inclusive, accessible and usable
+                                interfaces for every user.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Accessibility is a core engineering
+                                principle of the A Square L Design
+                                System. Every component, layout and
+                                interaction should be usable with
+                                keyboards, screen readers, assistive
+                                technologies and across devices while
+                                complying with recognized accessibility
+                                standards.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <a
+                                    href="#philosophy"
+                                    class="btn btn-primary"
+                                >
+
+                                    Accessibility Principles
+
+                                </a>
+
+                                <a
+                                    href="../components/buttons.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    Browse Components
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Guide Contents
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Accessibility Philosophy</li>
+                                    <li>WCAG Compliance</li>
+                                    <li>Semantic HTML</li>
+                                    <li>Keyboard Navigation</li>
+                                    <li>Screen Readers</li>
+                                    <li>ARIA Guidelines</li>
+                                    <li>Testing Checklist</li>
+                                    <li>Best Practices</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility Philosophy -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="philosophy"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Philosophy
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility by Design
+
+                        </h2>
+
+                        <p>
+
+                            Accessibility is integrated into ASLDS from
+                            the beginning of the design and engineering
+                            process. Components should be usable by
+                            everyone regardless of ability, device,
+                            browser or assistive technology.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Inclusive Design
+
+                                </h3>
+
+                                <p>
+
+                                    Design experiences that work for the
+                                    widest possible range of users
+                                    without requiring adaptation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Universal Access
+
+                                </h3>
+
+                                <p>
+
+                                    Every interface should remain usable
+                                    with keyboards, screen readers,
+                                    touch devices and alternative input
+                                    methods.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain predictable navigation,
+                                    interaction patterns and visual
+                                    hierarchy throughout every product.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- WCAG Compliance -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="wcag"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Standards
+
+                        </span>
+
+                        <h2>
+
+                            WCAG Compliance
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS targets conformance with WCAG 2.2 AA
+                            by promoting accessible structure, readable
+                            content, sufficient color contrast,
+                            keyboard operability and compatibility with
+                            assistive technologies.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Perceivable
+
+                                </h3>
+
+                                <p>
+
+                                    Content must be presented in ways
+                                    users can perceive using different
+                                    senses and technologies.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Operable
+
+                                </h3>
+
+                                <p>
+
+                                    Navigation and interactive controls
+                                    must be fully usable with a keyboard
+                                    and alternative input devices.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Understandable
+
+                                </h3>
+
+                                <p>
+
+                                    Interfaces should remain clear,
+                                    predictable and easy to understand
+                                    for every user.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Robust
+
+                                </h3>
+
+                                <p>
+
+                                    Components should remain compatible
+                                    with current and future browsers,
+                                    assistive technologies and devices.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Semantic HTML Guidelines -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="semantic-html"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Semantic HTML
+
+                        </span>
+
+                        <h2>
+
+                            Build Meaningful Document Structure
+
+                        </h2>
+
+                        <p>
+
+                            Semantic HTML provides meaningful structure
+                            for browsers, search engines and assistive
+                            technologies. Every ASLDS page should use
+                            appropriate HTML elements before relying on
+                            ARIA attributes.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;header&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+
+    &lt;section&gt;
+
+        &lt;article&gt;
+
+            ...
+
+        &lt;/article&gt;
+
+    &lt;/section&gt;
+
+&lt;/main&gt;
+
+&lt;footer&gt;
+&lt;/footer&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Use Native Elements
+
+                                </h3>
+
+                                <p>
+
+                                    Prefer native HTML elements such as
+                                    header, main, nav, section, article
+                                    and footer whenever possible.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Proper Heading Order
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain a logical heading hierarchy
+                                    beginning with one H1 followed by
+                                    sequential heading levels.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Keyboard Navigation -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="keyboard-navigation"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Keyboard Navigation
+
+                        </span>
+
+                        <h2>
+
+                            Every Feature Must Be Keyboard Accessible
+
+                        </h2>
+
+                        <p>
+
+                            All interactive elements must be reachable
+                            using the keyboard without requiring a
+                            pointing device.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Logical Tab Order
+
+                                </h3>
+
+                                <p>
+
+                                    Users should move naturally through
+                                    the interface using the Tab key.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Visible Focus
+
+                                </h3>
+
+                                <p>
+
+                                    Never remove keyboard focus
+                                    indicators without providing an
+                                    accessible alternative.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Shortcuts
+
+                                </h3>
+
+                                <p>
+
+                                    Shortcuts should complement—not
+                                    replace—standard keyboard
+                                    navigation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Focus Management -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="focus-management"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Focus Management
+
+                        </span>
+
+                        <h2>
+
+                            Maintain Predictable Focus
+
+                        </h2>
+
+                        <p>
+
+                            Focus should move logically during user
+                            interactions and never become trapped
+                            unintentionally.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;button autofocus&gt;
+
+Open Dialog
+
+&lt;/button&gt;
+
+&lt;dialog&gt;
+
+...
+
+&lt;/dialog&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dialog Focus
+
+                                </h3>
+
+                                <p>
+
+                                    When a dialog opens, keyboard focus
+                                    should move into the dialog and
+                                    return after it closes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Avoid Focus Loss
+
+                                </h3>
+
+                                <p>
+
+                                    Dynamic updates should never leave
+                                    keyboard users without an active
+                                    focus target.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Screen Reader Support -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="screen-readers"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Assistive Technology
+
+                        </span>
+
+                        <h2>
+
+                            Screen Reader Support
+
+                        </h2>
+
+                        <p>
+
+                            Structure, labels and landmarks should
+                            provide meaningful information for screen
+                            reader users.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Descriptive Labels
+
+                                </h3>
+
+                                <p>
+
+                                    Every interactive control should
+                                    have a meaningful accessible name.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Landmarks
+
+                                </h3>
+
+                                <p>
+
+                                    Use header, nav, main, aside and
+                                    footer landmarks consistently.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Alternative Text
+
+                                </h3>
+
+                                <p>
+
+                                    Images must include accurate
+                                    alternative text unless purely
+                                    decorative.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Color Contrast Standards -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="color-contrast"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Color Contrast
+
+                        </span>
+
+                        <h2>
+
+                            Ensure Readable Interfaces
+
+                        </h2>
+
+                        <p>
+
+                            Text and interactive elements must maintain
+                            sufficient contrast against their
+                            backgrounds to remain readable in various
+                            lighting conditions.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    WCAG Contrast
+
+                                </h3>
+
+                                <p>
+
+                                    Follow WCAG 2.2 AA minimum contrast
+                                    recommendations for normal and large
+                                    text.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Never Rely on Color Alone
+
+                                </h3>
+
+                                <p>
+
+                                    Combine color with icons, labels or
+                                    text so information is available to
+                                    every user.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Typography Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="typography-accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Typography
+
+                        </span>
+
+                        <h2>
+
+                            Accessible Reading Experience
+
+                        </h2>
+
+                        <p>
+
+                            Readable typography improves comprehension,
+                            reduces fatigue and benefits every user.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Comfortable Line Length
+
+                                </h3>
+
+                                <p>
+
+                                    Avoid extremely long lines of text
+                                    to improve readability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Text
+
+                                </h3>
+
+                                <p>
+
+                                    Typography should scale smoothly
+                                    across desktop, tablet and mobile
+                                    devices.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Clear Hierarchy
+
+                                </h3>
+
+                                <p>
+
+                                    Use consistent spacing and heading
+                                    levels to help users scan content
+                                    efficiently.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Forms Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="forms-accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Forms
+
+                        </span>
+
+                        <h2>
+
+                            Build Accessible Forms
+
+                        </h2>
+
+                        <p>
+
+                            Every form control should include clear
+                            labels, meaningful validation messages and
+                            keyboard accessibility to support all users.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;label for="email"&gt;
+
+Email Address
+
+&lt;/label&gt;
+
+&lt;input
+    id="email"
+    type="email"
+    required
+    aria-describedby="email-help"
+&gt;
+
+&lt;small id="email-help"&gt;
+
+We'll never share your email.
+
+&lt;/small&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Visible Labels
+
+                                </h3>
+
+                                <p>
+
+                                    Every input must have a descriptive
+                                    visible label associated with it.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Helpful Validation
+
+                                </h3>
+
+                                <p>
+
+                                    Display clear validation feedback
+                                    that explains how users can resolve
+                                    input errors.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessible Instructions
+
+                                </h3>
+
+                                <p>
+
+                                    Provide additional guidance using
+                                    helper text linked through
+                                    <code>aria-describedby</code>.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Button Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="button-accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Buttons
+
+                        </span>
+
+                        <h2>
+
+                            Accessible Button Design
+
+                        </h2>
+
+                        <p>
+
+                            Buttons should clearly communicate their
+                            purpose, remain keyboard accessible and
+                            provide visible focus indicators.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;button
+    type="button"
+    aria-label="Save Changes"
+&gt;
+
+Save
+
+&lt;/button&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Descriptive Actions
+
+                                </h3>
+
+                                <p>
+
+                                    Button text should clearly describe
+                                    the action that will occur when it
+                                    is activated.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Support
+
+                                </h3>
+
+                                <p>
+
+                                    Buttons should be operable using
+                                    both Enter and Space keys.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- ARIA Usage -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="aria-usage"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            ARIA
+
+                        </span>
+
+                        <h2>
+
+                            Use ARIA Responsibly
+
+                        </h2>
+
+                        <p>
+
+                            ARIA enhances accessibility only when native
+                            HTML cannot provide the required semantics.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;button
+    aria-expanded="false"
+    aria-controls="menu"
+&gt;
+
+Menu
+
+&lt;/button&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Native HTML First
+
+                                </h3>
+
+                                <p>
+
+                                    Always prefer semantic HTML before
+                                    introducing ARIA roles or
+                                    attributes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Meaningful ARIA
+
+                                </h3>
+
+                                <p>
+
+                                    Use ARIA only when it adds
+                                    accessibility information that
+                                    native HTML cannot provide.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Motion -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="motion"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Motion
+
+                        </span>
+
+                        <h2>
+
+                            Respect Reduced Motion Preferences
+
+                        </h2>
+
+                        <p>
+
+                            Animations should enhance the experience
+                            without causing discomfort. Users who
+                            request reduced motion should receive a
+                            simplified experience.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Purposeful Animation
+
+                                </h3>
+
+                                <p>
+
+                                    Motion should communicate state
+                                    changes rather than provide visual
+                                    decoration alone.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Reduced Motion
+
+                                </h3>
+
+                                <p>
+
+                                    Respect the user's operating system
+                                    preference for reduced motion
+                                    whenever possible.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Responsive Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="responsive-accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Responsive Design
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Across Devices
+
+                        </h2>
+
+                        <p>
+
+                            Accessible interfaces should remain usable
+                            regardless of screen size, orientation or
+                            input method.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Touch Targets
+
+                                </h3>
+
+                                <p>
+
+                                    Interactive controls should provide
+                                    sufficient size and spacing for
+                                    touch interaction.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Layout
+
+                                </h3>
+
+                                <p>
+
+                                    Content should reflow naturally
+                                    without horizontal scrolling on
+                                    supported devices.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Testing Checklist -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="testing-checklist"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Testing
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Testing Checklist
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>✓ Verify keyboard navigation.</li>
+
+                                <li>✓ Test with a screen reader.</li>
+
+                                <li>✓ Confirm sufficient color contrast.</li>
+
+                                <li>✓ Check heading hierarchy.</li>
+
+                                <li>✓ Validate ARIA attributes.</li>
+
+                                <li>✓ Ensure focus remains visible.</li>
+
+                                <li>✓ Test forms and validation.</li>
+
+                                <li>✓ Review responsive behavior.</li>
+
+                                <li>✓ Test reduced motion support.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Forms Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="forms-accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Forms
+
+                        </span>
+
+                        <h2>
+
+                            Build Accessible Forms
+
+                        </h2>
+
+                        <p>
+
+                            Every form control should include clear
+                            labels, meaningful validation messages and
+                            keyboard accessibility to support all users.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;label for="email"&gt;
+
+Email Address
+
+&lt;/label&gt;
+
+&lt;input
+    id="email"
+    type="email"
+    required
+    aria-describedby="email-help"
+&gt;
+
+&lt;small id="email-help"&gt;
+
+We'll never share your email.
+
+&lt;/small&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Visible Labels
+
+                                </h3>
+
+                                <p>
+
+                                    Every input must have a descriptive
+                                    visible label associated with it.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Helpful Validation
+
+                                </h3>
+
+                                <p>
+
+                                    Display clear validation feedback
+                                    that explains how users can resolve
+                                    input errors.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessible Instructions
+
+                                </h3>
+
+                                <p>
+
+                                    Provide additional guidance using
+                                    helper text linked through
+                                    <code>aria-describedby</code>.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Button Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="button-accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Buttons
+
+                        </span>
+
+                        <h2>
+
+                            Accessible Button Design
+
+                        </h2>
+
+                        <p>
+
+                            Buttons should clearly communicate their
+                            purpose, remain keyboard accessible and
+                            provide visible focus indicators.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;button
+    type="button"
+    aria-label="Save Changes"
+&gt;
+
+Save
+
+&lt;/button&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Descriptive Actions
+
+                                </h3>
+
+                                <p>
+
+                                    Button text should clearly describe
+                                    the action that will occur when it
+                                    is activated.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Support
+
+                                </h3>
+
+                                <p>
+
+                                    Buttons should be operable using
+                                    both Enter and Space keys.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- ARIA Usage -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="aria-usage"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            ARIA
+
+                        </span>
+
+                        <h2>
+
+                            Use ARIA Responsibly
+
+                        </h2>
+
+                        <p>
+
+                            ARIA enhances accessibility only when native
+                            HTML cannot provide the required semantics.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;button
+    aria-expanded="false"
+    aria-controls="menu"
+&gt;
+
+Menu
+
+&lt;/button&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Native HTML First
+
+                                </h3>
+
+                                <p>
+
+                                    Always prefer semantic HTML before
+                                    introducing ARIA roles or
+                                    attributes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Meaningful ARIA
+
+                                </h3>
+
+                                <p>
+
+                                    Use ARIA only when it adds
+                                    accessibility information that
+                                    native HTML cannot provide.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Motion -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="motion"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Motion
+
+                        </span>
+
+                        <h2>
+
+                            Respect Reduced Motion Preferences
+
+                        </h2>
+
+                        <p>
+
+                            Animations should enhance the experience
+                            without causing discomfort. Users who
+                            request reduced motion should receive a
+                            simplified experience.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Purposeful Animation
+
+                                </h3>
+
+                                <p>
+
+                                    Motion should communicate state
+                                    changes rather than provide visual
+                                    decoration alone.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Reduced Motion
+
+                                </h3>
+
+                                <p>
+
+                                    Respect the user's operating system
+                                    preference for reduced motion
+                                    whenever possible.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Responsive Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="responsive-accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Responsive Design
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Across Devices
+
+                        </h2>
+
+                        <p>
+
+                            Accessible interfaces should remain usable
+                            regardless of screen size, orientation or
+                            input method.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Touch Targets
+
+                                </h3>
+
+                                <p>
+
+                                    Interactive controls should provide
+                                    sufficient size and spacing for
+                                    touch interaction.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Layout
+
+                                </h3>
+
+                                <p>
+
+                                    Content should reflow naturally
+                                    without horizontal scrolling on
+                                    supported devices.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Testing Checklist -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="testing-checklist"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Testing
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Testing Checklist
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>✓ Verify keyboard navigation.</li>
+
+                                <li>✓ Test with a screen reader.</li>
+
+                                <li>✓ Confirm sufficient color contrast.</li>
+
+                                <li>✓ Check heading hierarchy.</li>
+
+                                <li>✓ Validate ARIA attributes.</li>
+
+                                <li>✓ Ensure focus remains visible.</li>
+
+                                <li>✓ Test forms and validation.</li>
+
+                                <li>✓ Review responsive behavior.</li>
+
+                                <li>✓ Test reduced motion support.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="best-practices"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Best Practices
+
+                        </h2>
+
+                        <p>
+
+                            Accessibility should be considered
+                            throughout planning, design,
+                            implementation and testing rather than
+                            treated as a final checklist.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Design for Everyone
+
+                                </h3>
+
+                                <p>
+
+                                    Consider diverse abilities,
+                                    devices and interaction methods
+                                    from the beginning of every
+                                    project.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Use Native HTML
+
+                                </h3>
+
+                                <p>
+
+                                    Prefer semantic HTML elements
+                                    before introducing custom
+                                    solutions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Test Regularly
+
+                                </h3>
+
+                                <p>
+
+                                    Verify accessibility during
+                                    development instead of waiting
+                                    until deployment.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keep Improving
+
+                                </h3>
+
+                                <p>
+
+                                    Accessibility is an ongoing
+                                    engineering commitment that should
+                                    evolve alongside the product.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Common Mistakes -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="common-mistakes"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Common Mistakes
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Issues to Avoid
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Missing Labels
+
+                                </h3>
+
+                                <p>
+
+                                    Every interactive control should
+                                    have a meaningful accessible name.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Poor Contrast
+
+                                </h3>
+
+                                <p>
+
+                                    Low-contrast text reduces
+                                    readability and accessibility.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Traps
+
+                                </h3>
+
+                                <p>
+
+                                    Never trap keyboard users inside a
+                                    component without a clear exit.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Incorrect Heading Order
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain a logical document
+                                    hierarchy using sequential
+                                    headings.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Engineering Notes -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="engineering-notes"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Engineering Notes
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Engineering Guidance
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Build accessible components once within ASLDS
+                        so every application benefits automatically.
+
+                    </div>
+
+                    <div class="alert alert-warning">
+
+                        Avoid overriding framework accessibility
+                        behavior unless a documented engineering
+                        requirement exists.
+
+                    </div>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>Accessibility Workflow
+
+Design
+
+↓
+
+Semantic HTML
+
+↓
+
+Keyboard Support
+
+↓
+
+Screen Reader Review
+
+↓
+
+Responsive Testing
+
+↓
+
+Accessibility Audit
+
+↓
+
+Production
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Documentation Navigation -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="documentation-navigation"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Reading
+
+                        </span>
+
+                        <h2>
+
+                            Documentation Navigation
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="../playground.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ← Playground
+
+                                </h3>
+
+                                <p>
+
+                                    Return to the interactive component
+                                    playground.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="engineering.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Engineering Guide →
+
+                                </h3>
+
+                                <p>
+
+                                    Continue with ASLDS engineering
+                                    standards and architecture.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer doc-footer">
+
+            <div class="container">
+
+                <div class="doc-footer-grid">
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            A Square L Innovate
+
+                        </h3>
+
+                        <p>
+
+                            Building enterprise software through
+                            accessible, scalable and reusable design
+                            systems.
+
+                        </p>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Documentation
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../playground.html">Playground</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Guides
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="accessibility.html">Accessibility</a></li>
+                            <li><a href="engineering.html">Engineering</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            ASL Design System
+
+                        </p>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            © 2026 A Square L Innovate
+
+                        </p>
+
+                    </section>
+
+                </div>
+
+                <div class="doc-footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate.
+                        All rights reserved.
+
+                    </p>
+
+                    <p>
+
+                        ASL Design System • Version 1.1 Stable
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Toast Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/foundations/animations.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Motion & Animation Foundation Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Motion & Animation Foundation documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Motion, Animation, Transition, UI Motion, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Animations • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+                            <a href="../index.html" class="nav-link">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../getting-started.html" class="nav-link">
+                                Getting Started
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../installation.html" class="nav-link">
+                                Installation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../playground.html" class="nav-link">
+                                Playground
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="animations.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                Foundations
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="colors.html">
+
+                            Foundations
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Animations
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Foundation
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Animations
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Build polished interfaces using the ASL Design
+                                System motion language.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Motion communicates hierarchy, feedback and
+                                continuity without distracting users.
+                                ASLDS animations prioritize performance,
+                                accessibility and consistency across every
+                                application.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Motion Utility
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Motion System
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Motion Principles</li>
+                                    <li>Duration Tokens</li>
+                                    <li>Easing</li>
+                                    <li>Transitions</li>
+                                    <li>Component Motion</li>
+                                    <li>Accessibility</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Introduction
+
+                        </span>
+
+                        <h2>
+
+                            Motion Philosophy
+
+                        </h2>
+
+                        <p>
+
+                            Motion should communicate purpose, improve
+                            understanding and reinforce interaction.
+                            Every ASLDS animation is subtle, intentional
+                            and optimized for accessibility.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Meaningful Motion
+
+                                </h3>
+
+                                <p>
+
+                                    Every animation should provide useful
+                                    feedback instead of unnecessary visual
+                                    decoration.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Performance
+
+                                </h3>
+
+                                <p>
+
+                                    Hardware-accelerated transforms and
+                                    opacity transitions are preferred for
+                                    smooth rendering.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Motion always respects reduced-motion
+                                    preferences and should never interfere
+                                    with usability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Reuse the same timing, easing and motion
+                                    patterns across every component.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Minimal Distraction
+
+                                </h3>
+
+                                <p>
+
+                                    Motion should enhance the interface while
+                                    allowing users to remain focused on
+                                    content.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Motion Principles -->
+            <!-- ========================================= -->
+
+            <section
+                id="motion-principles"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Principles
+
+                        </span>
+
+                        <h2>
+
+                            Motion Principles
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Natural Movement</h3>
+                                <p>Animations should feel realistic and predictable.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Purposeful Feedback</h3>
+                                <p>Motion reinforces interaction outcomes.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Consistent Timing</h3>
+                                <p>Reuse standard durations across components.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Smooth Easing</h3>
+                                <p>Use predictable easing curves for continuity.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Performance First</h3>
+                                <p>Prefer transform and opacity for efficient rendering.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Duration Tokens -->
+            <!-- ========================================= -->
+
+            <section
+                id="duration-tokens"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Motion Tokens
+
+                        </span>
+
+                        <h2>
+
+                            Duration Tokens
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS standardizes animation durations to create
+                            predictable interactions across every component.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Instant</h3>
+                                <p><strong>Variable:</strong> <code>--duration-instant</code></p>
+                                <p><strong>Value:</strong> 0ms</p>
+                                <button class="btn btn-outline">Copy</button>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Fast</h3>
+                                <p><strong>Variable:</strong> <code>--duration-fast</code></p>
+                                <p><strong>Value:</strong> 150ms</p>
+                                <button class="btn btn-outline">Copy</button>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Normal</h3>
+                                <p><strong>Variable:</strong> <code>--duration-normal</code></p>
+                                <p><strong>Value:</strong> 250ms</p>
+                                <button class="btn btn-outline">Copy</button>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Slow</h3>
+                                <p><strong>Variable:</strong> <code>--duration-slow</code></p>
+                                <p><strong>Value:</strong> 400ms</p>
+                                <button class="btn btn-outline">Copy</button>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Extra Slow</h3>
+                                <p><strong>Variable:</strong> <code>--duration-extra-slow</code></p>
+                                <p><strong>Value:</strong> 600ms</p>
+                                <button class="btn btn-outline">Copy</button>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Easing Functions -->
+            <!-- ========================================= -->
+
+            <section
+                id="easing-functions"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Timing
+
+                        </span>
+
+                        <h2>
+
+                            Easing Functions
+
+                        </h2>
+
+                        <p>
+
+                            Easing defines how motion accelerates and
+                            decelerates, creating more natural interactions.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Linear</h3>
+                                <p>Constant animation speed.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Ease</h3>
+                                <p>Balanced default transition.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Ease In</h3>
+                                <p>Begins slowly, accelerates naturally.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Ease Out</h3>
+                                <p>Fast start with gentle finish.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Ease In Out</h3>
+                                <p>Smooth acceleration and deceleration.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Transition Utilities -->
+            <!-- ========================================= -->
+
+            <section
+                id="transition-utilities"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Utilities
+
+                        </span>
+
+                        <h2>
+
+                            Transition Utilities
+
+                        </h2>
+
+                        <p>
+
+                            Transition utilities provide consistent motion
+                            across colors, transforms, elevation and other
+                            interactive states.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Color Transition</h3>
+                                <p>Smooth foreground color changes.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Background Transition</h3>
+                                <p>Animated surface color updates.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Border Transition</h3>
+                                <p>Gradual border color changes.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Shadow Transition</h3>
+                                <p>Elevation changes during interaction.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Opacity Transition</h3>
+                                <p>Fade elements in and out smoothly.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Transform Transition</h3>
+                                <p>Animate movement and scaling efficiently.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Component Motion Examples -->
+            <!-- ========================================= -->
+
+            <section
+                id="component-motion"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Components
+
+                        </span>
+
+                        <h2>
+
+                            Component Motion Examples
+
+                        </h2>
+
+                        <p>
+
+                            Motion reinforces interaction, improves feedback,
+                            and helps users understand interface changes
+                            without becoming distracting.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Button Hover</h3>
+                                <button class="btn btn-primary">
+                                    Hover Me
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Card Hover</h3>
+                                <p>Cards subtly elevate on hover.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Navigation Hover</h3>
+                                <p>Navigation links animate smoothly.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Dropdown Appearance</h3>
+                                <p>Dropdowns fade and slide into view.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Modal Entrance</h3>
+                                <p>Dialogs scale and fade naturally.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Tooltip</h3>
+                                <p>Tooltips appear with subtle fade.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Accordion</h3>
+                                <p>Expandable sections animate height.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Toast Notification</h3>
+                                <p>Notifications slide into view.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Loading Spinner</h3>
+                                <p>Continuous loading indicator.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Skeleton Loader</h3>
+                                <p>Animated placeholders while loading.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hover Effects -->
+            <!-- ========================================= -->
+
+            <section
+                id="hover-effects"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Hover Effects
+
+                        </span>
+
+                        <h2>
+
+                            Interactive Hover States
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Lift</h3>
+                                <p>Subtle upward movement.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Scale</h3>
+                                <p>Slight size increase.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Glow</h3>
+                                <p>Soft emphasis using light.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Shadow Elevation</h3>
+                                <p>Elevation indicates interaction.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Border Highlight</h3>
+                                <p>Interactive border transition.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Opacity Fade</h3>
+                                <p>Soft visibility transitions.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Loading States -->
+            <!-- ========================================= -->
+
+            <section
+                id="loading-states"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Loading
+
+                        </span>
+
+                        <h2>
+
+                            Loading States
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Spinner</h3>
+                                <p>Continuous loading feedback.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Skeleton</h3>
+                                <p>Content placeholder animation.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Pulse</h3>
+                                <p>Indicates background activity.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Progress Animation</h3>
+                                <p>Animated completion indicator.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Success State</h3>
+                                <p>Animated confirmation feedback.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessible Motion
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>prefers-reduced-motion</h3>
+                                <p>Respect user motion preferences.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Motion Sensitivity</h3>
+                                <p>Avoid excessive movement.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Reduced Alternatives</h3>
+                                <p>Provide simple fades instead.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Keyboard Support</h3>
+                                <p>Motion should never interrupt focus.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Performance</h3>
+                                <p>Prefer transform and opacity.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Motion Guidelines
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>Do</h3>
+
+                                <ul>
+                                    <li>Use subtle motion.</li>
+                                    <li>Keep durations consistent.</li>
+                                    <li>Animate with purpose.</li>
+                                    <li>Prioritize usability.</li>
+                                    <li>Maintain smooth transitions.</li>
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>Don't</h3>
+
+                                <ul>
+                                    <li>Animate everything.</li>
+                                    <li>Use distracting effects.</li>
+                                    <li>Create inconsistent timing.</li>
+                                    <li>Delay user interaction.</li>
+                                    <li>Ignore accessibility.</li>
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer Guide
+
+                        </span>
+
+                        <h2>
+
+                            Developer Usage
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS animation utilities are intentionally lightweight
+                            and reusable. Apply existing utility classes to create
+                            consistent interactions across the design system.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Example Markup
+
+                            </h3>
+
+                            <button
+                                class="btn btn-outline"
+                                type="button"
+                            >
+
+                                Copy
+
+                            </button>
+
+<pre><code>&lt;button class="btn btn-primary transition"&gt;
+    Save Changes
+&lt;/button&gt;
+
+&lt;div class="card hover-lift"&gt;
+    ...
+&lt;/div&gt;
+
+&lt;div class="fade-in"&gt;
+    Animated Content
+&lt;/div&gt;</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Foundations -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-pages"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Learning
+
+                        </span>
+
+                        <h2>
+
+                            Related Documentation
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Icons
+
+                                </h3>
+
+                                <p>
+
+                                    Learn how the ASLDS icon system integrates
+                                    seamlessly with animated interfaces.
+
+                                </p>
+
+                                <a
+                                    href="icons.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Icons
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Explore interactive button components,
+                                    hover states, and motion behaviors.
+
+                                </p>
+
+                                <a
+                                    href="../components/buttons.html"
+                                    class="btn btn-primary"
+                                >
+
+                                    View Buttons
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <nav
+                class="page-navigation"
+                aria-label="Documentation Navigation"
+            >
+
+                <a
+                    href="icons.html"
+                    class="btn btn-outline"
+                >
+
+                    ← Previous
+                    <span>
+
+                        Icons
+
+                    </span>
+
+                </a>
+
+                <a
+                    href="../components/buttons.html"
+                    class="btn btn-primary"
+                >
+
+                    Next →
+                    <span>
+
+                        Buttons
+
+                    </span>
+
+                </a>
+
+            </nav>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise UI framework for modern web
+                            applications.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Components
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../components/buttons.html">Buttons</a></li>
+                            <li><a href="../components/cards.html">Cards</a></li>
+                            <li><a href="../components/forms.html">Forms</a></li>
+                            <li><a href="../components/navbar.html">Navbar</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            ASL Design System
+
+                        </p>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            © 2026 A Square L Innovate
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

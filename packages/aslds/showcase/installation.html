@@ -9,13 +9,13 @@
     ASL Design System (ASLDS)
 
     File:
-    packages/aslds/showcase/getting-started.html
+    packages/aslds/showcase/installation.html
 
     Version:
     1.1 Stable
 
     Description:
-    Official Getting Started Guide for the
+    Official Installation Guide for the
     ASL Design System Documentation Website.
 
     Copyright © 2026
@@ -32,7 +32,7 @@
 
     <meta
         name="description"
-        content="Learn how to install and start building with the A Square L Design System."
+        content="Install the A Square L Design System into your project using the recommended enterprise setup process."
     >
 
     <meta
@@ -47,7 +47,7 @@
 
     <title>
 
-        Getting Started • ASL Design System
+        Installation • ASL Design System
 
     </title>
 
@@ -171,11 +171,24 @@
 
                             <a
                                 href="getting-started.html"
+                                class="nav-link"
+                            >
+
+                                Getting Started
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="installation.html"
                                 class="nav-link active"
                                 aria-current="page"
                             >
 
-                                Getting Started
+                                Installation
 
                             </a>
 
@@ -286,58 +299,56 @@
 
                     <div class="hero-grid">
 
-                        <!-- Hero Content -->
-
                         <div class="hero-content">
 
                             <span class="hero-badge">
 
-                                Documentation Guide
+                                Installation Guide
 
                             </span>
 
                             <h1 class="hero-title">
 
-                                Getting Started
+                                Installation
 
                             </h1>
 
                             <p class="hero-tagline">
 
-                                Build your first application using the
-                                ASL Design System.
+                                Install ASLDS into your project using
+                                the recommended enterprise setup
+                                process.
 
                             </p>
 
                             <p class="hero-description">
 
-                                This guide walks you through everything
-                                required to begin using the A Square L
-                                Design System. Learn the recommended
-                                project structure, installation process,
-                                asset loading order, and best practices
-                                for building scalable, maintainable,
-                                and accessible user interfaces.
+                                Learn the recommended installation
+                                methods, project organization, asset
+                                loading order and verification process
+                                required to integrate the A Square L
+                                Design System into modern web
+                                applications with confidence.
 
                             </p>
 
                             <div class="hero-actions">
 
                                 <a
-                                    href="#installation"
+                                    href="#installation-options"
                                     class="btn btn-primary"
                                 >
 
-                                    Start Installation
+                                    Manual Installation
 
                                 </a>
 
                                 <a
-                                    href="components/buttons.html"
+                                    href="guides/playground.html"
                                     class="btn btn-secondary"
                                 >
 
-                                    View Components
+                                    View Playground
 
                                 </a>
 
@@ -345,35 +356,33 @@
 
                         </div>
 
-                        <!-- Hero Panel -->
-
                         <aside class="hero-panel card">
 
                             <div class="card-body">
 
                                 <h3>
 
-                                    Guide Overview
+                                    Installation Overview
 
                                 </h3>
 
                                 <ul>
 
-                                    <li>Prerequisites</li>
+                                    <li>Installation Options</li>
 
-                                    <li>Installation Methods</li>
+                                    <li>Framework Download</li>
 
-                                    <li>Project Structure</li>
-
-                                    <li>CSS Loading Order</li>
+                                    <li>CSS Setup</li>
 
                                     <li>JavaScript Setup</li>
 
-                                    <li>First ASLDS Page</li>
-
                                     <li>Verification Checklist</li>
 
-                                    <li>Best Practices</li>
+                                    <li>Troubleshooting</li>
+
+                                    <li>Development Workflow</li>
+
+                                    <li>Frequently Asked Questions</li>
 
                                 </ul>
 
@@ -388,12 +397,12 @@
             </section>
 
             <!-- ========================================= -->
-            <!-- Prerequisites -->
+            <!-- Installation Options -->
             <!-- ========================================= -->
 
             <section
                 class="section"
-                id="prerequisites"
+                id="installation-options"
             >
 
                 <div class="container">
@@ -402,159 +411,30 @@
 
                         <span class="section-label">
 
-                            Before You Begin
+                            Installation Methods
 
                         </span>
 
                         <h2>
 
-                            Prerequisites
+                            Choose an Installation Method
 
                         </h2>
 
                         <p>
 
-                            Before integrating ASLDS into your project,
-                            ensure your development environment and
-                            knowledge meet these basic requirements.
+                            Select the installation approach that best
+                            fits your workflow. Manual installation is
+                            currently the recommended and fully
+                            supported method for production projects.
 
                         </p>
 
                     </header>
 
                     <div class="card-grid documentation-grid">
-
-                        <article class="card documentation-card">
-
-                            <div class="card-body">
-
-                                <h3>
-
-                                    HTML5 Knowledge
-
-                                </h3>
-
-                                <p>
-
-                                    Understand semantic HTML structure
-                                    and accessibility fundamentals.
-
-                                </p>
-
-                            </div>
-
-                        </article>
-
-                        <article class="card documentation-card">
-
-                            <div class="card-body">
-
-                                <h3>
-
-                                    CSS Fundamentals
-
-                                </h3>
-
-                                <p>
-
-                                    Familiarity with selectors,
-                                    layouts, variables and responsive
-                                    design concepts.
-
-                                </p>
-
-                            </div>
-
-                        </article>
-
-                        <article class="card documentation-card">
-
-                            <div class="card-body">
-
-                                <h3>
-
-                                    JavaScript Basics
-
-                                </h3>
-
-                                <p>
-
-                                    Basic knowledge of modern
-                                    JavaScript and ES Modules.
-
-                                </p>
-
-                            </div>
-
-                        </article>
-
-                        <article class="card documentation-card">
-
-                            <div class="card-body">
-
-                                <h3>
-
-                                    Modern Browser
-
-                                </h3>
-
-                                <p>
-
-                                    Use the latest version of
-                                    Chrome, Edge, Firefox or Safari
-                                    for development.
-
-                                </p>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-            </section>
-            
-                        <!-- ========================================= -->
-            <!-- Installation Overview -->
-            <!-- ========================================= -->
-
-            <section
-                class="section"
-                id="installation"
-            >
-
-                <div class="container">
-
-                    <header class="section-header">
-
-                        <span class="section-label">
-
-                            Installation
-
-                        </span>
-
-                        <h2>
-
-                            Choose Your Installation Method
-
-                        </h2>
-
-                        <p>
-
-                            ASLDS currently supports manual installation
-                            for maximum control and transparency. Additional
-                            installation methods are planned for future
-                            releases.
-
-                        </p>
-
-                    </header>
-
-                    <div class="card-grid documentation-grid">
-
-                        <article class="card documentation-card">
+                      
+                                              <article class="card documentation-card">
 
                             <div class="card-body">
 
@@ -572,10 +452,11 @@
 
                                 <p>
 
-                                    Download the ASL Design System package,
-                                    copy the required CSS and JavaScript
-                                    folders into your project, and reference
-                                    them using the recommended loading order.
+                                    Download the official ASL Design
+                                    System package, copy the framework
+                                    into your project and reference the
+                                    CSS and JavaScript files using the
+                                    recommended loading order.
 
                                 </p>
 
@@ -601,9 +482,10 @@
 
                                 <p>
 
-                                    Clone the official repository to obtain
-                                    the latest development version and track
-                                    future updates using Git.
+                                    Clone the repository to receive the
+                                    latest updates, contribute to the
+                                    framework and keep your local copy
+                                    synchronized with future releases.
 
                                 </p>
 
@@ -629,9 +511,10 @@
 
                                 <p>
 
-                                    Install ASLDS directly into your project
-                                    using npm with automatic version
-                                    management and dependency updates.
+                                    Future releases will support
+                                    installation through npm for
+                                    simplified dependency management
+                                    and version control.
 
                                 </p>
 
@@ -657,9 +540,9 @@
 
                                 <p>
 
-                                    Quickly prototype applications by loading
-                                    ASLDS assets from a globally distributed
-                                    content delivery network.
+                                    A globally distributed CDN will be
+                                    available for rapid prototyping and
+                                    lightweight demonstration projects.
 
                                 </p>
 
@@ -674,12 +557,12 @@
             </section>
 
             <!-- ========================================= -->
-            <!-- Project Structure -->
+            <!-- Download Framework -->
             <!-- ========================================= -->
 
             <section
                 class="section"
-                id="project-structure"
+                id="download-framework"
             >
 
                 <div class="container">
@@ -688,21 +571,22 @@
 
                         <span class="section-label">
 
-                            Project Structure
+                            Framework Files
 
                         </span>
 
                         <h2>
 
-                            Recommended Folder Structure
+                            Organize the Framework Correctly
 
                         </h2>
 
                         <p>
 
-                            Organizing your project consistently improves
-                            maintainability, scalability and collaboration
-                            across engineering teams.
+                            Place the ASL Design System inside a
+                            predictable project structure so that CSS,
+                            JavaScript and documentation assets remain
+                            easy to maintain as your application grows.
 
                         </p>
 
@@ -715,7 +599,16 @@
 <pre><code>project/
 │
 ├── css/
+│   ├── reset.css
+│   ├── variables.css
+│   ├── typography.css
+│   ├── layout.css
+│   ├── utilities.css
+│   ├── animations.css
+│   └── components/
+│
 ├── js/
+│
 ├── assets/
 │
 ├── showcase/
@@ -743,8 +636,9 @@
 
                                 <p>
 
-                                    Contains the complete ASLDS framework,
-                                    component styles and design tokens.
+                                    Stores the complete ASLDS framework,
+                                    design tokens, utilities and reusable
+                                    component stylesheets.
 
                                 </p>
 
@@ -764,8 +658,10 @@
 
                                 <p>
 
-                                    Contains reusable JavaScript modules
-                                    responsible for interactive components.
+                                    Contains modular JavaScript files
+                                    responsible for framework
+                                    interactivity and component
+                                    behaviour.
 
                                 </p>
 
@@ -785,8 +681,9 @@
 
                                 <p>
 
-                                    Store project images, icons, fonts,
-                                    videos and other static resources.
+                                    Keep application images, icons,
+                                    fonts, videos and downloadable
+                                    resources in a single location.
 
                                 </p>
 
@@ -806,8 +703,9 @@
 
                                 <p>
 
-                                    Documentation website demonstrating
-                                    every feature of the ASL Design System.
+                                    Contains the official documentation
+                                    website demonstrating every ASLDS
+                                    feature and guideline.
 
                                 </p>
 
@@ -829,7 +727,7 @@
 
                                     Documentation covering colors,
                                     typography, spacing, layout,
-                                    borders and animations.
+                                    borders, icons and animations.
 
                                 </p>
 
@@ -850,8 +748,8 @@
                                 <p>
 
                                     Individual documentation pages for
-                                    every reusable UI component available
-                                    in ASLDS.
+                                    every reusable ASL Design System
+                                    component.
 
                                 </p>
 
@@ -866,12 +764,12 @@
             </section>
 
             <!-- ========================================= -->
-            <!-- Include CSS -->
+            <!-- CSS Installation -->
             <!-- ========================================= -->
 
             <section
                 class="section"
-                id="include-css"
+                id="css-installation"
             >
 
                 <div class="container">
@@ -880,22 +778,24 @@
 
                         <span class="section-label">
 
-                            CSS Setup
+                            CSS Installation
 
                         </span>
 
                         <h2>
 
-                            Include the Framework Stylesheets
+                            Load Framework Styles in the Correct Order
 
                         </h2>
 
                         <p>
 
-                            Load the framework stylesheets in the
-                            recommended order to ensure design tokens,
-                            utilities and components are available
-                            throughout your application.
+                            The loading order is an essential part of
+                            the ASL Design System architecture. Core
+                            framework files must always be loaded before
+                            component stylesheets to ensure variables,
+                            utilities and shared layout rules are
+                            available throughout the application.
 
                         </p>
 
@@ -905,7 +805,7 @@
 
                         <div class="card-body">
 
-<pre><code>&lt;!-- Core --&gt;
+<pre><code>&lt;!-- Core Framework --&gt;
 &lt;link rel="stylesheet" href="css/reset.css"&gt;
 &lt;link rel="stylesheet" href="css/variables.css"&gt;
 &lt;link rel="stylesheet" href="css/typography.css"&gt;
@@ -919,6 +819,9 @@
 &lt;link rel="stylesheet" href="css/components/cards.css"&gt;
 &lt;link rel="stylesheet" href="css/components/forms.css"&gt;
 &lt;link rel="stylesheet" href="css/components/footer.css"&gt;
+
+&lt;!-- Documentation (Optional) --&gt;
+&lt;link rel="stylesheet" href="css/showcase.css"&gt;
 </code></pre>
 
                         </div>
@@ -933,16 +836,16 @@
 
                                 <h3>
 
-                                    Why Order Matters
+                                    Load Core Files First
 
                                 </h3>
 
                                 <p>
 
-                                    Core framework files define the
-                                    design tokens, layout system and
-                                    utilities required by every
-                                    component stylesheet.
+                                    Reset, variables, typography,
+                                    layout and utilities provide the
+                                    foundation used by every component
+                                    stylesheet in the framework.
 
                                 </p>
 
@@ -956,15 +859,15 @@
 
                                 <h3>
 
-                                    Components Last
+                                    Components Depend on the Framework
 
                                 </h3>
 
                                 <p>
 
-                                    Component styles should be loaded
-                                    after the framework so they inherit
-                                    shared variables and utilities.
+                                    Component styles assume that the
+                                    framework variables and layout
+                                    system have already been loaded.
 
                                 </p>
 
@@ -979,12 +882,12 @@
             </section>
 
             <!-- ========================================= -->
-            <!-- Include JavaScript -->
+            <!-- JavaScript Installation -->
             <!-- ========================================= -->
 
             <section
                 class="section"
-                id="include-javascript"
+                id="javascript-installation"
             >
 
                 <div class="container">
@@ -993,21 +896,23 @@
 
                         <span class="section-label">
 
-                            JavaScript Setup
+                            JavaScript Installation
 
                         </span>
 
                         <h2>
 
-                            Load JavaScript Modules
+                            Load JavaScript After HTML
 
                         </h2>
 
                         <p>
 
-                            Import JavaScript modules after the page
-                            content to improve loading performance and
-                            ensure all HTML elements are available.
+                            JavaScript modules should be loaded after
+                            the page content has been rendered. This
+                            improves perceived performance and ensures
+                            all interactive components can locate the
+                            required HTML elements.
 
                         </p>
 
@@ -1042,15 +947,16 @@
 
                                 <h3>
 
-                                    Recommended Placement
+                                    Module Architecture
 
                                 </h3>
 
                                 <p>
 
-                                    Load JavaScript immediately before
-                                    the closing <code>&lt;/body&gt;</code>
-                                    tag to avoid blocking page rendering.
+                                    Every JavaScript file is responsible
+                                    for a single feature, making the
+                                    framework easier to maintain and
+                                    extend over time.
 
                                 </p>
 
@@ -1064,15 +970,16 @@
 
                                 <h3>
 
-                                    ES Modules
+                                    Load Scripts Last
 
                                 </h3>
 
                                 <p>
 
-                                    Each module has a single
-                                    responsibility, making the framework
-                                    easier to maintain and extend.
+                                    Loading scripts after the document
+                                    prevents render blocking and allows
+                                    each module to initialize
+                                    successfully.
 
                                 </p>
 
@@ -1087,88 +994,6 @@
             </section>
 
             <!-- ========================================= -->
-            <!-- Build Your First Page -->
-            <!-- ========================================= -->
-
-            <section
-                class="section"
-                id="first-page"
-            >
-
-                <div class="container">
-
-                    <header class="section-header">
-
-                        <span class="section-label">
-
-                            First Project
-
-                        </span>
-
-                        <h2>
-
-                            Build Your First ASLDS Page
-
-                        </h2>
-
-                        <p>
-
-                            The following template demonstrates the
-                            minimum structure required to begin building
-                            an application with the ASL Design System.
-
-                        </p>
-
-                    </header>
-
-                    <article class="card">
-
-                        <div class="card-body">
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-
-&lt;head&gt;
-
-    &lt;meta charset="UTF-8"&gt;
-
-    &lt;meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    &gt;
-
-    &lt;title&gt;My ASLDS Project&lt;/title&gt;
-
-    &lt;link rel="stylesheet" href="css/reset.css"&gt;
-    &lt;link rel="stylesheet" href="css/variables.css"&gt;
-    &lt;link rel="stylesheet" href="css/layout.css"&gt;
-    &lt;link rel="stylesheet" href="css/components/buttons.css"&gt;
-
-&lt;/head&gt;
-
-&lt;body&gt;
-
-    &lt;button class="btn btn-primary"&gt;
-
-        Hello ASLDS
-
-    &lt;/button&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </section>
-
-            
-                        <!-- ========================================= -->
             <!-- Verify Installation -->
             <!-- ========================================= -->
 
@@ -1189,60 +1014,99 @@
 
                         <h2>
 
-                            Verify Your Installation
+                            Confirm the Framework is Working
 
                         </h2>
 
                         <p>
 
-                            Use the following checklist to confirm that
-                            the ASL Design System has been installed and
-                            configured correctly before beginning
-                            development.
+                            Complete the following checklist to verify
+                            that ASLDS has been installed correctly
+                            before beginning development.
 
                         </p>
 
                     </header>
 
-                    <div class="card">
+                    <article class="card">
 
                         <div class="card-body">
 
-                            <ul>
+                            <ol>
 
-                                <li>✓ Typography styles load correctly.</li>
+                                <li>
 
-                                <li>✓ Theme variables are available.</li>
+                                    Confirm CSS variables load
+                                    successfully.
 
-                                <li>✓ Buttons use ASLDS styling.</li>
+                                </li>
 
-                                <li>✓ Navbar renders correctly.</li>
+                                <li>
 
-                                <li>✓ Cards display proper spacing.</li>
+                                    Verify typography matches the
+                                    documentation website.
 
-                                <li>✓ Responsive layouts work on all devices.</li>
+                                </li>
 
-                                <li>✓ JavaScript modules load without errors.</li>
+                                <li>
 
-                                <li>✓ Design tokens are applied consistently.</li>
+                                    Ensure primary and secondary buttons
+                                    display correctly.
 
-                            </ul>
+                                </li>
+
+                                <li>
+
+                                    Confirm the navigation bar renders
+                                    properly.
+
+                                </li>
+
+                                <li>
+
+                                    Check that cards use the expected
+                                    spacing and elevation.
+
+                                </li>
+
+                                <li>
+
+                                    Resize the browser to verify the
+                                    responsive layout.
+
+                                </li>
+
+                                <li>
+
+                                    Confirm JavaScript modules initialize
+                                    without browser console errors.
+
+                                </li>
+
+                                <li>
+
+                                    Verify light and dark theme
+                                    functionality where applicable.
+
+                                </li>
+
+                            </ol>
 
                         </div>
 
-                    </div>
+                    </article>
 
                 </div>
 
             </section>
 
             <!-- ========================================= -->
-            <!-- Best Practices -->
+            <!-- Troubleshooting -->
             <!-- ========================================= -->
 
             <section
                 class="section"
-                id="best-practices"
+                id="troubleshooting"
             >
 
                 <div class="container">
@@ -1251,21 +1115,22 @@
 
                         <span class="section-label">
 
-                            Engineering
+                            Troubleshooting
 
                         </span>
 
                         <h2>
 
-                            Best Practices
+                            Resolve Common Installation Issues
 
                         </h2>
 
                         <p>
 
-                            Following these recommendations ensures your
-                            applications remain scalable, maintainable
-                            and consistent with the ASL Design System.
+                            The following guidance addresses the most
+                            common installation problems encountered
+                            when integrating the ASL Design System into
+                            a project.
 
                         </p>
 
@@ -1279,16 +1144,16 @@
 
                                 <h3>
 
-                                    Preserve Framework Integrity
+                                    CSS Not Loading
 
                                 </h3>
 
                                 <p>
 
-                                    Avoid editing framework files
-                                    directly. Keep upgrades simple by
-                                    placing project-specific styles in
-                                    separate files.
+                                    Verify that every stylesheet path is
+                                    correct and that all framework files
+                                    are available inside the expected
+                                    directory.
 
                                 </p>
 
@@ -1302,15 +1167,15 @@
 
                                 <h3>
 
-                                    Reuse Components
+                                    Incorrect File Paths
 
                                 </h3>
 
                                 <p>
 
-                                    Build interfaces using the existing
-                                    ASLDS component library instead of
-                                    recreating similar UI elements.
+                                    Ensure all relative paths correctly
+                                    reference the CSS, JavaScript and
+                                    asset folders from the current page.
 
                                 </p>
 
@@ -1324,15 +1189,15 @@
 
                                 <h3>
 
-                                    Follow Naming Standards
+                                    Missing Components
 
                                 </h3>
 
                                 <p>
 
-                                    Use the official ASLDS CSS API and
-                                    avoid introducing custom framework
-                                    class names.
+                                    Confirm the required component
+                                    stylesheet has been imported before
+                                    using its HTML structure.
 
                                 </p>
 
@@ -1346,15 +1211,15 @@
 
                                 <h3>
 
-                                    Accessibility First
+                                    Wrong Stylesheet Order
 
                                 </h3>
 
                                 <p>
 
-                                    Build semantic, keyboard-accessible
-                                    interfaces that comply with WCAG
-                                    recommendations.
+                                    Load the core framework before any
+                                    component stylesheet to preserve the
+                                    correct dependency order.
 
                                 </p>
 
@@ -1368,20 +1233,233 @@
 
                                 <h3>
 
-                                    Separate Custom Styles
+                                    Browser Cache
 
                                 </h3>
 
                                 <p>
 
-                                    Extend the framework without
-                                    modifying it. Keep custom project
-                                    styling isolated from ASLDS.
+                                    Perform a hard refresh or clear the
+                                    browser cache after updating
+                                    framework files.
 
                                 </p>
 
                             </div>
 
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Problems
+
+                                </h3>
+
+                                <p>
+
+                                    Confirm the viewport meta tag is
+                                    present and that all required layout
+                                    files are loaded correctly.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Recommended Development Workflow -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="development-workflow"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Engineering Workflow
+
+                        </span>
+
+                        <h2>
+
+                            Recommended Development Workflow
+
+                        </h2>
+
+                        <p>
+
+                            Following a consistent engineering workflow
+                            ensures long-term maintainability,
+                            predictable upgrades and a unified user
+                            experience across every A Square L
+                            application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Protect Framework Files</h3>
+                                <p>
+                                    Keep the ASLDS framework unchanged
+                                    and apply project-specific
+                                    customizations in separate files.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Extend, Don't Replace</h3>
+                                <p>
+                                    Build upon existing components
+                                    instead of rewriting framework
+                                    functionality.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Accessibility First</h3>
+                                <p>
+                                    Maintain semantic HTML, keyboard
+                                    navigation and accessible interface
+                                    patterns throughout every project.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Reuse Components</h3>
+                                <p>
+                                    Use existing ASLDS components before
+                                    creating custom alternatives.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Naming Consistency</h3>
+                                <p>
+                                    Follow the official ASLDS CSS API
+                                    and avoid introducing conflicting
+                                    framework class names.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Frequently Asked Questions -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="faq"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Frequently Asked Questions
+
+                        </span>
+
+                        <h2>
+
+                            Installation FAQ
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Can I modify ASLDS?</h3>
+                                <p>
+                                    Direct modification is not
+                                    recommended. Extend the framework
+                                    through project-specific files.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Can unused files be removed?</h3>
+                                <p>
+                                    Yes, provided dependencies between
+                                    components are understood and
+                                    preserved.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Does ASLDS support dark mode?</h3>
+                                <p>
+                                    Yes. Theme switching is handled by
+                                    the framework JavaScript modules and
+                                    design tokens.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Can I use ASLDS without JavaScript?</h3>
+                                <p>
+                                    Most layout and visual components
+                                    work without JavaScript, while
+                                    interactive components require the
+                                    corresponding modules.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>How do I update?</h3>
+                                <p>
+                                    Replace framework files with the
+                                    latest stable release while keeping
+                                    project-specific customizations
+                                    separate.
+                                </p>
+                            </div>
                         </article>
 
                     </div>
@@ -1415,131 +1493,43 @@
 
                         </h2>
 
-                        <p>
-
-                            Continue exploring the documentation to
-                            learn every part of the ASL Design System.
-
-                        </p>
-
                     </header>
 
                     <div class="card-grid quick-links-grid">
 
-                        <a
-                            href="getting-started.html"
-                            class="card quick-link-card"
-                        >
-
+                        <a href="guides/playground.html" class="card quick-link-card">
                             <div class="card-body">
-
-                                <h3>
-
-                                    Installation
-
-                                </h3>
-
-                                <p>
-
-                                    Review installation and setup.
-
-                                </p>
-
+                                <h3>Playground</h3>
+                                <p>Experiment with ASLDS components.</p>
                             </div>
-
                         </a>
 
-                        <a
-                            href="foundations/colors.html"
-                            class="card quick-link-card"
-                        >
-
+                        <a href="foundations/colors.html" class="card quick-link-card">
                             <div class="card-body">
-
-                                <h3>
-
-                                    Foundations
-
-                                </h3>
-
-                                <p>
-
-                                    Learn the core design principles.
-
-                                </p>
-
+                                <h3>Foundations</h3>
+                                <p>Learn the design foundations.</p>
                             </div>
-
                         </a>
 
-                        <a
-                            href="components/buttons.html"
-                            class="card quick-link-card"
-                        >
-
+                        <a href="components/buttons.html" class="card quick-link-card">
                             <div class="card-body">
-
-                                <h3>
-
-                                    Components
-
-                                </h3>
-
-                                <p>
-
-                                    Explore reusable UI components.
-
-                                </p>
-
+                                <h3>Components</h3>
+                                <p>Browse reusable interface components.</p>
                             </div>
-
                         </a>
 
-                        <a
-                            href="foundations/layout.html"
-                            class="card quick-link-card"
-                        >
-
+                        <a href="foundations/layout.html" class="card quick-link-card">
                             <div class="card-body">
-
-                                <h3>
-
-                                    Layouts
-
-                                </h3>
-
-                                <p>
-
-                                    Understand layout patterns.
-
-                                </p>
-
+                                <h3>Layouts</h3>
+                                <p>Explore responsive layout patterns.</p>
                             </div>
-
                         </a>
 
-                        <a
-                            href="guides/engineering.html"
-                            class="card quick-link-card"
-                        >
-
+                        <a href="guides/engineering.html" class="card quick-link-card">
                             <div class="card-body">
-
-                                <h3>
-
-                                    Engineering Guide
-
-                                </h3>
-
-                                <p>
-
-                                    Read engineering standards and
-                                    conventions.
-
-                                </p>
-
+                                <h3>Engineering Guide</h3>
+                                <p>Follow ASLDS engineering standards.</p>
                             </div>
-
                         </a>
 
                     </div>
@@ -1562,28 +1552,18 @@
 
                     <section class="doc-footer-column">
 
-                        <h3>
-
-                            A Square L Innovate
-
-                        </h3>
+                        <h3>A Square L Innovate</h3>
 
                         <p>
-
-                            Building enterprise-ready digital products
-                            through a unified design system.
-
+                            Enterprise software, design systems and AI
+                            solutions built for modern organizations.
                         </p>
 
                     </section>
 
                     <section class="doc-footer-column">
 
-                        <h3>
-
-                            Documentation
-
-                        </h3>
+                        <h3>Documentation</h3>
 
                         <ul>
 
@@ -1591,9 +1571,9 @@
 
                             <li><a href="getting-started.html">Getting Started</a></li>
 
-                            <li><a href="components/buttons.html">Components</a></li>
+                            <li><a href="installation.html">Installation</a></li>
 
-                            <li><a href="guides/engineering.html">Engineering</a></li>
+                            <li><a href="components/buttons.html">Components</a></li>
 
                         </ul>
 
@@ -1601,11 +1581,7 @@
 
                     <section class="doc-footer-column">
 
-                        <h3>
-
-                            Resources
-
-                        </h3>
+                        <h3>Resources</h3>
 
                         <ul>
 
@@ -1621,16 +1597,10 @@
 
                     <section class="doc-footer-column">
 
-                        <h3>
-
-                            Version
-
-                        </h3>
+                        <h3>Version</h3>
 
                         <p>ASL Design System</p>
-
                         <p>Version 1.1 Stable</p>
-
                         <p>Built in Kano, Nigeria</p>
 
                     </section>
@@ -1661,7 +1631,7 @@
     </div>
 
     <!-- ========================================= -->
-    <!-- Live Regions -->
+    <!-- Accessibility Regions -->
     <!-- ========================================= -->
 
     <div

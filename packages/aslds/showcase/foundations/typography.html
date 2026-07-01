@@ -1,0 +1,2435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/foundations/typography.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Typography Foundation documentation.
+
+    Copyright © 2026
+    A Square L Innovate
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Typography Foundation documentation for the ASL Design System."
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Typography Foundation • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Navigation -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System Home"
+                >
+
+                    <strong>
+
+                        ASLDS
+
+                    </strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+
+                                Getting Started
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+
+                                Installation
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+
+                                Playground
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="typography.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Foundations
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button
+                        class="nav-search"
+                        type="button"
+                    >
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main Content -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Foundation
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Typography Foundation
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Build readable, accessible and consistent
+                                interfaces through a unified typography
+                                system.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Typography defines how information is
+                                presented throughout the A Square L
+                                Innovate ecosystem. From dashboards and
+                                documentation to forms and navigation,
+                                every text element follows a consistent
+                                scale, hierarchy and spacing strategy.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <a
+                                    href="#typography-philosophy"
+                                    class="btn btn-primary"
+                                >
+
+                                    Explore Typography
+
+                                </a>
+
+                                <a
+                                    href="#typography-tokens"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Tokens
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Typography Philosophy</li>
+                                    <li>Font Families</li>
+                                    <li>Heading Scale</li>
+                                    <li>Body Text</li>
+                                    <li>Typography Tokens</li>
+                                    <li>Accessibility</li>
+                                    <li>Best Practices</li>
+                                    <li>Examples</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Typography Philosophy -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="typography-philosophy"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Philosophy
+
+                        </span>
+
+                        <h2>
+
+                            Typography Philosophy
+
+                        </h2>
+
+                        <p>
+
+                            Typography is more than choosing a font. It
+                            establishes visual hierarchy, improves
+                            readability and creates a consistent user
+                            experience across every ASL application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Clarity
+
+                                </h3>
+
+                                <p>
+
+                                    Every text style is optimized for
+                                    readability regardless of device
+                                    size.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Shared typography tokens create a
+                                    predictable experience throughout
+                                    the design system.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Proper font sizes, spacing and
+                                    contrast improve readability for all
+                                    users.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Reading Experience -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="reading-experience"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Readability
+
+                        </span>
+
+                        <h2>
+
+                            Reading Experience
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <p>
+
+                                ASLDS typography emphasizes comfortable
+                                reading through balanced line lengths,
+                                consistent spacing, logical hierarchy and
+                                carefully selected font weights. Long
+                                content remains easy to scan while
+                                interface text stays compact and
+                                informative.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Font Families -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="font-families"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Fonts
+
+                        </span>
+
+                        <h2>
+
+                            Font Families
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Primary Font
+
+                                </h3>
+
+<pre><code>--font-family-base</code></pre>
+
+                                <p>
+
+                                    Used throughout the interface for
+                                    headings, body content and controls.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Monospace Font
+
+                                </h3>
+
+<pre><code>--font-family-mono</code></pre>
+
+                                <p>
+
+                                    Reserved for code samples, variables
+                                    and technical documentation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Font Stack -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="font-stack"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Stack
+
+                        </span>
+
+                        <h2>
+
+                            Font Stack
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>Primary Font
+
+↓
+
+System Font
+
+↓
+
+Sans-serif Fallback
+</code></pre>
+
+                            <p>
+
+                                ASLDS prioritizes performance by using
+                                an efficient fallback stack while
+                                maintaining consistent rendering across
+                                platforms.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Font Loading Strategy -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="font-loading"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Performance
+
+                        </span>
+
+                        <h2>
+
+                            Font Loading Strategy
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Load only required font files, use modern
+                        formats and always provide fallback fonts to
+                        reduce layout shifts and improve loading
+                        performance.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Heading Scale -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="heading-scale"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Hierarchy
+
+                        </span>
+
+                        <h2>
+
+                            Heading Scale (H1–H6)
+
+                        </h2>
+
+                        <p>
+
+                            Headings establish a clear visual hierarchy,
+                            making content easy to scan while maintaining
+                            consistency across every ASL application.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h1>Heading Level 1</h1>
+
+                            <h2>Heading Level 2</h2>
+
+                            <h3>Heading Level 3</h3>
+
+                            <h4>Heading Level 4</h4>
+
+                            <h5>Heading Level 5</h5>
+
+                            <h6>Heading Level 6</h6>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Display Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="display-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Display
+
+                        </span>
+
+                        <h2>
+
+                            Display Typography
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h1>
+
+                                Enterprise Design Systems
+
+                            </h1>
+
+                            <p>
+
+                                Display typography is reserved for hero
+                                sections, landing pages and high-impact
+                                marketing content.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Body Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="body-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Body Text
+
+                        </span>
+
+                        <h2>
+
+                            Body Typography
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <p>
+
+                                    Body typography forms the majority of
+                                    written content across the design
+                                    system. Comfortable line height,
+                                    moderate width and balanced spacing
+                                    improve reading performance.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Caption Text -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="caption-text"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Caption
+
+                        </span>
+
+                        <h2>
+
+                            Caption Text
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <small>
+
+                                Last updated 01 July 2026 • Version 1.1 Stable
+
+                            </small>
+
+                            <p>
+
+                                Captions communicate supporting
+                                information without competing with
+                                primary content.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Small Text -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="small-text"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Supporting Text
+
+                        </span>
+
+                        <h2>
+
+                            Small Text
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <small>
+
+                                Secondary information should remain
+                                readable while staying visually
+                                subordinate.
+
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Labels -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="labels"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Forms
+
+                        </span>
+
+                        <h2>
+
+                            Labels
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <label for="demo-email">
+
+                                Email Address
+
+                            </label>
+
+                            <input
+                                id="demo-email"
+                                type="email"
+                                placeholder="name@example.com"
+                            >
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- UI Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="ui-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Interface
+
+                        </span>
+
+                        <h2>
+
+                            UI Typography
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cards
+
+                                </h3>
+
+                                <p>
+
+                                    Card titles should clearly establish
+                                    information hierarchy while remaining
+                                    compact.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashboards
+
+                                </h3>
+
+                                <p>
+
+                                    Dashboard metrics prioritize clarity
+                                    through consistent sizing and
+                                    alignment.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Navigation Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="navigation-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Navigation
+
+                        </span>
+
+                        <h2>
+
+                            Navigation Typography
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <nav
+                                aria-label="Typography Example Navigation"
+                            >
+
+                                <a
+                                    href="#"
+                                    class="nav-link active"
+                                >
+
+                                    Home
+
+                                </a>
+
+                                <a
+                                    href="#"
+                                    class="nav-link"
+                                >
+
+                                    Components
+
+                                </a>
+
+                                <a
+                                    href="#"
+                                    class="nav-link"
+                                >
+
+                                    Documentation
+
+                                </a>
+
+                            </nav>
+
+                            <p>
+
+                                Navigation text should remain concise,
+                                readable and immediately recognizable.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Button Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="button-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Components
+
+                        </span>
+
+                        <h2>
+
+                            Button Typography
+
+                        </h2>
+
+                        <p>
+
+                            Button labels should be concise, action-oriented
+                            and immediately understandable.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <button class="btn btn-primary">
+
+                                    Create Project
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <button class="btn btn-secondary">
+
+                                    Save Changes
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <button class="btn btn-outline">
+
+                                    Learn More
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Form Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="form-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Forms
+
+                        </span>
+
+                        <h2>
+
+                            Form Typography
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <label for="full-name">
+
+                                Full Name
+
+                            </label>
+
+                            <input
+                                id="full-name"
+                                type="text"
+                                placeholder="Enter your full name"
+                            >
+
+                            <label for="email-address">
+
+                                Email Address
+
+                            </label>
+
+                            <input
+                                id="email-address"
+                                type="email"
+                                placeholder="name@example.com"
+                            >
+
+                            <small>
+
+                                Labels should clearly explain the expected
+                                input.
+
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Dashboard Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="dashboard-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Dashboard
+
+                        </span>
+
+                        <h2>
+
+                            Dashboard Typography
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Revenue
+
+                                </span>
+
+                                <h2>
+
+                                    $245,870
+
+                                </h2>
+
+                                <p>
+
+                                    Monthly performance overview.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Users
+
+                                </span>
+
+                                <h2>
+
+                                    18,420
+
+                                </h2>
+
+                                <p>
+
+                                    Active platform users.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Code Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="code-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer Experience
+
+                        </span>
+
+                        <h2>
+
+                            Code Typography
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;button class="btn btn-primary"&gt;
+    Create Project
+&lt;/button&gt;
+</code></pre>
+
+                            <p>
+
+                                Code examples use monospace typography
+                                to improve readability and preserve
+                                formatting.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Monospace Fonts -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="monospace-fonts"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Fonts
+
+                        </span>
+
+                        <h2>
+
+                            Monospace Fonts
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>--font-family-mono</code></pre>
+
+                            <p>
+
+                                Reserved for source code, configuration
+                                values, variables and technical
+                                documentation.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Typography Scale -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="typography-scale"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Scale
+
+                        </span>
+
+                        <h2>
+
+                            Font Sizes, Weights & Spacing
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Font Sizes
+
+                                </h3>
+
+<pre><code>--font-size-xs
+--font-size-sm
+--font-size-base
+--font-size-lg
+--font-size-xl
+</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Font Weights
+
+                                </h3>
+
+<pre><code>300
+400
+500
+600
+700
+800
+</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Line Heights
+
+                                </h3>
+
+<pre><code>Compact
+
+Default
+
+Comfortable
+
+Reading
+</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Letter Spacing
+
+                                </h3>
+
+                                <p>
+
+                                    Fine-tuned spacing improves heading
+                                    balance and reading comfort.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Text Alignment -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="text-alignment"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Alignment
+
+                        </span>
+
+                        <h2>
+
+                            Text Alignment
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <p>
+
+                                Left alignment is recommended for long
+                                passages because it provides the best
+                                reading experience.
+
+                            </p>
+
+                            <p>
+
+                                Center alignment should be limited to
+                                hero sections, headings and short
+                                marketing content.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Text Transform & Decoration -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="text-transform"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Utilities
+
+                        </span>
+
+                        <h2>
+
+                            Text Transform & Decorations
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Text Transform
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Uppercase</li>
+                                    <li>Lowercase</li>
+                                    <li>Capitalize</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Decorations
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Underline</li>
+                                    <li>Line-through</li>
+                                    <li>No Decoration</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Responsive Typography -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="responsive-typography"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Responsive
+
+                        </span>
+
+                        <h2>
+
+                            Responsive Typography
+
+                        </h2>
+
+                        <p>
+
+                            Typography scales naturally across desktop,
+                            tablet and mobile devices while preserving
+                            hierarchy, readability and comfortable line
+                            lengths.
+
+                        </p>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Use responsive typography tokens instead of
+                        fixed pixel values whenever possible.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Readability
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain comfortable line heights,
+                                    appropriate spacing and sufficient
+                                    font sizes for long-form content.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Contrast
+
+                                </h3>
+
+                                <p>
+
+                                    Typography should always satisfy
+                                    WCAG contrast recommendations against
+                                    its background.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- WCAG -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="wcag"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            WCAG
+
+                        </span>
+
+                        <h2>
+
+                            WCAG Typography Recommendations
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>Use semantic heading hierarchy.</li>
+
+                                <li>Never rely on color alone.</li>
+
+                                <li>Maintain readable paragraph widths.</li>
+
+                                <li>Avoid tiny text for essential content.</li>
+
+                                <li>Ensure keyboard accessibility.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Typography Tokens -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="typography-tokens"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Tokens
+
+                        </span>
+
+                        <h2>
+
+                            Typography Tokens
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>--font-family-base
+--font-family-mono
+
+--font-size-xs
+--font-size-sm
+--font-size-base
+--font-size-lg
+--font-size-xl
+
+--font-weight-light
+--font-weight-normal
+--font-weight-medium
+--font-weight-semibold
+--font-weight-bold
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- CSS Variables -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="css-reference"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Reference
+
+                        </span>
+
+                        <h2>
+
+                            CSS Variable Reference
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>font-family
+
+font-size
+
+font-weight
+
+line-height
+
+letter-spacing
+
+text-transform
+
+text-decoration
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="best-practices"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Recommended Practices
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>✓ Maintain heading hierarchy.</li>
+
+                                <li>✓ Use semantic HTML.</li>
+
+                                <li>✓ Reuse typography tokens.</li>
+
+                                <li>✓ Keep paragraphs readable.</li>
+
+                                <li>✓ Preserve consistent spacing.</li>
+
+                                <li>✓ Test typography on mobile devices.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Common Mistakes -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="common-mistakes"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Mistakes
+
+                        </span>
+
+                        <h2>
+
+                            Common Mistakes
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-warning">
+
+                        Avoid mixing arbitrary font sizes, skipping
+                        heading levels or using decorative fonts for
+                        body content.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- FAQ -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="faq"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            FAQ
+
+                        </span>
+
+                        <h2>
+
+                            Frequently Asked Questions
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Can I use another font?
+
+                                </h3>
+
+                                <p>
+
+                                    Yes. Override typography tokens
+                                    within your project instead of
+                                    modifying the ASLDS framework.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Why use typography tokens?
+
+                                </h3>
+
+                                <p>
+
+                                    Tokens ensure consistency, easier
+                                    maintenance and future theme support.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Navigation -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="documentation-navigation"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Reading
+
+                        </span>
+
+                        <h2>
+
+                            Documentation Navigation
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="colors.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ← Colors
+
+                                </h3>
+
+                                <p>
+
+                                    Return to the Color Foundation.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="spacing.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Spacing →
+
+                                </h3>
+
+                                <p>
+
+                                    Continue to the Spacing Foundation.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer doc-footer">
+
+            <div class="container">
+
+                <div class="doc-footer-grid">
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            A Square L Innovate
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise UI systems built for consistency,
+                            accessibility and scalability.
+
+                        </p>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>ASL Design System</p>
+                        <p>Version 1.1 Stable</p>
+                        <p>© 2026 A Square L Innovate</p>
+
+                    </section>
+
+                </div>
+
+                <div class="doc-footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate.
+                        All rights reserved.
+
+                    </p>
+
+                    <p>
+
+                        ASL Design System • Version 1.1 Stable
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- Accessibility Regions -->
+
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <section id="toast-region" aria-live="polite"></section>
+
+    <dialog id="modal-root"></dialog>
+
+    <!-- JavaScript -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

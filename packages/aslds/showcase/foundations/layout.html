@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/foundations/layout.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Layout Foundation Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Layout Foundation documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Layout, Grid, Flexbox, CSS Grid, Responsive Design, Containers"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Layout Foundation • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>
+
+                        ASLDS
+
+                    </strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+
+                                Getting Started
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+
+                                Installation
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+
+                                Playground
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="layout.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Foundations
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="colors.html">
+
+                            Foundations
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Layout
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Foundation
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Layout
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Build responsive layouts with the ASLDS
+                                layout system.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Every ASLDS application is built on a
+                                responsive layout foundation that combines
+                                flexible containers, grid systems,
+                                consistent spacing and mobile-first
+                                engineering principles. The layout system
+                                provides a predictable structure that
+                                scales seamlessly from small mobile
+                                devices to enterprise desktop dashboards.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <a
+                                    href="#introduction"
+                                    class="btn btn-primary"
+                                >
+
+                                    Learn Layout
+
+                                </a>
+
+                                <a
+                                    href="#grid-system"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Grid
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+
+                                    <li>Containers</li>
+
+                                    <li>Grid System</li>
+
+                                    <li>Flex Utilities</li>
+
+                                    <li>CSS Grid</li>
+
+                                    <li>Breakpoints</li>
+
+                                    <li>Utilities</li>
+
+                                    <li>Best Practices</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Layout Philosophy
+
+                        </h2>
+
+                        <p>
+
+                            The ASLDS layout system establishes a
+                            consistent structure for every application.
+                            It encourages reusable patterns, predictable
+                            spacing and responsive behaviour while
+                            keeping implementation simple for developers.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    12-Column Grid
+
+                                </h3>
+
+                                <p>
+
+                                    Flexible layouts are built on a
+                                    responsive twelve-column grid that
+                                    adapts across all supported screen
+                                    sizes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Containers
+
+                                </h3>
+
+                                <p>
+
+                                    Containers maintain readable content
+                                    widths while preserving comfortable
+                                    spacing on every device.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Flexbox Utilities
+
+                                </h3>
+
+                                <p>
+
+                                    Utility helpers simplify alignment,
+                                    distribution and ordering without
+                                    custom CSS.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    CSS Grid
+
+                                </h3>
+
+                                <p>
+
+                                    Grid utilities make complex layouts
+                                    responsive while reducing repetitive
+                                    styling.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistent Spacing
+
+                                </h3>
+
+                                <p>
+
+                                    Every layout follows the official
+                                    spacing scale to create predictable
+                                    visual rhythm.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Mobile-First
+
+                                </h3>
+
+                                <p>
+
+                                    Components are designed for smaller
+                                    screens first and progressively
+                                    enhanced for larger viewports.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Containers -->
+            <!-- ========================================= -->
+
+            <section
+                id="containers"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Containers
+
+                        </span>
+
+                        <h2>
+
+                            Responsive Containers
+
+                        </h2>
+
+                        <p>
+
+                            Containers define the maximum readable width
+                            of page content while maintaining consistent
+                            horizontal spacing across every viewport.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    .container-sm
+
+                                </h3>
+
+                                <p>
+
+                                    Compact layouts for authentication,
+                                    documentation panels and narrow
+                                    reading experiences.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    .container
+
+                                </h3>
+
+                                <p>
+
+                                    Default container used throughout the
+                                    ASL Design System.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    .container-lg
+
+                                </h3>
+
+                                <p>
+
+                                    Wider layouts suitable for dashboards,
+                                    documentation and enterprise
+                                    interfaces.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    .container-xl
+
+                                </h3>
+
+                                <p>
+
+                                    Maximum-width container designed for
+                                    complex layouts and large displays.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Live Preview
+
+                            </h3>
+
+                            <div class="card-grid">
+
+                                <div class="card">
+
+                                    <div class="card-body">
+
+                                        Small Container
+
+                                    </div>
+
+                                </div>
+
+                                <div class="card">
+
+                                    <div class="card-body">
+
+                                        Standard Container
+
+                                    </div>
+
+                                </div>
+
+                                <div class="card">
+
+                                    <div class="card-body">
+
+                                        Large Container
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                HTML Example
+
+                            </h3>
+
+<pre><code>&lt;section&gt;
+    &lt;div class="container"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Grid System -->
+            <!-- ========================================= -->
+
+            <section
+                id="grid-system"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Grid
+
+                        </span>
+
+                        <h2>
+
+                            Responsive Grid System
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS layouts are built using flexible CSS
+                            Grid utilities that automatically adapt to
+                            available screen space.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Grid Fundamentals
+
+                            </h3>
+
+                            <ul>
+
+                                <li>
+
+                                    Twelve-column layout philosophy
+
+                                </li>
+
+                                <li>
+
+                                    Responsive column collapse
+
+                                </li>
+
+                                <li>
+
+                                    Consistent gap utilities
+
+                                </li>
+
+                                <li>
+
+                                    Mobile-first implementation
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Two Columns
+
+                                </h3>
+
+                                <div class="card-grid">
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+
+                                            Column One
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+
+                                            Column Two
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Three Columns
+
+                                </h3>
+
+                                <div class="card-grid">
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+
+                                            One
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+
+                                            Two
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+
+                                            Three
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Four Columns
+
+                                </h3>
+
+                                <div class="card-grid">
+
+                                    <div class="card"><div class="card-body">1</div></div>
+                                    <div class="card"><div class="card-body">2</div></div>
+                                    <div class="card"><div class="card-body">3</div></div>
+                                    <div class="card"><div class="card-body">4</div></div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Responsive Behaviour
+
+                            </h3>
+
+                            <p>
+
+                                Grid layouts automatically collapse into
+                                fewer columns on tablets and eventually a
+                                single-column layout on mobile devices to
+                                maximise readability.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Grid Source Code
+
+                            </h3>
+
+<pre><code>&lt;div class="card-grid"&gt;
+
+    &lt;article class="card"&gt;...&lt;/article&gt;
+
+    &lt;article class="card"&gt;...&lt;/article&gt;
+
+    &lt;article class="card"&gt;...&lt;/article&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Flex Utilities -->
+            <!-- ========================================= -->
+
+            <section
+                id="flex-utilities"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Flexbox
+
+                        </span>
+
+                        <h2>
+
+                            Flex Utilities
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS provides reusable flexbox utilities for
+                            alignment, spacing and responsive layouts
+                            without writing custom CSS.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    justify-content
+
+                                </h3>
+
+                                <div class="hero-actions">
+
+                                    <button class="btn btn-primary">
+
+                                        Start
+
+                                    </button>
+
+                                    <button class="btn btn-secondary">
+
+                                        Center
+
+                                    </button>
+
+                                    <button class="btn btn-outline">
+
+                                        End
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    align-items
+
+                                </h3>
+
+                                <p>
+
+                                    Align content vertically for cards,
+                                    navigation, dashboards and forms.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    flex-wrap
+
+                                </h3>
+
+                                <p>
+
+                                    Components wrap naturally across
+                                    smaller devices while maintaining
+                                    spacing consistency.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Example
+
+                            </h3>
+
+<pre><code>&lt;div class="hero-actions"&gt;
+
+    &lt;button class="btn btn-primary"&gt;
+        Save
+    &lt;/button&gt;
+
+    &lt;button class="btn btn-secondary"&gt;
+        Preview
+    &lt;/button&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- CSS Grid Utilities -->
+            <!-- ========================================= -->
+
+            <section
+                id="css-grid"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            CSS Grid
+
+                        </span>
+
+                        <h2>
+
+                            Grid Utilities
+
+                        </h2>
+
+                        <p>
+
+                            Grid helpers simplify responsive layouts by
+                            automatically adapting to different viewport
+                            widths.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    grid-2
+
+                                </h3>
+
+                                <p>
+
+                                    Two responsive columns.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    grid-3
+
+                                </h3>
+
+                                <p>
+
+                                    Three-column responsive layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    grid-4
+
+                                </h3>
+
+                                <p>
+
+                                    Four-column dashboard layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    grid-auto
+
+                                </h3>
+
+                                <p>
+
+                                    Automatically fits available space.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;div class="card-grid"&gt;
+
+    &lt;article class="card"&gt;...&lt;/article&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Responsive Breakpoints -->
+            <!-- ========================================= -->
+
+            <section
+                id="breakpoints"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Responsive
+
+                        </span>
+
+                        <h2>
+
+                            Breakpoints
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <table class="table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>Breakpoint</th>
+
+                                        <th>Minimum Width</th>
+
+                                        <th>Purpose</th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>Mobile</td>
+
+                                        <td>0px</td>
+
+                                        <td>Phones</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>Tablet</td>
+
+                                        <td>576px</td>
+
+                                        <td>Tablets</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>Laptop</td>
+
+                                        <td>768px</td>
+
+                                        <td>Small laptops</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>Desktop</td>
+
+                                        <td>992px</td>
+
+                                        <td>Desktop layouts</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>Wide</td>
+
+                                        <td>1440px</td>
+
+                                        <td>Large displays</td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Layout Utilities -->
+            <!-- ========================================= -->
+
+            <section
+                id="layout-utilities"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Utilities
+
+                        </span>
+
+                        <h2>
+
+                            Layout Utilities
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Width Utilities
+
+                                </h3>
+
+                                <p>
+
+                                    Control responsive element widths
+                                    using reusable utility classes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Height Utilities
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain consistent component heights
+                                    throughout layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Overflow
+
+                                </h3>
+
+                                <p>
+
+                                    Manage scrollable content and clipping
+                                    behavior.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Position & Z-Index
+
+                                </h3>
+
+                                <p>
+
+                                    Build layered interfaces while
+                                    preserving stacking order.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Display Helpers
+
+                                </h3>
+
+                                <p>
+
+                                    Quickly switch between block, flex,
+                                    grid and hidden states.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Visibility Helpers
+
+                                </h3>
+
+                                <p>
+
+                                    Show or hide content responsibly
+                                    across breakpoints.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Engineering
+
+                        </span>
+
+                        <h2>
+
+                            Best Practices
+
+                        </h2>
+
+                        <p>
+
+                            Following these recommendations helps keep
+                            layouts maintainable, scalable and consistent
+                            across every ASLDS application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Use official containers.</li>
+                                    <li>Maintain consistent spacing.</li>
+                                    <li>Use semantic HTML layouts.</li>
+                                    <li>Prefer ASLDS utility classes.</li>
+                                    <li>Avoid deeply nested grids.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Mix Grid and Flex unnecessarily.</li>
+                                    <li>Hard-code spacing values.</li>
+                                    <li>Break responsive layouts.</li>
+                                    <li>Use fixed widths for pages.</li>
+                                    <li>Duplicate layout utilities.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <div class="alert alert-info">
+
+                        <strong>
+
+                            Engineering Note
+
+                        </strong>
+
+                        <p>
+
+                            Build layouts from reusable foundations rather
+                            than page-specific CSS. This keeps every
+                            application visually consistent and greatly
+                            simplifies maintenance.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Foundations -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-foundations"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Learning
+
+                        </span>
+
+                        <h2>
+
+                            Related Foundations
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="typography.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Typography
+
+                                </h3>
+
+                                <p>
+
+                                    Learn how typography works with the
+                                    layout system.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="spacing.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Spacing
+
+                                </h3>
+
+                                <p>
+
+                                    Build predictable interfaces using
+                                    spacing tokens.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="shadows.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Shadows
+
+                                </h3>
+
+                                <p>
+
+                                    Apply elevation consistently across
+                                    components.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="borders.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Borders
+
+                                </h3>
+
+                                <p>
+
+                                    Create clear visual separation using
+                                    border tokens.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise UI framework for modern responsive
+                            applications.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Components
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../components/buttons.html">Buttons</a></li>
+                            <li><a href="../components/cards.html">Cards</a></li>
+                            <li><a href="../components/forms.html">Forms</a></li>
+                            <li><a href="../components/navbar.html">Navbar</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            © 2026 A Square L Innovate
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+<script type="module" src="../../js/navbar.js"></script>
+
+</body>
+
+</html>

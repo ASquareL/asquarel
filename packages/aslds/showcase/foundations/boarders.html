@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/foundations/borders.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Border Foundation Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Border Foundation documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Borders, Border Radius, Dividers, Design Tokens, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Borders • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+                                Getting Started
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+                                Installation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+                                Playground
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="borders.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                Foundations
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="colors.html">
+
+                            Foundations
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Borders
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Foundation
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Borders
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Define structure, separation and visual
+                                consistency using the ASL Design System
+                                border foundation.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Borders are essential for grouping
+                                content, creating component boundaries and
+                                improving accessibility. ASLDS provides a
+                                consistent set of border widths, radius
+                                tokens, outline styles and semantic border
+                                colors to ensure every interface feels
+                                cohesive across products.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy CSS Variable
+
+                                </button>
+
+                                <button class="btn btn-secondary">
+
+                                    Border Tokens
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Border Widths</li>
+                                    <li>Border Radius</li>
+                                    <li>Border Styles</li>
+                                    <li>Border Colors</li>
+                                    <li>Component Examples</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Introduction
+
+                        </span>
+
+                        <h2>
+
+                            Structure Through Borders
+
+                        </h2>
+
+                        <p>
+
+                            Borders help organize interfaces by separating
+                            content, defining interactive regions and
+                            improving readability. Combined with spacing,
+                            elevation and color, borders establish a clear
+                            visual hierarchy while maintaining accessible
+                            experiences across desktop and mobile
+                            interfaces.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Separation
+
+                                </h3>
+
+                                <p>
+
+                                    Distinguish related content without
+                                    unnecessary visual clutter.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Borders reinforce focus, grouping and
+                                    interactive states alongside color and
+                                    elevation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Reusable border tokens ensure every
+                                    ASLDS application follows the same
+                                    visual language.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Border Width Tokens -->
+            <!-- ========================================= -->
+
+            <section
+                id="border-width"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Design Tokens
+
+                        </span>
+
+                        <h2>
+
+                            Border Width Tokens
+
+                        </h2>
+
+                        <p>
+
+                            Border widths establish consistent visual
+                            separation across every ASLDS component. Use
+                            these predefined tokens instead of arbitrary
+                            pixel values.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    None
+
+                                </h3>
+
+                                <p><strong>Variable</strong></p>
+
+                                <code>--border-none</code>
+
+                                <p>No visible border.</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Hairline
+
+                                </h3>
+
+                                <p><strong>Variable</strong></p>
+
+                                <code>--border-hairline</code>
+
+                                <p>Subtle separators and dividers.</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Thin
+
+                                </h3>
+
+                                <p><strong>Variable</strong></p>
+
+                                <code>--border-thin</code>
+
+                                <p>Default component borders.</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Medium
+
+                                </h3>
+
+                                <p><strong>Variable</strong></p>
+
+                                <code>--border-medium</code>
+
+                                <p>Highlighted surfaces.</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Thick
+
+                                </h3>
+
+                                <p><strong>Variable</strong></p>
+
+                                <code>--border-thick</code>
+
+                                <p>Feature highlights and emphasis.</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Border Radius Tokens -->
+            <!-- ========================================= -->
+
+            <section
+                id="border-radius"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Radius System
+
+                        </span>
+
+                        <h2>
+
+                            Border Radius Tokens
+
+                        </h2>
+
+                        <p>
+
+                            Radius tokens maintain consistent corner
+                            treatment throughout the design system.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>None</h3>
+                                <code>--radius-none</code>
+                                <p>Square corners.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>XS</h3>
+                                <code>--radius-xs</code>
+                                <p>Compact UI elements.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>SM</h3>
+                                <code>--radius-sm</code>
+                                <p>Inputs and controls.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>MD</h3>
+                                <code>--radius-md</code>
+                                <p>Default cards.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>LG</h3>
+                                <code>--radius-lg</code>
+                                <p>Feature cards.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>XL</h3>
+                                <code>--radius-xl</code>
+                                <p>Hero panels.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>2XL</h3>
+                                <code>--radius-2xl</code>
+                                <p>Large containers.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Full</h3>
+                                <code>--radius-full</code>
+                                <p>Pill buttons.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Circle</h3>
+                                <code>50%</code>
+                                <p>Avatar components.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Border Styles -->
+            <!-- ========================================= -->
+
+            <section
+                id="border-styles"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Styles
+
+                        </span>
+
+                        <h2>
+
+                            Border Styles
+
+                        </h2>
+
+                        <p>
+
+                            Different border styles provide additional
+                            visual meaning while remaining consistent with
+                            the ASLDS foundation.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Solid
+
+                                </h3>
+
+                                <p>
+
+                                    Standard component borders.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashed
+
+                                </h3>
+
+                                <p>
+
+                                    Upload zones and placeholders.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dotted
+
+                                </h3>
+
+                                <p>
+
+                                    Secondary separators.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Double
+
+                                </h3>
+
+                                <p>
+
+                                    Decorative emphasis used sparingly.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Border Colors -->
+            <!-- ========================================= -->
+
+            <section
+                id="border-colors"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Semantic Colors
+
+                        </span>
+
+                        <h2>
+
+                            Border Colors
+
+                        </h2>
+
+                        <p>
+
+                            Semantic border colors communicate status,
+                            emphasis and interaction while remaining
+                            consistent with the ASLDS color foundation.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <span class="badge">Primary</span>
+                                <h3>Primary Border</h3>
+                                <p>Default interactive elements.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <span class="badge">Secondary</span>
+                                <h3>Secondary Border</h3>
+                                <p>Supporting interface elements.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <span class="badge">Success</span>
+                                <h3>Success Border</h3>
+                                <p>Confirmation and completed states.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <span class="badge">Warning</span>
+                                <h3>Warning Border</h3>
+                                <p>Requires user attention.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <span class="badge">Danger</span>
+                                <h3>Danger Border</h3>
+                                <p>Errors and destructive actions.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <span class="badge">Neutral</span>
+                                <h3>Neutral Border</h3>
+                                <p>General interface structure.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <span class="badge">Surface</span>
+                                <h3>Surface Border</h3>
+                                <p>Separates adjacent surfaces.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Component Examples -->
+            <!-- ========================================= -->
+
+            <section
+                id="component-examples"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Components
+
+                        </span>
+
+                        <h2>
+
+                            Border Usage Across Components
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Cards</h3>
+                                <p>Subtle borders improve content grouping.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Buttons</h3>
+                                <button class="btn btn-outline">
+                                    Outline Button
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Inputs</h3>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Example input"
+                                >
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Tables</h3>
+                                <p>
+                                    Borders separate rows and columns for
+                                    improved readability.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Alerts</h3>
+                                <div class="alert alert-info">
+                                    Informational alert example.
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Navigation</h3>
+                                <p>
+                                    Navigation borders distinguish sections
+                                    while remaining unobtrusive.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Badges</h3>
+                                <span class="badge">
+                                    Status Badge
+                                </span>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Dividers -->
+            <!-- ========================================= -->
+
+            <section
+                id="dividers"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Dividers
+
+                        </span>
+
+                        <h2>
+
+                            Divider Examples
+
+                        </h2>
+
+                        <p>
+
+                            Dividers separate content while maintaining
+                            rhythm and reducing visual clutter.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Horizontal Divider</h3>
+                                <hr>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Vertical Divider</h3>
+                                <p>
+                                    Used between navigation items and toolbars.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Section Divider</h3>
+                                <p>
+                                    Separates large documentation sections.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Decorative Divider</h3>
+                                <p>
+                                    Reserved for visual emphasis only.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Notes
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Focus Outlines</h3>
+                                <p>
+                                    Never remove keyboard focus indicators.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Contrast</h3>
+                                <p>
+                                    Borders should meet recommended contrast
+                                    ratios against surrounding surfaces.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Keyboard Navigation</h3>
+                                <p>
+                                    Ensure focused elements remain clearly
+                                    distinguishable.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>High Contrast</h3>
+                                <p>
+                                    Interfaces should remain usable with
+                                    operating system high-contrast modes.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Recommendations
+
+                        </span>
+
+                        <h2>
+
+                            Best Practices
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>Do</h3>
+
+                                <ul>
+
+                                    <li>Use official border tokens.</li>
+                                    <li>Maintain consistent corner radius.</li>
+                                    <li>Keep widths predictable.</li>
+                                    <li>Use borders to reinforce hierarchy.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>Don't</h3>
+
+                                <ul>
+
+                                    <li>Mix arbitrary border widths.</li>
+                                    <li>Overuse decorative borders.</li>
+                                    <li>Combine too many radius values.</li>
+                                    <li>Replace spacing with borders.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer Usage
+
+                        </span>
+
+                        <h2>
+
+                            Using Border Tokens
+
+                        </h2>
+
+                        <p>
+
+                            Always reference ASLDS design tokens instead
+                            of hardcoding border values. This keeps every
+                            application visually consistent and simplifies
+                            maintenance.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    HTML Example
+
+                                </h3>
+
+<pre><code>&lt;div class="card"&gt;
+    ...
+&lt;/div&gt;
+</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    CSS Example
+
+                                </h3>
+
+<pre><code>.card{
+
+    border:var(--border-thin)
+           solid
+           var(--border-color);
+
+    border-radius:var(--radius-md);
+
+}
+</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Foundations -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-foundations"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Learning
+
+                        </span>
+
+                        <h2>
+
+                            Related Foundation Pages
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="shadows.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Shadows
+
+                                </h3>
+
+                                <p>
+
+                                    Learn how elevation complements borders
+                                    to create visual hierarchy.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="icons.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Icons
+
+                                </h3>
+
+                                <p>
+
+                                    Discover consistent iconography across
+                                    the ASL Design System.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="animations.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Animations
+
+                                </h3>
+
+                                <p>
+
+                                    Combine borders with motion to create
+                                    engaging user experiences.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Documentation Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="shadows.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous: Shadows
+
+                        </a>
+
+                        <a
+                            href="icons.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next: Icons →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise UI framework for modern responsive
+                            applications.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Components
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../components/buttons.html">Buttons</a></li>
+                            <li><a href="../components/cards.html">Cards</a></li>
+                            <li><a href="../components/forms.html">Forms</a></li>
+                            <li><a href="../components/navbar.html">Navbar</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            ASL Design System
+
+                        </p>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            © 2026 A Square L Innovate
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

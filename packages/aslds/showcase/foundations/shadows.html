@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/foundations/shadows.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Shadow Foundation Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Shadow Foundation documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Shadows, Elevation, Surface, Design Tokens, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Shadows • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+                                Getting Started
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+                                Installation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+                                Playground
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="shadows.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                Foundations
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="colors.html">
+
+                            Foundations
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Shadows
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Foundation
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Shadows
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Elevation creates hierarchy, focus and
+                                depth while preserving clarity and
+                                accessibility across every ASLDS
+                                interface.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                The ASL Design System shadow foundation
+                                provides a consistent elevation scale for
+                                surfaces, cards, overlays, menus,
+                                navigation and dialogs. Every shadow is
+                                implemented through reusable design
+                                tokens, ensuring visual consistency across
+                                applications and themes.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy CSS Variable
+
+                                </button>
+
+                                <button class="btn btn-secondary">
+
+                                    Shadow Tokens
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Shadow Scale</li>
+                                    <li>Elevation</li>
+                                    <li>Dark Mode</li>
+                                    <li>Colored Shadows</li>
+                                    <li>Interactive States</li>
+                                    <li>Best Practices</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Introduction
+
+                        </span>
+
+                        <h2>
+
+                            Elevation & Visual Hierarchy
+
+                        </h2>
+
+                        <p>
+
+                            Shadows communicate depth without relying on
+                            heavy borders or unnecessary decoration. They
+                            help users identify interactive elements,
+                            understand interface hierarchy and distinguish
+                            floating surfaces from the page background.
+                            ASLDS uses a carefully balanced elevation
+                            scale to keep interfaces clean, accessible and
+                            visually consistent.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Visual Hierarchy
+
+                                </h3>
+
+                                <p>
+
+                                    Elevation helps users understand which
+                                    components deserve immediate
+                                    attention.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Shadows complement contrast instead of
+                                    replacing it, ensuring interfaces
+                                    remain understandable for all users.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Every elevation level is defined by
+                                    reusable design tokens shared across
+                                    the framework.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Shadow Scale -->
+            <!-- ========================================= -->
+
+            <section
+                id="shadow-scale"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Shadow Tokens
+
+                        </span>
+
+                        <h2>
+
+                            Shadow Scale
+
+                        </h2>
+
+                        <p>
+
+                            Every elevation level within ASLDS is defined
+                            as a reusable design token. Components should
+                            always reference these variables instead of
+                            creating custom shadow values.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>None</h3>
+
+                                <p><strong>Token:</strong> None</p>
+
+                                <p><code>--shadow-none</code></p>
+
+                                <p>No elevation</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>XS</h3>
+
+                                <p><strong>Token:</strong> XS</p>
+
+                                <p><code>--shadow-xs</code></p>
+
+                                <p>Subtle elevation</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>SM</h3>
+
+                                <p><strong>Token:</strong> SM</p>
+
+                                <p><code>--shadow-sm</code></p>
+
+                                <p>Buttons & badges</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>MD</h3>
+
+                                <p><strong>Token:</strong> MD</p>
+
+                                <p><code>--shadow-md</code></p>
+
+                                <p>Cards</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>LG</h3>
+
+                                <p><strong>Token:</strong> LG</p>
+
+                                <p><code>--shadow-lg</code></p>
+
+                                <p>Navigation panels</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>XL</h3>
+
+                                <p><strong>Token:</strong> XL</p>
+
+                                <p><code>--shadow-xl</code></p>
+
+                                <p>Dropdowns</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>2XL</h3>
+
+                                <p><strong>Token:</strong> 2XL</p>
+
+                                <p><code>--shadow-2xl</code></p>
+
+                                <p>Dialogs & overlays</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>Inner Shadow</h3>
+
+                                <p><strong>Token:</strong> Inner</p>
+
+                                <p><code>--shadow-inner</code></p>
+
+                                <p>Inset surfaces</p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Elevation Guidelines -->
+            <!-- ========================================= -->
+
+            <section
+                id="elevation-guidelines"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Usage
+
+                        </span>
+
+                        <h2>
+
+                            Elevation Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Choose the lowest elevation that clearly
+                            communicates hierarchy. Excessive shadows
+                            reduce clarity and create unnecessary visual
+                            noise.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Background Surfaces
+
+                                </h3>
+
+                                <p>
+
+                                    Usually use no shadow or the smallest
+                                    available elevation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cards
+
+                                </h3>
+
+                                <p>
+
+                                    Medium shadows separate grouped
+                                    content from surrounding layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dropdowns
+
+                                </h3>
+
+                                <p>
+
+                                    Larger elevation helps floating menus
+                                    remain distinguishable.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Sticky navigation benefits from subtle
+                                    elevation to remain visible.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Floating Panels
+
+                                </h3>
+
+                                <p>
+
+                                    Floating utility panels should appear
+                                    clearly above surrounding content.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dialogs & Modals
+
+                                </h3>
+
+                                <p>
+
+                                    Highest elevation level reserved for
+                                    important modal interactions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Light vs Dark Mode -->
+            <!-- ========================================= -->
+
+            <section
+                id="light-dark"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Theme Support
+
+                        </span>
+
+                        <h2>
+
+                            Light &amp; Dark Mode
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS shadow tokens automatically complement
+                            both light and dark themes. Shadows remain
+                            subtle while preserving sufficient separation
+                            between surfaces in every interface.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Light Theme
+
+                                </h3>
+
+                                <p>
+
+                                    Uses softer shadows to create natural
+                                    depth against bright backgrounds.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dark Theme
+
+                                </h3>
+
+                                <p>
+
+                                    Combines reduced opacity with subtle
+                                    highlights to preserve visual
+                                    hierarchy without excessive contrast.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Colored Shadows -->
+            <!-- ========================================= -->
+
+            <section
+                id="colored-shadows"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Colored Shadow Examples
+
+                        </h2>
+
+                        <p>
+
+                            Colored shadows should be used sparingly to
+                            reinforce brand identity or communicate
+                            semantic meaning.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Primary
+
+                                </span>
+
+                                <h3>
+
+                                    Brand Elevation
+
+                                </h3>
+
+                                <p>
+
+                                    Reinforces important brand actions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Success
+
+                                </span>
+
+                                <h3>
+
+                                    Success Shadow
+
+                                </h3>
+
+                                <p>
+
+                                    Suitable for confirmations and
+                                    positive outcomes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Warning
+
+                                </span>
+
+                                <h3>
+
+                                    Warning Shadow
+
+                                </h3>
+
+                                <p>
+
+                                    Draws attention without becoming
+                                    visually overwhelming.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Danger
+
+                                </span>
+
+                                <h3>
+
+                                    Error Shadow
+
+                                </h3>
+
+                                <p>
+
+                                    Reserved for destructive actions and
+                                    critical interface states.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Interactive States -->
+            <!-- ========================================= -->
+
+            <section
+                id="interactive"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Interaction
+
+                        </span>
+
+                        <h2>
+
+                            Interactive Elevation
+
+                        </h2>
+
+                        <p>
+
+                            Elevation changes communicate interaction,
+                            focus and movement while preserving visual
+                            consistency.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Hover Elevation
+
+                                </h3>
+
+                                <button class="btn btn-primary">
+
+                                    Hover Button
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Active Press
+
+                                </h3>
+
+                                <button class="btn btn-secondary">
+
+                                    Active Button
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Focus State
+
+                                </h3>
+
+                                <button class="btn btn-outline">
+
+                                    Keyboard Focus
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Floating Action
+
+                                </h3>
+
+                                <button class="btn btn-primary">
+
+                                    +
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Guidance
+
+                        </span>
+
+                        <h2>
+
+                            Best Practices
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Use official shadow tokens.</li>
+                                    <li>Increase elevation gradually.</li>
+                                    <li>Combine shadows with spacing.</li>
+                                    <li>Keep hierarchy consistent.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Create arbitrary shadows.</li>
+                                    <li>Stack multiple shadows excessively.</li>
+                                    <li>Replace contrast with shadows.</li>
+                                    <li>Overuse colored elevation.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Shadows should reinforce visual
+                                    hierarchy but never become the only
+                                    indicator of interaction or focus.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Performance
+
+                                </h3>
+
+                                <p>
+
+                                    Prefer reusable design tokens instead
+                                    of large custom shadow definitions to
+                                    keep rendering efficient.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer Usage
+
+                        </span>
+
+                        <h2>
+
+                            Using Shadow Tokens
+
+                        </h2>
+
+                        <p>
+
+                            Always reference the official ASLDS shadow
+                            variables instead of defining custom box-shadow
+                            values. This guarantees visual consistency
+                            across every application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    HTML Example
+
+                                </h3>
+
+<pre><code>&lt;article class="card"&gt;
+
+    ...
+
+&lt;/article&gt;
+</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    CSS Variable
+
+                                </h3>
+
+<pre><code>.card{
+
+    box-shadow:var(--shadow-md);
+
+}
+</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Foundations -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-foundations"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Learning
+
+                        </span>
+
+                        <h2>
+
+                            Related Foundations
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="layout.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Layout
+
+                                </h3>
+
+                                <p>
+
+                                    Build responsive interfaces using the
+                                    ASLDS layout system.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="borders.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Borders
+
+                                </h3>
+
+                                <p>
+
+                                    Learn how borders define structure and
+                                    separation.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="animations.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Animations
+
+                                </h3>
+
+                                <p>
+
+                                    Combine elevation with motion for more
+                                    engaging interactions.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Documentation Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="layout.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous: Layout
+
+                        </a>
+
+                        <a
+                            href="borders.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next: Borders →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise UI framework for modern responsive
+                            applications.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Components
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../components/buttons.html">Buttons</a></li>
+                            <li><a href="../components/cards.html">Cards</a></li>
+                            <li><a href="../components/forms.html">Forms</a></li>
+                            <li><a href="../components/navbar.html">Navbar</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            ASL Design System
+
+                        </p>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            © 2026 A Square L Innovate
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

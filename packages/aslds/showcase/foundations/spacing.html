@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/foundations/spacing.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Spacing Foundation Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Spacing Foundation documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Spacing, Layout, Margin, Padding, Gap, Design System"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Spacing Foundation • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Navigation -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+
+                                Getting Started
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+
+                                Installation
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+
+                                Playground
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="spacing.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Foundations
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main Content -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav
+                        aria-label="Breadcrumb"
+                    >
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="colors.html">
+
+                            Foundations
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Spacing
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Foundation
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Spacing
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Consistent spacing creates professional,
+                                predictable and highly readable user
+                                interfaces across the entire A Square L
+                                Innovate ecosystem.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Every margin, padding, gap and layout
+                                spacing value in ASLDS is based on a
+                                unified spacing scale. Following this
+                                scale ensures visual rhythm, alignment,
+                                maintainability and responsive
+                                consistency throughout applications.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <a
+                                    href="#spacing-scale"
+                                    class="btn btn-primary"
+                                >
+
+                                    Explore Scale
+
+                                </a>
+
+                                <a
+                                    href="#best-practices"
+                                    class="btn btn-secondary"
+                                >
+
+                                    Best Practices
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Spacing Philosophy</li>
+
+                                    <li>Spacing Scale</li>
+
+                                    <li>Margin Utilities</li>
+
+                                    <li>Padding Utilities</li>
+
+                                    <li>Gap Utilities</li>
+
+                                    <li>Responsive Spacing</li>
+
+                                    <li>Layout Examples</li>
+
+                                    <li>Developer Notes</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Spacing Philosophy -->
+            <!-- ========================================= -->
+
+            <section
+                id="spacing-philosophy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Philosophy
+
+                        </span>
+
+                        <h2>
+
+                            Why Spacing Matters
+
+                        </h2>
+
+                        <p>
+
+                            Spacing is one of the most influential
+                            foundations of interface design. Consistent
+                            spacing improves readability, reinforces
+                            hierarchy, reduces visual clutter and creates
+                            a polished user experience. Rather than using
+                            arbitrary values, ASLDS defines a structured
+                            spacing system that every component follows.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Visual Rhythm
+
+                                </h3>
+
+                                <p>
+
+                                    Consistent spacing creates a natural
+                                    flow that guides users through
+                                    content without distraction.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Predictability
+
+                                </h3>
+
+                                <p>
+
+                                    Designers and developers can build
+                                    layouts faster when every spacing
+                                    decision follows the same scale.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Maintainability
+
+                                </h3>
+
+                                <p>
+
+                                    Reusing spacing tokens simplifies
+                                    maintenance and keeps large projects
+                                    visually consistent.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Consistent Rhythm -->
+            <!-- ========================================= -->
+
+            <section
+                id="consistent-rhythm"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Rhythm
+
+                        </span>
+
+                        <h2>
+
+                            Consistent Vertical Rhythm
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <p>
+
+                                Every section, heading, paragraph, card,
+                                form and dashboard component uses the
+                                same spacing scale. This predictable
+                                rhythm makes interfaces easier to scan,
+                                improves reading speed and strengthens
+                                the professional appearance of the entire
+                                design system.
+
+                            </p>
+
+                            <div class="alert alert-info">
+
+                                Never introduce arbitrary spacing values.
+                                Always build layouts using the official
+                                ASLDS spacing scale.
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================================= -->
+            <!-- Spacing Scale -->
+            <!-- ========================================= -->
+
+            <section
+                id="spacing-scale"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Scale
+
+                        </span>
+
+                        <h2>
+
+                            Official Spacing Scale
+
+                        </h2>
+
+                        <p>
+
+                            Every spacing value within ASLDS is based on
+                            reusable design tokens. Using the spacing
+                            scale keeps every component visually
+                            consistent and easier to maintain.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <table class="table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>Token</th>
+
+                                        <th>Variable</th>
+
+                                        <th>Pixels</th>
+
+                                        <th>REM</th>
+
+                                        <th>Typical Usage</th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>XS</td>
+
+                                        <td><code>--space-xs</code></td>
+
+                                        <td>4px</td>
+
+                                        <td>0.25rem</td>
+
+                                        <td>Icons, labels</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>SM</td>
+
+                                        <td><code>--space-sm</code></td>
+
+                                        <td>8px</td>
+
+                                        <td>0.5rem</td>
+
+                                        <td>Compact spacing</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>MD</td>
+
+                                        <td><code>--space-md</code></td>
+
+                                        <td>16px</td>
+
+                                        <td>1rem</td>
+
+                                        <td>Default component spacing</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>LG</td>
+
+                                        <td><code>--space-lg</code></td>
+
+                                        <td>24px</td>
+
+                                        <td>1.5rem</td>
+
+                                        <td>Cards & sections</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>XL</td>
+
+                                        <td><code>--space-xl</code></td>
+
+                                        <td>32px</td>
+
+                                        <td>2rem</td>
+
+                                        <td>Large layouts</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>2XL</td>
+
+                                        <td><code>--space-2xl</code></td>
+
+                                        <td>48px</td>
+
+                                        <td>3rem</td>
+
+                                        <td>Hero & page spacing</td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Margin Utilities -->
+            <!-- ========================================= -->
+
+            <section
+                id="margin-utilities"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Utilities
+
+                        </span>
+
+                        <h2>
+
+                            Margin Utilities
+
+                        </h2>
+
+                        <p>
+
+                            Margin utilities control the space outside
+                            components. They should be applied
+                            consistently using the predefined spacing
+                            scale.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Live Preview
+
+                                </h3>
+
+                                <button class="btn btn-primary">
+
+                                    First Button
+
+                                </button>
+
+                                <button class="btn btn-secondary">
+
+                                    Second Button
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Code Example
+
+                                </h3>
+
+<pre><code>&lt;div class="mb-lg"&gt;
+    ...
+&lt;/div&gt;
+
+&lt;div class="mt-xl"&gt;
+    ...
+&lt;/div&gt;
+</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Padding Utilities -->
+            <!-- ========================================= -->
+
+            <section
+                id="padding-utilities"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Utilities
+
+                        </span>
+
+                        <h2>
+
+                            Padding Utilities
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Small Padding
+
+                                </h3>
+
+                                <p>
+
+                                    Suitable for compact badges,
+                                    navigation items and dense layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Medium Padding
+
+                                </h3>
+
+                                <p>
+
+                                    Recommended default spacing for most
+                                    cards and interface components.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Large Padding
+
+                                </h3>
+
+                                <p>
+
+                                    Used for hero panels, marketing
+                                    content and premium layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Responsive Padding Example
+
+                            </h3>
+
+<pre><code>&lt;section class="section"&gt;
+
+    &lt;div class="container"&gt;
+
+        ...
+
+    &lt;/div&gt;
+
+&lt;/section&gt;
+</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Note -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+            >
+
+                <div class="container">
+
+                    <div class="alert alert-info">
+
+                        <strong>
+
+                            Developer Note
+
+                        </strong>
+
+                        <p>
+
+                            Always use spacing tokens provided by ASLDS.
+                            Avoid introducing custom pixel values unless
+                            creating entirely new reusable design tokens.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Gap Utilities -->
+            <!-- ========================================= -->
+
+            <section
+                id="gap-utilities"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Gap Utilities
+
+                        </span>
+
+                        <h2>
+
+                            CSS Grid & Flex Gap Utilities
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS encourages the use of the CSS <code>gap</code>
+                            property for Grid and Flexbox layouts instead of
+                            relying on margins between child elements.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Horizontal Gap
+
+                                </h3>
+
+                                <div class="hero-actions">
+
+                                    <button class="btn btn-primary">
+
+                                        Button One
+
+                                    </button>
+
+                                    <button class="btn btn-secondary">
+
+                                        Button Two
+
+                                    </button>
+
+                                    <button class="btn btn-outline">
+
+                                        Button Three
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Grid Gap
+
+                                </h3>
+
+                                <div class="card-grid">
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+
+                                            Card A
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+
+                                            Card B
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Code Example
+
+                                </h3>
+
+<pre><code>.grid{
+
+display:grid;
+
+gap:var(--space-lg);
+
+}
+</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Stack Layout -->
+            <!-- ========================================= -->
+
+            <section
+                id="stack-layout"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Vertical Layout
+
+                        </span>
+
+                        <h2>
+
+                            Stack Spacing
+
+                        </h2>
+
+                        <p>
+
+                            Vertical stack spacing creates predictable
+                            separation between related content while
+                            preserving reading rhythm.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Card Title
+
+                            </h3>
+
+                            <p>
+
+                                Paragraph spacing remains consistent.
+
+                            </p>
+
+                            <button class="btn btn-primary">
+
+                                Primary Action
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;article class="card"&gt;
+
+    ...
+
+&lt;/article&gt;
+</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Inline Layout -->
+            <!-- ========================================= -->
+
+            <section
+                id="inline-layout"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Horizontal Layout
+
+                        </span>
+
+                        <h2>
+
+                            Inline Spacing
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <div class="hero-actions">
+
+                                    <button class="btn btn-primary">
+
+                                        Save
+
+                                    </button>
+
+                                    <button class="btn btn-secondary">
+
+                                        Preview
+
+                                    </button>
+
+                                    <button class="btn btn-outline">
+
+                                        Cancel
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Badges
+
+                                </h3>
+
+                                <span class="badge">
+
+                                    Stable
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Responsive
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Accessible
+
+                                </span>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Responsive Spacing -->
+            <!-- ========================================= -->
+
+            <section
+                id="responsive-spacing"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Responsive
+
+                        </span>
+
+                        <h2>
+
+                            Responsive Spacing
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS automatically adapts spacing across
+                            desktop, tablet and mobile while preserving
+                            layout balance.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Desktop
+
+                                </h3>
+
+                                <p>
+
+                                    Spacious layouts with generous
+                                    breathing room.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tablet
+
+                                </h3>
+
+                                <p>
+
+                                    Balanced spacing optimised for touch
+                                    interactions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Mobile
+
+                                </h3>
+
+                                <p>
+
+                                    Compact spacing without sacrificing
+                                    readability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Layout Examples -->
+            <!-- ========================================= -->
+
+            <section
+                id="layout-examples"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Examples
+
+                        </span>
+
+                        <h2>
+
+                            Complete Layout Examples
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashboard Card
+
+                                </h3>
+
+                                <p>
+
+                                    Consistent spacing between headings,
+                                    statistics and actions.
+
+                                </p>
+
+                                <button class="btn btn-primary">
+
+                                    View Dashboard
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Form Layout
+
+                                </h3>
+
+                                <label>
+
+                                    Email
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    placeholder="name@example.com"
+                                >
+
+                                <button class="btn btn-primary">
+
+                                    Submit
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Pricing Card
+
+                                </h3>
+
+                                <h2>
+
+                                    Pro
+
+                                </h2>
+
+                                <p>
+
+                                    $29 / month
+
+                                </p>
+
+                                <button class="btn btn-secondary">
+
+                                    Get Started
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Note -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="alert alert-info">
+
+                        <strong>
+
+                            Developer Note
+
+                        </strong>
+
+                        <p>
+
+                            Prefer <code>gap</code> for Grid and Flex
+                            layouts. Reserve margins primarily for
+                            spacing between unrelated layout sections.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Recommended Spacing Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Following these recommendations helps teams
+                            build visually consistent, scalable and
+                            maintainable interfaces.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Use the Official Scale
+
+                                </h3>
+
+                                <p>
+
+                                    Always use ASLDS spacing tokens
+                                    instead of arbitrary values.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Prefer Gap
+
+                                </h3>
+
+                                <p>
+
+                                    Use CSS Grid and Flex gap whenever
+                                    possible instead of margins between
+                                    sibling elements.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Maintain Rhythm
+
+                                </h3>
+
+                                <p>
+
+                                    Keep vertical spacing predictable
+                                    across sections, cards and forms.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Common Mistakes -->
+            <!-- ========================================= -->
+
+            <section
+                id="common-mistakes"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Mistakes
+
+                        </span>
+
+                        <h2>
+
+                            Common Spacing Mistakes
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Random Values
+
+                                </h3>
+
+                                <p>
+
+                                    Avoid arbitrary spacing values that
+                                    are not part of the official scale.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Nested Margins
+
+                                </h3>
+
+                                <p>
+
+                                    Multiple stacked margins often create
+                                    inconsistent layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Mixed Units
+
+                                </h3>
+
+                                <p>
+
+                                    Mixing pixels, rem, em and percentage
+                                    values unnecessarily reduces
+                                    consistency.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Uneven Padding
+
+                                </h3>
+
+                                <p>
+
+                                    Components should use consistent
+                                    internal spacing throughout the
+                                    interface.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Notes -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-notes"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Engineering Notes
+
+                        </span>
+
+                        <h2>
+
+                            Developer Guidance
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>
+
+                                    Build every layout using spacing
+                                    tokens.
+
+                                </li>
+
+                                <li>
+
+                                    Never hard-code spacing values inside
+                                    reusable components.
+
+                                </li>
+
+                                <li>
+
+                                    Use containers to maintain consistent
+                                    page width.
+
+                                </li>
+
+                                <li>
+
+                                    Use responsive spacing rather than
+                                    creating separate layouts.
+
+                                </li>
+
+                                <li>
+
+                                    Test spacing on desktop, tablet and
+                                    mobile devices.
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Documentation -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-pages"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Learning
+
+                        </span>
+
+                        <h2>
+
+                            Related Documentation
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="typography.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Typography
+
+                                </h3>
+
+                                <p>
+
+                                    Learn how typography works together
+                                    with spacing.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="layout.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Layout
+
+                                </h3>
+
+                                <p>
+
+                                    Build responsive page structures
+                                    using ASLDS layout foundations.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="borders.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Borders
+
+                                </h3>
+
+                                <p>
+
+                                    Learn how borders reinforce
+                                    structure and hierarchy.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="shadows.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Shadows
+
+                                </h3>
+
+                                <p>
+
+                                    Understand elevation and depth
+                                    throughout ASLDS.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="../components/buttons.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    See how spacing applies inside
+                                    interactive components.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer doc-footer">
+
+            <div class="container">
+
+                <div class="doc-footer-grid">
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            A Square L Innovate
+
+                        </h3>
+
+                        <p>
+
+                            Building consistent enterprise interfaces
+                            through a scalable design system.
+
+                        </p>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Components
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../components/buttons.html">Buttons</a></li>
+                            <li><a href="../components/cards.html">Cards</a></li>
+                            <li><a href="../components/forms.html">Forms</a></li>
+                            <li><a href="../components/navbar.html">Navbar</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>ASL Design System</p>
+                        <p>Version 1.1 Stable</p>
+                        <p>© 2026 A Square L Innovate</p>
+
+                    </section>
+
+                </div>
+
+                <div class="doc-footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate.
+                        All rights reserved.
+
+                    </p>
+
+                    <p>
+
+                        ASL Design System • Version 1.1 Stable
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Toast Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

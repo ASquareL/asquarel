@@ -1,0 +1,2752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/guides/engineering.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Engineering Standards for the
+    A Square L Innovate Ecosystem.
+
+    Copyright © 2026
+    A Square L Innovate
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Engineering standards, architecture principles and development workflow for the A Square L Innovate ecosystem."
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Engineering • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Navigation -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System Home"
+                >
+
+                    <strong>
+
+                        ASLDS
+
+                    </strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+                                Getting Started
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+                                Installation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+                                Playground
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="engineering.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                Engineering
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button
+                        class="nav-search"
+                        type="button"
+                        aria-label="Search Documentation"
+                    >
+
+                        Search
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline"
+                        type="button"
+                        aria-label="Toggle Theme"
+                    >
+
+                        Theme
+
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                    >
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main Content -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Enterprise Engineering
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Engineering Standards
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                One engineering standard for every
+                                application, service and platform built
+                                by A Square L Innovate.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                This guide establishes the engineering
+                                principles, coding standards,
+                                architectural decisions and development
+                                workflow used throughout the entire
+                                A Square L Innovate ecosystem. These
+                                standards apply to frontend
+                                applications, backend services, shared
+                                packages, documentation and deployment
+                                infrastructure.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <a
+                                    href="#engineering-philosophy"
+                                    class="btn btn-primary"
+                                >
+
+                                    Explore Standards
+
+                                </a>
+
+                                <a
+                                    href="#repository-structure"
+                                    class="btn btn-secondary"
+                                >
+
+                                    Repository Structure
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Guide Overview
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Engineering Philosophy</li>
+                                    <li>Architecture Principles</li>
+                                    <li>Coding Standards</li>
+                                    <li>Repository Structure</li>
+                                    <li>Component Architecture</li>
+                                    <li>Git Workflow</li>
+                                    <li>Testing Strategy</li>
+                                    <li>Deployment Standards</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Engineering Philosophy -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="engineering-philosophy"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Philosophy
+
+                        </span>
+
+                        <h2>
+
+                            Engineering Philosophy
+
+                        </h2>
+
+                        <p>
+
+                            Every engineering decision within A Square L
+                            Innovate should prioritize maintainability,
+                            scalability, accessibility, performance,
+                            security and long-term sustainability.
+                            Software is designed to evolve without
+                            requiring major architectural rewrites.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Build Once
+
+                                </h3>
+
+                                <p>
+
+                                    Develop reusable solutions that can
+                                    be shared across applications rather
+                                    than duplicated.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain consistent engineering
+                                    standards, APIs and user
+                                    experiences throughout every
+                                    product.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Long-Term Thinking
+
+                                </h3>
+
+                                <p>
+
+                                    Design systems and software should
+                                    remain maintainable for years, not
+                                    only the current release.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Architecture Principles -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="architecture-principles"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Architecture
+
+                        </span>
+
+                        <h2>
+
+                            Core Architecture Principles
+
+                        </h2>
+
+                        <p>
+
+                            The A Square L repository is organized into
+                            independent but connected layers. Each layer
+                            has a clearly defined responsibility,
+                            allowing applications, packages and services
+                            to evolve independently while sharing common
+                            engineering standards.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Modular Design
+
+                                </h3>
+
+                                <p>
+
+                                    Separate applications, packages,
+                                    backend services and documentation
+                                    into isolated modules with clearly
+                                    defined responsibilities.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Shared Foundations
+
+                                </h3>
+
+                                <p>
+
+                                    Reuse common components, utilities
+                                    and design tokens through shared
+                                    packages rather than copying code.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Scalable Architecture
+
+                                </h3>
+
+                                <p>
+
+                                    Every architectural decision should
+                                    support future products without
+                                    requiring structural changes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Documentation First
+
+                                </h3>
+
+                                <p>
+
+                                    Specifications, ADRs, RFCs and
+                                    engineering standards should guide
+                                    implementation rather than document
+                                    it afterward.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Repository Structure -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="repository-structure"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Repository
+
+                        </span>
+
+                        <h2>
+
+                            Project Folder Structure
+
+                        </h2>
+
+                        <p>
+
+                            The A Square L Innovate repository is
+                            organized using a modular architecture that
+                            separates applications, shared packages,
+                            backend services, documentation and
+                            engineering assets.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>A-Square-L-Innovate/
+│
+├── apps/
+├── packages/
+│   └── aslds/
+├── backend/
+├── docs/
+├── engineering/
+├── scripts/
+├── tests/
+├── deployment/
+└── .github/workflows/
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    apps/
+
+                                </h3>
+
+                                <p>
+
+                                    Contains production applications
+                                    including the public website,
+                                    academy, AI platform, Business OS,
+                                    portfolio and administration tools.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    packages/
+
+                                </h3>
+
+                                <p>
+
+                                    Shared reusable packages including
+                                    the ASL Design System and common
+                                    libraries used across projects.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    backend/
+
+                                </h3>
+
+                                <p>
+
+                                    API services, authentication,
+                                    storage, analytics, notifications
+                                    and infrastructure components.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    engineering/
+
+                                </h3>
+
+                                <p>
+
+                                    Engineering specifications, ADRs,
+                                    RFCs, prompts, standards and sprint
+                                    planning documentation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Coding Standards -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="coding-standards"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Coding Standards
+
+                        </span>
+
+                        <h2>
+
+                            General Development Rules
+
+                        </h2>
+
+                        <p>
+
+                            Every code contribution should prioritize
+                            readability, consistency and long-term
+                            maintainability.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Readable Code
+
+                                </h3>
+
+                                <p>
+
+                                    Write descriptive names, avoid
+                                    unnecessary complexity and keep code
+                                    self-explanatory.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Single Responsibility
+
+                                </h3>
+
+                                <p>
+
+                                    Every module, component and function
+                                    should have one clear purpose.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Reusable Solutions
+
+                                </h3>
+
+                                <p>
+
+                                    Build reusable modules instead of
+                                    copying similar logic throughout the
+                                    repository.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- HTML Standards -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="html-standards"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            HTML
+
+                        </span>
+
+                        <h2>
+
+                            HTML Engineering Standards
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;header&gt;
+&lt;nav&gt;
+&lt;main&gt;
+&lt;section&gt;
+&lt;article&gt;
+&lt;aside&gt;
+&lt;footer&gt;
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Semantic HTML
+
+                                </h3>
+
+                                <p>
+
+                                    Always prefer semantic HTML5
+                                    elements before adding ARIA roles.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Every page should follow WCAG 2.2
+                                    guidance and maintain proper heading
+                                    hierarchy.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- CSS Standards -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="css-standards"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            CSS
+
+                        </span>
+
+                        <h2>
+
+                            ASL Design System Standards
+
+                        </h2>
+
+                        <p>
+
+                            The ASL Design System is the single source
+                            of truth for visual styling across the
+                            ecosystem.
+
+                        </p>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Never duplicate framework components inside
+                        project-specific stylesheets. Extend existing
+                        classes instead.
+
+                    </div>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Design Tokens
+
+                                </h3>
+
+                                <p>
+
+                                    Always use framework variables for
+                                    colors, spacing, typography and
+                                    sizing.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Component API
+
+                                </h3>
+
+                                <p>
+
+                                    HTML must adapt to ASLDS CSS classes.
+                                    Never invent replacement class
+                                    names.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- JavaScript Standards -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="javascript-standards"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            JavaScript
+
+                        </span>
+
+                        <h2>
+
+                            JavaScript Engineering Standards
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>// One module
+// One responsibility
+// Export reusable functionality
+// Avoid global state
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ES Modules
+
+                                </h3>
+
+                                <p>
+
+                                    Use modern ES module syntax
+                                    throughout the ecosystem.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Progressive Enhancement
+
+                                </h3>
+
+                                <p>
+
+                                    Interfaces should remain usable
+                                    before JavaScript initializes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Naming Conventions -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="naming-conventions"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Naming
+
+                        </span>
+
+                        <h2>
+
+                            Naming Conventions
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Files
+
+                                </h3>
+
+                                <p>
+
+                                    Use lowercase file names with
+                                    hyphens where appropriate.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Components
+
+                                </h3>
+
+                                <p>
+
+                                    Follow the official ASLDS component
+                                    naming API consistently.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Variables
+
+                                </h3>
+
+                                <p>
+
+                                    Choose descriptive names that
+                                    communicate intent instead of
+                                    implementation details.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- File Organization -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="file-organization"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Organization
+
+                        </span>
+
+                        <h2>
+
+                            File Organization
+
+                        </h2>
+
+                        <p>
+
+                            Every directory within the repository has a
+                            clearly defined responsibility. Files should
+                            always be placed in the most appropriate
+                            location to maintain a clean, scalable and
+                            discoverable project structure.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Applications
+
+                                </h3>
+
+                                <p>
+
+                                    Production applications belong
+                                    inside the <strong>apps/</strong>
+                                    directory.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Shared Packages
+
+                                </h3>
+
+                                <p>
+
+                                    Reusable libraries belong in
+                                    <strong>packages/</strong> where
+                                    they can be shared across multiple
+                                    applications.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Backend Services
+
+                                </h3>
+
+                                <p>
+
+                                    Server-side functionality should
+                                    remain inside the
+                                    <strong>backend/</strong> directory.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Component Architecture -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="component-architecture"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Components
+
+                        </span>
+
+                        <h2>
+
+                            Component Architecture
+
+                        </h2>
+
+                        <p>
+
+                            Components should remain modular,
+                            predictable and reusable across the entire
+                            A Square L ecosystem.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>Design Tokens
+        ↓
+Core Layout
+        ↓
+Components
+        ↓
+Application Pages
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Independent Components
+
+                                </h3>
+
+                                <p>
+
+                                    Each component should solve one
+                                    problem and avoid unnecessary
+                                    dependencies.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Shared Foundation
+
+                                </h3>
+
+                                <p>
+
+                                    Components inherit typography,
+                                    spacing, colors and layout rules
+                                    directly from ASLDS.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Reusability -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="reusability"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Reusability
+
+                        </span>
+
+                        <h2>
+
+                            Build Once, Reuse Everywhere
+
+                        </h2>
+
+                        <p>
+
+                            Duplicate code increases maintenance costs.
+                            Shared solutions should always be preferred
+                            over project-specific implementations.
+
+                        </p>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        If functionality may be reused by another
+                        application, move it into a shared package
+                        instead of copying it.
+
+                    </div>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Shared Utilities
+
+                                </h3>
+
+                                <p>
+
+                                    Utility functions belong inside
+                                    reusable packages instead of
+                                    application code.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Shared Components
+
+                                </h3>
+
+                                <p>
+
+                                    Improve consistency by using the same
+                                    UI components throughout the entire
+                                    ecosystem.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Performance -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="performance"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Performance
+
+                        </span>
+
+                        <h2>
+
+                            Performance Best Practices
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Optimize Assets
+
+                                </h3>
+
+                                <p>
+
+                                    Compress images, minimize network
+                                    requests and eliminate unused code.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Lazy Loading
+
+                                </h3>
+
+                                <p>
+
+                                    Load non-critical assets only when
+                                    they become necessary.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cache Efficiently
+
+                                </h3>
+
+                                <p>
+
+                                    Leverage browser caching and static
+                                    asset versioning to improve loading
+                                    performance.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="accessibility"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Requirements
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    WCAG 2.2 AA
+
+                                </h3>
+
+                                <p>
+
+                                    Every application should target WCAG
+                                    2.2 AA accessibility compliance.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Support
+
+                                </h3>
+
+                                <p>
+
+                                    All interactive functionality must
+                                    remain fully keyboard accessible.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Responsive Design -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="responsive-design"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Responsive Design
+
+                        </span>
+
+                        <h2>
+
+                            Responsive Engineering Standards
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Mobile First
+
+                                </h3>
+
+                                <p>
+
+                                    Design for smaller screens before
+                                    progressively enhancing larger
+                                    layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Flexible Layouts
+
+                                </h3>
+
+                                <p>
+
+                                    Use responsive containers, adaptive
+                                    grids and scalable typography.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Security -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="security"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Security
+
+                        </span>
+
+                        <h2>
+
+                            Security Best Practices
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-warning">
+
+                        Never expose secrets, API keys or credentials
+                        within frontend code or public repositories.
+
+                    </div>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Validate Input
+
+                                </h3>
+
+                                <p>
+
+                                    Treat every external input as
+                                    untrusted until validated.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Least Privilege
+
+                                </h3>
+
+                                <p>
+
+                                    Applications and services should
+                                    receive only the permissions they
+                                    require.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Git Workflow -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="git-workflow"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Version Control
+
+                        </span>
+
+                        <h2>
+
+                            Git Workflow
+
+                        </h2>
+
+                        <p>
+
+                            Every engineering task should follow a
+                            predictable workflow that encourages
+                            collaboration, review and stable releases.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>Main
+  │
+  ├── Develop
+  │      │
+  │      ├── Feature Branch
+  │      ├── Bug Fix
+  │      └── Hotfix
+  │
+  └── Release
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Branch Naming -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="branch-naming"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Branch Naming
+
+                        </span>
+
+                        <h2>
+
+                            Branch Naming Convention
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>feature/navbar
+
+feature/design-system
+
+bugfix/mobile-menu
+
+hotfix/login
+
+docs/accessibility
+
+release/v1.1.0
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Commit Convention -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="commit-convention"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Commits
+
+                        </span>
+
+                        <h2>
+
+                            Commit Message Convention
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>feat: add responsive navbar
+
+fix: resolve mobile menu issue
+
+docs: update accessibility guide
+
+style: improve spacing
+
+refactor: simplify card layout
+
+test: add navbar tests
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Code Review -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="code-review"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Code Review
+
+                        </span>
+
+                        <h2>
+
+                            Review Checklist
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>✓ Follows ASLDS standards.</li>
+
+                                <li>✓ Semantic HTML.</li>
+
+                                <li>✓ Responsive layout verified.</li>
+
+                                <li>✓ Accessibility tested.</li>
+
+                                <li>✓ No duplicated code.</li>
+
+                                <li>✓ Performance considered.</li>
+
+                                <li>✓ Security reviewed.</li>
+
+                                <li>✓ Documentation updated.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Testing Strategy -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="testing-strategy"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Testing
+
+                        </span>
+
+                        <h2>
+
+                            Testing Strategy
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Unit Tests
+
+                                </h3>
+
+                                <p>
+
+                                    Verify reusable utilities and
+                                    components independently.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Integration Tests
+
+                                </h3>
+
+                                <p>
+
+                                    Ensure multiple modules work
+                                    correctly together.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Manual QA
+
+                                </h3>
+
+                                <p>
+
+                                    Validate usability, responsiveness
+                                    and accessibility before release.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Build & Deployment -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="deployment"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Deployment
+
+                        </span>
+
+                        <h2>
+
+                            Build & Deployment Workflow
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>Develop
+
+↓
+
+Test
+
+↓
+
+Review
+
+↓
+
+Merge
+
+↓
+
+Build
+
+↓
+
+Deploy
+
+↓
+
+Monitor
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Documentation Standards -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="documentation-standards"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Documentation
+
+                        </span>
+
+                        <h2>
+
+                            Documentation Standards
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Documentation is treated as a core engineering
+                        deliverable—not an optional task.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Engineering Checklist -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="engineering-checklist"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Final Checklist
+
+                        </span>
+
+                        <h2>
+
+                            Engineering Checklist
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>✓ Architecture reviewed.</li>
+                                <li>✓ Coding standards followed.</li>
+                                <li>✓ Responsive design verified.</li>
+                                <li>✓ Accessibility validated.</li>
+                                <li>✓ Performance optimized.</li>
+                                <li>✓ Documentation completed.</li>
+                                <li>✓ Tests executed.</li>
+                                <li>✓ Ready for deployment.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Common Mistakes -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="common-mistakes"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Common Mistakes
+
+                        </span>
+
+                        <h2>
+
+                            Avoid These Issues
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Duplicating Components
+
+                                </h3>
+
+                                <p>
+
+                                    Reuse shared packages instead of
+                                    recreating existing solutions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Ignoring Documentation
+
+                                </h3>
+
+                                <p>
+
+                                    Keep engineering documentation in
+                                    sync with implementation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Recommended Workflow -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="developer-workflow"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Workflow
+
+                        </span>
+
+                        <h2>
+
+                            Recommended Developer Workflow
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>Read Specification
+
+↓
+
+Create Branch
+
+↓
+
+Implement
+
+↓
+
+Test
+
+↓
+
+Review
+
+↓
+
+Merge
+
+↓
+
+Deploy
+
+↓
+
+Document
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Documentation Navigation -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="documentation-navigation"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Reading
+
+                        </span>
+
+                        <h2>
+
+                            Documentation Navigation
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="accessibility.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ← Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Review accessibility engineering
+                                    guidelines.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="roadmap.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Roadmap →
+
+                                </h3>
+
+                                <p>
+
+                                    Explore the future direction of the
+                                    ASL Design System.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer doc-footer">
+
+            <div class="container">
+
+                <div class="doc-footer-grid">
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            A Square L Innovate
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise engineering standards powering
+                            every product in the A Square L ecosystem.
+
+                        </p>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Documentation
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../playground.html">Playground</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Guides
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="accessibility.html">Accessibility</a></li>
+                            <li><a href="engineering.html">Engineering</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>ASL Design System</p>
+                        <p>Version 1.1 Stable</p>
+                        <p>© 2026 A Square L Innovate</p>
+
+                    </section>
+
+                </div>
+
+                <div class="doc-footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate.
+                        All rights reserved.
+
+                    </p>
+
+                    <p>
+
+                        ASL Design System • Version 1.1 Stable
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- Accessibility Regions -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Toast Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- JavaScript -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

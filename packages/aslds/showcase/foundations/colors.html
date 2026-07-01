@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/foundations/colors.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Color Foundation documentation for the
+    ASL Design System.
+
+    Copyright © 2026
+    A Square L Innovate
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Color Foundation documentation for the A Square L Innovate Design System."
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Color Foundation • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Navigation -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System Home"
+                >
+
+                    <strong>
+
+                        ASLDS
+
+                    </strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+
+                                Getting Started
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+
+                                Installation
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+
+                                Playground
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="colors.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Foundations
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button
+                        class="nav-search"
+                        type="button"
+                        aria-label="Search Documentation"
+                    >
+
+                        Search
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline"
+                        type="button"
+                    >
+
+                        Theme
+
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                    >
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main Content -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Foundation
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Color Foundation
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Every visual experience inside ASLDS is
+                                built on a carefully designed color
+                                system.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                The Color Foundation defines the design
+                                tokens, semantic colors and accessibility
+                                principles that create a consistent,
+                                recognizable and scalable visual language
+                                throughout every A Square L Innovate
+                                application.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <a
+                                    href="#brand-colors"
+                                    class="btn btn-primary"
+                                >
+
+                                    Explore Colors
+
+                                </a>
+
+                                <a
+                                    href="#tokens"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Tokens
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Color Philosophy</li>
+                                    <li>Brand Colors</li>
+                                    <li>Palettes</li>
+                                    <li>Semantic Colors</li>
+                                    <li>Design Tokens</li>
+                                    <li>Accessibility</li>
+                                    <li>Examples</li>
+                                    <li>Best Practices</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="introduction"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Introduction
+
+                        </h2>
+
+                        <p>
+
+                            Colors communicate hierarchy, interaction,
+                            meaning and brand identity. ASLDS uses
+                            semantic design tokens instead of hard-coded
+                            values to ensure consistency, maintainability
+                            and theme flexibility.
+
+                        </p>
+
+                    </header>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Color Philosophy -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="color-philosophy"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Philosophy
+
+                        </span>
+
+                        <h2>
+
+                            Color Philosophy
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Every component references design
+                                    tokens instead of raw color values.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Color combinations are selected to
+                                    maximize readability and meet WCAG
+                                    contrast recommendations.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Scalability
+
+                                </h3>
+
+                                <p>
+
+                                    Centralized variables allow themes
+                                    and future design updates without
+                                    rewriting components.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Design Principles -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="design-principles"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Principles
+
+                        </span>
+
+                        <h2>
+
+                            Design Principles
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>Purpose First</h3>
+
+                                <p>
+
+                                    Every color has a defined semantic
+                                    purpose rather than being purely
+                                    decorative.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>Minimal Palette</h3>
+
+                                <p>
+
+                                    Reduce unnecessary colors to create
+                                    a stronger visual identity.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>Theme Ready</h3>
+
+                                <p>
+
+                                    Tokens support future light and dark
+                                    theme expansion.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Brand Colors -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="brand-colors"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Brand
+
+                        </span>
+
+                        <h2>
+
+                            Brand Colors
+
+                        </h2>
+
+                        <p>
+
+                            The ASL Design System identity is built on a
+                            premium combination of gold, black and
+                            supporting neutral tones.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Primary Gold
+
+                                </h3>
+
+<pre><code>--primary-gold</code></pre>
+
+                                <p>
+
+                                    Primary brand color used for actions,
+                                    highlights and emphasis.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Primary Black
+
+                                </h3>
+
+<pre><code>--primary-black</code></pre>
+
+                                <p>
+
+                                    Core background and brand foundation
+                                    color.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Primary Palette -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="primary-palette"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Palette
+
+                        </span>
+
+                        <h2>
+
+                            Primary Palette
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Gold
+
+                                </h3>
+
+<pre><code>var(--primary-gold)</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Black
+
+                                </h3>
+
+<pre><code>var(--primary-black)</code></pre>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Secondary Palette -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="secondary-palette"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Palette
+
+                        </span>
+
+                        <h2>
+
+                            Secondary Palette
+
+                        </h2>
+
+                        <p>
+
+                            Secondary colors complement the primary
+                            brand palette and provide additional visual
+                            hierarchy throughout the design system.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Supporting Accent
+
+                                </h3>
+
+<pre><code>Semantic Secondary Color</code></pre>
+
+                                <p>
+
+                                    Used for secondary actions,
+                                    supporting UI elements and visual
+                                    balance.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accent Highlight
+
+                                </h3>
+
+<pre><code>Supporting Accent Token</code></pre>
+
+                                <p>
+
+                                    Used sparingly to create emphasis
+                                    without competing with the primary
+                                    brand color.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Neutral Palette -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="neutral-palette"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Neutral Colors
+
+                        </span>
+
+                        <h2>
+
+                            Neutral Palette
+
+                        </h2>
+
+                        <p>
+
+                            Neutral colors provide visual structure,
+                            readable typography and balanced layouts.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    White
+
+                                </h3>
+
+<pre><code>--white</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Gray Scale
+
+                                </h3>
+
+<pre><code>--gray-100
+--gray-300
+--gray-500
+--gray-700</code></pre>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Surface Colors -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="surface-colors"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Surface
+
+                        </span>
+
+                        <h2>
+
+                            Surface Colors
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Surface Tokens
+
+                            </h3>
+
+<pre><code>--surface
+
+--card-bg
+
+--surface-hover</code></pre>
+
+                            <p>
+
+                                Surface tokens create consistent
+                                backgrounds for cards, panels,
+                                navigation and dashboards.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Background Colors -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="background-colors"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Backgrounds
+
+                        </span>
+
+                        <h2>
+
+                            Background Colors
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Page Background
+
+                                </h3>
+
+<pre><code>--background</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Elevated Background
+
+                                </h3>
+
+<pre><code>--surface</code></pre>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Text Colors -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="text-colors"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Typography
+
+                        </span>
+
+                        <h2>
+
+                            Text Colors
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Primary Text
+
+                                </h3>
+
+<pre><code>--white</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Secondary Text
+
+                                </h3>
+
+<pre><code>--gray-300</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Muted Text
+
+                                </h3>
+
+<pre><code>--gray-500</code></pre>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Border Colors -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="border-colors"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Borders
+
+                        </span>
+
+                        <h2>
+
+                            Border Colors
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>--border-color</code></pre>
+
+                            <p>
+
+                                Borders separate interface elements
+                                without overwhelming the visual
+                                hierarchy.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Semantic Colors -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="semantic-colors"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Semantic Colors
+
+                        </span>
+
+                        <h2>
+
+                            Success, Warning, Error & Information
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Success
+
+                                </h3>
+
+<pre><code>--success</code></pre>
+
+                                <div class="alert alert-success">
+
+                                    Successful operation.
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Warning
+
+                                </h3>
+
+<pre><code>--warning</code></pre>
+
+                                <div class="alert alert-warning">
+
+                                    Requires attention.
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Error
+
+                                </h3>
+
+<pre><code>--danger</code></pre>
+
+                                <div class="alert alert-danger">
+
+                                    Action failed.
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Information
+
+                                </h3>
+
+<pre><code>--info</code></pre>
+
+                                <div class="alert alert-info">
+
+                                    Informational message.
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Interactive Colors -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="interactive-colors"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Interaction
+
+                        </span>
+
+                        <h2>
+
+                            Interactive Colors
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Primary Action
+
+                                </h3>
+
+                                <button class="btn btn-primary">
+
+                                    Primary Button
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Secondary Action
+
+                                </h3>
+
+                                <button class="btn btn-secondary">
+
+                                    Secondary Button
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Outline Action
+
+                                </h3>
+
+                                <button class="btn btn-outline">
+
+                                    Outline Button
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================================= -->
+            <!-- Hover States -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="hover-states"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            States
+
+                        </span>
+
+                        <h2>
+
+                            Hover States
+
+                        </h2>
+
+                        <p>
+
+                            Hover colors provide visual feedback that
+                            indicates an interactive element is ready
+                            for user interaction.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <button class="btn btn-primary">
+
+                                    Hover Me
+
+                                </button>
+
+                                <p>
+
+                                    Primary actions transition to a
+                                    stronger emphasis on hover.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Links
+
+                                </h3>
+
+                                <a
+                                    href="#"
+                                    class="nav-link"
+                                >
+
+                                    Documentation Link
+
+                                </a>
+
+                                <p>
+
+                                    Interactive text changes color to
+                                    reinforce clickability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Active States -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="active-states"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            States
+
+                        </span>
+
+                        <h2>
+
+                            Active States
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Active navigation items use the
+                                    primary brand color to clearly show
+                                    the current location.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Pressed controls provide immediate
+                                    visual confirmation of user input.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Disabled States -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="disabled-states"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            States
+
+                        </span>
+
+                        <h2>
+
+                            Disabled States
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <button
+                                class="btn btn-primary"
+                                disabled
+                            >
+
+                                Disabled Button
+
+                            </button>
+
+                            <p>
+
+                                Disabled elements communicate that an
+                                action is currently unavailable while
+                                remaining visually distinguishable.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Opacity Utilities -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="opacity"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Transparency
+
+                        </span>
+
+                        <h2>
+
+                            Opacity Utilities
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>Opacity is used for:
+
+• Overlays
+
+• Disabled elements
+
+• Glass effects
+
+• Focus layers
+
+• Interactive feedback
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Gradient System -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="gradient-system"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Gradients
+
+                        </span>
+
+                        <h2>
+
+                            Gradient System
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Hero Gradients
+
+                                </h3>
+
+                                <p>
+
+                                    Premium gradients help create depth
+                                    while maintaining readability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accent Gradients
+
+                                </h3>
+
+                                <p>
+
+                                    Used sparingly to highlight premium
+                                    interface elements.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Glass Effects -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="glass-effects"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Visual Effects
+
+                        </span>
+
+                        <h2>
+
+                            Glass Effects
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-info">
+
+                        Glass surfaces should enhance hierarchy without
+                        reducing readability or accessibility.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Color Tokens -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="tokens"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Tokens
+
+                        </span>
+
+                        <h2>
+
+                            Color Tokens
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+<pre><code>--primary-gold</code></pre>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+<pre><code>--primary-black</code></pre>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+<pre><code>--surface</code></pre>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+<pre><code>--card-bg</code></pre>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+<pre><code>--border-color</code></pre>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- CSS Variable Reference -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="variable-reference"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Reference
+
+                        </span>
+
+                        <h2>
+
+                            CSS Variable Reference
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>--primary-gold
+
+--primary-black
+
+--background
+
+--surface
+
+--card-bg
+
+--border-color
+
+--success
+
+--warning
+
+--danger
+
+--info
+
+--white
+
+--gray-100
+
+--gray-300
+
+--gray-500
+
+--gray-700
+</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="wcag"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            WCAG Contrast Guidelines
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    High Contrast
+
+                                </h3>
+
+                                <p>
+
+                                    Primary text and controls should
+                                    meet recommended WCAG contrast
+                                    ratios.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Avoid Low Contrast
+
+                                </h3>
+
+                                <p>
+
+                                    Decorative combinations should never
+                                    reduce content readability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Color Do's & Don'ts -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="dos-donts"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Guidelines
+
+                        </span>
+
+                        <h2>
+
+                            Color Do's & Don'ts
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ✓ Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Use semantic tokens.</li>
+                                    <li>Maintain accessibility.</li>
+                                    <li>Keep branding consistent.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ✕ Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Hard-code colors.</li>
+                                    <li>Mix unrelated palettes.</li>
+                                    <li>Ignore contrast ratios.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Real UI Examples -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="ui-examples"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Examples
+
+                        </span>
+
+                        <h2>
+
+                            Real UI Examples
+
+                        </h2>
+
+                        <p>
+
+                            The following examples demonstrate how the
+                            ASL Design System color tokens work together
+                            inside production user interfaces.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashboard Card
+
+                                </h3>
+
+                                <span class="badge">
+
+                                    Revenue
+
+                                </span>
+
+                                <p>
+
+                                    Surface, typography and semantic
+                                    colors combine to create clear
+                                    information hierarchy.
+
+                                </p>
+
+                                <button class="btn btn-primary">
+
+                                    View Report
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Notification
+
+                                </h3>
+
+                                <div class="alert alert-success">
+
+                                    Settings saved successfully.
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Status Badge
+
+                                </h3>
+
+                                <span class="badge">
+
+                                    Active
+
+                                </span>
+
+                                <p>
+
+                                    Semantic colors communicate state
+                                    consistently across the interface.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Component Color Examples -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="component-examples"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Components
+
+                        </span>
+
+                        <h2>
+
+                            Component Color Examples
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <button class="btn btn-primary">
+
+                                    Primary
+
+                                </button>
+
+                                <button class="btn btn-secondary">
+
+                                    Secondary
+
+                                </button>
+
+                                <button class="btn btn-outline">
+
+                                    Outline
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Alerts
+
+                                </h3>
+
+                                <div class="alert alert-info">
+
+                                    Information
+
+                                </div>
+
+                                <div class="alert alert-warning">
+
+                                    Warning
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Dark Theme Preview -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="dark-theme"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Theme
+
+                        </span>
+
+                        <h2>
+
+                            Dark Theme Preview
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Theme Ready
+
+                            </h3>
+
+                            <p>
+
+                                All ASLDS color tokens are designed to
+                                support future theme expansion while
+                                preserving semantic meaning and visual
+                                consistency.
+
+                            </p>
+
+                            <button class="btn btn-primary">
+
+                                Primary Action
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="best-practices"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Recommended Usage
+
+                        </h2>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>✓ Use semantic design tokens.</li>
+
+                                <li>✓ Maintain sufficient contrast.</li>
+
+                                <li>✓ Keep branding consistent.</li>
+
+                                <li>✓ Reuse framework variables.</li>
+
+                                <li>✓ Avoid hard-coded colors.</li>
+
+                                <li>✓ Test both desktop and mobile.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Common Mistakes -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="common-mistakes"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Mistakes
+
+                        </span>
+
+                        <h2>
+
+                            Common Mistakes
+
+                        </h2>
+
+                    </header>
+
+                    <div class="alert alert-warning">
+
+                        Avoid replacing framework variables with
+                        hard-coded values or introducing inconsistent
+                        colors into reusable components.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Frequently Asked Questions -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="faq"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            FAQ
+
+                        </span>
+
+                        <h2>
+
+                            Frequently Asked Questions
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Can I create custom colors?
+
+                                </h3>
+
+                                <p>
+
+                                    Yes. Extend ASLDS using your own
+                                    project-specific variables rather
+                                    than modifying the framework.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Should I edit variables.css?
+
+                                </h3>
+
+                                <p>
+
+                                    No. Keep framework files unchanged
+                                    and override values only within your
+                                    application when necessary.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Documentation Navigation -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="documentation-navigation"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Reading
+
+                        </span>
+
+                        <h2>
+
+                            Documentation Navigation
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="../guides/changelog.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ← Changelog
+
+                                </h3>
+
+                                <p>
+
+                                    Review the official release history
+                                    of ASLDS.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="typography.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Typography →
+
+                                </h3>
+
+                                <p>
+
+                                    Continue learning about the
+                                    typography foundation used
+                                    throughout the design system.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer doc-footer">
+
+            <div class="container">
+
+                <div class="doc-footer-grid">
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            A Square L Innovate
+
+                        </h3>
+
+                        <p>
+
+                            Building consistent enterprise experiences
+                            through a scalable design system.
+
+                        </p>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Guides
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+                            <li><a href="../guides/engineering.html">Engineering</a></li>
+                            <li><a href="../guides/roadmap.html">Roadmap</a></li>
+                            <li><a href="../guides/changelog.html">Changelog</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>ASL Design System</p>
+                        <p>Version 1.1 Stable</p>
+                        <p>© 2026 A Square L Innovate</p>
+
+                    </section>
+
+                </div>
+
+                <div class="doc-footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate.
+                        All rights reserved.
+
+                    </p>
+
+                    <p>
+
+                        ASL Design System • Version 1.1 Stable
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Toast Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

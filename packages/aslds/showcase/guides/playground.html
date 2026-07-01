@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/playground.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Interactive Playground for previewing
+    ASL Design System components.
+
+    Copyright © 2026
+    A Square L Innovate
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Experiment with ASL Design System components before integrating them into your applications."
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Playground • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../css/components/navbar.css">
+    <link rel="stylesheet" href="../css/components/sidebar.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/forms.css">
+    <link rel="stylesheet" href="../css/components/dashboard.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+    <link rel="stylesheet" href="../css/components/progress.css">
+    <link rel="stylesheet" href="../css/components/badge.css">
+    <link rel="stylesheet" href="../css/components/alert.css">
+    <link rel="stylesheet" href="../css/components/avatar.css">
+    <link rel="stylesheet" href="../css/components/dropdown.css">
+    <link rel="stylesheet" href="../css/components/modal.css">
+    <link rel="stylesheet" href="../css/components/table.css">
+    <link rel="stylesheet" href="../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../css/showcase.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- Skip Link -->
+    <!-- ========================================= -->
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- Page Wrapper -->
+    <!-- ========================================= -->
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Navigation -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System Home"
+                >
+
+                    <strong>
+
+                        ASLDS
+
+                    </strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+
+                            <a
+                                href="index.html"
+                                class="nav-link"
+                            >
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="getting-started.html"
+                                class="nav-link"
+                            >
+
+                                Getting Started
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="installation.html"
+                                class="nav-link"
+                            >
+
+                                Installation
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="playground.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Playground
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a
+                                href="components/buttons.html"
+                                class="nav-link"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button
+                        class="nav-search"
+                        type="button"
+                        aria-label="Search Documentation"
+                    >
+
+                        Search
+
+                    </button>
+
+                    <button
+                        class="btn btn-outline"
+                        type="button"
+                        aria-label="Toggle Theme"
+                    >
+
+                        Theme
+
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                    >
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ========================================= -->
+        <!-- Main Content -->
+        <!-- ========================================= -->
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Interactive Documentation
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Playground
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Experiment with ASLDS components before
+                                integrating them into your applications.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                The Playground provides a live preview
+                                environment for exploring reusable UI
+                                components, layouts and interaction
+                                patterns available in the A Square L
+                                Design System. Review component
+                                appearance and behavior before using
+                                them in production projects.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <a
+                                    href="components/buttons.html"
+                                    class="btn btn-primary"
+                                >
+
+                                    Browse Components
+
+                                </a>
+
+                                <a
+                                    href="foundations/colors.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Foundations
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Playground Overview
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Live Component Gallery</li>
+
+                                    <li>Layout Demonstrations</li>
+
+                                    <li>Accessibility Preview</li>
+
+                                    <li>Developer Notes</li>
+
+                                    <li>Documentation Links</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="introduction"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Playground
+
+                        </span>
+
+                        <h2>
+
+                            Preview Components Before Building
+
+                        </h2>
+
+                        <p>
+
+                            Use this interactive playground to explore
+                            how ASL Design System components look and
+                            behave. The examples shown on this page are
+                            intended for visual evaluation, design
+                            validation and rapid experimentation before
+                            integrating components into production
+                            applications.
+
+                        </p>
+
+                    </header>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Component Preview Gallery -->
+            <!-- ========================================= -->
+            
+                        <section
+                class="section"
+                id="component-gallery"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Live Component Gallery
+
+                        </span>
+
+                        <h2>
+
+                            Preview Core Components
+
+                        </h2>
+
+                        <p>
+
+                            Each preview demonstrates how the component
+                            appears inside a real interface. Select
+                            "View Documentation" to learn more about
+                            usage, accessibility and recommended
+                            practices.
+
+                        </p>
+
+                    </header>
+
+                    <!-- ========================================= -->
+                    <!-- Buttons -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Buttons
+
+                            </h3>
+
+                            <p>
+
+                                Standard action buttons used throughout
+                                ASLDS applications.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Primary
+
+                                </button>
+
+                                <button class="btn btn-secondary">
+
+                                    Secondary
+
+                                </button>
+
+                                <button class="btn btn-outline">
+
+                                    Outline
+
+                                </button>
+
+                            </div>
+
+                            <p>
+
+                                <a
+                                    href="components/buttons.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Cards -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Cards
+
+                            </h3>
+
+                            <p>
+
+                                Flexible content containers used across
+                                dashboards, documentation and business
+                                applications.
+
+                            </p>
+
+                            <div class="card-grid component-grid">
+
+                                <article class="card">
+
+                                    <div class="card-body">
+
+                                        <h4>
+
+                                            Analytics
+
+                                        </h4>
+
+                                        <p>
+
+                                            Enterprise dashboard card.
+
+                                        </p>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="card">
+
+                                    <div class="card-body">
+
+                                        <h4>
+
+                                            Reports
+
+                                        </h4>
+
+                                        <p>
+
+                                            Documentation preview card.
+
+                                        </p>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                            <p>
+
+                                <a
+                                    href="components/cards.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Alerts -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Alerts
+
+                            </h3>
+
+                            <p>
+
+                                Status messages used to communicate
+                                information, warnings and errors.
+
+                            </p>
+
+                            <div class="alert alert-info">
+
+                                Information alert preview.
+
+                            </div>
+
+                            <div class="alert alert-success">
+
+                                Success alert preview.
+
+                            </div>
+
+                            <div class="alert alert-warning">
+
+                                Warning alert preview.
+
+                            </div>
+
+                            <p>
+
+                                <a
+                                    href="components/alerts.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Badges -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Badges
+
+                            </h3>
+
+                            <p>
+
+                                Small labels for highlighting status,
+                                versions and categories.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <span class="badge">
+
+                                    Stable
+
+                                </span>
+
+                                <span class="badge">
+
+                                    New
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Preview
+
+                                </span>
+
+                            </div>
+
+                            <p>
+
+                                <a
+                                    href="components/badges.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Forms -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Forms
+
+                            </h3>
+
+                            <p>
+
+                                Form controls styled using the ASL
+                                Design System.
+
+                            </p>
+
+                            <form>
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        Full Name
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        placeholder="John Doe"
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        Email
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="email"
+                                        placeholder="john@example.com"
+                                    >
+
+                                </div>
+
+                            </form>
+
+                            <p>
+
+                                <a
+                                    href="components/forms.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Tables -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Tables
+
+                            </h3>
+
+                            <p>
+
+                                Responsive tabular data presentation.
+
+                            </p>
+
+                            <table class="table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>Component</th>
+
+                                        <th>Status</th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>Buttons</td>
+
+                                        <td>Ready</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>Cards</td>
+
+                                        <td>Ready</td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                            <p>
+
+                                <a
+                                    href="components/tables.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Additional Component Previews -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="advanced-components"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            More Components
+
+                        </span>
+
+                        <h2>
+
+                            Continue Exploring ASLDS
+
+                        </h2>
+
+                        <p>
+
+                            These previews demonstrate additional
+                            reusable interface components available
+                            throughout the ASL Design System.
+
+                        </p>
+
+                    </header>
+
+                    <!-- ========================================= -->
+                    <!-- Tabs -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Tabs
+
+                            </h3>
+
+                            <p>
+
+                                Organize related content into
+                                manageable sections.
+
+                            </p>
+
+                            <div class="tabs">
+
+                                <button class="tab active">
+
+                                    Overview
+
+                                </button>
+
+                                <button class="tab">
+
+                                    Examples
+
+                                </button>
+
+                                <button class="tab">
+
+                                    API
+
+                                </button>
+
+                            </div>
+
+                            <div class="tab-content">
+
+                                Active tab preview content.
+
+                            </div>
+
+                            <p>
+
+                                <a
+                                    href="components/tabs.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Progress -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Progress Bars
+
+                            </h3>
+
+                            <p>
+
+                                Visual indicators showing task
+                                completion and application progress.
+
+                            </p>
+
+                            <div class="progress">
+
+                                <div
+                                    class="progress-bar"
+                                    style="width:75%;"
+                                >
+
+                                    75%
+
+                                </div>
+
+                            </div>
+
+                            <p>
+
+                                <a
+                                    href="components/progress.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Avatars -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Avatars
+
+                            </h3>
+
+                            <p>
+
+                                User identity elements for profiles,
+                                comments and dashboards.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <div class="avatar">
+
+                                    A
+
+                                </div>
+
+                                <div class="avatar">
+
+                                    S
+
+                                </div>
+
+                                <div class="avatar">
+
+                                    L
+
+                                </div>
+
+                            </div>
+
+                            <p>
+
+                                <a
+                                    href="components/avatars.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Modals -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Modals
+
+                            </h3>
+
+                            <p>
+
+                                Overlay dialogs for confirmations,
+                                forms and detailed information.
+
+                            </p>
+
+                            <button class="btn btn-primary">
+
+                                Open Modal
+
+                            </button>
+
+                            <p>
+
+                                <a
+                                    href="components/modals.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Dropdowns -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Dropdowns
+
+                            </h3>
+
+                            <p>
+
+                                Compact menus for secondary actions
+                                and navigation.
+
+                            </p>
+
+                            <div class="dropdown">
+
+                                <button class="btn btn-outline">
+
+                                    Open Menu
+
+                                </button>
+
+                                <div class="dropdown-menu">
+
+                                    <a href="#">
+
+                                        Dashboard
+
+                                    </a>
+
+                                    <a href="#">
+
+                                        Settings
+
+                                    </a>
+
+                                    <a href="#">
+
+                                        Profile
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <p>
+
+                                <a
+                                    href="components/dropdowns.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ========================================= -->
+                    <!-- Navigation -->
+                    <!-- ========================================= -->
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>
+
+                                Navigation
+
+                            </h3>
+
+                            <p>
+
+                                Responsive navigation components used
+                                throughout the ASLDS ecosystem.
+
+                            </p>
+
+                            <nav aria-label="Navigation Preview">
+
+                                <ul class="nav-menu">
+
+                                    <li>
+
+                                        <a
+                                            href="#"
+                                            class="nav-link active"
+                                        >
+
+                                            Home
+
+                                        </a>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a
+                                            href="#"
+                                            class="nav-link"
+                                        >
+
+                                            Components
+
+                                        </a>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a
+                                            href="#"
+                                            class="nav-link"
+                                        >
+
+                                            Guides
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+
+                            <p>
+
+                                <a
+                                    href="components/navbar.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Layout Demonstrations -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="layout-demonstrations"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Layout Demonstrations
+
+                        </span>
+
+                        <h2>
+
+                            Responsive Layout Examples
+
+                        </h2>
+
+                        <p>
+
+                            Preview common layout patterns used across
+                            ASL Design System powered applications.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Containers
+
+                                </h3>
+
+                                <p>
+
+                                    Consistent page width with adaptive
+                                    spacing across all devices.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Grid Layouts
+
+                                </h3>
+
+                                <p>
+
+                                    Flexible responsive grid system for
+                                    dashboards and documentation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashboard Cards
+
+                                </h3>
+
+                                <p>
+
+                                    Balanced layouts for analytics,
+                                    statistics and business metrics.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Section Spacing
+
+                                </h3>
+
+                                <p>
+
+                                    Consistent vertical rhythm using
+                                    standardized spacing tokens.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility Preview -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="accessibility-preview"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessible Component Behavior
+
+                        </h2>
+
+                        <p>
+
+                            Every ASL Design System component is designed
+                            to encourage accessible, keyboard-friendly
+                            and responsive user interfaces.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Navigate interactive elements using
+                                    the Tab key and activate controls
+                                    using Enter or Space.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Button States
+
+                                </h3>
+
+                                <div class="hero-actions">
+
+                                    <button class="btn btn-primary">
+
+                                        Primary
+
+                                    </button>
+
+                                    <button class="btn btn-secondary">
+
+                                        Secondary
+
+                                    </button>
+
+                                    <button class="btn btn-outline">
+
+                                        Focus
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Form Controls
+
+                                </h3>
+
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Accessible Input"
+                                >
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Layout
+
+                                </h3>
+
+                                <p>
+
+                                    Resize the browser window to preview
+                                    how ASLDS components automatically
+                                    adapt to different screen sizes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Notes -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="developer-notes"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer Notes
+
+                        </span>
+
+                        <h2>
+
+                            Recommended Playground Workflow
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Preview First
+
+                                </h3>
+
+                                <p>
+
+                                    Review components in the Playground
+                                    before integrating them into your
+                                    application.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Reuse Components
+
+                                </h3>
+
+                                <p>
+
+                                    Prefer existing ASLDS components over
+                                    creating custom alternatives.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Maintain Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Follow framework conventions to keep
+                                    every product visually consistent.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Next Steps -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+                id="next-steps"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Learning
+
+                        </span>
+
+                        <h2>
+
+                            Next Steps
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid quick-links-grid">
+
+                        <a
+                            href="foundations/colors.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Foundations
+
+                                </h3>
+
+                                <p>
+
+                                    Learn the design foundations.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="components/buttons.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Components
+
+                                </h3>
+
+                                <p>
+
+                                    Browse the complete component library.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="guides/engineering.html"
+                            class="card quick-link-card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Engineering Guide
+
+                                </h3>
+
+                                <p>
+
+                                    Review engineering standards and best
+                                    practices.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer doc-footer">
+
+            <div class="container">
+
+                <div class="doc-footer-grid">
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            A Square L Innovate
+
+                        </h3>
+
+                        <p>
+
+                            Building enterprise-ready digital products
+                            with the ASL Design System.
+
+                        </p>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Documentation
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="installation.html">Installation</a></li>
+                            <li><a href="playground.html">Playground</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Resources
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="guides/roadmap.html">Roadmap</a></li>
+                            <li><a href="guides/changelog.html">Changelog</a></li>
+                            <li><a href="#">GitHub</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="doc-footer-column">
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            ASL Design System
+
+                        </p>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            Built in Kano, Nigeria
+
+                        </p>
+
+                    </section>
+
+                </div>
+
+                <div class="doc-footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate.
+                        All rights reserved.
+
+                    </p>
+
+                    <p>
+
+                        ASL Design System • Version 1.1 Stable
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Toast Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/sidebar.js"></script>
+    <script type="module" src="../js/tabs.js"></script>
+    <script type="module" src="../js/dropdown.js"></script>
+    <script type="module" src="../js/modal.js"></script>
+    <script type="module" src="../js/theme.js"></script>
+    <script type="module" src="../js/playground.js"></script>
+    <script type="module" src="../js/search.js"></script>
+    <script type="module" src="../js/animations.js"></script>
+    <script type="module" src="../js/toast.js"></script>
+
+</body>
+
+</html>
