@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/modals.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Modal Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Modal Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Modal, Dialog, Overlay, Components, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Modals • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../guides/playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="modals.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">Home</a>
+
+                        /
+
+                        <a href="../index.html">Components</a>
+
+                        /
+
+                        <span>Modals</span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Modals
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Display focused content, confirmations and
+                                workflows using accessible modal dialogs.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                ASLDS Modal components provide structured dialog
+                                experiences for confirmations, forms, previews,
+                                authentication and critical actions while
+                                maintaining accessibility and usability.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Dialogs
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overview</li>
+                                    <li>Anatomy</li>
+                                    <li>Variants</li>
+                                    <li>Sizes</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Modal Overview
+
+                        </h2>
+
+                        <p>
+
+                            Modal dialogs temporarily interrupt user workflows
+                            to present critical information, request decisions
+                            or complete focused tasks without leaving the
+                            current page.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Focused
+
+                                </h3>
+
+                                <p>
+
+                                    Direct user attention toward a single task
+                                    or decision.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Reusable
+
+                                </h3>
+
+                                <p>
+
+                                    Standard dialog layouts ensure consistency
+                                    across every ASLDS application.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessible
+
+                                </h3>
+
+                                <p>
+
+                                    Built with semantic dialog structure,
+                                    keyboard support and focus management.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Modal Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="modal-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Modal Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS modal follows a consistent structure
+                            that promotes usability, accessibility and
+                            predictable interaction throughout the design
+                            system.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Overlay
+
+                                </h3>
+
+                                <p>
+
+                                    Prevents interaction with background
+                                    content while directing attention toward
+                                    the dialog.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dialog Container
+
+                                </h3>
+
+                                <p>
+
+                                    Holds all modal content inside a structured
+                                    and visually separated panel.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Header
+
+                                </h3>
+
+                                <p>
+
+                                    Displays the dialog title and optional close
+                                    action.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Body
+
+                                </h3>
+
+                                <p>
+
+                                    Contains forms, messages, previews or any
+                                    interactive content.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Footer
+
+                                </h3>
+
+                                <p>
+
+                                    Contains the primary and secondary action
+                                    buttons.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Modal Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="modal-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Modal Variants
+
+                        </h2>
+
+                        <p>
+
+                            Different dialog layouts support confirmations,
+                            forms, warnings and detailed content while keeping
+                            a consistent user experience.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Confirmation Modal
+
+                                </h3>
+
+                                <div class="modal">
+
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+
+                                            <h4>
+
+                                                Delete Project
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                            Are you sure you want to continue?
+
+                                        </div>
+
+                                        <div class="modal-footer">
+
+                                            <button class="btn btn-outline">
+
+                                                Cancel
+
+                                            </button>
+
+                                            <button class="btn btn-primary">
+
+                                                Confirm
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+<pre><code>&lt;div class="modal"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Form Modal
+
+                                </h3>
+
+                                <div class="modal">
+
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+
+                                            <h4>
+
+                                                Create Project
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                            Form fields appear here.
+
+                                        </div>
+
+                                        <div class="modal-footer">
+
+                                            <button class="btn btn-outline">
+
+                                                Cancel
+
+                                            </button>
+
+                                            <button class="btn btn-primary">
+
+                                                Save
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+<pre><code>&lt;div class="modal"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Modal Sizes -->
+            <!-- ========================================= -->
+
+            <section
+                id="modal-sizes"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Sizes
+
+                        </span>
+
+                        <h2>
+
+                            Modal Sizes
+
+                        </h2>
+
+                        <p>
+
+                            Choose modal sizes according to the amount of
+                            content while maintaining readability and focus.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                        
+                                                <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Small Modal
+
+                                </h3>
+
+                                <p>
+
+                                    Ideal for confirmations, notifications and
+                                    simple user decisions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Medium Modal
+
+                                </h3>
+
+                                <p>
+
+                                    Recommended for forms and standard business
+                                    workflows.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Large Modal
+
+                                </h3>
+
+                                <p>
+
+                                    Suitable for detailed forms, previews and
+                                    complex enterprise workflows.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Fullscreen Modal
+
+                                </h3>
+
+                                <p>
+
+                                    Best suited for immersive editing,
+                                    dashboards and responsive mobile
+                                    experiences.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Interactive Examples -->
+            <!-- ========================================= -->
+
+            <section
+                id="interactive-examples"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Live Examples
+
+                        </span>
+
+                        <h2>
+
+                            Interactive Modal Examples
+
+                        </h2>
+
+                        <p>
+
+                            These examples demonstrate common modal patterns
+                            used throughout ASLDS enterprise applications.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Confirmation Dialog
+
+                                </h3>
+
+                                <button class="btn btn-primary">
+
+                                    Open Confirmation
+
+                                </button>
+
+                                <p>
+
+                                    Request user confirmation before performing
+                                    irreversible actions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Form Dialog
+
+                                </h3>
+
+                                <button class="btn btn-secondary">
+
+                                    Open Form
+
+                                </button>
+
+                                <p>
+
+                                    Collect information without leaving the
+                                    current workflow.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Preview Dialog
+
+                                </h3>
+
+                                <button class="btn btn-outline">
+
+                                    Preview Content
+
+                                </button>
+
+                                <p>
+
+                                    Display detailed information or previews
+                                    inside an overlay.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Modal dialogs should maintain focus management,
+                            semantic structure and complete keyboard
+                            accessibility.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                        
+                                                <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Users should be able to open, navigate and
+                                    close modal dialogs using only the keyboard.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Focus Management
+
+                                </h3>
+
+                                <p>
+
+                                    Move keyboard focus into the dialog when it
+                                    opens and restore focus to the triggering
+                                    element when it closes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ARIA Support
+
+                                </h3>
+
+                                <p>
+
+                                    Use semantic dialog roles together with
+                                    descriptive labels and accessible
+                                    relationships for assistive technologies.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Escape Key
+
+                                </h3>
+
+                                <p>
+
+                                    Support closing non-destructive dialogs
+                                    using the Escape key whenever appropriate.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Implementation
+
+                        </h2>
+
+                        <p>
+
+                            Build reusable dialog experiences using the
+                            standard ASLDS modal structure.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;div class="modal"&gt;
+    &lt;div class="modal-content"&gt;
+
+        &lt;div class="modal-header"&gt;
+            ...
+        &lt;/div&gt;
+
+        &lt;div class="modal-body"&gt;
+            ...
+        &lt;/div&gt;
+
+        &lt;div class="modal-footer"&gt;
+            ...
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do & Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Keep dialogs focused on one task.</li>
+                                    <li>Provide clear titles.</li>
+                                    <li>Offer obvious primary actions.</li>
+                                    <li>Support keyboard navigation.</li>
+                                    <li>Close dialogs predictably.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Stack multiple dialogs.</li>
+                                    <li>Hide critical actions.</li>
+                                    <li>Trap keyboard users.</li>
+                                    <li>Interrupt users unnecessarily.</li>
+                                    <li>Display excessive content.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related Components
+
+                        </span>
+
+                        <h2>
+
+                            Works Well With
+
+                        </h2>
+
+                        <p>
+
+                            Modal dialogs integrate naturally with forms,
+                            buttons and alerts to build complete user
+                            workflows.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Launch dialogs using standard ASLDS button
+                                    components.
+
+                                </p>
+
+                                <a href="buttons.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Forms
+
+                                </h3>
+
+                                <p>
+
+                                    Present data entry workflows inside modal
+                                    dialogs.
+
+                                </p>
+
+                                <a href="forms.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Alerts
+
+                                </h3>
+
+                                <p>
+
+                                    Combine alerts with confirmation dialogs for
+                                    destructive actions.
+
+                                </p>
+
+                                <a href="alerts.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="dropdowns.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Dropdowns
+
+                        </a>
+
+                        <a
+                            href="tables.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Tables
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering
+                            accessible, scalable and consistent digital
+                            experiences across every A Square L Innovate
+                            platform.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../index.html">Showcase</a></li>
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/layout.html">Layout</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="dropdowns.html">Dropdowns</a></li>
+                            <li><a href="modals.html">Modals</a></li>
+                            <li><a href="tables.html">Tables</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>

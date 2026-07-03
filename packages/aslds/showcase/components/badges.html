@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/badges.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Badge Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Badge Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Badge, Status, Labels, Indicators, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Badges • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../guides/playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="badges.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="../index.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Badges
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Badges
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Compact status indicators that communicate
+                                labels, counts and semantic states across the
+                                ASL Design System.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Badges provide concise visual indicators for
+                                notifications, categories, statuses and counts
+                                while maintaining consistency throughout
+                                enterprise interfaces.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Status
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Badge Anatomy</li>
+                                    <li>Variants</li>
+                                    <li>Sizes</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Badge Overview
+
+                        </h2>
+
+                        <p>
+
+                            Badges communicate compact pieces of information,
+                            such as labels, notification counts, categories,
+                            statuses and priorities. They are designed to be
+                            lightweight, recognizable and accessible.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Compact
+
+                                </h3>
+
+                                <p>
+
+                                    Display important information without
+                                    occupying significant interface space.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistent
+
+                                </h3>
+
+                                <p>
+
+                                    Reuse semantic badge styles throughout the
+                                    entire product ecosystem.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Informative
+
+                                </h3>
+
+                                <p>
+
+                                    Provide meaningful visual context while
+                                    avoiding unnecessary complexity.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Badge Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="badge-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Badge Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS badge follows a simple, reusable
+                            structure that ensures clarity, scalability and
+                            consistent visual communication across every
+                            application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Container
+
+                                </h3>
+
+                                <p>
+
+                                    The outer badge element provides the
+                                    overall shape, spacing and semantic color.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Label
+
+                                </h3>
+
+                                <p>
+
+                                    Displays concise text describing status,
+                                    category or priority.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Semantic Color
+
+                                </h3>
+
+                                <p>
+
+                                    Colors communicate meaning without
+                                    replacing descriptive text.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Optional Icon
+
+                                </h3>
+
+                                <p>
+
+                                    Icons may reinforce meaning when paired
+                                    with readable labels.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Notification Count
+
+                                </h3>
+
+                                <p>
+
+                                    Numeric badges communicate unread items,
+                                    pending tasks or notification totals.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Badge Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="badge-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Badge Variants
+
+                        </h2>
+
+                        <p>
+
+                            Semantic badge variants communicate different
+                            meanings while maintaining visual consistency
+                            throughout ASLDS.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Primary
+
+                                </h3>
+
+                                <span class="badge">
+
+                                    Primary
+
+                                </span>
+
+                                <p>
+
+                                    Default emphasis for general interface
+                                    labels.
+
+                                </p>
+
+<pre><code>&lt;span class="badge"&gt;
+    Primary
+&lt;/span&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Success
+
+                                </h3>
+
+                                <span class="badge badge-success">
+
+                                    Success
+
+                                </span>
+
+                                <p>
+
+                                    Indicates successful completion or healthy
+                                    system status.
+
+                                </p>
+
+<pre><code>&lt;span class="badge badge-success"&gt;
+    Success
+&lt;/span&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Warning
+
+                                </h3>
+
+                                <span class="badge badge-warning">
+
+                                    Warning
+
+                                </span>
+
+                                <p>
+
+                                    Highlights information requiring user
+                                    attention.
+
+                                </p>
+
+<pre><code>&lt;span class="badge badge-warning"&gt;
+    Warning
+&lt;/span&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Danger
+
+                                </h3>
+
+                                <span class="badge badge-danger">
+
+                                    Danger
+
+                                </span>
+
+                                <p>
+
+                                    Communicates critical states and errors.
+
+                                </p>
+
+<pre><code>&lt;span class="badge badge-danger"&gt;
+    Danger
+&lt;/span&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Info
+
+                                </h3>
+
+                                <span class="badge badge-info">
+
+                                    Info
+
+                                </span>
+
+                                <p>
+
+                                    Used for neutral announcements and
+                                    informational messages.
+
+                                </p>
+
+<pre><code>&lt;span class="badge badge-info"&gt;
+    Info
+&lt;/span&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Badge Sizes -->
+            <!-- ========================================= -->
+
+            <section
+                id="badge-sizes"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Sizes
+
+                        </span>
+
+                        <h2>
+
+                            Badge Sizes
+
+                        </h2>
+
+                        <p>
+
+                            Badge sizes should remain proportional to the
+                            surrounding interface while preserving readability.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                                            <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Small
+
+                                </h3>
+
+                                <span class="badge badge-sm">
+
+                                    Small
+
+                                </span>
+
+                                <p>
+
+                                    Best suited for compact interfaces, tables
+                                    and dense information layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Default
+
+                                </h3>
+
+                                <span class="badge">
+
+                                    Default
+
+                                </span>
+
+                                <p>
+
+                                    Standard badge size for most applications
+                                    throughout ASLDS.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Large
+
+                                </h3>
+
+                                <span class="badge badge-lg">
+
+                                    Large
+
+                                </span>
+
+                                <p>
+
+                                    Recommended for dashboards, statistics and
+                                    highlighted information.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Notification Badges -->
+            <!-- ========================================= -->
+
+            <section
+                id="notification-badges"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Notifications
+
+                        </span>
+
+                        <h2>
+
+                            Notification Badges
+
+                        </h2>
+
+                        <p>
+
+                            Notification badges communicate unread messages,
+                            pending tasks and activity counts without
+                            interrupting the user experience.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Messages
+
+                                </h3>
+
+                                <button class="btn btn-secondary">
+
+                                    Inbox
+
+                                    <span class="badge">
+
+                                        12
+
+                                    </span>
+
+                                </button>
+
+<pre><code>&lt;button class="btn btn-secondary"&gt;
+    Inbox
+    &lt;span class="badge"&gt;12&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Notifications
+
+                                </h3>
+
+                                <button class="btn btn-outline">
+
+                                    Alerts
+
+                                    <span class="badge badge-danger">
+
+                                        5
+
+                                    </span>
+
+                                </button>
+
+<pre><code>&lt;button class="btn btn-outline"&gt;
+    Alerts
+    &lt;span class="badge badge-danger"&gt;5&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tasks
+
+                                </h3>
+
+                                <button class="btn btn-primary">
+
+                                    Tasks
+
+                                    <span class="badge badge-warning">
+
+                                        18
+
+                                    </span>
+
+                                </button>
+
+<pre><code>&lt;button class="btn btn-primary"&gt;
+    Tasks
+    &lt;span class="badge badge-warning"&gt;18&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Badge content should always remain understandable
+                            without relying exclusively on color or visual
+                            styling.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Meaningful Labels
+
+                                </h3>
+
+                                <p>
+
+                                    Every badge should communicate meaningful
+                                    information through readable text.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Color Independence
+
+                                </h3>
+
+                                <p>
+
+                                    Semantic colors should reinforce meaning,
+                                    never replace descriptive content.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Contrast
+
+                                </h3>
+
+                                <p>
+
+                                    Ensure sufficient contrast between badge
+                                    text and background in every theme.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Implementation
+
+                        </h2>
+
+                        <p>
+
+                            Use semantic badge classes consistently throughout
+                            your application to communicate status, categories
+                            and notification counts.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;span class="badge"&gt;Primary&lt;/span&gt;
+
+&lt;span class="badge badge-success"&gt;
+    Success
+&lt;/span&gt;
+
+&lt;span class="badge badge-warning"&gt;
+    Warning
+&lt;/span&gt;
+
+&lt;span class="badge badge-danger"&gt;
+    Danger
+&lt;/span&gt;
+
+&lt;span class="badge badge-info"&gt;
+    Information
+&lt;/span&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do & Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Keep badge labels short.</li>
+                                    <li>Use semantic colors consistently.</li>
+                                    <li>Display only meaningful information.</li>
+                                    <li>Maintain readable contrast.</li>
+                                    <li>Reuse standard badge variants.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Use badges for long text.</li>
+                                    <li>Depend only on color.</li>
+                                    <li>Overload interfaces with badges.</li>
+                                    <li>Use inconsistent semantic meanings.</li>
+                                    <li>Create unnecessary badge variations.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related Components
+
+                        </span>
+
+                        <h2>
+
+                            Works Well With
+
+                        </h2>
+
+                        <p>
+
+                            Badges integrate naturally with several ASLDS
+                            components to provide additional visual context and
+                            interface feedback.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Display notification counts and activity
+                                    indicators.
+
+                                </p>
+
+                                <a
+                                    href="buttons.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Alerts
+
+                                </h3>
+
+                                <p>
+
+                                    Reinforce status messages with semantic
+                                    badge indicators.
+
+                                </p>
+
+                                <a
+                                    href="alerts.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cards
+
+                                </h3>
+
+                                <p>
+
+                                    Categorize content and highlight important
+                                    information inside card layouts.
+
+                                </p>
+
+                                <a
+                                    href="cards.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="alerts.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Alerts
+
+                        </a>
+
+                        <a
+                            href="progress.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Progress
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering
+                            accessible, scalable and consistent digital
+                            experiences across every A Square L Innovate
+                            platform.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../index.html">Showcase</a></li>
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/layout.html">Layout</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="cards.html">Cards</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="alerts.html">Alerts</a></li>
+                            <li><a href="badges.html">Badges</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/tabs.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Tabs Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Tabs Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Tabs, Navigation, Components, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Tabs • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../guides/playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="tabs.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="../index.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Tabs
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Tabs
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Organize related content into accessible,
+                                efficient and space-saving interfaces.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                ASLDS Tabs enable users to switch between
+                                related sections without leaving the current
+                                page, providing clean navigation patterns for
+                                dashboards, settings, documentation and complex
+                                enterprise applications.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Navigation
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overview</li>
+                                    <li>Tab Anatomy</li>
+                                    <li>Basic Tabs</li>
+                                    <li>Variants</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Tabs Overview
+
+                        </h2>
+
+                        <p>
+
+                            Tabs divide related information into logical
+                            sections while keeping interfaces organized,
+                            responsive and easy to navigate across every ASLDS
+                            application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Organized
+
+                                </h3>
+
+                                <p>
+
+                                    Present related information without
+                                    overwhelming the user interface.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Efficient
+
+                                </h3>
+
+                                <p>
+
+                                    Switch between content panels instantly
+                                    without page navigation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessible
+
+                                </h3>
+
+                                <p>
+
+                                    Built with keyboard navigation and semantic
+                                    interaction patterns for every user.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Tab Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="tab-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Tab Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS tab interface consists of predictable
+                            elements that provide consistent navigation,
+                            accessibility and reusable interaction patterns.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tabs Container
+
+                                </h3>
+
+                                <p>
+
+                                    Wraps the entire tab interface and manages
+                                    the relationship between navigation and
+                                    content panels.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tab List
+
+                                </h3>
+
+                                <p>
+
+                                    Contains the navigation items that allow
+                                    users to switch between sections.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tab Item
+
+                                </h3>
+
+                                <p>
+
+                                    Represents an individual navigation option
+                                    within the tab list.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tab Panel
+
+                                </h3>
+
+                                <p>
+
+                                    Displays the content associated with the
+                                    selected tab.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Basic Tabs -->
+            <!-- ========================================= -->
+
+            <section
+                id="basic-tabs"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Basic Usage
+
+                        </span>
+
+                        <h2>
+
+                            Standard Tabs
+
+                        </h2>
+
+                        <p>
+
+                            The standard tab component provides an intuitive way
+                            to organize related information without navigating
+                            away from the current page.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+                            <div class="tabs">
+
+                                <div class="tab-list">
+
+                                    <button class="tab active">
+
+                                        Overview
+
+                                    </button>
+
+                                    <button class="tab">
+
+                                        Analytics
+
+                                    </button>
+
+                                    <button class="tab">
+
+                                        Reports
+
+                                    </button>
+
+                                    <button class="tab">
+
+                                        Settings
+
+                                    </button>
+
+                                </div>
+
+                                <div class="tab-content">
+
+                                    <p>
+
+                                        The Overview panel displays summary
+                                        information for the selected resource.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+<pre><code>&lt;div class="tabs"&gt;
+    &lt;div class="tab-list"&gt;
+        ...
+    &lt;/div&gt;
+
+    &lt;div class="tab-content"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Tab Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="tab-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Tab Variants
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS provides multiple tab styles suitable for
+                            dashboards, settings pages, documentation and
+                            enterprise management interfaces.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                                              <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Underlined Tabs
+
+                                </h3>
+
+                                <div class="tabs">
+
+                                    <div class="tab-list">
+
+                                        <button class="tab-button is-active">
+
+                                            Overview
+
+                                        </button>
+
+                                        <button class="tab-button">
+
+                                            Activity
+
+                                        </button>
+
+                                        <button class="tab-button">
+
+                                            Settings
+
+                                        </button>
+
+                                    </div>
+
+                                    <div class="tab-content is-active">
+
+                                        <p>
+
+                                            The default ASLDS tab style is ideal
+                                            for documentation, settings pages
+                                            and dashboards.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+<pre><code>&lt;div class="tabs"&gt;
+    &lt;div class="tab-list"&gt;
+        &lt;button class="tab-button is-active"&gt;
+            Overview
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashboard Tabs
+
+                                </h3>
+
+                                <div class="tabs">
+
+                                    <div class="tab-list">
+
+                                        <button class="tab-button is-active">
+
+                                            Analytics
+
+                                        </button>
+
+                                        <button class="tab-button">
+
+                                            Revenue
+
+                                        </button>
+
+                                        <button class="tab-button">
+
+                                            Users
+
+                                        </button>
+
+                                        <button class="tab-button">
+
+                                            Reports
+
+                                        </button>
+
+                                    </div>
+
+                                    <div class="tab-content is-active">
+
+                                        <p>
+
+                                            Organize dashboard information into
+                                            focused sections while minimizing
+                                            page clutter.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+<pre><code>&lt;button class="tab-button"&gt;
+    Analytics
+&lt;/button&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Settings Tabs
+
+                                </h3>
+
+                                <div class="tabs">
+
+                                    <div class="tab-list">
+
+                                        <button class="tab-button is-active">
+
+                                            Profile
+
+                                        </button>
+
+                                        <button class="tab-button">
+
+                                            Security
+
+                                        </button>
+
+                                        <button class="tab-button">
+
+                                            Billing
+
+                                        </button>
+
+                                    </div>
+
+                                    <div class="tab-content is-active">
+
+                                        <p>
+
+                                            Separate account configuration into
+                                            logical categories for improved user
+                                            experience.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+<pre><code>&lt;div class="tab-content is-active"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Tabs should support keyboard navigation, clear
+                            focus states and semantic relationships between
+                            tab buttons and their associated content panels.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                      
+                                              <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Users should be able to navigate between
+                                    tabs using the keyboard, including Arrow
+                                    keys, Home and End where appropriate.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Focus Visibility
+
+                                </h3>
+
+                                <p>
+
+                                    Always provide a visible focus indicator so
+                                    keyboard users can identify the active tab.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ARIA Relationships
+
+                                </h3>
+
+                                <p>
+
+                                    Associate each tab with its corresponding
+                                    panel using appropriate ARIA roles,
+                                    properties and identifiers.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Clear Labels
+
+                                </h3>
+
+                                <p>
+
+                                    Use concise tab labels that accurately
+                                    describe the associated content panel.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Implementation
+
+                        </h2>
+
+                        <p>
+
+                            Build reusable tab interfaces using the standard
+                            ASLDS tabs structure and semantic HTML.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;div class="tabs"&gt;
+
+    &lt;div class="tab-list"&gt;
+        &lt;button class="tab-button is-active"&gt;
+            Overview
+        &lt;/button&gt;
+        &lt;button class="tab-button"&gt;
+            Settings
+        &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="tab-content is-active"&gt;
+        ...
+    &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do & Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Group related content together.</li>
+                                    <li>Keep tab labels concise.</li>
+                                    <li>Support keyboard navigation.</li>
+                                    <li>Maintain a consistent tab order.</li>
+                                    <li>Display one active tab at a time.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Create excessive numbers of tabs.</li>
+                                    <li>Hide critical actions inside tabs.</li>
+                                    <li>Break focus management.</li>
+                                    <li>Use ambiguous labels.</li>
+                                    <li>Mix unrelated content.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related Components
+
+                        </span>
+
+                        <h2>
+
+                            Works Well With
+
+                        </h2>
+
+                        <p>
+
+                            Tabs work seamlessly with other ASLDS components to
+                            create structured, scalable enterprise interfaces.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cards
+
+                                </h3>
+
+                                <p>
+
+                                    Display tabbed content inside dashboard and
+                                    analytics cards.
+
+                                </p>
+
+                                <a href="cards.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Forms
+
+                                </h3>
+
+                                <p>
+
+                                    Organize long forms into logical sections
+                                    using tabs.
+
+                                </p>
+
+                                <a href="forms.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tables
+
+                                </h3>
+
+                                <p>
+
+                                    Separate reports and datasets into multiple
+                                    organized tab panels.
+
+                                </p>
+
+                                <a href="tables.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="tables.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Tables
+
+                        </a>
+
+                        <a
+                            href="footer.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Footer
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering
+                            accessible, scalable and consistent digital
+                            experiences across every A Square L Innovate
+                            platform.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../index.html">Showcase</a></li>
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/layout.html">Layout</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="cards.html">Cards</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="tabs.html">Tabs</a></li>
+                            <li><a href="footer.html">Footer</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>

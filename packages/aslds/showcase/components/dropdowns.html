@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/dropdowns.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Dropdown Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Dropdown Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Dropdown, Menu, Navigation, Components, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Dropdowns • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../guides/playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="dropdowns.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">Home</a>
+
+                        /
+
+                        <a href="../index.html">Components</a>
+
+                        /
+
+                        <span>Dropdowns</span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Dropdowns
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Organize actions, navigation and contextual
+                                options inside compact interactive menus.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                ASLDS Dropdown components provide consistent,
+                                accessible and scalable menu experiences for
+                                navigation, commands, filtering and account
+                                actions across every application.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Navigation
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overview</li>
+                                    <li>Anatomy</li>
+                                    <li>Variants</li>
+                                    <li>Menus</li>
+                                    <li>Accessibility</li>
+                                    <li>Best Practices</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Dropdown Overview
+
+                        </h2>
+
+                        <p>
+
+                            Dropdown components allow users to access related
+                            actions without overwhelming the interface, keeping
+                            navigation clean while supporting scalable
+                            enterprise workflows.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Compact
+
+                                </h3>
+
+                                <p>
+
+                                    Present many actions inside a minimal UI.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistent
+
+                                </h3>
+
+                                <p>
+
+                                    Unified dropdown behavior across all ASLDS
+                                    products.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessible
+
+                                </h3>
+
+                                <p>
+
+                                    Designed for keyboard navigation and assistive
+                                    technologies.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Dropdown Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="dropdown-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Dropdown Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS dropdown follows a predictable
+                            structure to provide consistent interaction,
+                            accessibility and reusable navigation patterns.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Trigger
+
+                                </h3>
+
+                                <p>
+
+                                    The button or control that opens the
+                                    dropdown menu.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dropdown Menu
+
+                                </h3>
+
+                                <p>
+
+                                    Contains navigation links or contextual
+                                    actions related to the trigger.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Menu Item
+
+                                </h3>
+
+                                <p>
+
+                                    Represents an individual action or
+                                    navigation destination.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Divider
+
+                                </h3>
+
+                                <p>
+
+                                    Separates groups of related menu items for
+                                    improved readability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Keyboard navigation and ARIA attributes
+                                    ensure inclusive interaction.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Basic Dropdown -->
+            <!-- ========================================= -->
+
+            <section
+                id="basic-dropdown"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Examples
+
+                        </span>
+
+                        <h2>
+
+                            Basic Dropdown
+
+                        </h2>
+
+                        <p>
+
+                            The standard dropdown is ideal for simple menus,
+                            quick actions and contextual navigation.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Default Menu
+
+                                </h3>
+
+                                <div class="dropdown">
+
+                                    <button class="btn btn-primary">
+
+                                        Open Menu
+
+                                    </button>
+
+                                    <div class="dropdown-menu">
+
+                                        <a href="#" class="dropdown-item">Dashboard</a>
+                                        <a href="#" class="dropdown-item">Profile</a>
+                                        <a href="#" class="dropdown-item">Settings</a>
+                                        <a href="#" class="dropdown-item">Logout</a>
+
+                                    </div>
+
+                                </div>
+
+<pre><code>&lt;div class="dropdown"&gt;
+    &lt;button class="btn btn-primary"&gt;
+        Open Menu
+    &lt;/button&gt;
+
+    &lt;div class="dropdown-menu"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Action Menu
+
+                                </h3>
+
+                                <div class="dropdown">
+
+                                    <button class="btn btn-secondary">
+
+                                        Actions
+
+                                    </button>
+
+                                    <div class="dropdown-menu">
+
+                                        <a href="#" class="dropdown-item">Edit</a>
+                                        <a href="#" class="dropdown-item">Duplicate</a>
+                                        <a href="#" class="dropdown-item">Archive</a>
+                                        <a href="#" class="dropdown-item">Delete</a>
+
+                                    </div>
+
+                                </div>
+
+<pre><code>&lt;button class="btn btn-secondary"&gt;
+    Actions
+&lt;/button&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Dropdown Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="dropdown-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Dropdown Variants
+
+                        </h2>
+
+                        <p>
+
+                            Dropdown menus adapt to different contexts while
+                            preserving consistent interaction patterns across
+                            the design system.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                                              <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Account Menu
+
+                                </h3>
+
+                                <div class="dropdown">
+
+                                    <button class="btn btn-outline">
+
+                                        My Account
+
+                                    </button>
+
+                                    <div class="dropdown-menu">
+
+                                        <a href="#" class="dropdown-item">Profile</a>
+                                        <a href="#" class="dropdown-item">Notifications</a>
+                                        <a href="#" class="dropdown-item">Billing</a>
+                                        <a href="#" class="dropdown-item">Sign Out</a>
+
+                                    </div>
+
+                                </div>
+
+                                <p>
+
+                                    Commonly used for user profile navigation
+                                    and account management.
+
+                                </p>
+
+<pre><code>&lt;div class="dropdown"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navigation Menu
+
+                                </h3>
+
+                                <div class="dropdown">
+
+                                    <button class="btn btn-primary">
+
+                                        Products
+
+                                    </button>
+
+                                    <div class="dropdown-menu">
+
+                                        <a href="#" class="dropdown-item">Business OS</a>
+                                        <a href="#" class="dropdown-item">Academy</a>
+                                        <a href="#" class="dropdown-item">Developer Portal</a>
+                                        <a href="#" class="dropdown-item">AI Solutions</a>
+
+                                    </div>
+
+                                </div>
+
+                                <p>
+
+                                    Organize navigation into logical groups for
+                                    scalable enterprise applications.
+
+                                </p>
+
+<pre><code>&lt;button class="btn btn-primary"&gt;
+    Products
+&lt;/button&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Filter Menu
+
+                                </h3>
+
+                                <div class="dropdown">
+
+                                    <button class="btn btn-secondary">
+
+                                        Filter
+
+                                    </button>
+
+                                    <div class="dropdown-menu">
+
+                                        <a href="#" class="dropdown-item">All Records</a>
+                                        <a href="#" class="dropdown-item">Active</a>
+                                        <a href="#" class="dropdown-item">Pending</a>
+                                        <a href="#" class="dropdown-item">Archived</a>
+
+                                    </div>
+
+                                </div>
+
+                                <p>
+
+                                    Simplify filtering and sorting operations
+                                    within dashboards and tables.
+
+                                </p>
+
+<pre><code>&lt;button class="btn btn-secondary"&gt;
+    Filter
+&lt;/button&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Dropdown Positions -->
+            <!-- ========================================= -->
+
+            <section
+                id="dropdown-positions"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Placement
+
+                        </span>
+
+                        <h2>
+
+                            Dropdown Placement
+
+                        </h2>
+
+                        <p>
+
+                            Dropdown menus should automatically position
+                            themselves to remain visible inside the viewport
+                            while maintaining a consistent interaction pattern.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Bottom Start
+
+                                </h3>
+
+                                <p>
+
+                                    Default placement for most dropdown menus.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Bottom End
+
+                                </h3>
+
+                                <p>
+
+                                    Ideal for account menus and user actions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Top Placement
+
+                                </h3>
+
+                                <p>
+
+                                    Used when insufficient space exists below
+                                    the trigger element.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Dropdown components must remain fully accessible
+                            using keyboard navigation, semantic HTML and ARIA
+                            attributes.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                      
+                                              <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Users should be able to open, navigate and
+                                    close dropdown menus entirely using the
+                                    keyboard.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ARIA Attributes
+
+                                </h3>
+
+                                <p>
+
+                                    Apply appropriate ARIA roles, states and
+                                    properties so assistive technologies can
+                                    correctly interpret dropdown behavior.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Focus Management
+
+                                </h3>
+
+                                <p>
+
+                                    Ensure focus moves predictably into the menu
+                                    when opened and returns to the trigger when
+                                    closed.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Clear Labels
+
+                                </h3>
+
+                                <p>
+
+                                    Use descriptive trigger labels that clearly
+                                    communicate the purpose of the dropdown.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Implementation
+
+                        </h2>
+
+                        <p>
+
+                            Build reusable dropdown menus using the standard
+                            ASLDS dropdown classes and semantic HTML structure.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;div class="dropdown"&gt;
+    &lt;button class="btn btn-primary"&gt;
+        Menu
+    &lt;/button&gt;
+
+    &lt;div class="dropdown-menu"&gt;
+        &lt;a class="dropdown-item"&gt;
+            Dashboard
+        &lt;/a&gt;
+
+        &lt;a class="dropdown-item"&gt;
+            Settings
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do & Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Keep menu labels concise.</li>
+                                    <li>Group related actions together.</li>
+                                    <li>Support keyboard interaction.</li>
+                                    <li>Use clear menu hierarchies.</li>
+                                    <li>Maintain consistent placement.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overload menus with too many options.</li>
+                                    <li>Hide essential navigation.</li>
+                                    <li>Use vague action labels.</li>
+                                    <li>Break keyboard navigation.</li>
+                                    <li>Create inconsistent menu layouts.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related Components
+
+                        </span>
+
+                        <h2>
+
+                            Works Well With
+
+                        </h2>
+
+                        <p>
+
+                            Dropdowns integrate seamlessly with other ASLDS
+                            navigation and interactive components.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Dropdown menus are commonly triggered by
+                                    button components.
+
+                                </p>
+
+                                <a href="buttons.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navbar
+
+                                </h3>
+
+                                <p>
+
+                                    Extend navigation with organized dropdown
+                                    menus.
+
+                                </p>
+
+                                <a href="navbar.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Forms
+
+                                </h3>
+
+                                <p>
+
+                                    Use dropdowns for option selection within
+                                    form interfaces.
+
+                                </p>
+
+                                <a href="forms.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="avatars.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Avatars
+
+                        </a>
+
+                        <a
+                            href="modals.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Modals
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering
+                            accessible, scalable and consistent digital
+                            experiences across every A Square L Innovate
+                            platform.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../index.html">Showcase</a></li>
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/layout.html">Layout</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="navbar.html">Navbar</a></li>
+                            <li><a href="dropdowns.html">Dropdowns</a></li>
+                            <li><a href="modals.html">Modals</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>

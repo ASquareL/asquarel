@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/tables.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Table Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Table Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Tables, Data Tables, Components, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Tables • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../guides/playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="tables.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="../index.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Tables
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Tables
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Present structured data using responsive,
+                                accessible and enterprise-ready tables.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                ASLDS Tables provide a consistent foundation
+                                for displaying structured information,
+                                analytics, administration records and business
+                                data across every A Square L Innovate product.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Data Display
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overview</li>
+                                    <li>Table Anatomy</li>
+                                    <li>Basic Tables</li>
+                                    <li>Variants</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Table Overview
+
+                        </h2>
+
+                        <p>
+
+                            Tables organize large amounts of structured
+                            information into readable rows and columns while
+                            maintaining consistency, accessibility and
+                            scalability throughout ASLDS.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Readable
+
+                                </h3>
+
+                                <p>
+
+                                    Display structured information with
+                                    consistent spacing and alignment.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive
+
+                                </h3>
+
+                                <p>
+
+                                    Tables adapt gracefully across desktop,
+                                    tablet and mobile interfaces.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessible
+
+                                </h3>
+
+                                <p>
+
+                                    Built with semantic HTML for assistive
+                                    technologies and keyboard navigation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Table Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="table-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Table Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS table is built from predictable,
+                            semantic elements that improve readability,
+                            accessibility and scalability across enterprise
+                            applications.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Table Wrapper
+
+                                </h3>
+
+                                <p>
+
+                                    Provides responsive horizontal scrolling on
+                                    smaller devices while preserving layout.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Header
+
+                                </h3>
+
+                                <p>
+
+                                    Defines column labels and communicates the
+                                    structure of the dataset.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Body
+
+                                </h3>
+
+                                <p>
+
+                                    Displays records using consistent row and
+                                    column alignment.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Rows
+
+                                </h3>
+
+                                <p>
+
+                                    Each row represents an individual record
+                                    within the dataset.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cells
+
+                                </h3>
+
+                                <p>
+
+                                    Cells contain structured values that remain
+                                    aligned across every column.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Basic Table -->
+            <!-- ========================================= -->
+
+            <section
+                id="basic-table"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Basic Usage
+
+                        </span>
+
+                        <h2>
+
+                            Standard Table
+
+                        </h2>
+
+                        <p>
+
+                            The default table provides a clean presentation for
+                            structured business information.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+                            <div class="table-wrapper">
+
+                                <table class="table">
+
+                                    <thead>
+
+                                        <tr>
+
+                                            <th>Name</th>
+                                            <th>Department</th>
+                                            <th>Status</th>
+                                            <th class="text-right">Role</th>
+
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                        <tr>
+
+                                            <td>John Smith</td>
+                                            <td>Engineering</td>
+                                            <td>Active</td>
+                                            <td class="text-right">Manager</td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>Sarah James</td>
+                                            <td>Finance</td>
+                                            <td>Active</td>
+                                            <td class="text-right">Analyst</td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>David Musa</td>
+                                            <td>Operations</td>
+                                            <td>Pending</td>
+                                            <td class="text-right">Supervisor</td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+<pre><code>&lt;div class="table-wrapper"&gt;
+    &lt;table class="table"&gt;
+        ...
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Table Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="table-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Table Variants
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS includes multiple table styles for different
+                            presentation requirements while maintaining visual
+                            consistency.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                                              <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Striped Table
+
+                                </h3>
+
+                                <div class="table-wrapper">
+
+                                    <table class="table table-striped">
+
+                                        <thead>
+
+                                            <tr>
+
+                                                <th>Employee</th>
+                                                <th>Team</th>
+                                                <th>Status</th>
+
+                                            </tr>
+
+                                        </thead>
+
+                                        <tbody>
+
+                                            <tr>
+
+                                                <td>Abdul Karim</td>
+                                                <td>Engineering</td>
+                                                <td>Active</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>Mary Johnson</td>
+                                                <td>Marketing</td>
+                                                <td>Pending</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>James Wilson</td>
+                                                <td>Finance</td>
+                                                <td>Active</td>
+
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+
+                                <p>
+
+                                    Alternate row styling improves readability
+                                    for large datasets.
+
+                                </p>
+
+<pre><code>&lt;table class="table table-striped"&gt;
+    ...
+&lt;/table&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Bordered Table
+
+                                </h3>
+
+                                <div class="table-wrapper">
+
+                                    <table class="table table-bordered">
+
+                                        <thead>
+
+                                            <tr>
+
+                                                <th>Project</th>
+                                                <th>Owner</th>
+                                                <th>Progress</th>
+
+                                            </tr>
+
+                                        </thead>
+
+                                        <tbody>
+
+                                            <tr>
+
+                                                <td>Business OS</td>
+                                                <td>Michael</td>
+                                                <td>82%</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>Academy</td>
+                                                <td>Fatima</td>
+                                                <td>64%</td>
+
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+
+                                <p>
+
+                                    Adds visible borders around every table
+                                    cell for maximum separation.
+
+                                </p>
+
+<pre><code>&lt;table class="table table-bordered"&gt;
+    ...
+&lt;/table&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Hover Table
+
+                                </h3>
+
+                                <div class="table-wrapper">
+
+                                    <table class="table table-hover">
+
+                                        <thead>
+
+                                            <tr>
+
+                                                <th>Invoice</th>
+                                                <th>Customer</th>
+                                                <th>Amount</th>
+
+                                            </tr>
+
+                                        </thead>
+
+                                        <tbody>
+
+                                            <tr>
+
+                                                <td>#10024</td>
+                                                <td>Global Tech</td>
+                                                <td>$4,520</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>#10025</td>
+                                                <td>Nova Ltd.</td>
+                                                <td>$1,930</td>
+
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+
+                                <p>
+
+                                    Highlights rows during pointer interaction
+                                    for improved usability.
+
+                                </p>
+
+<pre><code>&lt;table class="table table-hover"&gt;
+    ...
+&lt;/table&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Responsive Tables -->
+            <!-- ========================================= -->
+
+            <section
+                id="responsive-tables"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Responsive
+
+                        </span>
+
+                        <h2>
+
+                            Responsive Tables
+
+                        </h2>
+
+                        <p>
+
+                            Wrap tables inside the standard table wrapper to
+                            enable horizontal scrolling on smaller screens
+                            without breaking the layout.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Mobile Friendly
+
+                                </h3>
+
+                                <p>
+
+                                    The <code>table-wrapper</code> keeps large
+                                    datasets usable across all screen sizes.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Enterprise Ready
+
+                                </h3>
+
+                                <p>
+
+                                    Designed for dashboards, reports,
+                                    administration panels and analytics
+                                    interfaces.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Build semantic tables that remain understandable
+                            for every user and assistive technology.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                                              <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Semantic Structure
+
+                                </h3>
+
+                                <p>
+
+                                    Always use semantic table elements such as
+                                    <code>caption</code>, <code>thead</code>,
+                                    <code>tbody</code>, <code>tr</code>,
+                                    <code>th</code> and <code>td</code> to
+                                    provide meaningful document structure.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Header Cells
+
+                                </h3>
+
+                                <p>
+
+                                    Identify column headers using
+                                    <code>&lt;th&gt;</code> elements with the
+                                    appropriate scope attributes whenever
+                                    applicable.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Layout
+
+                                </h3>
+
+                                <p>
+
+                                    Wrap large tables inside a
+                                    <code>table-wrapper</code> container to
+                                    preserve usability on smaller devices.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Readability
+
+                                </h3>
+
+                                <p>
+
+                                    Keep column titles concise, align related
+                                    values consistently and avoid overcrowding
+                                    large datasets.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Implementation
+
+                        </h2>
+
+                        <p>
+
+                            Build responsive data tables using the standard
+                            ASLDS table structure and component classes.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;div class="table-wrapper"&gt;
+    &lt;table class="table"&gt;
+
+        &lt;thead&gt;
+            ...
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+            ...
+        &lt;/tbody&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do & Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Use descriptive column headings.</li>
+                                    <li>Keep rows consistently aligned.</li>
+                                    <li>Support responsive layouts.</li>
+                                    <li>Use semantic HTML elements.</li>
+                                    <li>Display related information together.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overcrowd tables with unnecessary data.</li>
+                                    <li>Use tables for page layout.</li>
+                                    <li>Hide important headers.</li>
+                                    <li>Break responsive behavior.</li>
+                                    <li>Use inconsistent alignment.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related Components
+
+                        </span>
+
+                        <h2>
+
+                            Works Well With
+
+                        </h2>
+
+                        <p>
+
+                            Tables integrate seamlessly with other ASLDS
+                            components for enterprise dashboards and reporting
+                            interfaces.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Forms
+
+                                </h3>
+
+                                <p>
+
+                                    Filter, search and edit structured data.
+
+                                </p>
+
+                                <a href="forms.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Badges
+
+                                </h3>
+
+                                <p>
+
+                                    Display record status directly inside table
+                                    cells.
+
+                                </p>
+
+                                <a href="badges.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Progress
+
+                                </h3>
+
+                                <p>
+
+                                    Show completion percentages inside
+                                    dashboards and reporting tables.
+
+                                </p>
+
+                                <a href="progress.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="modals.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Modals
+
+                        </a>
+
+                        <a
+                            href="tabs.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Tabs
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering
+                            accessible, scalable and consistent digital
+                            experiences across every A Square L Innovate
+                            platform.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../index.html">Showcase</a></li>
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/layout.html">Layout</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="tables.html">Tables</a></li>
+                            <li><a href="tabs.html">Tabs</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>

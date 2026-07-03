@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/sidebar.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Sidebar Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Sidebar Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Sidebar, Navigation, Components, UI, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Sidebar • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+                                Getting Started
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+                                Installation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../guides/playground.html"
+                                class="nav-link"
+                            >
+                                Playground
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="sidebar.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                Components
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="../index.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Sidebar
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Sidebar
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Build structured application navigation with the
+                                official ASL Design System Sidebar component.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                The Sidebar component provides scalable,
+                                responsive and accessible navigation for
+                                dashboards, enterprise software, admin panels
+                                and documentation websites. It maintains
+                                consistent navigation patterns while supporting
+                                nested menus, responsive layouts and keyboard
+                                accessibility.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Navigation
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Anatomy</li>
+                                    <li>Variants</li>
+                                    <li>Layouts</li>
+                                    <li>States</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Sidebar Overview
+
+                        </h2>
+
+                        <p>
+
+                            Sidebars organize application navigation into clear,
+                            predictable sections. They help users quickly move
+                            between destinations while maintaining awareness of
+                            their current location within the interface.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistent Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Use a stable navigation hierarchy across all
+                                    pages to reduce cognitive load.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive
+
+                                </h3>
+
+                                <p>
+
+                                    Automatically adapts between desktop,
+                                    tablet and mobile layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessible
+
+                                </h3>
+
+                                <p>
+
+                                    Supports keyboard navigation, focus
+                                    visibility and screen readers.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+            
+                        <!-- ========================================= -->
+            <!-- Sidebar Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="sidebar-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Sidebar Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS sidebar is composed of reusable
+                            structural elements that provide predictable
+                            navigation and scalable application layouts.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Brand Area
+
+                                </h3>
+
+                                <p>
+
+                                    Displays the application identity and
+                                    provides quick access to the homepage.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navigation Groups
+
+                                </h3>
+
+                                <p>
+
+                                    Related destinations are grouped together
+                                    for improved discoverability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navigation Items
+
+                                </h3>
+
+                                <p>
+
+                                    Individual links provide access to pages,
+                                    modules or application sections.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Active Indicator
+
+                                </h3>
+
+                                <p>
+
+                                    Clearly identifies the user's current
+                                    location within the application.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Footer Area
+
+                                </h3>
+
+                                <p>
+
+                                    Commonly contains account information,
+                                    settings and secondary actions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Sidebar Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="sidebar-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Sidebar Variants
+
+                        </h2>
+
+                        <p>
+
+                            Different navigation patterns support a wide range
+                            of enterprise applications while preserving the
+                            ASLDS visual language.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Standard Sidebar
+
+                                </h3>
+
+                                <div class="documentation-preview">
+
+                                    <aside class="sidebar">
+
+                                        <nav>
+
+                                            <ul>
+
+                                                <li>Dashboard</li>
+                                                <li>Projects</li>
+                                                <li>Reports</li>
+                                                <li>Settings</li>
+
+                                            </ul>
+
+                                        </nav>
+
+                                    </aside>
+
+                                </div>
+
+                                <p>
+
+                                    Recommended for dashboards and business
+                                    applications.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Example
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Collapsible Sidebar
+
+                                </h3>
+
+                                <p>
+
+                                    Allows users to collapse navigation and
+                                    maximize workspace without losing context.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Example
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Icon Sidebar
+
+                                </h3>
+
+                                <p>
+
+                                    Compact navigation focused on icons for
+                                    high-density interfaces.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Example
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Documentation Sidebar
+
+                                </h3>
+
+                                <p>
+
+                                    Ideal for technical documentation with
+                                    grouped navigation and nested sections.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Example
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Navigation Groups -->
+            <!-- ========================================= -->
+
+            <section
+                id="navigation-groups"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Organization
+
+                        </span>
+
+                        <h2>
+
+                            Navigation Groups
+
+                        </h2>
+
+                        <p>
+
+                            Group related destinations together to improve
+                            navigation efficiency and reduce cognitive load.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>Workspace
+ ├── Dashboard
+ ├── Projects
+ ├── Calendar
+
+Management
+ ├── Users
+ ├── Teams
+ ├── Roles
+
+Settings
+ ├── Preferences
+ ├── Security
+ └── Billing</code></pre>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Sidebar States -->
+            <!-- ========================================= -->
+
+            <section
+                id="sidebar-states"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            States
+
+                        </span>
+
+                        <h2>
+
+                            Navigation States
+
+                        </h2>
+
+                        <p>
+
+                            Sidebar items communicate interaction through
+                            consistent visual feedback.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Default
+
+                                </h3>
+
+                                <p>
+
+                                    Standard appearance for inactive navigation
+                                    items.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Hover
+
+                                </h3>
+
+                                <p>
+
+                                    Indicates the destination before selection.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Active
+
+                                </h3>
+
+                                <p>
+
+                                    Highlights the current application section.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Disabled
+
+                                </h3>
+
+                                <p>
+
+                                    Reserved for unavailable or restricted
+                                    destinations.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Responsive Behaviour -->
+            <!-- ========================================= -->
+
+            <section
+                id="responsive-sidebar"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Responsive
+
+                        </span>
+
+                        <h2>
+
+                            Responsive Behaviour
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS sidebars automatically adapt to different
+                            viewport sizes while preserving usability,
+                            navigation hierarchy and accessibility.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Desktop
+
+                                </h3>
+
+                                <p>
+
+                                    Persistent sidebar displayed alongside the
+                                    application content for fast navigation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tablet
+
+                                </h3>
+
+                                <p>
+
+                                    Sidebar may collapse into a compact layout
+                                    while maintaining quick access to primary
+                                    destinations.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Mobile
+
+                                </h3>
+
+                                <p>
+
+                                    Hidden by default and revealed using the
+                                    existing mobile navigation toggle for an
+                                    optimized small-screen experience.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS sidebar is designed to support
+                            keyboard users, assistive technologies and
+                            responsive navigation patterns.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    All navigation links and controls must be
+                                    reachable using the keyboard.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Focus Indicators
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain clear visible focus states for
+                                    every interactive navigation element.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Screen Readers
+
+                                </h3>
+
+                                <p>
+
+                                    Label navigation regions appropriately and
+                                    provide meaningful link text.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Ensure mobile sidebar menus remain fully
+                                    accessible and dismissible using keyboard
+                                    and touch controls.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Sidebar Best Practices
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ✓ Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Keep navigation hierarchy simple.</li>
+                                    <li>Use descriptive labels.</li>
+                                    <li>Group related destinations.</li>
+                                    <li>Highlight the active page.</li>
+                                    <li>Maintain consistent ordering.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ✕ Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overload the sidebar with links.</li>
+                                    <li>Hide primary navigation.</li>
+                                    <li>Mix unrelated navigation groups.</li>
+                                    <li>Remove focus visibility.</li>
+                                    <li>Use inconsistent naming.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Implementation
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;aside class="sidebar"&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Reports&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/aside&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related
+
+                        </span>
+
+                        <h2>
+
+                            Related Components
+
+                        </h2>
+
+                        <p>
+
+                            These components are commonly used together with
+                            the Sidebar component to build complete enterprise
+                            navigation experiences.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navbar
+
+                                </h3>
+
+                                <p>
+
+                                    Top-level navigation that complements the
+                                    sidebar for responsive application layouts.
+
+                                </p>
+
+                                <a
+                                    href="navbar.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Sidebar actions, collapse controls and
+                                    utility actions all leverage the shared
+                                    button component system.
+
+                                </p>
+
+                                <a
+                                    href="buttons.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dropdowns
+
+                                </h3>
+
+                                <p>
+
+                                    Extend navigation with contextual menus,
+                                    user profiles and secondary navigation.
+
+                                </p>
+
+                                <a
+                                    href="dropdowns.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashboard
+
+                                </h3>
+
+                                <p>
+
+                                    Dashboard layouts are designed to work
+                                    seamlessly with the ASLDS Sidebar.
+
+                                </p>
+
+                                <a
+                                    href="dashboard.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="navbar.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Navbar
+
+                        </a>
+
+                        <a
+                            href="dashboard.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Dashboard
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering
+                            accessible, scalable and consistent user interfaces
+                            across every A Square L Innovate product.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                <a href="../getting-started.html">
+
+                                    Getting Started
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../installation.html">
+
+                                    Installation
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../index.html">
+
+                                    Showcase
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../guides/accessibility.html">
+
+                                    Accessibility
+
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/icons.html">Icons</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="cards.html">Cards</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="navbar.html">Navbar</a></li>
+                            <li><a href="sidebar.html">Sidebar</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>

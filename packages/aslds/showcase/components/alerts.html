@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/alerts.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Alert Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Alert Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Alerts, Notifications, Status Messages, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Alerts • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../guides/playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="alerts.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="../index.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Alerts
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Alerts
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Communicate important information clearly using
+                                the ASL Design System Alert component.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Alerts provide contextual feedback about system
+                                status, successful operations, warnings,
+                                informational updates and critical errors while
+                                maintaining consistency across every ASLDS
+                                application.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Feedback
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Alert Anatomy</li>
+                                    <li>Variants</li>
+                                    <li>Dismissible Alerts</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Alert Overview
+
+                        </h2>
+
+                        <p>
+
+                            Alerts help users understand the current status of
+                            the application by providing immediate, contextual
+                            feedback. They should be concise, meaningful and
+                            visually distinguishable without overwhelming the
+                            interface.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Inform Users
+
+                                </h3>
+
+                                <p>
+
+                                    Display timely messages that keep users
+                                    aware of important application events.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Reinforce Actions
+
+                                </h3>
+
+                                <p>
+
+                                    Confirm completed operations and provide
+                                    clear feedback after user interactions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Improve Usability
+
+                                </h3>
+
+                                <p>
+
+                                    Help users recover from problems quickly by
+                                    providing actionable guidance and clear
+                                    messaging.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+            
+                        <!-- ========================================= -->
+            <!-- Alert Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="alert-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Alert Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS alert follows a consistent structure
+                            that improves readability, accessibility and
+                            recognition across products.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Status Indicator
+
+                                </h3>
+
+                                <p>
+
+                                    Visually communicates the alert type using
+                                    semantic colors and supporting icons.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Title
+
+                                </h3>
+
+                                <p>
+
+                                    Provides a concise summary describing the
+                                    alert purpose.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Message
+
+                                </h3>
+
+                                <p>
+
+                                    Explains the situation and guides users
+                                    toward the appropriate action.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Optional Actions
+
+                                </h3>
+
+                                <p>
+
+                                    Include buttons or links when user action
+                                    is required.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dismiss Control
+
+                                </h3>
+
+                                <p>
+
+                                    Temporary alerts may include a dismiss
+                                    button without interrupting workflow.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Alert Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="alert-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Alert Variants
+
+                        </h2>
+
+                        <p>
+
+                            Use semantic alert styles to communicate different
+                            levels of importance while maintaining consistency
+                            throughout the interface.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Success
+
+                                </h3>
+
+                                <div class="alert alert-success">
+
+                                    Your changes have been saved successfully.
+
+                                </div>
+
+                                <p>
+
+                                    Use for completed actions and successful
+                                    operations.
+
+                                </p>
+
+<pre><code>&lt;div class="alert alert-success"&gt;
+    Your changes have been saved successfully.
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Warning
+
+                                </h3>
+
+                                <div class="alert alert-warning">
+
+                                    Please review your information before
+                                    continuing.
+
+                                </div>
+
+                                <p>
+
+                                    Warn users before potentially risky
+                                    actions.
+
+                                </p>
+
+<pre><code>&lt;div class="alert alert-warning"&gt;
+    Please review your information.
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Danger
+
+                                </h3>
+
+                                <div class="alert alert-danger">
+
+                                    Something went wrong while processing your
+                                    request.
+
+                                </div>
+
+                                <p>
+
+                                    Display errors requiring immediate user
+                                    attention.
+
+                                </p>
+
+<pre><code>&lt;div class="alert alert-danger"&gt;
+    Something went wrong.
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Information
+
+                                </h3>
+
+                                <div class="alert alert-info">
+
+                                    New platform features are now available.
+
+                                </div>
+
+                                <p>
+
+                                    Present neutral updates and contextual
+                                    guidance.
+
+                                </p>
+
+<pre><code>&lt;div class="alert alert-info"&gt;
+    New platform features are now available.
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Dismissible Alerts -->
+            <!-- ========================================= -->
+
+            <section
+                id="dismissible-alerts"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Interaction
+
+                        </span>
+
+                        <h2>
+
+                            Dismissible Alerts
+
+                        </h2>
+
+                        <p>
+
+                            Temporary notifications may include an optional
+                            dismiss action while preserving accessibility and
+                            discoverability.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+                            <div class="alert alert-info">
+
+                                Your profile has been updated.
+
+                                <button class="btn btn-outline">
+
+                                    Dismiss
+
+                                </button>
+
+                            </div>
+
+                            <pre><code>&lt;div class="alert alert-info"&gt;
+    Your profile has been updated.
+    &lt;button class="btn btn-outline"&gt;
+        Dismiss
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Example
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Alerts should communicate important information to
+                            every user regardless of ability or assistive
+                            technology.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Semantic Roles
+
+                                </h3>
+
+                                <p>
+
+                                    Use appropriate ARIA roles such as
+                                    <code>alert</code> and
+                                    <code>status</code> depending on the
+                                    urgency of the message.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Support
+
+                                </h3>
+
+                                <p>
+
+                                    Dismiss buttons and embedded actions must
+                                    remain fully keyboard accessible.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Color Independence
+
+                                </h3>
+
+                                <p>
+
+                                    Never rely solely on color to communicate
+                                    meaning. Combine semantic color with text
+                                    and supporting icons.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Focus Management
+
+                                </h3>
+
+                                <p>
+
+                                    Preserve visible focus indicators whenever
+                                    alerts contain interactive controls.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Readability
+
+                                </h3>
+
+                                <p>
+
+                                    Keep messages concise and prioritize the
+                                    most important information first.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Usage Guidelines -->
+            <!-- ========================================= -->
+
+            <section
+                id="usage-guidelines"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Guidelines
+
+                        </span>
+
+                        <h2>
+
+                            Usage Recommendations
+
+                        </h2>
+
+                        <p>
+
+                            Choosing the appropriate alert type improves
+                            comprehension and reduces unnecessary cognitive
+                            load.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Success
+
+                                </h3>
+
+                                <p>
+
+                                    Confirm completed tasks, saved settings,
+                                    uploaded files and successful transactions.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Information
+
+                                </h3>
+
+                                <p>
+
+                                    Provide contextual guidance and product
+                                    announcements without interrupting the
+                                    workflow.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Warning
+
+                                </h3>
+
+                                <p>
+
+                                    Notify users before irreversible actions
+                                    or potentially risky operations.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Danger
+
+                                </h3>
+
+                                <p>
+
+                                    Display validation failures, critical
+                                    system errors and security issues that
+                                    require immediate attention.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Implementation
+
+                        </h2>
+
+                        <p>
+
+                            Build alerts using the standard ASLDS alert classes
+                            for consistent styling throughout every project.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;div class="alert alert-success"&gt;
+    Profile updated successfully.
+&lt;/div&gt;
+
+&lt;div class="alert alert-warning"&gt;
+    Review your information before continuing.
+&lt;/div&gt;
+
+&lt;div class="alert alert-danger"&gt;
+    Unable to complete the request.
+&lt;/div&gt;
+
+&lt;div class="alert alert-info"&gt;
+    A new update is available.
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do & Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Keep messages concise.</li>
+                                    <li>Provide actionable guidance.</li>
+                                    <li>Use semantic alert types.</li>
+                                    <li>Prioritize accessibility.</li>
+                                    <li>Display alerts only when necessary.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Stack excessive alerts.</li>
+                                    <li>Depend only on color.</li>
+                                    <li>Interrupt users unnecessarily.</li>
+                                    <li>Hide important error details.</li>
+                                    <li>Use alerts for decorative content.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related Components
+
+                        </span>
+
+                        <h2>
+
+                            Works Well With
+
+                        </h2>
+
+                        <p>
+
+                            Alerts are commonly combined with the following
+                            ASLDS components to provide complete feedback
+                            experiences throughout enterprise applications.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Use buttons inside alerts for primary and
+                                    secondary user actions.
+
+                                </p>
+
+                                <a
+                                    href="buttons.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Forms
+
+                                </h3>
+
+                                <p>
+
+                                    Display validation messages and submission
+                                    feedback within form workflows.
+
+                                </p>
+
+                                <a
+                                    href="forms.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Modals
+
+                                </h3>
+
+                                <p>
+
+                                    Combine alerts with modal dialogs to
+                                    reinforce critical confirmations and
+                                    warnings.
+
+                                </p>
+
+                                <a
+                                    href="modals.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Badges
+
+                                </h3>
+
+                                <p>
+
+                                    Pair badges with alerts to emphasize status
+                                    and notification priority.
+
+                                </p>
+
+                                <a
+                                    href="badges.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="dashboard.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Dashboard
+
+                        </a>
+
+                        <a
+                            href="badges.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Badges
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering
+                            accessible, scalable and consistent digital
+                            experiences across every A Square L Innovate
+                            platform.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../index.html">Showcase</a></li>
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/layout.html">Layout</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="cards.html">Cards</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="alerts.html">Alerts</a></li>
+                            <li><a href="badges.html">Badges</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>

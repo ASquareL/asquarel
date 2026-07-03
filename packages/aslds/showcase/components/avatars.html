@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/avatars.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Avatar Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Avatar Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Avatar, Profile, User Image, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Avatars • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../guides/playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="avatars.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="../index.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Avatars
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Avatars
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Represent people, teams and identities with
+                                consistent avatar components throughout ASLDS.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Avatar components visually identify users,
+                                organizations and participants across
+                                dashboards, collaboration tools and enterprise
+                                interfaces while maintaining accessibility and
+                                consistency.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Identity
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overview</li>
+                                    <li>Avatar Anatomy</li>
+                                    <li>Sizes</li>
+                                    <li>Variants</li>
+                                    <li>Groups</li>
+                                    <li>Accessibility</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Avatar Overview
+
+                        </h2>
+
+                        <p>
+
+                            Avatar components provide recognizable visual
+                            representations for users, teams and organizations
+                            while supporting profile images, initials and
+                            fallback states across ASL Design System
+                            applications.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Recognition
+
+                                </h3>
+
+                                <p>
+
+                                    Help users quickly identify people and
+                                    collaborators throughout the interface.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Standard avatar styles create a unified
+                                    identity system across every ASLDS product.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Avatar components support meaningful
+                                    alternative text and accessible fallback
+                                    content for every user.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Avatar Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="avatar-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Avatar Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS avatar follows a consistent structure
+                            to ensure recognizable identities and predictable
+                            behavior throughout every application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Avatar Container
+
+                                </h3>
+
+                                <p>
+
+                                    Defines the overall size, shape and visual
+                                    boundary of the avatar component.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Profile Image
+
+                                </h3>
+
+                                <p>
+
+                                    Displays the user's profile photograph when
+                                    available.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Initials
+
+                                </h3>
+
+                                <p>
+
+                                    Automatically provide a recognizable
+                                    fallback when no profile image exists.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Status Indicator
+
+                                </h3>
+
+                                <p>
+
+                                    Optional online, offline or busy indicators
+                                    communicate current availability.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Every avatar should include meaningful
+                                    alternative text or accessible labels.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Avatar Sizes -->
+            <!-- ========================================= -->
+
+            <section
+                id="avatar-sizes"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Sizes
+
+                        </span>
+
+                        <h2>
+
+                            Avatar Sizes
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS provides consistent avatar sizes for compact
+                            interfaces, dashboards, navigation and profile
+                            pages.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Small
+
+                                </h3>
+
+                                <div class="avatar avatar-sm">
+
+                                    AS
+
+                                </div>
+
+                                <p>
+
+                                    Best suited for tables, lists and compact
+                                    layouts.
+
+                                </p>
+
+<pre><code>&lt;div class="avatar avatar-sm"&gt;
+    AS
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Medium
+
+                                </h3>
+
+                                <div class="avatar">
+
+                                    AS
+
+                                </div>
+
+                                <p>
+
+                                    Default avatar size for most interfaces.
+
+                                </p>
+
+<pre><code>&lt;div class="avatar"&gt;
+    AS
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Large
+
+                                </h3>
+
+                                <div class="avatar avatar-lg">
+
+                                    AS
+
+                                </div>
+
+                                <p>
+
+                                    Ideal for profile pages and user settings.
+
+                                </p>
+
+<pre><code>&lt;div class="avatar avatar-lg"&gt;
+    AS
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Avatar Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="avatar-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Avatar Variants
+
+                        </h2>
+
+                        <p>
+
+                            Avatar variants support different identity states,
+                            profile representations and enterprise workflows.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                                              <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Image Avatar
+
+                                </h3>
+
+                                <div class="avatar">
+
+                                    <img
+                                        src="../../images/avatar-placeholder.jpg"
+                                        alt="User Avatar"
+                                    >
+
+                                </div>
+
+                                <p>
+
+                                    Display profile photographs whenever a user
+                                    image is available.
+
+                                </p>
+
+<pre><code>&lt;div class="avatar"&gt;
+    &lt;img src="avatar.jpg"
+         alt="User Avatar"&gt;
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Initial Avatar
+
+                                </h3>
+
+                                <div class="avatar">
+
+                                    AL
+
+                                </div>
+
+                                <p>
+
+                                    Automatically represent users using their
+                                    initials when no profile image exists.
+
+                                </p>
+
+<pre><code>&lt;div class="avatar"&gt;
+    AL
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Status Avatar
+
+                                </h3>
+
+                                <div class="avatar avatar-online">
+
+                                    AS
+
+                                </div>
+
+                                <p>
+
+                                    Combine avatars with presence indicators to
+                                    display online availability.
+
+                                </p>
+
+<pre><code>&lt;div class="avatar avatar-online"&gt;
+    AS
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Avatar Groups -->
+            <!-- ========================================= -->
+
+            <section
+                id="avatar-groups"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Groups
+
+                        </span>
+
+                        <h2>
+
+                            Avatar Groups
+
+                        </h2>
+
+                        <p>
+
+                            Avatar groups efficiently represent teams,
+                            collaborators and participants while conserving
+                            interface space.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Team Members
+
+                                </h3>
+
+                                <div class="avatar-group">
+
+                                    <div class="avatar">
+
+                                        AK
+
+                                    </div>
+
+                                    <div class="avatar">
+
+                                        BL
+
+                                    </div>
+
+                                    <div class="avatar">
+
+                                        CM
+
+                                    </div>
+
+                                    <div class="avatar">
+
+                                        +5
+
+                                    </div>
+
+                                </div>
+
+                                <p>
+
+                                    Display project participants using compact
+                                    overlapping avatar groups.
+
+                                </p>
+
+<pre><code>&lt;div class="avatar-group"&gt;
+    &lt;div class="avatar"&gt;AK&lt;/div&gt;
+    &lt;div class="avatar"&gt;BL&lt;/div&gt;
+    &lt;div class="avatar"&gt;CM&lt;/div&gt;
+    &lt;div class="avatar"&gt;+5&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                <button class="btn btn-outline">
+
+                                    Copy Code
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Avatar components should always remain meaningful,
+                            accessible and understandable for every user,
+                            regardless of assistive technology.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+                      
+                                              <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Alternative Text
+
+                                </h3>
+
+                                <p>
+
+                                    Every avatar image should include
+                                    meaningful <code>alt</code> text describing
+                                    the represented person or organization.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Initial Fallback
+
+                                </h3>
+
+                                <p>
+
+                                    Display readable initials whenever profile
+                                    images are unavailable to preserve user
+                                    identity.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Color Independence
+
+                                </h3>
+
+                                <p>
+
+                                    Never rely solely on avatar color to convey
+                                    identity or status information.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Status Indicators
+
+                                </h3>
+
+                                <p>
+
+                                    Presence indicators should complement
+                                    accessible labels rather than replace them.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Implementation
+
+                        </h2>
+
+                        <p>
+
+                            Reuse the standard ASLDS avatar classes to ensure
+                            consistent user identity throughout every
+                            application.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;div class="avatar"&gt;
+    AL
+&lt;/div&gt;
+
+&lt;div class="avatar avatar-lg"&gt;
+    AL
+&lt;/div&gt;
+
+&lt;div class="avatar avatar-online"&gt;
+    AL
+&lt;/div&gt;
+
+&lt;div class="avatar-group"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do & Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Provide meaningful alternative text.</li>
+                                    <li>Use initials as fallbacks.</li>
+                                    <li>Maintain consistent avatar sizes.</li>
+                                    <li>Show status indicators when appropriate.</li>
+                                    <li>Use avatar groups for teams.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Stretch profile images.</li>
+                                    <li>Depend only on colors.</li>
+                                    <li>Mix inconsistent avatar sizes.</li>
+                                    <li>Display decorative avatars without labels.</li>
+                                    <li>Overcrowd avatar groups.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related Components
+
+                        </span>
+
+                        <h2>
+
+                            Works Well With
+
+                        </h2>
+
+                        <p>
+
+                            Avatar components integrate naturally with other
+                            ASLDS components used throughout enterprise
+                            interfaces.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cards
+
+                                </h3>
+
+                                <p>
+
+                                    Display user information inside profile and
+                                    dashboard cards.
+
+                                </p>
+
+                                <a href="cards.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tables
+
+                                </h3>
+
+                                <p>
+
+                                    Identify users and owners inside data
+                                    tables.
+
+                                </p>
+
+                                <a href="tables.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Badges
+
+                                </h3>
+
+                                <p>
+
+                                    Combine avatars with badges for roles,
+                                    permissions and user status.
+
+                                </p>
+
+                                <a href="badges.html" class="btn btn-outline">
+
+                                    View Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next Navigation -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="progress.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Progress
+
+                        </a>
+
+                        <a
+                            href="dropdowns.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Dropdowns
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering accessible,
+                            scalable and consistent digital experiences across
+                            every A Square L Innovate platform.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../index.html">Showcase</a></li>
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/layout.html">Layout</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="cards.html">Cards</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="avatars.html">Avatars</a></li>
+                            <li><a href="dropdowns.html">Dropdowns</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>

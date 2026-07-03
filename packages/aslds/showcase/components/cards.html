@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/cards.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Card Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Card Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Cards, Components, UI, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Cards • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li>
+                            <a
+                                href="../index.html"
+                                class="nav-link"
+                            >
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../getting-started.html"
+                                class="nav-link"
+                            >
+                                Getting Started
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../installation.html"
+                                class="nav-link"
+                            >
+                                Installation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="../playground.html"
+                                class="nav-link"
+                            >
+                                Playground
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="cards.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                Components
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="buttons.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Cards
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Cards
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Flexible content containers for presenting
+                                information with clarity, hierarchy and
+                                consistency.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                Cards are one of the most versatile components
+                                in ASLDS. They group related content into
+                                visually distinct surfaces while maintaining
+                                consistent spacing, elevation, borders and
+                                responsive behaviour across every application.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Card Example
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Component
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Card Anatomy</li>
+                                    <li>Variants</li>
+                                    <li>Layouts</li>
+                                    <li>Interactive Cards</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Card Component
+
+                        </h2>
+
+                        <p>
+
+                            Cards organize related information into meaningful,
+                            reusable containers. They improve visual hierarchy,
+                            simplify scanning, and create consistent layouts
+                            throughout ASLDS applications.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Flexible
+
+                                </h3>
+
+                                <p>
+
+                                    Supports simple content, media, actions,
+                                    dashboards, forms and data presentation.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistent
+
+                                </h3>
+
+                                <p>
+
+                                    Uses standardized spacing, borders, radius
+                                    and shadows defined by the ASL Design
+                                    System.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive
+
+                                </h3>
+
+                                <p>
+
+                                    Adapts naturally across desktop, tablet and
+                                    mobile layouts without requiring custom
+                                    implementations.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessible
+
+                                </h3>
+
+                                <p>
+
+                                    Provides clear structure, semantic content
+                                    grouping and predictable reading order for
+                                    assistive technologies.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Card Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="card-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Card Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every card follows a consistent structure to
+                            maximize readability and component reuse.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card">
+
+                            <div class="card-header">
+
+                                Card Header
+
+                            </div>
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Card Title
+
+                                </h3>
+
+                                <p>
+
+                                    Card body content demonstrates the standard
+                                    content area used throughout ASLDS.
+
+                                </p>
+
+                            </div>
+
+                            <div class="card-footer">
+
+                                Footer Actions
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <ul>
+
+                                    <li>Container</li>
+                                    <li>Optional Media</li>
+                                    <li>Header</li>
+                                    <li>Body</li>
+                                    <li>Supporting Content</li>
+                                    <li>Footer Actions</li>
+                                    <li>Border & Shadow</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Card Variants -->
+            <!-- ========================================= -->
+
+            <section
+                id="card-variants"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Variants
+
+                        </span>
+
+                        <h2>
+
+                            Card Variants
+
+                        </h2>
+
+                        <p>
+
+                            Different card styles communicate hierarchy while
+                            maintaining a unified appearance.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Default
+
+                                </span>
+
+                                <h3>
+
+                                    Standard Card
+
+                                </h3>
+
+                                <p>
+
+                                    Suitable for most layouts and content
+                                    presentation.
+
+                                </p>
+
+                                <button class="btn btn-primary">
+
+                                    Primary Action
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Featured
+
+                                </span>
+
+                                <h3>
+
+                                    Featured Card
+
+                                </h3>
+
+                                <p>
+
+                                    Use to highlight important content,
+                                    announcements or promotional information.
+
+                                </p>
+
+                                <button class="btn btn-secondary">
+
+                                    Learn More
+
+                                </button>
+
+                            </div>
+
+                        </article>
+                        
+                                                <article class="card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Minimal
+
+                                </span>
+
+                                <h3>
+
+                                    Minimal Card
+
+                                </h3>
+
+                                <p>
+
+                                    Designed for lightweight content where
+                                    emphasis should remain on typography and
+                                    spacing.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Read More
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Interactive
+
+                                </span>
+
+                                <h3>
+
+                                    Clickable Card
+
+                                </h3>
+
+                                <p>
+
+                                    Cards can function as interactive surfaces
+                                    when the entire container represents a
+                                    single navigation destination.
+
+                                </p>
+
+                                <button class="btn btn-primary">
+
+                                    Open
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Card Layouts -->
+            <!-- ========================================= -->
+
+            <section
+                id="card-layouts"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Layouts
+
+                        </span>
+
+                        <h2>
+
+                            Common Card Layouts
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS cards support multiple content arrangements
+                            while maintaining consistent spacing and alignment.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card">
+
+                            <div class="card-header">
+
+                                Basic Layout
+
+                            </div>
+
+                            <div class="card-body">
+
+                                <p>
+
+                                    Header followed by descriptive body
+                                    content.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Body Only
+
+                                </h3>
+
+                                <p>
+
+                                    Suitable for concise information blocks,
+                                    metrics and dashboard widgets.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-header">
+
+                                Product Card
+
+                            </div>
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    ASL Component Kit
+
+                                </h3>
+
+                                <p>
+
+                                    Enterprise-ready UI components designed for
+                                    scalable applications.
+
+                                </p>
+
+                            </div>
+
+                            <div class="card-footer">
+
+                                <button class="btn btn-primary">
+
+                                    Purchase
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Statistics
+
+                                </span>
+
+                                <h3>
+
+                                    4,582
+
+                                </h3>
+
+                                <p>
+
+                                    Monthly active users.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Interactive Cards -->
+            <!-- ========================================= -->
+
+            <section
+                id="interactive-cards"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Interaction
+
+                        </span>
+
+                        <h2>
+
+                            Interactive Cards
+
+                        </h2>
+
+                        <p>
+
+                            Interactive cards provide larger click targets,
+                            improve discoverability and encourage engagement.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navigation Card
+
+                                </h3>
+
+                                <p>
+
+                                    Direct users to another section, page or
+                                    workflow.
+
+                                </p>
+
+                                <button class="btn btn-secondary">
+
+                                    Explore
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashboard Widget
+
+                                </h3>
+
+                                <p>
+
+                                    Display metrics, reports and live business
+                                    information inside dashboard interfaces.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    View Report
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Team Member
+
+                                </h3>
+
+                                <p>
+
+                                    Combine avatars, descriptions and actions
+                                    into reusable profile cards.
+
+                                </p>
+
+                                <button class="btn btn-primary">
+
+                                    View Profile
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Card Composition -->
+            <!-- ========================================= -->
+
+            <section
+                id="composition"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Composition
+
+                        </span>
+
+                        <h2>
+
+                            Building Effective Cards
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Clear Hierarchy
+
+                                </h3>
+
+                                <p>
+
+                                    Use headings, spacing and supporting text
+                                    to create an obvious reading order.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Concise Content
+
+                                </h3>
+
+                                <p>
+
+                                    Keep information focused on a single topic
+                                    or task.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Meaningful Actions
+
+                                </h3>
+
+                                <p>
+
+                                    Include only actions directly related to
+                                    the card's content.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistent Layout
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain uniform spacing, alignment and
+                                    component structure across collections of
+                                    cards.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Implementation
+
+                        </span>
+
+                        <h2>
+
+                            Developer Usage
+
+                        </h2>
+
+                        <p>
+
+                            Construct cards using the existing ASLDS component
+                            structure.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;article class="card"&gt;
+    &lt;div class="card-header"&gt;
+        Header
+    &lt;/div&gt;
+
+    &lt;div class="card-body"&gt;
+        &lt;h3&gt;Card Title&lt;/h3&gt;
+        &lt;p&gt;Card content.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="card-footer"&gt;
+        &lt;button class="btn btn-primary"&gt;
+            Action
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessible Card Design
+
+                        </h2>
+
+                        <p>
+
+                            Cards should remain understandable, keyboard
+                            accessible and easy to navigate for every user.
+                            Interactive cards should communicate focus,
+                            clickable regions and action hierarchy clearly.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Semantic Structure
+
+                                </h3>
+
+                                <p>
+
+                                    Use appropriate heading levels and
+                                    semantic elements to organize card content
+                                    logically.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Interactive cards must remain fully
+                                    operable using keyboard navigation and
+                                    visible focus indicators.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Color Contrast
+
+                                </h3>
+
+                                <p>
+
+                                    Maintain sufficient contrast between text,
+                                    backgrounds, borders and interactive
+                                    elements.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Screen Readers
+
+                                </h3>
+
+                                <p>
+
+                                    Ensure card actions, links and controls
+                                    expose meaningful accessible names.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do &amp; Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Do
+
+                                </span>
+
+                                <ul>
+
+                                    <li>Group related information together.</li>
+                                    <li>Use consistent spacing.</li>
+                                    <li>Provide clear titles.</li>
+                                    <li>Keep actions concise.</li>
+                                    <li>Maintain visual hierarchy.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <span class="badge">
+
+                                    Don't
+
+                                </span>
+
+                                <ul>
+
+                                    <li>Overload cards with content.</li>
+                                    <li>Mix unrelated actions.</li>
+                                    <li>Use inconsistent spacing.</li>
+                                    <li>Create unnecessary nesting.</li>
+                                    <li>Rely only on color for emphasis.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related
+
+                        </span>
+
+                        <h2>
+
+                            Related Components
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Primary actions used inside cards.
+
+                                </p>
+
+                                <a
+                                    href="buttons.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Forms
+
+                                </h3>
+
+                                <p>
+
+                                    Build complete form layouts using cards as
+                                    content containers.
+
+                                </p>
+
+                                <a
+                                    href="forms.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Alerts
+
+                                </h3>
+
+                                <p>
+
+                                    Combine alerts with cards to communicate
+                                    important information.
+
+                                </p>
+
+                                <a
+                                    href="alerts.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Dashboard
+
+                                </h3>
+
+                                <p>
+
+                                    Cards provide the foundation for dashboard
+                                    layouts and widgets.
+
+                                </p>
+
+                                <a
+                                    href="dashboard.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Documentation
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next -->
+            <!-- ========================================= -->
+
+            <section
+                class="section"
+            >
+
+                <div class="container">
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <span class="section-label">
+
+                                    Previous
+
+                                </span>
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <a
+                                    href="buttons.html"
+                                    class="btn btn-secondary"
+                                >
+
+                                    Previous Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <span class="section-label">
+
+                                    Next
+
+                                </span>
+
+                                <h3>
+
+                                    Forms
+
+                                </h3>
+
+                                <a
+                                    href="forms.html"
+                                    class="btn btn-primary"
+                                >
+
+                                    Next Component
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+             <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise UI framework for modern web
+                            applications.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Components
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../components/buttons.html">Buttons</a></li>
+                            <li><a href="../components/cards.html">Cards</a></li>
+                            <li><a href="../components/forms.html">Forms</a></li>
+                            <li><a href="../components/navbar.html">Navbar</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            ASL Design System
+
+                        </p>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            © 2026 A Square L Innovate
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- Accessibility Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>

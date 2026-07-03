@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/dashboard.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Dashboard Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Dashboard Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Dashboard, Analytics, Layout, Components, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Dashboard • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <!-- ========================================= -->
+        <!-- Header -->
+        <!-- ========================================= -->
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+                        <li><a href="../guides/playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="dashboard.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="../index.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Dashboard
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Dashboard
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Build scalable analytics, administration and
+                                enterprise workspaces using the ASLDS Dashboard
+                                component.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                The Dashboard component combines layout,
+                                navigation, cards, charts, tables, statistics
+                                and actions into a consistent experience for
+                                enterprise applications.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Component
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Enterprise
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Dashboard Anatomy</li>
+                                    <li>Layouts</li>
+                                    <li>Widgets</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Dashboard Overview
+
+                        </h2>
+
+                        <p>
+
+                            Dashboards organize complex business information
+                            into structured, actionable interfaces. ASLDS
+                            dashboard patterns emphasize clarity, consistency,
+                            responsiveness and accessibility across every
+                            enterprise product.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Scalable Layout
+
+                                </h3>
+
+                                <p>
+
+                                    Flexible dashboard structures support
+                                    analytics, CRM, ERP and administrative
+                                    applications.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Modular Widgets
+
+                                </h3>
+
+                                <p>
+
+                                    Combine reusable cards, tables, charts and
+                                    KPIs into consistent dashboard layouts.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Productivity First
+
+                                </h3>
+
+                                <p>
+
+                                    Prioritize important information while
+                                    reducing visual clutter and cognitive load.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Dashboard Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="dashboard-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Dashboard Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS dashboard is composed of reusable,
+                            predictable interface regions that provide a
+                            consistent experience across products.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Application Header</h3>
+                                <p>
+                                    Contains branding, global navigation,
+                                    search, notifications and user actions.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Sidebar Navigation</h3>
+                                <p>
+                                    Organizes primary application navigation,
+                                    modules and contextual sections.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Content Area</h3>
+                                <p>
+                                    Displays KPIs, charts, widgets, reports
+                                    and operational data.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Widget Cards</h3>
+                                <p>
+                                    Modular components presenting statistics,
+                                    activity, reports and summaries.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Footer Actions</h3>
+                                <p>
+                                    Secondary navigation, metadata and support
+                                    links conclude the workspace.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Dashboard Layouts -->
+            <!-- ========================================= -->
+
+            <section
+                id="dashboard-layouts"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Layouts
+
+                        </span>
+
+                        <h2>
+
+                            Dashboard Layout Patterns
+
+                        </h2>
+
+                        <p>
+
+                            Choose the layout that best matches the amount of
+                            information and workflow complexity required by
+                            your application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Analytics Dashboard
+
+                                </h3>
+
+                                <p>
+
+                                    KPI cards, charts, reports and business
+                                    metrics arranged for executive visibility.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Preview Layout
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Administrative Dashboard
+
+                                </h3>
+
+                                <p>
+
+                                    Optimized for managing users, permissions,
+                                    settings and operational workflows.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Preview Layout
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    CRM Dashboard
+
+                                </h3>
+
+                                <p>
+
+                                    Displays customer pipelines, sales
+                                    performance, engagement metrics and
+                                    communication history.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Preview Layout
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Project Dashboard
+
+                                </h3>
+
+                                <p>
+
+                                    Task management, sprint progress, team
+                                    productivity and delivery status in one
+                                    workspace.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Preview Layout
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Dashboard Widgets -->
+            <!-- ========================================= -->
+
+            <section
+                id="dashboard-widgets"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Widgets
+
+                        </span>
+
+                        <h2>
+
+                            Common Dashboard Widgets
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS dashboards are assembled from reusable,
+                            accessible widgets that maintain consistency
+                            across every enterprise application.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Statistic Cards</h3>
+                                <p>
+                                    Present KPIs, totals, trends and business
+                                    indicators at a glance.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Charts</h3>
+                                <p>
+                                    Display visual insights using consistent
+                                    data visualization patterns.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Tables</h3>
+                                <p>
+                                    Organize structured records with sorting,
+                                    filtering and pagination support.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Activity Feed</h3>
+                                <p>
+                                    Surface recent user actions, events and
+                                    operational updates.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Dashboard States -->
+            <!-- ========================================= -->
+
+            <section
+                id="dashboard-states"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            States
+
+                        </span>
+
+                        <h2>
+
+                            Dashboard States
+
+                        </h2>
+
+                        <p>
+
+                            Every dashboard should communicate loading,
+                            success, empty and error states clearly while
+                            maintaining a consistent visual hierarchy.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Loading
+
+                                </h3>
+
+                                <p>
+
+                                    Use skeleton placeholders or progress
+                                    indicators while data is being retrieved.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Loading Preview
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Empty State
+
+                                </h3>
+
+                                <p>
+
+                                    Explain why content is unavailable and
+                                    provide an obvious next action.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Empty Preview
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Success
+
+                                </h3>
+
+                                <p>
+
+                                    Confirm completed actions using concise
+                                    messaging and subtle visual feedback.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Success Preview
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Error
+
+                                </h3>
+
+                                <p>
+
+                                    Display actionable recovery guidance
+                                    whenever data cannot be loaded.
+
+                                </p>
+
+                                <button class="btn btn-outline">
+
+                                    Error Preview
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessibility Guidelines
+
+                        </h2>
+
+                        <p>
+
+                            Enterprise dashboards must remain usable for all
+                            users regardless of device, input method or
+                            assistive technology.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Keyboard Navigation</h3>
+                                <p>
+                                    Every interactive control should be fully
+                                    accessible using only the keyboard.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Focus Visibility</h3>
+                                <p>
+                                    Preserve visible focus indicators on every
+                                    actionable component.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Semantic Structure</h3>
+                                <p>
+                                    Use headings, landmarks and meaningful HTML
+                                    elements to improve navigation.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Color Contrast</h3>
+                                <p>
+                                    Ensure all text and UI elements satisfy
+                                    recommended accessibility contrast ratios.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Responsive Layout</h3>
+                                <p>
+                                    Dashboard content should adapt gracefully
+                                    across desktop, tablet and mobile screens.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            Basic Dashboard Structure
+
+                        </h2>
+
+                        <p>
+
+                            Compose dashboards from reusable ASLDS layout and
+                            component primitives.
+
+                        </p>
+
+                    </header>
+
+                    <article class="card documentation-card">
+
+                        <div class="card-body">
+
+                            <pre><code>&lt;main class="dashboard"&gt;
+    &lt;section class="card-grid"&gt;
+        &lt;article class="card"&gt;
+            ...
+        &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+
+                            <button class="btn btn-outline">
+
+                                Copy Code
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Guidelines
+
+                        </span>
+
+                        <h2>
+
+                            Best Practices
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Prioritize important metrics.</li>
+                                    <li>Keep layouts consistent.</li>
+                                    <li>Use reusable dashboard widgets.</li>
+                                    <li>Group related information.</li>
+                                    <li>Design for responsive screens.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Overload dashboards with information.</li>
+                                    <li>Mix unrelated visual patterns.</li>
+                                    <li>Hide critical actions.</li>
+                                    <li>Depend solely on color.</li>
+                                    <li>Create inconsistent navigation.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Related Components
+
+                        </span>
+
+                        <h2>
+
+                            Build Better Dashboards
+
+                        </h2>
+
+                        <p>
+
+                            Dashboards work together with several ASLDS
+                            components to create complete enterprise
+                            applications.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Sidebar
+
+                                </h3>
+
+                                <p>
+
+                                    Primary application navigation used
+                                    alongside dashboard layouts.
+
+                                </p>
+
+                                <a
+                                    href="sidebar.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Sidebar
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Navbar
+
+                                </h3>
+
+                                <p>
+
+                                    Provides global navigation, search,
+                                    notifications and user actions.
+
+                                </p>
+
+                                <a
+                                    href="navbar.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Navbar
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cards
+
+                                </h3>
+
+                                <p>
+
+                                    The fundamental building block for
+                                    statistics, widgets and reports.
+
+                                </p>
+
+                                <a
+                                    href="cards.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Cards
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Tables
+
+                                </h3>
+
+                                <p>
+
+                                    Display structured datasets inside
+                                    enterprise dashboards.
+
+                                </p>
+
+                                <a
+                                    href="tables.html"
+                                    class="btn btn-outline"
+                                >
+
+                                    View Tables
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <div class="page-navigation">
+
+                        <a
+                            href="sidebar.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous
+                            <br>
+
+                            Sidebar
+
+                        </a>
+
+                        <a
+                            href="alerts.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next →
+                            <br>
+
+                            Alerts
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <section>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise-grade design language powering
+                            accessible, scalable and consistent digital
+                            experiences across every A Square L Innovate
+                            platform.
+
+                        </p>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Documentation
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../getting-started.html">Getting Started</a></li>
+                            <li><a href="../installation.html">Installation</a></li>
+                            <li><a href="../index.html">Showcase</a></li>
+                            <li><a href="../guides/accessibility.html">Accessibility</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Foundations
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="../foundations/colors.html">Colors</a></li>
+                            <li><a href="../foundations/typography.html">Typography</a></li>
+                            <li><a href="../foundations/layout.html">Layout</a></li>
+                            <li><a href="../foundations/animations.html">Animations</a></li>
+
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h4>
+
+                            Components
+
+                        </h4>
+
+                        <ul>
+
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="cards.html">Cards</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="navbar.html">Navbar</a></li>
+                            <li><a href="sidebar.html">Sidebar</a></li>
+
+                        </ul>
+
+                    </section>
+
+                </div>
+
+                <div class="footer-bottom">
+
+                    <p>
+
+                        © 2026 A Square L Innovate. All rights reserved.
+
+                    </p>
+
+                    <span class="badge">
+
+                        ASLDS v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script src="../../js/app.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dropdown.js"></script>
+    <script src="../../js/modal.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/playground.js"></script>
+    <script src="../../js/search.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/toast.js"></script>
+
+</body>
+
+</html>
+

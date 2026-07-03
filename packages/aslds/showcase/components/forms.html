@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--
+    ==========================================================
+    A Square L Innovate
+    ASL Design System (ASLDS)
+
+    File:
+    packages/aslds/showcase/components/forms.html
+
+    Version:
+    1.1 Stable
+
+    Description:
+    Official Form Component Documentation
+
+    ==========================================================
+    -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official Form Component documentation for the ASL Design System."
+    >
+
+    <meta
+        name="keywords"
+        content="ASLDS, Forms, Inputs, Components, UI, Documentation"
+    >
+
+    <meta
+        name="author"
+        content="A Square L Innovate"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b"
+    >
+
+    <title>
+
+        Forms • ASL Design System
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Core CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/typography.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+
+    <!-- ========================================= -->
+    <!-- Component CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/components/buttons.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/forms.css">
+    <link rel="stylesheet" href="../../css/components/dashboard.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/components/badge.css">
+    <link rel="stylesheet" href="../../css/components/alert.css">
+    <link rel="stylesheet" href="../../css/components/progress.css">
+    <link rel="stylesheet" href="../../css/components/avatar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/modal.css">
+    <link rel="stylesheet" href="../../css/components/table.css">
+    <link rel="stylesheet" href="../../css/components/tabs.css">
+
+    <!-- ========================================= -->
+    <!-- Documentation CSS -->
+    <!-- ========================================= -->
+
+    <link rel="stylesheet" href="../../css/showcase.css">
+
+</head>
+
+<body>
+
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+
+        Skip to main content
+
+    </a>
+
+    <div class="page-wrapper">
+
+        <header class="navbar">
+
+            <div class="navbar-container">
+
+                <a
+                    href="../index.html"
+                    class="navbar-logo"
+                    aria-label="ASL Design System"
+                >
+
+                    <strong>ASLDS</strong>
+
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <nav
+                    id="primary-navigation"
+                    aria-label="Primary Navigation"
+                >
+
+                    <ul class="nav-menu">
+
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+
+                        <li><a href="../getting-started.html" class="nav-link">Getting Started</a></li>
+
+                        <li><a href="../installation.html" class="nav-link">Installation</a></li>
+
+                        <li><a href="../playground.html" class="nav-link">Playground</a></li>
+
+                        <li>
+
+                            <a
+                                href="forms.html"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+
+                                Components
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="nav-actions">
+
+                    <button class="nav-search">
+
+                        Search
+
+                    </button>
+
+                    <button class="btn btn-outline">
+
+                        Theme
+
+                    </button>
+
+                    <button class="btn btn-secondary">
+
+                        GitHub
+
+                    </button>
+
+                    <span class="badge">
+
+                        v1.1 Stable
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <main
+            id="main-content"
+            class="main-content"
+        >
+
+            <!-- ========================================= -->
+            <!-- Breadcrumb -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav aria-label="Breadcrumb">
+
+                        <a href="../index.html">
+
+                            Home
+
+                        </a>
+
+                        /
+
+                        <a href="buttons.html">
+
+                            Components
+
+                        </a>
+
+                        /
+
+                        <span>
+
+                            Forms
+
+                        </span>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Hero -->
+            <!-- ========================================= -->
+
+            <section class="hero">
+
+                <div class="container">
+
+                    <div class="hero-grid">
+
+                        <div class="hero-content">
+
+                            <span class="hero-badge">
+
+                                Component
+
+                            </span>
+
+                            <h1 class="hero-title">
+
+                                Forms
+
+                            </h1>
+
+                            <p class="hero-tagline">
+
+                                Build consistent, accessible and enterprise-ready
+                                forms with the ASL Design System.
+
+                            </p>
+
+                            <p class="hero-description">
+
+                                ASLDS Forms provide a complete collection of
+                                accessible inputs, controls and validation
+                                patterns that create reliable user experiences
+                                across every application.
+
+                            </p>
+
+                            <div class="hero-actions">
+
+                                <button class="btn btn-primary">
+
+                                    Copy Form Template
+
+                                </button>
+
+                                <span class="badge">
+
+                                    Component
+
+                                </span>
+
+                                <span class="badge">
+
+                                    Version 1.1 Stable
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <aside class="hero-panel card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    On This Page
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Introduction</li>
+                                    <li>Form Anatomy</li>
+                                    <li>Input Types</li>
+                                    <li>Layouts</li>
+                                    <li>Validation</li>
+                                    <li>Accessibility</li>
+                                    <li>Developer Usage</li>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Introduction -->
+            <!-- ========================================= -->
+
+            <section
+                id="introduction"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Overview
+
+                        </span>
+
+                        <h2>
+
+                            Form Component Overview
+
+                        </h2>
+
+                        <p>
+
+                            Forms are essential for collecting user information.
+                            ASLDS provides a unified set of form controls,
+                            layouts and validation patterns that ensure
+                            consistency, accessibility and usability across
+                            every product.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Consistency
+
+                                </h3>
+
+                                <p>
+
+                                    Every field shares consistent spacing,
+                                    typography, sizing and interaction patterns.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Accessibility
+
+                                </h3>
+
+                                <p>
+
+                                    Labels, focus states and keyboard navigation
+                                    are supported throughout every form control.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Responsive
+
+                                </h3>
+
+                                <p>
+
+                                    Form layouts adapt naturally across mobile,
+                                    tablet and desktop experiences.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Validation
+
+                                </h3>
+
+                                <p>
+
+                                    Support for clear validation messaging helps
+                                    users complete forms successfully.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Form Anatomy -->
+            <!-- ========================================= -->
+
+            <section
+                id="form-anatomy"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Anatomy
+
+                        </span>
+
+                        <h2>
+
+                            Form Anatomy
+
+                        </h2>
+
+                        <p>
+
+                            Every ASLDS form follows the same predictable
+                            structure for improved usability.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Label</h3>
+                                <p>Clearly identifies the purpose of the field.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Input</h3>
+                                <p>Main interactive control for user input.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Helper Text</h3>
+                                <p>Provides supporting instructions.</p>
+                            </div>
+                        </article>
+
+                        <article class="card documentation-card">
+                            <div class="card-body">
+                                <h3>Validation</h3>
+                                <p>Communicates success or error states.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Basic Inputs -->
+            <!-- ========================================= -->
+
+            <section
+                id="basic-inputs"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Controls
+
+                        </span>
+
+                        <h2>
+
+                            Basic Input Fields
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <form class="form">
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Full Name
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        placeholder="Enter your full name"
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Email Address
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="email"
+                                        placeholder="name@example.com"
+                                    >
+
+                                </div>
+                                
+                                                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Password
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="password"
+                                        placeholder="Enter password"
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Phone Number
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="tel"
+                                        placeholder="+234..."
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Website
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="url"
+                                        placeholder="https://example.com"
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        About
+
+                                    </label>
+
+                                    <textarea
+                                        class="form-control"
+                                        rows="5"
+                                        placeholder="Tell us about yourself..."
+                                    ></textarea>
+
+                                </div>
+
+                                <button class="btn btn-primary">
+
+                                    Submit
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Input Types -->
+            <!-- ========================================= -->
+
+            <section
+                id="input-types"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Input Types
+
+                        </span>
+
+                        <h2>
+
+                            Supported Controls
+
+                        </h2>
+
+                        <p>
+
+                            ASLDS provides consistent styling for common HTML
+                            form controls.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Text Input
+
+                                </h3>
+
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Text input"
+                                >
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Email
+
+                                </h3>
+
+                                <input
+                                    class="form-control"
+                                    type="email"
+                                    placeholder="Email"
+                                >
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Number
+
+                                </h3>
+
+                                <input
+                                    class="form-control"
+                                    type="number"
+                                    placeholder="0"
+                                >
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Search
+
+                                </h3>
+
+                                <input
+                                    class="form-control"
+                                    type="search"
+                                    placeholder="Search..."
+                                >
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Date
+
+                                </h3>
+
+                                <input
+                                    class="form-control"
+                                    type="date"
+                                >
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Time
+
+                                </h3>
+
+                                <input
+                                    class="form-control"
+                                    type="time"
+                                >
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Selection Controls -->
+            <!-- ========================================= -->
+
+            <section
+                id="selection-controls"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Selection
+
+                        </span>
+
+                        <h2>
+
+                            Selection Controls
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <form class="form">
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Country
+
+                                    </label>
+
+                                    <select class="form-control">
+
+                                        <option>Select a country</option>
+                                        <option>Nigeria</option>
+                                        <option>Ghana</option>
+                                        <option>Kenya</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        <input type="checkbox">
+
+                                        Receive product updates
+
+                                    </label>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label>
+
+                                        <input
+                                            type="radio"
+                                            name="plan"
+                                        >
+
+                                        Basic Plan
+
+                                    </label>
+
+                                    <label>
+
+                                        <input
+                                            type="radio"
+                                            name="plan"
+                                        >
+
+                                        Premium Plan
+
+                                    </label>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Form Layouts -->
+            <!-- ========================================= -->
+
+            <section
+                id="form-layouts"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Layout
+
+                        </span>
+
+                        <h2>
+
+                            Common Layout Patterns
+
+                        </h2>
+
+                        <p>
+
+                            Choose layouts that best suit the amount of content
+                            and the available screen space.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Single Column
+
+                                </h3>
+
+                                <p>
+
+                                    Best for mobile devices and long forms.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Two Column
+
+                                </h3>
+
+                                <p>
+
+                                    Improves efficiency for desktop workflows.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Wizard
+
+                                </h3>
+
+                                <p>
+
+                                    Divide large forms into manageable steps.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Inline
+
+                                </h3>
+
+                                <p>
+
+                                    Ideal for compact filtering and search forms.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+                        <!-- ========================================= -->
+            <!-- Validation States -->
+            <!-- ========================================= -->
+
+            <section
+                id="validation"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Validation
+
+                        </span>
+
+                        <h2>
+
+                            Validation States
+
+                        </h2>
+
+                        <p>
+
+                            Validation helps users identify mistakes quickly
+                            while providing clear guidance toward successful
+                            completion.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <form class="form">
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Valid Input
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        value="John Doe"
+                                    >
+
+                                    <small>
+
+                                        Looks good.
+
+                                    </small>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Required Field
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="email"
+                                        placeholder="name@example.com"
+                                    >
+
+                                    <small>
+
+                                        Email address is required.
+
+                                    </small>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Disabled & Readonly -->
+            <!-- ========================================= -->
+
+            <section
+                id="states"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            States
+
+                        </span>
+
+                        <h2>
+
+                            Disabled &amp; Readonly Fields
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <form class="form">
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Readonly
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        value="Readonly value"
+                                        readonly
+                                    >
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="form-label">
+
+                                        Disabled
+
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        value="Disabled input"
+                                        disabled
+                                    >
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Accessibility -->
+            <!-- ========================================= -->
+
+            <section
+                id="accessibility"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Accessibility
+
+                        </span>
+
+                        <h2>
+
+                            Accessible Forms
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Labels
+
+                                </h3>
+
+                                <p>
+
+                                    Every control should have a visible,
+                                    descriptive label associated with its input.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Keyboard Navigation
+
+                                </h3>
+
+                                <p>
+
+                                    Users should be able to complete forms using
+                                    only the keyboard.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Error Messages
+
+                                </h3>
+
+                                <p>
+
+                                    Provide clear validation messages close to
+                                    the affected field.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card documentation-card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Required Fields
+
+                                </h3>
+
+                                <p>
+
+                                    Clearly indicate mandatory information
+                                    without relying solely on color.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Best Practices -->
+            <!-- ========================================= -->
+
+            <section
+                id="best-practices"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Best Practices
+
+                        </span>
+
+                        <h2>
+
+                            Do &amp; Don't
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Do
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Use clear labels.</li>
+                                    <li>Keep forms concise.</li>
+                                    <li>Group related fields.</li>
+                                    <li>Provide helper text.</li>
+                                    <li>Validate user input.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                        <article class="card">
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Don't
+
+                                </h3>
+
+                                <ul>
+
+                                    <li>Hide important instructions.</li>
+                                    <li>Use placeholder text as labels.</li>
+                                    <li>Display unclear error messages.</li>
+                                    <li>Require unnecessary information.</li>
+                                    <li>Depend only on color indicators.</li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Developer Usage -->
+            <!-- ========================================= -->
+
+            <section
+                id="developer-usage"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Developer
+
+                        </span>
+
+                        <h2>
+
+                            HTML Example
+
+                        </h2>
+
+                    </header>
+
+                    <div class="card">
+
+                        <div class="card-body">
+
+<pre><code>&lt;form class="form"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="form-label"&gt;
+            Email
+        &lt;/label&gt;
+
+        &lt;input
+            class="form-control"
+            type="email"
+            placeholder="name@example.com"
+        &gt;
+    &lt;/div&gt;
+
+    &lt;button class="btn btn-primary"&gt;
+        Submit
+    &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            
+            
+                        <!-- ========================================= -->
+            <!-- Related Components -->
+            <!-- ========================================= -->
+
+            <section
+                id="related-components"
+                class="section"
+            >
+
+                <div class="container">
+
+                    <header class="section-header">
+
+                        <span class="section-label">
+
+                            Continue Learning
+
+                        </span>
+
+                        <h2>
+
+                            Related Components
+
+                        </h2>
+
+                        <p>
+
+                            Forms work together with several ASLDS components to
+                            create complete user experiences.
+
+                        </p>
+
+                    </header>
+
+                    <div class="card-grid documentation-grid">
+
+                        <a
+                            href="buttons.html"
+                            class="card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Buttons
+
+                                </h3>
+
+                                <p>
+
+                                    Submit, reset and perform form actions.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="cards.html"
+                            class="card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Cards
+
+                                </h3>
+
+                                <p>
+
+                                    Organize forms into clean, structured
+                                    layouts.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="alerts.html"
+                            class="card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Alerts
+
+                                </h3>
+
+                                <p>
+
+                                    Display validation summaries and important
+                                    messages.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a
+                            href="modals.html"
+                            class="card"
+                        >
+
+                            <div class="card-body">
+
+                                <h3>
+
+                                    Modals
+
+                                </h3>
+
+                                <p>
+
+                                    Present forms inside dialogs and workflows.
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================= -->
+            <!-- Previous / Next -->
+            <!-- ========================================= -->
+
+            <section class="section">
+
+                <div class="container">
+
+                    <nav
+                        class="page-navigation"
+                        aria-label="Documentation Navigation"
+                    >
+
+                        <a
+                            href="cards.html"
+                            class="btn btn-outline"
+                        >
+
+                            ← Previous: Cards
+
+                        </a>
+
+                        <a
+                            href="navbar.html"
+                            class="btn btn-primary"
+                        >
+
+                            Next: Navbar →
+
+                        </a>
+
+                    </nav>
+
+                </div>
+
+            </section>
+
+        </main>
+
+             <!-- ========================================= -->
+        <!-- Footer -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div>
+
+                        <h3>
+
+                            ASL Design System
+
+                        </h3>
+
+                        <p>
+
+                            Enterprise UI framework for modern web
+                            applications.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Foundations
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="colors.html">Colors</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="spacing.html">Spacing</a></li>
+                            <li><a href="layout.html">Layout</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Components
+
+                        </h3>
+
+                        <ul>
+
+                            <li><a href="../components/buttons.html">Buttons</a></li>
+                            <li><a href="../components/cards.html">Cards</a></li>
+                            <li><a href="../components/forms.html">Forms</a></li>
+                            <li><a href="../components/navbar.html">Navbar</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Version
+
+                        </h3>
+
+                        <p>
+
+                            ASL Design System
+
+                        </p>
+
+                        <p>
+
+                            Version 1.1 Stable
+
+                        </p>
+
+                        <p>
+
+                            © 2026 A Square L Innovate
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Accessibility Live Regions -->
+    <!-- ========================================= -->
+
+    <div
+        id="live-region"
+        class="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <section
+        id="toast-region"
+        aria-live="polite"
+        aria-label="Notifications"
+    ></section>
+
+    <dialog
+        id="modal-root"
+        aria-label="Application Modal"
+    ></dialog>
+
+    <!-- ========================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================= -->
+
+    <script type="module" src="../../js/app.js"></script>
+    <script type="module" src="../../js/navbar.js"></script>
+    <script type="module" src="../../js/sidebar.js"></script>
+    <script type="module" src="../../js/tabs.js"></script>
+    <script type="module" src="../../js/dropdown.js"></script>
+    <script type="module" src="../../js/modal.js"></script>
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/playground.js"></script>
+    <script type="module" src="../../js/search.js"></script>
+    <script type="module" src="../../js/animations.js"></script>
+    <script type="module" src="../../js/toast.js"></script>
+
+</body>
+
+</html>
