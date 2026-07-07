@@ -199,3 +199,89 @@
     --desktop: 1200px;
     --wide: 1400px;
 }
+
+/* ==========================================================
+   LIGHT THEME
+========================================================== */
+
+:root[data-theme="light"] {
+
+    --background: #F8FAFC;
+
+    --surface: #FFFFFF;
+
+    --card-bg: #FFFFFF;
+
+    --card-hover: #F3F4F6;
+
+    --white: #111111;
+
+    --gray-100: #111111;
+
+    --gray-200: #333333;
+
+    --gray-300: #555555;
+
+    --gray-400: #777777;
+
+    --gray-500: #888888;
+
+    --gray-600: #999999;
+
+    --gray-700: #BBBBBB;
+
+    --gray-800: #DDDDDD;
+
+    --gray-900: #F5F5F5;
+
+    --border-color: #D8D8D8;
+
+    --glass-bg: rgba(255,255,255,.75);
+
+    --glass-border: rgba(0,0,0,.08);
+
+}
+
+
+
+/* ==========================================================
+   DARK THEME
+========================================================== */
+
+:root[data-theme="dark"] {
+
+    --background: #050505;
+
+    --surface: #0B0B0B;
+
+    --card-bg: #111111;
+
+    --card-hover: #1A1A1A;
+
+    --white: #FFFFFF;
+
+    --gray-100: #F5F5F5;
+
+    --gray-200: #DDDDDD;
+
+    --gray-300: #C9C9C9;
+
+    --gray-400: #B3B3B3;
+
+    --gray-500: #999999;
+
+    --gray-600: #777777;
+
+    --gray-700: #555555;
+
+    --gray-800: #333333;
+
+    --gray-900: #1A1A1A;
+
+    --border-color: #222222;
+
+    --glass-bg: rgba(255,255,255,.04);
+
+    --glass-border: rgba(255,255,255,.08);
+
+}
