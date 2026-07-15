@@ -170,6 +170,7 @@
             root: document.documentElement,
             toggles: [],
             metaThemeColor: null,
+            liveRegion: null,
         },
 
         /**
@@ -248,6 +249,9 @@
 
             // Apply CSS variables
             this._applyCSSVariables();
+
+            // Update meta theme color
+            this._updateMetaThemeColor(this.state.active);
 
             this.state.initialized = true;
 
@@ -1070,6 +1074,8 @@
             Object.keys(variables).forEach(function (key) {
                 root.style.setProperty(key, variables[key]);
             });
+
+            ASLDS.logger.debug('CSS variables applied for theme: ' + active);
         },
 
         /**
@@ -1143,8 +1149,8 @@
             const displayName = this.getDisplayName(theme);
             const icon = this.getIcon(theme);
 
-            // Update text
-            button.textContent = '';
+            // Clear button
+            button.innerHTML = '';
 
             // Add icon
             const iconEl = document.createElement('i');
@@ -1314,13 +1320,6 @@
             ASLDS.events.off('runtime:destroy');
             ASLDS.events.off('theme:apply');
             ASLDS.events.off('theme:toggle');
-
-            // Remove event listeners from toggles
-            this.elements.toggles.forEach(function (button) {
-                // Remove listeners (simplified - would need to store references)
-            });
-
-            ASLDS.logger.debug('Theme events unregistered.');
         },
     };
 
