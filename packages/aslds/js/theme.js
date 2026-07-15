@@ -1333,7 +1333,6 @@
     Object.freeze(Theme.icons);
     Object.freeze(Theme.emojis);
     Object.freeze(Theme.cssVariables);
-    Object.freeze(Theme.elements);
 
     // ========================================================================
     // Runtime Registration
