@@ -198,7 +198,26 @@
     --laptop: 992px;
     --desktop: 1200px;
     --wide: 1400px;
+
+
+    /* Container */
+--container-width: 1200px;
+--container-padding: 24px;
+
+/* Z-Index */
+--z-dropdown: 1000;
+--z-sticky: 1020;
+--z-navbar: 1030;
+--z-modal: 1050;
+--z-tooltip: 1060;
+--z-toast: 1070;
+
+/* Transitions */
+--transition-fast: 0.2s ease;
+--transition-normal: 0.3s ease;
+--transition-slow: 0.6s ease;
 }
+
 
 /* ==========================================================
    LIGHT THEME

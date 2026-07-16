@@ -892,28 +892,26 @@
          * @param {Element} container - Container element
          * @returns {Array} Array of focusable elements
          */
-        _getFocusableElements: function (container) {
-            const selector = [
-                'a[href]',
-                'button:not([disabled])',
-                'input:not([disabled])',
-                'select:not([disabled])',
-                'textarea:not([disabled])',
-                '[tabindex]:not([tabindex="-1"])',
-                'details summary',
-                'audio[controls]',
-                'video[controls]',
-                '[contenteditable]:not([contenteditable="false"])',
-            ].join(',');
+       _getFocusableElements: function(container) {
+    // More specific selector for focusable elements
+    const selector = [
+        'a[href]:not([disabled])',
+        'button:not([disabled])',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        'textarea:not([disabled])',
+        'details summary',
+        '[tabindex]:not([tabindex="-1"]):not([tabindex="0"])'
+    ].join(',');
 
-            const elements = ASLDS.dom.findAll(selector, container);
-            return elements.filter(function (el) {
-                // Filter out hidden or disabled elements
-                return el.offsetParent !== null &&
-                    !el.disabled &&
-                    el.getAttribute('aria-hidden') !== 'true';
-            });
-        },
+    const elements = ASLDS.dom.findAll(selector, container);
+    return elements.filter(function(el) {
+        return el.offsetParent !== null &&
+            !el.disabled &&
+            el.getAttribute('aria-hidden') !== 'true' &&
+            (el.tabIndex >= 0 || el.tagName === 'A' || el.tagName === 'BUTTON');
+    });
+},
 
         /**
          * Get a modal instance by element

@@ -88,7 +88,7 @@
 
             // Ripple settings
             rippleDuration: 600,
-            rippleColor: 'rgba(255, 255, 255, 0.3)',
+           rippleColor: 'rgba(212, 175, 55, 0.3)',
 
             // Performance
             useRAF: true,

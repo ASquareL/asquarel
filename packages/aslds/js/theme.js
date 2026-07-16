@@ -118,10 +118,10 @@
          * Theme Display Names
          */
         displayNames: {
-            light: 'Light',
-            dark: 'Dark',
-            system: 'System',
-            auto: 'Auto',
+            light: 'Light ☀️',
+            dark: 'Dark 🌙',
+            system: 'System 🖥️',
+            auto: 'Auto 🕒',
         },
 
         /**

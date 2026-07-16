@@ -660,34 +660,129 @@
         },
 
         /**
-         * Build search index from page data
-         */
-        _buildIndex: function () {
-            if (this.index.initialized) {
-                return;
+ * Build search index from all documentation pages
+ */
+_buildIndex: function() {
+    if (this.index.initialized) return;
+
+    // First, try to load a static index (if available)
+    this._loadSearchIndexFromFile()
+        .then(function(data) {
+            if (data && data.length > 0) {
+                this.index.items = data;
+                this.index.initialized = true;
+                ASLDS.logger.debug('Search index loaded from static file.', { count: data.length });
+            } else {
+                // Fallback: build index from current page and crawl links
+                this._buildIndexFromNavigation();
             }
+        }.bind(this))
+        .catch(function() {
+            // Fallback: build index from current page only
+            this._buildIndexFromNavigation();
+        }.bind(this));
+},
 
-            // Collect page data from the document
-            const pages = this._collectPageData();
+/**
+ * Load search index from a static JSON file (if exists)
+ */
+_loadSearchIndexFromFile: function() {
+    return fetch('/search-index.json')
+        .then(function(response) {
+            if (!response.ok) throw new Error('Index file not found');
+            return response.json();
+        })
+        .catch(function() {
+            return null;
+        });
+},
 
-            // Build search items
-            const items = [];
+/**
+ * Build index by crawling navigation links
+ */
+_buildIndexFromNavigation: function() {
+    // Collect all internal links from the main navigation
+    const navLinks = ASLDS.dom.findAll('nav a[href]');
+    const urls = [];
+    navLinks.forEach(function(link) {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('http') && !href.startsWith('#')) {
+            urls.push(href);
+        }
+    });
 
-            pages.forEach(function (page) {
-                // Add page title
-                items.push({
-                    type: 'page',
-                    title: page.title,
-                    url: page.url,
-                    description: page.description || '',
-                    category: 'Page',
-                    weight: 10,
+    // Remove duplicates
+    const uniqueUrls = [...new Set(urls)];
+
+    // Index the current page first
+    const currentItems = this._collectPageData();
+    this.index.items = currentItems;
+
+    // Then fetch and index other pages (limit to avoid too many requests)
+    const maxPages = 10;
+    const pagesToFetch = uniqueUrls.slice(0, maxPages);
+
+    const fetchPromises = pagesToFetch.map(function(url) {
+        return fetch(url)
+            .then(function(response) {
+                if (!response.ok) return null;
+                return response.text();
+            })
+            .then(function(html) {
+                if (!html) return null;
+                // Parse HTML to extract title, headings, components
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const title = doc.querySelector('title')?.textContent || '';
+                const headings = [];
+                doc.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function(h) {
+                    const text = h.textContent.trim();
+                    if (text) {
+                        headings.push({
+                            text: text,
+                            id: h.id || '',
+                        });
+                    }
                 });
+                // Extract component names from data-component attributes
+                const components = [];
+                doc.querySelectorAll('[data-component]').forEach(function(el) {
+                    const name = el.getAttribute('data-component');
+                    if (name) {
+                        components.push({
+                            name: name,
+                            id: el.id || '',
+                            description: el.getAttribute('data-description') || '',
+                        });
+                    }
+                });
+                // Return page data
+                return {
+                    title: title,
+                    url: url,
+                    description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+                    headings: headings,
+                    components: components,
+                };
+            });
+    }.bind(this));
 
-                // Add headings from the page
-                if (page.headings) {
-                    page.headings.forEach(function (heading) {
-                        items.push({
+    Promise.all(fetchPromises)
+        .then(function(pages) {
+            pages.forEach(function(page) {
+                if (page) {
+                    // Add page title
+                    this.index.items.push({
+                        type: 'page',
+                        title: page.title,
+                        url: page.url,
+                        description: page.description || '',
+                        category: 'Page',
+                        weight: 10,
+                    });
+                    // Add headings
+                    page.headings.forEach(function(heading) {
+                        this.index.items.push({
                             type: 'heading',
                             title: heading.text,
                             url: page.url + (heading.id ? '#' + heading.id : ''),
@@ -695,13 +790,10 @@
                             category: 'Heading',
                             weight: 8,
                         });
-                    });
-                }
-
-                // Add components from the page
-                if (page.components) {
-                    page.components.forEach(function (component) {
-                        items.push({
+                    }.bind(this));
+                    // Add components
+                    page.components.forEach(function(component) {
+                        this.index.items.push({
                             type: 'component',
                             title: component.name,
                             url: page.url + (component.id ? '#' + component.id : ''),
@@ -709,18 +801,21 @@
                             category: 'Component',
                             weight: 9,
                         });
-                    });
+                    }.bind(this));
                 }
             }.bind(this));
 
-            this.index.items = items;
             this.index.initialized = true;
+            ASLDS.logger.debug('Search index built via crawling.', { count: this.index.items.length });
+        }.bind(this))
+        .catch(function(error) {
+            ASLDS.logger.error('Failed to build search index:', error);
+            // Fallback: use current page only
+            this.index.items = this._collectPageData();
+            this.index.initialized = true;
+        }.bind(this));
+},
 
-            ASLDS.logger.debug('Search index built.', {
-                items: items.length,
-                pages: pages.length,
-            });
-        },
 
         /**
          * Collect page data from the document
