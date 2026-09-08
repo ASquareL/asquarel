@@ -1,0 +1,329 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Toast
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Toast notification component for user feedback,
+alerts, and system messages.
+
+Supports:
+- Multiple types (success, error, warning, info)
+- Auto-dismiss with progress bar
+- Stacking multiple toasts
+- Theme-aware (light/dark)
+- Slide-in animations
+- Dismissible with close button
+
+==========================================================
+*/
+
+/* ======================================================
+   TOAST CONTAINER
+====================================================== */
+
+.toast-container {
+    position: fixed;
+    z-index: var(--z-toast, 1070);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    width: 100%;
+    padding: 16px;
+    pointer-events: none;
+}
+
+/* Positions */
+.toast-container--top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.toast-container--top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.toast-container--bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+.toast-container--bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+/* ======================================================
+   INDIVIDUAL TOAST
+====================================================== */
+
+.toast {
+    position: relative;
+    pointer-events: auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 16px 20px;
+    padding-right: 48px;
+    min-height: 60px;
+    overflow: hidden;
+    animation: toastSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+}
+
+/* Left accent border */
+.toast::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+/* ======================================================
+   TOAST TYPES
+====================================================== */
+
+/* Success */
+.toast--success {
+    border-left-color: var(--success);
+}
+
+.toast--success::before {
+    background: var(--success);
+}
+
+.toast--success .toast-icon {
+    color: var(--success);
+}
+
+/* Error */
+.toast--error {
+    border-left-color: var(--danger);
+}
+
+.toast--error::before {
+    background: var(--danger);
+}
+
+.toast--error .toast-icon {
+    color: var(--danger);
+}
+
+/* Warning */
+.toast--warning {
+    border-left-color: var(--warning);
+}
+
+.toast--warning::before {
+    background: var(--warning);
+}
+
+.toast--warning .toast-icon {
+    color: var(--warning);
+}
+
+/* Info */
+.toast--info {
+    border-left-color: var(--primary-gold);
+}
+
+.toast--info::before {
+    background: var(--primary-gold);
+}
+
+.toast--info .toast-icon {
+    color: var(--primary-gold);
+}
+
+/* ======================================================
+   TOAST CONTENT
+====================================================== */
+
+.toast-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.toast-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.toast-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.toast-title {
+    font-size: 15px;
+    font-weight: var(--fw-bold, 700);
+    color: var(--white);
+    margin-bottom: 4px;
+    line-height: var(--lh-tight, 1.2);
+}
+
+.toast-message {
+    font-size: 14px;
+    color: var(--gray-400);
+    line-height: var(--lh-normal, 1.6);
+    word-break: break-word;
+}
+
+/* ======================================================
+   CLOSE BUTTON
+====================================================== */
+
+.toast-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.toast-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+}
+
+.toast-close:focus-visible {
+    outline: 2px solid var(--primary-gold);
+    outline-offset: 2px;
+}
+
+/* ======================================================
+   PROGRESS BAR
+====================================================== */
+
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--primary-gold);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    transition: width 0.1s linear;
+    width: 100%;
+}
+
+.toast--success .toast-progress {
+    background: var(--success);
+}
+
+.toast--error .toast-progress {
+    background: var(--danger);
+}
+
+.toast--warning .toast-progress {
+    background: var(--warning);
+}
+
+.toast--info .toast-progress {
+    background: var(--primary-gold);
+}
+
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+
+@keyframes toastSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(30px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes toastSlideOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(30px) scale(0.96);
+    }
+}
+
+.toast--exiting {
+    animation: toastSlideOut 0.3s ease forwards;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 576px) {
+    .toast-container {
+        max-width: 100%;
+        padding: 12px;
+        top: 12px;
+        right: 12px;
+        left: 12px;
+        width: auto;
+    }
+
+    .toast-container--top-left,
+    .toast-container--bottom-left {
+        left: 12px;
+        right: 12px;
+    }
+
+    .toast-container--top-right,
+    .toast-container--bottom-right {
+        left: 12px;
+        right: 12px;
+    }
+
+    .toast {
+        padding: 14px 16px;
+        padding-right: 44px;
+        font-size: 14px;
+    }
+
+    .toast-title {
+        font-size: 14px;
+    }
+
+    .toast-message {
+        font-size: 13px;
+    }
+
+    .toast-close {
+        top: 10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+    }
+}

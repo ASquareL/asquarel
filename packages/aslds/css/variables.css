@@ -1,7 +1,7 @@
 /* ==========================================================
-   A SQUARE L ACADEMY DESIGN SYSTEM (ADS)
+   A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
    File: variables.css
-   Version: 1.0
+   Version: 1.1
    Author: A Square L Innovate
    ========================================================== */
 
@@ -107,13 +107,9 @@
     ====================================================== */
 
     --shadow-sm: 0 2px 8px rgba(0,0,0,.15);
-
     --shadow-md: 0 8px 20px rgba(0,0,0,.25);
-
     --shadow-lg: 0 15px 40px rgba(0,0,0,.35);
-
-    --shadow-gold:
-        0 0 15px rgba(212,175,55,.20);
+    --shadow-gold: 0 0 15px rgba(212,175,55,.20);
 
     /* ======================================================
        GLASS EFFECT
@@ -127,30 +123,28 @@
        TRANSITIONS
     ====================================================== */
 
-    --transition-fast: .2s ease;
-
-    --transition-normal: .3s ease;
-
-    --transition-slow: .5s ease;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.6s ease;
 
     /* ======================================================
-       Z INDEX
+       Z-INDEX
     ====================================================== */
 
     --z-dropdown: 1000;
-    --z-navbar: 1010;
-    --z-sidebar: 1020;
+    --z-sticky: 1020;
+    --z-navbar: 1030;
     --z-modal: 1050;
-    --z-tooltip: 1100;
+    --z-tooltip: 1060;
+    --z-toast: 1070;
     --z-loader: 1200;
 
     /* ======================================================
        CONTAINER
     ====================================================== */
 
-    --container-width: 1280px;
-
-    --container-padding: 20px;
+    --container-width: 1200px;
+    --container-padding: 24px;
 
     /* ======================================================
        NAVBAR
@@ -169,9 +163,7 @@
     ====================================================== */
 
     --course-card-height: 340px;
-
     --lesson-sidebar-width: 320px;
-
     --progress-height: 8px;
 
     /* ======================================================
@@ -179,7 +171,6 @@
     ====================================================== */
 
     --btn-height: 50px;
-
     --btn-padding: 0 28px;
 
     /* ======================================================
@@ -190,7 +181,6 @@
 
     /* ======================================================
        BREAKPOINTS
-       (Reference values for responsive.css)
     ====================================================== */
 
     --mobile: 576px;
@@ -199,23 +189,6 @@
     --desktop: 1200px;
     --wide: 1400px;
 
-
-    /* Container */
---container-width: 1200px;
---container-padding: 24px;
-
-/* Z-Index */
---z-dropdown: 1000;
---z-sticky: 1020;
---z-navbar: 1030;
---z-modal: 1050;
---z-tooltip: 1060;
---z-toast: 1070;
-
-/* Transitions */
---transition-fast: 0.2s ease;
---transition-normal: 0.3s ease;
---transition-slow: 0.6s ease;
 }
 
 
@@ -226,41 +199,28 @@
 :root[data-theme="light"] {
 
     --background: #F8FAFC;
-
     --surface: #FFFFFF;
-
     --card-bg: #FFFFFF;
-
     --card-hover: #F3F4F6;
 
     --white: #111111;
 
     --gray-100: #111111;
-
     --gray-200: #333333;
-
     --gray-300: #555555;
-
     --gray-400: #777777;
-
     --gray-500: #888888;
-
     --gray-600: #999999;
-
     --gray-700: #BBBBBB;
-
     --gray-800: #DDDDDD;
-
     --gray-900: #F5F5F5;
 
     --border-color: #D8D8D8;
 
     --glass-bg: rgba(255,255,255,.75);
-
     --glass-border: rgba(0,0,0,.08);
 
 }
-
 
 
 /* ==========================================================
@@ -270,37 +230,61 @@
 :root[data-theme="dark"] {
 
     --background: #050505;
-
     --surface: #0B0B0B;
-
     --card-bg: #111111;
-
     --card-hover: #1A1A1A;
 
     --white: #FFFFFF;
 
     --gray-100: #F5F5F5;
-
     --gray-200: #DDDDDD;
-
     --gray-300: #C9C9C9;
-
     --gray-400: #B3B3B3;
-
     --gray-500: #999999;
-
     --gray-600: #777777;
-
     --gray-700: #555555;
-
     --gray-800: #333333;
-
     --gray-900: #1A1A1A;
 
     --border-color: #222222;
 
     --glass-bg: rgba(255,255,255,.04);
-
     --glass-border: rgba(255,255,255,.08);
 
+}
+
+
+/* ==========================================================
+   THEME TRANSITIONS
+   ========================================================== */
+
+/*
+   Prevents FOUC (Flash of Unstyled Content) on page load.
+   The .theme-transitioning class is added/removed by theme.js
+   to control when transitions are active.
+*/
+
+:root:not(.theme-transitioning) {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Disable all transitions during theme switching to prevent flash */
+:root.theme-transitioning * {
+    transition: none !important;
+}
+
+/*
+   Optional: Smooth transition for theme toggle buttons
+   Makes the button text feel more responsive
+*/
+[data-theme-toggle] {
+    transition: opacity 0.2s ease;
+}
+
+[data-theme-toggle]:active {
+    opacity: 0.6;
 }

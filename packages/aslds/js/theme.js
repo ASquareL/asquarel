@@ -4,790 +4,528 @@
  * ============================================================================
  *
  * ASL Design System (ASLDS)
- * Theme Module
+ * Theme Module v2.0
  *
  * File      : theme.js
- * Version   : 1.0.0
+ * Version   : 2.0.0
  * Author    : A Square L Innovate
  *
  * Description
  * ----------------------------------------------------------------------------
- * Manages application themes across the ASL Design System.
+ * Advanced theme management with Auto (system), Light, and Dark modes.
+ * Persists user preference, watches OS changes, and provides a clean API.
  *
- * Responsibilities:
- *
- * • Theme registration
- * • Theme initialization
- * • Theme persistence
- * • System theme detection
- * • Theme switching
- * • Accessibility integration
- * • Runtime communication
+ * Features:
+ *   • Three modes: 'auto', 'light', 'dark'
+ *   • System theme detection & live updates
+ *   • Smooth transitions with flash prevention
+ *   • Persistent storage via ASLDS.storage
+ *   • Full runtime integration
+ *   • Toggle cycling with visual feedback
  *
  * ============================================================================
  */
 
 "use strict";
 
-(function () {
+(function (window, document) {
 
-    /**
-     * ========================================================================
-     * Ensure Runtime Exists
-     * ========================================================================
-     */
+    // ========================================================================
+    // Ensure Runtime Exists
+    // ========================================================================
 
     if (!window.ASLDS) {
-
-        console.error(
-
-            "[ASLDS] Runtime not found."
-
-        );
-
+        console.error("[ASLDS] Theme module requires ASLDS runtime.");
         return;
-
     }
 
-    /**
-     * ========================================================================
-     * Theme Module
-     * ========================================================================
-     */
+    // ========================================================================
+    // Theme Module Definition
+    // ========================================================================
 
     const Theme = {
 
-        /**
-         * --------------------------------------------------------------------
-         * Module Information
-         * --------------------------------------------------------------------
-         */
+        // --------------------------------------------------------------------
+        // Module Metadata
+        // --------------------------------------------------------------------
 
         name: "Theme",
-
-        version: "1.0.0",
-
-        priority: 1,
-
+        version: "2.0.0",
+        priority: 10, // Early, but after storage is ready
         dependencies: [],
 
-        /**
-         * --------------------------------------------------------------------
-         * Configuration
-         * --------------------------------------------------------------------
-         */
+        // --------------------------------------------------------------------
+        // Configuration
+        // --------------------------------------------------------------------
 
         config: {
-
-            storageKey: "theme",
-
-            defaultTheme: "dark",
-
-            followSystem: true,
-
-            attribute: "data-theme"
-
+            storageKey: "theme-mode", // stores 'auto', 'light', or 'dark'
+            attribute: "data-theme", // applied to <html>
+            modeAttribute: "data-theme-mode", // applied to <html> to indicate mode
+            transitionClass: "theme-transitioning",
+            defaultMode: "auto", // fallback if no storage
+            debounceDelay: 100, // ms for system theme changes
         },
 
-        /**
-         * --------------------------------------------------------------------
-         * Runtime State
-         * --------------------------------------------------------------------
-         */
+        // --------------------------------------------------------------------
+        // State
+        // --------------------------------------------------------------------
 
         state: {
-
             initialized: false,
-
-            current: null,
-
-            system: null,
-
-            previous: null
-
+            mode: null, // 'auto' | 'light' | 'dark' (user preference)
+            effective: null, // 'light' | 'dark' (actually applied)
+            system: null, // cached system preference
+            isTransitioning: false,
+            mediaQuery: null,
+            mediaListener: null,
+            toggleTimeout: null,
         },
 
-        /**
-         * --------------------------------------------------------------------
-         * Available Themes
-         * --------------------------------------------------------------------
-         */
+        // --------------------------------------------------------------------
+        // Available Modes & Display Labels
+        // --------------------------------------------------------------------
 
-        themes: [
+        modes: ["auto", "light", "dark"],
 
-            "light",
+        labels: {
+            auto: "🌓 Auto",
+            light: "☀️ Light",
+            dark: "🌙 Dark",
+        },
 
-            "dark"
-
-        ],
-
-        /**
-         * --------------------------------------------------------------------
-         * Cached Elements
-         * --------------------------------------------------------------------
-         */
+        // --------------------------------------------------------------------
+        // Cached Elements
+        // --------------------------------------------------------------------
 
         elements: {
-
-            root: document.documentElement
-
-        }
-
+            root: document.documentElement,
+            toggleButtons: null, // populated on init
+        },
     };
 
-
-
-
-
-
-    /**
-     * ========================================================================
-     * Get Stored Theme
-     * ========================================================================
-     */
-
-    Theme.getStoredTheme = function () {
-
-        return ASLDS.storage.get(
-
-            Theme.config.storageKey
-
-        );
-
-    };
+    // ========================================================================
+    // PRIVATE HELPERS
+    // ========================================================================
 
     /**
-     * ========================================================================
-     * Save Theme
-     * ========================================================================
+     * Get the system theme (OS preference)
      */
-
-    Theme.saveTheme = function (
-
-        theme
-
-    ) {
-
-        ASLDS.storage.set(
-
-            Theme.config.storageKey,
-
-            theme
-
-        );
-
-    };
-
-    /**
-     * ========================================================================
-     * Detect System Theme
-     * ========================================================================
-     */
-
-    Theme.getSystemTheme = function () {
-
-        return window.matchMedia(
-
-            "(prefers-color-scheme: dark)"
-
-        ).matches
-
+    function getSystemTheme() {
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
-
             : "light";
-
-    };
+    }
 
     /**
-     * ========================================================================
-     * Apply Theme
-     * ========================================================================
+     * Resolve the effective theme based on current mode and system.
      */
+    function resolveEffective(mode) {
+        if (mode === "auto") {
+            return getSystemTheme();
+        }
+        return mode; // 'light' or 'dark'
+    }
 
-    Theme.apply = function (
+    /**
+     * Check if a mode is valid.
+     */
+    function isValidMode(mode) {
+        return Theme.modes.indexOf(mode) !== -1;
+    }
 
-        theme
+    /**
+     * Get the user's stored mode, with backward compatibility.
+     * Old storage might have 'light' or 'dark' directly.
+     */
+    function getStoredMode() {
+        const stored = ASLDS.storage.get(Theme.config.storageKey);
+        if (stored && isValidMode(stored)) {
+            return stored;
+        }
+        // Backward compatibility: if they had 'dark' or 'light' saved without 'auto',
+        // treat it as a forced mode.
+        if (stored === "light" || stored === "dark") {
+            return stored;
+        }
+        return Theme.config.defaultMode;
+    }
 
-    ) {
+    /**
+     * Save the current mode to storage.
+     */
+    function saveMode(mode) {
+        ASLDS.storage.set(Theme.config.storageKey, mode);
+    }
 
-        if (
+    // ========================================================================
+    // CORE THEME APPLICATION
+    // ========================================================================
 
-            !Theme.themes.includes(
-
-                theme
-
-            )
-
-        ) {
-
-            ASLDS.logger.warn(
-
-                `Unknown theme: ${theme}`
-
-            );
-
+    /**
+     * Apply a theme to the root element with transition handling.
+     * @param {string} theme - 'light' or 'dark'
+     * @param {boolean} instant - Skip transition if true
+     */
+    function applyTheme(theme, instant) {
+        if (theme !== "light" && theme !== "dark") {
+            ASLDS.logger.warn("[Theme] Invalid theme:", theme);
             return;
-
         }
 
-        Theme.state.previous =
+        const root = Theme.elements.root;
 
-            Theme.state.current;
+        // Set the effective theme state
+        Theme.state.effective = theme;
 
-        Theme.state.current = theme;
+        // If instant, remove transitions to prevent flash
+        if (instant) {
+            root.classList.add(Theme.config.transitionClass);
+        } else {
+            root.classList.remove(Theme.config.transitionClass);
+        }
 
-        Theme.elements.root.setAttribute(
+        // Apply the theme attribute
+        root.setAttribute(Theme.config.attribute, theme);
 
-            Theme.config.attribute,
+        // Update the mode attribute on root (so CSS can style based on mode)
+        root.setAttribute(Theme.config.modeAttribute, Theme.state.mode);
 
-            theme
+        // Update toggle buttons text to reflect the current mode
+        updateToggleButtons();
 
-        );
-
-        Theme.saveTheme(
-
-            theme
-
-        );
-        
-        document
-
-    .querySelectorAll(
-
-        "[data-theme-toggle]"
-
-    )
-
-    .forEach(button => {
-
-        button.textContent =
-
-            theme === "dark"
-
-                ? "☀ Light"
-
-                : "🌙 Dark";
-
-    });
-
-        ASLDS.events.emit(
-
-            "theme:changed",
-
-            {
-
-                current: theme,
-
-                previous: Theme.state.previous
-
-            }
-
-        );
+        // Emit effective change event (for other modules)
+        ASLDS.events.emit("theme:effective-changed", {
+            mode: Theme.state.mode,
+            effective: Theme.state.effective,
+            system: Theme.state.system,
+        });
 
         ASLDS.logger.info(
-
-            `Theme applied: ${theme}`
-
+            `[Theme] Applied effective theme: ${theme} (mode: ${Theme.state.mode})`
         );
-
-    };
+    }
 
     /**
-     * ========================================================================
-     * Toggle Theme
-     * ========================================================================
+     * Resolve and apply the correct effective theme based on current mode.
      */
-
-    Theme.toggle = function () {
-
-        Theme.apply(
-
-            Theme.state.current === "dark"
-
-                ? "light"
-
-                : "dark"
-
-        );
-
-    };
-
-    /**
-     * ========================================================================
-     * Load Theme
-     * ========================================================================
-     */
-
-    Theme.load = function () {
-
-        const saved =
-
-            Theme.getStoredTheme();
-
-        Theme.state.system =
-
-            Theme.getSystemTheme();
-
-        if (
-
-            saved
-
-        ) {
-
-            Theme.apply(
-
-                saved
-
-            );
-
-            return;
-
+    function resolveAndApply(instant) {
+        const effective = resolveEffective(Theme.state.mode);
+        applyTheme(effective, instant);
+        // Watch system if mode is auto, otherwise unwatch
+        if (Theme.state.mode === "auto") {
+            watchSystemTheme();
+        } else {
+            unwatchSystemTheme();
         }
+    }
 
-        if (
+    // ========================================================================
+    // SYSTEM THEME WATCHER
+    // ========================================================================
 
-            Theme.config.followSystem
-
-        ) {
-
-            Theme.apply(
-
-                Theme.state.system
-
-            );
-
-            return;
-
-        }
-
-        Theme.apply(
-
-            Theme.config.defaultTheme
-
-        );
-
-    };
-
-
-    
-    
-        /**
-     * ========================================================================
-     * Listen for System Theme Changes
-     * ========================================================================
+    /**
+     * Watch for OS theme changes (only active when mode === 'auto').
      */
+    function watchSystemTheme() {
+        if (Theme.state.mediaListener) return; // already watching
 
-    Theme.watchSystemTheme = function () {
+        const mq = window.matchMedia("(prefers-color-scheme: dark)");
+        Theme.state.mediaQuery = mq;
 
-        const mediaQuery = window.matchMedia(
+        const handler = function (event) {
+            const newSystem = event.matches ? "dark" : "light";
+            Theme.state.system = newSystem;
 
-            "(prefers-color-scheme: dark)"
-
-        );
-
-        mediaQuery.addEventListener(
-
-            "change",
-
-            function (event) {
-
-                Theme.state.system =
-
-                    event.matches
-
-                        ? "dark"
-
-                        : "light";
-
-                if (
-
-                    Theme.config.followSystem
-
-                ) {
-
-                    Theme.apply(
-
-                        Theme.state.system
-
-                    );
-
-                }
-
+            // Only re-apply if we're in auto mode and the system actually changed
+            if (Theme.state.mode === "auto") {
+                ASLDS.logger.info(
+                    `[Theme] System theme changed to: ${newSystem} (auto mode)`
+                );
+                // Debounce to avoid rapid flashes
+                clearTimeout(Theme.state.toggleTimeout);
+                Theme.state.toggleTimeout = setTimeout(function () {
+                    resolveAndApply(false);
+                }, Theme.config.debounceDelay);
             }
-
-        );
-
-    };
-
-    /**
-     * ========================================================================
-     * Get Current Theme
-     * ========================================================================
-     */
-
-    Theme.getCurrentTheme = function () {
-
-        return Theme.state.current;
-
-    };
-
-    /**
-     * ========================================================================
-     * Get Available Themes
-     * ========================================================================
-     */
-
-    Theme.getThemes = function () {
-
-        return [
-
-            ...Theme.themes
-
-        ];
-
-    };
-
-    /**
-     * ========================================================================
-     * Check Theme
-     * ========================================================================
-     */
-
-    Theme.isDark = function () {
-
-        return Theme.state.current === "dark";
-
-    };
-
-    Theme.isLight = function () {
-
-        return Theme.state.current === "light";
-
-    };
-
-    /**
-     * ========================================================================
-     * Accessibility Support
-     * ========================================================================
-     */
-
-    Theme.applyAccessibility = function () {
-
-        const reducedMotion = window.matchMedia(
-
-            "(prefers-reduced-motion: reduce)"
-
-        ).matches;
-
-        Theme.elements.root.setAttribute(
-
-            "data-motion",
-
-            reducedMotion
-
-                ? "reduced"
-
-                : "normal"
-
-        );
-
-        ASLDS.events.emit(
-
-            "theme:accessibility",
-
-            {
-
-                reducedMotion
-
-            }
-
-        );
-
-    };
-
-    /**
-     * ========================================================================
-     * Theme Utilities
-     * ========================================================================
-     */
-
-    Theme.refresh = function () {
-
-        Theme.apply(
-
-            Theme.state.current
-
-        );
-
-    };
-
-    Theme.reset = function () {
-
-        ASLDS.storage.remove(
-
-            Theme.config.storageKey
-
-        );
-
-        Theme.state.current = null;
-
-        Theme.state.previous = null;
-
-        Theme.load();
-
-    };
-
-    /**
-     * ========================================================================
-     * Runtime Information
-     * ========================================================================
-     */
-
-    Theme.info = function () {
-
-        return {
-
-            module: Theme.name,
-
-            version: Theme.version,
-
-            initialized: Theme.state.initialized,
-
-            current: Theme.state.current,
-
-            system: Theme.state.system,
-
-            availableThemes: Theme.getThemes()
-
         };
 
-    };
+        // Initial system cache
+        Theme.state.system = mq.matches ? "dark" : "light";
 
+        // Use .addEventListener if available, else .addListener (legacy)
+        if (mq.addEventListener) {
+            mq.addEventListener("change", handler);
+        } else {
+            mq.addListener(handler);
+        }
 
-    
-        /**
-     * ========================================================================
-     * Set Theme
-     * ========================================================================
+        Theme.state.mediaListener = handler;
+        ASLDS.logger.info("[Theme] System theme watcher enabled.");
+    }
+
+    /**
+     * Unwatch system theme changes.
      */
+    function unwatchSystemTheme() {
+        if (!Theme.state.mediaListener) return;
 
-    Theme.set = function (theme) {
+        const mq = Theme.state.mediaQuery;
+        if (mq) {
+            if (mq.removeEventListener) {
+                mq.removeEventListener("change", Theme.state.mediaListener);
+            } else {
+                mq.removeListener(Theme.state.mediaListener);
+            }
+        }
 
-        if (
+        Theme.state.mediaQuery = null;
+        Theme.state.mediaListener = null;
+        ASLDS.logger.info("[Theme] System theme watcher disabled.");
+    }
 
-            !Theme.themes.includes(
+    // ========================================================================
+    // TOGGLE BUTTONS
+    // ========================================================================
 
-                theme
+    /**
+     * Update all [data-theme-toggle] buttons with the current mode label.
+     */
+    function updateToggleButtons() {
+        const buttons = document.querySelectorAll("[data-theme-toggle]");
+        const label = Theme.labels[Theme.state.mode] || Theme.state.mode;
+        buttons.forEach(function (btn) {
+            btn.textContent = label;
+        });
+        // Cache for later
+        Theme.elements.toggleButtons = buttons;
+    }
 
-            )
+    // ========================================================================
+    // PUBLIC API
+    // ========================================================================
 
-        ) {
-
-            ASLDS.errors.warn(
-
-                `Unsupported theme: ${theme}`
-
-            );
-
+    /**
+     * Set the theme mode.
+     * @param {string} mode - 'auto', 'light', or 'dark'
+     * @param {boolean} instant - Skip transition if true
+     * @returns {boolean} - Success
+     */
+    Theme.setMode = function (mode, instant) {
+        if (!isValidMode(mode)) {
+            ASLDS.logger.warn("[Theme] Invalid mode:", mode);
             return false;
-
         }
 
-        Theme.apply(
+        if (mode === Theme.state.mode) {
+            // Same mode, but maybe we still need to refresh if system changed?
+            // We can just re-apply to be safe.
+            Theme.state.mode = mode;
+            saveMode(mode);
+            resolveAndApply(instant);
+            return true;
+        }
 
-            theme
+        Theme.state.mode = mode;
+        saveMode(mode);
+        resolveAndApply(instant);
 
-        );
+        // Emit mode change event
+        ASLDS.events.emit("theme:mode-changed", {
+            mode: mode,
+            effective: Theme.state.effective,
+        });
 
+        ASLDS.logger.info(`[Theme] Mode set to: ${mode}`);
         return true;
-
     };
 
     /**
-     * ========================================================================
-     * Enable / Disable System Theme
-     * ========================================================================
+     * Toggle the theme mode in a cycle: auto → light → dark → auto.
+     * @param {boolean} instant - Skip transition if true
      */
-
-    Theme.enableSystemTheme = function () {
-
-        Theme.config.followSystem = true;
-
-        Theme.apply(
-
-            Theme.getSystemTheme()
-
-        );
-
-    };
-
-    Theme.disableSystemTheme = function () {
-
-        Theme.config.followSystem = false;
-
+    Theme.toggle = function (instant) {
+        const currentIndex = Theme.modes.indexOf(Theme.state.mode);
+        const nextIndex = (currentIndex + 1) % Theme.modes.length;
+        const nextMode = Theme.modes[nextIndex];
+        Theme.setMode(nextMode, instant);
     };
 
     /**
-     * ========================================================================
-     * Register Theme Events
-     * ========================================================================
+     * Get the current mode (user preference).
+     * @returns {string} 'auto', 'light', or 'dark'
      */
-
-    Theme.registerEvents = function () {
-
-        ASLDS.events.on(
-
-            "runtime:refresh",
-
-            function () {
-
-                Theme.refresh();
-
-            }
-
-        );
-
-        ASLDS.events.on(
-
-            "runtime:destroy",
-
-            function () {
-
-                Theme.destroy();
-
-            }
-
-        );
-        
-        ASLDS.utils.delegate(
-           
-            document,
-            
-            "click",
-            
-            "[data-theme-toggle]",
-            
-            function () {
-                
-                Theme.toggle();
-                
-            }
-            
-        );
+    Theme.getMode = function () {
+        return Theme.state.mode;
     };
 
     /**
-     * ========================================================================
-     * Destroy Theme Module
-     * ========================================================================
+     * Get the currently applied theme.
+     * @returns {string} 'light' or 'dark'
      */
-
-    Theme.destroy = function () {
-
-        Theme.state.initialized = false;
-
-        Theme.state.previous = null;
-
-        Theme.state.system = null;
-
-        ASLDS.logger.info(
-
-            "Theme module destroyed."
-
-        );
-
+    Theme.getEffectiveTheme = function () {
+        return Theme.state.effective;
     };
 
     /**
-     * ========================================================================
-     * Update Initialization
-     * ========================================================================
+     * Get the system theme.
+     * @returns {string} 'light' or 'dark'
      */
+    Theme.getSystemTheme = function () {
+        return Theme.state.system || getSystemTheme();
+    };
 
+    /**
+     * Check if dark mode is currently effective.
+     * @returns {boolean}
+     */
+    Theme.isDark = function () {
+        return Theme.state.effective === "dark";
+    };
+
+    /**
+     * Check if light mode is currently effective.
+     * @returns {boolean}
+     */
+    Theme.isLight = function () {
+        return Theme.state.effective === "light";
+    };
+
+    /**
+     * Check if auto mode is active.
+     * @returns {boolean}
+     */
+    Theme.isAuto = function () {
+        return Theme.state.mode === "auto";
+    };
+
+    /**
+     * Refresh the current theme (re-apply without changing mode).
+     * Useful after CSS changes or layout shifts.
+     */
+    Theme.refresh = function () {
+        if (!Theme.state.initialized) return;
+        resolveAndApply(true);
+    };
+
+    /**
+     * Reset the theme to default (auto) and clear storage.
+     */
+    Theme.reset = function () {
+        ASLDS.storage.remove(Theme.config.storageKey);
+        Theme.state.mode = Theme.config.defaultMode;
+        Theme.state.effective = null;
+        saveMode(Theme.state.mode);
+        resolveAndApply(true);
+        ASLDS.logger.info("[Theme] Reset to default.");
+    };
+
+    /**
+     * Get module information.
+     * @returns {Object}
+     */
+    Theme.info = function () {
+        return {
+            module: Theme.name,
+            version: Theme.version,
+            mode: Theme.state.mode,
+            effective: Theme.state.effective,
+            system: Theme.state.system,
+            initialized: Theme.state.initialized,
+            availableModes: Theme.modes,
+        };
+    };
+
+    // ========================================================================
+    // LIFECYCLE: INIT, DESTROY
+    // ========================================================================
+
+    /**
+     * Initialize the theme module.
+     */
     Theme.init = function () {
-
-        if (
-
-            Theme.state.initialized
-
-        ) {
-
+        if (Theme.state.initialized) {
+            ASLDS.logger.warn("[Theme] Already initialized.");
             return;
-
         }
 
-        ASLDS.logger.info(
+        ASLDS.logger.info("[Theme] Initializing...");
 
-            "Initializing Theme module..."
+        // Load stored mode (with backward compatibility)
+        const storedMode = getStoredMode();
+        Theme.state.mode = storedMode;
+        Theme.state.system = getSystemTheme();
 
+        // Apply the theme (instant to avoid flash)
+        resolveAndApply(true);
+
+        // Update toggle buttons
+        updateToggleButtons();
+
+        // Listen for runtime refresh
+        ASLDS.events.on("runtime:refresh", function () {
+            Theme.refresh();
+        });
+
+        // Listen for runtime destroy
+        ASLDS.events.on("runtime:destroy", function () {
+            Theme.destroy();
+        });
+
+        // Delegate click events on toggle buttons
+        ASLDS.utils.delegate(
+            document,
+            "click",
+            "[data-theme-toggle]",
+            function (e) {
+                e.preventDefault();
+                Theme.toggle(false);
+            }
         );
-
-        Theme.load();
-
-        Theme.watchSystemTheme();
-
-        Theme.applyAccessibility();
-
-        Theme.registerEvents();
 
         Theme.state.initialized = true;
 
-        ASLDS.events.emit(
+        ASLDS.events.emit("theme:ready", {
+            mode: Theme.state.mode,
+            effective: Theme.state.effective,
+            system: Theme.state.system,
+        });
 
-            "theme:ready",
-
-            {
-
-                current: Theme.state.current,
-
-                system: Theme.state.system
-
-            }
-
+        ASLDS.logger.info(
+            `[Theme] Ready. Mode: ${Theme.state.mode}, Effective: ${Theme.state.effective}`
         );
-
     };
 
     /**
-     * ========================================================================
-     * Public API
-     * ========================================================================
+     * Destroy the theme module – clean up watchers and state.
      */
+    Theme.destroy = function () {
+        if (!Theme.state.initialized) return;
 
-    Object.freeze(
+        unwatchSystemTheme();
+        clearTimeout(Theme.state.toggleTimeout);
 
-        Theme.config
+        Theme.state.initialized = false;
+        Theme.state.mode = null;
+        Theme.state.effective = null;
+        Theme.state.system = null;
 
-    );
+        ASLDS.logger.info("[Theme] Destroyed.");
+    };
 
-    Object.freeze(
+    // ========================================================================
+    // REGISTER WITH RUNTIME
+    // ========================================================================
 
-        Theme.themes
+    // Freeze config to prevent runtime mutation
+    Object.freeze(Theme.config);
+    Object.freeze(Theme.modes);
+    Object.freeze(Theme.labels);
 
-    );
+    // Register the module with ASLDS runtime
+    ASLDS.register(Theme.name, Theme, Theme.priority, Theme.dependencies);
 
-    Object.freeze(
+    // Expose on the global namespace for manual usage
+    window.ASLDS.Theme = Theme;
 
-        Theme.elements
-
-    );
-
-    /**
-     * ========================================================================
-     * Runtime Registration
-     * ========================================================================
-     */
-
-    ASLDS.register(
-
-        Theme.name,
-
-        Theme,
-
-        Theme.priority,
-
-        Theme.dependencies
-
-    );
-
-})();
+})(window, document);
