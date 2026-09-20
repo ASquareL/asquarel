@@ -31,6 +31,9 @@ course categories, and notifications.
     white-space:nowrap;
     user-select:none;
     transition:var(--transition-normal);
+    background:rgba(212,175,55,.12);
+    color:var(--primary-gold);
+    border:1px solid rgba(212,175,55,.25);
 }
 
 /* ======================================================
@@ -53,4 +56,194 @@ course categories, and notifications.
 }
 
 /* ======================================================
-   GOLD
+   GOLD (Primary)
+====================================================== */
+
+.badge-gold,
+.badge-primary{
+    background:rgba(212,175,55,.12);
+    color:var(--primary-gold);
+    border:1px solid rgba(212,175,55,.25);
+}
+
+/* ======================================================
+   SUCCESS
+====================================================== */
+
+.badge-success{
+    background:rgba(34,197,94,.12);
+    color:var(--success);
+    border:1px solid rgba(34,197,94,.25);
+}
+
+/* ======================================================
+   WARNING
+====================================================== */
+
+.badge-warning{
+    background:rgba(250,204,21,.12);
+    color:var(--warning);
+    border:1px solid rgba(250,204,21,.25);
+}
+
+/* ======================================================
+   DANGER
+====================================================== */
+
+.badge-danger{
+    background:rgba(239,68,68,.12);
+    color:var(--danger);
+    border:1px solid rgba(239,68,68,.25);
+}
+
+/* ======================================================
+   INFO
+====================================================== */
+
+.badge-info{
+    background:rgba(59,130,246,.12);
+    color:var(--info);
+    border:1px solid rgba(59,130,246,.25);
+}
+
+/* ======================================================
+   SOLID VARIANTS
+====================================================== */
+
+.badge-solid{
+    border:none;
+}
+
+.badge-solid.badge-gold,
+.badge-solid.badge-primary{
+    background:var(--primary-gold);
+    color:var(--black);
+}
+
+.badge-solid.badge-success{
+    background:var(--success);
+    color:#fff;
+}
+
+.badge-solid.badge-warning{
+    background:var(--warning);
+    color:#000;
+}
+
+.badge-solid.badge-danger{
+    background:var(--danger);
+    color:#fff;
+}
+
+.badge-solid.badge-info{
+    background:var(--info);
+    color:#fff;
+}
+
+/* ======================================================
+   OUTLINE VARIANT
+====================================================== */
+
+.badge-outline{
+    background:transparent;
+}
+
+.badge-outline.badge-gold,
+.badge-outline.badge-primary{
+    color:var(--primary-gold);
+    border-color:var(--primary-gold);
+}
+
+.badge-outline.badge-success{
+    color:var(--success);
+    border-color:var(--success);
+}
+
+.badge-outline.badge-warning{
+    color:var(--warning);
+    border-color:var(--warning);
+}
+
+.badge-outline.badge-danger{
+    color:var(--danger);
+    border-color:var(--danger);
+}
+
+.badge-outline.badge-info{
+    color:var(--info);
+    border-color:var(--info);
+}
+
+/* ======================================================
+   DOT VARIANT (minimal indicator)
+====================================================== */
+
+.badge-dot{
+    width:8px;
+    height:8px;
+    padding:0;
+    border-radius:50%;
+    border:none;
+}
+
+.badge-dot.badge-gold,
+.badge-dot.badge-primary{
+    background:var(--primary-gold);
+}
+
+.badge-dot.badge-success{
+    background:var(--success);
+}
+
+.badge-dot.badge-warning{
+    background:var(--warning);
+}
+
+.badge-dot.badge-danger{
+    background:var(--danger);
+}
+
+.badge-dot.badge-info{
+    background:var(--info);
+}
+
+/* ======================================================
+   CLOSE BUTTON (removable badge)
+====================================================== */
+
+.badge-close{
+    background:none;
+    border:none;
+    color:inherit;
+    cursor:pointer;
+    font-size:14px;
+    line-height:1;
+    padding:0;
+    opacity:.7;
+    transition:var(--transition-fast);
+}
+
+.badge-close:hover{
+    opacity:1;
+}
+
+/* ======================================================
+   HOVER
+====================================================== */
+
+.badge:hover{
+    transform:translateY(-1px);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+    .badge-lg{
+        padding:6px 14px;
+        font-size:13px;
+    }
+
+}

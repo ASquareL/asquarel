@@ -435,16 +435,20 @@ Author: A Square L Innovate
 
 @media(max-width:768px){
 
-.btn{
+    /* Opt-in full-width only for grouped buttons or explicit .btn-block */
+    .btn-group{
+        flex-direction: column;
+        width: 100%;
+    }
 
-    width:100%;
+    .btn-group > .btn{
+        width: 100%;
+    }
 
-}
-
-.btn-group{
-
-    flex-direction:column;
-
-}
+    /* Icon-only buttons stay square */
+    .btn-icon{
+        width: 50px;
+        flex-shrink: 0;
+    }
 
 }

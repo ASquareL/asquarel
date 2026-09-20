@@ -21,7 +21,7 @@ Author: A Square L Innovate
 
     z-index:var(--z-navbar);
 
-    background:rgba(0,0,0,.82);
+    background:var(--navbar-bg);
 
     backdrop-filter:blur(18px);
 
@@ -257,71 +257,45 @@ Author: A Square L Innovate
 }
 
 /* ======================================================
-   DROPDOWN
+   NAVBAR DROPDOWN (renamed from .dropdown to avoid
+   conflict with dropdown.css — Section 16)
 ====================================================== */
 
-.dropdown{
-
+.nav-dropdown{
     position:relative;
-
 }
 
-.dropdown-menu{
-
+.nav-dropdown-menu{
     position:absolute;
-
     top:60px;
-
     right:0;
-
     width:260px;
-
     background:var(--card-bg);
-
     border:1px solid var(--border-color);
-
     border-radius:var(--radius-lg);
-
     overflow:hidden;
-
     opacity:0;
-
     visibility:hidden;
-
     transform:translateY(12px);
-
     transition:.3s;
-
 }
 
-.dropdown:hover .dropdown-menu{
-
+.nav-dropdown:hover .nav-dropdown-menu{
     opacity:1;
-
     visibility:visible;
-
     transform:translateY(0);
-
 }
 
-.dropdown-menu a{
-
+.nav-dropdown-menu a{
     display:block;
-
     padding:16px 22px;
-
     text-decoration:none;
-
     color:var(--gray-300);
-
 }
 
-.dropdown-menu a:hover{
-
+.nav-dropdown-menu a:hover{
     background:rgba(212,175,55,.08);
-
     color:var(--primary-gold);
-
 }
 
 /* ======================================================
@@ -400,7 +374,7 @@ Author: A Square L Innovate
     
     padding: 24px;
     
-    background: rgba(0, 0, 0, .95);
+    background: var(--navbar-mobile-bg);
     
     backdrop-filter: blur(18px);
     

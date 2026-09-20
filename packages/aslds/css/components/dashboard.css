@@ -11,6 +11,8 @@ Author: A Square L Innovate
    DASHBOARD WRAPPER
 ====================================================== */
 
+/* DEPRECATED — use .dashboard-layout from layout.css instead.
+   Kept as an alias for backward compatibility. */
 .dashboard{
     display:grid;
     grid-template-columns:280px 1fr;
@@ -22,6 +24,8 @@ Author: A Square L Innovate
    SIDEBAR
 ====================================================== */
 
+/* DEPRECATED — use .sidebar from sidebar.css instead.
+   Kept as an alias for backward compatibility. */
 .dashboard-sidebar{
     background:var(--card-bg);
     border-right:1px solid var(--border-color);
@@ -35,7 +39,6 @@ Author: A Square L Innovate
 .dashboard-content{
     display:flex;
     flex-direction:column;
-    min-height:100vh;
 }
 
 /* ======================================================

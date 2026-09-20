@@ -189,6 +189,22 @@
     --desktop: 1200px;
     --wide: 1400px;
 
+        /* ======================================================
+       COMPATIBILITY ALIASES
+    ====================================================== */
+
+    --color-primary: var(--primary-gold);
+    --color-white:   var(--white);
+
+    --shadow-xl:     0 20px 60px rgba(0,0,0,.45);
+    --container-xl:  1400px;
+
+    /* ======================================================
+       NAVBAR SURFACE (theme-aware)
+    ====================================================== */
+
+    --navbar-bg:         rgba(0,0,0,.82);
+    --navbar-mobile-bg:  rgba(0,0,0,.95);
 }
 
 
@@ -220,6 +236,8 @@
     --glass-bg: rgba(255,255,255,.75);
     --glass-border: rgba(0,0,0,.08);
 
+    --navbar-bg:         rgba(255,255,255,.82);
+    --navbar-mobile-bg:  rgba(255,255,255,.95);
 }
 
 

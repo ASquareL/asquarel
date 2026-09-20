@@ -143,6 +143,11 @@ Author: A Square L Innovate
    STAT CARD
 ====================================================== */
 
+/* ======================================================
+   STAT CARD (application version — uses .stat-number / .stat-text)
+   For documentation pages, use .doc-stat-card (showcase.css).
+====================================================== */
+
 .stat-card{
     text-align:center;
     padding:40px;

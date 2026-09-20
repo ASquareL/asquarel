@@ -20,11 +20,12 @@ Reusable footer component for all A Square L products.
     border-top:1px solid var(--border-color);
     margin-top:auto;
     color:var(--gray-300);
+    padding-top:3rem;
 }
 
 .footer-container{
     max-width:var(--container-xl);
-    margin:0 auto;
+    margin: auto;
     padding:60px 24px 30px;
 }
 
