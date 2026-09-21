@@ -274,6 +274,72 @@ Global utility classes for rapid development.
 
 
 /* ======================================================
+   GOLD GLOW UTILITIES
+   Apply to any section or card for a premium gold
+   ambient glow. Elements must have layout context.
+====================================================== */
+
+.bg-glow-top {
+    position: relative;
+    isolation: isolate;
+}
+
+.bg-glow-top::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top center,
+        var(--gold-glow-medium),
+        transparent 60%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bg-glow-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.bg-glow-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        var(--gold-glow-strong) 0%,
+        var(--gold-glow-soft) 35%,
+        transparent 72%
+    );
+    pointer-events: none;
+    z-index: -1;
+    animation: glowPulse 7s infinite alternate ease-in-out;
+}
+
+.bg-sheen-gold {
+    position: relative;
+    isolation: isolate;
+}
+
+.bg-sheen-gold::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        var(--gold-glow-medium),
+        transparent 40%,
+        transparent 60%,
+        var(--gold-glow-soft)
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* ======================================================
    RESPONSIVE
 ====================================================== */
 

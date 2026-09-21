@@ -54,6 +54,11 @@ SHADOW
     --shadow-sm · --shadow-md · --shadow-lg · --shadow-gold
     (--shadow-xl is referenced but NOT defined — avoid)
 
+GOLD GLOW
+    --gold-glow-strong rgba(212,175,55,.16)
+    --gold-glow-medium rgba(212,175,55,.08)
+    --gold-glow-soft   rgba(212,175,55,.04)    
+
 GLASS
     --glass-bg · --glass-border · --glass-blur
 
@@ -173,6 +178,12 @@ RESPONSIVE
     .mobile-hidden (hide ≤768)
     .mobile-full (width 100% ≤768)
 
+    GOLD GLOW (ambient)
+    .bg-glow-top     → radial glow from top (sections)
+    .bg-glow-hero    → pulsing glow center (hero)
+    .bg-sheen-gold   → diagonal gold wash (cards, CTA)
+    Use at most one per section. Never stack hero + sheen.
+
 ================================================================================
 MOTION (animations.css)
 ================================================================================
@@ -184,6 +195,7 @@ ENTRY (use with animations.js — auto-triggered on scroll)
 
 CONTINUOUS
     .float (4s) · .pulse (2s) · .spin (1s) · .glow (2s)
+    .glow-pulse (auto-inside .bg-glow-hero) · 7s alternate
 
 ATTENTION
     .shake .bounce

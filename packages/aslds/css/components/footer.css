@@ -151,19 +151,53 @@ Reusable footer component for all A Square L products.
     margin-top:20px;
 }
 
+.footer-newsletter form{
+    position:relative;
+    display:flex;
+    width:100%;
+}
+
 .footer-newsletter input{
     width:100%;
-    padding:14px 16px;
+    padding:14px 60px 14px 20px;
     border:1px solid var(--border-color);
-    border-radius:var(--radius-md);
+    border-radius:var(--radius-round);
     background:var(--surface);
     color:var(--white);
-    margin-bottom:12px;
+    transition:var(--transition-normal);
 }
 
 .footer-newsletter input:focus{
     outline:none;
     border-color:var(--primary-gold);
+    box-shadow:0 0 0 3px rgba(212,175,55,.12);
+}
+
+.footer-newsletter button{
+    position:absolute;
+    right:5px;
+    top:5px;
+    bottom:5px;
+    width:44px;
+    border:none;
+    border-radius:50%;
+    background:var(--primary-gold);
+    color:var(--black);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:var(--transition-normal);
+}
+
+.footer-newsletter button:hover{
+    background:var(--primary-gold-hover);
+    transform:scale(1.05);
+}
+
+.footer-newsletter button:focus-visible{
+    outline:2px solid var(--primary-gold);
+    outline-offset:2px;
 }
 
 /* ======================================================

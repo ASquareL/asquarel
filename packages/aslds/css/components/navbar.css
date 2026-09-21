@@ -303,49 +303,33 @@ Author: A Square L Innovate
 ====================================================== */
 
 .mobile-toggle {
-    
     display: none;
-    
+    flex-direction: column;
     align-items: center;
-    
     justify-content: center;
-    
+    gap: 5px;
     width: 48px;
-    
     height: 48px;
-    
-    border: none;
-    
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
     background: transparent;
-    
     color: var(--white);
-    
     cursor: pointer;
-    
-    transition: .3s;
-    
+    transition: var(--transition-normal);
 }
 
 .mobile-toggle:hover {
-    
     color: var(--primary-gold);
-    
+    border-color: var(--primary-gold);
 }
 
 .mobile-toggle span {
-    
     display: block;
-    
-    width: 22px;
-    
+    width: 20px;
     height: 2px;
-    
-    margin: 4px auto;
-    
+    border-radius: 2px;
     background: currentColor;
-    
-    transition: .3s;
-    
+    transition: var(--transition-normal);
 }
 
 /* ======================================================
@@ -421,16 +405,26 @@ Author: A Square L Innovate
 
 @media(max-width:768px){
 
-.navbar-container{
+    .navbar-container{
+        height:72px;
+        gap:1rem;
+    }
 
-    height:72px;
+    .navbar-logo{
+        font-size:16px;
+    }
 
-}
+    .nav-actions{
+        gap:8px;
+    }
 
-.navbar-logo{
+    .nav-actions .btn{
+        padding:0 14px;
+    }
 
-    font-size:20px;
-
-}
+    /* CTA is redundant with the mobile menu — hide it */
+    .nav-actions .btn-primary{
+        display:none;
+    }
 
 }

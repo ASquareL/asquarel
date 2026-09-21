@@ -280,8 +280,8 @@ Usage (manual):
     function cacheElements(config) {
         const modal = document.querySelector(config.modalSelector);
         if (!modal) {
-            console.warn('[ASLDS Modal] Element not found:', config.modalSelector);
-            return false;
+          // No modal on this page — silent skip
+          return false;
         }
         cached.modal = modal;
         cached.dialog = modal.querySelector(config.dialogSelector) || modal;
@@ -302,9 +302,10 @@ Usage (manual):
             return this;
         }
         state.config = mergeConfig(userConfig);
-        const elementsFound = cacheElements(state.config);
+                const elementsFound = cacheElements(state.config);
         if (!elementsFound) {
-            console.error('[ASLDS Modal] Init failed – modal not found.');
+            // No modal on this page — mark initialized to prevent retry
+            state.initialized = true;
             return this;
         }
         if (cached.modal.classList.contains(state.config.openClass)) {

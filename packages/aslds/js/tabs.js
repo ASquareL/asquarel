@@ -345,7 +345,7 @@ Usage (manual):
 
         const containers = document.querySelectorAll(state.config.tabSelector);
         if (containers.length === 0) {
-            console.warn('[ASLDS Tabs] No tab containers found with selector:', state.config.tabSelector);
+            // No tabs on this page — silent skip
             state.initialized = true;
             return this;
         }

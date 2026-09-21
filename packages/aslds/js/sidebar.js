@@ -291,8 +291,8 @@ Usage (manual):
     function cacheElements(config) {
         const sidebar = document.querySelector(config.sidebarSelector);
         if (!sidebar) {
-            console.warn('[ASLDS Sidebar] Element not found:', config.sidebarSelector);
-            return false;
+          // No sidebar on this page — silent skip
+          return false;
         }
         cached.sidebar = sidebar;
         let toggle = null;
@@ -335,7 +335,8 @@ Usage (manual):
         state.config = mergeConfig(userConfig);
         const elementsFound = cacheElements(state.config);
         if (!elementsFound) {
-            console.error('[ASLDS Sidebar] Init failed – sidebar not found.');
+            // No sidebar on this page — mark initialized to prevent retry
+            state.initialized = true;
             return this;
         }
         if (cached.sidebar.classList.contains(state.config.openClass)) {

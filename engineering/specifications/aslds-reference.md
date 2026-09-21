@@ -339,6 +339,16 @@ The `[data-theme-toggle]` element gets a smooth opacity transition automatically
 
 ---
 
+### 2.15 Gold Glow Tints
+
+Ambient glow tints used for section and card backgrounds. Values are theme-neutral — same rgba works on light and dark.
+
+| Token | Value | Purpose |
+| :--- | :--- | :--- |
+| `--gold-glow-strong` | `rgba(212,175,55,.16)` | Hero pulsing glow |
+| `--gold-glow-medium` | `rgba(212,175,55,.08)` | Section ambient glow, card sheen |
+| `--gold-glow-soft`   | `rgba(212,175,55,.04)` | Edge fade in gradients |
+
 # Section 03 — Base Reset
 
 **Source:** `packages/aslds/css/reset.css`
@@ -1314,6 +1324,35 @@ Responsive:   .mobile-hidden  .mobile-full
 ❌ Never use .shadow-xl until --shadow-xl is defined in variables.css
 ❌ Never use .d-none to hide page structure — use [hidden] attribute
 
+--------------------------------------------------------------------------------
+6.24 GOLD GLOW UTILITIES
+--------------------------------------------------------------------------------
+Ambient gold glow effects. Applied to any section or card. Require the element
+to have positional context (they use ::before / ::after with isolation).
+
+.bg-glow-top
+    → soft radial gold glow from top center
+    → best for: section backgrounds
+    → static (no animation)
+
+.bg-glow-hero
+    → pulsing radial gold glow from center
+    → best for: hero sections
+    → animated: glowPulse 7s infinite alternate
+
+.bg-sheen-gold
+    → subtle diagonal gold wash (135deg)
+    → best for: cards, CTA panels
+    → static, sits above content with z-index:1
+
+Rule: Use AT MOST one .bg-glow-* per section to avoid visual fatigue.
+Rule: Never stack .bg-glow-hero + .bg-sheen-gold on the same element.
+
+Example:
+    <section class="hero bg-glow-hero">…</section>
+    <section class="section bg-glow-top">…</section>
+    <div class="card bg-sheen-gold">…</div>
+
 ================================================================================
 END OF SECTION 06
 ================================================================================
@@ -1384,6 +1423,10 @@ Keyframe: scaleIn
 
 .glow    → pulsing gold box-shadow · duration 2s · infinite
            box-shadow: transparent → 0 0 30px rgba(212,175,55,.45) → transparent
+
+.glow-pulse  → backdrop opacity pulse · duration 7s · infinite · alternate
+               opacity: .55 → 1
+               Applied automatically inside .bg-glow-hero::before           
 
 --------------------------------------------------------------------------------
 7.6 ATTENTION ANIMATIONS (one-shot)
@@ -1574,6 +1617,8 @@ The following are used in earlier generated pages but are NOT YET in ASLDS:
 
 These should be added ONLY once confirmed across multiple pages.
 Until then, do NOT use them in production pages.
+
+
 
 ================================================================================
 END OF SECTION 07

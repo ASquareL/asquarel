@@ -417,11 +417,10 @@ Usage (manual):
 
         const containers = document.querySelectorAll(state.config.dropdownSelector);
         if (containers.length === 0) {
-            console.warn('[ASLDS Dropdown] No dropdown containers found with selector:', state.config.dropdownSelector);
+            // No dropdowns on this page — silent skip
             state.initialized = true;
             return this;
         }
-
         containers.forEach(function (container) {
             setupDropdownGroup(container);
         });
