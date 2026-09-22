@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A Square L Academy — Course catalog and learning paths." />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <title>Courses — A Square L Academy</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/components/navbar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/sidebar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dashboard.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/footer.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/alert.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dropdown.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/modal.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/progress.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/tabs.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard-layout">
+
+        <!-- ========================================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================================= -->
+        <aside class="sidebar" aria-label="Student Navigation">
+
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="sidebar-logo" aria-label="Academy Dashboard">
+                    <div class="sidebar-brand">
+                        <span class="sidebar-title">A SQUARE L</span>
+                        <span class="sidebar-subtitle">Academy</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="avatar avatar-xl avatar-gold mb-3">
+                    <span class="avatar-initials">AA</span>
+                </div>
+                <div class="sidebar-name">Ashiru A. Lawal</div>
+                <div class="sidebar-role">Student</div>
+                <span class="sidebar-level">Level 2</span>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Student Menu">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="dashboard.html" class="sidebar-link">
+                            <i class="fa-solid fa-home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="courses.html" class="sidebar-link active" aria-current="page">
+                            <i class="fa-solid fa-book"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="profile.html" class="sidebar-link">
+                            <i class="fa-solid fa-user"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="settings.html" class="sidebar-link">
+                            <i class="fa-solid fa-cog"></i>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-progress">
+                <div class="sidebar-progress-title">Overall Progress</div>
+                <div class="sidebar-progress-value">42%</div>
+                <div class="sidebar-progress-bar">
+                    <div class="sidebar-progress-fill" style="width: 42%"></div>
+                </div>
+            </div>
+
+            <div class="sidebar-mission">
+                <h4>Daily Mission</h4>
+                <p>Complete 1 lesson today to keep your learning streak alive.</p>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="sidebar-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- ========================================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ========================================= -->
+        <main id="main-content" class="dashboard-content">
+
+            <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
+
+                <div class="d-flex align-center gap-3">
+                    <button
+                        class="mobile-toggle"
+                        type="button"
+                        aria-label="Toggle Sidebar"
+                        aria-expanded="false"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div>
+                        <h1 class="mb-1">Courses</h1>
+                        <p class="mb-0">Explore and continue your learning paths.</p>
+                    </div>
+                </div>
+
+                <button
+                    class="btn btn-outline btn-sm"
+                    type="button"
+                    data-theme-toggle
+                    aria-label="Toggle Theme"
+                >
+                    Theme
+                </button>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- YOUR COURSES -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Your Courses</h2>
+
+            <div class="grid grid-3 mb-5">
+
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center mb-4">
+                            <div class="avatar avatar-md avatar-gold">
+                                <i class="fa-solid fa-code fa-2x text-gold"></i>
+                            </div>
+                            <span class="badge badge-warning">In Progress</span>
+                        </div>
+
+                        <h3 class="mb-3">Web Development</h3>
+                        <p class="mb-4">Master HTML, CSS, JavaScript, and modern frameworks by building real projects from scratch.</p>
+
+                        <div class="progress mb-4">
+                            <div class="progress-header">
+                                <span class="progress-title">Progress</span>
+                                <span class="progress-value">42%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 42%"></div>
+                            </div>
+                        </div>
+
+                        <a href="course.html" class="btn btn-primary btn-block">
+                            Continue Learning <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center mb-4">
+                            <div class="avatar avatar-md avatar-gold">
+                                <i class="fa-brands fa-bitcoin fa-2x text-gold"></i>
+                            </div>
+                            <span class="badge">Not Started</span>
+                        </div>
+
+                        <h3 class="mb-3">Crypto &amp; Blockchain</h3>
+                        <p class="mb-4">Understand blockchain fundamentals, wallet safety, DEX trading, and decentralized finance.</p>
+
+                        <a href="course.html" class="btn btn-outline btn-block">
+                            Start Course <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center mb-4">
+                            <div class="avatar avatar-md avatar-gold">
+                                <i class="fa-solid fa-pen-ruler fa-2x text-gold"></i>
+                            </div>
+                            <span class="badge">Not Started</span>
+                        </div>
+
+                        <h3 class="mb-3">Smartphone Graphic Design</h3>
+                        <p class="mb-4">Create premium flyers, logos, and brand visuals using just your mobile phone.</p>
+
+                        <a href="course.html" class="btn btn-outline btn-block">
+                            Start Course <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- COMING SOON -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Coming Soon</h2>
+
+            <div class="grid grid-3">
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="avatar avatar-md avatar-gold mb-4">
+                            <i class="fa-solid fa-server fa-2x text-gold"></i>
+                        </div>
+                        <span class="badge badge-info mb-3">In Development</span>
+                        <h3 class="mb-3">Backend Development</h3>
+                        <p class="mb-0">Node.js, databases, APIs, and server-side architecture for production applications.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="avatar avatar-md avatar-gold mb-4">
+                            <i class="fa-solid fa-palette fa-2x text-gold"></i>
+                        </div>
+                        <span class="badge badge-info mb-3">In Development</span>
+                        <h3 class="mb-3">UI/UX Design</h3>
+                        <p class="mb-0">Design systems, wireframing, prototyping, and user-centered design fundamentals.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="avatar avatar-md avatar-gold mb-4">
+                            <i class="fa-solid fa-mobile-screen-button fa-2x text-gold"></i>
+                        </div>
+                        <span class="badge badge-info mb-3">In Development</span>
+                        <h3 class="mb-3">Mobile App Development</h3>
+                        <p class="mb-0">Build native and cross-platform mobile apps for Android and iOS.</p>
+                    </div>
+                </article>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Accessibility regions -->
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <!-- ASLDS JS — order matters -->
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/navbar.js"></script>
+    <script src="../../packages/aslds/js/sidebar.js"></script>
+    <script src="../../packages/aslds/js/tabs.js"></script>
+    <script src="../../packages/aslds/js/dropdown.js"></script>
+    <script src="../../packages/aslds/js/modal.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/search.js"></script>
+    <script src="../../packages/aslds/js/animations.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+
+</body>
+</html>

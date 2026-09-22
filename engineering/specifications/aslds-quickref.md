@@ -122,6 +122,11 @@ DASHBOARD LAYOUT
 COURSE LAYOUT
     .course-layout · .lesson-sidebar · .lesson-content
 
+
+
+SKIP LINK (required on every page)
+<a href="#main-content" class="skip-link">Skip to main content</a>
+Styled in reset.css — appears only on Tab keypress
 ================================================================================
 UTILITIES (utilities.css)
 ================================================================================
@@ -978,6 +983,44 @@ FINAL RULE — THE ONE-LINE TEST
 If a page has more than ~30 lines of inline CSS or any inline JS
 manipulating a component → something is wrong.
 A well-built ASLDS page has ZERO inline style and ZERO inline script.
+
+
+================================================================================
+FOLDER STRUCTURE (reference)
+================================================================================
+
+A-Square-L-Innovate/
+├── apps/
+│   ├── public-site/     (marketing pages, flat structure)
+│   ├── academy/         (learning app — has courses/ subfolder)
+│   │   └── courses/
+│   │       ├── index.html
+│   │       ├── {slug}/index.html
+│   │       └── {slug}/lessons/lesson-NN.html
+│   ├── ai/              (reserved)
+│   ├── business-os/     (reserved)
+│   ├── portfolio/       (reserved)
+│   └── admin/           (reserved)
+│
+├── packages/aslds/      (design system + showcase)
+├── backend/
+├── docs/
+├── engineering/
+├── scripts/
+├── tests/
+└── deployment/
+
+PATH DEPTH RULES:
+  apps/{app}/*.html                     → ../../packages/aslds/…
+  apps/academy/courses/index.html       → ../../../packages/aslds/…
+  apps/academy/courses/{slug}/index.html → ../../../../packages/aslds/…
+  apps/academy/courses/{slug}/lessons/*.html → ../../../../../packages/aslds/…
+
+ASSETS:
+  apps/{app}/*.html                     → assets/images/…
+  apps/academy/courses/index.html       → ../assets/images/…
+  apps/academy/courses/{slug}/*.html    → ../../assets/images/…
+  apps/academy/courses/{slug}/lessons/* → ../../../assets/images/…
 
 ================================================================================
 END OF QUICKREF
