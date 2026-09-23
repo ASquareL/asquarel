@@ -1,0 +1,255 @@
+/*
+==========================================================
+A SQUARE L INNOVATE DESIGN SYSTEM (ASLDS)
+Version: 1.0.0
+Component: Auth
+Author: A Square L Innovate
+Created: 2026
+
+Description:
+Authentication layout — split-screen brand panel
++ centered form panel. Reusable across Academy,
+Admin, Business OS, AI Platform, and Portfolio.
+==========================================================
+*/
+
+/* ======================================================
+   AUTH LAYOUT
+====================================================== */
+
+.auth-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+    .auth-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ======================================================
+   BRAND PANEL (left — hidden on mobile)
+====================================================== */
+
+.auth-brand {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-6);
+    background: linear-gradient(135deg, rgba(212,175,55,.06), rgba(255,255,255,.01));
+    border-right: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .auth-brand {
+        display: flex;
+    }
+}
+
+.auth-brand::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, var(--gold-glow-medium), transparent 55%);
+    pointer-events: none;
+}
+
+.auth-brand > * {
+    position: relative;
+    z-index: 1;
+}
+
+.auth-brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.auth-brand-logo span {
+    color: var(--primary-gold);
+}
+
+.auth-brand-tagline {
+    font-size: var(--fs-3xl);
+    font-weight: 900;
+    line-height: var(--lh-tight);
+    margin-bottom: var(--space-3);
+    color: var(--white);
+}
+
+.auth-brand-description {
+    color: var(--gray-400);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--space-5);
+    max-width: 420px;
+}
+
+.auth-feature {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: var(--space-3);
+}
+
+.auth-feature i {
+    color: var(--primary-gold);
+    font-size: 1.1rem;
+    margin-top: 5px;
+    width: 20px;
+    text-align: center;
+}
+
+.auth-feature strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.auth-feature span {
+    color: var(--gray-400);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-normal);
+}
+
+.auth-brand-footer {
+    color: var(--gray-500);
+    font-size: var(--fs-sm);
+}
+
+/* ======================================================
+   FORM PANEL (right)
+====================================================== */
+
+.auth-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-5) var(--space-3);
+    background: var(--background);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+}
+
+.auth-card-header {
+    margin-bottom: var(--space-5);
+}
+
+.auth-card-title {
+    font-size: var(--fs-3xl);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.auth-card-subtitle {
+    color: var(--gray-400);
+    font-size: var(--fs-md);
+    line-height: var(--lh-normal);
+    margin: 0;
+}
+
+/* ======================================================
+   DIVIDER — "or continue with"
+====================================================== */
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: var(--space-3) 0;
+    color: var(--gray-500);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+/* ======================================================
+   FORM FOOTER NOTE
+====================================================== */
+
+.auth-footer-note {
+    text-align: center;
+    margin-top: var(--space-4);
+    color: var(--gray-500);
+    font-size: var(--fs-sm);
+}
+
+.auth-footer-note a {
+    color: var(--primary-gold);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.auth-footer-note a:hover {
+    color: var(--primary-gold-hover);
+}
+
+/* ======================================================
+   GOOGLE BUTTON
+====================================================== */
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    height: var(--btn-height);
+    padding: 0 24px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--card-bg);
+    color: var(--white);
+    font-family: var(--font-family);
+    font-size: var(--fs-md);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.btn-google:hover {
+    background: var(--card-hover);
+    border-color: var(--primary-gold);
+    transform: translateY(-2px);
+}
+
+.btn-google i {
+    color: var(--primary-gold);
+    font-size: 1.1rem;
+}
+
+/* ======================================================
+   MOBILE ADJUSTMENTS
+====================================================== */
+
+@media (max-width: 576px) {
+    .auth-form-panel {
+        padding: var(--space-3) var(--space-2);
+    }
+
+    .auth-card-title {
+        font-size: var(--fs-2xl);
+    }
+}

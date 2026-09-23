@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign in to A Square L Academy — access your courses, dashboard, and learning progress." />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <title>Sign In — A Square L Academy</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/components/navbar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/footer.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/alert.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dropdown.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/modal.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/progress.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/tabs.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/auth.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <div class="auth-layout">
+
+        <!-- ========================================= -->
+        <!-- BRAND PANEL (desktop only) -->
+        <!-- ========================================= -->
+        <aside class="auth-brand">
+
+            <div>
+                <a href="index.html" class="auth-brand-logo" aria-label="A Square L Academy">
+                    A SQUARE L <span>ACADEMY</span>
+                </a>
+            </div>
+
+            <div>
+
+                <h2 class="auth-brand-tagline">
+                    Welcome back to your learning journey.
+                </h2>
+
+                <p class="auth-brand-description">
+                    Pick up where you left off. Your courses, progress, and mentor support are all waiting inside.
+                </p>
+
+                <div class="auth-feature">
+                    <i class="fa-solid fa-book"></i>
+                    <div>
+                        <strong>Structured Courses</strong>
+                        <span>Clear lessons, real exercises, steady progress.</span>
+                    </div>
+                </div>
+
+                <div class="auth-feature">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div>
+                        <strong>Progress Tracking</strong>
+                        <span>See exactly what's done and what's next.</span>
+                    </div>
+                </div>
+
+                <div class="auth-feature">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <div>
+                        <strong>Direct Mentorship</strong>
+                        <span>Real guidance from working engineers.</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="auth-brand-footer">
+                &copy; 2026 A Square L Innovate
+            </div>
+
+        </aside>
+
+        <!-- ========================================= -->
+        <!-- FORM PANEL -->
+        <!-- ========================================= -->
+        <main id="main-content" class="auth-form-panel">
+
+            <div class="auth-card">
+
+                <header class="auth-card-header">
+                    <h1 class="auth-card-title">Welcome Back</h1>
+                    <p class="auth-card-subtitle">Sign in to continue your learning.</p>
+                </header>
+
+                <!-- Google Sign-In (placeholder — requires backend) -->
+                <button type="button" class="btn-google" aria-label="Continue with Google">
+                    <i class="fa-brands fa-google"></i>
+                    Continue with Google
+                </button>
+
+                <div class="auth-divider">or continue with email</div>
+
+                <!-- Login form -->
+                <form class="form" action="#" method="POST" autocomplete="on">
+
+                    <div class="form-group">
+                        <label for="login-email" class="form-label">Email Address</label>
+                        <input
+                            type="email"
+                            id="login-email"
+                            name="email"
+                            class="form-control"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password" class="form-label">Password</label>
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            class="form-control"
+                            placeholder="Your password"
+                            autocomplete="current-password"
+                            required
+                        />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Sign In <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+                <p class="auth-footer-note">
+                    Don't have an account?
+                    <a href="register.html">Create one</a>
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Accessibility regions -->
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <!-- ASLDS JS — minimal set for auth pages -->
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+    <script src="../../packages/aslds/js/modal.js"></script>
+
+</body>
+</html>

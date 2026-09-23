@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A Square L Academy — the student learning platform. Sign in to access your courses, track your progress, and continue your learning journey." />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <title>Academy — A Square L Innovate</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/components/navbar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/footer.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/alert.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dropdown.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/modal.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/progress.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/tabs.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="page-wrapper">
+
+        <header class="navbar" role="banner">
+            <div class="container navbar-container">
+
+                <a href="index.html" class="navbar-logo" aria-label="A Square L Academy">
+                    <strong>A SQUARE L <span>ACADEMY</span></strong>
+                </a>
+
+                <button
+                    class="mobile-toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav id="primary-navigation" aria-label="Primary Navigation">
+                    <ul class="nav-menu">
+                        <li><a href="../public-site/index.html" class="nav-link">Ecosystem</a></li>
+                        <li><a href="index.html" class="nav-link active" aria-current="page">Academy</a></li>
+                        <li><a href="courses/index.html" class="nav-link">Courses</a></li>
+                        <li><a href="../public-site/academy.html" class="nav-link">About</a></li>
+                        <li><a href="../public-site/contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="btn btn-outline btn-sm" type="button" data-theme-toggle aria-label="Toggle Theme">
+                        Theme
+                    </button>
+                    <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+                </div>
+
+            </div>
+        </header>
+
+        <main id="main-content" class="main-content">
+
+            <!-- ========================================= -->
+            <!-- HERO -->
+            <!-- ========================================= -->
+            <section class="hero bg-glow-hero">
+                <div class="container">
+                    <div class="grid grid-2 align-center">
+
+                        <div>
+                            <span class="badge mb-3">Student Portal</span>
+
+                            <h1 class="mb-4">
+                                Your learning journey, all in one place.
+                            </h1>
+
+                            <p class="mb-4">
+                                Access your courses, track your progress, earn certificates, and connect with your mentor. Whether you're just starting or deep into a track, everything you need lives here.
+                            </p>
+
+                            <div class="btn-group mb-4">
+                                <a href="register.html" class="btn btn-primary">
+                                    Create Free Account <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="login.html" class="btn btn-secondary">
+                                    Sign In
+                                </a>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge">3 Learning Tracks</span>
+                                <span class="badge">Phone-Friendly</span>
+                                <span class="badge">Mentor Support</span>
+                                <span class="badge">Certificates</span>
+                            </div>
+                        </div>
+
+                            <aside class="card bg-sheen-gold">
+                                <div class="card-body">
+
+                                    <span class="badge mb-4">3 Learning Tracks</span>
+
+                                    <h3 class="mb-4">Pick Your Path</h3>
+
+                                    <div class="d-flex flex-column gap-3">
+
+                                        <div class="d-flex gap-3 align-start">
+                                            <div class="avatar avatar-sm avatar-gold">
+                                                <i class="fa-solid fa-code"></i>
+                                            </div>
+                                            <div>
+                                                <strong class="d-block mb-1">Web Development</strong>
+                                                <p class="mb-0">HTML, CSS, JavaScript, and modern frameworks</p>
+                                            </div>
+                                        </div>
+
+                                       <div class="d-flex gap-3 align-start">
+                                            <div class="avatar avatar-sm avatar-gold">
+                                                <i class="fa-brands fa-bitcoin"></i>
+                                            </div>
+                                            <div>
+                                                <strong class="d-block mb-1">Crypto &amp; Blockchain</strong>
+                                                <p class="mb-0">Wallets, DEX, and DeFi fundamentals</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex gap-3 align-start">
+                                            <div class="avatar avatar-sm avatar-gold">
+                                                <i class="fa-solid fa-pen-ruler"></i>
+                                            </div>
+                                            <div>
+                                                <strong class="d-block mb-1">Smartphone Graphic Design</strong>
+                                                <p class="mb-0">Flyers, logos, and brand visuals</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                        <a href="register.html" class="btn btn-primary btn-block mt-4">
+                                            Start Your Free Account
+                                        </a>
+
+                                </div>
+                            </aside>
+
+
+                        
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- WHAT'S INSIDE -->
+            <!-- ========================================= -->
+            <section class="section" id="inside">
+                <div class="container">
+
+                    <div class="text-center mb-5">
+                        <span class="badge mb-3">What's Inside</span>
+                        <h2 class="mb-3">Three things that make the Academy different.</h2>
+                        <p>Not just another course platform. A focused environment built around real skill development.</p>
+                    </div>
+
+                    <div class="grid grid-3">
+
+                        <article class="card">
+                            <div class="card-body">
+                                <div class="avatar avatar-lg avatar-gold mb-4">
+                                    <i class="fa-solid fa-book fa-2x text-gold"></i>
+                                </div>
+                                <h3 class="mb-3">Structured Courses</h3>
+                                <p>Every track is broken into clear lessons with practical exercises. No overwhelm — just steady progress toward real capability.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <div class="avatar avatar-lg avatar-gold mb-4">
+                                    <i class="fa-solid fa-chart-line fa-2x text-gold"></i>
+                                </div>
+                                <h3 class="mb-3">Progress Tracking</h3>
+                                <p>See exactly where you are, what you've completed, and what's next. Your dashboard always shows your real status.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <div class="avatar avatar-lg avatar-gold mb-4">
+                                    <i class="fa-solid fa-certificate fa-2x text-gold"></i>
+                                </div>
+                                <h3 class="mb-3">Certificates</h3>
+                                <p>Complete a track, earn a certificate. Real evidence of what you can do — useful for portfolios and job applications.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- LEARNING JOURNEY -->
+            <!-- ========================================= -->
+            <section class="section bg-glow-top" id="journey">
+                <div class="container">
+
+                    <div class="text-center mb-5">
+                        <span class="badge mb-3">Your Learning Journey</span>
+                        <h2 class="mb-3">From registration to certificate in three steps.</h2>
+                        <p>Simple process. Real progress. No guesswork.</p>
+                    </div>
+
+                    <div class="grid grid-3">
+
+                        <article class="card">
+                            <div class="card-body">
+                                <div class="avatar avatar-md avatar-gold mb-4 text-gold">
+                                    <strong>01</strong>
+                                </div>
+                                <h3 class="mb-3">Create Your Account</h3>
+                                <p>Register for free in under a minute. No credit card required. Get instant access to the free plan and starter lessons.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <div class="avatar avatar-md avatar-gold mb-4 text-gold">
+                                    <strong>02</strong>
+                                </div>
+                                <h3 class="mb-3">Choose Your Track</h3>
+                                <p>Pick from Web Development, Crypto &amp; Blockchain, or Smartphone Graphic Design. Switch or add tracks any time.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <div class="avatar avatar-md avatar-gold mb-4 text-gold">
+                                    <strong>03</strong>
+                                </div>
+                                <h3 class="mb-3">Learn, Build, Certify</h3>
+                                <p>Work through lessons at your own pace. Build real projects. Complete the track and earn your certificate.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- MEET THE MENTOR -->
+            <!-- ========================================= -->
+            <section class="section" id="mentor">
+                <div class="container">
+
+                    <div class="text-center mb-5">
+                        <span class="badge mb-3">Meet Your Mentor</span>
+                        <h2 class="mb-3">Direct guidance from a working engineer.</h2>
+                        <p>Every student gets real mentorship — not pre-recorded videos and call centers.</p>
+                    </div>
+
+                    <div class="grid grid-2">
+
+                        <article class="card profile-card">
+                            <div class="profile-avatar">
+                                <img src="assets/images/founder.png" alt="Ashiru Auwal Lawal — Academy Mentor" />
+                            </div>
+                            <h3 class="profile-name">Ashiru Auwal Lawal</h3>
+                            <p class="profile-role">Founder &amp; Lead Mentor</p>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <p class="mb-3">
+                                    Ashiru Auwal Lawal is a software engineer and Business Relationship Manager who has trained hundreds of students and overseen large-scale operational systems across the region.
+                                </p>
+                                <p class="mb-3">
+                                    He teaches the tracks himself — bringing real project experience, honest industry perspective, and a straightforward approach that beginners respond to.
+                                </p>
+                                <p class="mb-4">
+                                    His philosophy for the Academy: teach what actually gets used in the workplace, skip the fluff, and meet students where they are.
+                                </p>
+                                <a href="../public-site/about.html" class="btn btn-outline">
+                                    More About the Team <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- STUDENT STATS -->
+            <!-- ========================================= -->
+            <section class="section" id="stats">
+                <div class="container">
+
+                    <div class="text-center mb-5">
+                        <span class="badge mb-3">By The Numbers</span>
+                        <h2 class="mb-3">What the Academy delivers.</h2>
+                        <p>Clear, honest numbers on what you're getting when you join.</p>
+                    </div>
+
+                    <div class="grid grid-4">
+
+                        <div class="card stat-card">
+                            <div class="stat-number text-gold">3</div>
+                            <div class="stat-text">Core Learning Tracks</div>
+                        </div>
+
+                        <div class="card stat-card">
+                            <div class="stat-number text-gold">52</div>
+                            <div class="stat-text">Weeks of Structured Content</div>
+                        </div>
+
+                        <div class="card stat-card">
+                            <div class="stat-number text-gold">100%</div>
+                            <div class="stat-text">Beginner-Friendly Material</div>
+                        </div>
+
+                        <div class="card stat-card">
+                            <div class="stat-number text-gold">24/7</div>
+                            <div class="stat-text">Learning Access</div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- FAQ -->
+            <!-- ========================================= -->
+            <section class="section" id="faq">
+                <div class="container">
+
+                    <div class="text-center mb-5">
+                        <span class="badge mb-3">Common Questions</span>
+                        <h2 class="mb-3">Everything you need to know before you start.</h2>
+                        <p>Six answers to the most common enrollment questions.</p>
+                    </div>
+
+                    <div class="grid grid-2">
+
+                        <article class="card">
+                            <div class="card-body">
+                                <h3 class="mb-3">Is the Academy really free to start?</h3>
+                                <p class="mb-0">Yes. You can create a free account and access the starter lessons and free plan courses without paying anything. Pro plans unlock everything.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <h3 class="mb-3">How much time do I need each week?</h3>
+                                <p class="mb-0">Most students commit 5–10 hours per week. The material is self-paced — you go as fast or as slow as your schedule allows.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <h3 class="mb-3">Do I need a laptop or can I use my phone?</h3>
+                                <p class="mb-0">Both work. Every lesson is designed to be usable on a phone. For coding tracks, a laptop makes things easier — but isn't required to start.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <h3 class="mb-3">Do I get a certificate when I finish?</h3>
+                                <p class="mb-0">Yes. Complete any track and earn a certificate you can share on LinkedIn, attach to job applications, or add to your portfolio.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <h3 class="mb-3">How does mentorship work?</h3>
+                                <p class="mb-0">Pro and Mentorship plan students get direct access to Ashiru and the team. Free plan students have community support and self-paced materials.</p>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-body">
+                                <h3 class="mb-3">Can I switch tracks later?</h3>
+                                <p class="mb-0">Absolutely. Enroll in as many tracks as you want. Many students start with Web Development and later add Crypto or Design.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- FINAL CTA -->
+            <!-- ========================================= -->
+            <section class="section" id="start">
+                <div class="container">
+
+                    <div class="text-center mb-5">
+                        <span class="badge mb-3">Ready to Start?</span>
+                        <h2 class="mb-3">Your first lesson is one click away.</h2>
+                        <p>Two doors. Pick the one that matches where you are.</p>
+                    </div>
+
+                    <div class="grid grid-2">
+
+                        <article class="card bg-sheen-gold">
+                            <div class="card-body">
+                                <div class="avatar avatar-md avatar-gold mb-4">
+                                    <i class="fa-solid fa-user-plus fa-2x text-gold"></i>
+                                </div>
+                                <h3 class="mb-3">New to the Academy?</h3>
+                                <p class="mb-4">Create a free account in under a minute. No credit card required. Start learning immediately.</p>
+                                <a href="register.html" class="btn btn-primary">
+                                    Create Free Account <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="card bg-sheen-gold">
+                            <div class="card-body">
+                                <div class="avatar avatar-md avatar-gold mb-4">
+                                    <i class="fa-solid fa-right-to-bracket fa-2x text-gold"></i>
+                                </div>
+                                <h3 class="mb-3">Already Learning?</h3>
+                                <p class="mb-4">Sign in to jump back into your dashboard, continue your courses, and pick up where you left off.</p>
+                                <a href="login.html" class="btn btn-outline">
+                                    Sign In <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ========================================= -->
+        <!-- FOOTER -->
+        <!-- ========================================= -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+
+                <div class="footer-grid">
+
+                    <div class="footer-brand">
+                        <h2>A SQUARE L <span>INNOVATE</span></h2>
+                        <p>Engineering the digital talent, software experiences, and operational business infrastructure that modern growth depends on.</p>
+                        <div class="footer-social">
+                            <a href="https://x.com/A_Square_L" target="_blank" rel="noopener" aria-label="X / Twitter">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ashiru-auwal-lawal" target="_blank" rel="noopener" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://instagram.com/a_square_l" target="_blank" rel="noopener" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://github.com/A-Square-L-Innovate" target="_blank" rel="noopener" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Divisions</h4>
+                        <ul>
+                            <li><a href="index.html">A Square L Academy</a></li>
+                            <li><a href="../public-site/products.html">Web Design Pool</a></li>
+                            <li><a href="../public-site/business-os.html">Business Systems</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="../public-site/about.html">About Us</a></li>
+                            <li><a href="../public-site/developer-portal.html">Developer Portal</a></li>
+                            <li><a href="../public-site/careers.html">Careers</a></li>
+                            <li><a href="../public-site/blog.html">Blog</a></li>
+                            <li><a href="../public-site/contact.html">Contact</a></li>
+                            <li><a href="../public-site/privacy.html">Privacy Policy</a></li>
+                            <li><a href="../public-site/terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe to receive ecosystem updates, technical insights, and announcements across A Square L Innovate.</p>
+                        <form name="Innovate_Newsletter" method="POST" data-netlify="true" action="../public-site/subscribed.html">
+                            <input type="hidden" name="form-name" value="Innovate_Newsletter" />
+                            <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
+                            <button type="submit" aria-label="Subscribe">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copy">&copy; 2026 A Square L Innovate. All rights reserved.</p>
+                    <span class="badge">ASLDS v1.1 Stable</span>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Accessibility regions -->
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <!-- ASLDS JS — order matters -->
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/navbar.js"></script>
+    <script src="../../packages/aslds/js/sidebar.js"></script>
+    <script src="../../packages/aslds/js/tabs.js"></script>
+    <script src="../../packages/aslds/js/dropdown.js"></script>
+    <script src="../../packages/aslds/js/modal.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/search.js"></script>
+    <script src="../../packages/aslds/js/animations.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+
+</body>
+</html>
