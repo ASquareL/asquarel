@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your Academy dashboard — track courses, continue lessons, monitor your progress." />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <title>Dashboard — A Square L Academy</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/components/navbar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/sidebar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dashboard.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/footer.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/alert.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dropdown.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/modal.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/progress.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/tabs.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard-layout">
+
+        <!-- ========================================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================================= -->
+        <aside class="sidebar" id="dashboard-sidebar" aria-label="Student Navigation">
+
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="sidebar-logo" aria-label="Academy Dashboard">
+                    <div class="sidebar-brand">
+                        <span class="sidebar-title">A SQUARE L</span>
+                        <span class="sidebar-subtitle">Academy</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="avatar avatar-xl avatar-gold mb-3">
+                    <span class="avatar-initials">AA</span>
+                </div>
+                <div class="sidebar-name">Ashiru A. Lawal</div>
+                <div class="sidebar-role">Student</div>
+                <span class="sidebar-level">ASL-2026-001</span>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Student Menu">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="dashboard.html" class="sidebar-link active" aria-current="page">
+                            <i class="fa-solid fa-home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="courses/index.html" class="sidebar-link">
+                            <i class="fa-solid fa-book"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="profile.html" class="sidebar-link">
+                            <i class="fa-solid fa-user"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="settings.html" class="sidebar-link">
+                            <i class="fa-solid fa-cog"></i>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-progress">
+                <div class="sidebar-progress-title">Weekly Goal</div>
+                <div class="sidebar-progress-value">60%</div>
+                <div class="sidebar-progress-bar">
+                    <div class="sidebar-progress-fill" style="width: 60%"></div>
+                </div>
+            </div>
+
+            <div class="sidebar-mission">
+                <h4>Daily Mission</h4>
+                <p>Complete 1 lesson today to keep your learning streak alive.</p>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="sidebar-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- ========================================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ========================================= -->
+        <main id="main-content" class="dashboard-content">
+
+            <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
+
+                <div class="d-flex align-center gap-3">
+                    <button
+                        class="mobile-toggle"
+                        type="button"
+                        aria-label="Toggle Sidebar"
+                        aria-expanded="false"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div>
+                        <h1 class="mb-1">Welcome back, Ashiru</h1>
+                        <p class="mb-0">You've studied 4.5 hours this week — great pace.</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-center gap-2">
+                    <button
+                        class="btn btn-outline btn-sm"
+                        type="button"
+                        data-theme-toggle
+                        aria-label="Toggle Theme"
+                    >
+                        Theme
+                    </button>
+
+                    <div class="dropdown">
+                        <button
+                            class="dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            aria-label="Account Menu"
+                        >
+                            <div class="avatar avatar-sm avatar-gold">
+                                <span class="avatar-initials">AA</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header">
+                                <div class="dropdown-title">Ashiru A. Lawal</div>
+                                <div class="dropdown-subtitle">ashiru@example.com</div>
+                            </div>
+
+                            <ul class="dropdown-list">
+                                <li class="dropdown-item">
+                                    <a class="dropdown-link" href="profile.html">
+                                        <i class="fa-solid fa-user"></i> My Profile
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a class="dropdown-link" href="settings.html">
+                                        <i class="fa-solid fa-cog"></i> Settings
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="dropdown-divider"></div>
+
+                            <div class="dropdown-footer">
+                                <a href="login.html">Sign Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- STATS -->
+            <!-- ========================================= -->
+            <div class="dashboard-stats mb-5">
+
+                <div class="card stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-text">Courses Enrolled</div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="stat-number">24</div>
+                    <div class="stat-text">Lessons Complete</div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-text">Day Streak</div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="stat-number">47.5</div>
+                    <div class="stat-text">Hours Learned</div>
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- CONTINUE LEARNING -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Continue Learning</h2>
+
+            <div class="grid grid-3 mb-5">
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-between align-center mb-4">
+                            <div class="avatar avatar-md avatar-gold">
+                                <i class="fa-solid fa-code fa-2x text-gold"></i>
+                            </div>
+                            <span class="badge badge-warning">In Progress</span>
+                        </div>
+
+                        <h3 class="mb-3">Web Development</h3>
+                        <p class="mb-4">HTML, CSS, JavaScript, and modern frameworks.</p>
+
+                        <div class="progress mb-4">
+                            <div class="progress-header">
+                                <span class="progress-title">Progress</span>
+                                <span class="progress-value">42%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 42%"></div>
+                            </div>
+                        </div>
+
+                        <a href="courses/web-development/index.html" class="btn btn-primary btn-block">
+                            Continue <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-between align-center mb-4">
+                            <div class="avatar avatar-md avatar-gold">
+                                <i class="fa-brands fa-bitcoin fa-2x text-gold"></i>
+                            </div>
+                            <span class="badge badge-warning">In Progress</span>
+                        </div>
+
+                        <h3 class="mb-3">Crypto &amp; Blockchain</h3>
+                        <p class="mb-4">Wallets, DEX, and DeFi fundamentals.</p>
+
+                        <div class="progress mb-4">
+                            <div class="progress-header">
+                                <span class="progress-title">Progress</span>
+                                <span class="progress-value">18%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 18%"></div>
+                            </div>
+                        </div>
+
+                        <a href="courses/crypto-blockchain/index.html" class="btn btn-primary btn-block">
+                            Continue <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-between align-center mb-4">
+                            <div class="avatar avatar-md avatar-gold">
+                                <i class="fa-solid fa-pen-ruler fa-2x text-gold"></i>
+                            </div>
+                            <span class="badge">Not Started</span>
+                        </div>
+
+                        <h3 class="mb-3">Smartphone Graphic Design</h3>
+                        <p class="mb-4">Flyers, logos, and brand visuals.</p>
+
+                        <a href="courses/smartphone-graphic-design/index.html" class="btn btn-outline btn-block">
+                            Start Course <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- RECENT ACTIVITY -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Recent Activity</h2>
+
+            <div class="card mb-5">
+                <div class="card-body">
+
+                    <div class="d-flex align-center gap-3 mb-4">
+                        <div class="avatar avatar-sm avatar-gold">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div>
+                            <strong>Completed Lesson 18 in Web Development</strong>
+                            <p class="mb-0">2 hours ago</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-center gap-3 mb-4">
+                        <div class="avatar avatar-sm avatar-gold">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div>
+                            <strong>Started the Crypto &amp; Blockchain track</strong>
+                            <p class="mb-0">Yesterday</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-center gap-3 mb-4">
+                        <div class="avatar avatar-sm avatar-gold">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div>
+                            <strong>Earned the "Week 3 Streak" badge</strong>
+                            <p class="mb-0">2 days ago</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-center gap-3">
+                        <div class="avatar avatar-sm avatar-gold">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+                        <div>
+                            <strong>Passed quiz: CSS Flexbox Fundamentals</strong>
+                            <p class="mb-0">3 days ago</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Accessibility regions -->
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <!-- ASLDS JS — order matters -->
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/navbar.js"></script>
+    <script src="../../packages/aslds/js/sidebar.js"></script>
+    <script src="../../packages/aslds/js/tabs.js"></script>
+    <script src="../../packages/aslds/js/dropdown.js"></script>
+    <script src="../../packages/aslds/js/modal.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/search.js"></script>
+    <script src="../../packages/aslds/js/animations.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+
+</body>
+</html>
