@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manage your A Square L Academy account — profile details, notifications, learning preferences, and security settings." />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <title>Settings — A Square L Academy</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../../packages/aslds/css/components/navbar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/sidebar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dashboard.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/footer.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/alert.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dropdown.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/modal.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/progress.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/tabs.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard-layout">
+
+        <!-- ========================================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================================= -->
+        <aside class="sidebar" id="dashboard-sidebar" aria-label="Student Navigation">
+
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="sidebar-logo" aria-label="Academy Dashboard">
+                    <div class="sidebar-brand">
+                        <span class="sidebar-title">A SQUARE L</span>
+                        <span class="sidebar-subtitle">Academy</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="avatar avatar-xl avatar-gold mb-3">
+                    <span class="avatar-initials">AL</span>
+                </div>
+                <div class="sidebar-name">Ashiru Awal Lawal</div>
+                <div class="sidebar-role">Student</div>
+                <span class="sidebar-level">ASL-2026-001</span>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Student Menu">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="dashboard.html" class="sidebar-link">
+                            <i class="fa-solid fa-home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="courses/index.html" class="sidebar-link">
+                            <i class="fa-solid fa-book"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="profile.html" class="sidebar-link">
+                            <i class="fa-solid fa-user"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="settings.html" class="sidebar-link active" aria-current="page">
+                            <i class="fa-solid fa-cog"></i>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-progress">
+                <div class="sidebar-progress-title">Overall Progress</div>
+                <div class="sidebar-progress-value">42%</div>
+                <div class="sidebar-progress-bar">
+                    <div class="sidebar-progress-fill" style="width: 42%"></div>
+                </div>
+            </div>
+
+            <div class="sidebar-mission">
+                <h4>Daily Mission</h4>
+                <p>Complete 1 lesson today to keep your learning streak alive.</p>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="sidebar-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- ========================================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ========================================= -->
+        <main id="main-content" class="dashboard-content">
+
+            <!-- ========================================= -->
+            <!-- HEADER ROW -->
+            <!-- ========================================= -->
+            <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
+
+                <div class="d-flex align-center gap-3">
+                    <button
+                        class="mobile-toggle"
+                        type="button"
+                        aria-label="Toggle Sidebar"
+                        aria-expanded="false"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div>
+                        <h1 class="mb-1">Settings</h1>
+                        <p class="mb-0">Manage your account, preferences, and security.</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-center gap-2">
+                    <button
+                        class="btn btn-outline btn-sm"
+                        type="button"
+                        data-theme-toggle
+                        aria-label="Toggle Theme"
+                    >
+                        Theme
+                    </button>
+
+                    <button class="btn btn-primary btn-sm" type="button">
+                        <i class="fa-solid fa-check"></i> Save Changes
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- TABS -->
+            <!-- ========================================= -->
+            <div class="tabs">
+
+                <div class="tab-list" role="tablist">
+                    <button class="tab-button is-active" role="tab">
+                        <i class="fa-solid fa-user"></i> Account
+                    </button>
+                    <button class="tab-button" role="tab">
+                        <i class="fa-solid fa-bell"></i> Notifications
+                    </button>
+                    <button class="tab-button" role="tab">
+                        <i class="fa-solid fa-graduation-cap"></i> Learning
+                    </button>
+                    <button class="tab-button" role="tab">
+                        <i class="fa-solid fa-shield-halved"></i> Security
+                    </button>
+                </div>
+
+                <!-- ========================================= -->
+                <!-- TAB 1 — ACCOUNT -->
+                <!-- ========================================= -->
+                <div class="tab-content is-active" role="tabpanel">
+
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">Profile Information</h2>
+
+                        <form class="form">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-name">Full Name</label>
+                                    <input
+                                        id="settings-name"
+                                        class="form-control"
+                                        type="text"
+                                        value="Ashiru Awal Lawal"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-reg">Registration Number</label>
+                                    <input
+                                        id="settings-reg"
+                                        class="form-control"
+                                        type="text"
+                                        value="ASL-2026-001"
+                                        readonly
+                                    />
+                                    <p class="form-text">Assigned by the Academy. Cannot be changed.</p>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-email">Email Address</label>
+                                    <input
+                                        id="settings-email"
+                                        class="form-control"
+                                        type="email"
+                                        value="ashiru@example.com"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-phone">Phone Number</label>
+                                    <input
+                                        id="settings-phone"
+                                        class="form-control"
+                                        type="tel"
+                                        value="+234 800 000 0000"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="settings-location">Location</label>
+                                <input
+                                    id="settings-location"
+                                    class="form-control"
+                                    type="text"
+                                    value="Kano, Nigeria"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="settings-bio">Bio</label>
+                                <textarea
+                                    id="settings-bio"
+                                    class="form-control"
+                                    placeholder="Tell us a bit about yourself..."
+                                >I'm a student at A Square L Academy, passionate about web development and blockchain technology.</textarea>
+                                <p class="form-text">A short introduction visible to mentors.</p>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- ========================================= -->
+                <!-- TAB 2 — NOTIFICATIONS -->
+                <!-- ========================================= -->
+                <div class="tab-content" role="tabpanel">
+
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">Email Notifications</h2>
+
+                        <div class="d-flex flex-column gap-4">
+
+                            <div class="d-flex justify-between align-center gap-4">
+                                <div>
+                                    <strong>Course updates</strong>
+                                    <p class="mb-0">New lessons, module releases, and curriculum changes.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="d-flex justify-between align-center gap-4">
+                                <div>
+                                    <strong>Weekly progress digest</strong>
+                                    <p class="mb-0">A summary of your learning activity each Monday.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="d-flex justify-between align-center gap-4">
+                                <div>
+                                    <strong>Achievement alerts</strong>
+                                    <p class="mb-0">Celebrate when you unlock badges and certificates.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="widget">
+                        <h2 class="widget-title">Communication</h2>
+
+                        <div class="d-flex flex-column gap-4">
+
+                            <div class="d-flex justify-between align-center gap-4">
+                                <div>
+                                    <strong>Mentor messages</strong>
+                                    <p class="mb-0">Direct messages from your assigned mentor.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="d-flex justify-between align-center gap-4">
+                                <div>
+                                    <strong>Community announcements</strong>
+                                    <p class="mb-0">Academy-wide news, events, and cohort updates.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="d-flex justify-between align-center gap-4">
+                                <div>
+                                    <strong>Marketing emails</strong>
+                                    <p class="mb-0">Promotions, new track launches, and offers.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ========================================= -->
+                <!-- TAB 3 — LEARNING -->
+                <!-- ========================================= -->
+                <div class="tab-content" role="tabpanel">
+
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">Learning Preferences</h2>
+
+                        <form class="form">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-goal">Daily Learning Goal</label>
+                                    <select id="settings-goal" class="form-control">
+                                        <option>15 minutes</option>
+                                        <option selected>30 minutes</option>
+                                        <option>1 hour</option>
+                                        <option>2 hours</option>
+                                    </select>
+                                    <p class="form-text">How much time you aim to study each day.</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-time">Preferred Learning Time</label>
+                                    <select id="settings-time" class="form-control">
+                                        <option>Early morning</option>
+                                        <option>Morning</option>
+                                        <option selected>Afternoon</option>
+                                        <option>Evening</option>
+                                        <option>Late night</option>
+                                    </select>
+                                    <p class="form-text">When you usually have the most focus.</p>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-timezone">Timezone</label>
+                                    <select id="settings-timezone" class="form-control">
+                                        <option selected>Africa/Lagos (WAT)</option>
+                                        <option>Africa/Cairo (EET)</option>
+                                        <option>Europe/London (GMT)</option>
+                                        <option>America/New_York (EST)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-language">Preferred Language</label>
+                                    <select id="settings-language" class="form-control">
+                                        <option selected>English</option>
+                                        <option>Hausa</option>
+                                        <option>Arabic</option>
+                                        <option>French</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="widget">
+                        <h2 class="widget-title">Difficulty Level</h2>
+
+                        <p class="mb-4">Choose how challenging the practice material should be.</p>
+
+                        <div class="d-flex flex-column gap-3">
+
+                            <label class="radio">
+                                <input type="radio" name="difficulty" />
+                                <span>
+                                    <strong>Beginner</strong>
+                                    <span class="d-block">Slow-paced, detailed explanations, guided exercises.</span>
+                                </span>
+                            </label>
+
+                            <label class="radio">
+                                <input type="radio" name="difficulty" checked />
+                                <span>
+                                    <strong>Intermediate</strong>
+                                    <span class="d-block">Balanced pace with hands-on practice and challenges.</span>
+                                </span>
+                            </label>
+
+                            <label class="radio">
+                                <input type="radio" name="difficulty" />
+                                <span>
+                                    <strong>Advanced</strong>
+                                    <span class="d-block">Fast-paced, real-world projects, minimal hand-holding.</span>
+                                </span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ========================================= -->
+                <!-- TAB 4 — SECURITY -->
+                <!-- ========================================= -->
+                <div class="tab-content" role="tabpanel">
+
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">Change Password</h2>
+
+                        <form class="form">
+
+                            <div class="form-group">
+                                <label class="form-label" for="settings-current-pass">Current Password</label>
+                                <input
+                                    id="settings-current-pass"
+                                    class="form-control"
+                                    type="password"
+                                    placeholder="Enter your current password"
+                                    autocomplete="current-password"
+                                />
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-new-pass">New Password</label>
+                                    <input
+                                        id="settings-new-pass"
+                                        class="form-control"
+                                        type="password"
+                                        placeholder="At least 8 characters"
+                                        autocomplete="new-password"
+                                    />
+                                    <p class="form-text">Mix letters, numbers, and symbols.</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="settings-confirm-pass">Confirm New Password</label>
+                                    <input
+                                        id="settings-confirm-pass"
+                                        class="form-control"
+                                        type="password"
+                                        placeholder="Repeat your new password"
+                                        autocomplete="new-password"
+                                    />
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">Two-Factor Authentication</h2>
+
+                        <div class="d-flex justify-between align-center gap-4">
+                            <div>
+                                <strong>Authenticator app</strong>
+                                <p class="mb-0">Add an extra layer of security to your account.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">Active Sessions</h2>
+
+                        <div class="d-flex flex-column gap-4">
+
+                            <div class="d-flex justify-between align-center gap-4">
+                                <div class="d-flex align-center gap-3">
+                                    <div class="avatar avatar-sm avatar-gold">
+                                        <i class="fa-solid fa-desktop"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Chrome · Windows</strong>
+                                        <p class="mb-0">Kano, Nigeria</p>
+                                    </div>
+                                </div>
+                                <span class="badge badge-success">Current</span>
+                            </div>
+
+                            <div class="d-flex justify-between align-center gap-4">
+                                <div class="d-flex align-center gap-3">
+                                    <div class="avatar avatar-sm avatar-gold">
+                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Mobile Safari · iPhone</strong>
+                                        <p class="mb-0">Kano, Nigeria</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline btn-sm" type="button">
+                                    Revoke
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="widget">
+                        <h2 class="widget-title">Danger Zone</h2>
+
+                        <div class="d-flex justify-between align-center gap-4 flex-wrap">
+                            <div>
+                                <strong>Delete Account</strong>
+                                <p class="mb-0">Permanently remove your account and all learning data. This cannot be undone.</p>
+                            </div>
+                            <button class="btn btn-danger" type="button">
+                                <i class="fa-solid fa-trash"></i> Delete Account
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Accessibility regions -->
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <!-- ASLDS JS — canonical order -->
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/navbar.js"></script>
+    <script src="../../packages/aslds/js/sidebar.js"></script>
+    <script src="../../packages/aslds/js/tabs.js"></script>
+    <script src="../../packages/aslds/js/dropdown.js"></script>
+    <script src="../../packages/aslds/js/modal.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/search.js"></script>
+    <script src="../../packages/aslds/js/animations.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+
+</body>
+</html>

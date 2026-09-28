@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A SQUARE L Innovate & Tech Solutions - Full-Stack Web Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        /* Custom Scrollbar for Sidebar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+
+        .lesson-active {
+            background-color: #374151;
+            color: #60a5fa;
+            border-left: 4px solid #60a5fa;
+        }
+        
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="text-gray-800 h-screen overflow-hidden flex flex-col">
+
+    <header class="bg-indigo-900 text-white shadow-md z-20 flex-shrink-0">
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Mobile menu button -->
+                <div class="flex items-center lg:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Brand -->
+                <div class="flex items-center flex-1 lg:flex-none justify-center lg:justify-start">
+                    <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="app.loadOverview()">
+                        <div class="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center font-bold text-xl shadow-lg border-2 border-indigo-400">
+                            A²L
+                        </div>
+                        <span class="font-bold text-lg hidden sm:block tracking-wide">A SQUARE L <span class="text-indigo-300 font-normal">Innovate & Tech</span></span>
+                    </div>
+                </div>
+
+                <!-- User Profile / Actions -->
+                <div class="flex items-center gap-4">
+                    <div class="hidden sm:flex items-center gap-2 text-sm text-indigo-200">
+                        <i class="fas fa-trophy text-yellow-400"></i>
+                        <span>120 Points</span>
+                    </div>
+                    <div class="h-8 w-8 rounded-full bg-indigo-400 flex items-center justify-center border-2 border-white cursor-pointer hover:bg-indigo-300 transition">
+                        <i class="fas fa-user text-white text-sm"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden relative">
+        
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="bg-gray-900 w-72 flex-shrink-0 flex flex-col h-full absolute lg:static transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-10 custom-scrollbar overflow-y-auto">
+            <div class="p-5 border-b border-gray-800">
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Current Course</p>
+                <h2 class="text-white font-bold text-lg leading-tight cursor-pointer hover:text-indigo-400 transition" onclick="app.loadOverview()">Full-Stack Web Development</h2>
+                
+                <div class="mt-4 flex items-center gap-2">
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-indigo-500 h-2 rounded-full" style="width: 15%"></div>
+                    </div>
+                    <span class="text-xs text-gray-400 font-medium">15%</span>
+                </div>
+            </div>
+            
+            <nav id="course-curriculum" class="flex-1 py-4">
+                <!-- Curriculum items will be injected here by JS -->
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 h-full overflow-y-auto bg-white relative">
+            
+            <!-- Mobile Overlay -->
+            <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-0 hidden lg:hidden transition-opacity"></div>
+
+            <div id="content-container" class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8 pb-20 relative z-0">
+                <!-- Content will be dynamically injected here -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const courseData = {
+            title: "Full-Stack Web Development",
+            description: "Master the fundamentals and advanced concepts of building robust web applications from scratch. This comprehensive path takes you through front-end design to back-end architecture.",
+            instructor: "Dr. A. Square",
+            totalDuration: "40 Hours",
+            modules: [
+                {
+                    id: "mod-html",
+                    title: "Module 1: HTML5 Foundations",
+                    lessons: [
+                        { 
+                            id: "l-html-1", 
+                            title: "Introduction to the Web & HTML", 
+                            duration: "15 min",
+                            type: "video",
+                            content: `
+                                <h2>Welcome to Web Development!</h2>
+                                <p>HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content.</p>
+                                <h3>What you will learn:</h3>
+                                <ul>
+                                    <li>How the internet works at a high level.</li>
+                                    <li>The standard boilerplate of an HTML5 document.</li>
+                                    <li>Basic tags like headings, paragraphs, and lists.</li>
+                                </ul>
+                                <h3>Code Example: Basic Boilerplate</h3>
+                                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            `
+                        },
+                        { 
+                            id: "l-html-2", 
+                            title: "Forms and Semantic Elements", 
+                            duration: "25 min",
+                            type: "article",
+                            content: `
+                                <h2>Structuring Data Collection</h2>
+                                <p>Forms are essential for collecting user input. Combined with semantic HTML, you create accessible and powerful web interfaces.</p>
+                                <pre><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" required&gt;
+    
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                                <p>Semantic tags like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> help search engines and screen readers understand your page.</p>
+                            `
+                        }
+                    ]
+                },
+                {
+                    id: "mod-css",
+                    title: "Module 2: CSS Styling & Layouts",
+                    lessons: [
+                        { 
+                            id: "l-css-1", 
+                            title: "CSS Basics and Selectors", 
+                            duration: "20 min",
+                            type: "video",
+                            content: `
+                                <h2>Beautifying the Web</h2>
+                                <p>Cascading Style Sheets (CSS) allow you to apply styles to web documents.</p>
+                                <h3>Targeting Elements</h3>
+                                <p>You can target elements by tag, class (using <code>.</code>), or ID (using <code>#</code>).</p>
+                                <pre><code>/* Element Selector */
+p { color: blue; }
+
+/* Class Selector */
+.highlight { background-color: yellow; }
+
+/* ID Selector */
+#main-header { font-size: 2em; }</code></pre>
+                            `
+                        },
+                        { 
+                            id: "l-css-2", 
+                            title: "Flexbox and Grid Mastery", 
+                            duration: "45 min",
+                            type: "video",
+                            content: `
+                                <h2>Modern Layouts</h2>
+                                <p>Gone are the days of float-based layouts. CSS Flexbox and Grid are the standard tools for building responsive designs.</p>
+                                <h3>Flexbox Example</h3>
+                                <pre><code>.container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+    height: 100vh;
+}</code></pre>
+                            `
+                        }
+                    ]
+                },
+                {
+                    id: "mod-js",
+                    title: "Module 3: JavaScript Programming",
+                    lessons: [
+                        { 
+                            id: "l-js-1", 
+                            title: "Variables, Data Types, and Functions", 
+                            duration: "30 min",
+                            type: "video",
+                            content: `
+                                <h2>Making Things Interactive</h2>
+                                <p>JavaScript is the programming language of the Web. It can update and change both HTML and CSS, and can calculate, manipulate and validate data.</p>
+                                <pre><code>// Variable declaration
+let greeting = "Welcome to A SQUARE L!";
+const maxUsers = 100;
+
+// Function definition
+function greetUser(name) {
+    return \`\${greeting} \${name}\`;
+}
+
+console.log(greetUser("Student"));</code></pre>
+                            `
+                        },
+                        { 
+                            id: "l-js-2", 
+                            title: "DOM Manipulation & Events", 
+                            duration: "40 min",
+                            type: "article",
+                            content: `
+                                <h2>Interacting with the Page</h2>
+                                <p>The Document Object Model (DOM) connects web pages to scripts or programming languages.</p>
+                                <pre><code>const button = document.querySelector('#myBtn');
+
+button.addEventListener('click', function() {
+    alert('Button was clicked!');
+    document.body.style.backgroundColor = 'lightblue';
+});</code></pre>
+                            `
+                        }
+                    ]
+                },
+                {
+                    id: "mod-py",
+                    title: "Module 4: Python Backend Development",
+                    lessons: [
+                        { 
+                            id: "l-py-1", 
+                            title: "Python Fundamentals", 
+                            duration: "35 min",
+                            type: "video",
+                            content: `
+                                <h2>Introduction to Python</h2>
+                                <p>Python is a high-level, general-purpose programming language known for its readability and concise syntax.</p>
+                                <pre><code># Python basics
+def calculate_area(radius):
+    pi = 3.14159
+    return pi * (radius ** 2)
+
+print(f"Area: {calculate_area(5)}")</code></pre>
+                            `
+                        },
+                        { 
+                            id: "l-py-2", 
+                            title: "Building APIs with Flask/Django", 
+                            duration: "50 min",
+                            type: "video",
+                            content: `
+                                <h2>Server-side Logic</h2>
+                                <p>Learn how to handle HTTP requests, connect to databases, and serve JSON data to your front-end applications.</p>
+                                <pre><code>from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/courses')
+def get_courses():
+    courses = [
+        {"id": 1, "name": "Web Dev"},
+        {"id": 2, "name": "Data Science"}
+    ]
+    return jsonify(courses)
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+                            `
+                        }
+                    ]
+                }
+            ]
+        };
+
+        const app = {
+            currentLessonId: null,
+            elements: {
+                sidebar: document.getElementById('sidebar'),
+                sidebarOverlay: document.getElementById('sidebar-overlay'),
+                mobileMenuBtn: document.getElementById('mobile-menu-btn'),
+                curriculumList: document.getElementById('course-curriculum'),
+                contentContainer: document.getElementById('content-container')
+            },
+
+            init() {
+                this.renderSidebar();
+                this.loadOverview();
+                this.setupEventListeners();
+            },
+
+            setupEventListeners() {
+                // Mobile menu toggle
+                this.elements.mobileMenuBtn.addEventListener('click', () => this.toggleSidebar());
+                this.elements.sidebarOverlay.addEventListener('click', () => this.toggleSidebar());
+            },
+
+            toggleSidebar() {
+                const sidebar = this.elements.sidebar;
+                const overlay = this.elements.sidebarOverlay;
+                
+                if (sidebar.classList.contains('-translate-x-full')) {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                }
+            },
+
+            renderSidebar() {
+                let html = '';
+                courseData.modules.forEach((mod, index) => {
+                    html += `
+                        <div class="mb-4">
+                            <div class="px-5 py-2 flex items-center justify-between text-gray-300">
+                                <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500">${mod.title}</h3>
+                            </div>
+                            <ul class="mt-1 space-y-1">
+                    `;
+                    
+                    mod.lessons.forEach(lesson => {
+                        const icon = lesson.type === 'video' ? 'fa-play-circle' : 'fa-file-alt';
+                        html += `
+                            <li>
+                                <a href="#" onclick="app.loadLesson('${lesson.id}'); return false;" 
+                                   id="nav-${lesson.id}"
+                                   class="flex items-center px-5 py-2.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors border-l-4 border-transparent">
+                                    <i class="fas ${icon} w-5 text-gray-500 mr-2"></i>
+                                    <span class="truncate flex-1">${lesson.title}</span>
+                                    <span class="text-xs text-gray-500 ml-2">${lesson.duration}</span>
+                                </a>
+                            </li>
+                        `;
+                    });
+                    
+                    html += `</ul></div>`;
+                });
+                this.elements.curriculumList.innerHTML = html;
+            },
+
+            updateActiveNav(lessonId) {
+                // Remove active class from all
+                document.querySelectorAll('#course-curriculum a').forEach(el => {
+                    el.classList.remove('lesson-active', 'bg-gray-800');
+                    el.classList.add('border-transparent');
+                });
+                
+                if (lessonId) {
+                    const activeEl = document.getElementById(`nav-${lessonId}`);
+                    if (activeEl) {
+                        activeEl.classList.add('lesson-active');
+                        activeEl.classList.remove('border-transparent');
+                    }
+                }
+            },
+
+            loadOverview() {
+                this.currentLessonId = null;
+                this.updateActiveNav(null);
+                if(window.innerWidth < 1024) this.toggleSidebar(); // Close sidebar on mobile
+
+                let modulesSummaryHtml = '';
+                courseData.modules.forEach(mod => {
+                    let lessonsHtml = mod.lessons.map(l => `
+                        <div class="flex items-center justify-between py-3 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition px-2 rounded cursor-pointer" onclick="app.loadLesson('${l.id}')">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                    <i class="fas ${l.type === 'video' ? 'fa-play' : 'fa-book'} text-xs"></i>
+                                </div>
+                                <span class="font-medium text-gray-700">${l.title}</span>
+                            </div>
+                            <span class="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">${l.duration}</span>
+                        </div>
+                    `).join('');
+
+                    modulesSummaryHtml += `
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
+                            <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                <h3 class="font-bold text-gray-800">${mod.title}</h3>
+                            </div>
+                            <div class="p-4">
+                                ${lessonsHtml}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                this.elements.contentContainer.innerHTML = `
+                    <div class="mb-8">
+                        <div class="inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">Web Development Track</div>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">${courseData.title}</h1>
+                        <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">${courseData.description}</p>
+                        
+                        <div class="flex flex-wrap items-center gap-6 mt-6">
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-chalkboard-teacher text-indigo-500"></i>
+                                <span>Instructor: <strong>${courseData.instructor}</strong></span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-clock text-indigo-500"></i>
+                                <span>Duration: <strong>${courseData.totalDuration}</strong></span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-certificate text-indigo-500"></i>
+                                <span>Certificate of Completion</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="app.loadLesson('${courseData.modules[0].lessons[0].id}')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 mb-10">
+                        Resume Learning <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Course Curriculum</h2>
+                    ${modulesSummaryHtml}
+                `;
+            },
+
+            loadLesson(lessonId) {
+                this.currentLessonId = lessonId;
+                this.updateActiveNav(lessonId);
+                if(window.innerWidth < 1024 && !this.elements.sidebar.classList.contains('-translate-x-full')) {
+                     this.toggleSidebar();
+                }
+                
+                // Find lesson data
+                let currentLesson = null;
+                let nextLessonId = null;
+                let prevLessonId = null;
+                
+                const allLessons = [];
+                courseData.modules.forEach(m => m.lessons.forEach(l => allLessons.push(l)));
+                
+                for (let i = 0; i < allLessons.length; i++) {
+                    if (allLessons[i].id === lessonId) {
+                        currentLesson = allLessons[i];
+                        if (i > 0) prevLessonId = allLessons[i-1].id;
+                        if (i < allLessons.length - 1) nextLessonId = allLessons[i+1].id;
+                        break;
+                    }
+                }
+
+                if (!currentLesson) return;
+
+                // Build UI
+                const videoPlaceholder = currentLesson.type === 'video' ? `
+                    <div class="w-full bg-gray-900 rounded-xl aspect-video flex items-center justify-center relative group mb-8 overflow-hidden shadow-lg border border-gray-800">
+                        <img src="https://placehold.co/1280x720/1f2937/4f46e5?text=Video+Player" alt="Video cover" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                        <div class="w-20 h-20 bg-indigo-600 bg-opacity-90 rounded-full flex items-center justify-center cursor-pointer group-hover:scale-110 group-hover:bg-indigo-500 transition-all z-10 shadow-[0_0_20px_rgba(79,70,229,0.5)]">
+                            <i class="fas fa-play text-white text-3xl ml-2"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between z-10 bg-black bg-opacity-50 px-4 py-2 rounded-lg backdrop-blur-sm">
+                            <div class="flex items-center gap-4 text-white">
+                                <i class="fas fa-pause cursor-pointer hover:text-indigo-400"></i>
+                                <span class="text-sm font-medium">02:14 / ${currentLesson.duration}</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-white">
+                                <i class="fas fa-volume-up cursor-pointer hover:text-indigo-400"></i>
+                                <i class="fas fa-cog cursor-pointer hover:text-indigo-400"></i>
+                                <i class="fas fa-expand cursor-pointer hover:text-indigo-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                ` : `
+                    <div class="w-full bg-indigo-50 border border-indigo-100 rounded-xl p-8 mb-8 text-center">
+                        <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-indigo-900 mb-2">Reading Material</h3>
+                        <p class="text-indigo-700">Read through the content below to complete this lesson.</p>
+                    </div>
+                `;
+
+                // Main content formatting
+                const formattedContent = currentLesson.content
+                    .replace(/<h2>/g, '<h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4 border-b pb-2">')
+                    .replace(/<h3>/g, '<h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">')
+                    .replace(/<p>/g, '<p class="text-gray-600 leading-relaxed mb-4 text-lg">')
+                    .replace(/<ul>/g, '<ul class="list-disc list-inside text-gray-600 mb-4 space-y-2 text-lg">');
+
+                const prevBtn = prevLessonId 
+                    ? `<button onclick="app.loadLesson('${prevLessonId}')" class="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition font-medium flex items-center gap-2"><i class="fas fa-chevron-left"></i> Previous</button>` 
+                    : `<div></div>`; // Empty div for flex spacing
+                
+                const nextBtn = nextLessonId
+                    ? `<button onclick="app.loadLesson('${nextLessonId}')" class="px-5 py-2.5 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition font-medium flex items-center gap-2 shadow-md hover:shadow-lg">Next Lesson <i class="fas fa-chevron-right"></i></button>`
+                    : `<button onclick="app.loadOverview()" class="px-5 py-2.5 rounded-lg bg-green-600 text-white hover:bg-green-700 transition font-medium flex items-center gap-2 shadow-md hover:shadow-lg"><i class="fas fa-check-circle"></i> Finish Course</button>`;
+
+                this.elements.contentContainer.innerHTML = `
+                    <div class="mb-6 flex items-center text-sm text-gray-500 font-medium">
+                        <span class="cursor-pointer hover:text-indigo-600 transition" onclick="app.loadOverview()">Course Home</span>
+                        <i class="fas fa-chevron-right mx-3 text-xs"></i>
+                        <span class="text-gray-800">${currentLesson.title}</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6">${currentLesson.title}</h1>
+                    
+                    ${videoPlaceholder}
+
+                    <div class="prose max-w-none mb-12">
+                        ${formattedContent}
+                    </div>
+
+                    <div class="mt-12 pt-6 border-t border-gray-200 flex items-center justify-between">
+                        ${prevBtn}
+                        ${nextBtn}
+                    </div>
+                `;
+                
+                // Scroll to top of content
+                this.elements.contentContainer.parentElement.scrollTo(0,0);
+            }
+        };
+
+        // Initialize App on load
+        window.addEventListener('DOMContentLoaded', () => {
+            app.init();
+        });
+    </script>
+</body>
+</html>

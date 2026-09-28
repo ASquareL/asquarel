@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Web Development — Master HTML, CSS, JavaScript, and modern frameworks by building real projects from scratch." />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <title>Web Development — A Square L Academy</title>
+
+    <link rel="icon" type="image/png" href="../../assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="../../assets/images/favicon.png" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/animations.css" />
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/navbar.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/sidebar.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/dashboard.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/footer.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/alert.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/dropdown.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/modal.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/progress.css" />
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/tabs.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard-layout">
+
+        <!-- ========================================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================================= -->
+        <aside class="sidebar" id="dashboard-sidebar" aria-label="Student Navigation">
+
+            <div class="sidebar-header">
+                <a href="../../dashboard.html" class="sidebar-logo" aria-label="Academy Dashboard">
+                    <div class="sidebar-brand">
+                        <span class="sidebar-title">A SQUARE L</span>
+                        <span class="sidebar-subtitle">Academy</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="avatar avatar-xl avatar-gold mb-3">
+                    <span class="avatar-initials">AL</span>
+                </div>
+                <div class="sidebar-name">Ashiru Awal Lawal</div>
+                <div class="sidebar-role">Student</div>
+                <span class="sidebar-level">ASL-2026-001</span>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Student Menu">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="../../dashboard.html" class="sidebar-link">
+                            <i class="fa-solid fa-home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../index.html" class="sidebar-link active" aria-current="page">
+                            <i class="fa-solid fa-book"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../../profile.html" class="sidebar-link">
+                            <i class="fa-solid fa-user"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../../settings.html" class="sidebar-link">
+                            <i class="fa-solid fa-cog"></i>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-progress">
+                <div class="sidebar-progress-title">Web Dev Progress</div>
+                <div class="sidebar-progress-value">42%</div>
+                <div class="sidebar-progress-bar">
+                    <div class="sidebar-progress-fill" style="width: 42%"></div>
+                </div>
+            </div>
+
+            <div class="sidebar-mission">
+                <h4>Daily Mission</h4>
+                <p>Complete 1 lesson today to keep your learning streak alive.</p>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../../login.html" class="sidebar-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- ========================================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ========================================= -->
+        <main id="main-content" class="dashboard-content">
+
+            <!-- ========================================= -->
+            <!-- HEADER ROW -->
+            <!-- ========================================= -->
+            <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
+
+                <div class="d-flex align-center gap-3">
+                    <button
+                        class="mobile-toggle"
+                        type="button"
+                        aria-label="Toggle Sidebar"
+                        aria-expanded="false"
+                        aria-controls="dashboard-sidebar"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div>
+                        <div class="d-flex align-center gap-2 mb-1">
+                            <a href="../index.html" class="text-muted">
+                                <i class="fa-solid fa-arrow-left"></i> All Courses
+                            </a>
+                        </div>
+                        <h1 class="mb-0">Web Development</h1>
+                    </div>
+                </div>
+
+                <div class="d-flex align-center gap-2">
+                    <button
+                        class="btn btn-outline btn-sm"
+                        type="button"
+                        data-theme-toggle
+                        aria-label="Toggle Theme"
+                    >
+                        Theme
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- HERO CARD -->
+            <!-- ========================================= -->
+            <section class="card bg-sheen-gold mb-5">
+                <div class="card-body">
+
+                    <div class="grid grid-2">
+
+                        <!-- LEFT — Identity -->
+                        <div>
+
+                            <div class="avatar avatar-xl avatar-gold mb-4">
+                                <i class="fa-solid fa-code fa-3x text-gold"></i>
+                            </div>
+
+                            <h2 class="mb-3">Web Development</h2>
+
+                            <p class="mb-4">
+                                Master HTML, CSS, JavaScript, and modern frameworks by building real projects from scratch. No prior experience required.
+                            </p>
+
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="badge">52 Lessons</span>
+                                <span class="badge">6 Modules</span>
+                                <span class="badge">Beginner</span>
+                                <span class="badge badge-success">Certificate</span>
+                            </div>
+
+                            <div class="progress mb-4">
+                                <div class="progress-header">
+                                    <span class="progress-title">Your Progress</span>
+                                    <span class="progress-value">42%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 42%"></div>
+                                </div>
+                            </div>
+
+                            <a href="lessons/lesson-19.html" class="btn btn-primary btn-lg">
+                                Continue Learning <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                        <!-- RIGHT — At a glance -->
+                        <div>
+
+                            <h3 class="mb-4">At a Glance</h3>
+
+                            <div class="d-flex flex-column gap-4">
+
+                                <div class="d-flex align-center gap-3">
+                                    <div class="avatar avatar-sm avatar-gold">
+                                        <i class="fa-solid fa-book-open"></i>
+                                    </div>
+                                    <div>
+                                        <strong>52 Lessons</strong>
+                                        <p class="mb-0">Across 6 structured modules</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-center gap-3">
+                                    <div class="avatar avatar-sm avatar-gold">
+                                        <i class="fa-solid fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <strong>~42 hours</strong>
+                                        <p class="mb-0">At your own pace</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-center gap-3">
+                                    <div class="avatar avatar-sm avatar-gold">
+                                        <i class="fa-solid fa-code"></i>
+                                    </div>
+                                    <div>
+                                        <strong>12 projects</strong>
+                                        <p class="mb-0">Real portfolio pieces</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-center gap-3">
+                                    <div class="avatar avatar-sm avatar-gold">
+                                        <i class="fa-solid fa-certificate"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Certificate</strong>
+                                        <p class="mb-0">On completion</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-center gap-3">
+                                    <div class="avatar avatar-sm avatar-gold">
+                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                                    </div>
+                                    <div>
+                                        <strong>Phone-friendly</strong>
+                                        <p class="mb-0">Learn from any device</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- WHAT YOU'LL LEARN -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">What You'll Learn</h2>
+
+            <div class="grid grid-2 mb-5">
+
+                <div class="d-flex align-start gap-3">
+                    <i class="fa-solid fa-circle-check text-gold"></i>
+                    <p class="mb-0">Build complete websites from scratch using semantic HTML and modern CSS</p>
+                </div>
+
+                <div class="d-flex align-start gap-3">
+                    <i class="fa-solid fa-circle-check text-gold"></i>
+                    <p class="mb-0">Write clean, maintainable JavaScript — from variables to async/await</p>
+                </div>
+
+                <div class="d-flex align-start gap-3">
+                    <i class="fa-solid fa-circle-check text-gold"></i>
+                    <p class="mb-0">Create responsive layouts that work perfectly on phone, tablet, and desktop</p>
+                </div>
+
+                <div class="d-flex align-start gap-3">
+                    <i class="fa-solid fa-circle-check text-gold"></i>
+                    <p class="mb-0">Master DOM manipulation, events, and interactive UI behaviour</p>
+                </div>
+
+                <div class="d-flex align-start gap-3">
+                    <i class="fa-solid fa-circle-check text-gold"></i>
+                    <p class="mb-0">Work with Git, GitHub, and modern developer tools used in real jobs</p>
+                </div>
+
+                <div class="d-flex align-start gap-3">
+                    <i class="fa-solid fa-circle-check text-gold"></i>
+                    <p class="mb-0">Ship real projects to the internet and build a portfolio that gets noticed</p>
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- COURSE CURRICULUM -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Course Curriculum</h2>
+
+            <p class="mb-4">
+                52 lessons organized into 6 modules. Each module builds on the last — progress in order or jump to any topic.
+            </p>
+
+            <div class="d-flex flex-column gap-4 mb-5">
+
+                <!-- Module 1 -->
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center flex-wrap gap-3 mb-3">
+                            <div class="d-flex align-center gap-3">
+                                <div class="avatar avatar-sm avatar-gold">
+                                    <i class="fa-solid fa-html5"></i>
+                                </div>
+                                <div>
+                                    <span class="badge badge-sm mb-1">Module 1</span>
+                                    <h3 class="mb-0">HTML Fundamentals</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex align-center gap-3">
+                                <span class="text-muted">8 lessons · 5h 30m</span>
+                                <span class="badge badge-success">Complete</span>
+                            </div>
+                        </div>
+
+                        <p class="mb-0">
+                            Structure, semantics, forms, accessibility, and the building blocks of every web page.
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- Module 2 -->
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center flex-wrap gap-3 mb-3">
+                            <div class="d-flex align-center gap-3">
+                                <div class="avatar avatar-sm avatar-gold">
+                                    <i class="fa-solid fa-paintbrush"></i>
+                                </div>
+                                <div>
+                                    <span class="badge badge-sm mb-1">Module 2</span>
+                                    <h3 class="mb-0">CSS Fundamentals</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex align-center gap-3">
+                                <span class="text-muted">10 lessons · 7h 15m</span>
+                                <span class="badge badge-success">Complete</span>
+                            </div>
+                        </div>
+
+                        <p class="mb-0">
+                            Selectors, the box model, colors, typography, and styling that scales.
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- Module 3 -->
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center flex-wrap gap-3 mb-3">
+                            <div class="d-flex align-center gap-3">
+                                <div class="avatar avatar-sm avatar-gold">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                </div>
+                                <div>
+                                    <span class="badge badge-sm mb-1">Module 3</span>
+                                    <h3 class="mb-0">CSS Layout &amp; Responsive Design</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex align-center gap-3">
+                                <span class="text-muted">8 lessons · 6h 45m</span>
+                                <span class="badge badge-warning">In Progress</span>
+                            </div>
+                        </div>
+
+                        <p class="mb-0">
+                            Flexbox, Grid, media queries, and building layouts that work on every screen.
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- Module 4 -->
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center flex-wrap gap-3 mb-3">
+                            <div class="d-flex align-center gap-3">
+                                <div class="avatar avatar-sm avatar-gold">
+                                    <i class="fa-brands fa-js"></i>
+                                </div>
+                                <div>
+                                    <span class="badge badge-sm mb-1">Module 4</span>
+                                    <h3 class="mb-0">JavaScript Fundamentals</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex align-center gap-3">
+                                <span class="text-muted">10 lessons · 8h 20m</span>
+                                <span class="badge">Not Started</span>
+                            </div>
+                        </div>
+
+                        <p class="mb-0">
+                            Variables, functions, arrays, objects, control flow, and how to think like a programmer.
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- Module 5 -->
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center flex-wrap gap-3 mb-3">
+                            <div class="d-flex align-center gap-3">
+                                <div class="avatar avatar-sm avatar-gold">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <div>
+                                    <span class="badge badge-sm mb-1">Module 5</span>
+                                    <h3 class="mb-0">Advanced JavaScript</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex align-center gap-3">
+                                <span class="text-muted">8 lessons · 7h 10m</span>
+                                <span class="badge">Not Started</span>
+                            </div>
+                        </div>
+
+                        <p class="mb-0">
+                            DOM manipulation, events, async/await, fetch API, and building interactive interfaces.
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- Module 6 -->
+                <article class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-between align-center flex-wrap gap-3 mb-3">
+                            <div class="d-flex align-center gap-3">
+                                <div class="avatar avatar-sm avatar-gold">
+                                    <i class="fa-solid fa-rocket"></i>
+                                </div>
+                                <div>
+                                    <span class="badge badge-sm mb-1">Module 6</span>
+                                    <h3 class="mb-0">Modern Workflow &amp; Deployment</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex align-center gap-3">
+                                <span class="text-muted">8 lessons · 7h 00m</span>
+                                <span class="badge">Not Started</span>
+                            </div>
+                        </div>
+
+                        <p class="mb-0">
+                            Git, GitHub, package managers, build tools, and shipping real projects to production.
+                        </p>
+
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- WHAT YOU'LL BUILD -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">What You'll Build</h2>
+
+            <div class="grid grid-3 mb-5">
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="avatar avatar-md avatar-gold mb-4">
+                            <i class="fa-solid fa-id-card fa-2x text-gold"></i>
+                        </div>
+                        <h3 class="mb-2">Personal Portfolio</h3>
+                        <p class="mb-0">A responsive site that showcases your skills, projects, and contact information.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="avatar avatar-md avatar-gold mb-4">
+                            <i class="fa-solid fa-list-check fa-2x text-gold"></i>
+                        </div>
+                        <h3 class="mb-2">Task Manager App</h3>
+                        <p class="mb-0">An interactive task tracker with add, complete, delete, and filter features.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <div class="avatar avatar-md avatar-gold mb-4">
+                            <i class="fa-solid fa-cloud-sun fa-2x text-gold"></i>
+                        </div>
+                        <h3 class="mb-2">Weather Dashboard</h3>
+                        <p class="mb-0">A real API-powered app that fetches live weather data and renders it beautifully.</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- REQUIREMENTS -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Requirements</h2>
+
+            <div class="widget mb-5">
+                <ul class="d-flex flex-column gap-3">
+                    <li class="d-flex align-start gap-3">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span>No prior programming experience needed — we start from zero</span>
+                    </li>
+                    <li class="d-flex align-start gap-3">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span>A phone, tablet, or laptop with internet access</span>
+                    </li>
+                    <li class="d-flex align-start gap-3">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span>Consistency — 30 minutes a day beats 5 hours once a week</span>
+                    </li>
+                    <li class="d-flex align-start gap-3">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span>Curiosity and willingness to make mistakes (that's how you learn)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ========================================= -->
+            <!-- YOUR MENTOR -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Your Mentor</h2>
+
+            <div class="grid grid-2 mb-5">
+
+                <article class="card profile-card">
+                    <div class="profile-avatar">
+                        <img src="../../assets/images/founder.png" alt="Ashiru Awal Lawal — Course Mentor" />
+                    </div>
+                    <h3 class="profile-name">Ashiru Awal Lawal</h3>
+                    <p class="profile-role">Founder &amp; Lead Mentor</p>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <p class="mb-3">
+                            Ashiru Awal Lawal is a software engineer and Business Relationship Manager who has trained hundreds of students and built production systems across the region.
+                        </p>
+                        <p class="mb-3">
+                            He teaches this track himself — bringing real project experience, honest industry perspective, and a straightforward teaching style that beginners respond to.
+                        </p>
+                        <p class="mb-0">
+                            His philosophy: teach what actually gets used in the workplace, skip the fluff, and meet students where they are.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- FAQ -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+
+            <div class="grid grid-2 mb-5">
+
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Is this course really beginner-friendly?</h3>
+                        <p class="mb-0">Yes. We start from zero. Module 1 assumes no prior experience — the first lesson explains what a web page is, and by lesson 8 you've built one yourself.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">How long does it take to finish?</h3>
+                        <p class="mb-0">At 30 minutes a day, roughly 3 months. At 1 hour a day, about 6 weeks. There's no deadline — go at the pace that fits your life.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Can I learn from my phone?</h3>
+                        <p class="mb-0">Yes. Every lesson is designed to work on a phone. For coding practice, a laptop makes things easier — but it isn't required to start or complete the material.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Do I get a certificate?</h3>
+                        <p class="mb-0">Yes. Complete all 52 lessons and you earn a certificate you can share on LinkedIn, attach to job applications, or add to your portfolio.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">What if I get stuck?</h3>
+                        <p class="mb-0">Every module has discussion threads. Pro and Mentorship plan students get direct access to the mentor. Free plan students have community support.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Will this get me a job?</h3>
+                        <p class="mb-0">It gives you the foundation, real projects for your portfolio, and the skills employers actually ask for. Job outcomes depend on how much you practice and build beyond the course.</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- FINAL CTA -->
+            <!-- ========================================= -->
+            <section class="card bg-sheen-gold">
+                <div class="card-body text-center">
+
+                    <h2 class="mb-3">Ready to continue?</h2>
+
+                    <p class="mb-4">
+                        You're 42% through the course. Keep going — the best projects are ahead.
+                    </p>
+
+                    <div class="btn-group justify-center">
+                        <a href="lessons/lesson-01.html" class="btn btn-primary btn-lg">
+                            Continue Learning <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="../index.html" class="btn btn-outline btn-lg">
+                            All Courses
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Accessibility regions -->
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <!-- ASLDS JS — order matters -->
+    <script src="../../../../packages/aslds/js/app.js"></script>
+    <script src="../../../../packages/aslds/js/navbar.js"></script>
+    <script src="../../../../packages/aslds/js/sidebar.js"></script>
+    <script src="../../../../packages/aslds/js/tabs.js"></script>
+    <script src="../../../../packages/aslds/js/dropdown.js"></script>
+    <script src="../../../../packages/aslds/js/modal.js"></script>
+    <script src="../../../../packages/aslds/js/theme.js"></script>
+    <script src="../../../../packages/aslds/js/search.js"></script>
+    <script src="../../../../packages/aslds/js/animations.js"></script>
+    <script src="../../../../packages/aslds/js/toast.js"></script>
+
+</body>
+</html>
