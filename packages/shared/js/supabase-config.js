@@ -12,7 +12,7 @@
 (function (window, document) {
     'use strict';
 
-    const SUPABASE_URL = 'https://rrojwvllffitnxievob.supabase.co';
+    const SUPABASE_URL = 'https://rrrojvvlflfitnxievob.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJycm9qdnZsZmxmaXRueGlldm9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA2MzI0MDUsImV4cCI6MjEwNjIwODQwNX0.0MX1ZFWnXS59Qf0RU0ZykBNio6viUBSiS1JmA4yMMP0';
 
     if (typeof window.supabase === 'undefined' || !window.supabase.createClient) {
