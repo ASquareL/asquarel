@@ -108,7 +108,7 @@
                 </header>
 
                 <!-- Google Sign-Up (placeholder — requires backend) -->
-                <button type="button" class="btn-google" aria-label="Sign up with Google">
+                <button type="button" class="btn-google" data-auth-google aria-label="Sign up with Google">
                     <i class="fa-brands fa-google"></i>
                     Sign up with Google
                 </button>
@@ -116,7 +116,7 @@
                 <div class="auth-divider">or sign up with email</div>
 
                 <!-- Registration form -->
-                <form class="form" action="#" method="POST" autocomplete="on">
+                <form class="form" data-auth="register" autocomplete="on">
 
                     <div class="form-group">
                         <label for="register-name" class="form-label">Full Name</label>
@@ -189,10 +189,13 @@
     <dialog id="modal-root" aria-label="Application Modal"></dialog>
 
     <!-- ASLDS JS — minimal set for auth pages -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/supabase-config.js"></script>
     <script src="../../packages/aslds/js/app.js"></script>
     <script src="../../packages/aslds/js/theme.js"></script>
     <script src="../../packages/aslds/js/toast.js"></script>
     <script src="../../packages/aslds/js/modal.js"></script>
+    <script src="../../packages/shared/js/auth.js"></script>
 
 </body>
 </html>
