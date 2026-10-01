@@ -1,0 +1,37 @@
+# ============================================================
+# A Square L Innovate — Netlify Routing Rules
+# Order matters: first match wins.
+# ============================================================
+
+# -- Root → public-site homepage -----------------------------
+/                               /apps/public-site/index.html        200
+
+# -- Academy app (must be BEFORE the public-site catch-all) --
+/academy                        /apps/academy/index.html            200
+/academy/                       /apps/academy/index.html            200
+/academy/*                      /apps/academy/:splat                200
+
+# -- ASLDS design system showcase ----------------------------
+/aslds                          /packages/aslds/showcase/index.html 200
+/aslds/                         /packages/aslds/showcase/index.html 200
+/aslds/*                        /packages/aslds/showcase/:splat     200
+
+# -- Public-site pages (all *.html at root level) ------------
+/*.html                         /apps/public-site/:splat.html       200
+
+# -- Public-site clean URLs (no extension) -------------------
+/about                          /apps/public-site/about.html        200
+/products                       /apps/public-site/products.html     200
+/academy-marketing              /apps/public-site/academy.html      200
+/ai                             /apps/public-site/ai.html           200
+/business-os                    /apps/public-site/business-os.html  200
+/developer-portal               /apps/public-site/developer-portal.html 200
+/careers                        /apps/public-site/careers.html      200
+/blog                           /apps/public-site/blog.html         200
+/contact                        /apps/public-site/contact.html      200
+/privacy                        /apps/public-site/privacy.html      200
+/terms                          /apps/public-site/terms.html        200
+/subscribed                     /apps/public-site/subscribed.html   200
+
+# -- Fallback: anything else → public-site -------------------
+/*                              /apps/public-site/:splat            200
