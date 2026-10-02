@@ -61,11 +61,11 @@
 
             <div class="sidebar-user">
                 <div class="avatar avatar-xl avatar-gold mb-3">
-                    <span class="avatar-initials">AL</span>
+                    <span class="avatar-initials" data-user-initials>??</span>
                 </div>
-                <div class="sidebar-name">Ashiru Awal Lawal</div>
+                <div class="sidebar-name" data-user-name>Loading…</div>
                 <div class="sidebar-role">Student</div>
-                <span class="sidebar-level">ASL-2026-001</span>
+                <span class="sidebar-level" data-user-reg>—</span>
             </div>
 
             <nav class="sidebar-nav" aria-label="Student Menu">
@@ -99,9 +99,9 @@
 
             <div class="sidebar-progress">
                 <div class="sidebar-progress-title">Overall Progress</div>
-                <div class="sidebar-progress-value">42%</div>
+                <div class="sidebar-progress-value" data-sidebar-progress-value>0%</div>
                 <div class="sidebar-progress-bar">
-                    <div class="sidebar-progress-fill" style="width: 42%"></div>
+                    <div class="sidebar-progress-fill" style="width: 0%" data-sidebar-progress-fill></div>
                 </div>
             </div>
 
@@ -111,7 +111,7 @@
             </div>
 
             <div class="sidebar-footer">
-                <a href="../login.html" class="sidebar-link">
+                <a href="#" class="sidebar-link" data-signout>
                     <i class="fa-solid fa-right-from-bracket"></i>
                     Logout
                 </a>
@@ -161,78 +161,33 @@
             <!-- ========================================= -->
             <h2 class="mb-4">Your Courses</h2>
 
-            <div class="grid grid-3 mb-5">
+            <div class="grid grid-3 mb-5" data-list="enrolled-courses"></div>
 
-                <article class="card">
-                    <div class="card-body">
-
-                        <div class="d-flex justify-between align-center mb-4">
-                            <div class="avatar avatar-md avatar-gold">
-                                <i class="fa-solid fa-code fa-2x text-gold"></i>
-                            </div>
-                            <span class="badge badge-warning">In Progress</span>
-                        </div>
-
-                        <h3 class="mb-3">Web Development</h3>
-                        <p class="mb-4">Master HTML, CSS, JavaScript, and modern frameworks by building real projects from scratch.</p>
-
-                        <div class="progress mb-4">
-                            <div class="progress-header">
-                                <span class="progress-title">Progress</span>
-                                <span class="progress-value">42%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 42%"></div>
-                            </div>
-                        </div>
-
-                        <a href="web-development/index.html" class="btn btn-primary btn-block">
-                            Continue Learning <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
+            <div data-empty="enrolled-courses" hidden class="mb-5">
+                <div class="widget text-center py-5">
+                    <div class="avatar avatar-lg avatar-gold mb-4 mx-auto">
+                        <i class="fa-solid fa-book-open fa-2x text-gold"></i>
                     </div>
-                </article>
+                    <h3 class="mb-2">You haven't enrolled yet</h3>
+                    <p class="mb-4">Pick a course below and start your learning journey.</p>
+                </div>
+            </div>
 
-                <article class="card">
-                    <div class="card-body">
+            <!-- ========================================= -->
+            <!-- EXPLORE COURSES -->
+            <!-- ========================================= -->
+            <h2 class="mb-4">Explore More Courses</h2>
 
-                        <div class="d-flex justify-between align-center mb-4">
-                            <div class="avatar avatar-md avatar-gold">
-                                <i class="fa-brands fa-bitcoin fa-2x text-gold"></i>
-                            </div>
-                            <span class="badge">Not Started</span>
-                        </div>
+            <div class="grid grid-3 mb-5" data-list="available-courses"></div>
 
-                        <h3 class="mb-3">Crypto &amp; Blockchain</h3>
-                        <p class="mb-4">Understand blockchain fundamentals, wallet safety, DEX trading, and decentralized finance.</p>
-
-                        <a href="crypto-blockchain/index.html" class="btn btn-outline btn-block">
-                            Start Course <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
+            <div data-empty="available-courses" hidden class="mb-5">
+                <div class="widget text-center py-5">
+                    <div class="avatar avatar-lg avatar-gold mb-4 mx-auto">
+                        <i class="fa-solid fa-trophy fa-2x text-gold"></i>
                     </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-body">
-
-                        <div class="d-flex justify-between align-center mb-4">
-                            <div class="avatar avatar-md avatar-gold">
-                                <i class="fa-solid fa-pen-ruler fa-2x text-gold"></i>
-                            </div>
-                            <span class="badge">Not Started</span>
-                        </div>
-
-                        <h3 class="mb-3">Smartphone Graphic Design</h3>
-                        <p class="mb-4">Create premium flyers, logos, and brand visuals using just your mobile phone.</p>
-
-                        <a href="smartphone-graphic-design/index.html" class="btn btn-outline btn-block">
-                            Start Course <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-                </article>
-
+                    <h3 class="mb-2">You're enrolled in every course</h3>
+                    <p class="mb-0">Nice work — keep learning and unlock those certificates.</p>
+                </div>
             </div>
 
             <!-- ========================================= -->
@@ -286,17 +241,23 @@
     <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
     <dialog id="modal-root" aria-label="Application Modal"></dialog>
 
-    <!-- ASLDS JS — order matters -->
+    <!-- Supabase SDK + config FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../packages/shared/js/supabase-config.js"></script>
+
+    <!-- ASLDS runtime -->
     <script src="../../../packages/aslds/js/app.js"></script>
-    <script src="../../../packages/aslds/js/navbar.js"></script>
     <script src="../../../packages/aslds/js/sidebar.js"></script>
     <script src="../../../packages/aslds/js/tabs.js"></script>
     <script src="../../../packages/aslds/js/dropdown.js"></script>
     <script src="../../../packages/aslds/js/modal.js"></script>
     <script src="../../../packages/aslds/js/theme.js"></script>
-    <script src="../../../packages/aslds/js/search.js"></script>
     <script src="../../../packages/aslds/js/animations.js"></script>
     <script src="../../../packages/aslds/js/toast.js"></script>
+
+    <!-- Auth + page logic -->
+    <script src="../../../packages/shared/js/auth.js"></script>
+    <script src="../../../packages/shared/js/courses.js"></script>
 
 </body>
 </html>
