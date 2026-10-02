@@ -11,7 +11,6 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <link rel="apple-touch-icon" href="assets/images/favicon.png" />
 
-    <!-- Core CSS -->
     <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
     <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
     <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
@@ -19,7 +18,6 @@
     <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
     <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
 
-    <!-- Component CSS -->
     <link rel="stylesheet" href="../../packages/aslds/css/components/navbar.css" />
     <link rel="stylesheet" href="../../packages/aslds/css/components/sidebar.css" />
     <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
@@ -45,9 +43,6 @@
 
     <div class="dashboard-layout">
 
-        <!-- ========================================= -->
-        <!-- SIDEBAR -->
-        <!-- ========================================= -->
         <aside class="sidebar" id="dashboard-sidebar" aria-label="Student Navigation">
 
             <div class="sidebar-header">
@@ -61,37 +56,33 @@
 
             <div class="sidebar-user">
                 <div class="avatar avatar-xl avatar-gold mb-3">
-                    <span class="avatar-initials">AL</span>
+                    <span class="avatar-initials" data-user-initials>??</span>
                 </div>
-                <div class="sidebar-name">Ashiru Awal Lawal</div>
+                <div class="sidebar-name" data-user-name>Loading…</div>
                 <div class="sidebar-role">Student</div>
-                <span class="sidebar-level">ASL-2026-001</span>
+                <span class="sidebar-level" data-user-reg>—</span>
             </div>
 
             <nav class="sidebar-nav" aria-label="Student Menu">
                 <ul class="sidebar-menu">
                     <li class="sidebar-item">
                         <a href="dashboard.html" class="sidebar-link">
-                            <i class="fa-solid fa-home"></i>
-                            Dashboard
+                            <i class="fa-solid fa-home"></i> Dashboard
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="courses/index.html" class="sidebar-link">
-                            <i class="fa-solid fa-book"></i>
-                            Courses
+                            <i class="fa-solid fa-book"></i> Courses
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="profile.html" class="sidebar-link">
-                            <i class="fa-solid fa-user"></i>
-                            Profile
+                            <i class="fa-solid fa-user"></i> Profile
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="settings.html" class="sidebar-link active" aria-current="page">
-                            <i class="fa-solid fa-cog"></i>
-                            Settings
+                            <i class="fa-solid fa-cog"></i> Settings
                         </a>
                     </li>
                 </ul>
@@ -99,9 +90,9 @@
 
             <div class="sidebar-progress">
                 <div class="sidebar-progress-title">Overall Progress</div>
-                <div class="sidebar-progress-value">42%</div>
+                <div class="sidebar-progress-value" data-sidebar-progress-value>0%</div>
                 <div class="sidebar-progress-bar">
-                    <div class="sidebar-progress-fill" style="width: 42%"></div>
+                    <div class="sidebar-progress-fill" style="width: 0%" data-sidebar-progress-fill></div>
                 </div>
             </div>
 
@@ -111,31 +102,19 @@
             </div>
 
             <div class="sidebar-footer">
-                <a href="login.html" class="sidebar-link">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    Logout
+                <a href="#" class="sidebar-link" data-signout>
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
                 </a>
             </div>
 
         </aside>
 
-        <!-- ========================================= -->
-        <!-- MAIN CONTENT -->
-        <!-- ========================================= -->
         <main id="main-content" class="dashboard-content">
 
-            <!-- ========================================= -->
-            <!-- HEADER ROW -->
-            <!-- ========================================= -->
             <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
 
                 <div class="d-flex align-center gap-3">
-                    <button
-                        class="mobile-toggle"
-                        type="button"
-                        aria-label="Toggle Sidebar"
-                        aria-expanded="false"
-                    >
+                    <button class="mobile-toggle" type="button" aria-label="Toggle Sidebar" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -148,25 +127,17 @@
                 </div>
 
                 <div class="d-flex align-center gap-2">
-                    <button
-                        class="btn btn-outline btn-sm"
-                        type="button"
-                        data-theme-toggle
-                        aria-label="Toggle Theme"
-                    >
+                    <button class="btn btn-outline btn-sm" type="button" data-theme-toggle aria-label="Toggle Theme">
                         Theme
                     </button>
 
-                    <button class="btn btn-primary btn-sm" type="button">
+                    <button class="btn btn-primary btn-sm" type="button" data-save>
                         <i class="fa-solid fa-check"></i> Save Changes
                     </button>
                 </div>
 
             </div>
 
-            <!-- ========================================= -->
-            <!-- TABS -->
-            <!-- ========================================= -->
             <div class="tabs">
 
                 <div class="tab-list" role="tablist">
@@ -184,9 +155,7 @@
                     </button>
                 </div>
 
-                <!-- ========================================= -->
                 <!-- TAB 1 — ACCOUNT -->
-                <!-- ========================================= -->
                 <div class="tab-content is-active" role="tabpanel">
 
                     <div class="widget mb-4">
@@ -197,23 +166,12 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label" for="settings-name">Full Name</label>
-                                    <input
-                                        id="settings-name"
-                                        class="form-control"
-                                        type="text"
-                                        value="Ashiru Awal Lawal"
-                                    />
+                                    <input id="settings-name" class="form-control" type="text" data-field="full_name" />
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label" for="settings-reg">Registration Number</label>
-                                    <input
-                                        id="settings-reg"
-                                        class="form-control"
-                                        type="text"
-                                        value="ASL-2026-001"
-                                        readonly
-                                    />
+                                    <input id="settings-reg" class="form-control" type="text" readonly data-user-reg value="" />
                                     <p class="form-text">Assigned by the Academy. Cannot be changed.</p>
                                 </div>
                             </div>
@@ -221,42 +179,24 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label" for="settings-email">Email Address</label>
-                                    <input
-                                        id="settings-email"
-                                        class="form-control"
-                                        type="email"
-                                        value="ashiru@example.com"
-                                    />
+                                    <input id="settings-email" class="form-control" type="email" data-field="email" readonly />
+                                    <p class="form-text">Contact support to change your email.</p>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label" for="settings-phone">Phone Number</label>
-                                    <input
-                                        id="settings-phone"
-                                        class="form-control"
-                                        type="tel"
-                                        value="+234 800 000 0000"
-                                    />
+                                    <input id="settings-phone" class="form-control" type="tel" data-field="phone" placeholder="+234..." />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="settings-location">Location</label>
-                                <input
-                                    id="settings-location"
-                                    class="form-control"
-                                    type="text"
-                                    value="Kano, Nigeria"
-                                />
+                                <input id="settings-location" class="form-control" type="text" data-field="location" placeholder="City, Country" />
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="settings-bio">Bio</label>
-                                <textarea
-                                    id="settings-bio"
-                                    class="form-control"
-                                    placeholder="Tell us a bit about yourself..."
-                                >I'm a student at A Square L Academy, passionate about web development and blockchain technology.</textarea>
+                                <textarea id="settings-bio" class="form-control" data-field="bio" placeholder="Tell us a bit about yourself..."></textarea>
                                 <p class="form-text">A short introduction visible to mentors.</p>
                             </div>
 
@@ -265,9 +205,7 @@
 
                 </div>
 
-                <!-- ========================================= -->
                 <!-- TAB 2 — NOTIFICATIONS -->
-                <!-- ========================================= -->
                 <div class="tab-content" role="tabpanel">
 
                     <div class="widget mb-4">
@@ -281,7 +219,7 @@
                                     <p class="mb-0">New lessons, module releases, and curriculum changes.</p>
                                 </div>
                                 <label class="switch">
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" data-pref="email_course_updates" />
                                     <span class="slider"></span>
                                 </label>
                             </div>
@@ -292,7 +230,7 @@
                                     <p class="mb-0">A summary of your learning activity each Monday.</p>
                                 </div>
                                 <label class="switch">
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" data-pref="email_weekly_digest" />
                                     <span class="slider"></span>
                                 </label>
                             </div>
@@ -303,7 +241,7 @@
                                     <p class="mb-0">Celebrate when you unlock badges and certificates.</p>
                                 </div>
                                 <label class="switch">
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" data-pref="email_achievements" />
                                     <span class="slider"></span>
                                 </label>
                             </div>
@@ -322,7 +260,7 @@
                                     <p class="mb-0">Direct messages from your assigned mentor.</p>
                                 </div>
                                 <label class="switch">
-                                    <input type="checkbox" checked />
+                                    <input type="checkbox" data-pref="email_mentor_messages" />
                                     <span class="slider"></span>
                                 </label>
                             </div>
@@ -333,7 +271,7 @@
                                     <p class="mb-0">Academy-wide news, events, and cohort updates.</p>
                                 </div>
                                 <label class="switch">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" data-pref="email_community_announcements" />
                                     <span class="slider"></span>
                                 </label>
                             </div>
@@ -344,7 +282,7 @@
                                     <p class="mb-0">Promotions, new track launches, and offers.</p>
                                 </div>
                                 <label class="switch">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" data-pref="email_marketing" />
                                     <span class="slider"></span>
                                 </label>
                             </div>
@@ -354,9 +292,7 @@
 
                 </div>
 
-                <!-- ========================================= -->
                 <!-- TAB 3 — LEARNING -->
-                <!-- ========================================= -->
                 <div class="tab-content" role="tabpanel">
 
                     <div class="widget mb-4">
@@ -367,23 +303,23 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label" for="settings-goal">Daily Learning Goal</label>
-                                    <select id="settings-goal" class="form-control">
-                                        <option>15 minutes</option>
-                                        <option selected>30 minutes</option>
-                                        <option>1 hour</option>
-                                        <option>2 hours</option>
+                                    <select id="settings-goal" class="form-control" data-field="daily_goal_minutes">
+                                        <option value="15">15 minutes</option>
+                                        <option value="30">30 minutes</option>
+                                        <option value="60">1 hour</option>
+                                        <option value="120">2 hours</option>
                                     </select>
                                     <p class="form-text">How much time you aim to study each day.</p>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label" for="settings-time">Preferred Learning Time</label>
-                                    <select id="settings-time" class="form-control">
-                                        <option>Early morning</option>
-                                        <option>Morning</option>
-                                        <option selected>Afternoon</option>
-                                        <option>Evening</option>
-                                        <option>Late night</option>
+                                    <select id="settings-time" class="form-control" data-field="preferred_time">
+                                        <option value="early_morning">Early morning</option>
+                                        <option value="morning">Morning</option>
+                                        <option value="afternoon">Afternoon</option>
+                                        <option value="evening">Evening</option>
+                                        <option value="late_night">Late night</option>
                                     </select>
                                     <p class="form-text">When you usually have the most focus.</p>
                                 </div>
@@ -392,21 +328,21 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label" for="settings-timezone">Timezone</label>
-                                    <select id="settings-timezone" class="form-control">
-                                        <option selected>Africa/Lagos (WAT)</option>
-                                        <option>Africa/Cairo (EET)</option>
-                                        <option>Europe/London (GMT)</option>
-                                        <option>America/New_York (EST)</option>
+                                    <select id="settings-timezone" class="form-control" data-field="preferred_timezone">
+                                        <option value="Africa/Lagos">Africa/Lagos (WAT)</option>
+                                        <option value="Africa/Cairo">Africa/Cairo (EET)</option>
+                                        <option value="Europe/London">Europe/London (GMT)</option>
+                                        <option value="America/New_York">America/New_York (EST)</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label" for="settings-language">Preferred Language</label>
-                                    <select id="settings-language" class="form-control">
-                                        <option selected>English</option>
-                                        <option>Hausa</option>
-                                        <option>Arabic</option>
-                                        <option>French</option>
+                                    <select id="settings-language" class="form-control" data-field="preferred_language">
+                                        <option value="en">English</option>
+                                        <option value="ha">Hausa</option>
+                                        <option value="ar">Arabic</option>
+                                        <option value="fr">French</option>
                                     </select>
                                 </div>
                             </div>
@@ -422,7 +358,7 @@
                         <div class="d-flex flex-column gap-3">
 
                             <label class="radio">
-                                <input type="radio" name="difficulty" />
+                                <input type="radio" name="difficulty" value="beginner" />
                                 <span>
                                     <strong>Beginner</strong>
                                     <span class="d-block">Slow-paced, detailed explanations, guided exercises.</span>
@@ -430,7 +366,7 @@
                             </label>
 
                             <label class="radio">
-                                <input type="radio" name="difficulty" checked />
+                                <input type="radio" name="difficulty" value="intermediate" />
                                 <span>
                                     <strong>Intermediate</strong>
                                     <span class="d-block">Balanced pace with hands-on practice and challenges.</span>
@@ -438,7 +374,7 @@
                             </label>
 
                             <label class="radio">
-                                <input type="radio" name="difficulty" />
+                                <input type="radio" name="difficulty" value="advanced" />
                                 <span>
                                     <strong>Advanced</strong>
                                     <span class="d-block">Fast-paced, real-world projects, minimal hand-holding.</span>
@@ -450,9 +386,7 @@
 
                 </div>
 
-                <!-- ========================================= -->
                 <!-- TAB 4 — SECURITY -->
-                <!-- ========================================= -->
                 <div class="tab-content" role="tabpanel">
 
                     <div class="widget mb-4">
@@ -462,105 +396,46 @@
 
                             <div class="form-group">
                                 <label class="form-label" for="settings-current-pass">Current Password</label>
-                                <input
-                                    id="settings-current-pass"
-                                    class="form-control"
-                                    type="password"
-                                    placeholder="Enter your current password"
-                                    autocomplete="current-password"
-                                />
+                                <input id="settings-current-pass" class="form-control" type="password"
+                                       data-password="current" autocomplete="current-password" />
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label" for="settings-new-pass">New Password</label>
-                                    <input
-                                        id="settings-new-pass"
-                                        class="form-control"
-                                        type="password"
-                                        placeholder="At least 8 characters"
-                                        autocomplete="new-password"
-                                    />
+                                    <input id="settings-new-pass" class="form-control" type="password"
+                                           data-password="new" placeholder="At least 8 characters"
+                                           autocomplete="new-password" />
                                     <p class="form-text">Mix letters, numbers, and symbols.</p>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label" for="settings-confirm-pass">Confirm New Password</label>
-                                    <input
-                                        id="settings-confirm-pass"
-                                        class="form-control"
-                                        type="password"
-                                        placeholder="Repeat your new password"
-                                        autocomplete="new-password"
-                                    />
+                                    <input id="settings-confirm-pass" class="form-control" type="password"
+                                           data-password="confirm" autocomplete="new-password" />
                                 </div>
+                            </div>
+
+                            <div>
+                                <button class="btn btn-primary" type="button" data-password-submit>
+                                    <i class="fa-solid fa-key"></i> Update Password
+                                </button>
                             </div>
 
                         </form>
                     </div>
 
-                    <div class="widget mb-4">
-                        <h2 class="widget-title">Two-Factor Authentication</h2>
-
-                        <div class="d-flex justify-between align-center gap-4">
-                            <div>
-                                <strong>Authenticator app</strong>
-                                <p class="mb-0">Add an extra layer of security to your account.</p>
-                            </div>
-                            <label class="switch">
-                                <input type="checkbox" />
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="widget mb-4">
-                        <h2 class="widget-title">Active Sessions</h2>
-
-                        <div class="d-flex flex-column gap-4">
-
-                            <div class="d-flex justify-between align-center gap-4">
-                                <div class="d-flex align-center gap-3">
-                                    <div class="avatar avatar-sm avatar-gold">
-                                        <i class="fa-solid fa-desktop"></i>
-                                    </div>
-                                    <div>
-                                        <strong>Chrome · Windows</strong>
-                                        <p class="mb-0">Kano, Nigeria</p>
-                                    </div>
-                                </div>
-                                <span class="badge badge-success">Current</span>
-                            </div>
-
-                            <div class="d-flex justify-between align-center gap-4">
-                                <div class="d-flex align-center gap-3">
-                                    <div class="avatar avatar-sm avatar-gold">
-                                        <i class="fa-solid fa-mobile-screen-button"></i>
-                                    </div>
-                                    <div>
-                                        <strong>Mobile Safari · iPhone</strong>
-                                        <p class="mb-0">Kano, Nigeria</p>
-                                    </div>
-                                </div>
-                                <button class="btn btn-outline btn-sm" type="button">
-                                    Revoke
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
                     <div class="widget">
-                        <h2 class="widget-title">Danger Zone</h2>
+                        <h2 class="widget-title">Account</h2>
 
                         <div class="d-flex justify-between align-center gap-4 flex-wrap">
                             <div>
-                                <strong>Delete Account</strong>
-                                <p class="mb-0">Permanently remove your account and all learning data. This cannot be undone.</p>
+                                <strong>Need to delete your account?</strong>
+                                <p class="mb-0">Contact support and we'll handle it manually — this keeps your data safe from accidental deletion.</p>
                             </div>
-                            <button class="btn btn-danger" type="button">
-                                <i class="fa-solid fa-trash"></i> Delete Account
-                            </button>
+                            <a href="../../apps/public-site/contact.html" class="btn btn-outline">
+                                <i class="fa-solid fa-envelope"></i> Contact Support
+                            </a>
                         </div>
                     </div>
 
@@ -572,22 +447,27 @@
 
     </div>
 
-    <!-- Accessibility regions -->
     <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
     <dialog id="modal-root" aria-label="Application Modal"></dialog>
 
-    <!-- ASLDS JS — canonical order -->
+    <!-- Supabase SDK + config FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/supabase-config.js"></script>
+
+    <!-- ASLDS runtime -->
     <script src="../../packages/aslds/js/app.js"></script>
-    <script src="../../packages/aslds/js/navbar.js"></script>
     <script src="../../packages/aslds/js/sidebar.js"></script>
     <script src="../../packages/aslds/js/tabs.js"></script>
     <script src="../../packages/aslds/js/dropdown.js"></script>
     <script src="../../packages/aslds/js/modal.js"></script>
     <script src="../../packages/aslds/js/theme.js"></script>
-    <script src="../../packages/aslds/js/search.js"></script>
     <script src="../../packages/aslds/js/animations.js"></script>
     <script src="../../packages/aslds/js/toast.js"></script>
+
+    <!-- Auth + page logic -->
+    <script src="../../packages/shared/js/auth.js"></script>
+    <script src="../../packages/shared/js/settings.js"></script>
 
 </body>
 </html>
