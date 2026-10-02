@@ -61,11 +61,11 @@
 
             <div class="sidebar-user">
                 <div class="avatar avatar-xl avatar-gold mb-3">
-                    <span class="avatar-initials">AA</span>
+                    <span class="avatar-initials" data-user-initials>??</span>
                 </div>
-                <div class="sidebar-name">Ashiru A. Lawal</div>
+                <div class="sidebar-name" data-user-name>Loading…</div>
                 <div class="sidebar-role">Student</div>
-                <span class="sidebar-level">ASL-2026-001</span>
+                <span class="sidebar-level" data-user-reg>—</span>
             </div>
 
             <nav class="sidebar-nav" aria-label="Student Menu">
@@ -99,9 +99,9 @@
 
             <div class="sidebar-progress">
                 <div class="sidebar-progress-title">Weekly Goal</div>
-                <div class="sidebar-progress-value">60%</div>
+                <div class="sidebar-progress-value">0%</div>
                 <div class="sidebar-progress-bar">
-                    <div class="sidebar-progress-fill" style="width: 60%"></div>
+                    <div class="sidebar-progress-fill" style="width: 0%"></div>
                 </div>
             </div>
 
@@ -111,7 +111,7 @@
             </div>
 
             <div class="sidebar-footer">
-                <a href="login.html" class="sidebar-link">
+                <a href="#" class="sidebar-link" data-signout>
                     <i class="fa-solid fa-right-from-bracket"></i>
                     Logout
                 </a>
@@ -139,8 +139,8 @@
                     </button>
 
                     <div>
-                        <h1 class="mb-1">Welcome back, Ashiru</h1>
-                        <p class="mb-0">You've studied 4.5 hours this week — great pace.</p>
+                        <h1 class="dashboard-title">Welcome back, <span data-user-firstname>there</span></h1>
+                        <p class="mb-0">Here's your learning overview.</p>
                     </div>
                 </div>
 
@@ -163,15 +163,15 @@
                             aria-label="Account Menu"
                         >
                             <div class="avatar avatar-sm avatar-gold">
-                                <span class="avatar-initials">AA</span>
+                                <span class="avatar-initials" data-user-initials>??</span>
                             </div>
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
 
                         <div class="dropdown-menu">
                             <div class="dropdown-header">
-                                <div class="dropdown-title">Ashiru A. Lawal</div>
-                                <div class="dropdown-subtitle">ashiru@example.com</div>
+                                <div class="dropdown-title" data-user-name>Loading…</div>
+                                <div class="dropdown-subtitle" data-user-email>—</div>
                             </div>
 
                             <ul class="dropdown-list">
@@ -190,7 +190,7 @@
                             <div class="dropdown-divider"></div>
 
                             <div class="dropdown-footer">
-                                <a href="login.html">Sign Out</a>
+                                <a href="#" data-signout>Sign Out</a>
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@
                     <div class="stat-icon">
                         <i class="fa-solid fa-book-open"></i>
                     </div>
-                    <div class="stat-number">3</div>
+                    <div class="stat-number" data-stat="courses-enrolled">0</div>
                     <div class="stat-text">Courses Enrolled</div>
                 </div>
 
@@ -215,23 +215,23 @@
                     <div class="stat-icon">
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
-                    <div class="stat-number">24</div>
-                    <div class="stat-text">Lessons Complete</div>
+                    <div class="stat-number" data-stat="lessons-completed">0</div>
+                    <div class="stat-text">Lessons Completed</div>
                 </div>
 
                 <div class="card stat-card">
                     <div class="stat-icon">
-                        <i class="fa-solid fa-fire"></i>
+                        <i class="fa-solid fa-calendar-check"></i>
                     </div>
-                    <div class="stat-number">12</div>
-                    <div class="stat-text">Day Streak</div>
+                    <div class="stat-number" data-stat="active-days">0</div>
+                    <div class="stat-text">Active Days (30d)</div>
                 </div>
 
                 <div class="card stat-card">
                     <div class="stat-icon">
                         <i class="fa-solid fa-clock"></i>
                     </div>
-                    <div class="stat-number">47.5</div>
+                    <div class="stat-number" data-stat="hours-learned">0.0</div>
                     <div class="stat-text">Hours Learned</div>
                 </div>
 
@@ -240,134 +240,44 @@
             <!-- ========================================= -->
             <!-- CONTINUE LEARNING -->
             <!-- ========================================= -->
-            <h2 class="mb-4">Continue Learning</h2>
+            <div class="widget mb-5">
+                <div class="d-flex justify-between align-center mb-4">
+                    <h2 class="widget-title mb-0">Continue Learning</h2>
+                    <a href="courses/index.html" class="text-gold fw-bold">View All</a>
+                </div>
 
-            <div class="grid grid-3 mb-5">
+                <div class="grid grid-3" data-list="enrolled-courses"></div>
 
-                <article class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-between align-center mb-4">
-                            <div class="avatar avatar-md avatar-gold">
-                                <i class="fa-solid fa-code fa-2x text-gold"></i>
-                            </div>
-                            <span class="badge badge-warning">In Progress</span>
+                <div data-empty="enrolled-courses" hidden>
+                    <div class="text-center py-4">
+                        <div class="avatar avatar-lg avatar-gold mb-4 mx-auto">
+                            <i class="fa-solid fa-book-open fa-2x text-gold"></i>
                         </div>
-
-                        <h3 class="mb-3">Web Development</h3>
-                        <p class="mb-4">HTML, CSS, JavaScript, and modern frameworks.</p>
-
-                        <div class="progress mb-4">
-                            <div class="progress-header">
-                                <span class="progress-title">Progress</span>
-                                <span class="progress-value">42%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 42%"></div>
-                            </div>
-                        </div>
-
-                        <a href="courses/web-development/index.html" class="btn btn-primary btn-block">
-                            Continue <i class="fa-solid fa-arrow-right"></i>
+                        <h3 class="mb-2">You haven't enrolled yet</h3>
+                        <p class="mb-4">Browse our courses and start learning today.</p>
+                        <a href="courses/index.html" class="btn btn-primary">
+                            Browse Courses <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-between align-center mb-4">
-                            <div class="avatar avatar-md avatar-gold">
-                                <i class="fa-brands fa-bitcoin fa-2x text-gold"></i>
-                            </div>
-                            <span class="badge badge-warning">In Progress</span>
-                        </div>
-
-                        <h3 class="mb-3">Crypto &amp; Blockchain</h3>
-                        <p class="mb-4">Wallets, DEX, and DeFi fundamentals.</p>
-
-                        <div class="progress mb-4">
-                            <div class="progress-header">
-                                <span class="progress-title">Progress</span>
-                                <span class="progress-value">18%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 18%"></div>
-                            </div>
-                        </div>
-
-                        <a href="courses/crypto-blockchain/index.html" class="btn btn-primary btn-block">
-                            Continue <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-between align-center mb-4">
-                            <div class="avatar avatar-md avatar-gold">
-                                <i class="fa-solid fa-pen-ruler fa-2x text-gold"></i>
-                            </div>
-                            <span class="badge">Not Started</span>
-                        </div>
-
-                        <h3 class="mb-3">Smartphone Graphic Design</h3>
-                        <p class="mb-4">Flyers, logos, and brand visuals.</p>
-
-                        <a href="courses/smartphone-graphic-design/index.html" class="btn btn-outline btn-block">
-                            Start Course <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
+                </div>
             </div>
 
             <!-- ========================================= -->
             <!-- RECENT ACTIVITY -->
             <!-- ========================================= -->
-            <h2 class="mb-4">Recent Activity</h2>
+            <div class="widget">
+                <h2 class="widget-title">Recent Activity</h2>
 
-            <div class="card mb-5">
-                <div class="card-body">
+                <div class="d-flex flex-column gap-4" data-list="activity"></div>
 
-                    <div class="d-flex align-center gap-3 mb-4">
-                        <div class="avatar avatar-sm avatar-gold">
-                            <i class="fa-solid fa-check"></i>
+                <div data-empty="activity" hidden>
+                    <div class="text-center py-4">
+                        <div class="avatar avatar-lg avatar-gold mb-4 mx-auto">
+                            <i class="fa-solid fa-clock-rotate-left fa-2x text-gold"></i>
                         </div>
-                        <div>
-                            <strong>Completed Lesson 18 in Web Development</strong>
-                            <p class="mb-0">2 hours ago</p>
-                        </div>
+                        <h3 class="mb-2">No activity yet</h3>
+                        <p class="mb-0">Your learning journey will show up here.</p>
                     </div>
-
-                    <div class="d-flex align-center gap-3 mb-4">
-                        <div class="avatar avatar-sm avatar-gold">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                        <div>
-                            <strong>Started the Crypto &amp; Blockchain track</strong>
-                            <p class="mb-0">Yesterday</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-center gap-3 mb-4">
-                        <div class="avatar avatar-sm avatar-gold">
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-                        <div>
-                            <strong>Earned the "Week 3 Streak" badge</strong>
-                            <p class="mb-0">2 days ago</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-center gap-3">
-                        <div class="avatar avatar-sm avatar-gold">
-                            <i class="fa-solid fa-file-circle-check"></i>
-                        </div>
-                        <div>
-                            <strong>Passed quiz: CSS Flexbox Fundamentals</strong>
-                            <p class="mb-0">3 days ago</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
@@ -380,17 +290,23 @@
     <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
     <dialog id="modal-root" aria-label="Application Modal"></dialog>
 
-    <!-- ASLDS JS — order matters -->
+    <!-- Supabase SDK + config FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/supabase-config.js"></script>
+
+    <!-- ASLDS runtime -->
     <script src="../../packages/aslds/js/app.js"></script>
-    <script src="../../packages/aslds/js/navbar.js"></script>
     <script src="../../packages/aslds/js/sidebar.js"></script>
     <script src="../../packages/aslds/js/tabs.js"></script>
     <script src="../../packages/aslds/js/dropdown.js"></script>
     <script src="../../packages/aslds/js/modal.js"></script>
     <script src="../../packages/aslds/js/theme.js"></script>
-    <script src="../../packages/aslds/js/search.js"></script>
     <script src="../../packages/aslds/js/animations.js"></script>
     <script src="../../packages/aslds/js/toast.js"></script>
+
+    <!-- Auth + page logic -->
+    <script src="../../packages/shared/js/auth.js"></script>
+    <script src="../../packages/shared/js/dashboard.js"></script>
 
 </body>
 </html>
