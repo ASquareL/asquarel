@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Edit lesson — A Square L Academy" />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="robots" content="noindex" />
+    <title>Edit Lesson — ASL Admin</title>
+
+    <link rel="icon" type="image/png" href="../academy/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="../academy/assets/images/favicon.png" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/components/sidebar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dashboard.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/table.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/lesson-content.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar" id="dashboard-sidebar" aria-label="Admin Navigation">
+
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <div class="sidebar-brand">
+                        <span class="sidebar-title">ASL</span>
+                        <span class="sidebar-subtitle">Admin</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="avatar avatar-xl avatar-gold mb-3">
+                    <span class="avatar-initials" data-user-initials>??</span>
+                </div>
+                <div class="sidebar-name" data-user-name>Loading…</div>
+                <div class="sidebar-role" data-user-role>admin</div>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Admin Menu">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="index.html" class="sidebar-link">
+                            <i class="fa-solid fa-gauge-high"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="lessons.html" class="sidebar-link active" aria-current="page">
+                            <i class="fa-solid fa-book-open"></i> Lessons
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../academy/dashboard.html" class="sidebar-link">
+                            <i class="fa-solid fa-eye"></i> View Academy
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link" data-signout>
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </div>
+
+        </aside>
+
+        <main id="main-content" class="dashboard-content">
+
+            <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
+
+                <div class="d-flex align-center gap-3">
+                    <button class="mobile-toggle" type="button" aria-label="Toggle Sidebar" aria-expanded="false" aria-controls="dashboard-sidebar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div>
+                        <a href="index.html" data-back-link class="text-muted d-block mb-2">
+                            <i class="fa-solid fa-arrow-left"></i> Back to lessons
+                        </a>
+                        <h1 class="mb-1" data-lesson-title>Loading…</h1>
+                        <p class="mb-0"><small class="text-muted">Slug:</small> <small data-lesson-slug>—</small></p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-center gap-2">
+                    <button class="btn btn-outline btn-sm" type="button" data-theme-toggle aria-label="Toggle Theme">
+                        Theme
+                    </button>
+
+                    <button class="btn btn-primary btn-sm" type="button" data-save-btn>
+                        <i class="fa-solid fa-check"></i> Save Lesson
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="grid grid-2 mb-5">
+
+                <!-- LEFT: Editor -->
+                <div>
+
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">Lesson Details</h2>
+
+                        <div class="form">
+
+                            <div class="form-group">
+                                <label class="form-label" for="lesson-title">Title</label>
+                                <input id="lesson-title" class="form-control" type="text" data-field="title" />
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="lesson-duration">Duration (minutes)</label>
+                                    <input id="lesson-duration" class="form-control" type="number" min="0" data-field="duration_minutes" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="lesson-published">Status</label>
+                                    <label class="checkbox pt-3">
+                                        <input type="checkbox" data-field="published" />
+                                        <span>Published (visible to students)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="lesson-video">YouTube Video ID</label>
+                                <input id="lesson-video" class="form-control" type="text" data-field="video_id"
+                                       placeholder="e.g. dQw4w9WgXcQ" />
+                                <p class="form-text">Just the 11-character ID — not the full URL.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="widget">
+                        <h2 class="widget-title">Lesson Content</h2>
+
+                        <div class="form">
+                            <div class="form-group">
+                                <label class="form-label" for="lesson-content">Written Content (HTML allowed)</label>
+                                <textarea id="lesson-content" class="form-control textarea-code" data-field="content" rows="20"
+                                          placeholder="<p>Write the lesson body here. HTML tags are allowed.</p>"></textarea>
+                                <p class="form-text">Supports HTML — headings, paragraphs, lists, code blocks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT: Preview -->
+                <div>
+
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">Video Preview</h2>
+                        <div data-video-preview>
+                            <div class="text-center text-muted is-empty">
+                                <i class="fa-solid fa-video fa-2x mb-2"></i>
+                                <p class="mb-0">No video yet. Paste a YouTube ID on the left.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget">
+                        <h2 class="widget-title">Tips</h2>
+
+                        <div class="d-flex flex-column gap-3">
+                            <p class="mb-0"><strong>YouTube ID:</strong> From a URL like <code>youtube.com/watch?v=ABC123</code>, the ID is <code>ABC123</code>.</p>
+                            <p class="mb-0"><strong>Content:</strong> You can use HTML. Keep it simple — paragraphs, lists, and <code>&lt;code&gt;</code> blocks.</p>
+                            <p class="mb-0"><strong>Save often:</strong> There's no autosave yet. Click <strong>Save Lesson</strong> before navigating away.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/supabase-config.js"></script>
+
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/sidebar.js"></script>
+    <script src="../../packages/aslds/js/modal.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/animations.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+
+    <script src="../../packages/shared/js/admin.js"></script>
+    <script src="../../packages/shared/js/admin-lesson-edit.js"></script>
+
+</body>
+</html>

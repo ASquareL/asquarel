@@ -402,3 +402,15 @@ select.form-control{
 }
 
 }
+
+
+/* ======================================================
+   CODE TEXTAREA — for admin content editors
+====================================================== */
+.textarea-code {
+    min-height: 400px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+}

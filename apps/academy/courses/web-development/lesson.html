@@ -28,31 +28,7 @@
     <link rel="stylesheet" href="../../../../packages/aslds/css/components/progress.css" />
     <link rel="stylesheet" href="../../../../packages/aslds/css/components/toast.css" />
     <link rel="stylesheet" href="../../../../packages/aslds/css/components/alert.css" />
-
-    <!-- Page-local video CSS — TO MOVE TO ASLDS when a second page needs it -->
-    <style>
-        .video-embed {
-            aspect-ratio: 16 / 9;
-            width: 100%;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            margin-bottom: var(--space-4);
-        }
-        .video-embed iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            display: block;
-        }
-        .video-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-400);
-        }
-    </style>
+    <link rel="stylesheet" href="../../../../packages/aslds/css/components/lesson-content.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -70,7 +46,7 @@
             <!-- ============================================ -->
             <aside class="lesson-sidebar" aria-label="Course Navigation">
 
-                <div class="p-4" style="border-bottom: 1px solid var(--border-color);">
+                <div class="sidebar-header">
                     <a href="../index.html" class="d-flex align-center gap-2 mb-3">
                         <i class="fa-solid fa-arrow-left"></i>
                         <span>Back to course</span>
@@ -78,7 +54,7 @@
                     <strong data-course-title>Loading…</strong>
                 </div>
 
-                <div class="p-4" style="border-bottom: 1px solid var(--border-color);">
+                <div class="sidebar-user">
                     <div class="d-flex justify-between align-center mb-2">
                         <span class="text-muted">Your progress</span>
                         <span class="text-gold fw-bold" data-progress-percent>0%</span>
@@ -89,7 +65,7 @@
                     <small class="text-muted" data-progress-text>0 of 0 complete</small>
                 </div>
 
-                <nav class="p-4" aria-label="Lesson List" data-lesson-list>
+                <nav class="sidebar-nav" aria-label="Lesson List" data-lesson-list>
                     <p class="text-muted">Loading lessons…</p>
                 </nav>
 
@@ -102,15 +78,29 @@
 
                 <div class="d-flex justify-between align-center flex-wrap gap-3 mb-4">
 
-                    <div>
-                        <div class="d-flex align-center gap-2 flex-wrap mb-2">
-                            <span class="text-muted">Lesson <span data-lesson-number>--</span> of <span data-lesson-total>--</span></span>
-                            <span class="text-muted">·</span>
-                            <span class="text-muted"><i class="fa-solid fa-clock"></i> <span data-lesson-duration>--</span></span>
-                            <span class="text-muted">·</span>
-                            <span class="text-muted" data-lesson-module>—</span>
+                    <div class="d-flex align-center gap-3">
+                        <button
+                            class="lesson-mobile-toggle"
+                            type="button"
+                            data-lesson-toggle
+                            aria-label="Toggle lesson list"
+                            aria-expanded="false"
+                        >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <div>
+                            <div class="d-flex align-center gap-2 flex-wrap mb-2">
+                                <span class="text-muted">Lesson <span data-lesson-number>--</span> of <span data-lesson-total>--</span></span>
+                                <span class="text-muted">·</span>
+                                <span class="text-muted"><i class="fa-solid fa-clock"></i> <span data-lesson-duration>--</span></span>
+                                <span class="text-muted">·</span>
+                                <span class="text-muted" data-lesson-module>—</span>
+                            </div>
+                            <span class="badge" data-lesson-status>Loading…</span>
                         </div>
-                        <span class="badge" data-lesson-status>Loading…</span>
                     </div>
 
                     <button
@@ -135,8 +125,7 @@
                     <div class="d-flex flex-column gap-3 mb-5" data-lesson-resources></div>
                 </div>
 
-                <div class="d-flex justify-between align-center flex-wrap gap-3 pt-4" style="border-top: 1px solid var(--border-color);">
-
+                <div class="lesson-actions">
                     <a class="btn btn-outline" data-prev-btn href="#">
                         <i class="fa-solid fa-arrow-left"></i> Previous
                     </a>
@@ -148,10 +137,12 @@
                     <a class="btn btn-primary" data-next-btn href="#">
                         Next <i class="fa-solid fa-arrow-right"></i>
                     </a>
-
                 </div>
 
             </article>
+
+            <!-- Mobile drawer backdrop -->
+            <div class="lesson-backdrop" data-lesson-backdrop></div>
 
         </div>
 
@@ -165,7 +156,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../../../../packages/shared/js/supabase-config.js"></script>
 
-    <!-- ASLDS runtime (minimal — no navbar/sidebar/dropdown/tabs/modal/search) -->
+    <!-- ASLDS runtime (minimal) -->
     <script src="../../../../packages/aslds/js/app.js"></script>
     <script src="../../../../packages/aslds/js/theme.js"></script>
     <script src="../../../../packages/aslds/js/animations.js"></script>

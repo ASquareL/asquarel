@@ -38,7 +38,6 @@
         return el ? el.getAttribute('data-course') : null;
     }
 
-    // ----------------------------------------------------------
     const state = {
         session: null,
         course: null,
@@ -130,7 +129,6 @@
             el.style.width = `${percent}%`;
         });
 
-        // Group lessons by module
         const moduleMap = new Map();
         lessons.forEach(l => {
             const mid = l.module.id;
@@ -150,17 +148,43 @@
         const listEl = document.querySelector('[data-lesson-list]');
         if (!listEl) return;
 
-        listEl.innerHTML = modules.map(m => `
-            <div class="mb-4">
-                <div class="d-flex align-center gap-2 mb-3">
-                    <span class="badge badge-sm">Module ${m.order}</span>
-                    <strong>${escapeHtml(m.title)}</strong>
+        listEl.innerHTML = modules.map(m =>
+            moduleHtml(m, currentLesson.slug, progressMap)
+        ).join('');
+
+        wireModuleToggles();
+    }
+
+    function moduleHtml(m, currentSlug, progressMap) {
+        const isCurrentModule = m.lessons.some(l => l.slug === currentSlug);
+        const allComplete = m.lessons.every(l => progressMap[l.id] === 'completed');
+        const someComplete = m.lessons.some(l => progressMap[l.id] === 'completed');
+
+        let badge = '';
+        if (allComplete) {
+            badge = '<span class="badge badge-sm badge-success">Done</span>';
+        } else if (someComplete) {
+            badge = '<span class="badge badge-sm badge-warning">In Progress</span>';
+        }
+
+        return `
+            <div class="lesson-module ${isCurrentModule ? 'is-expanded' : ''}" data-module>
+                <button class="lesson-module-header" type="button" aria-expanded="${isCurrentModule}">
+                    <div class="lesson-module-info">
+                        <span class="lesson-module-num">Module ${m.order}</span>
+                        <strong class="lesson-module-title">${escapeHtml(m.title)}</strong>
+                    </div>
+                    <div class="lesson-module-meta">
+                        ${badge}
+                        <i class="fa-solid fa-chevron-down lesson-module-chevron"></i>
+                    </div>
+                </button>
+                <div class="lesson-module-lessons">
+                    <ul class="sidebar-menu">
+                        ${m.lessons.map(l => lessonRowHtml(l, currentSlug, progressMap)).join('')}
+                    </ul>
                 </div>
-                <ul class="sidebar-menu">
-                    ${m.lessons.map(l => lessonRowHtml(l, currentLesson.slug, progressMap)).join('')}
-                </ul>
-            </div>
-        `).join('');
+            </div>`;
     }
 
     function lessonRowHtml(lesson, currentSlug, progressMap) {
@@ -184,18 +208,28 @@
                 <a href="?id=${encodeURIComponent(lesson.slug)}"
                    class="sidebar-link ${isCurrent ? 'active' : ''}"
                    ${isCurrent ? 'aria-current="page"' : ''}>
-                    <i class="${icon} ${iconColor}" style="width:20px;text-align:center;"></i>
-                    <span style="min-width:26px;" class="text-muted">${String(lesson.number).padStart(2, '0')}</span>
+                    <i class="${icon} ${iconColor} icon-fixed"></i>
+                    <span class="lesson-num text-muted">${String(lesson.number).padStart(2, '0')}</span>
                     <span>${escapeHtml(lesson.title)}</span>
                 </a>
             </li>`;
+    }
+
+    function wireModuleToggles() {
+        document.querySelectorAll('[data-module] .lesson-module-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const module = header.closest('[data-module]');
+                const isExpanded = module.classList.toggle('is-expanded');
+                header.setAttribute('aria-expanded', String(isExpanded));
+            });
+        });
     }
 
     // ----------------------------------------------------------
     // RENDER — CONTENT
     // ----------------------------------------------------------
     function renderContent() {
-        const { course, lessons, progressMap, currentLesson } = state;
+        const { lessons, progressMap, currentLesson } = state;
         const idx = lessons.findIndex(l => l.id === currentLesson.id);
         const total = lessons.length;
         const prev = idx > 0 ? lessons[idx - 1] : null;
@@ -207,7 +241,6 @@
         setText('[data-lesson-title]', currentLesson.title);
         setText('[data-lesson-module]', currentLesson.module.title);
 
-        // Status badge
         const badge = document.querySelector('[data-lesson-status]');
         const status = progressMap[currentLesson.id] || 'not_started';
         if (badge) {
@@ -223,7 +256,6 @@
             }
         }
 
-        // Video
         const videoEl = document.querySelector('[data-lesson-video]');
         if (videoEl) {
             if (currentLesson.video_id) {
@@ -248,13 +280,11 @@
             }
         }
 
-        // Body
         const bodyEl = document.querySelector('[data-lesson-body]');
         if (bodyEl) {
             bodyEl.innerHTML = currentLesson.content || '<p class="text-muted">Content coming soon. The video above covers this lesson.</p>';
         }
 
-        // Resources
         const resList = document.querySelector('[data-lesson-resources]');
         const resSection = document.querySelector('[data-lesson-resources-section]');
         const resources = Array.isArray(currentLesson.resources) ? currentLesson.resources : [];
@@ -271,7 +301,7 @@
                                 <strong>${escapeHtml(r.name || 'Resource')}</strong>
                                 <p class="mb-0">${escapeHtml(r.size || '')}</p>
                             </div>
-                            <a href="${escapeHtml(r.url || '#')}" class="btn btn-outline btn-sm ml-auto" style="margin-left:auto;" download>
+                            <a href="${escapeHtml(r.url || '#')}" class="btn btn-outline btn-sm ml-auto" download>
                                 <i class="fa-solid fa-download"></i> Download
                             </a>
                         </div>
@@ -280,7 +310,6 @@
             }
         }
 
-        // Prev / Next
         const prevBtn = document.querySelector('[data-prev-btn]');
         const nextBtn = document.querySelector('[data-next-btn]');
 
@@ -307,10 +336,7 @@
             }
         }
 
-        // Complete button
         updateCompleteButton();
-
-        // Page title
         document.title = `Lesson ${String(currentLesson.number).padStart(2, '0')} · ${currentLesson.title} — A Square L Academy`;
     }
 
@@ -345,6 +371,50 @@
                     </a>
                 </div>`;
         }
+    }
+
+    // ----------------------------------------------------------
+    // MOBILE SIDEBAR DRAWER
+    // ----------------------------------------------------------
+    function wireMobileSidebar() {
+        const toggle = document.querySelector('[data-lesson-toggle]');
+        const sidebar = document.querySelector('.lesson-sidebar');
+        const backdrop = document.querySelector('[data-lesson-backdrop]');
+        if (!toggle || !sidebar) return;
+
+        function open() {
+            sidebar.classList.add('is-open');
+            if (backdrop) backdrop.classList.add('is-visible');
+            toggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+            sidebar.classList.remove('is-open');
+            if (backdrop) backdrop.classList.remove('is-visible');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener('click', () => {
+            if (sidebar.classList.contains('is-open')) close(); else open();
+        });
+
+        if (backdrop) backdrop.addEventListener('click', close);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('is-open')) close();
+        });
+
+        sidebar.querySelectorAll('a[href^="?id="]').forEach(a => {
+            a.addEventListener('click', () => {
+                if (window.innerWidth <= 992) close();
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && sidebar.classList.contains('is-open')) close();
+        });
     }
 
     // ----------------------------------------------------------
@@ -436,6 +506,7 @@
         renderSidebar();
         renderContent();
         wireCompleteButton();
+        wireMobileSidebar();
         wireSignOut();
     }
 

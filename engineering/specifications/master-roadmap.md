@@ -719,3 +719,248 @@ No other context needed.
 ================================================================================
 END OF ROADMAP
 ================================================================================
+
+
+
+# A SQUARE L INNOVATE — MASTER ROADMAP
+Version: 3.0
+Date: October 2026
+Purpose: Strategic plan for the whole ecosystem. Handoff document.
+
+================================================================================
+1. VISION
+================================================================================
+
+A Square L Innovate is a Nigerian technology company building:
+  • A serious online learning platform (Academy)
+  • AI-powered tools (planned)
+  • Business operating systems (planned)
+  • A public portfolio and marketing presence
+
+Positioning: "Learn web skills. Ace your JAMB. Build your future."
+Long-term: The place Nigerian students go to learn everything digital.
+
+================================================================================
+2. WHAT'S DONE (as of this update)
+================================================================================
+
+PHASE 1 — FOUNDATION
+  ✅ ASLDS design system (v1.1 Stable)
+       - 17 component CSS files
+       - 11 JS modules
+       - Full showcase documentation
+  ✅ Public site (13 pages)
+  ✅ Netlify build + routing pipeline
+  ✅ Supabase project + full DB schema (21 tables)
+  ✅ Row Level Security on every table
+  ✅ 7 migrations applied
+  ✅ Seed data: 3 courses, 18 modules, 52 lessons, 6 quiz placeholders, 3 plans
+
+PHASE 2 — ACADEMY CORE
+  ✅ Email/password authentication
+  ✅ Register → auto profile + reg number + notification prefs
+  ✅ Login → session persistence
+  ✅ Dashboard (real data)
+  ✅ Profile (real data)
+  ✅ Settings (profile, notifications, learning prefs, password)
+  ✅ Courses index (enrolled + available, enroll button)
+  ✅ Web Development landing page
+  ✅ Data-driven lesson viewer (lesson.html?id=lesson-01)
+  ✅ Lesson progress tracking + auto course completion + auto certificate row
+
+PHASE 3 — ADMIN SYSTEM  ← NEW
+  ✅ Admin role gate (three-layer: URL + login + role check)
+  ✅ Admin login page
+  ✅ Admin dashboard (stats: students, courses, lessons, enrollments)
+  ✅ Lessons list per course
+  ✅ Lesson editor (title, duration, video_id, content, published)
+  ✅ YouTube ID extraction (paste any URL, auto-cleans)
+  ✅ Content edits reflect instantly on student pages
+
+================================================================================
+3. WHAT'S NEXT (in priority order)
+================================================================================
+
+--------------------------------------------------------------------------------
+IMMEDIATE
+--------------------------------------------------------------------------------
+  1. Populate lesson content
+       OWNER: You (via admin panel)
+       - Add video IDs to all 52 Web Dev lessons
+       - Write lesson bodies
+       - Add resources where useful
+       No code needed — the admin panel handles this.
+
+  2. QUIZZES UI
+       WHY: Biggest missing learning feature. Schema is ready.
+       WHAT:
+         - Quiz list per module (already in DB)
+         - Quiz taking page (question-by-question)
+         - Grading via existing submit_quiz_attempt() function
+         - Results page with explanations
+         - Retakes per max_attempts setting
+         - Quiz progress in dashboard
+       DB: Ready — just needs frontend
+       ESTIMATE: 3-4 chat sessions
+
+  3. CERTIFICATE PDF
+       WHY: Completes the reward loop. Certificates exist as DB rows but no PDF.
+       WHAT:
+         - Supabase Edge Function to generate PDF
+         - Certificate viewer page
+         - Public verification page (verify by certificate_number)
+         - Download button on profile
+       ESTIMATE: 2-3 chat sessions
+
+--------------------------------------------------------------------------------
+NEXT (2-3 weeks)
+--------------------------------------------------------------------------------
+  4. CRYPTO + DESIGN COURSE LANDINGS
+       Copy web-development/index.html structure
+       Wire to DB (same pattern as courses.js)
+       Populate first 10 lessons per course
+       ESTIMATE: 1-2 chat sessions
+
+  5. DISCUSSIONS UI
+       Thread list per course/lesson
+       Thread view with replies
+       New thread / reply form
+       Reactions (like, helpful, insightful)
+       DB: Ready
+       ESTIMATE: 2-3 chat sessions
+
+  6. PAYMENTS (Stripe or Paystack)
+       Payment flow for Pro/Mentorship plans
+       Webhook to update subscriptions table
+       Subscription status checks in app
+       DB: plans + subscriptions + transactions ready
+       ESTIMATE: 3-4 chat sessions
+
+--------------------------------------------------------------------------------
+LATER
+--------------------------------------------------------------------------------
+  7. Google OAuth (setup is 30 min, mostly Google Cloud Console config)
+  8. Notifications inbox (bell icon → list of notifications)
+  9. Student analytics page (charts, weak areas, streak calendar)
+  10. Admin: course/module CRUD (currently SQL-only for creating)
+  11. Admin: student management (view, edit roles, refunds)
+  12. Discussion moderation tools
+
+================================================================================
+4. PHASE 4 — JAMB TRAINING (HIGH PRIORITY, HIGH VALUE)
+================================================================================
+
+WHY THIS IS STRATEGIC
+  JAMB = ~1.9 million candidates per year in Nigeria
+  Existing competition is weak (PDFs, low-quality apps)
+  Massive search traffic potential
+  Proven willingness to pay
+
+WHY IT FITS THE ACADEMY
+  The quiz schema already handles 80% of JAMB:
+    quizzes → subject / mock
+    quiz_questions → the question
+    quiz_options → A/B/C/D answers
+    quiz_attempts → practice history
+    quiz_answers → per-question analytics
+
+WHAT'S NEEDED (schema additions)
+  subjects table           English, Mathematics, Physics, Chemistry, Biology, etc.
+  topics table             Per-subject (Algebra, Comprehension, Mechanics...)
+  exam_years               Which year(s) a question appeared
+  difficulty               easy / medium / hard
+  exam_mode                timed vs untimed
+  question_bank            Bulk import existing JAMB questions
+
+FEATURES
+  Practice Mode            Pick subject/topic, self-paced, see explanations
+  Exam Mode                2-hour timed mock, real conditions
+  Analytics                Weak subjects/topics highlighted
+  Question bank by year    JAMB 2015-2025
+  Bookmarks + flashcards
+  Leaderboards (opt-in)
+  Mobile-first design      Most students study on phones
+
+MONETIZATION
+  Free:     50 questions per subject
+  Premium:  ₦2,000/month — full bank + analytics + mock exams
+  Bundled:  Included in Academy Pro plan
+
+ESTIMATE
+  Schema:   1-2 migrations
+  UI:       4-6 chat sessions
+  Content: Bulk import of existing question banks (large data task)
+
+================================================================================
+5. PHASE 5 — AI PLATFORM
+================================================================================
+
+TIMING: After Academy is stable and JAMB is live.
+WHY:    AI monetizes on top of user base + content.
+
+CONCEPT (to be refined)
+  - AI tutor that answers questions about course content
+  - AI-generated quizzes from lesson material
+  - AI essay/assignment review
+  - Personal learning path recommendations
+  - Chat assistant for JAMB prep
+
+TECH
+  Supabase Edge Functions → OpenAI / Anthropic API
+  Rate limiting per user plan
+  Prompt templates stored in DB
+
+ESTIMATE
+  Discovery: 2-3 sessions
+  MVP:       6-8 chat sessions
+
+================================================================================
+6. PHASE 6 — BUSINESS OS
+================================================================================
+
+TIMING: After AI platform proves profitable.
+CONCEPT (to be refined)
+  - ERP-style modules for small businesses
+  - Invoicing, inventory, CRM, reporting
+  - Multi-tenant from day one
+  - Built on same ASLDS + Supabase stack
+
+================================================================================
+7. PHASE 7 — PORTFOLIO + ADMIN TOOLS
+================================================================================
+
+Portfolio site       Marketing for the company's own work
+Admin expansion      Full CMS, user management, analytics
+Business OS admin    Internal tooling
+
+================================================================================
+8. LATER ARCHITECTURE DECISIONS
+================================================================================
+
+When to leave Supabase:
+  Trigger: paying customers + custom business logic + WebSockets/cron needed
+  Path:    Export Postgres → own instance on Railway/Fly.io → rebuild auth
+  Zero data loss — standard SQL export
+
+When to add a build step:
+  Current: plain HTML/CSS/JS (no bundler)
+  Trigger: >20 shared JS files or when import/export becomes necessary
+  Path:    Introduce Vite or esbuild — but not before it's needed
+
+================================================================================
+9. CURRENT STATE — WHERE WE ARE
+================================================================================
+
+  We just finished the Admin System (Phase 3).
+  Next up: content population (you) + Quizzes UI (me).
+
+  The Academy is roughly 60% complete for MVP launch.
+  Missing pieces are: quizzes, certificate PDF, crypto/design landings,
+  payments, and — most importantly — lesson content.
+
+  Once quizzes + certificates + 3 course landings + payments are done,
+  the Academy is launchable. That's roughly 15-20 more chat sessions.
+
+================================================================================
+END OF ROADMAP
+================================================================================

@@ -1022,6 +1022,167 @@ ASSETS:
   apps/academy/courses/{slug}/*.html    → ../../assets/images/…
   apps/academy/courses/{slug}/lessons/* → ../../../assets/images/…
 
+
+  ================================================================================
+LESSON CONTENT (Component — added Oct 2026)
+Source: packages/aslds/css/components/lesson-content.css
+Scope:  Academy lesson pages + admin lesson editor preview + quiz pages.
+        Also contains the quiz UI and lesson-sidebar drawer behavior.
+================================================================================
+
+LESSON BODY — the rendered content area
+--------------------------------------------------------------------------------
+.lesson-body              Reading column (max 72ch) + typography reset
+.lesson-body h2           Section heading (--fs-3xl)
+.lesson-body h3           Subsection heading (--fs-2xl)
+.lesson-body p            Paragraph (inherits from body)
+.lesson-body ul/ol        Lists (padded left)
+.lesson-body code         Inline code (monospace)
+.lesson-body pre          Code block wrapper
+.lesson-body a            Gold link with underline
+
+BLOCKS — used inside .lesson-body
+--------------------------------------------------------------------------------
+.lesson-objectives        Gold-accent block for "What You'll Learn" lists
+.lesson-activity          Gold-bordered hands-on activity block
+.lesson-checklist         Green-checkmark list (no bullets)
+.lesson-figure            Figure wrapper (image + caption)
+.lesson-diagram           Text-based diagram in a bordered box
+
+VIDEO
+--------------------------------------------------------------------------------
+.video-embed              16:9 aspect-ratio iframe wrapper
+.video-placeholder        Fallback content when no video is set
+
+QUIZ UI — for quiz.html + quizzes.html
+--------------------------------------------------------------------------------
+.quiz-shell               Centered content container (max 820px)
+.quiz-meta                Meta info row (questions · pass % · time)
+.quiz-meta-item           One meta item with gold icon
+.quiz-progress            Question progress bar wrapper
+.quiz-progress-header     "Question X of Y" + percentage
+.quiz-question            Question card
+.quiz-question-text       Big question text (--fs-2xl)
+.quiz-options             Vertical stack of options
+.quiz-option              One option — clickable label
+.quiz-option.is-selected  Selected state (or use :has(input:checked))
+.quiz-option-indicator    Radio circle inside option
+.quiz-option-text         Option text
+.quiz-actions             Prev / Submit row (stacks on mobile)
+
+QUIZ RESULTS
+--------------------------------------------------------------------------------
+.quiz-result-hero         Big centered score card
+.quiz-result-score        72px score number (--success | --danger class)
+.quiz-result-score.pass   Green
+.quiz-result-score.fail   Red
+.quiz-result-label        Small uppercase label above score
+.quiz-result-item         Per-question review row
+.quiz-result-item.correct     Green left border + checkmark
+.quiz-result-item.incorrect   Red left border + X
+.quiz-result-item-header  Icon + question text
+.quiz-result-item-question    Bold question text
+.quiz-result-item-explanation Explanation paragraph
+
+LESSON LAYOUT — sidebar, modules, mobile drawer
+--------------------------------------------------------------------------------
+.lesson-actions           Prev / Mark complete / Next row
+.lesson-sidebar           Left column (sticky, 100vh, own scroll)
+.lesson-sidebar-section   Bordered section inside sidebar
+
+MODULE COLLAPSE — used in lesson sidebar navigation
+--------------------------------------------------------------------------------
+.lesson-module            Module wrapper
+.lesson-module.is-expanded   Expanded state
+.lesson-module-header     Clickable header button
+.lesson-module-info       Number + title block
+.lesson-module-num        "Module N" label (gold, uppercase)
+.lesson-module-title      Module title
+.lesson-module-meta       Badge + chevron
+.lesson-module-chevron    Rotates 180° when expanded
+.lesson-module-lessons    Lesson list (display: none unless expanded)
+
+MOBILE DRAWER
+--------------------------------------------------------------------------------
+.lesson-mobile-toggle     Hamburger (shown ≤992px only)
+.lesson-backdrop          Dim overlay behind open drawer
+.lesson-backdrop.is-visible   Visible state
+
+BEHAVIOR
+--------------------------------------------------------------------------------
+Desktop (>992px):
+  .lesson-sidebar sticky, 100vh tall, own scroll
+  .lesson-mobile-toggle hidden
+  Module collapse works normally
+
+Mobile (≤992px):
+  .lesson-sidebar becomes fixed left drawer
+  .lesson-sidebar.is-open slides in from left
+  .lesson-mobile-toggle visible
+  .lesson-backdrop appears behind open drawer
+  .course-layout stacks to 1 column
+
+JS: packages/shared/js/lesson.js (drawer + collapse wiring)
+
+GOLDEN RULES
+--------------------------------------------------------------------------------
+✅ Use .lesson-body as wrapper for all lesson content
+✅ Use the block classes (.lesson-objectives, .lesson-activity) — don't invent
+✅ Use .video-embed for any 16:9 iframe
+✅ Let lesson.js handle module collapse — don't wire manually
+
+❌ Never hardcode conic-gradient video aspect ratios
+❌ Never override .lesson-sidebar positioning per page
+❌ Never add a separate mobile-toggle for lessons — use .lesson-mobile-toggle
+
+
+UTILITIES — ADDED Oct 2026
+--------------------------------------------------------------------------------
+Extends the existing spacing/margin/padding/state utilities. Same file
+(packages/aslds/css/utilities.css).
+
+SPACING
+    .p-6      → padding: var(--space-5) → 40px
+    .py-4     → padding-top/bottom: var(--space-4) → 32px
+    .py-5     → padding-top/bottom: var(--space-5) → 40px
+    .px-4     → padding-left/right: var(--space-4) → 32px
+    .px-5     → padding-left/right: var(--space-5) → 40px
+
+MARGIN
+    .ml-auto  → margin-left: auto
+    .mr-auto  → margin-right: auto
+
+LAYOUT HELPERS
+    .icon-fixed → width: 20px; text-align: center; flex-shrink: 0
+                  (for consistent icon columns in generated lists)
+    .lesson-num → min-width: 26px; display: inline-block;
+                  flex-shrink: 0; font-variant-numeric: tabular-nums
+                  (for 2-digit lesson numbers, keeps columns aligned)
+
+EMPTY STATES
+    .is-empty   → padding: var(--space-6) var(--space-3);
+                  text-align: center;
+                  color: var(--gray-500)
+                  Use for "loading", "no data", "empty list" table cells
+                  and placeholder blocks.
+
+
+THEME BOOT (theme-boot.js)
+--------------------------------------------------------------------------------
+Runs synchronously in <head> BEFORE any CSS loads.
+Reads ASLDS::theme-mode from localStorage, sets data-theme on <html>.
+Prevents the dark→light flash on page load.
+
+MUST load FIRST in <head>. Not deferred, not async.
+
+Load order per page:
+  1. theme-boot.js  (in <head>, before CSS)
+  2. CSS links
+  3. app.js and other ASLDS modules (at end of <body>)
+  4. theme.js       (at end of <body>)
+
+
+  
 ================================================================================
 END OF QUICKREF
 ================================================================================

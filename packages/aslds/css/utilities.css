@@ -338,6 +338,50 @@ Global utility classes for rapid development.
     z-index: 1;
 }
 
+/* ======================================================
+   SPACING — additional padding/margin (extends existing)
+====================================================== */
+
+.p-6      { padding: var(--space-5); }              /* 40px */
+.py-4     { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.py-5     { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+.px-4     { padding-left: var(--space-4); padding-right: var(--space-4); }
+.px-5     { padding-left: var(--space-5); padding-right: var(--space-5); }
+
+.ml-auto  { margin-left: auto; }
+.mr-auto  { margin-right: auto; }
+
+/* ======================================================
+   ICON COLUMN — fixed-width icon for menu rows
+====================================================== */
+
+.icon-fixed {
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* ======================================================
+   EMPTY STATE — loading / no-data placeholder block
+====================================================== */
+
+.is-empty {
+    padding: var(--space-6) var(--space-3);
+    text-align: center;
+    color: var(--gray-500);
+}
+
+
+/* ======================================================
+   EMPTY STATE — loading / no-data placeholder block
+====================================================== */
+
+.is-empty {
+    padding: var(--space-6) var(--space-3);
+    text-align: center;
+    color: var(--gray-500);
+}
+
 
 /* ======================================================
    RESPONSIVE
@@ -354,3 +398,12 @@ Global utility classes for rapid development.
 }
 
 }
+
+
+.lesson-num {
+    min-width: 26px;
+    display: inline-block;
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+}
+

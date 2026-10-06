@@ -3,6 +3,10 @@
 # Order matters: first match wins.
 # ============================================================
 
+/admin                  /apps/admin/index.html   200
+/admin/                 /apps/admin/index.html   200
+/admin/*                /apps/admin/:splat       200
+
 # -- Root → public-site homepage -----------------------------
 /                               /apps/public-site/index.html        200
 

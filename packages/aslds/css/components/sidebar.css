@@ -341,3 +341,44 @@ Supports:
         -webkit-overflow-scrolling: touch;
     }
 }
+
+
+/* ======================================================
+   SIDEBAR SCROLLBAR — subtle, gold-tinted
+   Replaces default OS scrollbar in sidebar columns
+====================================================== */
+
+.sidebar,
+.lesson-sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(212, 175, 55, 0.25) transparent;
+}
+
+.sidebar::-webkit-scrollbar,
+.lesson-sidebar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.lesson-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.lesson-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.2);
+    border-radius: 999px;
+    transition: background 0.2s ease;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.lesson-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.45);
+}
+
+/* Firefox-only: further dim when not hovered */
+.sidebar,
+.lesson-sidebar {
+    scrollbar-gutter: stable;
+}
