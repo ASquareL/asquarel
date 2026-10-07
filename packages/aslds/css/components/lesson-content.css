@@ -543,10 +543,12 @@
 
 .lesson-mobile-toggle {
     display: none;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    gap: 5px;
+    width: 48px;
+    height: 48px;
     border: 1px solid var(--border-color);
     background: var(--surface);
     border-radius: var(--radius-md);
@@ -625,4 +627,69 @@
     .lesson-content {
         margin: 0;
     }
+}
+
+
+/* ======================================================
+   CONTENT OVERFLOW — prevent wide content from breaking layout
+   Grid items default to min-width:auto which refuses to
+   shrink below content width. Force wrapping + scroll.
+====================================================== */
+
+/* The grid item must be allowed to shrink */
+.lesson-content {
+    min-width: 0;
+}
+
+/* Content wrapper — allow breaking within itself */
+.lesson-body {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Code blocks: scroll internally, never push the layout */
+.lesson-body pre,
+.lesson-body code {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.lesson-body pre {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Tables: scroll inside their wrapper */
+.lesson-body table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Images: never exceed their container */
+.lesson-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Video embeds: also constrain */
+.lesson-content .video-embed {
+    max-width: 100%;
+}
+
+/* Quiz options: same shrink protection */
+.quiz-option-text,
+.quiz-question-text {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Backdrop must not push layout width */
+.lesson-backdrop {
+    max-width: 100vw;
 }
