@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your certificate — A Square L Academy" />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="robots" content="noindex" />
+    <title>Certificate — A Square L Academy</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/alert.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/certificate.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="main-content">
+
+        <div class="container section">
+
+            <!-- Loading state -->
+            <div data-cert-loading class="text-center">
+                <i class="fa-solid fa-spinner fa-spin fa-3x text-gold"></i>
+                <p class="mt-4 mb-0">Loading certificate…</p>
+            </div>
+
+            <!-- Not found state -->
+            <div data-cert-notfound class="text-center" hidden>
+                <div class="avatar avatar-xl avatar-gold mb-4 mx-auto">
+                    <i class="fa-solid fa-certificate fa-3x text-gold"></i>
+                </div>
+                <h1 class="mb-3">Certificate not found</h1>
+                <p class="mb-4">This certificate doesn't exist or you don't have access to it.</p>
+                <a href="dashboard.html" class="btn btn-primary">
+                    Back to Dashboard <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Certificate display -->
+            <div data-cert-view hidden>
+
+                <div class="text-center mb-5 no-print">
+                    <h1 class="mb-2">Your Certificate</h1>
+                    <p class="mb-4">Congratulations on completing the course.</p>
+
+                    <div class="d-flex justify-center gap-2 flex-wrap">
+                        <button class="btn btn-primary" type="button" data-cert-print>
+                            <i class="fa-solid fa-download"></i> Download PDF
+                        </button>
+                        <button class="btn btn-outline" type="button" data-cert-copy>
+                            <i class="fa-solid fa-link"></i> Copy Verification Link
+                        </button>
+                        <a href="profile.html" class="btn btn-outline">
+                            <i class="fa-solid fa-arrow-left"></i> Back to Profile
+                        </a>
+                    </div>
+                </div>
+
+                <article class="certificate" data-cert>
+                    <div class="certificate-inner">
+
+                        <div class="certificate-brand">
+                            A SQUARE L <span>ACADEMY</span>
+                        </div>
+
+                        <div class="certificate-label">Certificate of Completion</div>
+
+                        <h2 class="certificate-title">Achievement Awarded</h2>
+
+                        <p class="certificate-presented">This certifies that</p>
+
+                        <div class="certificate-name" data-cert-name>Student Name</div>
+
+                        <p class="certificate-for">has successfully completed all lessons and requirements for</p>
+
+                        <div class="certificate-course" data-cert-course>Course Title</div>
+
+                        <div class="certificate-footer">
+
+                            <div class="certificate-sign">
+                                <div class="certificate-sign-line"></div>
+                                <div class="certificate-sign-name">Ashiru Awal Lawal</div>
+                                <div class="certificate-sign-role">Founder &amp; Lead Mentor</div>
+                            </div>
+
+                            <div class="certificate-seal" aria-hidden="true">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+
+                            <div class="certificate-sign">
+                                <div class="certificate-sign-line"></div>
+                                <div class="certificate-sign-name" data-cert-date>—</div>
+                                <div class="certificate-sign-role">Date Issued</div>
+                            </div>
+
+                        </div>
+
+                        <div class="certificate-meta">
+                            <div>
+                                <strong>Certificate No:</strong> <span data-cert-number>—</span>
+                            </div>
+                            <div>
+                                <strong>Verify at:</strong>
+                                <a class="certificate-verify-hint" href="#" data-cert-verify-url>
+                                    asquarel.netlify.app/verify/<span data-cert-code>—</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <p class="text-center text-muted mt-4 no-print">
+                    <small>
+                        Share this certificate on LinkedIn or attach it to job applications.
+                        Anyone can verify its authenticity using the verification link above.
+                    </small>
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/supabase-config.js"></script>
+
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/animations.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+
+    <script src="../../packages/shared/js/certificate.js"></script>
+
+</body>
+</html>

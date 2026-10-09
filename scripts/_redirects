@@ -3,6 +3,12 @@
 # Order matters: first match wins.
 # ============================================================
 
+# Public certificate verification
+/verify                 /apps/academy/verify.html   200
+/verify/                /apps/academy/verify.html   200
+/verify/*               /apps/academy/verify.html   200
+
+
 /admin                  /apps/admin/index.html   200
 /admin/                 /apps/admin/index.html   200
 /admin/*                /apps/admin/:splat       200

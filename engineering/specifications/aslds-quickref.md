@@ -1181,8 +1181,62 @@ Load order per page:
   3. app.js and other ASLDS modules (at end of <body>)
   4. theme.js       (at end of <body>)
 
+CERTIFICATE (added Oct 2026)
+--------------------------------------------------------------------------------
+Source: packages/aslds/css/components/certificate.css
+Scope:  Certificate display + print
 
-  
+CLASSES
+    .certificate                Printable cert wrapper (A4 landscape friendly)
+    .certificate-inner          Content wrapper (positioned above decoration)
+    .certificate-brand          "A SQUARE L ACADEMY" header
+    .certificate-label          "Certificate of Completion" small label
+    .certificate-title          "Achievement Awarded" big title
+    .certificate-presented      "This certifies that" line
+    .certificate-name           Large student name
+    .certificate-for            "has successfully completed..." line
+    .certificate-course         Course title
+    .certificate-footer         Flex row: sign | seal | sign
+    .certificate-sign           Signature block (line + name + role)
+    .certificate-sign-line      Underline for signature
+    .certificate-sign-name      Signer name
+    .certificate-sign-role      Signer role
+    .certificate-seal           Round gold seal with icon
+    .certificate-meta           Bottom strip: cert number + verify URL
+    .certificate-verify-hint    Gold verify link
+
+PRINT BEHAVIOR
+    @media print styles hide .no-print and everything except .certificate
+    Browser print dialog → Save as PDF creates A4 landscape PDF
+
+PAGE
+    apps/academy/certificate.html
+    URL: ?id={cert_uuid}  OR  ?course={slug}
+
+JS
+    packages/shared/js/certificate.js
+    API: not exported (page-local)
+
+DB
+    Function: verify_certificate(p_code text) → jsonb (public-safe)
+    Grants: EXECUTE to anon, authenticated
+
+
+    VERIFY (verify.js)
+--------------------------------------------------------------------------------
+Public certificate verification. No auth required.
+Page: apps/academy/verify.html
+URLs: /verify/{code}  OR  /verify?code={code}
+
+Behavior:
+- Reads code from URL path or query
+- Calls verify_certificate(code) DB function (SECURITY DEFINER, grants to anon)
+- Shows valid / invalid / loading / form states
+- Manual form updates URL for shareable lookups
+
+Load after supabase-config.js. Does NOT need auth.js.
+
+
 ================================================================================
 END OF QUICKREF
 ================================================================================

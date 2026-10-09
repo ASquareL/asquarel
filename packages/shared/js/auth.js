@@ -72,11 +72,22 @@
         const c = getClient();
         if (!c) return { error: 'Supabase not ready' };
 
-        const redirectTo = window.location.origin + '/apps/academy/dashboard.html';
+        // Build the redirect URL from the current page's folder.
+        // On login.html or register.html (both in /apps/academy/),
+        // this resolves to /apps/academy/dashboard.html
+        const redirectTo = new URL('dashboard.html', window.location.href).href;
+
         const { error } = await c.auth.signInWithOAuth({
             provider: 'google',
-            options: { redirectTo }
+            options: {
+                redirectTo,
+                queryParams: {
+                    access_type: 'offline',
+                    prompt: 'consent'
+                }
+            }
         });
+
         return { error: error ? error.message : null };
     }
 

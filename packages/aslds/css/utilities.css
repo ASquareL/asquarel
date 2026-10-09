@@ -407,3 +407,7 @@ Global utility classes for rapid development.
     font-variant-numeric: tabular-nums;
 }
 
+
+.mono {
+    font-family: Consolas, "Courier New", monospace;
+}

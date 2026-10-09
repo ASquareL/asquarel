@@ -1,0 +1,306 @@
+/* ======================================================
+   CERTIFICATE — printable certificate component
+   Used on: certificate.html (student view)
+   Print-friendly: optimized for A4 landscape
+====================================================== */
+
+.certificate {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+    border: 2px solid var(--primary-gold);
+    border-radius: var(--radius-lg);
+    padding: var(--space-7) var(--space-7) var(--space-6);
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+}
+
+/* Inner ornamental border */
+.certificate::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: calc(var(--radius-lg) - 6px);
+    pointer-events: none;
+}
+
+/* Subtle corner glow */
+.certificate::after {
+    content: "";
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+/* ---------- Inner content ---------- */
+
+.certificate-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* ---------- Header ---------- */
+
+.certificate-brand {
+    font-size: var(--fs-lg);
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: var(--space-3);
+}
+
+.certificate-brand span {
+    color: var(--white);
+}
+
+/* ---------- Award title ---------- */
+
+.certificate-label {
+    font-size: var(--fs-sm);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gray-500);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.certificate-title {
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--primary-gold);
+    line-height: 1.1;
+    margin-bottom: var(--space-5);
+    letter-spacing: 1px;
+}
+
+/* ---------- Presented to ---------- */
+
+.certificate-presented {
+    font-size: var(--fs-sm);
+    color: var(--gray-400);
+    margin-bottom: var(--space-2);
+    font-style: italic;
+}
+
+.certificate-name {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    position: relative;
+}
+
+.certificate-name::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+}
+
+/* ---------- Course info ---------- */
+
+.certificate-for {
+    font-size: var(--fs-sm);
+    color: var(--gray-400);
+    margin-bottom: var(--space-2);
+    font-style: italic;
+}
+
+.certificate-course {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: var(--space-5);
+    line-height: 1.3;
+}
+
+/* ---------- Footer: seal + signature ---------- */
+
+.certificate-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.certificate-sign {
+    text-align: center;
+    flex: 1;
+    max-width: 220px;
+}
+
+.certificate-sign-line {
+    height: 1px;
+    background: var(--gray-600);
+    margin-bottom: var(--space-2);
+}
+
+.certificate-sign-name {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 2px;
+}
+
+.certificate-sign-role {
+    font-size: var(--fs-xs);
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ---------- Award seal ---------- */
+
+.certificate-seal {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.04));
+    border: 2px solid var(--primary-gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.certificate-seal i {
+    font-size: 26px;
+    color: var(--primary-gold);
+}
+
+.certificate-seal::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+/* ---------- Meta strip at very bottom ---------- */
+
+.certificate-meta {
+    margin-top: var(--space-5);
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    font-size: var(--fs-xs);
+    color: var(--gray-500);
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.certificate-meta strong {
+    color: var(--gray-300);
+    font-weight: 600;
+}
+
+.certificate-verify-hint {
+    color: var(--primary-gold);
+    text-decoration: none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+    .certificate {
+        padding: var(--space-4) var(--space-3);
+    }
+
+    .certificate-title {
+        font-size: 26px;
+        letter-spacing: 0;
+    }
+
+    .certificate-name {
+        font-size: 24px;
+    }
+
+    .certificate-course {
+        font-size: var(--fs-lg);
+    }
+
+    .certificate-footer {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .certificate-sign {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .certificate-seal {
+        width: 70px;
+        height: 70px;
+    }
+
+    .certificate-seal i {
+        font-size: 20px;
+    }
+}
+
+/* ---------- Print styles ---------- */
+
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 10mm;
+    }
+
+    body {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .certificate,
+    .certificate * {
+        visibility: visible;
+    }
+
+    .certificate {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+        border-width: 3px;
+        box-shadow: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}

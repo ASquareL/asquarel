@@ -112,7 +112,8 @@
         const { data, error } = await client
             .from('certificates')
             .select('id, certificate_number, issued_at, course:courses(title, slug)')
-            .eq('user_id', userId);
+            .eq('user_id', userId)
+            .order('issued_at', { ascending: false });
         if (error) { console.error('[Profile] certificates', error); return []; }
         return data || [];
     }
@@ -233,6 +234,7 @@
         `).join('');
     }
 
+    // ----- Certificate Progress widget (existing — shows best in-progress) -----
     function renderCertificate(certs, enrollments, progressMap) {
         const widget = document.querySelector('[data-certificate-widget]');
         if (!widget) return;
@@ -253,7 +255,6 @@
             return;
         }
 
-        // No certificates yet — show best in-progress course
         const inProgress = enrollments
             .map(e => ({ e, prog: progressMap[e.course?.id] || {} }))
             .filter(x => (x.prog.percentage || 0) > 0)
@@ -288,6 +289,44 @@
             <small>Complete the track to unlock your certificate.</small>`;
     }
 
+    // ----- My Certificates widget (new — lists every earned certificate) -----
+    function renderCertificates(certs) {
+        const container = document.querySelector('[data-certificates-container]');
+        const empty = document.querySelector('[data-certificates-empty]');
+        if (!container) return;
+
+        if (!certs.length) {
+            if (empty) empty.hidden = false;
+            return;
+        }
+
+        if (empty) empty.hidden = true;
+
+        container.innerHTML = certs.map(c => `
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-center gap-3 mb-3">
+                        <div class="avatar avatar-md avatar-gold">
+                            <i class="fa-solid fa-certificate text-gold"></i>
+                        </div>
+                        <div>
+                            <strong>${escapeHtml(c.course?.title || 'Certificate')}</strong>
+                            <p class="mb-0">Issued ${formatDate(c.issued_at)}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="certificate.html?id=${encodeURIComponent(c.id)}" class="btn btn-primary btn-sm">
+                            <i class="fa-solid fa-eye"></i> View
+                        </a>
+                        <a href="certificate.html?id=${encodeURIComponent(c.id)}" class="btn btn-outline btn-sm">
+                            <i class="fa-solid fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
     function wireSignOut() {
         document.querySelectorAll('[data-signout]').forEach(el => {
             el.addEventListener('click', async (e) => {
@@ -318,6 +357,7 @@
         renderEnrollments(enrollments, progress);
         renderActivity(activity);
         renderCertificate(certs, enrollments, progress);
+        renderCertificates(certs);
         wireSignOut();
     }
 
