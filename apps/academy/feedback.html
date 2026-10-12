@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Send feedback — A Square L Academy" />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="robots" content="noindex" />
+    <title>Feedback — A Square L Academy</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/alert.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="main-content">
+
+        <section class="section">
+            <div class="container">
+
+                <div class="text-center mb-5">
+                    <a href="dashboard.html" class="d-inline-block mb-4">
+                        <div class="avatar avatar-lg avatar-gold mx-auto">
+                            <i class="fa-solid fa-comment-dots fa-2x text-gold"></i>
+                        </div>
+                    </a>
+
+                    <h1 class="mb-3">Tell us what you think</h1>
+                    <p class="mb-0">We're in beta. Every piece of feedback shapes what we build next.</p>
+                </div>
+
+                <div class="w-50 mx-auto mobile-full">
+
+                    <!-- FORM -->
+                    <form class="form" data-feedback-form>
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label class="form-label">What kind of feedback is this?</label>
+                                    <input type="hidden" data-field="category" value="" />
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button type="button" class="btn btn-outline btn-sm" data-category="bug">
+                                            <i class="fa-solid fa-bug"></i> Bug
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-sm" data-category="confusion">
+                                            <i class="fa-solid fa-circle-question"></i> Confusing
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-sm" data-category="suggestion">
+                                            <i class="fa-solid fa-lightbulb"></i> Suggestion
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-sm" data-category="praise">
+                                            <i class="fa-solid fa-heart"></i> Praise
+                                        </button>
+                                        <button type="button" class="btn btn-outline btn-sm" data-category="other">
+                                            <i class="fa-solid fa-ellipsis"></i> Other
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label class="form-label">How are we doing overall?</label>
+                                    <input type="hidden" data-field="rating" value="" />
+                                    <div class="d-flex gap-2" data-rating-stars>
+                                        <button type="button" class="btn btn-icon" data-rating-star aria-label="1 star">
+                                            <i class="fa-regular fa-star"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon" data-rating-star aria-label="2 stars">
+                                            <i class="fa-regular fa-star"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon" data-rating-star aria-label="3 stars">
+                                            <i class="fa-regular fa-star"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon" data-rating-star aria-label="4 stars">
+                                            <i class="fa-regular fa-star"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon" data-rating-star aria-label="5 stars">
+                                            <i class="fa-regular fa-star"></i>
+                                        </button>
+                                    </div>
+                                    <p class="form-text">Optional — skip if you'd rather not rate.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label class="form-label" for="feedback-email">Email (optional — if you want a reply)</label>
+                                    <input
+                                        id="feedback-email"
+                                        type="email"
+                                        class="form-control"
+                                        data-field="email"
+                                        placeholder="you@example.com"
+                                        autocomplete="email"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="feedback-message">Your message</label>
+                                    <textarea
+                                        id="feedback-message"
+                                        class="form-control"
+                                        data-field="message"
+                                        rows="6"
+                                        placeholder="Be as specific as possible. What were you doing? What happened? What did you expect?"
+                                        required
+                                    ></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fa-solid fa-paper-plane"></i> Send Feedback
+                            </button>
+                        </div>
+
+                    </form>
+
+                    <!-- SUCCESS STATE -->
+                    <div data-feedback-success hidden>
+                        <div class="card bg-sheen-gold">
+                            <div class="card-body text-center py-5">
+                                <div class="avatar avatar-xl avatar-success mb-4 mx-auto">
+                                    <i class="fa-solid fa-check fa-3x text-success"></i>
+                                </div>
+                                <h2 class="mb-3">Thank you</h2>
+                                <p class="mb-4">Your feedback has been received. We read every message and use it to improve the Academy.</p>
+                                <div class="d-flex justify-center gap-2 flex-wrap">
+                                    <a href="dashboard.html" class="btn btn-primary">
+                                        Back to Dashboard
+                                    </a>
+                                    <button type="button" class="btn btn-outline" data-feedback-reset>
+                                        Send More
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/supabase-config.js"></script>
+
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/animations.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+
+    <script src="../../packages/shared/js/feedback.js"></script>
+
+</body>
+</html>

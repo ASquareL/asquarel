@@ -1237,6 +1237,79 @@ Behavior:
 Load after supabase-config.js. Does NOT need auth.js.
 
 
+GOOGLE OAUTH
+--------------------------------------------------------------------------------
+Provider:    Google (via Supabase Auth)
+Setup:       Google Cloud Console OAuth 2.0 credentials
+Callback:    https://rrrojvvlflfitnxievob.supabase.co/auth/v1/callback
+Enabled:     Supabase → Authentication → Providers → Google
+
+Frontend:
+- Buttons:   <button data-auth-google>
+- Logic:     ASLDS.Auth.signInWithGoogle()  (in auth.js)
+- Redirect:  Same directory as caller → dashboard.html
+
+Behavior:
+- Google sign-in = signup + login in one step
+- No email OTP needed (Google pre-verifies)
+- handle_new_user trigger creates profile automatically
+- Uses queryParams: prompt: 'consent' for account picker
+
+Testing:
+- Add test users to Google Cloud consent screen
+- OR publish app for public use
+
+
+BETA BADGE — global component
+--------------------------------------------------------------------------------
+Source: packages/aslds/css/components/badge.css
+Injected by: packages/shared/js/supabase-config.js
+
+Behavior:
+- Fixed bottom-right pill
+- "Beta · Free" text + pulsing green dot
+- Clickable → /apps/academy/feedback.html
+- Auto-injected on every page loading supabase-config.js
+
+Opt out per page: add data-hide-beta-badge to <body>
+
+
+FEEDBACK (feedback.js)
+--------------------------------------------------------------------------------
+Page: apps/academy/feedback.html
+Table: feedback (see migration 010)
+
+Behavior:
+- Works signed-in or anonymous
+- Category chips (bug/confusion/suggestion/praise/other)
+- Optional 1-5 star rating
+- Optional email for reply
+- Saves to feedback table via RLS policy (insert allowed for all)
+
+No auth required — can be shared with non-users.
+
+ADMIN FEEDBACK (admin-feedback.js)
+--------------------------------------------------------------------------------
+Page: apps/admin/feedback.html
+Depends on: ASLDS.Admin (admin.js) for auth + helpers
+
+Behavior:
+- Loads all feedback (newest first)
+- Filter by category (bug / confusion / suggestion / praise / other / all)
+- Toggle "Unresolved only"
+- Expand items via <details> element (no JS toggle)
+- Save admin notes per item
+- Mark resolved / reopen
+- Auto-count badge in sidebar (via admin.js hydrateFeedbackBadge)
+
+No HTML contract beyond data-* attributes on the page.
+
+ADMIN.js — Additional helpers
+--------------------------------------------------------------------------------
+countUnresolvedFeedback()   → int  (rows where resolved = false)
+hydrateFeedbackBadge()      → void (populates [data-feedback-count] on all admin pages)
+                              Auto-called by requireAdmin()
+
 ================================================================================
 END OF QUICKREF
 ================================================================================

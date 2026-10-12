@@ -31,4 +31,26 @@
 
     console.info('[Supabase] Client ready for', SUPABASE_URL);
 
+
+        // ----------------------------------------------------------
+    // BETA BADGE — injected on every page that loads this file
+    // Clickable — links to the feedback page.
+    // ----------------------------------------------------------
+    function injectBetaBadge() {
+        if (document.querySelector('.beta-badge')) return;
+
+        const badge = document.createElement('a');
+        badge.className = 'beta-badge';
+        badge.href = window.location.origin + '/apps/academy/feedback.html';
+        badge.textContent = 'Beta · Free';
+        badge.setAttribute('aria-label', 'Beta version — Free during development. Click to give feedback.');
+        document.body.appendChild(badge);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', injectBetaBadge);
+    } else {
+        injectBetaBadge();
+    }
+
 })(window, document);

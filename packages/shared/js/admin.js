@@ -66,6 +66,9 @@
             return null;
         }
 
+               // Fire-and-forget: hydrate sidebar feedback badge
+        hydrateFeedbackBadge();
+
         return { session, profile };
     }
 
@@ -135,6 +138,26 @@
         return count || 0;
     }
 
+        async function countUnresolvedFeedback() {
+        const client = getClient();
+        const { count, error } = await client
+            .from('feedback')
+            .select('*', { count: 'exact', head: true })
+            .eq('resolved', false);
+        if (error) return 0;
+        return count || 0;
+    }
+
+    async function hydrateFeedbackBadge() {
+        const badges = document.querySelectorAll('[data-feedback-count]');
+        if (!badges.length) return;
+        const count = await countUnresolvedFeedback();
+        badges.forEach(el => {
+            el.textContent = count;
+            el.hidden = count === 0;
+        });
+    }
+
     // ----------------------------------------------------------
     // SIGN OUT
     // ----------------------------------------------------------
@@ -174,7 +197,9 @@
         escapeHtml,
         getQueryParam,
         setText,
-        getInitials
+        getInitials,
+        countUnresolvedFeedback,
+        hydrateFeedbackBadge
     };
 
 })(window, document);

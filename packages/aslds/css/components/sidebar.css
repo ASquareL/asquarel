@@ -70,8 +70,10 @@ Supports:
 }
 
 .sidebar-subtitle{
-    font-size:13px;
+    font-size:21px;
+    font-weight: 600;
     color:var(--primary-gold);
+    text-align:center;
 }
 
 /* ======================================================

@@ -247,3 +247,278 @@ course categories, and notifications.
     }
 
 }
+
+
+
+/* ======================================================
+   BETA BADGE — floating corner indicator
+   Shows on every Academy page: "Beta · Free"
+   Clickable — links to feedback page.
+====================================================== */
+
+.beta-badge {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: var(--z-sticky);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(17, 17, 17, 0.9);
+    color: var(--primary-gold);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: var(--radius-round);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: var(--transition-fast);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.beta-badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--success);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px var(--success);
+    animation: beta-pulse 2s infinite;
+}
+
+.beta-badge:hover {
+    border-color: var(--primary-gold);
+    background: rgba(30, 26, 10, 0.95);
+    transform: translateY(-2px);
+}
+
+@keyframes beta-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+@media (max-width: 576px) {
+    .beta-badge {
+        bottom: 12px;
+        right: 12px;
+        font-size: 10px;
+        padding: 6px 11px;
+        gap: 6px;
+    }
+    .beta-badge::before {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+@media print {
+    .beta-badge { display: none; }
+}
+
+/* ======================================================
+   FEEDBACK ITEM — expandable list item for admin view
+====================================================== */
+
+.feedback-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-3);
+    overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.feedback-item:hover,
+.feedback-item[open] {
+    border-color: var(--primary-gold);
+}
+
+.feedback-summary {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    cursor: pointer;
+    list-style: none;
+}
+
+.feedback-summary::-webkit-details-marker { display: none; }
+.feedback-summary::marker { display: none; }
+
+.feedback-summary-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.feedback-summary-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.feedback-summary-title strong {
+    color: var(--white);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+}
+
+.feedback-summary-preview {
+    color: var(--gray-400);
+    font-size: var(--fs-sm);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.feedback-summary-side {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+}
+
+.feedback-time {
+    font-size: var(--fs-xs);
+    color: var(--gray-500);
+    white-space: nowrap;
+}
+
+.feedback-chevron {
+    color: var(--gray-500);
+    transition: transform 0.25s ease;
+    font-size: 0.9em;
+}
+
+.feedback-item[open] .feedback-chevron {
+    transform: rotate(180deg);
+}
+
+/* ---------- Expanded body ---------- */
+
+.feedback-body {
+    padding: var(--space-4);
+    border-top: 1px solid var(--border-color);
+    background: var(--surface);
+}
+
+.feedback-message {
+    color: var(--gray-200);
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: var(--space-4);
+    padding: var(--space-3);
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--primary-gold);
+}
+
+.feedback-meta-row {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-4);
+    font-size: var(--fs-sm);
+    color: var(--gray-500);
+}
+
+.feedback-meta-row strong {
+    color: var(--gray-300);
+    font-weight: 600;
+}
+
+.feedback-meta-row a {
+    color: var(--primary-gold);
+}
+
+.feedback-admin {
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-color);
+}
+
+.feedback-admin-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    flex-wrap: wrap;
+}
+
+/* ---------- Filter bar ---------- */
+
+.feedback-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.feedback-filters-label {
+    font-size: var(--fs-sm);
+    color: var(--gray-500);
+    font-weight: 600;
+    margin-right: var(--space-1);
+}
+
+.feedback-filter-chip {
+    padding: 6px 14px;
+    border-radius: var(--radius-round);
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--gray-400);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    font-family: inherit;
+}
+
+.feedback-filter-chip:hover {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.feedback-filter-chip.is-active {
+    background: var(--primary-gold);
+    color: var(--black);
+    border-color: var(--primary-gold);
+}
+
+.feedback-filters-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--border-color);
+    margin: 0 var(--space-1);
+}
+
+@media (max-width: 768px) {
+    .feedback-summary {
+        align-items: flex-start;
+    }
+    .feedback-summary-side {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-1);
+    }
+}
+
+/* ---------- Sidebar feedback badge ---------- */
+
+.sidebar-link-badge {
+    margin-left: auto;
+    padding: 2px 8px;
+    font-size: 11px;
+    line-height: 1.4;
+}
