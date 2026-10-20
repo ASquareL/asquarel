@@ -16,6 +16,11 @@ Version: 1.0.0
     border-radius:var(--radius-lg);
     border:1px solid var(--border-color);
     background:var(--card-bg);
+    -webkit-overflow-scrolling: touch;
+}
+
+.dashboard-content {
+    min-width: 0; /* prevents flex/grid parent from expanding */
 }
 
 /* ======================================================
@@ -26,6 +31,7 @@ Version: 1.0.0
     width:100%;
     border-collapse:collapse;
     color:var(--white);
+    min-width:700px;
 }
 
 .table th,

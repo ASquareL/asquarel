@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
     <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
     <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/progress.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -61,6 +62,15 @@
                         <a href="index.html" class="sidebar-link active" aria-current="page">
                             <i class="fa-solid fa-gauge-high"></i> Dashboard
                         </a>
+                    </li>                    <li class="sidebar-item">
+                        <a href="students.html" class="sidebar-link">
+                            <i class="fa-solid fa-users"></i> Students
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="enrollments.html" class="sidebar-link">
+                            <i class="fa-solid fa-graduation-cap"></i> Enrollments
+                        </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="lessons.html" class="sidebar-link">
@@ -71,6 +81,11 @@
                         <a href="feedback.html" class="sidebar-link">
                             <i class="fa-solid fa-comment-dots"></i> Feedback
                             <span class="badge badge-sm badge-danger sidebar-link-badge" data-feedback-count hidden>0</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="settings.html" class="sidebar-link">
+                            <i class="fa-solid fa-gear"></i> Settings
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -111,46 +126,81 @@
                 </button>
             </div>
 
-            <!-- STATS -->
+            <!-- STATS ROW -->
             <div class="dashboard-stats mb-5">
                 <div class="card stat-card">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
                     <div class="stat-number" data-stat="students">0</div>
                     <div class="stat-text">Students</div>
                 </div>
-
                 <div class="card stat-card">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-book"></i>
-                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-book"></i></div>
                     <div class="stat-number" data-stat="courses">0</div>
                     <div class="stat-text">Courses</div>
                 </div>
-
                 <div class="card stat-card">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-file-lines"></i>
-                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-file-lines"></i></div>
                     <div class="stat-number" data-stat="lessons">0</div>
                     <div class="stat-text">Lessons</div>
                 </div>
-
                 <div class="card stat-card">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="stat-number" data-stat="enrollments">0</div>
                     <div class="stat-text">Enrollments</div>
                 </div>
+                <div class="card stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="stat-number" data-stat="certificates">0</div>
+                    <div class="stat-text">Certificates</div>
+                </div>
+            </div>
+
+            <!-- RECENT + CONTENT HEALTH -->
+            <div class="dashboard-grid mb-5">
+
+                <div class="widget">
+                    <h2 class="widget-title">Recent Signups</h2>
+                    <div data-list="recent-signups">
+                        <p class="is-empty">Loading…</p>
+                    </div>
+                    <p data-empty="recent-signups" class="is-empty" hidden>No students yet.</p>
+                </div>
+
+                <div class="widget">
+                    <h2 class="widget-title">Recent Enrollments</h2>
+                    <div data-list="recent-enrollments">
+                        <p class="is-empty">Loading…</p>
+                    </div>
+                    <p data-empty="recent-enrollments" class="is-empty" hidden>No enrollments yet.</p>
+                </div>
+
+            </div>
+
+            <!-- ACTIVITY + CONTENT HEALTH -->
+            <div class="dashboard-grid mb-5">
+
+                <div class="widget">
+                    <h2 class="widget-title">Content Health</h2>
+                    <div data-content-health>
+                        <p class="is-empty">Loading…</p>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h2 class="widget-title">Recent Activity</h2>
+                    <div data-list="recent-activity">
+                        <p class="is-empty">Loading…</p>
+                    </div>
+                    <p data-empty="recent-activity" class="is-empty" hidden>No activity yet.</p>
+                </div>
+
             </div>
 
             <!-- COURSES -->
             <h2 class="mb-4">Courses</h2>
 
             <div class="grid grid-3" data-list="courses">
-                <p class="text-muted">Loading…</p>
+                <p class="is-empty">Loading…</p>
             </div>
 
         </main>

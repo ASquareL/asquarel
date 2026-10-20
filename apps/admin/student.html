@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Student Detail — ASL Admin" />
+    <meta name="author" content="A Square L Innovate" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="robots" content="noindex" />
+    <title>Student Detail — ASL Admin</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/components/sidebar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dashboard.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/progress.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/modal.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar" id="dashboard-sidebar" aria-label="Admin Navigation">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <div class="sidebar-brand">
+                        <span class="sidebar-title">ASL</span>
+                        <span class="sidebar-subtitle">Admin</span>
+                    </div>
+                </a>
+            </div>
+            <div class="sidebar-user">
+                <div class="avatar avatar-xl avatar-gold mb-3">
+                    <span class="avatar-initials" data-user-initials>??</span>
+                </div>
+                <div class="sidebar-name" data-user-name>Loading…</div>
+                <div class="sidebar-role" data-user-role>admin</div>
+            </div>
+            <nav class="sidebar-nav" aria-label="Admin Menu">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+                    <li class="sidebar-item"><a href="students.html" class="sidebar-link active" aria-current="page"><i class="fa-solid fa-users"></i> Students</a></li>
+                    <li class="sidebar-item"><a href="enrollments.html" class="sidebar-link"><i class="fa-solid fa-graduation-cap"></i> Enrollments</a></li>
+                    <li class="sidebar-item"><a href="lessons.html" class="sidebar-link"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li class="sidebar-item"><a href="feedback.html" class="sidebar-link"><i class="fa-solid fa-comment-dots"></i> Feedback<span class="badge badge-sm badge-danger sidebar-link-badge" data-feedback-count hidden>0</span></a></li>
+                    <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li class="sidebar-item"><a href="../academy/dashboard.html" class="sidebar-link"><i class="fa-solid fa-eye"></i> View Academy</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link" data-signout><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main id="main-content" class="dashboard-content">
+
+            <!-- LOADING STATE -->
+            <div data-state="loading">
+                <div class="text-center py-5">
+                    <i class="fa-solid fa-spinner fa-spin fa-3x text-gold"></i>
+                    <p class="mt-4 mb-0">Loading student details…</p>
+                </div>
+            </div>
+
+            <!-- NOT FOUND STATE -->
+            <div data-state="notfound" hidden>
+                <div class="card text-center py-5">
+                    <div class="card-body">
+                        <div class="avatar avatar-xl avatar-gold mb-4 mx-auto">
+                            <i class="fa-solid fa-user-slash fa-3x text-gold"></i>
+                        </div>
+                        <h1 class="mb-3">Student not found</h1>
+                        <p class="mb-4">This student doesn't exist or their profile has been removed.</p>
+                        <a href="students.html" class="btn btn-primary">Back to Students <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW STATE -->
+            <div data-state="view" hidden>
+                <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
+                    <div class="d-flex align-center gap-3">
+                        <button class="mobile-toggle" type="button" aria-label="Toggle Sidebar" aria-expanded="false" aria-controls="dashboard-sidebar">
+                            <span></span><span></span><span></span>
+                        </button>
+                        <div>
+                            <a href="#" data-back-link class="text-muted d-block mb-2"><i class="fa-solid fa-arrow-left"></i> Back to students</a>
+                            <h1 class="mb-1" data-student-name>Student Name</h1>
+                            <p class="mb-0">
+                                <span class="badge badge-success" data-student-level>Level 1</span>
+                                <span class="text-muted ml-2">Reg: <span data-student-reg>—</span></span>
+                            </p>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" type="button" data-theme-toggle aria-label="Toggle Theme">Theme</button>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- LEFT COLUMN -->
+                    <div>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="d-flex align-center gap-4 flex-wrap mb-4">
+                                    <div class="avatar avatar-xl avatar-gold">
+                                        <span class="avatar-initials" data-student-initials>??</span>
+                                    </div>
+                                    <div>
+                                        <h2 class="mb-2" data-student-name>Student Name</h2>
+                                        <p class="mb-0 text-muted" data-student-email>email@example.com</p>
+                                    </div>
+                                </div>
+                                <div class="grid grid-3 mt-4">
+                                    <div><small class="text-muted d-block mb-1">Phone</small><strong data-student-phone>—</strong></div>
+                                    <div><small class="text-muted d-block mb-1">Location</small><strong data-student-location>—</strong></div>
+                                    <div><small class="text-muted d-block mb-1">Joined</small><strong data-student-joined>—</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-stats mb-4">
+                            <div class="card stat-card">
+                                <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+                                <div class="stat-number" data-stat="courses-enrolled">0</div>
+                                <div class="stat-text">Courses Enrolled</div>
+                            </div>
+                            <div class="card stat-card">
+                                <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                                <div class="stat-number" data-stat="lessons-completed">0</div>
+                                <div class="stat-text">Lessons Complete</div>
+                            </div>
+                            <div class="card stat-card">
+                                <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
+                                <div class="stat-number" data-stat="certificates">0</div>
+                                <div class="stat-text">Certificates</div>
+                            </div>
+                            <div class="card stat-card">
+                                <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                                <div class="stat-number" data-stat="active-days">0</div>
+                                <div class="stat-text">Active Days (30d)</div>
+                            </div>
+                        </div>
+
+                        <div class="widget mb-4">
+                            <h2 class="widget-title">Enrollments</h2>
+                            <div data-list="enrollments"><p class="is-empty">Loading…</p></div>
+                            <p data-empty="enrollments" class="is-empty" hidden>Not enrolled in any courses yet.</p>
+                        </div>
+
+                        <div class="widget">
+                            <h2 class="widget-title">Recent Activity</h2>
+                            <div data-list="activity"><p class="is-empty">Loading…</p></div>
+                            <p data-empty="activity" class="is-empty" hidden>No activity recorded.</p>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN -->
+                    <div>
+                        <!-- NEW MANAGEMENT WIDGET -->
+                        <div class="widget mb-4 border-gold">
+                            <h2 class="widget-title">Manage Student</h2>
+                            <div data-manage-widget>
+                                <p class="is-empty">Loading actions…</p>
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <h2 class="widget-title">Certificates</h2>
+                            <div data-list="certificates"><p class="is-empty">Loading…</p></div>
+                            <p data-empty="certificates" class="is-empty" hidden>No certificates earned.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Single Modal Shell for Admin Actions -->
+    <div class="modal" id="admin-action-modal">
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Action</h3>
+                <button class="modal-close" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body" data-modal-body></div>
+            <div class="modal-footer" data-modal-footer></div>
+        </div>
+    </div>
+
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/core/supabase-config.js"></script>
+
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/sidebar.js"></script>
+    <script src="../../packages/aslds/js/modal.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/animations.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+
+    <script src="../../packages/shared/js/admin/admin.js"></script>
+    <script src="../../packages/shared/js/admin/admin-student.js"></script>
+    <script src="../../packages/shared/js/admin/admin-student-manage.js"></script>
+
+</body>
+</html>

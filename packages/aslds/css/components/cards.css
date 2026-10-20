@@ -392,3 +392,10 @@ Author: A Square L Innovate
     color: var(--gray-400);
 }
 
+/* ======================================================
+   GOLD-BORDERED WIDGET — for management panels
+====================================================== */
+
+.border-gold {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}

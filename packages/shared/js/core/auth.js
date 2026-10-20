@@ -37,6 +37,22 @@
 
         const { data, error } = await c.auth.signInWithPassword({ email, password });
         if (error) return { user: null, error: error.message };
+
+        // Check suspension
+        const { data: profile } = await c
+            .from('profiles')
+            .select('suspended_at')
+            .eq('id', data.user.id)
+            .single();
+
+        if (profile && profile.suspended_at) {
+            await c.auth.signOut();
+            return { 
+                user: null, 
+                error: 'Your account has been suspended. Please contact support@asquarel.com.' 
+            };
+        }
+
         return { user: data.user, error: null };
     }
 
@@ -91,12 +107,27 @@
         return { error: error ? error.message : null };
     }
 
-    async function requireAuth(redirectUrl) {
+        async function requireAuth(redirectUrl) {
         const session = await getSession();
         if (!session) {
-            window.location.href = redirectUrl || '/apps/academy/login.html';
+            window.location.href = redirectUrl || 'login.html';
             return null;
         }
+
+        // Check if suspended
+        const client = getClient();
+        const { data: profile } = await client
+            .from('profiles')
+            .select('suspended_at')
+            .eq('id', session.user.id)
+            .single();
+
+        if (profile && profile.suspended_at) {
+            await client.auth.signOut();
+            window.location.href = 'login.html?error=suspended';
+            return null;
+        }
+
         return session;
     }
 
