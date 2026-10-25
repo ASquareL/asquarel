@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Mock Exam — A Square L JAMB</title>
+
+    <link rel="icon" type="image/png" href="../academy/assets/images/favicon.png" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/modal.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/lesson-content.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="bg-card">
+
+    <main id="main-content" class="cbt-layout">
+
+        <div class="d-flex flex-column">
+            <div class="cbt-header">
+                <div>
+                    <h1 class="mb-1">Full UTME Mock Exam</h1>
+                    <p class="mb-0 text-muted" data-candidate-name>Candidate</p>
+                </div>
+                <div class="cbt-timer" data-timer>
+                    <i class="fa-solid fa-clock"></i>
+                    <span>02:00:00</span>
+                </div>
+            </div>
+
+            <div class="cbt-question-area" data-question-area>
+                <div class="text-center py-5">
+                    <i class="fa-solid fa-spinner fa-spin fa-3x text-gold"></i>
+                    <p class="mt-3">Assembling your UTME exam...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cbt-sidebar">
+            <div data-mock-sidebar>
+                <div class="text-center py-4">
+                    <i class="fa-solid fa-spinner fa-spin text-gold"></i>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <button class="btn btn-danger btn-block" type="button" data-submit-exam>
+                <i class="fa-solid fa-paper-plane"></i> End & Submit Exam
+            </button>
+        </div>
+
+    </main>
+
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <dialog id="modal-root" aria-label="Application Modal"></dialog>
+
+        <!-- CUSTOM SUBMIT MODAL -->
+    <div class="modal" id="submit-modal">
+        <div class="modal-dialog modal-sm" role="dialog" aria-modal="true" aria-labelledby="submit-title">
+            <div class="modal-header">
+                <h3 class="modal-title" id="submit-title">Submit Exam?</h3>
+                <button class="modal-close" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fa-solid fa-triangle-exclamation fa-3x text-warning mb-3"></i>
+                <p>Are you sure you want to end the exam?</p>
+                
+                <div class="d-flex flex-column gap-2 text-left mb-4 p-3 bg-surface rounded">
+                    <div class="d-flex justify-between">
+                        <span class="text-muted">Answered:</span>
+                        <strong data-summary-answered>0</strong>
+                    </div>
+                    <div class="d-flex justify-between">
+                        <span class="text-muted">Unanswered:</span>
+                        <strong class="text-danger" data-summary-unanswered>0</strong>
+                    </div>
+                    <div class="d-flex justify-between">
+                        <span class="text-muted">Marked for Review:</span>
+                        <strong style="color: #f97316;" data-summary-review>0</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" type="button" data-close-submit>Return to Exam</button>
+                <button class="btn btn-danger" type="button" data-confirm-submit>Confirm Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/core/supabase-config.js"></script>
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+    <script src="../../packages/aslds/js/modal.js"></script>
+    
+    <script src="../../packages/shared/js/pages/jamb-full-mock.js"></script>
+</body>
+</html>

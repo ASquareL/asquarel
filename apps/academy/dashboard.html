@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark" data-theme-mode="auto">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Your Academy dashboard — track courses, continue lessons, monitor your progress." />
+    <meta name="description"
+        content="Your Academy dashboard — track courses, continue lessons, monitor your progress." />
     <meta name="author" content="A Square L Innovate" />
     <meta name="theme-color" content="#050505" />
     <title>Dashboard — A Square L Academy</title>
@@ -38,11 +40,13 @@
     <link rel="stylesheet" href="../../packages/aslds/css/components/progress.css" />
     <link rel="stylesheet" href="../../packages/aslds/css/components/tabs.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="manifest" href="./manifest.json" />
     <script src="./pwa.js" defer></script>
 </head>
+
 <body>
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -84,6 +88,11 @@
                         <a href="courses/index.html" class="sidebar-link">
                             <i class="fa-solid fa-book"></i>
                             Courses
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../jamb/index.html" class="sidebar-link">
+                            <i class="fa-solid fa-pen-to-square"></i> JAMB Prep
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -131,12 +140,7 @@
             <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
 
                 <div class="d-flex align-center gap-3">
-                    <button
-                        class="mobile-toggle"
-                        type="button"
-                        aria-label="Toggle Sidebar"
-                        aria-expanded="false"
-                    >
+                    <button class="mobile-toggle" type="button" aria-label="Toggle Sidebar" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -149,23 +153,13 @@
                 </div>
 
                 <div class="d-flex align-center gap-2">
-                    <button
-                        class="btn btn-outline btn-sm"
-                        type="button"
-                        data-theme-toggle
-                        aria-label="Toggle Theme"
-                    >
+                    <button class="btn btn-outline btn-sm" type="button" data-theme-toggle aria-label="Toggle Theme">
                         Theme
                     </button>
 
                     <div class="dropdown">
-                        <button
-                            class="dropdown-toggle"
-                            type="button"
-                            aria-expanded="false"
-                            aria-haspopup="true"
-                            aria-label="Account Menu"
-                        >
+                        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true"
+                            aria-label="Account Menu">
                             <div class="avatar avatar-sm avatar-gold">
                                 <span class="avatar-initials" data-user-initials>??</span>
                             </div>
@@ -266,6 +260,40 @@
                 </div>
             </div>
 
+            <!-- JAMB PREP WIDGET -->
+            <div class="widget mb-5 bg-sheen-gold">
+                <div class="d-flex justify-between align-center mb-4">
+                    <h2 class="widget-title mb-0">JAMB Preparation</h2>
+                    <span class="badge badge-solid badge-gold">UTME 2026</span>
+                </div>
+
+                <!-- State: Has taken mocks -->
+                <div data-jamb-stats-view hidden>
+                    <div class="d-flex justify-between align-center mb-4">
+                        <div class="stat-card p-0 border-0 shadow-none bg-transparent text-left">
+                            <div class="stat-number text-gold" data-jamb-stat="best-score">0</div>
+                            <div class="stat-text">Best Aggregate Score (400)</div>
+                        </div>
+                        <div class="stat-card p-0 border-0 shadow-none bg-transparent text-right">
+                            <div class="stat-number" data-jamb-stat="mocks-taken">0</div>
+                            <div class="stat-text">Mocks Taken</div>
+                        </div>
+                    </div>
+                    <a href="../jamb/index.html" class="btn btn-primary btn-block">
+                        Continue JAMB Prep <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- State: Has not taken mocks -->
+                <div data-jamb-empty-view>
+                    <p class="mb-4">Practice real past questions in a simulated CBT environment. English is compulsory.
+                    </p>
+                    <a href="../jamb/index.html" class="btn btn-outline btn-block">
+                        Start JAMB Prep <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
             <!-- ========================================= -->
             <!-- RECENT ACTIVITY -->
             <!-- ========================================= -->
@@ -313,4 +341,5 @@
     <script src="../../packages/shared/js/pages/dashboard.js"></script>
 
 </body>
+
 </html>

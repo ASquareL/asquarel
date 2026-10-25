@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>JAMB Manager — ASL Admin</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/sidebar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/forms.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/dashboard.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/avatar.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/toast.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/table.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="dashboard-layout">
+        <aside class="sidebar" id="dashboard-sidebar" aria-label="Admin Navigation">
+            <div class="sidebar-header"><a href="index.html" class="sidebar-logo"><div class="sidebar-brand"><span class="sidebar-title">ASL</span><span class="sidebar-subtitle">Admin</span></div></a></div>
+            <div class="sidebar-user"><div class="avatar avatar-xl avatar-gold mb-3"><span class="avatar-initials" data-user-initials>??</span></div><div class="sidebar-name" data-user-name>Loading…</div><div class="sidebar-role" data-user-role>admin</div></div>
+            <nav class="sidebar-nav" aria-label="Admin Menu">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item"><a href="index.html" class="sidebar-link"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+                    <li class="sidebar-item"><a href="students.html" class="sidebar-link"><i class="fa-solid fa-users"></i> Students</a></li>
+                    <li class="sidebar-item"><a href="enrollments.html" class="sidebar-link"><i class="fa-solid fa-graduation-cap"></i> Enrollments</a></li>
+                    <li class="sidebar-item"><a href="lessons.html" class="sidebar-link"><i class="fa-solid fa-book-open"></i> Academy Lessons</a></li>
+                    <li class="sidebar-item"><a href="jamb-manager.html" class="sidebar-link active"><i class="fa-solid fa-building-columns"></i> JAMB Exams</a></li>
+                    <li class="sidebar-item"><a href="jamb-upload.html" class="sidebar-link"><i class="fa-solid fa-file-import"></i> Bulk Uploader</a></li>
+                    <li class="sidebar-item"><a href="feedback.html" class="sidebar-link"><i class="fa-solid fa-comment-dots"></i> Feedback</a></li>
+                    <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer"><a href="#" class="sidebar-link" data-signout><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+        </aside>
+
+        <main id="main-content" class="dashboard-content">
+            <div class="d-flex justify-between align-center flex-wrap gap-3 mb-5">
+                <div class="d-flex align-center gap-3">
+                    <button class="mobile-toggle" type="button" aria-label="Toggle Sidebar" aria-expanded="false" aria-controls="dashboard-sidebar"><span></span><span></span><span></span></button>
+                    <div><h1 class="mb-1">JAMB Exams</h1><p class="mb-0">Manage subjects and create past question years.</p></div>
+                </div>
+                <button class="btn btn-outline btn-sm" type="button" data-theme-toggle>Theme</button>
+            </div>
+
+            <div class="grid grid-2">
+                <!-- CREATE NEW EXAM -->
+                <div class="widget">
+                    <h2 class="widget-title">Create New Exam</h2>
+                    <form class="form" data-create-form>
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <select class="form-control" data-subject-select required>
+                                <option value="">Loading subjects...</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Year (e.g., 2023)</label>
+                                <input type="number" class="form-control" data-year-input placeholder="2023" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Time Limit (Mins)</label>
+                                <input type="number" class="form-control" data-time-input value="40" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create Exam</button>
+                    </form>
+                </div>
+
+                <!-- EXISTING EXAMS -->
+                <div class="widget">
+                    <h2 class="widget-title">Existing Exams</h2>
+                    <div class="table-wrapper" style="max-height: 400px; overflow-y: auto;">
+                        <table class="table table-sm">
+                            <thead><tr><th>Subject</th><th>Year</th><th>Questions</th><th>Action</th></tr></thead>
+                            <tbody data-exams-tbody><tr><td colspan="4" class="is-empty">Loading…</td></tr></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/core/supabase-config.js"></script>
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/sidebar.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+    <script src="../../packages/shared/js/admin/admin.js"></script>
+    <script src="../../packages/shared/js/admin/admin-jamb-manager.js"></script>
+</body>
+</html>

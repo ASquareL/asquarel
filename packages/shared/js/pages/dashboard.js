@@ -1,8 +1,5 @@
 // ============================================================
 // A SQUARE L INNOVATE — Dashboard Data Loader
-// Fetches profile, stats, enrollments, activity for the
-// logged-in user and injects into the DOM.
-// Requires: SupabaseClient (supabase-config.js)
 // ============================================================
 
 (function (window, document) {
@@ -72,17 +69,15 @@
     // ----------------------------------------------------------
     async function fetchProfile(userId) {
         const client = getClient();
-        const { data, error } = await client
-            .from('profiles').select('*').eq('id', userId).single();
-        if (error) { console.error('[Dashboard] profile', error); return null; }
+        const { data, error } = await client.from('profiles').select('*').eq('id', userId).single();
+        if (error) return null;
         return data;
     }
 
     async function fetchStats(userId) {
         const client = getClient();
-        const { data, error } = await client
-            .from('user_stats').select('*').eq('user_id', userId).single();
-        if (error) { console.error('[Dashboard] stats', error); return null; }
+        const { data, error } = await client.from('user_stats').select('*').eq('user_id', userId).single();
+        if (error) return null;
         return data;
     }
 
@@ -90,19 +85,17 @@
         const client = getClient();
         const { data, error } = await client
             .from('enrollments')
-            .select(`id, plan, enrolled_at, completed_at, last_lesson_id,
-                     course:courses(id, slug, title, tagline, icon, lessons_count, level)`)
+            .select(`id, plan, enrolled_at, completed_at, last_lesson_id, course:courses(id, slug, title, tagline, icon, lessons_count, level)`)
             .eq('user_id', userId)
             .order('enrolled_at', { ascending: false });
-        if (error) { console.error('[Dashboard] enrollments', error); return []; }
+        if (error) return [];
         return data || [];
     }
 
     async function fetchProgress(userId) {
         const client = getClient();
-        const { data, error } = await client
-            .from('course_progress').select('*').eq('user_id', userId);
-        if (error) { console.error('[Dashboard] progress', error); return {}; }
+        const { data, error } = await client.from('course_progress').select('*').eq('user_id', userId);
+        if (error) return {};
         const map = {};
         (data || []).forEach(r => { map[r.course_id] = r; });
         return map;
@@ -112,14 +105,39 @@
         const client = getClient();
         const { data, error } = await client
             .from('activity_log')
-            .select(`id, type, created_at, metadata, course_id, lesson_id,
-                     course:courses(title, slug),
-                     lesson:lessons(title, number)`)
+            .select(`id, type, created_at, metadata, course_id, lesson_id, course:courses(title, slug), lesson:lessons(title, number)`)
             .eq('user_id', userId)
             .order('created_at', { ascending: false })
             .limit(8);
-        if (error) { console.error('[Dashboard] activity', error); return []; }
+        if (error) return [];
         return data || [];
+    }
+
+    // NEW: Fetch JAMB Stats
+    async function fetchJambStats(userId) {
+        const client = getClient();
+        const { data: attempts } = await client
+            .from('quiz_attempts')
+            .select('score_percent, created_at, quiz:quizzes(course:courses(slug))')
+            .eq('user_id', userId)
+            .not('submitted_at', 'is', null);
+
+        const jambAttempts = (attempts || []).filter(a => a.quiz?.course?.slug?.startsWith('jamb-'));
+
+        if (!jambAttempts.length) return { best: 0, count: 0 };
+
+        const sessions = {};
+        jambAttempts.forEach(a => {
+            const date = new Date(a.created_at).toDateString();
+            if (!sessions[date]) sessions[date] = 0;
+            sessions[date] += a.score_percent; // Aggregate score
+        });
+
+        const scores = Object.values(sessions);
+        return {
+            best: Math.max(...scores),
+            count: scores.length
+        };
     }
 
     // ----------------------------------------------------------
@@ -137,8 +155,24 @@
         setText('[data-stat="courses-enrolled"]', stats.courses_enrolled);
         setText('[data-stat="lessons-completed"]', stats.lessons_completed);
         setText('[data-stat="active-days"]', stats.active_days_30);
-        setText('[data-stat="hours-learned"]',
-            (stats.total_minutes_learned / 60).toFixed(1));
+        setText('[data-stat="hours-learned"]', (stats.total_minutes_learned / 60).toFixed(1));
+    }
+
+    function renderJambStats(jamb) {
+        setText('[data-jamb-stat="best-score"]', jamb.best > 0 ? jamb.best : '—');
+        setText('[data-jamb-stat="mocks-taken"]', jamb.count);
+        
+        // Hide the empty state and show the stats if they have taken a mock
+        const statsEl = document.querySelector('[data-jamb-stats-view]');
+        const emptyEl = document.querySelector('[data-jamb-empty-view]');
+        
+        if (jamb.count > 0) {
+            if (statsEl) statsEl.hidden = false;
+            if (emptyEl) emptyEl.hidden = true;
+        } else {
+            if (statsEl) statsEl.hidden = true;
+            if (emptyEl) emptyEl.hidden = false;
+        }
     }
 
     function courseCardHtml(enrollment, progress) {
@@ -160,10 +194,7 @@
                     </div>
                     <h3 class="mb-2">${escapeHtml(c.title)}</h3>
                     <p class="mb-3">${escapeHtml(c.tagline || '')}</p>
-                    ${started ? `
-                        <div class="progress-bar mb-3">
-                            <div class="progress-fill" style="width: ${percent}%"></div>
-                        </div>` : ''}
+                    ${started ? `<div class="progress-bar mb-3"><div class="progress-fill" style="width: ${percent}%"></div></div>` : ''}
                     <div class="d-flex justify-between align-center">
                         <small>${completed} of ${total} lessons</small>
                         <a href="${url}" class="btn ${ctaClass} btn-sm">
@@ -187,9 +218,7 @@
         const empty = document.querySelector('[data-empty="enrolled-courses"]');
         if (empty) empty.hidden = true;
 
-        list.innerHTML = enrollments.map(e =>
-            courseCardHtml(e, progressMap[e.course?.id])
-        ).join('');
+        list.innerHTML = enrollments.map(e => courseCardHtml(e, progressMap[e.course?.id])).join('');
     }
 
     const ACTIVITY_ICONS = {
@@ -245,16 +274,11 @@
         `).join('');
     }
 
-    // ----------------------------------------------------------
-    // SIGN OUT
-    // ----------------------------------------------------------
     function wireSignOut() {
         document.querySelectorAll('[data-signout]').forEach(el => {
             el.addEventListener('click', async (e) => {
                 e.preventDefault();
-                if (window.ASLDS && window.ASLDS.Auth) {
-                    await window.ASLDS.Auth.signOut();
-                }
+                if (window.ASLDS && window.ASLDS.Auth) await window.ASLDS.Auth.signOut();
                 window.location.href = 'login.html';
             });
         });
@@ -269,16 +293,18 @@
 
         const userId = session.user.id;
 
-        const [profile, stats, enrollments, progress, activity] = await Promise.all([
+        const [profile, stats, enrollments, progress, activity, jambStats] = await Promise.all([
             fetchProfile(userId),
             fetchStats(userId),
             fetchEnrollments(userId),
             fetchProgress(userId),
-            fetchActivity(userId)
+            fetchActivity(userId),
+            fetchJambStats(userId) // NEW
         ]);
 
         if (profile) renderProfile(profile);
         if (stats) renderStats(stats);
+        if (jambStats) renderJambStats(jambStats); // NEW
         renderEnrollments(enrollments, progress);
         renderActivity(activity);
         wireSignOut();

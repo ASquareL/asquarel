@@ -718,3 +718,318 @@
         width: 100%;
     }
 }
+
+
+/* ======================================================
+   CBT INTERFACE (JAMB Mode)
+====================================================== */
+
+.cbt-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-4);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-4);
+    min-height: 100vh;
+    background: var(--background);
+}
+
+@media (max-width: 992px) {
+    .cbt-layout {
+        grid-template-columns: 1fr;
+        padding: var(--space-2);
+    }
+    .cbt-sidebar {
+        order: -1; /* Put sidebar (grid/timer) on top for mobile */
+    }
+}
+
+/* CBT Header */
+.cbt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--space-4);
+}
+
+.cbt-timer {
+    font-size: var(--fs-xl);
+    font-weight: 800;
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* CBT Main Question Area */
+.cbt-question-area {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    flex: 1;
+}
+
+.cbt-q-number {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+}
+
+.cbt-q-text {
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: var(--space-5);
+}
+
+/* Options */
+.cbt-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.cbt-option {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.cbt-option:hover {
+    background: var(--card-hover);
+}
+
+.cbt-option:has(input:checked),
+.cbt-option.is-selected {
+    border-color: var(--primary-gold);
+    background: rgba(212, 175, 55, 0.08);
+}
+
+.cbt-option input {
+    display: none; /* Hide native radio */
+}
+
+.cbt-option-letter {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.cbt-option:has(input:checked) .cbt-option-letter {
+    background: var(--primary-gold);
+    color: var(--black);
+    border-color: var(--primary-gold);
+}
+
+.cbt-option-text {
+    font-size: var(--fs-lg);
+    color: var(--white);
+    padding-top: 4px;
+}
+
+/* CBT Sidebar (Grid + Timer) */
+.cbt-sidebar {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    height: fit-content;
+    position: sticky;
+    top: var(--space-4);
+}
+
+/* Question Grid */
+.cbt-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.cbt-grid-btn {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background: var(--surface);
+    color: var(--gray-400);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.cbt-grid-btn:hover {
+    border-color: var(--primary-gold);
+}
+
+/* Grid States */
+.cbt-grid-btn.is-active {
+    border-color: var(--primary-gold);
+    box-shadow: inset 0 0 0 2px var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.cbt-grid-btn.is-answered {
+    background: var(--primary-gold);
+    color: var(--black);
+    border-color: var(--primary-gold);
+}
+
+/* CBT Footer (Nav buttons) */
+.cbt-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-color);
+}
+
+.cbt-legend {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    font-size: var(--fs-sm);
+    color: var(--gray-400);
+    margin-bottom: var(--space-3);
+}
+
+.cbt-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cbt-legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    background: var(--surface);
+}
+
+.cbt-legend-dot.gold {
+    background: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+
+/* Grouped grid for Full Mock */
+.cbt-grid-group h4 {
+    font-size: var(--fs-sm);
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-2);
+    padding-bottom: var(--space-1);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ======================================================
+   CBT FULL MOCK — Phase 2 Additions
+====================================================== */
+
+/* Subject Tabs */
+.cbt-subject-tabs {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--space-4);
+    padding-bottom: 4px;
+}
+
+.cbt-subject-tab {
+    padding: 10px 16px;
+    background: var(--surface);
+    color: var(--gray-400);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-fast);
+}
+
+.cbt-subject-tab:hover {
+    background: var(--card-hover);
+}
+
+.cbt-subject-tab.is-active {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+/* Mark for Review Button */
+.cbt-mark-review {
+    margin-top: var(--space-4);
+    padding: var(--space-2) var(--space-3);
+    background: transparent;
+    color: var(--gray-400);
+    border: 1px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-fast);
+}
+
+.cbt-mark-review:hover,
+.cbt-mark-review.is-marked {
+    color: #f97316; /* Orange */
+    border-color: #f97316;
+    background: rgba(249, 115, 22, 0.1);
+}
+
+/* Grid States */
+.cbt-grid-btn.is-review {
+    background: #f97316; /* Orange */
+    color: white;
+    border-color: #f97316;
+}
+
+.cbt-grid-btn.is-active {
+    border-color: var(--white);
+    box-shadow: inset 0 0 0 2px var(--white);
+}
+
+.cbt-grid-btn.is-answered {
+    background: var(--primary-gold);
+    color: var(--black);
+    border-color: var(--primary-gold);
+}
+
+/* Grid size specific for full mock */
+.cbt-grid-6 {
+    grid-template-columns: repeat(6, 1fr) !important;
+}

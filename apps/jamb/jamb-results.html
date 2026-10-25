@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Results — A Square L Academy</title>
+
+    <link rel="icon" type="image/png" href="../academy/assets/images/favicon.png" />
+    <link rel="stylesheet" href="../../packages/aslds/css/reset.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/variables.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/typography.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/layout.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/utilities.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/animations.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/buttons.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/cards.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/badge.css" />
+    <link rel="stylesheet" href="../../packages/aslds/css/components/lesson-content.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="bg-glow-top">
+
+    <main id="main-content" class="main-content">
+        <div class="container section max-content">
+            
+            <div class="text-center mb-5">
+                <h1 class="mb-3">Exam Results</h1>
+                <a href="index.html" class="btn btn-outline btn-sm">Back to JAMB Dashboard</a>
+            </div>
+
+            <div class="quiz-result-hero mb-5">
+                <div class="quiz-result-label" data-result-status>Loading…</div>
+                <div class="quiz-result-score" data-result-score>0%</div>
+                <p class="mb-0" data-result-points>0 of 0 points</p>
+            </div>
+
+            <h2 class="mb-4">Review Answers</h2>
+            <div class="d-flex flex-column gap-3" data-review-list>
+                <p class="is-empty">Loading review…</p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../packages/shared/js/core/supabase-config.js"></script>
+    <script src="../../packages/aslds/js/app.js"></script>
+    <script src="../../packages/aslds/js/theme.js"></script>
+    <script src="../../packages/aslds/js/toast.js"></script>
+    <script src="../../packages/shared/js/pages/jamb-results.js"></script>
+</body>
+</html>

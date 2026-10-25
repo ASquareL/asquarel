@@ -168,11 +168,21 @@
                     toast('error', 'Sign in failed', error);
                     return;
                 }
-                toast('success', 'Welcome back', 'Redirecting to your dashboard…');
-                setTimeout(() => { window.location.href = '/apps/academy/dashboard.html'; }, 800);
+                
+                // Check if we need to redirect somewhere specific
+                const redirectParam = new URLSearchParams(window.location.search).get('redirect');
+                let destination = 'dashboard.html';
+                
+                if (redirectParam === 'jamb') {
+                    destination = '../jamb/index.html';
+                }
+
+                toast('success', 'Welcome back', 'Redirecting…');
+                setTimeout(() => { window.location.href = destination; }, 800);
             });
         }
 
+        
         if (registerForm) {
             registerForm.addEventListener('submit', async (e) => {
                 e.preventDefault();

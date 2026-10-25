@@ -399,3 +399,70 @@ Author: A Square L Innovate
 .border-gold {
     border: 1px solid rgba(212, 175, 55, 0.3);
 }
+
+/* ======================================================
+   SUBJECT SELECTOR CARD
+====================================================== */
+
+.subject-select-card {
+    position: relative;
+    display: block;
+    padding: var(--space-4);
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.subject-select-card:hover {
+    border-color: var(--gray-500);
+}
+
+.subject-select-card.is-selected {
+    border-color: var(--primary-gold);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.subject-select-card.is-locked {
+    opacity: 0.8;
+    cursor: not-allowed;
+    border-color: var(--primary-gold);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.subject-select-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.subject-select-indicator {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-3);
+    transition: var(--transition-fast);
+}
+
+.subject-select-card.is-selected .subject-select-indicator,
+.subject-select-card.is-locked .subject-select-indicator {
+    background: var(--primary-gold);
+    border-color: var(--primary-gold);
+    color: var(--black);
+}
+
+.subject-select-indicator i {
+    font-size: 12px;
+    display: none;
+}
+
+.subject-select-card.is-selected .subject-select-indicator i,
+.subject-select-card.is-locked .subject-select-indicator i {
+    display: block;
+}
+
