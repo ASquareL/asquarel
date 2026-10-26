@@ -56,34 +56,55 @@
             </div>
 
             <div class="grid grid-2">
-                <!-- CREATE NEW EXAM -->
-                <div class="widget">
-                    <h2 class="widget-title">Create New Exam</h2>
-                    <form class="form" data-create-form>
-                        <div class="form-group">
-                            <label class="form-label">Subject</label>
-                            <select class="form-control" data-subject-select required>
-                                <option value="">Loading subjects...</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">Year (e.g., 2023)</label>
-                                <input type="number" class="form-control" data-year-input placeholder="2023" required>
+                <!-- LEFT: Create Subject & Exam -->
+                <div>
+                    <!-- CREATE NEW SUBJECT -->
+                    <div class="widget mb-4">
+                        <h2 class="widget-title">1. Create New Subject</h2>
+                        <form class="form" data-create-subject-form>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Subject Title</label>
+                                    <input type="text" class="form-control" data-sub-title placeholder="e.g., Government" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Icon (FontAwesome)</label>
+                                    <input type="text" class="form-control" data-sub-icon placeholder="fa-solid fa-landmark" value="fa-solid fa-book">
+                                </div>
                             </div>
+                            <button type="submit" class="btn btn-outline btn-block"><i class="fa-solid fa-plus"></i> Add Subject</button>
+                        </form>
+                    </div>
+
+                    <!-- CREATE NEW EXAM -->
+                    <div class="widget">
+                        <h2 class="widget-title">2. Create Exam for Subject</h2>
+                        <form class="form" data-create-form>
                             <div class="form-group">
-                                <label class="form-label">Time Limit (Mins)</label>
-                                <input type="number" class="form-control" data-time-input value="40" required>
+                                <label class="form-label">Subject</label>
+                                <select class="form-control" data-subject-select required>
+                                    <option value="">Loading subjects...</option>
+                                </select>
                             </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create Exam</button>
-                    </form>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Year (e.g., 2023)</label>
+                                    <input type="number" class="form-control" data-year-input placeholder="2023" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Time Limit (Mins)</label>
+                                    <input type="number" class="form-control" data-time-input value="40" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-file-circle-plus"></i> Create Exam</button>
+                        </form>
+                    </div>
                 </div>
 
-                <!-- EXISTING EXAMS -->
+                <!-- RIGHT: Existing Exams -->
                 <div class="widget">
                     <h2 class="widget-title">Existing Exams</h2>
-                    <div class="table-wrapper" style="max-height: 400px; overflow-y: auto;">
+                    <div class="table-wrapper" style="max-height: 600px; overflow-y: auto;">
                         <table class="table table-sm">
                             <thead><tr><th>Subject</th><th>Year</th><th>Questions</th><th>Action</th></tr></thead>
                             <tbody data-exams-tbody><tr><td colspan="4" class="is-empty">Loading…</td></tr></tbody>

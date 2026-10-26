@@ -1033,3 +1033,63 @@
 .cbt-grid-6 {
     grid-template-columns: repeat(6, 1fr) !important;
 }
+
+/* ======================================================
+   CBT MOBILE RESPONSIVENESS
+====================================================== */
+
+@media (max-width: 992px) {
+    /* Sidebar becomes an overlay */
+    .cbt-sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 85vw);
+        height: 100vh;
+        z-index: 1100;
+        border-radius: 0;
+        border-left: 1px solid var(--border-color);
+        transition: right 0.3s ease;
+        background: var(--card-bg);
+        padding: var(--space-4);
+        order: 0; /* Reset order */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cbt-sidebar.is-open {
+        right: 0;
+    }
+
+    .cbt-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.7);
+        z-index: 1090;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .cbt-backdrop.is-visible {
+        display: block;
+        opacity: 1;
+    }
+
+    .cbt-mobile-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--surface);
+        border: 1px solid var(--border-color);
+        padding: 8px 16px;
+        border-radius: var(--radius-md);
+        color: var(--white);
+        font-weight: 700;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 993px) {
+    .cbt-mobile-btn { display: none; }
+}

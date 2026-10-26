@@ -272,6 +272,19 @@
     // BOOT
     // ----------------------------------------------------------
     async function boot() {
+                // Mobile Sidebar Toggle
+        const sidebar = document.querySelector('.cbt-sidebar');
+        const backdrop = document.querySelector('[data-sidebar-backdrop]');
+        const toggleBtn = document.querySelector('[data-toggle-sidebar]');
+
+        function toggleSidebar() {
+            const isOpen = sidebar.classList.toggle('is-open');
+            if (backdrop) backdrop.classList.toggle('is-visible', isOpen);
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
+        if (backdrop) backdrop.addEventListener('click', toggleSidebar);
+        
         const session = await requireAuth();
         if (!session) return;
         state.session = session;
