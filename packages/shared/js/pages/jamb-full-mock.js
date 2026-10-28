@@ -12,10 +12,11 @@
         masterQuestions: [],
         currentIndex: 0,
         answers: {},
-        markedForReview: new Set(), // Track which questions are marked
+        markedForReview: new Set(),
         timerInterval: null,
         timeRemaining: 120 * 60,
-        attempts: {}
+        attempts: {},
+        closeSidebar: null
     };
 
     // ----------------------------------------------------------
@@ -23,29 +24,28 @@
     // ----------------------------------------------------------
     async function assembleExam(subjectSlugs) {
         const client = getClient();
-        
+
         const { data: courses } = await client
             .from('courses')
             .select('id, title, slug, quizzes(id, title)')
             .in('slug', subjectSlugs);
-        
+
         if (!courses || !courses.length) return false;
 
         let allQuestions = [];
         const quizIds = [];
 
-        // Maintain the order of the slugs passed in the URL
         const orderedCourses = subjectSlugs.map(slug => courses.find(c => c.slug === slug)).filter(c => c);
 
         for (const course of orderedCourses) {
             const quiz = course.quizzes && course.quizzes[0];
             if (!quiz) continue;
-            
+
             quizIds.push(quiz.id);
             state.attempts[quiz.id] = { courseTitle: course.title, attemptId: null };
 
             const { data: qs } = await client.from('quiz_questions').select('id, question, order_index, quiz_id').eq('quiz_id', quiz.id).order('order_index');
-            
+
             if (qs && qs.length) {
                 const qIds = qs.map(q => q.id);
                 const { data: opts } = await client.from('quiz_options_safe').select('id, question_id, option_text, order_index').in('question_id', qIds).order('order_index');
@@ -62,14 +62,14 @@
 
         state.masterQuestions = allQuestions;
         state.subjects = orderedCourses.map(c => c.title);
-        
+
         for (const quizId of quizIds) {
             const { data: attempt } = await client.from('quiz_attempts').insert({
                 user_id: state.session.user.id,
                 quiz_id: quizId,
                 course_id: courses.find(c => c.quizzes[0].id === quizId).id
             }).select('id').single();
-            
+
             if (attempt) state.attempts[quizId].attemptId = attempt.id;
         }
 
@@ -93,7 +93,6 @@
         container.querySelectorAll('[data-tab]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const targetSubject = btn.getAttribute('data-tab');
-                // Find first question of this subject
                 const targetIndex = state.masterQuestions.findIndex(q => q.courseTitle === targetSubject);
                 if (targetIndex !== -1) {
                     state.currentIndex = targetIndex;
@@ -124,11 +123,11 @@
                             const isCurrent = q.globalIndex === state.currentIndex;
                             const isAnswered = !!state.answers[q.id];
                             const isReview = state.markedForReview.has(q.id);
-                            
+
                             let classes = 'cbt-grid-btn';
                             if (isReview) classes += ' is-review';
                             else if (isAnswered) classes += ' is-answered';
-                            
+
                             if (isCurrent) classes += ' is-active';
 
                             return `<button type="button" class="${classes}" data-jump="${q.globalIndex}">${q.globalIndex + 1}</button>`;
@@ -137,7 +136,7 @@
                 </div>
             `;
         }
-        
+
         sidebar.innerHTML = html;
 
         sidebar.querySelectorAll('[data-jump]').forEach(btn => {
@@ -145,6 +144,7 @@
                 state.currentIndex = parseInt(btn.getAttribute('data-jump'), 10);
                 renderQuestion();
                 renderSidebarGrid();
+                if (state.closeSidebar) state.closeSidebar();
             });
         });
     }
@@ -170,10 +170,10 @@
             <div class="d-flex justify-between align-center mb-4">
                 <div class="cbt-q-number mb-0">${q.courseTitle} · Question ${state.currentIndex + 1} of ${state.masterQuestions.length}</div>
             </div>
-            
+
             <h2 class="cbt-q-text">${escapeHtml(q.question)}</h2>
             <div class="cbt-options">${optionsHtml}</div>
-            
+
             <button type="button" class="cbt-mark-review ${isMarked ? 'is-marked' : ''}" data-mark-review>
                 <i class="fa-solid fa-flag"></i> ${isMarked ? 'Unmark Review' : 'Mark for Review'}
             </button>
@@ -189,7 +189,6 @@
             <div class="text-center mt-3 text-muted"><small>Use keys A, B, C, D to answer. N for next, P for previous. M to mark for review.</small></div>
         `;
 
-        // Wire clicks
         area.querySelectorAll('.cbt-option input').forEach(input => {
             input.addEventListener('change', () => {
                 state.answers[q.id] = input.value;
@@ -225,6 +224,56 @@
     }
 
     // ----------------------------------------------------------
+    // MOBILE SIDEBAR DRAWER
+    // ----------------------------------------------------------
+    function setupMobileSidebar() {
+        const sidebar = document.querySelector('.cbt-sidebar');
+        const backdrop = document.querySelector('[data-sidebar-backdrop]');
+        const toggleBtn = document.querySelector('[data-toggle-sidebar]');
+        const closeBtn = document.querySelector('[data-close-sidebar]');
+
+        if (!sidebar) return;
+
+        function openSidebar() {
+            if (sidebar.classList.contains('is-open')) return;
+            sidebar.classList.add('is-open');
+            if (backdrop) backdrop.classList.add('is-visible');
+            if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            const focusTarget = closeBtn || sidebar.querySelector('button');
+            if (focusTarget) focusTarget.focus({ preventScroll: true });
+        }
+
+        function closeSidebar() {
+            if (!sidebar.classList.contains('is-open')) return;
+            sidebar.classList.remove('is-open');
+            if (backdrop) backdrop.classList.remove('is-visible');
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.focus({ preventScroll: true });
+            }
+            document.body.style.overflow = '';
+        }
+
+        function toggleSidebar() {
+            if (sidebar.classList.contains('is-open')) closeSidebar();
+            else openSidebar();
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
+        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+        if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+                closeSidebar();
+            }
+        });
+
+        state.closeSidebar = closeSidebar;
+    }
+
+    // ----------------------------------------------------------
     // KEYBOARD SHORTCUTS
     // ----------------------------------------------------------
     function setupKeyboard() {
@@ -236,7 +285,7 @@
                 const index = ['a', 'b', 'c', 'd'].indexOf(key);
                 const q = state.masterQuestions[state.currentIndex];
                 const option = q.options[index];
-                
+
                 if (option) {
                     state.answers[q.id] = option.id;
                     const area = document.querySelector('[data-question-area]');
@@ -282,6 +331,8 @@
     }
 
     function openSubmitModal() {
+        if (state.closeSidebar) state.closeSidebar();
+
         const answered = Object.keys(state.answers).length;
         const total = state.masterQuestions.length;
         const unanswered = total - answered;
@@ -302,8 +353,7 @@
         if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Grading...'; }
 
         const client = getClient();
-        
-        // Group answers by quiz_id
+
         const answersByQuiz = {};
         state.masterQuestions.forEach(q => {
             if (state.answers[q.id]) {
@@ -316,7 +366,6 @@
             }
         });
 
-        // Insert answers and grade each subject
         let completedAttempts = [];
         for (const [quizId, answers] of Object.entries(answersByQuiz)) {
             if (answers.length > 0) {
@@ -327,7 +376,6 @@
             completedAttempts.push(attemptId);
         }
 
-        // Redirect to results with a comma-separated list of attempt IDs
         window.location.href = `full-results.html?attempts=${completedAttempts.join(',')}`;
     }
 
@@ -342,22 +390,11 @@
     // BOOT
     // ----------------------------------------------------------
     async function boot() {
-                // Mobile Sidebar Toggle
-        const sidebar = document.querySelector('.cbt-sidebar');
-        const backdrop = document.querySelector('[data-sidebar-backdrop]');
-        const toggleBtn = document.querySelector('[data-toggle-sidebar]');
+        setupMobileSidebar();
 
-        function toggleSidebar() {
-            const isOpen = sidebar.classList.toggle('is-open');
-            if (backdrop) backdrop.classList.toggle('is-visible', isOpen);
-        }
-
-        if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
-        if (backdrop) backdrop.addEventListener('click', toggleSidebar);
-        
         const client = getClient();
         const { data: { session } } = await client.auth.getSession();
-        if (!session) { window.location.href = '../academy/login.html?redirect=jamb'; return; }
+        if (!session) { window.location.href = '/apps/academy/login.html?redirect=jamb'; return; }
         state.session = session;
 
         const subjectSlugs = getQuery('subjects');
@@ -369,15 +406,6 @@
         if (!success || !state.masterQuestions.length) {
             toast('error', 'Exam Error', 'Could not load questions. Ensure questions are uploaded.');
             return;
-        }
-
-        // Add Subject Tabs container to DOM dynamically (if not in HTML)
-        const header = document.querySelector('.cbt-header');
-        if (header && !document.querySelector('[data-subject-tabs]')) {
-            const tabsDiv = document.createElement('div');
-            tabsDiv.className = 'cbt-subject-tabs';
-            tabsDiv.setAttribute('data-subject-tabs', '');
-            header.parentNode.insertBefore(tabsDiv, header.nextSibling);
         }
 
         renderSubjectTabs();

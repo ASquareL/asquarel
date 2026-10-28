@@ -37,13 +37,17 @@
         currentIndex: 0,
         answers: {},
         timerInterval: null,
-        timeRemaining: 0
+        timeRemaining: 0,
+        closeSidebar: null
     };
 
     async function requireAuth() {
         const client = getClient();
         const { data: { session } } = await client.auth.getSession();
-        if (!session) { window.location.href = '../login.html'; return null; }
+        if (!session) {
+            window.location.href = '/apps/academy/login.html?redirect=jamb';
+            return null;
+        }
         return session;
     }
 
@@ -71,7 +75,7 @@
             .select('id, question, order_index')
             .eq('quiz_id', quizId)
             .order('order_index');
-        
+
         if (!questions) return [];
 
         const { data: options } = await client
@@ -117,12 +121,12 @@
             return `<button type="button" class="${classes}" data-jump="${index}">${index + 1}</button>`;
         }).join('');
 
-        // Re-wire jump buttons
         grid.querySelectorAll('[data-jump]').forEach(btn => {
             btn.addEventListener('click', () => {
                 state.currentIndex = parseInt(btn.getAttribute('data-jump'), 10);
                 renderQuestion();
                 renderGrid();
+                if (state.closeSidebar) state.closeSidebar();
             });
         });
     }
@@ -147,7 +151,7 @@
             <div class="cbt-q-number">Question ${state.currentIndex + 1} of ${state.questions.length}</div>
             <h2 class="cbt-q-text">${escapeHtml(q.question)}</h2>
             <div class="cbt-options">${optionsHtml}</div>
-            
+
             <div class="cbt-footer">
                 <button type="button" class="btn btn-outline" data-prev ${state.currentIndex === 0 ? 'disabled' : ''}>
                     <i class="fa-solid fa-arrow-left"></i> Previous
@@ -158,18 +162,15 @@
             </div>
         `;
 
-        // Wire option clicks
         area.querySelectorAll('.cbt-option input').forEach(input => {
             input.addEventListener('change', () => {
                 state.answers[q.id] = input.value;
-                // Manually update classes for immediate visual feedback
                 area.querySelectorAll('.cbt-option').forEach(el => el.classList.remove('is-selected'));
                 input.closest('.cbt-option').classList.add('is-selected');
-                renderGrid(); // Update the sidebar grid
+                renderGrid();
             });
         });
 
-        // Wire nav
         area.querySelector('[data-prev]')?.addEventListener('click', () => {
             if (state.currentIndex > 0) {
                 state.currentIndex--;
@@ -187,11 +188,62 @@
     }
 
     // ----------------------------------------------------------
+    // MOBILE SIDEBAR DRAWER
+    // ----------------------------------------------------------
+    function setupMobileSidebar() {
+        const sidebar = document.querySelector('.cbt-sidebar');
+        const backdrop = document.querySelector('[data-sidebar-backdrop]');
+        const toggleBtn = document.querySelector('[data-toggle-sidebar]');
+        const closeBtn = document.querySelector('[data-close-sidebar]');
+
+        if (!sidebar) return;
+
+        function openSidebar() {
+            if (sidebar.classList.contains('is-open')) return;
+            sidebar.classList.add('is-open');
+            if (backdrop) backdrop.classList.add('is-visible');
+            if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            const focusTarget = closeBtn || sidebar.querySelector('button');
+            if (focusTarget) focusTarget.focus({ preventScroll: true });
+        }
+
+        function closeSidebar() {
+            if (!sidebar.classList.contains('is-open')) return;
+            sidebar.classList.remove('is-open');
+            if (backdrop) backdrop.classList.remove('is-visible');
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.focus({ preventScroll: true });
+            }
+            document.body.style.overflow = '';
+        }
+
+        function toggleSidebar() {
+            if (sidebar.classList.contains('is-open')) closeSidebar();
+            else openSidebar();
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
+        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+        if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+                closeSidebar();
+            }
+        });
+
+        state.closeSidebar = closeSidebar;
+    }
+
+    // ----------------------------------------------------------
     // TIMER
     // ----------------------------------------------------------
     function startTimer() {
         const timerEl = document.querySelector('[data-timer] span');
-        if (!timerEl) return;
+        const timerBox = document.querySelector('[data-timer]');
+        if (!timerEl || !timerBox) return;
 
         if (!state.quiz.time_limit_min) {
             timerEl.textContent = 'Untimed';
@@ -202,7 +254,7 @@
 
         state.timerInterval = setInterval(() => {
             state.timeRemaining--;
-            
+
             if (state.timeRemaining <= 0) {
                 clearInterval(state.timerInterval);
                 timerEl.textContent = '00:00';
@@ -212,10 +264,9 @@
             }
 
             timerEl.textContent = formatTime(state.timeRemaining);
-            
-            // Turn red under 5 minutes
+
             if (state.timeRemaining < 300) {
-                timerEl.parentElement.style.background = 'rgba(239, 68, 68, 0.2)';
+                timerBox.classList.add('is-warning');
             }
         }, 1000);
     }
@@ -224,6 +275,8 @@
     // SUBMIT
     // ----------------------------------------------------------
     async function handleSubmit(force = false) {
+        if (state.closeSidebar) state.closeSidebar();
+
         const answered = Object.keys(state.answers).length;
         const total = state.questions.length;
 
@@ -241,8 +294,7 @@
         clearInterval(state.timerInterval);
 
         const client = getClient();
-        
-        // 1. Save all answers
+
         const rows = Object.entries(state.answers).map(([qId, optId]) => ({
             attempt_id: state.currentAttempt.id,
             question_id: qId,
@@ -253,7 +305,6 @@
             await client.from('quiz_answers').insert(rows);
         }
 
-        // 2. Grade via RPC
         const { data, error } = await client.rpc('submit_quiz_attempt', {
             p_attempt_id: state.currentAttempt.id
         });
@@ -264,7 +315,6 @@
             return;
         }
 
-        // Redirect to results (we'll build this next)
         window.location.href = `jamb-results.html?id=${state.currentAttempt.id}`;
     }
 
@@ -272,19 +322,8 @@
     // BOOT
     // ----------------------------------------------------------
     async function boot() {
-                // Mobile Sidebar Toggle
-        const sidebar = document.querySelector('.cbt-sidebar');
-        const backdrop = document.querySelector('[data-sidebar-backdrop]');
-        const toggleBtn = document.querySelector('[data-toggle-sidebar]');
+        setupMobileSidebar();
 
-        function toggleSidebar() {
-            const isOpen = sidebar.classList.toggle('is-open');
-            if (backdrop) backdrop.classList.toggle('is-visible', isOpen);
-        }
-
-        if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
-        if (backdrop) backdrop.addEventListener('click', toggleSidebar);
-        
         const session = await requireAuth();
         if (!session) return;
         state.session = session;

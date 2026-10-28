@@ -340,7 +340,7 @@
     async function boot() {
         const client = getClient();
         const { data: { session } } = await client.auth.getSession();
-        if (!session) { window.location.href = '../academy/login.html?redirect=jamb'; return; }
+        if (!session) { window.location.href = '/apps/academy/login.html?redirect=jamb'; return; }
         state.session = session;
 
         // Fetch User Plan
