@@ -103,6 +103,16 @@
         });
     }
 
+    function updateActiveTab() {
+        const currentQ = state.masterQuestions[state.currentIndex];
+        if (!currentQ) return;
+        
+        document.querySelectorAll('.cbt-subject-tab').forEach(tab => {
+            const isActive = tab.getAttribute('data-tab') === currentQ.courseTitle;
+            tab.classList.toggle('is-active', isActive);
+        });
+    }
+
     function renderSidebarGrid() {
         const sidebar = document.querySelector('[data-mock-sidebar]');
         if (!sidebar) return;
@@ -201,6 +211,9 @@
         area.querySelector('[data-mark-review]')?.addEventListener('click', toggleMarkForReview);
         area.querySelector('[data-prev]')?.addEventListener('click', () => navigate(-1));
         area.querySelector('[data-next]')?.addEventListener('click', () => navigate(1));
+
+        // Update the active tab highlight on every render
+        updateActiveTab();
     }
 
     function toggleMarkForReview() {
