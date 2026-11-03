@@ -3,7 +3,7 @@
 
     function getClient() {
         if (!window.SupabaseClient) {
-            console.error('[Auth] Supabase client not initialized. Is supabase-config.js loaded?');
+            console.error('[Auth] Supabase client not initialized.');
             return null;
         }
         return window.SupabaseClient;
@@ -17,6 +17,9 @@
         }
     }
 
+    // ----------------------------------------------------------
+    // SIGN UP
+    // ----------------------------------------------------------
     async function signUp({ email, password, fullName }) {
         const c = getClient();
         if (!c) return { user: null, error: 'Supabase not ready' };
@@ -31,6 +34,50 @@
         return { user: data.user, error: null };
     }
 
+    // ----------------------------------------------------------
+    // OTP VERIFICATION
+    // ----------------------------------------------------------
+    async function verifyOtp({ email, token }) {
+        const c = getClient();
+        if (!c) return { user: null, error: 'Supabase not ready' };
+
+        const { data, error } = await c.auth.verifyOtp({
+            email,
+            token,
+            type: 'signup'
+        });
+
+        if (error) return { user: null, error: error.message };
+        return { user: data.user, error: null };
+    }
+
+    async function resendOtp({ email }) {
+        const c = getClient();
+        if (!c) return { error: 'Supabase not ready' };
+
+        const { error } = await c.auth.resend({ type: 'signup', email });
+        return { error: error ? error.message : null };
+    }
+
+    async function checkVerifyAttempts(userId) {
+        const c = getClient();
+        if (!c) return { allowed: true };
+        const { data, error } = await c.rpc('check_verify_attempts', { p_user_id: userId });
+        if (error) return { allowed: true };
+        return data;
+    }
+
+    async function recordFailedVerify(userId) {
+        const c = getClient();
+        if (!c) return { locked: false };
+        const { data, error } = await c.rpc('record_failed_verify', { p_user_id: userId });
+        if (error) return { locked: false };
+        return data;
+    }
+
+    // ----------------------------------------------------------
+    // LOGIN
+    // ----------------------------------------------------------
     async function signIn({ email, password }) {
         const c = getClient();
         if (!c) return { user: null, error: 'Supabase not ready' };
@@ -87,34 +134,21 @@
     async function signInWithGoogle() {
         const c = getClient();
         if (!c) return { error: 'Supabase not ready' };
-
-        // Build the redirect URL from the current page's folder.
-        // On login.html or register.html (both in /apps/academy/),
-        // this resolves to /apps/academy/dashboard.html
         const redirectTo = new URL('dashboard.html', window.location.href).href;
-
         const { error } = await c.auth.signInWithOAuth({
             provider: 'google',
-            options: {
-                redirectTo,
-                queryParams: {
-                    access_type: 'offline',
-                    prompt: 'consent'
-                }
-            }
+            options: { redirectTo, queryParams: { access_type: 'offline', prompt: 'consent' } }
         });
-
         return { error: error ? error.message : null };
     }
 
-        async function requireAuth(redirectUrl) {
+    async function requireAuth(redirectUrl) {
         const session = await getSession();
         if (!session) {
             window.location.href = redirectUrl || 'login.html';
             return null;
         }
 
-        // Check if suspended
         const client = getClient();
         const { data: profile } = await client
             .from('profiles')
@@ -127,7 +161,6 @@
             window.location.href = 'login.html?error=suspended';
             return null;
         }
-
         return session;
     }
 
@@ -142,10 +175,7 @@
 
     // ----------------------------------------------------------
     // FORM AUTO-WIRING
-    // Any form with [data-auth="login"|"register"] gets wired.
-    // Any button with [data-auth-google] triggers Google OAuth.
     // ----------------------------------------------------------
-
     function wireForms() {
         const loginForm = document.querySelector('[data-auth="login"]');
         const registerForm = document.querySelector('[data-auth="register"]');
@@ -155,39 +185,42 @@
             loginForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const submitBtn = loginForm.querySelector('button[type="submit"]');
-                if (submitBtn) submitBtn.disabled = true;
+                const originalTxt = submitBtn.innerHTML;
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Signing in…'; }
 
                 const email = loginForm.querySelector('input[type="email"]').value.trim();
                 const password = loginForm.querySelector('input[type="password"]').value;
 
                 const { user, error } = await signIn({ email, password });
 
-                if (submitBtn) submitBtn.disabled = false;
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalTxt; }
 
                 if (error) {
+                    // If they haven't verified their email, push them to the OTP screen
+                    if (error.toLowerCase().includes('email not confirmed')) {
+                        toast('warning', 'Email not verified', 'Redirecting to verification…');
+                        setTimeout(() => { window.location.href = `register.html?verify=${encodeURIComponent(email)}`; }, 1200);
+                        return;
+                    }
                     toast('error', 'Sign in failed', error);
                     return;
                 }
                 
-                // Check if we need to redirect somewhere specific
                 const redirectParam = new URLSearchParams(window.location.search).get('redirect');
                 let destination = 'dashboard.html';
-                
-                if (redirectParam === 'jamb') {
-                    destination = '../jamb/index.html';
-                }
+                if (redirectParam === 'jamb') destination = '../jamb/index.html';
 
                 toast('success', 'Welcome back', 'Redirecting…');
                 setTimeout(() => { window.location.href = destination; }, 800);
             });
         }
 
-        
         if (registerForm) {
             registerForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const submitBtn = registerForm.querySelector('button[type="submit"]');
-                if (submitBtn) submitBtn.disabled = true;
+                const originalTxt = submitBtn.innerHTML;
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Creating account…'; }
 
                 const fullName = registerForm.querySelector('input[name="name"]').value.trim();
                 const email = registerForm.querySelector('input[type="email"]').value.trim();
@@ -195,14 +228,18 @@
 
                 const { user, error } = await signUp({ email, password, fullName });
 
-                if (submitBtn) submitBtn.disabled = false;
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalTxt; }
 
                 if (error) {
                     toast('error', 'Registration failed', error);
                     return;
                 }
-                toast('success', 'Account created', 'Welcome to A Square L Academy.');
-                setTimeout(() => { window.location.href = '/apps/academy/dashboard.html'; }, 1000);
+                
+                toast('success', 'Check your email', 'We sent you a 6-digit code.');
+                setTimeout(() => { 
+                    // Pass the UID so we can check lockouts even without a session
+                    window.location.href = `register.html?verify=${encodeURIComponent(email)}&uid=${user.id}`; 
+                }, 800);
             });
         }
 
@@ -229,6 +266,10 @@
         signUp,
         signIn,
         signOut,
+        verifyOtp,
+        resendOtp,
+        checkVerifyAttempts,
+        recordFailedVerify,
         getUser,
         getSession,
         onAuthChange,

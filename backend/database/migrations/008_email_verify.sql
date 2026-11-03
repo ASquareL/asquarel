@@ -31,7 +31,6 @@ BEGIN
         );
     END IF;
 
-    -- If lock has expired, reset
     IF v_locked_until IS NOT NULL AND v_locked_until <= now() THEN
         UPDATE profiles
         SET email_verify_attempts = 0, email_verify_locked_until = NULL
@@ -49,7 +48,8 @@ BEGIN
 END;
 $$;
 
-GRANT EXECUTE ON FUNCTION check_verify_attempts(uuid) TO authenticated;
+-- FIXED: Grant to anon as well as authenticated
+GRANT EXECUTE ON FUNCTION check_verify_attempts(uuid) TO anon, authenticated;
 
 -- Function to record a failed attempt
 CREATE OR REPLACE FUNCTION record_failed_verify(p_user_id uuid)
@@ -78,4 +78,5 @@ BEGIN
 END;
 $$;
 
-GRANT EXECUTE ON FUNCTION record_failed_verify(uuid) TO authenticated;
+-- FIXED: Grant to anon as well as authenticated
+GRANT EXECUTE ON FUNCTION record_failed_verify(uuid) TO anon, authenticated;

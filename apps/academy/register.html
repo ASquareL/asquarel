@@ -44,11 +44,8 @@
 
     <div class="auth-layout">
 
-        <!-- ========================================= -->
-        <!-- BRAND PANEL (desktop only) -->
-        <!-- ========================================= -->
+        <!-- BRAND PANEL -->
         <aside class="auth-brand">
-
             <div>
                 <a href="index.html" class="auth-brand-logo" aria-label="A Square L Academy">
                     A SQUARE L <span>ACADEMY</span>
@@ -56,15 +53,10 @@
             </div>
 
             <div>
-
-                <h2 class="auth-brand-tagline">
-                    Start learning in under a minute.
-                </h2>
-
+                <h2 class="auth-brand-tagline">Start learning in under a minute.</h2>
                 <p class="auth-brand-description">
                     No credit card. No long forms. Just your email — and you're in. The free plan gives you access to starter lessons and full community support.
                 </p>
-
                 <div class="auth-feature">
                     <i class="fa-solid fa-bolt"></i>
                     <div>
@@ -72,7 +64,6 @@
                         <span>Begin your first lesson immediately after signing up.</span>
                     </div>
                 </div>
-
                 <div class="auth-feature">
                     <i class="fa-solid fa-shield-halved"></i>
                     <div>
@@ -80,7 +71,6 @@
                         <span>No card required. Upgrade only if you want to.</span>
                     </div>
                 </div>
-
                 <div class="auth-feature">
                     <i class="fa-solid fa-mobile-screen-button"></i>
                     <div>
@@ -88,76 +78,43 @@
                         <span>Phone, tablet, laptop — everything works.</span>
                     </div>
                 </div>
-
             </div>
 
             <div class="auth-brand-footer">
                 &copy; 2026 A Square L Innovate
             </div>
-
         </aside>
 
-        <!-- ========================================= -->
         <!-- FORM PANEL -->
-        <!-- ========================================= -->
         <main id="main-content" class="auth-form-panel">
 
-            <div class="auth-card">
-
+            <!-- 1. REGISTRATION CARD -->
+            <div class="auth-card" id="register-card">
                 <header class="auth-card-header">
                     <h1 class="auth-card-title">Create Your Account</h1>
                     <p class="auth-card-subtitle">Start learning digital skills — free, forever.</p>
                 </header>
 
-                <!-- Google Sign-Up (placeholder — requires backend) -->
                 <button type="button" class="btn-google" data-auth-google aria-label="Sign up with Google">
-                    <i class="fa-brands fa-google"></i>
-                    Sign up with Google
+                    <i class="fa-brands fa-google"></i> Sign up with Google
                 </button>
 
                 <div class="auth-divider">or sign up with email</div>
 
-                <!-- Registration form -->
                 <form class="form" data-auth="register" autocomplete="on">
-
                     <div class="form-group">
                         <label for="register-name" class="form-label">Full Name</label>
-                        <input
-                            type="text"
-                            id="register-name"
-                            name="name"
-                            class="form-control"
-                            placeholder="Your full name"
-                            autocomplete="name"
-                            required
-                        />
+                        <input type="text" id="register-name" name="name" class="form-control" placeholder="Your full name" autocomplete="name" required />
                     </div>
 
                     <div class="form-group">
                         <label for="register-email" class="form-label">Email Address</label>
-                        <input
-                            type="email"
-                            id="register-email"
-                            name="email"
-                            class="form-control"
-                            placeholder="you@example.com"
-                            autocomplete="email"
-                            required
-                        />
+                        <input type="email" id="register-email" name="email" class="form-control" placeholder="you@example.com" autocomplete="email" required />
                     </div>
 
                     <div class="form-group">
                         <label for="register-password" class="form-label">Password</label>
-                        <input
-                            type="password"
-                            id="register-password"
-                            name="password"
-                            class="form-control"
-                            placeholder="At least 8 characters"
-                            autocomplete="new-password"
-                            minlength="8"
-                            required
-                        />
+                        <input type="password" id="register-password" name="password" class="form-control" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required />
                         <p class="form-text">Use at least 8 characters — mix letters, numbers, and symbols.</p>
                     </div>
 
@@ -171,14 +128,40 @@
                     <button type="submit" class="btn btn-primary btn-block">
                         Create Free Account <i class="fa-solid fa-arrow-right"></i>
                     </button>
-
                 </form>
 
                 <p class="auth-footer-note">
-                    Already have an account?
-                    <a href="login.html">Sign in</a>
+                    Already have an account? <a href="login.html">Sign in</a>
                 </p>
+            </div>
 
+            <!-- 2. OTP VERIFICATION CARD (Hidden by default) -->
+            <div class="auth-card" id="verify-step" hidden>
+                <header class="auth-card-header">
+                    <h1 class="auth-card-title">Verify your email</h1>
+                    <p class="auth-card-subtitle">
+                        We sent a 6-digit code to <strong id="verify-email">your email</strong>.
+                    </p>
+                </header>
+
+                <form class="form" id="otp-form">
+                    <div class="form-group">
+                        <label class="form-label" for="otp-input">Verification code</label>
+                        <input id="otp-input" class="form-control" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" placeholder="000000" />
+                        <p class="form-text" id="otp-error" hidden style="color: var(--danger);"></p>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" id="otp-submit">
+                        Verify &amp; Continue <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <p class="auth-footer-note">
+                    Didn't get the code? <a href="#" id="resend-link">Resend</a> <span id="resend-timer"></span>
+                </p>
+                <p class="auth-footer-note">
+                    <a href="register.html">← Back to sign up</a>
+                </p>
             </div>
 
         </main>
@@ -190,7 +173,7 @@
     <section id="toast-region" aria-live="polite" aria-label="Toast Notifications"></section>
     <dialog id="modal-root" aria-label="Application Modal"></dialog>
 
-    <!-- ASLDS JS — minimal set for auth pages -->
+    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../../packages/shared/js/core/supabase-config.js"></script>
     <script src="../../packages/aslds/js/app.js"></script>
@@ -198,6 +181,7 @@
     <script src="../../packages/aslds/js/toast.js"></script>
     <script src="../../packages/aslds/js/modal.js"></script>
     <script src="../../packages/shared/js/core/auth.js"></script>
+    <script src="../../packages/shared/js/core/register-verify.js"></script>
 
 </body>
 </html>

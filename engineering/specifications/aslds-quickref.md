@@ -814,6 +814,33 @@ manipulating a component → something is wrong.
 A well-built ASLDS page has ZERO inline style and ZERO inline script.
 (Exception: .progress-fill width — documented as allowed.)
 
+```markdown
+REGISTER VERIFY (register-verify.js)
+--------------------------------------------------------------------------------
+Handles the OTP verification step on register.html.
+Activated when URL contains ?verify=email
+
+- Reads email from query param
+- Hides register form, shows OTP step
+- 60-second resend cooldown
+- Pre-check + post-check attempt tracking (3 max, 21-min lockout)
+- On success → dashboard.html
+
+Load after auth.js on register.html.
+```
+
+Also add a new **utility block**:
+
+```markdown
+EMAIL VERIFICATION
+--------------------------------------------------------------------------------
+Methods:  6-digit OTP via Resend SMTP
+Expiry:   21 minutes
+Attempts: 3 max, then 21-minute lockout
+Provider: Resend (custom SMTP)
+Template: Supabase → Auth → Email Templates → Confirm signup
+DB funcs: check_verify_attempts(uuid) · record_failed_verify(uuid)
+
 ================================================================================
 END OF QUICKREF
 ================================================================================
