@@ -17,8 +17,8 @@
     };
 
     // REPLACE THIS WITH YOUR ACTUAL PAYSTACK PUBLIC KEY LATER
-    const PAYSTACK_PUBLIC_KEY = 'pk_test_YOUR_PUBLIC_KEY_HERE'; 
-    const PRO_PLAN_PRICE = 500000; // 5,000 NGN (Paystack uses kobo)
+    const PAYSTACK_PUBLIC_KEY = 'pk_test_86792f7ea7ad404bacbe25b139ba358b97400f36'; 
+    const PRO_PLAN_PRICE = 100000; // 1,000 NGN (Paystack uses kobo)
 
     async function loadHistory() {
         const client = getClient();
