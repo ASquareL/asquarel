@@ -1,5 +1,8 @@
+﻿
+# -- Admin Subdomain Routing --
+https://admin.asquarel.com/*    /apps/admin/:splat    200
 # ============================================================
-# A Square L Innovate — Netlify Routing Rules
+# A Square L Innovate â€” Netlify Routing Rules
 # Order matters: first match wins.
 # ============================================================
 
@@ -17,7 +20,7 @@
 /apps/jamb/*                    /apps/academy/jamb/:splat           301
 /jamb/*                         /apps/academy/jamb/:splat           200
 
-# -- Root → public-site homepage -----------------------------
+# -- Root â†’ public-site homepage -----------------------------
 /                               /apps/public-site/index.html        200
 
 # -- Academy app (must be BEFORE the public-site catch-all) --
@@ -47,5 +50,5 @@
 /terms                          /apps/public-site/terms.html        200
 /subscribed                     /apps/public-site/subscribed.html   200
 
-# -- Fallback: anything else → public-site -------------------
+# -- Fallback: anything else â†’ public-site -------------------
 /*                              /apps/public-site/:splat            200
